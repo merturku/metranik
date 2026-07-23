@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Palet ve tipografi projenik.com'un canlı CSS'inden birebir çekildi (kullanıcı talebiyle,
+   PRODUCT.md'de belirtildiği gibi). İçerik/kopya kaynağa ait değil, orijinal. */
+:root {
+  --surface: #0d0a08;
+  --surface-secondary: #171210;
+  --surface-tertiary: #1e1814;
+  --border: rgba(240, 230, 215, 0.1);
+  --border-strong: rgba(240, 230, 215, 0.2);
+  --text-primary: #f0e9df;
+  --text-secondary: #b7ab99;
+  --text-tertiary: #7e7264;
+  --accent: #c65a33;
+  --accent-hover: #e5744a;
+  --accent-glow: rgba(198, 90, 51, 0.16);
+  --accent-fg: #fff;
+  --success: #58b382;
+  --warning: #d1993d;
+  --danger: #e06c5a;
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-tertiary: var(--surface-tertiary);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fg: var(--accent-fg);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-sora);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-serif: Georgia, "Times New Roman", "Nimbus Roman", serif;
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
