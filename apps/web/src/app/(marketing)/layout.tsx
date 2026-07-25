@@ -66,11 +66,22 @@ export default function MarketingLayout({
         {children}
 
         <footer className="border-t border-border px-6 py-8">
-          <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
             <span className="text-sm font-bold tracking-tight">
               <span className="text-text-primary">Metra</span>
               <span className="text-accent">nik</span>
             </span>
+            <nav className="flex flex-wrap items-center justify-center gap-4 text-xs text-text-secondary">
+              <a href="/#nasil-calisir" className="transition-colors duration-300 hover:text-text-primary">
+                Nasıl Çalışır
+              </a>
+              <a href="/#kimin-icin" className="transition-colors duration-300 hover:text-text-primary">
+                Kimin İçin
+              </a>
+              <Link href="/uygulama" className="transition-colors duration-300 hover:text-text-primary">
+                Modüller
+              </Link>
+            </nav>
             <p className="text-xs text-text-tertiary">
               Ön boyutlandırma aracıdır; nihai karar mühendis kontrolü gerektirir.
             </p>
