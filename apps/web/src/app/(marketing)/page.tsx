@@ -13,6 +13,7 @@ import {
   depremTabanKesmeTbdy2018,
   zeminTasimaGucuKontrolu,
 } from "@metranik/core-calc";
+import { TUM_MODULLER } from "@/lib/modules";
 
 const STANDARTLAR = [
   "TS 825",
@@ -61,8 +62,8 @@ const ROLLER = [
 const YOL_HARITASI = [
   {
     etiket: "ŞİMDİ · YAYINDA",
-    title: "20 modül",
-    desc: "15 çekirdek hesap modülü + 5 test/kontrol modülü hesaplanabiliyor; 38 test yeşil.",
+    title: `${TUM_MODULLER.length} modül`,
+    desc: "15 çekirdek hesap modülü + test/kontrol modülleri hesaplanabiliyor; tüm testler yeşil.",
   },
   {
     etiket: "SIRADA · FAZ 2",
@@ -210,9 +211,9 @@ export default function Home() {
       <section className="border-b border-border px-6 py-10">
         <div className="mx-auto grid max-w-[1140px] grid-cols-2 gap-8 sm:grid-cols-4">
           {[
-            { value: "20", label: "Modül Yayında" },
+            { value: `${TUM_MODULLER.length}`, label: "Modül Yayında" },
             { value: "4", label: "Disiplin" },
-            { value: "38", label: "Test Yeşil" },
+            { value: "42", label: "Test Yeşil" },
             { value: "0", label: "Kara Kutu Hesap" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
