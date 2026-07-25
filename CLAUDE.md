@@ -27,19 +27,39 @@ Monorepo (pnpm workspaces):
 ```
 /packages
   /core-calc      → framework-bağımsız hesap motoru (saf TS, YAN ETKİSİZ). Vitest.
-  /ifc            → IFC okuma / metraj çıkarımı (web-ifc). (Faz 2)
-  /ui             → paylaşılan tasarım tokenları / bileşenler. (opsiyonel)
+  /ifc            → IFC okuma / metraj çıkarımı (web-ifc). (Faz 2, henüz yok)
+  /ui             → paylaşılan tasarım tokenları / bileşenler. (opsiyonel, henüz yok)
 /apps
   /web            → Next.js (App Router) + TypeScript + Tailwind. PWA.
-  /ios            → SwiftUI (Faz 3)
+  /ios            → SwiftUI (Faz 3, henüz yok)
 ```
+
+`apps/web/src/app` iki route group'a ayrılır (URL'leri etkilemez, her ikisinin kendi
+root layout'u vardır — html/body burada tanımlanır, ikisi arasında paylaşılmaz):
+- `(marketing)` → herkese açık tanıtım sitesi (`/`). Kendi header/footer'ı var.
+- `(app)` → gerçek uygulama kabuğu: sol sidebar (`components/app-sidebar.tsx`,
+  disiplin → alt kategori → modül), `/uygulama` (Kontrol Merkezi: arama, son
+  hesaplar, en çok kullanılanlar — `lib/recent-calcs.ts` ile gerçek localStorage
+  takibi) ve her hesap modülünün kendi sayfası.
+
+Modül kataloğu tek kaynaktan yönetilir: `apps/web/src/lib/modules.ts`
+(`MODUL_GRUPLARI`, `TUM_MODULLER`, `modulKonumu()`, `ilgiliModuller()`). Sidebar,
+anasayfa modül listesi ve breadcrumb hepsi buradan okur — yeni modül eklerken
+burayı da güncelle.
+
+Çoğu hesap sayfası ortak `components/calc-page.tsx` (`<CalcPage>`) bileşenini
+kullanır: form alanları config olarak verilir, breadcrumb/stepper/yöntem
+paneli/ilgili modüller/verdict rozeti otomatik gelir. Yalnız girdi şekli çok
+özel olan birkaç sayfa (örn. isitma-yuku, kanal-boyutlandirma) kendi JSX'ini yazar.
 
 - Dil: **TypeScript strict** (`strict: true`, `noUncheckedIndexedAccess: true`).
 - Girdi doğrulama: **Zod**.
 - Test: **Vitest** (`packages/core-calc` içinde birim test zorunlu).
-- Backend/veri (Faz 1+): **Supabase** (Auth + Postgres + RLS ile satır düzeyi izin).
-- Excel çıktı: **SheetJS**. PDF: server-side (Puppeteer) veya react-pdf.
+- Backend/veri (Faz 1+): **Supabase** (Auth + Postgres + RLS ile satır düzeyi izin). Henüz eklenmedi.
+- Excel çıktı: **SheetJS**. PDF: server-side (Puppeteer) veya react-pdf. Henüz eklenmedi.
 - Paket yöneticisi: **pnpm**. Node 20+.
+- **Deploy:** GitHub `merturku/metranik` (main branch) → Vercel'e otomatik deploy
+  (Root Directory: `apps/web`). Canlı: https://web-lime-eta-39.vercel.app
 
 ---
 
@@ -92,15 +112,34 @@ it("TS 825 çözümlü örnek: 85 m² çift cam İstanbul ≈ X kW", () => {
 
 ---
 
-## 5. İlk 15 Çekirdek Modül (mekanik ağırlıklı — başlangıç seti)
+## 5. İlk 15 Çekirdek Modül — ✅ TAMAMLANDI (2026-07)
 
 Mekanik: ısıtma yükü (TS 825), soğutma yükü, hidronik su debisi, kanal boyutlandırma (SMACNA),
 boru basınç kaybı, pompa seçimi, sprinkler debi/basınç (NFPA 13), genleşme tankı, sıcak su/boyler (DIN 4708).
 Elektrik: kablo kesiti + gerilim düşümü (IEC 60364), kısa devre akımı, aydınlatma lüks yöntemi (EN 12464-1), kompanzasyon.
 Havalandırma: taze hava debisi (ASHRAE 62.1).
-İnşaat (opsiyonel 15.): deprem taban kesme (TBDY 2018).
+İnşaat: deprem taban kesme (TBDY 2018).
 
 Modülleri **tek tek**, her biri test yeşil olacak şekilde ekle. Hepsini birden yazma.
+
+### 5b. Test & Kontrol modülleri (ek, planın dışında ama aynı disiplinde)
+
+`CalcResult.verdict` alanını kullanan, saha/deney değerini bir kriterle karşılaştıran
+7 modül eklendi (her disiplinde en az bir tane, dengeli dağılım için):
+
+- Mekanik: hidrostatik basınç testi (ASME B31/NFPA 13), havalandırma debi kontrolü.
+- Elektrik: topraklama direnci testi (IEC 60364-4-41), yalıtım direnci testi (IEC 60364-6),
+  kesici kısa devre kapasitesi kontrolü (IEC 60947-2).
+- İnşaat: zemin taşıma gücü kontrolü, beton basınç dayanımı kontrolü (TS 500/TS EN 13791).
+
+Aynı kural geçerli: standart-spesifik tablo değerleri (örn. yalıtım direnci asgari
+MΩ tablosu) doğrulanmış ama "yerel baskıdan teyit edin" notuyla; formülün kendisi
+(basınç/direnç/kapasite karşılaştırması) her zaman gerçek fizik/mühendislik ilişkisi,
+uydurma değil.
+
+**Toplam: 22 modül, 42 test, hepsi yeşil.** Yeni modül eklerken hem
+`packages/core-calc/src/index.ts` hem `apps/web/src/lib/modules.ts` (MODUL_GRUPLARI +
+ilgili sabit) hem de `apps/web/src/app/(app)/<modul>/page.tsx` güncellenmeli.
 
 ---
 
@@ -115,12 +154,28 @@ Modülleri **tek tek**, her biri test yeşil olacak şekilde ekle. Hepsini birde
 
 ---
 
-## 7. Milestone 0 — Kabul Kriteri (ilk hedef)
+## 7. Milestone 0 — Kabul Kriteri (ilk hedef) — ✅ TAMAMLANDI
 
-- [ ] Monorepo kurulu, `pnpm install` ve `pnpm build` temiz.
-- [ ] `packages/core-calc` içinde **ısıtma yükü (TS 825)** modülü: Zod şeması + saf `compute` + `intermediates` + çözümlü örnek testi.
-- [ ] `pnpm test` yeşil.
-- [ ] `apps/web` içinde tek sayfa: girdi formu → modülü çağırır → sonucu + ara değerleri + standart notunu gösterir.
-- [ ] Kısa `README.md`: kurulum + "yeni modül nasıl eklenir" reçetesi.
+- [x] Monorepo kurulu, `pnpm install` ve `pnpm build` temiz.
+- [x] `packages/core-calc` içinde **ısıtma yükü (TS 825)** modülü: Zod şeması + saf `compute` + `intermediates` + çözümlü örnek testi.
+- [x] `pnpm test` yeşil.
+- [x] `apps/web` içinde tek sayfa: girdi formu → modülü çağırır → sonucu + ara değerleri + standart notunu gösterir.
+- [x] Kısa `README.md`: kurulum + "yeni modül nasıl eklenir" reçetesi.
 
-Milestone 0 bitince dur ve özet ver; sonraki modüllere birlikte karar veririz.
+---
+
+## 8. Güncel Durum (2026-07, Milestone 0 sonrası)
+
+Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklendi:
+
+- **Tasarım**: Görsel sistem (renk/tipografi/layout) bilinçli olarak projenik.com'un
+  canlı CSS'inden alındı (kullanıcı talebi, `PRODUCT.md`'de gerekçesiyle kayıtlı).
+  İçerik/kopya her zaman orijinal — kaynağın sahte istatistiklerini/özelliklerini
+  kopyalamadık.
+- **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
+  takibi (localStorage, `lib/recent-calcs.ts`).
+- **22 modül, 42 test** (bkz. §5/§5b) — hem hesap hem test/kontrol tipinde, 3 disiplinde dengeli.
+- **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
+
+Sıradaki karar noktası: Faz 2 (BIM/IFC-native metraj, `packages/ifc`, web-ifc) — ayrı
+bir mimari planlama gerektirir, kendiliğinden başlanmaz, önce birlikte karar verilir.
