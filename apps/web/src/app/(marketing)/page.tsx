@@ -242,7 +242,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1140px] text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-xs text-text-secondary">
             <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-success" />
-            Şu an tamamen ücretsiz · üyeliksiz kullanın
+            Beta sürümü · şu an tamamen ücretsiz · üyeliksiz kullanın
           </span>
 
           <h1 className="mx-auto mt-6 max-w-3xl text-[clamp(2.6rem,6vw,4.4rem)] font-normal leading-[1.1] tracking-tight text-text-primary [font-family:var(--font-serif)]">
@@ -528,6 +528,52 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Reklam Verin */}
+      <section id="reklam-verin" className="border-b border-border px-6 py-20">
+        <div className="mx-auto max-w-[1140px]">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            — Reklam Verin —
+          </p>
+          <h2 className="mt-4 max-w-2xl text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
+            Doğru anda, doğru mühendise reklam verin.
+          </h2>
+          <p className="mt-3 max-w-[60ch] text-sm leading-relaxed text-text-secondary">
+            Metranik beta sürümünde; kullanıcılar gerçek bir hesap yapıp karar verirken
+            markanız tam o anda görünür. Malzeme, ekipman ve yazılım üreticileri için
+            sponsorluk alanları ayrılabilir.
+          </p>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                title: "Ana Sponsor Bandı",
+                desc: "Anasayfa üst bandında sürekli marka görünürlüğü.",
+              },
+              {
+                title: "Kategori Sponsorluğu",
+                desc: "Belirli bir disiplin veya modül grubunda (örn. Elektrik Tesisat) öne çıkın.",
+              },
+              {
+                title: "Sonuç Yanı Kart",
+                desc: "Hesap sonuç ekranında bağlamsal, ilgili markanın kartı.",
+              },
+            ].map((k) => (
+              <div key={k.title} className="rounded-2xl border border-dashed border-border-strong p-6">
+                <p className="text-sm font-semibold text-text-primary">{k.title}</p>
+                <p className="mt-2 text-sm leading-relaxed text-text-secondary">{k.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="mailto:erturkuludasdemir@gmail.com?subject=Metranik%20Reklam%20%2F%20Sponsorluk"
+            className="mt-8 inline-flex items-center justify-center rounded-xl border border-accent px-5 py-2.5 text-sm font-semibold text-accent transition-colors duration-300 hover:bg-accent hover:text-accent-fg"
+          >
+            Reklam İçin İletişime Geçin
+          </a>
         </div>
       </section>
 

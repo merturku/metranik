@@ -176,6 +176,10 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   takibi (localStorage, `lib/recent-calcs.ts`).
 - **22 modül, 42 test** (bkz. §5/§5b) — hem hesap hem test/kontrol tipinde, 3 disiplinde dengeli.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
+- **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
+  Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
+  Kategori Sponsorluğu, Sonuç Yanı Kart). Henüz gerçek reklam altyapısı (ödeme, sponsor
+  yönetimi) yok — şu an sadece ilgi toplama/iletişim CTA'sı var.
 
 Sıradaki karar noktası: Faz 2 (BIM/IFC-native metraj, `packages/ifc`, web-ifc) — ayrı
 bir mimari planlama gerektirir, kendiliğinden başlanmaz, önce birlikte karar verilir.

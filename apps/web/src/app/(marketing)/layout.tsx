@@ -41,6 +41,9 @@ export default function MarketingLayout({
                 <span className="text-text-primary">Metra</span>
                 <span className="text-accent">nik</span>
               </span>
+              <span className="rounded-full border border-accent/40 bg-accent/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-accent">
+                Beta
+              </span>
             </Link>
 
             <nav className="hidden items-center gap-6 text-sm text-text-secondary sm:flex">
@@ -53,6 +56,9 @@ export default function MarketingLayout({
               <Link href="/uygulama" className="transition-colors duration-300 hover:text-text-primary">
                 Modüller
               </Link>
+              <a href="/#reklam-verin" className="transition-colors duration-300 hover:text-text-primary">
+                Reklam Verin
+              </a>
             </nav>
 
             <Link
@@ -81,9 +87,12 @@ export default function MarketingLayout({
               <Link href="/uygulama" className="transition-colors duration-300 hover:text-text-primary">
                 Modüller
               </Link>
+              <a href="/#reklam-verin" className="transition-colors duration-300 hover:text-text-primary">
+                Reklam Verin
+              </a>
             </nav>
             <p className="text-xs text-text-tertiary">
-              Ön boyutlandırma aracıdır; nihai karar mühendis kontrolü gerektirir.
+              Beta sürümü · Ön boyutlandırma aracıdır; nihai karar mühendis kontrolü gerektirir.
             </p>
           </div>
         </footer>
