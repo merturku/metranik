@@ -63,3 +63,8 @@ export type {
   ZeminTasimaGucuKontroluInput,
   ZeminTasimaGucuKontroluOutput,
 } from "./modules/zemin-tasima-gucu-kontrolu";
+export { havalandirmaDebiKontrolu } from "./modules/havalandirma-debi-kontrolu";
+export type {
+  HavalandirmaDebiKontroluInput,
+  HavalandirmaDebiKontroluOutput,
+} from "./modules/havalandirma-debi-kontrolu";

@@ -115,6 +115,12 @@ const ZEMIN_TASIMA_GUCU_KONTROLU: ModuleEntry = {
   href: "/zemin-tasima-gucu-kontrolu",
   standard: "—",
 };
+const HAVALANDIRMA_DEBI_KONTROLU: ModuleEntry = {
+  id: "havalandirma-debi-kontrolu",
+  title: "Havalandırma Debi Kontrolü",
+  href: "/havalandirma-debi-kontrolu",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -127,7 +133,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       },
       { label: "Havalandırma", modules: [KANAL_BOYUTLANDIRMA, TAZE_HAVA_DEBISI] },
       { label: "Yangın", modules: [SPRINKLER] },
-      { label: "Test & Kontrol", modules: [HIDROSTATIK_BASINC_TESTI] },
+      { label: "Test & Kontrol", modules: [HIDROSTATIK_BASINC_TESTI, HAVALANDIRMA_DEBI_KONTROLU] },
     ],
   },
   {
