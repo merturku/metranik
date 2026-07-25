@@ -68,3 +68,8 @@ export type {
   HavalandirmaDebiKontroluInput,
   HavalandirmaDebiKontroluOutput,
 } from "./modules/havalandirma-debi-kontrolu";
+export { betonBasincDayanimiKontrolu } from "./modules/beton-basinc-dayanimi-kontrolu";
+export type {
+  BetonBasincDayanimiKontroluInput,
+  BetonBasincDayanimiKontroluOutput,
+} from "./modules/beton-basinc-dayanimi-kontrolu";

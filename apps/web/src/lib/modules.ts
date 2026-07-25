@@ -121,6 +121,12 @@ const HAVALANDIRMA_DEBI_KONTROLU: ModuleEntry = {
   href: "/havalandirma-debi-kontrolu",
   standard: "—",
 };
+const BETON_BASINC_DAYANIMI_KONTROLU: ModuleEntry = {
+  id: "beton-basinc-dayanimi-kontrolu",
+  title: "Beton Basınç Dayanımı Kontrolü",
+  href: "/beton-basinc-dayanimi-kontrolu",
+  standard: "TS 500 / TS EN 13791",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -153,7 +159,10 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
     label: "İnşaat Hesapları",
     subgroups: [
       { label: "İnşaat Hesapları", modules: [DEPREM_TABAN_KESME] },
-      { label: "Test & Kontrol", modules: [ZEMIN_TASIMA_GUCU_KONTROLU] },
+      {
+        label: "Test & Kontrol",
+        modules: [ZEMIN_TASIMA_GUCU_KONTROLU, BETON_BASINC_DAYANIMI_KONTROLU],
+      },
     ],
   },
 ];
