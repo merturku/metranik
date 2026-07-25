@@ -15,6 +15,15 @@ import {
 } from "@metranik/core-calc";
 import { TUM_MODULLER } from "@/lib/modules";
 
+const ONERI_CIPLERI = [
+  { title: "Isıtma Yükü", href: "/isitma-yuku" },
+  { title: "Kablo Kesiti", href: "/kablo-kesiti" },
+  { title: "Sprinkler", href: "/sprinkler" },
+  { title: "Kanal Boyutlandırma", href: "/kanal-boyutlandirma" },
+  { title: "Kompanzasyon", href: "/kompanzasyon" },
+  { title: "Zemin Taşıma Gücü", href: "/zemin-tasima-gucu-kontrolu" },
+];
+
 const STANDARTLAR = [
   "TS 825",
   "SMACNA",
@@ -231,11 +240,15 @@ export default function Home() {
       {/* Hero */}
       <section className="border-b border-border px-6 pt-16 pb-20 sm:pt-20 sm:pb-24">
         <div className="mx-auto max-w-[1140px] text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            — Uygulamadan —
-          </p>
-          <h1 className="mx-auto mt-5 max-w-3xl text-[clamp(2.4rem,5.6vw,4rem)] font-normal leading-[1.12] tracking-tight text-text-primary [font-family:var(--font-serif)]">
-            Hesabı motor yapar, kararı mühendis verir.
+          <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-xs text-text-secondary">
+            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-success" />
+            Şu an tamamen ücretsiz · üyeliksiz kullanın
+          </span>
+
+          <h1 className="mx-auto mt-6 max-w-3xl text-[clamp(2.6rem,6vw,4.4rem)] font-normal leading-[1.1] tracking-tight text-text-primary [font-family:var(--font-serif)]">
+            Hesabı motor yapar.
+            <br />
+            Kararı <em className="text-accent">mühendis</em> verir.
           </h1>
           <p className="mx-auto mt-5 max-w-[56ch] text-base leading-relaxed text-text-secondary">
             Her modül standart atıflı, ara değerleri şeffaf ve tamamen deterministik bir hesap
@@ -259,17 +272,29 @@ export default function Home() {
                 type="text"
                 value={arama}
                 onChange={(e) => setArama(e.target.value)}
-                placeholder="Modül ara: örn. ısıtma, hidronik…"
+                placeholder="Ne hesaplamak istiyorsunuz? örn: 85 m² daireye ısıtma yükü"
                 className="min-w-0 flex-1 bg-transparent py-2 text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none"
               />
               <button
                 type="submit"
                 className="rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-accent-fg transition-colors duration-300 hover:bg-accent-hover"
               >
-                Bul
+                Hesapla
               </button>
             </div>
           </form>
+
+          <div className="mx-auto mt-4 flex max-w-[560px] flex-wrap items-center justify-center gap-2">
+            {ONERI_CIPLERI.map((m) => (
+              <Link
+                key={m.href}
+                href={m.href}
+                className="rounded-full border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent"
+              >
+                {m.title}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="mt-14">
@@ -333,7 +358,7 @@ export default function Home() {
       </section>
 
       {/* Özellik: Isıtma Yükü */}
-      <section className="border-b border-border px-6 py-20">
+      <section id="nasil-calisir" className="border-b border-border px-6 py-20">
         <div className="mx-auto grid max-w-[1140px] gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
@@ -451,7 +476,7 @@ export default function Home() {
       </section>
 
       {/* Roller */}
-      <section className="border-b border-border px-6 py-20">
+      <section id="kimin-icin" className="border-b border-border px-6 py-20">
         <div className="mx-auto max-w-[1140px]">
           <h2 className="max-w-2xl text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
             Sahadaki herkese göre bir yüzü var.

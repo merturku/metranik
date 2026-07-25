@@ -44,9 +44,15 @@ export default function MarketingLayout({
             </Link>
 
             <nav className="hidden items-center gap-6 text-sm text-text-secondary sm:flex">
-              <a href="/#moduller" className="transition-colors duration-300 hover:text-text-primary">
-                Modüller
+              <a href="/#nasil-calisir" className="transition-colors duration-300 hover:text-text-primary">
+                Nasıl Çalışır
               </a>
+              <a href="/#kimin-icin" className="transition-colors duration-300 hover:text-text-primary">
+                Kimin İçin
+              </a>
+              <Link href="/uygulama" className="transition-colors duration-300 hover:text-text-primary">
+                Modüller
+              </Link>
             </nav>
 
             <Link
