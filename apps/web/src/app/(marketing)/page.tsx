@@ -205,6 +205,17 @@ const MOCK_KARTLAR = [
   },
 ] as const;
 
+function Eyebrow({ children, center = false }: { children: string; center?: boolean }) {
+  return (
+    <p
+      className={`inline-flex items-center gap-2.5 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent-hover ${center ? "justify-center" : ""}`}
+    >
+      <span aria-hidden className="h-px w-[26px] bg-accent/70" />
+      {children}
+    </p>
+  );
+}
+
 export default function Home() {
   const [arama, setArama] = useState("");
   const router = useRouter();
@@ -219,30 +230,31 @@ export default function Home() {
       {/* Hero */}
       <section className="border-b border-border px-6 pt-16 pb-20 sm:pt-20 sm:pb-24">
         <div className="mx-auto max-w-[1140px] text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-xs text-text-secondary">
-            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-success" />
+          <span className="mb-[34px] inline-flex items-center gap-2.5 rounded-full border border-border bg-text-primary/[0.03] px-4 py-1.5 font-mono text-[0.74rem] tracking-[0.1em] text-text-secondary">
+            <span aria-hidden className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-success" />
             Beta sürümü · şu an tamamen ücretsiz · üyeliksiz kullanın
           </span>
 
-          <h1 className="mx-auto mt-6 max-w-3xl text-[clamp(2.6rem,6vw,4.4rem)] font-normal leading-[1.1] tracking-tight text-text-primary [font-family:var(--font-serif)]">
+          <h1 className="mx-auto max-w-3xl text-[clamp(2.9rem,7.2vw,5.6rem)] font-normal leading-[1.04] tracking-tight text-text-primary [font-family:var(--font-serif)]">
             Hesabı motor yapar.
-            <br />
-            Kararı <em className="text-accent">mühendis</em> verir.
+            <span className="block text-text-secondary">
+              Kararı <em className="font-normal text-accent-hover italic">mühendis</em> verir.
+            </span>
           </h1>
-          <p className="mx-auto mt-5 max-w-[56ch] text-base leading-relaxed text-text-secondary">
+          <p className="mx-auto mt-6 max-w-[620px] text-[1.08rem] leading-[1.7] text-text-secondary">
             Her modül standart atıflı, ara değerleri şeffaf ve tamamen deterministik bir hesap
             motoruyla çalışır. Girdiyi siz belirlersiniz, sonucu motor üretir.
           </p>
 
           <form onSubmit={ara} className="mx-auto mt-10 max-w-[560px]">
-            <div className="flex items-center gap-2 rounded-2xl border-[1.5px] border-accent bg-surface-secondary p-1.5 pl-4 shadow-[0_0_0_4px_var(--accent-glow)]">
+            <div className="flex items-center gap-2.5 rounded-[14px] border-[1.5px] border-accent bg-surface-secondary py-1.5 pr-1.5 pl-4 shadow-[0_0_0_4px_var(--accent-glow)] focus-within:border-accent-hover">
               <svg
                 aria-hidden
-                width="16"
-                height="16"
+                width="18"
+                height="18"
                 viewBox="0 0 16 16"
                 fill="none"
-                className="shrink-0 text-text-tertiary"
+                className="shrink-0 text-accent-hover"
               >
                 <circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.5" />
                 <path d="M14 14L11 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -252,11 +264,11 @@ export default function Home() {
                 value={arama}
                 onChange={(e) => setArama(e.target.value)}
                 placeholder="Ne hesaplamak istiyorsunuz? örn: 85 m² daireye ısıtma yükü"
-                className="min-w-0 flex-1 bg-transparent py-2 text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none"
+                className="min-w-0 flex-1 bg-transparent py-2.5 text-[15px] text-text-primary placeholder:text-text-tertiary focus:outline-none"
               />
               <button
                 type="submit"
-                className="rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-accent-fg transition-colors duration-300 hover:bg-accent-hover"
+                className="shrink-0 rounded-[10px] bg-accent px-[22px] py-3 text-sm font-bold text-accent-fg transition-colors duration-150 hover:bg-accent-hover"
               >
                 Hesapla
               </button>
@@ -361,9 +373,7 @@ export default function Home() {
       <section id="nasil-calisir" className="border-b border-border px-6 py-20">
         <div className="mx-auto grid max-w-[1140px] gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              — Biliyor muydunuz? —
-            </p>
+            <Eyebrow>Biliyor muydunuz?</Eyebrow>
             <h2 className="mt-4 text-[clamp(1.6rem,3.2vw,2.4rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
               Bir dairenin ısıtma yükünü <em className="text-accent">saniyeler içinde</em>{" "}
               çıkarabileceğinizi biliyor muydunuz?
@@ -453,9 +463,7 @@ export default function Home() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              — Biliyor muydunuz? —
-            </p>
+            <Eyebrow>Biliyor muydunuz?</Eyebrow>
             <h2 className="mt-4 text-[clamp(1.6rem,3.2vw,2.4rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
               Isı yükünden debiye geçişin <em className="text-accent">tek fizik formülüyle</em>{" "}
               çözüldüğünü biliyor muydunuz?
@@ -510,9 +518,7 @@ export default function Home() {
       {/* Yol haritası */}
       <section className="border-b border-border px-6 py-20">
         <div className="mx-auto max-w-[1140px]">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            — Yol Haritası —
-          </p>
+          <Eyebrow>Yol Haritası</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
             Milestone 0 tamam. Sırada standart doğrulaması var.
           </h2>
@@ -534,9 +540,7 @@ export default function Home() {
       {/* Reklam Verin */}
       <section id="reklam-verin" className="border-b border-border px-6 py-20">
         <div className="mx-auto max-w-[1140px]">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            — Reklam Verin —
-          </p>
+          <Eyebrow>Reklam Verin</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
             Doğru anda, doğru mühendise reklam verin.
           </h2>
@@ -579,9 +583,7 @@ export default function Home() {
 
       {/* Kapanış CTA */}
       <section className="flex-1 px-6 py-20 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          Hazır mısınız?
-        </p>
+        <Eyebrow center>Hazır mısınız?</Eyebrow>
         <h2 className="mx-auto mt-4 max-w-xl text-[clamp(1.6rem,3.2vw,2.2rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
           20 modülün tamamı bir tık uzağınızda.
         </h2>

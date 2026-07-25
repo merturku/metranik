@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
+import { MarketingNav } from "@/components/marketing-nav";
 import "../globals.css";
 
 const sora = Sora({
@@ -31,45 +32,8 @@ export default function MarketingLayout({
       className={`${sora.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface font-sans text-text-primary">
-        <header className="border-b border-border px-6 py-4">
-          <div className="mx-auto flex max-w-[1140px] items-center justify-between gap-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-sm font-bold text-accent-fg">
-                M
-              </span>
-              <span className="text-[17px] font-bold tracking-tight">
-                <span className="text-text-primary">Metra</span>
-                <span className="text-accent">nik</span>
-              </span>
-              <span className="rounded-full border border-accent/40 bg-accent/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-accent">
-                Beta
-              </span>
-            </Link>
-
-            <nav className="hidden items-center gap-6 text-sm text-text-secondary sm:flex">
-              <a href="/#nasil-calisir" className="transition-colors duration-300 hover:text-text-primary">
-                Nasıl Çalışır
-              </a>
-              <a href="/#kimin-icin" className="transition-colors duration-300 hover:text-text-primary">
-                Kimin İçin
-              </a>
-              <Link href="/uygulama" className="transition-colors duration-300 hover:text-text-primary">
-                Modüller
-              </Link>
-              <a href="/#reklam-verin" className="transition-colors duration-300 hover:text-text-primary">
-                Reklam Verin
-              </a>
-            </nav>
-
-            <Link
-              href="/uygulama"
-              className="rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-fg transition-colors duration-300 hover:bg-accent-hover"
-            >
-              Uygulamayı Aç
-            </Link>
-          </div>
-        </header>
-        {children}
+        <MarketingNav />
+        <div className="pt-[100px]">{children}</div>
 
         <footer className="border-t border-border px-6 py-8">
           <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
