@@ -216,27 +216,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-1 flex-col">
-      {/* İstatistikler */}
-      <section className="border-b border-border px-6 py-10">
-        <div className="mx-auto grid max-w-[1140px] grid-cols-2 gap-8 sm:grid-cols-4">
-          {[
-            { value: `${TUM_MODULLER.length}`, label: "Modül Yayında" },
-            { value: "4", label: "Disiplin" },
-            { value: "42", label: "Test Yeşil" },
-            { value: "0", label: "Kara Kutu Hesap" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-2xl text-text-primary [font-family:var(--font-serif)] sm:text-3xl">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-[11px] uppercase tracking-wide text-text-tertiary">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Hero */}
       <section className="border-b border-border px-6 pt-16 pb-20 sm:pt-20 sm:pb-24">
         <div className="mx-auto max-w-[1140px] text-center">
@@ -293,6 +272,27 @@ export default function Home() {
               >
                 {m.title}
               </Link>
+            ))}
+          </div>
+
+          <div className="mt-16 flex flex-wrap justify-center">
+            {[
+              { value: `${TUM_MODULLER.length}`, label: "modül yayında" },
+              { value: "4", label: "disiplin" },
+              { value: "42", label: "test yeşil" },
+              { value: "0", label: "kara kutu hesap" },
+            ].map((stat, i) => (
+              <div
+                key={stat.label}
+                className={`px-8 py-1.5 text-center ${i > 0 ? "border-l border-border" : ""}`}
+              >
+                <b className="block font-normal tracking-tight text-text-primary [font-family:var(--font-serif)] text-[1.9rem]">
+                  {stat.value}
+                </b>
+                <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-text-tertiary">
+                  {stat.label}
+                </span>
+              </div>
             ))}
           </div>
         </div>
