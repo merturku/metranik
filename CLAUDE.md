@@ -192,10 +192,10 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~33 | çok geride, yangın (merdiven basınçlandırma/sprinkler çapı) + sıhhi (temiz su) eklendi |
-| Elektrik | 62 | ~19 | geride, yıldırım risk + acil aydınlatma eklendi |
+| Mekanik | 142 | ~35 | çok geride, buhar/kuru sistem eklendi |
+| Elektrik | 62 | ~20 | geride, pano yük cetveli eklendi |
 | İnşaat | 65 | ~15 | geride, denetim+betonarme+yükler alt kategorileri güçlendi |
-| Ev Sahibi/Günlük Hayat | 39 | 5 | geride |
+| Ev Sahibi/Günlük Hayat | 39 | 7 | geride (referans sitede bu kategori için spesifik başlık yayınlanmamış, kendi mantıklı başlıklarımızı ekliyoruz) |
 | Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
 
@@ -273,6 +273,13 @@ temiz su debisi (EN 806-3, yükleme birimi yöntemi), yıldırım risk değerlen
 
 **Toplam: 72 modül, 107 test, hepsi yeşil.**
 
+### 5n. Buhar/ev/elektrik son modülleri: 5 modül daha
+
+Kuru sistem hava kompresörü kapasitesi (NFPA 13), kondens debisi, pano yük cetveli
+(talep faktörü), boya miktarı hesabı (Ev), fayans/döşeme malzeme miktarı (Ev).
+
+**Toplam: 77 modül, 112 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -315,7 +322,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **72 modül, 107 test** (bkz. §5/§5b-§5m) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **77 modül, 112 test** (bkz. §5/§5b-§5n) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,

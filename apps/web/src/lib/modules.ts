@@ -428,6 +428,36 @@ const ACIL_AYDINLATMA_BATARYA_SURESI: ModuleEntry = {
   href: "/acil-aydinlatma-batarya-suresi",
   standard: "—",
 };
+const KURU_SISTEM_HAVA_KOMPRESORU: ModuleEntry = {
+  id: "kuru-sistem-hava-kompresoru",
+  title: "Kuru Sistem Hava Kompresörü Kapasitesi",
+  href: "/kuru-sistem-hava-kompresoru",
+  standard: "NFPA 13",
+};
+const KONDENS_DEBISI: ModuleEntry = {
+  id: "kondens-debisi",
+  title: "Kondens Debisi",
+  href: "/kondens-debisi",
+  standard: "—",
+};
+const PANO_YUK_CETVELI: ModuleEntry = {
+  id: "pano-yuk-cetveli",
+  title: "Pano Yük Cetveli (Talep Faktörü)",
+  href: "/pano-yuk-cetveli",
+  standard: "—",
+};
+const BOYA_MIKTARI_HESABI: ModuleEntry = {
+  id: "boya-miktari-hesabi",
+  title: "Boya Miktarı Hesabı",
+  href: "/boya-miktari-hesabi",
+  standard: "—",
+};
+const FAYANS_DOSEME_MALZEME_MIKTARI: ModuleEntry = {
+  id: "fayans-doseme-malzeme-miktari",
+  title: "Fayans / Döşeme Malzeme Miktarı",
+  href: "/fayans-doseme-malzeme-miktari",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -479,9 +509,10 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANGIN_DOLABI_DEBI_BASINC,
           MERDIVEN_BASINCLANDIRMA_FANI_DEBISI,
           SPRINKLER_BORU_CAPI,
+          KURU_SISTEM_HAVA_KOMPRESORU,
         ],
       },
-      { label: "Buhar", modules: [BUHAR_HAT_CAPI] },
+      { label: "Buhar", modules: [BUHAR_HAT_CAPI, KONDENS_DEBISI] },
       { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI] },
       {
         label: "Test & Kontrol",
@@ -508,6 +539,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BARA_AKIM_TASIMA_KAPASITESI,
           YILDIRIM_RISK_DEGERLENDIRMESI,
           ACIL_AYDINLATMA_BATARYA_SURESI,
+          PANO_YUK_CETVELI,
         ],
       },
       {
@@ -561,6 +593,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SU_DEPOSU_HACMI_HESABI,
           ISI_YALITIM_KALINLIGI_HESABI,
           EV_TESISATI_SIGORTA_YUKU_KONTROLU,
+          BOYA_MIKTARI_HESABI,
+          FAYANS_DOSEME_MALZEME_MIKTARI,
         ],
       },
     ],
