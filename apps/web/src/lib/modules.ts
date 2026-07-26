@@ -368,6 +368,36 @@ const FCU_SU_DEBISI: ModuleEntry = {
   href: "/fcu-su-debisi",
   standard: "—",
 };
+const FAN_AFFINITE_YASALARI: ModuleEntry = {
+  id: "fan-affinite-yasalari",
+  title: "Fan Afinite Yasaları (Devir Değişimi)",
+  href: "/fan-affinite-yasalari",
+  standard: "Fan Afinite Yasaları",
+};
+const DAVLUMBAZ_DEBISI: ModuleEntry = {
+  id: "davlumbaz-debisi",
+  title: "Davlumbaz Debisi (Yakalama Hızı)",
+  href: "/davlumbaz-debisi",
+  standard: "ACGIH",
+};
+const MENFEZ_DIFUZOR_DEBISI: ModuleEntry = {
+  id: "menfez-difuzor-debisi",
+  title: "Menfez / Difüzör Debisi",
+  href: "/menfez-difuzor-debisi",
+  standard: "—",
+};
+const SICAK_SU_SIRKULASYON_DEBISI: ModuleEntry = {
+  id: "sicak-su-sirkulasyon-debisi",
+  title: "Sıcak Su Sirkülasyon Debisi",
+  href: "/sicak-su-sirkulasyon-debisi",
+  standard: "—",
+};
+const TRAFO_ODASI_HAVALANDIRMA_DEBISI: ModuleEntry = {
+  id: "trafo-odasi-havalandirma-debisi",
+  title: "Trafo Odası Havalandırma Debisi",
+  href: "/trafo-odasi-havalandirma-debisi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -397,9 +427,20 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ASKILAMA_HESABI,
           YAGMUR_SUYU_DEBISI,
           ATIK_SU_DEBISI,
+          SICAK_SU_SIRKULASYON_DEBISI,
         ],
       },
-      { label: "Havalandırma", modules: [KANAL_BOYUTLANDIRMA, TAZE_HAVA_DEBISI] },
+      {
+        label: "Havalandırma",
+        modules: [
+          KANAL_BOYUTLANDIRMA,
+          TAZE_HAVA_DEBISI,
+          FAN_AFFINITE_YASALARI,
+          DAVLUMBAZ_DEBISI,
+          MENFEZ_DIFUZOR_DEBISI,
+          TRAFO_ODASI_HAVALANDIRMA_DEBISI,
+        ],
+      },
       { label: "Yangın", modules: [SPRINKLER, YANGIN_DOLABI_DEBI_BASINC] },
       { label: "Buhar", modules: [BUHAR_HAT_CAPI] },
       { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI] },

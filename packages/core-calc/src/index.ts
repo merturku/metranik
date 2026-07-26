@@ -246,3 +246,25 @@ export type {
 } from "./modules/gunes-kollektoru-alani";
 export { fcuSuDebisi } from "./modules/fcu-su-debisi";
 export type { FcuSuDebisiInput, FcuSuDebisiOutput } from "./modules/fcu-su-debisi";
+export { fanAffiniteYasalari } from "./modules/fan-affinite-yasalari";
+export type {
+  FanAffiniteYasalariInput,
+  FanAffiniteYasalariOutput,
+} from "./modules/fan-affinite-yasalari";
+export { davlumbazDebisi } from "./modules/davlumbaz-debisi";
+export type { DavlumbazDebisiInput, DavlumbazDebisiOutput } from "./modules/davlumbaz-debisi";
+export { menfezDifuzorDebisi } from "./modules/menfez-difuzor-debisi";
+export type {
+  MenfezDifuzorDebisiInput,
+  MenfezDifuzorDebisiOutput,
+} from "./modules/menfez-difuzor-debisi";
+export { sicakSuSirkulasyonDebisi } from "./modules/sicak-su-sirkulasyon-debisi";
+export type {
+  SicakSuSirkulasyonDebisiInput,
+  SicakSuSirkulasyonDebisiOutput,
+} from "./modules/sicak-su-sirkulasyon-debisi";
+export { trafoOdasiHavalandirmaDebisi } from "./modules/trafo-odasi-havalandirma-debisi";
+export type {
+  TrafoOdasiHavalandirmaDebisiInput,
+  TrafoOdasiHavalandirmaDebisiOutput,
+} from "./modules/trafo-odasi-havalandirma-debisi";
