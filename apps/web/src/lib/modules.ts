@@ -157,6 +157,42 @@ const GERILIM_DUSUMU_KONTROLU: ModuleEntry = {
   href: "/gerilim-dusumu-kontrolu",
   standard: "IEC 60364-5-52",
 };
+const RUZGAR_YUKU_HESABI: ModuleEntry = {
+  id: "ruzgar-yuku-hesabi",
+  title: "Rüzgar Yükü Hesabı",
+  href: "/ruzgar-yuku-hesabi",
+  standard: "TS EN 1991-1-4",
+};
+const MERDIVEN_BASAMAK_HESABI: ModuleEntry = {
+  id: "merdiven-basamak-hesabi",
+  title: "Merdiven Basamak Hesabı",
+  href: "/merdiven-basamak-hesabi",
+  standard: "Blondel Formülü",
+};
+const TRAFO_GUC_SECIMI: ModuleEntry = {
+  id: "trafo-guc-secimi",
+  title: "Trafo Güç Seçimi",
+  href: "/trafo-guc-secimi",
+  standard: "—",
+};
+const JENERATOR_SECIMI: ModuleEntry = {
+  id: "jenerator-secimi",
+  title: "Jeneratör Seçimi",
+  href: "/jenerator-secimi",
+  standard: "—",
+};
+const YANGIN_DOLABI_DEBI_BASINC: ModuleEntry = {
+  id: "yangin-dolabi-debi-basinc",
+  title: "Yangın Dolabı Debi/Basınç",
+  href: "/yangin-dolabi-debi-basinc",
+  standard: "TS 9811",
+};
+const KLIMA_KAPASITE_SECIMI: ModuleEntry = {
+  id: "klima-kapasite-secimi",
+  title: "Klima (Split) Kapasite Seçimi",
+  href: "/klima-kapasite-secimi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -175,7 +211,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         ],
       },
       { label: "Havalandırma", modules: [KANAL_BOYUTLANDIRMA, TAZE_HAVA_DEBISI] },
-      { label: "Yangın", modules: [SPRINKLER] },
+      { label: "Yangın", modules: [SPRINKLER, YANGIN_DOLABI_DEBI_BASINC] },
       {
         label: "Test & Kontrol",
         modules: [HIDROSTATIK_BASINC_TESTI, HAVALANDIRMA_DEBI_KONTROLU, YANGIN_POMPASI_PERFORMANS_KONTROLU],
@@ -187,7 +223,14 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
     subgroups: [
       {
         label: "Elektrik Tesisat",
-        modules: [KABLO_KESITI, KISA_DEVRE_AKIMI, AYDINLATMA, KOMPANZASYON],
+        modules: [
+          KABLO_KESITI,
+          KISA_DEVRE_AKIMI,
+          AYDINLATMA,
+          KOMPANZASYON,
+          TRAFO_GUC_SECIMI,
+          JENERATOR_SECIMI,
+        ],
       },
       {
         label: "Test & Kontrol",
@@ -204,12 +247,19 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "İnşaat Hesapları",
     subgroups: [
-      { label: "İnşaat Hesapları", modules: [DEPREM_TABAN_KESME, KAR_YUKU_HESABI] },
+      {
+        label: "İnşaat Hesapları",
+        modules: [DEPREM_TABAN_KESME, KAR_YUKU_HESABI, RUZGAR_YUKU_HESABI, MERDIVEN_BASAMAK_HESABI],
+      },
       {
         label: "Test & Kontrol",
         modules: [ZEMIN_TASIMA_GUCU_KONTROLU, BETON_BASINC_DAYANIMI_KONTROLU],
       },
     ],
+  },
+  {
+    label: "Ev",
+    subgroups: [{ label: "Ev", modules: [KLIMA_KAPASITE_SECIMI] }],
   },
 ];
 

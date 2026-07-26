@@ -59,7 +59,7 @@ paneli/ilgili modüller/verdict rozeti otomatik gelir. Yalnız girdi şekli çok
 - Excel çıktı: **SheetJS**. PDF: server-side (Puppeteer) veya react-pdf. Henüz eklenmedi.
 - Paket yöneticisi: **pnpm**. Node 20+.
 - **Deploy:** GitHub `merturku/metranik` (main branch) → Vercel'e otomatik deploy
-  (Root Directory: `apps/web`). Canlı: https://web-lime-eta-39.vercel.app
+  (Root Directory: `apps/web`). Canlı: https://metranik.vercel.app
 
 ---
 
@@ -137,9 +137,30 @@ MΩ tablosu) doğrulanmış ama "yerel baskıdan teyit edin" notuyla; formülün
 (basınç/direnç/kapasite karşılaştırması) her zaman gerçek fizik/mühendislik ilişkisi,
 uydurma değil.
 
-**Toplam: 22 modül, 42 test, hepsi yeşil.** Yeni modül eklerken hem
+### 5c. 24. ve 27. modüller + Standart & Yöntem paneli
+
+24. modül grubu: yangın pompası performans kontrolü (NFPA 20), pano sıcaklık artışı
+kontrolü (IEC 61439). 27. modül grubu: kar yükü hesabı (EN 1991-1-3), askılama hesabı
+(askı yükü = doğrusal ağırlık × açıklık), gerilim düşümü kontrolü (IEC 60364-5-52,
+ölçülen % ile izin verilen % karşılaştırması).
+
+Ayrıca `CalcPage`'e `formula` ve `engineeringNote` prop'ları eklendi (referans
+sitedeki "Standart & Yöntem" panelinin karşılığı) ve o tarihte var olan 27 modül
+sayfasının tamamına işlendi. **Yeni modül eklerken bu iki prop'u da doldur.**
+
+### 5d. İnşaat/Ev dengesi için 6 modül daha
+
+İnşaat (4 modül) ve Ev (0 modül) diğer disiplinlere göre zayıf kaldığı için eklendi:
+
+- İnşaat: rüzgar yükü hesabı (TS EN 1991-1-4), merdiven basamak hesabı (Blondel formülü, verdict'li).
+- Elektrik: trafo güç seçimi, jeneratör seçimi (ikisi de fiziksel formül, standart yok).
+- Mekanik: yangın dolabı debi/basınç (TS 9811, verdict'li).
+- Ev (yeni disiplin, ilk modülü): klima (split) kapasite seçimi (sektör kuralı, standart yok).
+
+**Toplam: 33 modül, 60 test, hepsi yeşil.** Yeni modül eklerken hem
 `packages/core-calc/src/index.ts` hem `apps/web/src/lib/modules.ts` (MODUL_GRUPLARI +
-ilgili sabit) hem de `apps/web/src/app/(app)/<modul>/page.tsx` güncellenmeli.
+ilgili sabit) hem de `apps/web/src/app/(app)/<modul>/page.tsx` (module, standardsLabel,
+description, formula, engineeringNote, fields, defaults) güncellenmeli.
 
 ---
 
@@ -174,7 +195,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **22 modül, 42 test** (bkz. §5/§5b) — hem hesap hem test/kontrol tipinde, 3 disiplinde dengeli.
+- **33 modül, 60 test** (bkz. §5/§5b/§5c/§5d) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
