@@ -277,6 +277,36 @@ const YANGIN_ALGILAMA_LOOP_GERILIM_DUSUMU: ModuleEntry = {
   href: "/yangin-algilama-loop-gerilim-dusumu",
   standard: "EN 54",
 };
+const DOSEME_KALINLIGI: ModuleEntry = {
+  id: "doseme-kalinligi",
+  title: "Döşeme Kalınlığı (Sehim Kontrolü)",
+  href: "/doseme-kalinligi",
+  standard: "TS 500 / TBDY 2018",
+};
+const SU_YALITIM_MEMBRAN_BINDIRME_KONTROLU: ModuleEntry = {
+  id: "su-yalitim-membran-bindirme-kontrolu",
+  title: "Su Yalıtımı Membran Bindirme Kontrolü",
+  href: "/su-yalitim-membran-bindirme-kontrolu",
+  standard: "DIN 18533",
+};
+const MOTOR_YOL_VERME_AKIMI: ModuleEntry = {
+  id: "motor-yol-verme-akimi",
+  title: "Motor Yol Verme Akımı",
+  href: "/motor-yol-verme-akimi",
+  standard: "—",
+};
+const UPS_BATARYA_KAPASITESI: ModuleEntry = {
+  id: "ups-batarya-kapasitesi",
+  title: "UPS / Batarya Kapasitesi",
+  href: "/ups-batarya-kapasitesi",
+  standard: "—",
+};
+const BARA_AKIM_TASIMA_KAPASITESI: ModuleEntry = {
+  id: "bara-akim-tasima-kapasitesi",
+  title: "Bara (Busbar) Akım Taşıma Kapasitesi",
+  href: "/bara-akim-tasima-kapasitesi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -316,6 +346,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           JENERATOR_SECIMI,
           PARATONER_KORUMA_YARICAPI,
           KABLO_AKIM_TASIMA_KAPASITESI_DUZELTMESI,
+          MOTOR_YOL_VERME_AKIMI,
+          UPS_BATARYA_KAPASITESI,
+          BARA_AKIM_TASIMA_KAPASITESI,
         ],
       },
       {
@@ -348,6 +381,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOLON_BOYUTLANDIRMA,
           KIRIS_BOYUTLANDIRMA,
           TEMEL_TASIMA_KAPASITESI_MEYERHOF,
+          DOSEME_KALINLIGI,
+          SU_YALITIM_MEMBRAN_BINDIRME_KONTROLU,
         ],
       },
       {
