@@ -247,6 +247,36 @@ const PARATONER_KORUMA_YARICAPI: ModuleEntry = {
   href: "/paratoner-koruma-yaricapi",
   standard: "TS EN 62305",
 };
+const KOLON_BOYUTLANDIRMA: ModuleEntry = {
+  id: "kolon-boyutlandirma",
+  title: "Kolon Boyutlandırma (Eksenel Kapasite)",
+  href: "/kolon-boyutlandirma",
+  standard: "TS 500 / TBDY 2018",
+};
+const KIRIS_BOYUTLANDIRMA: ModuleEntry = {
+  id: "kiris-boyutlandirma",
+  title: "Kiriş Boyutlandırma (Moment Kapasitesi)",
+  href: "/kiris-boyutlandirma",
+  standard: "TS 500 / TBDY 2018",
+};
+const TEMEL_TASIMA_KAPASITESI_MEYERHOF: ModuleEntry = {
+  id: "temel-tasima-kapasitesi-meyerhof",
+  title: "Temel Taşıma Kapasitesi (Meyerhof)",
+  href: "/temel-tasima-kapasitesi-meyerhof",
+  standard: "Meyerhof",
+};
+const KABLO_AKIM_TASIMA_KAPASITESI_DUZELTMESI: ModuleEntry = {
+  id: "kablo-akim-tasima-kapasitesi-duzeltmesi",
+  title: "Kablo Akım Taşıma Kapasitesi Düzeltmesi",
+  href: "/kablo-akim-tasima-kapasitesi-duzeltmesi",
+  standard: "IEC 60364-5-52",
+};
+const YANGIN_ALGILAMA_LOOP_GERILIM_DUSUMU: ModuleEntry = {
+  id: "yangin-algilama-loop-gerilim-dusumu",
+  title: "Yangın Algılama Loop Gerilim Düşümü",
+  href: "/yangin-algilama-loop-gerilim-dusumu",
+  standard: "EN 54",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -285,6 +315,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TRAFO_GUC_SECIMI,
           JENERATOR_SECIMI,
           PARATONER_KORUMA_YARICAPI,
+          KABLO_AKIM_TASIMA_KAPASITESI_DUZELTMESI,
         ],
       },
       {
@@ -296,6 +327,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           PANO_SICAKLIK_ARTISI_KONTROLU,
           GERILIM_DUSUMU_KONTROLU,
           KABLO_TAVA_DOLULUK_ORANI,
+          YANGIN_ALGILAMA_LOOP_GERILIM_DUSUMU,
         ],
       },
     ],
@@ -313,6 +345,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DONATI_KENETLENME_BOYU,
           CELIK_BULON_SIKMA_MOMENTI,
           TAZE_BETON_KALIP_BASINCI,
+          KOLON_BOYUTLANDIRMA,
+          KIRIS_BOYUTLANDIRMA,
+          TEMEL_TASIMA_KAPASITESI_MEYERHOF,
         ],
       },
       {

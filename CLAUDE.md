@@ -193,11 +193,20 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
 | Mekanik | 142 | ~15 | çok geride |
-| Elektrik | 62 | ~12 | geride |
-| İnşaat | 65 | ~9 | geride (denetim alt kategorisi yeni başladı) |
+| Elektrik | 62 | ~14 | geride |
+| İnşaat | 65 | ~13 | geride (Betonarme: kolon/kiriş/temel eklendi) |
 | Ev Sahibi/Günlük Hayat | 39 | 5 | geride |
 | Teknik Ofis | 21 | 0 | başlanmadı |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
+
+### 5h. Betonarme + elektrik denetim: 5 modül daha
+
+Kolon boyutlandırma (eksenel kapasite), kiriş boyutlandırma (tek donatılı moment
+kapasitesi), temel taşıma kapasitesi (Meyerhof formülü, taşıma gücü katsayıları
+kullanıcı girdisi), kablo akım taşıma kapasitesi düzeltmesi (IEC 60364-5-52, sıcaklık/
+gruplama katsayıları), yangın algılama loop gerilim düşümü (EN 54/NFPA 72, verdict'li).
+
+**Toplam: 47 modül, 80 test, hepsi yeşil.**
 
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
@@ -241,7 +250,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **42 modül, 74 test** (bkz. §5/§5b-§5g) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu).
+- **47 modül, 80 test** (bkz. §5/§5b-§5h) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
