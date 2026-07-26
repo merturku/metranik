@@ -192,9 +192,9 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~58 | çok geride, basınçlı hava boru çapı eklendi |
-| Elektrik | 62 | ~33 | geride, kablo kısa devre termik kontrolü + bara elektrodinamik kuvvet eklendi |
-| İnşaat | 65 | ~27 | geride, kiriş sehim kontrolü + istinat duvarı aktif toprak basıncı eklendi |
+| Mekanik | 142 | ~60 | çok geride, ısı değiştirici etkinliği + psikrometrik çiy noktası eklendi |
+| Elektrik | 62 | ~35 | geride, trafo verimi + kondansatör depolanan enerji eklendi |
+| İnşaat | 65 | ~28 | geride, kolon boyuna donatı oranı kontrolü eklendi |
 | Ev Sahibi/Günlük Hayat | 39 | 8 | geride (referans sitede bu kategori için spesifik başlık yayınlanmamış, kendi mantıklı başlıklarımızı ekliyoruz) |
 | Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
@@ -362,6 +362,15 @@ istinat duvarı aktif toprak basıncı (Rankine teorisi).
 
 **Toplam: 127 modül, 169 test, hepsi yeşil.**
 
+### 5y. Isı değiştirici/psikrometri/trafo verimi/kondansatör enerji/kolon donatı: 5 modül daha
+
+Isı değiştirici etkinliği (ε-NTU temel tanımı), psikrometrik çiy noktası
+(Magnus-Tetens yaklaşımı), trafo verimi (Pfe/Pcu kayıp yöntemi), kondansatör
+depolanan enerji (E=0.5CV²), kolon boyuna donatı oranı kontrolü (TS 500 §7.4.1,
+verdict'li).
+
+**Toplam: 132 modül, 176 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -404,7 +413,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **127 modül, 169 test** (bkz. §5/§5b-§5x) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **132 modül, 176 test** (bkz. §5/§5b-§5y) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,

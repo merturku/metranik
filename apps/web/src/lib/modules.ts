@@ -758,6 +758,36 @@ const ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI: ModuleEntry = {
   href: "/istinat-duvari-aktif-toprak-basinci",
   standard: "—",
 };
+const ISI_DEGISTIRICI_ETKINLIGI: ModuleEntry = {
+  id: "isi-degistirici-etkinligi",
+  title: "Isı Değiştirici Etkinliği",
+  href: "/isi-degistirici-etkinligi",
+  standard: "—",
+};
+const PSIKROMETRIK_CIG_NOKTASI: ModuleEntry = {
+  id: "psikrometrik-cig-noktasi",
+  title: "Psikrometrik Çiy Noktası Sıcaklığı",
+  href: "/psikrometrik-cig-noktasi",
+  standard: "Magnus-Tetens Yaklaşımı",
+};
+const TRAFO_VERIMI: ModuleEntry = {
+  id: "trafo-verimi",
+  title: "Trafo Verimi",
+  href: "/trafo-verimi",
+  standard: "—",
+};
+const KONDANSATOR_DEPOLANAN_ENERJI: ModuleEntry = {
+  id: "kondansator-depolanan-enerji",
+  title: "Kondansatör Depolanan Enerji",
+  href: "/kondansator-depolanan-enerji",
+  standard: "—",
+};
+const KOLON_DONATI_ORANI_KONTROLU: ModuleEntry = {
+  id: "kolon-donati-orani-kontrolu",
+  title: "Kolon Boyuna Donatı Oranı Kontrolü",
+  href: "/kolon-donati-orani-kontrolu",
+  standard: "TS 500",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -790,6 +820,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_ET_KALINLIGI_BARLOW,
           KOMPRESOR_SIKISTIRMA_SICAKLIGI,
           VANA_KV_DEGERI,
+          ISI_DEGISTIRICI_ETKINLIGI,
         ],
       },
       {
@@ -822,6 +853,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TRAFO_ODASI_HAVALANDIRMA_DEBISI,
           SUSTURUCU_UZUNLUGU,
           FAN_GUCU,
+          PSIKROMETRIK_CIG_NOKTASI,
         ],
       },
       {
@@ -878,6 +910,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           AKU_SARJ_SURESI,
           KONDANSATOR_DESARJ_SURESI,
           BARA_ELEKTRODINAMIK_KUVVET,
+          TRAFO_VERIMI,
+          KONDANSATOR_DEPOLANAN_ENERJI,
         ],
       },
       {
@@ -926,6 +960,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SONSUZ_SEV_STABILITESI,
           KIRIS_SEHIM_KONTROLU,
           ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI,
+          KOLON_DONATI_ORANI_KONTROLU,
         ],
       },
       {
