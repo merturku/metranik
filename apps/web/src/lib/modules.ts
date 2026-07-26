@@ -548,6 +548,36 @@ const TRAFO_KISA_DEVRE_AKIMI: ModuleEntry = {
   href: "/trafo-kisa-devre-akimi",
   standard: "—",
 };
+const HAVUZ_SU_SIRKULASYON_DEBISI: ModuleEntry = {
+  id: "havuz-su-sirkulasyon-debisi",
+  title: "Havuz Su Sirkülasyon Debisi",
+  href: "/havuz-su-sirkulasyon-debisi",
+  standard: "—",
+};
+const SU_YUMUSATMA_RESIN_HACMI: ModuleEntry = {
+  id: "su-yumusatma-resin-hacmi",
+  title: "Su Yumuşatma Reçine Hacmi",
+  href: "/su-yumusatma-resin-hacmi",
+  standard: "—",
+};
+const KLIMA_GIZLI_ISI_YUKU: ModuleEntry = {
+  id: "klima-gizli-isi-yuku",
+  title: "Klima Gizli Isı Yükü (Nem Alma)",
+  href: "/klima-gizli-isi-yuku",
+  standard: "—",
+};
+const MERDIVEN_BASAMAK_SAYISI: ModuleEntry = {
+  id: "merdiven-basamak-sayisi",
+  title: "Merdiven Basamak Sayısı",
+  href: "/merdiven-basamak-sayisi",
+  standard: "—",
+};
+const PENCERE_DUVAR_ISI_KAYBI: ModuleEntry = {
+  id: "pencere-duvar-isi-kaybi",
+  title: "Pencere / Duvar Isı Kaybı",
+  href: "/pencere-duvar-isi-kaybi",
+  standard: "TS 825",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -568,6 +598,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISI_GERI_KAZANIM_VERIMI,
           BOYLER_ISINMA_SURESI,
           RADYANT_ISITICI_KAPASITESI,
+          KLIMA_GIZLI_ISI_YUKU,
+          PENCERE_DUVAR_ISI_KAYBI,
         ],
       },
       {
@@ -586,6 +618,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_ISI_KAYBI_IZOLASYON,
           BORU_TERMAL_GENLESME_PAYI,
           SU_DARBESI_BASINCI,
+          SU_YUMUSATMA_RESIN_HACMI,
         ],
       },
       {
@@ -679,6 +712,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ZEMIN_KONSOLIDASYON_OTURMASI,
           KESME_KUVVETI_KAPASITESI,
           KOLON_NARINLIK_KONTROLU,
+          MERDIVEN_BASAMAK_SAYISI,
         ],
       },
       {
@@ -700,6 +734,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           EV_TESISATI_SIGORTA_YUKU_KONTROLU,
           BOYA_MIKTARI_HESABI,
           FAYANS_DOSEME_MALZEME_MIKTARI,
+          HAVUZ_SU_SIRKULASYON_DEBISI,
         ],
       },
     ],
