@@ -818,6 +818,36 @@ const TEMEL_EKSANTRIK_YUK_KONTROLU: ModuleEntry = {
   href: "/temel-eksantrik-yuk-kontrolu",
   standard: "—",
 };
+const ELEKTRIK_FATURA_TAHMINI: ModuleEntry = {
+  id: "elektrik-fatura-tahmini",
+  title: "Elektrik Fatura Tahmini",
+  href: "/elektrik-fatura-tahmini",
+  standard: "—",
+};
+const GUNES_PANELI_GERI_ODEME_SURESI: ModuleEntry = {
+  id: "gunes-paneli-geri-odeme-suresi",
+  title: "Güneş Paneli Geri Ödeme Süresi",
+  href: "/gunes-paneli-geri-odeme-suresi",
+  standard: "—",
+};
+const LED_AYDINLATMA_ENERJI_TASARRUFU: ModuleEntry = {
+  id: "led-aydinlatma-enerji-tasarrufu",
+  title: "LED Aydınlatma Enerji Tasarrufu",
+  href: "/led-aydinlatma-enerji-tasarrufu",
+  standard: "—",
+};
+const DUZ_YUZEY_TASINIM_ISI_KAYBI: ModuleEntry = {
+  id: "duz-yuzey-tasinim-isi-kaybi",
+  title: "Düz Yüzey Taşınımla Isı Kaybı",
+  href: "/duz-yuzey-tasinim-isi-kaybi",
+  standard: "Newton Soğuma Yasası",
+};
+const KONSOL_KIRIS_SEHIMI: ModuleEntry = {
+  id: "konsol-kiris-sehimi",
+  title: "Konsol Kiriş Ucu Sehimi",
+  href: "/konsol-kiris-sehimi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -851,6 +881,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOMPRESOR_SIKISTIRMA_SICAKLIGI,
           VANA_KV_DEGERI,
           ISI_DEGISTIRICI_ETKINLIGI,
+          DUZ_YUZEY_TASINIM_ISI_KAYBI,
         ],
       },
       {
@@ -996,6 +1027,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI,
           KOLON_DONATI_ORANI_KONTROLU,
           TEMEL_EKSANTRIK_YUK_KONTROLU,
+          KONSOL_KIRIS_SEHIMI,
         ],
       },
       {
@@ -1018,6 +1050,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BOYA_MIKTARI_HESABI,
           FAYANS_DOSEME_MALZEME_MIKTARI,
           HAVUZ_SU_SIRKULASYON_DEBISI,
+          ELEKTRIK_FATURA_TAHMINI,
+          GUNES_PANELI_GERI_ODEME_SURESI,
+          LED_AYDINLATMA_ENERJI_TASARRUFU,
         ],
       },
     ],

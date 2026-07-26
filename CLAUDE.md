@@ -192,10 +192,10 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~62 | çok geride, boru akış rejimi (Reynolds) + pompa hidrolik gücü eklendi |
-| Elektrik | 62 | ~37 | geride, motor senkron hızı + kompanzasyon kondansatör akımı eklendi |
-| İnşaat | 65 | ~29 | geride, temel eksantrik yük zemin gerilmesi kontrolü eklendi |
-| Ev Sahibi/Günlük Hayat | 39 | 8 | geride (referans sitede bu kategori için spesifik başlık yayınlanmamış, kendi mantıklı başlıklarımızı ekliyoruz) |
+| Mekanik | 142 | ~63 | çok geride, düz yüzey taşınımla ısı kaybı eklendi |
+| Elektrik | 62 | ~37 | geride |
+| İnşaat | 65 | ~30 | geride, konsol kiriş ucu sehimi eklendi |
+| Ev Sahibi/Günlük Hayat | 39 | 11 | geride, elektrik fatura tahmini + güneş paneli geri ödeme + LED tasarrufu eklendi |
 | Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
 
@@ -380,6 +380,16 @@ kondansatör akımı (Ic=Qc/(√3×V)), temel eksantrik yük zemin gerilmesi kon
 
 **Toplam: 137 modül, 183 test, hepsi yeşil.**
 
+### 5aa. Ev disiplini + mekanik/inşaat detay: 5 modül daha
+
+Ev disiplini referansa göre en zayıf kategori olduğu için önceliklendirildi:
+elektrik fatura tahmini (basit tüketim×fiyat), güneş paneli geri ödeme süresi
+(yatırım/yıllık tasarruf), LED aydınlatma enerji tasarrufu. Ayrıca düz yüzey
+taşınımla ısı kaybı (Newton soğuma yasası, Q=hAΔT) ve konsol kiriş ucu sehimi
+(klasik kiriş teorisi, ankastre durum, L/180 servis sınırı, verdict'li).
+
+**Toplam: 142 modül, 189 test, hepsi yeşil.**
+
 Ayrıca bu oturumda: (1) Türkçe klavye/yerel ayarla girilen ondalık virgül
 ("5,5") `type="number"` input'larda native olarak reddediliyor ve `Number()`
 NaN döndürüyordu — `calc-page.tsx`'teki tüm girdi alanları `type="text"` +
@@ -431,8 +441,9 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **137 modül, 183 test** (bkz. §5/§5b-§5z) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **142 modül, 189 test** (bkz. §5/§5b-§5aa) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
+- **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
