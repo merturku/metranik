@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import { MarketingNav } from "@/components/marketing-nav";
+import { KvkkBanner } from "@/components/kvkk-banner";
 import "../globals.css";
 
 const sora = Sora({
@@ -60,6 +61,7 @@ export default function MarketingLayout({
             </p>
           </div>
         </footer>
+        <KvkkBanner />
       </body>
     </html>
   );

@@ -66,8 +66,12 @@ export function CalcPage<I extends Record<string, unknown>, O>({
     setBugun(bugunSayisi(mod.id));
   }, [mod.id]);
 
+  function sayiyaCevir(v: string | number): number {
+    return typeof v === "number" ? v : Number(String(v).trim().replace(",", "."));
+  }
+
   function adimla(f: CalcField, yon: 1 | -1) {
-    const mevcut = Number(values[f.key]) || 0;
+    const mevcut = sayiyaCevir(values[f.key]) || 0;
     const adim = f.step ?? 1;
     const yeni = mevcut + yon * adim;
     setValues((v) => ({ ...v, [f.key]: f.min !== undefined ? Math.max(f.min, yeni) : yeni }));
@@ -76,7 +80,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
   function hesapla() {
     const payload: Record<string, string | number> = {};
     for (const f of fields) {
-      payload[f.key] = f.type === "number" ? Number(values[f.key]) : values[f.key];
+      payload[f.key] = f.type === "number" ? sayiyaCevir(values[f.key]) : values[f.key];
     }
     const ayristirilmis = mod.inputSchema.safeParse(payload);
     if (!ayristirilmis.success) {
@@ -188,11 +192,15 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                     </button>
                     <input
                       id={f.key}
-                      type="number"
-                      min={f.min}
-                      step={f.step ?? "any"}
+                      type="text"
+                      inputMode="decimal"
                       value={values[f.key]}
-                      onChange={(e) => setValues((v) => ({ ...v, [f.key]: e.target.value }))}
+                      onChange={(e) => {
+                        const girilen = e.target.value;
+                        if (/^-?[0-9]*[.,]?[0-9]*$/.test(girilen)) {
+                          setValues((v) => ({ ...v, [f.key]: girilen }));
+                        }
+                      }}
                       className="w-full min-w-0 rounded-xl border border-border bg-surface px-3 py-2 text-center text-sm text-text-primary transition-colors duration-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/40"
                     />
                     <button

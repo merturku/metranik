@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import { AppSidebar } from "@/components/app-sidebar";
+import { KvkkBanner } from "@/components/kvkk-banner";
 import "../globals.css";
 
 const sora = Sora({
@@ -54,6 +55,7 @@ export default function AppLayout({
           <AppSidebar />
           <main className="min-w-0 flex-1 overflow-y-auto">{children}</main>
         </div>
+        <KvkkBanner />
       </body>
     </html>
   );
