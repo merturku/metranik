@@ -578,6 +578,36 @@ const PENCERE_DUVAR_ISI_KAYBI: ModuleEntry = {
   href: "/pencere-duvar-isi-kaybi",
   standard: "TS 825",
 };
+const DENGE_KABI_HACMI: ModuleEntry = {
+  id: "denge-kabi-hacmi",
+  title: "Denge Kabı (Buffer Tank) Hacmi",
+  href: "/denge-kabi-hacmi",
+  standard: "—",
+};
+const ENDUSTRIYEL_BOYLER_YAKIT_TUKETIMI: ModuleEntry = {
+  id: "endustriyel-boyler-yakit-tuketimi",
+  title: "Endüstriyel Boyler Yakıt Tüketimi",
+  href: "/endustriyel-boyler-yakit-tuketimi",
+  standard: "—",
+};
+const KOLLEKTOR_DEVRE_SAYISI: ModuleEntry = {
+  id: "kollektor-devre-sayisi",
+  title: "Kollektör Devre Sayısı",
+  href: "/kollektor-devre-sayisi",
+  standard: "—",
+};
+const BARA_ISINMA_KAYBI: ModuleEntry = {
+  id: "bara-isinma-kaybi",
+  title: "Bara Isınma Kaybı (I²R)",
+  href: "/bara-isinma-kaybi",
+  standard: "—",
+};
+const PERDE_DUVAR_KALINLIGI: ModuleEntry = {
+  id: "perde-duvar-kalinligi",
+  title: "Perde Duvar Kalınlığı",
+  href: "/perde-duvar-kalinligi",
+  standard: "TBDY 2018",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -600,6 +630,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           RADYANT_ISITICI_KAPASITESI,
           KLIMA_GIZLI_ISI_YUKU,
           PENCERE_DUVAR_ISI_KAYBI,
+          DENGE_KABI_HACMI,
+          ENDUSTRIYEL_BOYLER_YAKIT_TUKETIMI,
+          KOLLEKTOR_DEVRE_SAYISI,
         ],
       },
       {
@@ -675,6 +708,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TOPRAKLAMA_ILETKENI_KESITI,
           KISA_DEVRE_GUCU,
           TRAFO_KISA_DEVRE_AKIMI,
+          BARA_ISINMA_KAYBI,
         ],
       },
       {
@@ -713,6 +747,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KESME_KUVVETI_KAPASITESI,
           KOLON_NARINLIK_KONTROLU,
           MERDIVEN_BASAMAK_SAYISI,
+          PERDE_DUVAR_KALINLIGI,
         ],
       },
       {
