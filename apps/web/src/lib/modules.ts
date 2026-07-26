@@ -217,6 +217,36 @@ const EV_TESISATI_SIGORTA_YUKU_KONTROLU: ModuleEntry = {
   href: "/ev-tesisati-sigorta-yuku-kontrolu",
   standard: "IEC 60364",
 };
+const DONATI_KENETLENME_BOYU: ModuleEntry = {
+  id: "donati-kenetlenme-boyu",
+  title: "Donatı Kenetlenme Boyu",
+  href: "/donati-kenetlenme-boyu",
+  standard: "TS 500 / TBDY 2018",
+};
+const CELIK_BULON_SIKMA_MOMENTI: ModuleEntry = {
+  id: "celik-bulon-sikma-momenti",
+  title: "Çelik Yapı Bulon Sıkma Momenti",
+  href: "/celik-bulon-sikma-momenti",
+  standard: "TS EN 1090-2",
+};
+const TAZE_BETON_KALIP_BASINCI: ModuleEntry = {
+  id: "taze-beton-kalip-basinci",
+  title: "Taze Beton Kalıp Basıncı",
+  href: "/taze-beton-kalip-basinci",
+  standard: "ACI 347",
+};
+const KABLO_TAVA_DOLULUK_ORANI: ModuleEntry = {
+  id: "kablo-tava-doluluk-orani",
+  title: "Kablo Tava Doluluk Oranı",
+  href: "/kablo-tava-doluluk-orani",
+  standard: "TS EN 61537",
+};
+const PARATONER_KORUMA_YARICAPI: ModuleEntry = {
+  id: "paratoner-koruma-yaricapi",
+  title: "Paratoner Koruma Yarıçapı",
+  href: "/paratoner-koruma-yaricapi",
+  standard: "TS EN 62305",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -254,6 +284,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOMPANZASYON,
           TRAFO_GUC_SECIMI,
           JENERATOR_SECIMI,
+          PARATONER_KORUMA_YARICAPI,
         ],
       },
       {
@@ -264,6 +295,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KESICI_KISA_DEVRE_KONTROLU,
           PANO_SICAKLIK_ARTISI_KONTROLU,
           GERILIM_DUSUMU_KONTROLU,
+          KABLO_TAVA_DOLULUK_ORANI,
         ],
       },
     ],
@@ -273,7 +305,15 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
     subgroups: [
       {
         label: "İnşaat Hesapları",
-        modules: [DEPREM_TABAN_KESME, KAR_YUKU_HESABI, RUZGAR_YUKU_HESABI, MERDIVEN_BASAMAK_HESABI],
+        modules: [
+          DEPREM_TABAN_KESME,
+          KAR_YUKU_HESABI,
+          RUZGAR_YUKU_HESABI,
+          MERDIVEN_BASAMAK_HESABI,
+          DONATI_KENETLENME_BOYU,
+          CELIK_BULON_SIKMA_MOMENTI,
+          TAZE_BETON_KALIP_BASINCI,
+        ],
       },
       {
         label: "Test & Kontrol",

@@ -8,7 +8,15 @@ kararlara ve kurallara **her zaman** uy.
 ## 1. Ürün
 
 Tarayıcı tabanlı + native mobil bir **mühendislik hesap platformu**.
-Referans/rakip: projenik.com. Bizim farkımız modül sayısı değil, üç eksende derinlik:
+Referans/rakip: projenik.com.
+
+**Kapsam kararı (2026-07-26, güncellendi):** İlk stratejide "modül sayısı değil derinlik"
+denmişti ve §6'da 300 modülü kopyalamama uyarısı vardı. Kullanıcı bu kararı bilinçli
+olarak tersine çevirdi: projenik.com'un tüm kataloğu (~330 modül: Mekanik 142,
+Elektrik 62, İnşaat 65, Ev Sahibi/Günlük Hayat 39, Teknik Ofis 21, Diğer 3) hedef
+alınıyor. Kategori kategori (önce İnşaat) ilerlenip her oturumda bir parti eklenecek;
+her modül yine §3/§4 kuralına (gerçek formül + standart atfı + çözümlü test) tabi —
+sayı arttıkça titizlik düşürülmüyor. Aşağıdaki 3 eksen hâlâ ürünün asıl farkı:
 
 1. **BIM/IFC-native metraj** — kullanıcı IFC modeli yükler → boru/kanal/kablo/ekipman
    otomatik okunur → metraj ve hesap girdileri otomatik dolar.
@@ -165,10 +173,38 @@ sigorta yükü kontrolü (IEC 60364, verdict'li). Ayrıca `/uygulama` (Kontrol M
 sayfasına, sidebar'dakiyle tutarlı, disiplin/alt kategori bazlı gruplu "Tüm Modüller"
 bölümü eklendi (referans sitedeki klasör görünümünün karşılığı).
 
-**Toplam: 37 modül, 65 test, hepsi yeşil.** Yeni modül eklerken hem
+### 5f. İnşaat Denetim & Elektrik denetim modülleri (~330 hedefine ilk parti)
+
+projenik.com'un İnşaat İşleri kategorisinden gerçek atıflı formüllerle 5 modül
+eklendi: donatı kenetlenme boyu (TS 500/TBDY 2018), çelik yapı bulon sıkma momenti
+(TS EN 1090-2/AWS D1.1), taze beton kalıp basıncı (ACI 347/TS EN 12812, hidrostatik
+ve ampirik formülün küçüğü), kablo tava doluluk oranı (TS EN 61537, verdict'li),
+paratoner koruma yarıçapı (TS EN 62305/NF C 17-102, yuvarlanan küre yöntemi).
+
+**Toplam: 42 modül, 74 test, hepsi yeşil.** Yeni modül eklerken hem
 `packages/core-calc/src/index.ts` hem `apps/web/src/lib/modules.ts` (MODUL_GRUPLARI +
 ilgili sabit) hem de `apps/web/src/app/(app)/<modul>/page.tsx` (module, standardsLabel,
 description, formula, engineeringNote, fields, defaults) güncellenmeli.
+
+### 5g. ~330 modül hedefine ilerleme takibi
+
+Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-26):
+
+| Disiplin | Referans | Bizde | Not |
+|---|---|---|---|
+| Mekanik | 142 | ~15 | çok geride |
+| Elektrik | 62 | ~12 | geride |
+| İnşaat | 65 | ~9 | geride (denetim alt kategorisi yeni başladı) |
+| Ev Sahibi/Günlük Hayat | 39 | 5 | geride |
+| Teknik Ofis | 21 | 0 | başlanmadı |
+| Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
+
+Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
+başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
+atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
+WebFetch ile inceleyip gerçek formül/standart bulmak işe yarıyor — ama sayfa client-side
+render olduğundan bazen sadece kısmi bilgi dönebilir, gerekirse mühendislik bilgisiyle
+tamamla (uydurma sayı değil, gerçek standart formülü).
 
 ---
 
@@ -176,7 +212,9 @@ description, formula, engineeringNote, fields, defaults) güncellenmeli.
 
 - Standart metinlerini (TS/NFPA/IEC) **kopyalama/gömme**. Yalnız madde no + yönteme atıf.
 - Hesabı LLM'e yaptırma (bkz. §3).
-- Kapsamı şişirme: 300 modül kopyalamaya çalışma; 15 çekirdek + 3 farklılaşma ekseni.
+- ~330 modül hedefi §1'de kayıtlı bilinçli bir karar; ama her modül yine de gerçek
+  formül + standart atfı + çözümlü test gerektirir (bkz. §3/§4) — hız için kaliteden
+  ödün verme, uydurma sayı/tablo değeri ekleme.
 - Her sonuç ekranında ve raporda: *"Ön boyutlandırmadır; nihai karar mühendis kontrolü gerektirir."*
 - Bulut/hesap eklenince KVKK: aydınlatma metni + açık rıza + çerez akışı gerekir.
 - Sırlar `.env` içinde, repoya girmez. Supabase anonim anahtarı client'ta olabilir; service_role ASLA.
@@ -203,7 +241,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **37 modül, 65 test** (bkz. §5/§5b/§5c/§5d/§5e) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli.
+- **42 modül, 74 test** (bkz. §5/§5b-§5g) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
