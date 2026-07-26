@@ -398,6 +398,36 @@ const TRAFO_ODASI_HAVALANDIRMA_DEBISI: ModuleEntry = {
   href: "/trafo-odasi-havalandirma-debisi",
   standard: "—",
 };
+const MERDIVEN_BASINCLANDIRMA_FANI_DEBISI: ModuleEntry = {
+  id: "merdiven-basinclandirma-fani-debisi",
+  title: "Merdiven Basınçlandırma Fanı Debisi",
+  href: "/merdiven-basinclandirma-fani-debisi",
+  standard: "NFPA 92",
+};
+const SPRINKLER_BORU_CAPI: ModuleEntry = {
+  id: "sprinkler-boru-capi",
+  title: "Sprinkler Boru Çapı",
+  href: "/sprinkler-boru-capi",
+  standard: "NFPA 13",
+};
+const TEMIZ_SU_DEBISI: ModuleEntry = {
+  id: "temiz-su-debisi",
+  title: "Temiz Su Debisi (Yükleme Birimi Yöntemi)",
+  href: "/temiz-su-debisi",
+  standard: "EN 806-3",
+};
+const YILDIRIM_RISK_DEGERLENDIRMESI: ModuleEntry = {
+  id: "yildirim-risk-degerlendirmesi",
+  title: "Yıldırım Risk Değerlendirmesi",
+  href: "/yildirim-risk-degerlendirmesi",
+  standard: "IEC 62305-2",
+};
+const ACIL_AYDINLATMA_BATARYA_SURESI: ModuleEntry = {
+  id: "acil-aydinlatma-batarya-suresi",
+  title: "Acil Aydınlatma Batarya Süresi",
+  href: "/acil-aydinlatma-batarya-suresi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -428,6 +458,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YAGMUR_SUYU_DEBISI,
           ATIK_SU_DEBISI,
           SICAK_SU_SIRKULASYON_DEBISI,
+          TEMIZ_SU_DEBISI,
         ],
       },
       {
@@ -441,7 +472,15 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TRAFO_ODASI_HAVALANDIRMA_DEBISI,
         ],
       },
-      { label: "Yangın", modules: [SPRINKLER, YANGIN_DOLABI_DEBI_BASINC] },
+      {
+        label: "Yangın",
+        modules: [
+          SPRINKLER,
+          YANGIN_DOLABI_DEBI_BASINC,
+          MERDIVEN_BASINCLANDIRMA_FANI_DEBISI,
+          SPRINKLER_BORU_CAPI,
+        ],
+      },
       { label: "Buhar", modules: [BUHAR_HAT_CAPI] },
       { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI] },
       {
@@ -467,6 +506,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           MOTOR_YOL_VERME_AKIMI,
           UPS_BATARYA_KAPASITESI,
           BARA_AKIM_TASIMA_KAPASITESI,
+          YILDIRIM_RISK_DEGERLENDIRMESI,
+          ACIL_AYDINLATMA_BATARYA_SURESI,
         ],
       },
       {

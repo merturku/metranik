@@ -192,8 +192,8 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~30 | çok geride, havalandırma ekipmanı (fan/davlumbaz/menfez) eklendi |
-| Elektrik | 62 | ~17 | geride |
+| Mekanik | 142 | ~33 | çok geride, yangın (merdiven basınçlandırma/sprinkler çapı) + sıhhi (temiz su) eklendi |
+| Elektrik | 62 | ~19 | geride, yıldırım risk + acil aydınlatma eklendi |
 | İnşaat | 65 | ~15 | geride, denetim+betonarme+yükler alt kategorileri güçlendi |
 | Ev Sahibi/Günlük Hayat | 39 | 5 | geride |
 | Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
@@ -265,6 +265,14 @@ dengesi), trafo odası havalandırma debisi (enerji dengesi).
 
 **Toplam: 67 modül, 102 test, hepsi yeşil.**
 
+### 5m. Yangın/sıhhi/yıldırım modülleri: 5 modül daha
+
+Merdiven basınçlandırma fanı debisi (NFPA 92), sprinkler boru çapı (NFPA 13),
+temiz su debisi (EN 806-3, yükleme birimi yöntemi), yıldırım risk değerlendirmesi
+(IEC 62305-2, basitleştirilmiş düşme sıklığı), acil aydınlatma batarya süresi.
+
+**Toplam: 72 modül, 107 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -307,7 +315,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **67 modül, 102 test** (bkz. §5/§5b-§5l) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **72 modül, 107 test** (bkz. §5/§5b-§5m) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
