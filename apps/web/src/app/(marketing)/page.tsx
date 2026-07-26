@@ -585,7 +585,7 @@ export default function Home() {
       <section className="flex-1 px-6 py-20 text-center">
         <Eyebrow center>Hazır mısınız?</Eyebrow>
         <h2 className="mx-auto mt-4 max-w-xl text-[clamp(1.6rem,3.2vw,2.2rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
-          20 modülün tamamı bir tık uzağınızda.
+          {TUM_MODULLER.length} modülün tamamı bir tık uzağınızda.
         </h2>
         <Link
           href="/uygulama"
