@@ -9,6 +9,8 @@ export default function SicakSuBoylerPage() {
       module={sicakSuBoylerDin4708}
       standardsLabel="Enerji Korunumu"
       description="Pik talep ile ısıtıcının pik süre boyunca karşılayabildiği hacim farkından gerekli boyler deposunu hesaplar."
+      formula="Recovery = P × 860 / ΔT; Depo = Pik Talep − (Recovery × Süre)"
+      engineeringNote="DIN 4708'in 'Bedarfskennzahl' referans tabloları gömülü değildir; pik talep mühendis girdisidir."
       fields={[
         { key: "pikTalep_L", label: "Pik Talep (L)", type: "number", min: 1, step: 1 },
         { key: "pikSuresi_saat", label: "Pik Süresi (saat)", type: "number", min: 0.1, step: 0.1 },

@@ -8,7 +8,9 @@ export default function YalitimDirenciTestiPage() {
     <CalcPage
       module={yalitimDirenciTesti}
       standardsLabel="IEC 60364-6"
-      description="Devre kategorisine göre asgari yalıtım direnci (IEC 60364-6 Tablo 6.1 yaygın değerleri: SELV/PELV 0.5 MΩ, 500V'a kadar 1.0 MΩ, üzeri 1.0 MΩ). Baskı/ek sürümüne göre değişebilir, yerel baskıdan teyit edin."
+      description="Devre kategorisine göre asgari yalıtım direnci kontrolü."
+      formula="Kategori → Asgari Direnç (IEC 60364-6 Tablo 6.1: SELV/PELV 0.5 MΩ, 500V'a kadar 1.0 MΩ, üzeri 1.0 MΩ)"
+      engineeringNote="Asgari direnç değerleri standardın farklı baskı/ek sürümlerinde değişebilir; yerel baskıdan teyit edin."
       fields={[
         {
           key: "kategori",

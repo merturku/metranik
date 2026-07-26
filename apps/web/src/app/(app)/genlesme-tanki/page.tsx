@@ -8,7 +8,9 @@ export default function GenlesmeTankiPage() {
     <CalcPage
       module={genlesmeTanki}
       standardsLabel="Fiziksel Formül"
-      description="Kapalı hidronik sistemde gerekli genleşme tankı hacmini hesaplar. Suyun genleşme oranını sıcaklık farkına göre siz belirlersiniz."
+      description="Kapalı hidronik sistemde gerekli genleşme tankı hacmini hesaplar."
+      formula="Vt = Vs × e / (1 − Pa/Pf)"
+      engineeringNote="Genleşme oranı (e) sıcaklık farkına bağlıdır; tablo yerine mühendis girdisi olarak alınır."
       fields={[
         { key: "sistemSuHacmi_L", label: "Sistem Su Hacmi (L)", type: "number", min: 1, step: 1 },
         {

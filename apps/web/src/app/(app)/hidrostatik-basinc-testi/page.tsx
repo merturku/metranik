@@ -8,7 +8,9 @@ export default function HidrostatikBasincTestiPage() {
     <CalcPage
       module={hidrostatikBasincTesti}
       standardsLabel="ASME B31 / NFPA 13"
-      description="Boru hattı çalışma basıncının üzerinde su ile basınçlandırılıp süre boyunca bekletilir; sızıntı/basınç düşüşü aranır. Gerekli test basıncı sistem tipine göre belirlenir (genel: 1.5×çalışma; NFPA 13 sprinkler: 13.8 bar veya çalışma+3.45 bar, en az 2 saat). Kriter: uygulanan basınç ≥ gerekli, süre ≥ minimum ve basınç düşüşü izin verilenin altında ise UYGUN."
+      description="Boru hattı çalışma basıncının üzerinde su ile basınçlandırılıp süre boyunca bekletilir; sızıntı/basınç düşüşü aranır. Kriter: uygulanan basınç ≥ gerekli, süre ≥ minimum ve basınç düşüşü izin verilenin altında ise UYGUN."
+      formula="Genel: Pgerekli = 1.5 × Pçalışma; Sprinkler (NFPA 13): Pgerekli = max(13.8, Pçalışma+3.45) bar, min. 2 saat"
+      engineeringNote="Kesin test basıncı/süresi proje şartnamesi ve yerel mevzuata göre değişebilir; burada yaygın pratik değerler kullanılır."
       fields={[
         {
           key: "sistemTipi",

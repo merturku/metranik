@@ -8,7 +8,9 @@ export default function ZeminTasimaGucuKontroluPage() {
     <CalcPage
       module={zeminTasimaGucuKontrolu}
       standardsLabel="Geoteknik Rapor"
-      description="Temel altında uygulanan gerilme, zeminin emniyetli taşıma gücünü aşmamalı: q_uygulanan ≤ q_emniyet. Zemin emniyet gerilmesi geoteknik rapordan alınır."
+      description="Temel altında uygulanan gerilme, zeminin emniyetli taşıma gücünü aşmamalı."
+      formula="Marj = qemniyet − quygulanan"
+      engineeringNote="Zemin emniyet gerilmesi geoteknik rapordan alınır; bu modülde gömülü değildir."
       fields={[
         {
           key: "uygulananGerilme_kPa",

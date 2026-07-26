@@ -8,7 +8,9 @@ export default function SprinklerPage() {
     <CalcPage
       module={sprinklerNfpa13}
       standardsLabel="NFPA 13"
-      description="Sprinkler orifis debisini K-faktör ve basınca göre hesaplar (Q = K√P). Tehlike sınıfı tasarım yoğunluğunu siz belirlersiniz."
+      description="Sprinkler orifis debisini K-faktör ve basınca göre hesaplar."
+      formula="Q = K × √P"
+      engineeringNote="Tasarım yoğunluğu ve K-faktör seçimi NFPA 13 tehlike sınıfı tablosuna göre mühendis tarafından belirlenir."
       fields={[
         { key: "kFaktoru", label: "K-Faktörü", type: "number", min: 1, step: 1 },
         { key: "basinc_bar", label: "Basınç (bar)", type: "number", min: 0.1, step: 0.1 },

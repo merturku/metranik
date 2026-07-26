@@ -8,7 +8,8 @@ export default function KesiciKisaDevreKontroluPage() {
     <CalcPage
       module={kesiciKisaDevreKontrolu}
       standardsLabel="IEC 60947-2"
-      description="Kesicinin anma kısa devre kesme kapasitesi (Icu), hesaplanan olası kısa devre akımını karşılamalı: Icu ≥ Isc."
+      description="Kesicinin anma kısa devre kesme kapasitesi (Icu), hesaplanan olası kısa devre akımını karşılamalı."
+      formula="Marj = Icu − Isc"
       fields={[
         {
           key: "hesaplananKisaDevreAkimi_kA",

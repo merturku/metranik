@@ -9,6 +9,8 @@ export default function SogutmaYukuPage() {
       module={sogutmaYuku}
       standardsLabel="Pratisyen Tablo"
       description="Bina brüt alanı, iklim ve kullanım tipine göre ön boyutlandırma soğutma yükünü hesaplar."
+      formula="Q = Alan × Birim Yük(kullanım) × İklim Faktörü(şehir)"
+      engineeringNote="Katsayılar pratisyen tahminidir, resmi bir standart tablosundan alınmamıştır."
       fields={[
         { key: "alan", label: "Alan (m²)", type: "number", min: 1, step: 1 },
         {

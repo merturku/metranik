@@ -8,7 +8,9 @@ export default function YanginPompasiPerformansKontroluPage() {
     <CalcPage
       module={yanginPompasiPerformansKontrolu}
       standardsLabel="NFPA 20"
-      description="Anma debisinde ölçülen basınç, gerekli (anma) basıncını karşılamalı. Tam churn/overload eğrisi bu modülde gömülü değildir, yalnız anma noktası karşılaştırılır."
+      description="Anma debisinde ölçülen basınç, gerekli (anma) basıncını karşılamalı."
+      formula="Marj = Pölçülen − Pgerekli"
+      engineeringNote="Tam churn/overload eğrisi bu modülde gömülü değildir, yalnız anma noktası karşılaştırılır."
       fields={[
         { key: "olculenBasinc_bar", label: "Ölçülen Basınç (bar)", type: "number", min: 0.1, step: 0.1 },
         { key: "gerekliBasinc_bar", label: "Gerekli Basınç (bar)", type: "number", min: 0.1, step: 0.1 },

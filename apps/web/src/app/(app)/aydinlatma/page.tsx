@@ -8,7 +8,9 @@ export default function AydinlatmaPage() {
     <CalcPage
       module={aydinlatmaEn12464}
       standardsLabel="EN 12464-1"
-      description="Lümen (lüks) yöntemiyle gerekli toplam ışık akısını hesaplar. Hedef aydınlık düzeyini mekan tipine göre siz belirlersiniz."
+      description="Lümen (lüks) yöntemiyle gerekli toplam ışık akısını hesaplar."
+      formula="Φ = E × A / (UF × MF)"
+      engineeringNote="Hedef aydınlık (E) ve kullanım faktörü (UF) EN 12464-1 mekan tablolarından mühendis tarafından seçilir."
       fields={[
         { key: "hedefAydinlik_lux", label: "Hedef Aydınlık (lux)", type: "number", min: 1, step: 1 },
         { key: "alan_m2", label: "Alan (m²)", type: "number", min: 1, step: 1 },

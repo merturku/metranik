@@ -8,7 +8,8 @@ export default function HidronikSuDebisiPage() {
     <CalcPage
       module={hidronikSuDebisi}
       standardsLabel="Enerji Korunumu"
-      description="Isı yükü ve gidiş-dönüş sıcaklık farkına (ΔT) göre gerekli su debisini hesaplar (Q = ṁ · cp · ΔT)."
+      description="Isı yükü ve gidiş-dönüş sıcaklık farkına (ΔT) göre gerekli su debisini hesaplar."
+      formula="ṁ = Q / (cp × ΔT); V̇ = ṁ × 3.6 (cp=4.186 kJ/kg·K, ρ=1000 kg/m³)"
       fields={[
         { key: "isiYuku", label: "Isı Yükü (kW)", type: "number", min: 0.1, step: 0.1 },
         { key: "deltaT", label: "ΔT (°C)", type: "number", min: 0.1, step: 0.1 },

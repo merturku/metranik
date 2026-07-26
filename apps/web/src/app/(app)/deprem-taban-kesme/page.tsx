@@ -8,7 +8,9 @@ export default function DepremTabanKesmePage() {
     <CalcPage
       module={depremTabanKesmeTbdy2018}
       standardsLabel="TBDY 2018"
-      description="Basitleştirilmiş eşdeğer statik yük yöntemiyle taban kesme kuvvetini hesaplar. Spektral ivme, önem ve taşıyıcı sistem katsayılarını TBDY 2018 tasarım spektrumuna göre siz belirlersiniz."
+      description="Basitleştirilmiş eşdeğer statik yük yöntemiyle taban kesme kuvvetini hesaplar."
+      formula="Vt = Sa × W × I / R"
+      engineeringNote="Sa, I ve R değerleri TBDY 2018 tasarım spektrumu ve bina sınıfına göre belirlenir; bu modülde gömülü değildir."
       fields={[
         { key: "spektralIvme_Sa", label: "Spektral İvme Sa (g)", type: "number", min: 0.01, step: 0.01 },
         { key: "binaAgirligi_kN", label: "Bina Ağırlığı (kN)", type: "number", min: 1, step: 1 },

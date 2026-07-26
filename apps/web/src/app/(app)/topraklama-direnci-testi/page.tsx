@@ -8,7 +8,8 @@ export default function TopraklamaDirenciTestiPage() {
     <CalcPage
       module={topraklamaDirenciTesti}
       standardsLabel="IEC 60364-4-41"
-      description="TT sistemlerde dokunma gerilimi kriteri: Ra × IΔn ≤ Uo. Ra ölçülen topraklama direnci, IΔn koruma cihazının (RCD) anma artık akımı. Genel yerlerde Uo=50V, ıslak/özel yerlerde 25V kullanılır."
+      description="TT sistemlerde dokunma gerilimi kriteri. Genel yerlerde Uo=50V, ıslak/özel yerlerde 25V kullanılır."
+      formula="U = Ra × IΔn (Ra: ölçülen direnç, IΔn: RCD anma artık akımı)"
       fields={[
         { key: "olculenDirenc_ohm", label: "Ölçülen Direnç (Ω)", type: "number", min: 0.1, step: 1 },
         {

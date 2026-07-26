@@ -8,7 +8,9 @@ export default function GerilimDusumuKontroluPage() {
     <CalcPage
       module={gerilimDusumuKontrolu}
       standardsLabel="IEC 60364-5-52"
-      description="Ölçülen gerilim düşümü yüzdesi, izin verilen sınırı (tipik: aydınlatmada %3, diğer kullanımlarda %5) aşmamalı."
+      description="Ölçülen gerilim düşümü yüzdesi, izin verilen sınırı aşmamalı."
+      formula="Marj = İzin% − Ölçülen%"
+      engineeringNote="IEC 60364-5-52 tipik sınırlar: aydınlatmada %3, diğer kullanımlarda %5 (kaynak/bina tipine göre değişebilir)."
       fields={[
         {
           key: "olculenGerilimDusumu_yuzde",

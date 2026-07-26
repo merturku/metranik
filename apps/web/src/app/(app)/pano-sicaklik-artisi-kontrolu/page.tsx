@@ -9,6 +9,7 @@ export default function PanoSicaklikArtisiKontroluPage() {
       module={panoSicaklikArtisiKontrolu}
       standardsLabel="IEC 61439"
       description="Pano içi ölçülen sıcaklık ile ortam sıcaklığı farkı, izin verilen sıcaklık artışını (K) aşmamalı."
+      formula="ΔT = Tölçülen − Tortam; Marj = ΔTizin − ΔT"
       fields={[
         { key: "ortamSicakligi_C", label: "Ortam Sıcaklığı (°C)", type: "number", step: 1 },
         { key: "olculenSicaklik_C", label: "Ölçülen Sıcaklık (°C)", type: "number", step: 1 },

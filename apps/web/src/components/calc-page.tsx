@@ -33,6 +33,8 @@ interface CalcPageProps<I extends Record<string, unknown>, O> {
   module: CalcModule<I, O>;
   standardsLabel: string;
   description: string;
+  formula?: string;
+  engineeringNote?: string;
   fields: CalcField[];
   defaults: Record<string, string | number>;
   mainUnit: string;
@@ -45,6 +47,8 @@ export function CalcPage<I extends Record<string, unknown>, O>({
   module: mod,
   standardsLabel,
   description,
+  formula,
+  engineeringNote,
   fields,
   defaults,
   mainUnit,
@@ -126,9 +130,22 @@ export function CalcPage<I extends Record<string, unknown>, O>({
 
           <div className="mt-3 rounded-xl border border-border bg-surface-secondary/60 p-3">
             <p className="text-[11px] font-semibold uppercase tracking-wide text-text-tertiary">
-              Yöntem
+              Standart &amp; Yöntem
             </p>
             <p className="mt-1 text-xs leading-relaxed text-text-secondary">{description}</p>
+            {formula && (
+              <p className="mt-2 rounded-lg bg-surface px-2.5 py-2 font-mono text-xs text-text-primary">
+                {formula}
+              </p>
+            )}
+            {engineeringNote && (
+              <div className="mt-2 rounded-lg border border-warning/30 bg-warning/[0.06] px-2.5 py-2">
+                <p className="text-xs leading-relaxed text-text-secondary">
+                  <span className="font-semibold text-warning">Mühendislik notu: </span>
+                  {engineeringNote}
+                </p>
+              </div>
+            )}
           </div>
 
           <form

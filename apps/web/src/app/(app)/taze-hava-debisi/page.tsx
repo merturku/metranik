@@ -8,7 +8,9 @@ export default function TazeHavaDebisiPage() {
     <CalcPage
       module={tazeHavaAshrae62}
       standardsLabel="ASHRAE 62.1"
-      description="Kişi başı ve alan başı debi oranlarına göre nefes alma bölgesi taze hava debisini hesaplar. Oranları kullanım tipine göre siz belirlersiniz."
+      description="Kişi başı ve alan başı debi oranlarına göre nefes alma bölgesi taze hava debisini hesaplar."
+      formula="Vbz = Rp × Pz + Ra × Az"
+      engineeringNote="Rp ve Ra değerleri ASHRAE 62.1 kullanım tipi tablosundan alınmalıdır; bu modülde gömülü değildir."
       fields={[
         { key: "kisiSayisi", label: "Kişi Sayısı", type: "number", min: 0, step: 1 },
         { key: "alan_m2", label: "Alan (m²)", type: "number", min: 1, step: 1 },

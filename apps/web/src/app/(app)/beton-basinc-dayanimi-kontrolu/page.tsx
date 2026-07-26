@@ -8,7 +8,9 @@ export default function BetonBasincDayanimiKontroluPage() {
     <CalcPage
       module={betonBasincDayanimiKontrolu}
       standardsLabel="TS 500 / TS EN 13791"
-      description="Ölçülen (düzeltilmiş) karot basınç dayanımı, tasarım karakteristik dayanımını (f'ck) karşılamalı. Karot çap-boy oranı, delme yönü, nem durumu gibi düzeltme faktörleri bu modülde gömülü değildir — ölçülen değeri bu düzeltmeler uygulandıktan sonra girin."
+      description="Ölçülen (düzeltilmiş) karot basınç dayanımı, tasarım karakteristik dayanımını (f'ck) karşılamalı."
+      formula="Marj = fölçülen − f'ck"
+      engineeringNote="Karot çap-boy oranı, delme yönü, nem durumu gibi düzeltme faktörleri bu modülde gömülü değildir — ölçülen değeri bu düzeltmeler uygulandıktan sonra girin."
       fields={[
         {
           key: "olculenDayanim_MPa",

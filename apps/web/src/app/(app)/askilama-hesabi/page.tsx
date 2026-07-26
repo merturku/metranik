@@ -8,7 +8,8 @@ export default function AskilamaHesabiPage() {
     <CalcPage
       module={askilamaHesabi}
       standardsLabel="Fiziksel Formül"
-      description="Askı noktası yükü: F = (boru + akışkan doğrusal ağırlığı) × askı aralığı."
+      description="Askı noktası yükünü boru ve akışkan ağırlığından, askı aralığına göre hesaplar."
+      formula="F = (wboru + wsu) × Askı Aralığı"
       fields={[
         { key: "boruAgirligi_kg_m", label: "Boru Ağırlığı (kg/m)", type: "number", min: 0.1, step: 0.1 },
         { key: "suAgirligi_kg_m", label: "Akışkan Ağırlığı (kg/m)", type: "number", min: 0, step: 0.1 },

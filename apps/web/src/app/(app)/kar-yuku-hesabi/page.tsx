@@ -8,7 +8,9 @@ export default function KarYukuHesabiPage() {
     <CalcPage
       module={karYukuHesabi}
       standardsLabel="EN 1991-1-3"
-      description="Çatı kar yükü: S = μ · Ce · Ct · Sk. Zemin kar yükü (Sk) yer/bölgeye göre standart haritasından alınır; bu modülde gömülü değildir."
+      description="Çatı kar yükünü şekil, maruziyet ve ısıl katsayılarıyla zemin kar yükünden hesaplar."
+      formula="S = μ × Ce × Ct × Sk"
+      engineeringNote="Zemin kar yükü (Sk) yer/bölgeye göre standart haritasından alınır; bu modülde gömülü değildir."
       fields={[
         { key: "sekilKatsayisi_mu", label: "Şekil Katsayısı (μ)", type: "number", min: 0.1, step: 0.1 },
         {

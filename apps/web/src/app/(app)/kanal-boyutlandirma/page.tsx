@@ -8,7 +8,9 @@ export default function KanalBoyutlandirmaPage() {
     <CalcPage
       module={kanalBoyutlandirmaSmacna}
       standardsLabel="SMACNA"
-      description="Debi ve hedef hıza göre dairesel kanal çapını hesaplar (süreklilik denklemi, SMACNA hız metodu). Hedef hızı SMACNA'nın önerdiği aralıktan siz seçersiniz."
+      description="Debi ve hedef hıza göre dairesel kanal çapını hesaplar (süreklilik denklemi, SMACNA hız metodu)."
+      formula="A = Q / V; D = √(4A / π)"
+      engineeringNote="Hedef hız (V) SMACNA'nın önerdiği aralıktan seçilmelidir; bu modül tabloyu göstermez, mühendis girdisidir."
       fields={[
         { key: "debi", label: "Debi (m³/s)", type: "number", min: 0.01, step: 0.01 },
         { key: "hiz", label: "Hedef Hız (m/s)", type: "number", min: 0.1, step: 0.1 },

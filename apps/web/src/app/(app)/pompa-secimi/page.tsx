@@ -9,6 +9,7 @@ export default function PompaSecimiPage() {
       module={pompaSecimi}
       standardsLabel="Fiziksel Sabitler"
       description="Basınç kaybını pompa basma yüksekliğine çevirir; debiyle birlikte çalışma noktasını verir."
+      formula="H = ΔP / (ρ × g)"
       fields={[
         { key: "debi_m3h", label: "Debi (m³/h)", type: "number", min: 0.1, step: 0.1 },
         {

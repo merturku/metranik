@@ -9,6 +9,8 @@ export default function KisaDevreAkimiPage() {
       module={kisaDevreAkimi}
       standardsLabel="Basitleştirilmiş Empedans Yöntemi"
       description="Transformatör gücü, gerilim ve empedans yüzdesine göre kısa devre akımını hesaplar."
+      formula="In = S / (√3 × U); Isc = In × (100 / Z%)"
+      engineeringNote="Basitleştirilmiş empedans yöntemidir; tam IEC 60909 hesabı kablo/şebeke empedanslarını da içerir."
       fields={[
         {
           key: "transformatorGucu_kVA",

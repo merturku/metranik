@@ -9,6 +9,8 @@ export default function IsitmaYukuPage() {
       module={isitmaYukuTs825}
       standardsLabel="TS 825"
       description="Bina brüt alanı, iklim bölgesi ve cam tipine göre ön boyutlandırma ısıtma yükünü hesaplar."
+      formula="Q = Alan × Birim Yük(bölge) × Cam Faktörü"
+      engineeringNote="İklim bölgesi ve W/m² birim yük katsayıları yer tutucudur; TS 825 Ek-A/Ek-B tablolarından doğrulanmadan gerçek projede kullanılmamalıdır."
       fields={[
         { key: "alan", label: "Alan (m²)", type: "number", min: 1, step: 1 },
         {
