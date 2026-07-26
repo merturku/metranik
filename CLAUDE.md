@@ -192,7 +192,7 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~37 | çok geride, boru fiziği (ısı kaybı/genleşme/su darbesi) eklendi |
+| Mekanik | 142 | ~42 | çok geride, ısıtma-soğutma ekipmanı (yerden ısıtma/ısı geri kazanım/boyler/radyant) eklendi |
 | Elektrik | 62 | ~21 | geride, aydınlatma direği rüzgar yükü eklendi |
 | İnşaat | 65 | ~16 | geride, zemin konsolidasyon oturması eklendi |
 | Ev Sahibi/Günlük Hayat | 39 | 7 | geride (referans sitede bu kategori için spesifik başlık yayınlanmamış, kendi mantıklı başlıklarımızı ekliyoruz) |
@@ -288,6 +288,13 @@ direği rüzgar yükü (TS EN 1991-1-4).
 
 **Toplam: 82 modül, 117 test, hepsi yeşil.**
 
+### 5p. Isıtma-soğutma ekipmanı + havalandırma: 5 modül daha
+
+Yerden ısıtma boru uzunluğu, ısı geri kazanım verimi, boyler ısınma süresi,
+susturucu uzunluğu, radyant ısıtıcı kapasitesi.
+
+**Toplam: 87 modül, 122 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -330,7 +337,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **82 modül, 117 test** (bkz. §5/§5b-§5o) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **87 modül, 122 test** (bkz. §5/§5b-§5p) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,

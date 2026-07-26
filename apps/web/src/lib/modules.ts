@@ -488,6 +488,36 @@ const AYDINLATMA_DIREGI_RUZGAR_YUKU: ModuleEntry = {
   href: "/aydinlatma-diregi-ruzgar-yuku",
   standard: "TS EN 1991-1-4",
 };
+const YERDEN_ISITMA_BORU_UZUNLUGU: ModuleEntry = {
+  id: "yerden-isitma-boru-uzunlugu",
+  title: "Yerden Isıtma Boru Uzunluğu",
+  href: "/yerden-isitma-boru-uzunlugu",
+  standard: "—",
+};
+const ISI_GERI_KAZANIM_VERIMI: ModuleEntry = {
+  id: "isi-geri-kazanim-verimi",
+  title: "Isı Geri Kazanım Verimi",
+  href: "/isi-geri-kazanim-verimi",
+  standard: "—",
+};
+const BOYLER_ISINMA_SURESI: ModuleEntry = {
+  id: "boyler-isinma-suresi",
+  title: "Boyler Isınma Süresi",
+  href: "/boyler-isinma-suresi",
+  standard: "—",
+};
+const SUSTURUCU_UZUNLUGU: ModuleEntry = {
+  id: "susturucu-uzunlugu",
+  title: "Susturucu Uzunluğu",
+  href: "/susturucu-uzunlugu",
+  standard: "—",
+};
+const RADYANT_ISITICI_KAPASITESI: ModuleEntry = {
+  id: "radyant-isitici-kapasitesi",
+  title: "Radyant Isıtıcı Kapasitesi",
+  href: "/radyant-isitici-kapasitesi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -504,6 +534,10 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           RADYATOR_KAPASITE_DUZELTME,
           GUNES_KOLLEKTORU_ALANI,
           FCU_SU_DEBISI,
+          YERDEN_ISITMA_BORU_UZUNLUGU,
+          ISI_GERI_KAZANIM_VERIMI,
+          BOYLER_ISINMA_SURESI,
+          RADYANT_ISITICI_KAPASITESI,
         ],
       },
       {
@@ -533,6 +567,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DAVLUMBAZ_DEBISI,
           MENFEZ_DIFUZOR_DEBISI,
           TRAFO_ODASI_HAVALANDIRMA_DEBISI,
+          SUSTURUCU_UZUNLUGU,
         ],
       },
       {
