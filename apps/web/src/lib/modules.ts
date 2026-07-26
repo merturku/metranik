@@ -458,6 +458,36 @@ const FAYANS_DOSEME_MALZEME_MIKTARI: ModuleEntry = {
   href: "/fayans-doseme-malzeme-miktari",
   standard: "—",
 };
+const BORU_ISI_KAYBI_IZOLASYON: ModuleEntry = {
+  id: "boru-isi-kaybi-izolasyon",
+  title: "Boru Isı Kaybı (İzolasyonlu)",
+  href: "/boru-isi-kaybi-izolasyon",
+  standard: "—",
+};
+const BORU_TERMAL_GENLESME_PAYI: ModuleEntry = {
+  id: "boru-termal-genlesme-payi",
+  title: "Boru Termal Genleşme Payı",
+  href: "/boru-termal-genlesme-payi",
+  standard: "—",
+};
+const SU_DARBESI_BASINCI: ModuleEntry = {
+  id: "su-darbesi-basinci",
+  title: "Su Darbesi Basıncı (Joukowsky)",
+  href: "/su-darbesi-basinci",
+  standard: "Joukowsky Denklemi",
+};
+const ZEMIN_KONSOLIDASYON_OTURMASI: ModuleEntry = {
+  id: "zemin-konsolidasyon-oturmasi",
+  title: "Zemin Konsolidasyon Oturması",
+  href: "/zemin-konsolidasyon-oturmasi",
+  standard: "Terzaghi Konsolidasyon Teorisi",
+};
+const AYDINLATMA_DIREGI_RUZGAR_YUKU: ModuleEntry = {
+  id: "aydinlatma-diregi-ruzgar-yuku",
+  title: "Aydınlatma Direği Rüzgar Yükü",
+  href: "/aydinlatma-diregi-ruzgar-yuku",
+  standard: "TS EN 1991-1-4",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -489,6 +519,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ATIK_SU_DEBISI,
           SICAK_SU_SIRKULASYON_DEBISI,
           TEMIZ_SU_DEBISI,
+          BORU_ISI_KAYBI_IZOLASYON,
+          BORU_TERMAL_GENLESME_PAYI,
+          SU_DARBESI_BASINCI,
         ],
       },
       {
@@ -540,6 +573,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YILDIRIM_RISK_DEGERLENDIRMESI,
           ACIL_AYDINLATMA_BATARYA_SURESI,
           PANO_YUK_CETVELI,
+          AYDINLATMA_DIREGI_RUZGAR_YUKU,
         ],
       },
       {
@@ -574,6 +608,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TEMEL_TASIMA_KAPASITESI_MEYERHOF,
           DOSEME_KALINLIGI,
           SU_YALITIM_MEMBRAN_BINDIRME_KONTROLU,
+          ZEMIN_KONSOLIDASYON_OTURMASI,
         ],
       },
       {
