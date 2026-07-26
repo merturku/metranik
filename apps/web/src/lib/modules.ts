@@ -638,6 +638,36 @@ const KLIMA_SANTRALI_BASINC_KAYBI: ModuleEntry = {
   href: "/klima-santrali-basinc-kaybi",
   standard: "—",
 };
+const BORU_ET_KALINLIGI_BARLOW: ModuleEntry = {
+  id: "boru-et-kalinligi-barlow",
+  title: "Boru Et Kalınlığı (Barlow Formülü)",
+  href: "/boru-et-kalinligi-barlow",
+  standard: "Barlow Formülü",
+};
+const MOTOR_GIRIS_GUCU: ModuleEntry = {
+  id: "motor-giris-gucu",
+  title: "Motor Giriş Gücü",
+  href: "/motor-giris-gucu",
+  standard: "—",
+};
+const KABLO_EKONOMIK_KESIT: ModuleEntry = {
+  id: "kablo-ekonomik-kesit",
+  title: "Kablo Ekonomik Kesit",
+  href: "/kablo-ekonomik-kesit",
+  standard: "—",
+};
+const KOMPRESOR_SIKISTIRMA_SICAKLIGI: ModuleEntry = {
+  id: "kompresor-sikistirma-sicakligi",
+  title: "Kompresör Sıkıştırma Sıcaklığı",
+  href: "/kompresor-sikistirma-sicakligi",
+  standard: "—",
+};
+const KOLON_ON_BOYUTLANDIRMA: ModuleEntry = {
+  id: "kolon-on-boyutlandirma",
+  title: "Kolon Ön Boyutlandırma (Eksenel Yük)",
+  href: "/kolon-on-boyutlandirma",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -667,6 +697,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           VAV_KUTUSU_MINIMUM_DEBI,
           ISI_POMPASI_SPF,
           KLIMA_SANTRALI_BASINC_KAYBI,
+          BORU_ET_KALINLIGI_BARLOW,
+          KOMPRESOR_SIKISTIRMA_SICAKLIGI,
         ],
       },
       {
@@ -743,6 +775,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KISA_DEVRE_GUCU,
           TRAFO_KISA_DEVRE_AKIMI,
           BARA_ISINMA_KAYBI,
+          MOTOR_GIRIS_GUCU,
+          KABLO_EKONOMIK_KESIT,
         ],
       },
       {
@@ -783,6 +817,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           MERDIVEN_BASAMAK_SAYISI,
           PERDE_DUVAR_KALINLIGI,
           BETON_SU_CIMENTO_ORANI,
+          KOLON_ON_BOYUTLANDIRMA,
         ],
       },
       {

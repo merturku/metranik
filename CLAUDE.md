@@ -192,9 +192,9 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~52 | çok geride, FCU/VAV/ısı pompası SPF/klima santrali eklendi |
-| Elektrik | 62 | ~25 | geride, bara ısınma kaybı eklendi |
-| İnşaat | 65 | ~21 | geride, beton su/çimento oranı eklendi |
+| Mekanik | 142 | ~54 | çok geride, boru et kalınlığı/kompresör sıcaklığı eklendi |
+| Elektrik | 62 | ~27 | geride, motor giriş gücü/kablo ekonomik kesit eklendi |
+| İnşaat | 65 | ~22 | geride, kolon ön boyutlandırma eklendi |
 | Ev Sahibi/Günlük Hayat | 39 | 8 | geride (referans sitede bu kategori için spesifik başlık yayınlanmamış, kendi mantıklı başlıklarımızı ekliyoruz) |
 | Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
@@ -326,6 +326,14 @@ toplam basınç kaybı (bileşen toplamı).
 
 **Toplam: 107 modül, 143 test, hepsi yeşil.**
 
+### 5u. Klasik mühendislik formülleri: 5 modül daha
+
+Boru et kalınlığı (Barlow formülü), motor giriş gücü, kablo ekonomik kesit
+(ekonomik akım yoğunluğu), kompresör sıkıştırma sıcaklığı (izentropik bağıntı),
+kolon ön boyutlandırma (eksenel yük bazlı kaba kesit).
+
+**Toplam: 112 modül, 148 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -368,7 +376,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **107 modül, 143 test** (bkz. §5/§5b-§5t) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **112 modül, 148 test** (bkz. §5/§5b-§5u) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
