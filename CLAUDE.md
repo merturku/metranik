@@ -192,7 +192,7 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~20 | çok geride, sıhhi/buhar/basınçlı hava eklendi |
+| Mekanik | 142 | ~25 | çok geride, sıhhi/buhar/basınçlı hava/ısıtma-soğutma ekipmanı eklendi |
 | Elektrik | 62 | ~17 | geride |
 | İnşaat | 65 | ~15 | geride, denetim+betonarme+yükler alt kategorileri güçlendi |
 | Ev Sahibi/Günlük Hayat | 39 | 5 | geride |
@@ -249,6 +249,14 @@ alt kategoriler: Buhar, Basınçlı Hava.
 
 **Toplam: 57 modül, 92 test, hepsi yeşil.**
 
+### 5k. Isıtma-Soğutma ekipman modülleri: 5 modül daha
+
+Eşanjör boyutlandırma (LMTD yöntemi), ısı pompası kompresör gücü (COP), radyatör
+kapasite düzeltmesi (EN 442, üstel yasa), güneş kollektörü alanı (enerji dengesi),
+FCU su debisi (enerji dengesi, Q=ṁcpΔT).
+
+**Toplam: 62 modül, 97 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -291,7 +299,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **57 modül, 92 test** (bkz. §5/§5b-§5j) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **62 modül, 97 test** (bkz. §5/§5b-§5k) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,

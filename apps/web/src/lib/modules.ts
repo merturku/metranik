@@ -338,6 +338,36 @@ const HAVA_KOMPRESORU_SECIMI: ModuleEntry = {
   href: "/hava-kompresoru-secimi",
   standard: "—",
 };
+const ESANJOR_BOYUTLANDIRMA: ModuleEntry = {
+  id: "esanjor-boyutlandirma",
+  title: "Eşanjör Boyutlandırma (LMTD)",
+  href: "/esanjor-boyutlandirma",
+  standard: "—",
+};
+const ISI_POMPASI_KOMPRESOR_GUCU: ModuleEntry = {
+  id: "isi-pompasi-kompresor-gucu",
+  title: "Isı Pompası Kompresör Gücü",
+  href: "/isi-pompasi-kompresor-gucu",
+  standard: "—",
+};
+const RADYATOR_KAPASITE_DUZELTME: ModuleEntry = {
+  id: "radyator-kapasite-duzeltme",
+  title: "Radyatör Kapasite Düzeltmesi",
+  href: "/radyator-kapasite-duzeltme",
+  standard: "EN 442",
+};
+const GUNES_KOLLEKTORU_ALANI: ModuleEntry = {
+  id: "gunes-kollektoru-alani",
+  title: "Güneş Kollektörü Alanı",
+  href: "/gunes-kollektoru-alani",
+  standard: "—",
+};
+const FCU_SU_DEBISI: ModuleEntry = {
+  id: "fcu-su-debisi",
+  title: "FCU Su Debisi",
+  href: "/fcu-su-debisi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -345,7 +375,16 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
     subgroups: [
       {
         label: "Isıtma-Soğutma",
-        modules: [ISITMA_YUKU, SOGUTMA_YUKU, EMNIYET_VENTILI_KAPASITESI],
+        modules: [
+          ISITMA_YUKU,
+          SOGUTMA_YUKU,
+          EMNIYET_VENTILI_KAPASITESI,
+          ESANJOR_BOYUTLANDIRMA,
+          ISI_POMPASI_KOMPRESOR_GUCU,
+          RADYATOR_KAPASITE_DUZELTME,
+          GUNES_KOLLEKTORU_ALANI,
+          FCU_SU_DEBISI,
+        ],
       },
       {
         label: "Sıhhi Tesisat",
