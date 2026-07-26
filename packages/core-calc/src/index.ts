@@ -73,3 +73,13 @@ export type {
   BetonBasincDayanimiKontroluInput,
   BetonBasincDayanimiKontroluOutput,
 } from "./modules/beton-basinc-dayanimi-kontrolu";
+export { yanginPompasiPerformansKontrolu } from "./modules/yangin-pompasi-performans-kontrolu";
+export type {
+  YanginPompasiPerformansKontroluInput,
+  YanginPompasiPerformansKontroluOutput,
+} from "./modules/yangin-pompasi-performans-kontrolu";
+export { panoSicaklikArtisiKontrolu } from "./modules/pano-sicaklik-artisi-kontrolu";
+export type {
+  PanoSicaklikArtisiKontroluInput,
+  PanoSicaklikArtisiKontroluOutput,
+} from "./modules/pano-sicaklik-artisi-kontrolu";

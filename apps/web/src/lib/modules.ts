@@ -127,6 +127,18 @@ const BETON_BASINC_DAYANIMI_KONTROLU: ModuleEntry = {
   href: "/beton-basinc-dayanimi-kontrolu",
   standard: "TS 500 / TS EN 13791",
 };
+const YANGIN_POMPASI_PERFORMANS_KONTROLU: ModuleEntry = {
+  id: "yangin-pompasi-performans-kontrolu",
+  title: "Yangın Pompası Performans Kontrolü",
+  href: "/yangin-pompasi-performans-kontrolu",
+  standard: "NFPA 20",
+};
+const PANO_SICAKLIK_ARTISI_KONTROLU: ModuleEntry = {
+  id: "pano-sicaklik-artisi-kontrolu",
+  title: "Pano Sıcaklık Artışı Kontrolü",
+  href: "/pano-sicaklik-artisi-kontrolu",
+  standard: "IEC 61439",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -139,7 +151,10 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       },
       { label: "Havalandırma", modules: [KANAL_BOYUTLANDIRMA, TAZE_HAVA_DEBISI] },
       { label: "Yangın", modules: [SPRINKLER] },
-      { label: "Test & Kontrol", modules: [HIDROSTATIK_BASINC_TESTI, HAVALANDIRMA_DEBI_KONTROLU] },
+      {
+        label: "Test & Kontrol",
+        modules: [HIDROSTATIK_BASINC_TESTI, HAVALANDIRMA_DEBI_KONTROLU, YANGIN_POMPASI_PERFORMANS_KONTROLU],
+      },
     ],
   },
   {
@@ -151,7 +166,12 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       },
       {
         label: "Test & Kontrol",
-        modules: [TOPRAKLAMA_DIRENCI_TESTI, YALITIM_DIRENCI_TESTI, KESICI_KISA_DEVRE_KONTROLU],
+        modules: [
+          TOPRAKLAMA_DIRENCI_TESTI,
+          YALITIM_DIRENCI_TESTI,
+          KESICI_KISA_DEVRE_KONTROLU,
+          PANO_SICAKLIK_ARTISI_KONTROLU,
+        ],
       },
     ],
   },
