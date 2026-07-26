@@ -698,6 +698,36 @@ const KONDANSATOR_DESARJ_SURESI: ModuleEntry = {
   href: "/kondansator-desarj-suresi",
   standard: "RC Deşarj Denklemi",
 };
+const FAN_GUCU: ModuleEntry = {
+  id: "fan-gucu",
+  title: "Fan Gücü",
+  href: "/fan-gucu",
+  standard: "—",
+};
+const POMPA_NPSH_KONTROLU: ModuleEntry = {
+  id: "pompa-npsh-kontrolu",
+  title: "Pompa NPSH Kontrolü",
+  href: "/pompa-npsh-kontrolu",
+  standard: "—",
+};
+const TRAFO_YUKLENME_ORANI: ModuleEntry = {
+  id: "trafo-yuklenme-orani",
+  title: "Trafo Yüklenme Oranı",
+  href: "/trafo-yuklenme-orani",
+  standard: "—",
+};
+const KAZIK_TASIMA_KAPASITESI: ModuleEntry = {
+  id: "kazik-tasima-kapasitesi",
+  title: "Kazık Taşıma Kapasitesi (Statik)",
+  href: "/kazik-tasima-kapasitesi",
+  standard: "—",
+};
+const SONSUZ_SEV_STABILITESI: ModuleEntry = {
+  id: "sonsuz-sev-stabilitesi",
+  title: "Şev Stabilitesi (Sonsuz Şev)",
+  href: "/sonsuz-sev-stabilitesi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -761,6 +791,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           MENFEZ_DIFUZOR_DEBISI,
           TRAFO_ODASI_HAVALANDIRMA_DEBISI,
           SUSTURUCU_UZUNLUGU,
+          FAN_GUCU,
         ],
       },
       {
@@ -777,7 +808,12 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI] },
       {
         label: "Test & Kontrol",
-        modules: [HIDROSTATIK_BASINC_TESTI, HAVALANDIRMA_DEBI_KONTROLU, YANGIN_POMPASI_PERFORMANS_KONTROLU],
+        modules: [
+          HIDROSTATIK_BASINC_TESTI,
+          HAVALANDIRMA_DEBI_KONTROLU,
+          YANGIN_POMPASI_PERFORMANS_KONTROLU,
+          POMPA_NPSH_KONTROLU,
+        ],
       },
     ],
   },
@@ -823,6 +859,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           GERILIM_DUSUMU_KONTROLU,
           KABLO_TAVA_DOLULUK_ORANI,
           YANGIN_ALGILAMA_LOOP_GERILIM_DUSUMU,
+          TRAFO_YUKLENME_ORANI,
         ],
       },
     ],
@@ -853,6 +890,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BETON_SU_CIMENTO_ORANI,
           KOLON_ON_BOYUTLANDIRMA,
           YIGMA_DUVAR_GERILME_KONTROLU,
+          KAZIK_TASIMA_KAPASITESI,
+          SONSUZ_SEV_STABILITESI,
         ],
       },
       {

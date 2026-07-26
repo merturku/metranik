@@ -192,9 +192,9 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~55 | çok geride, vana Kv değeri eklendi |
-| Elektrik | 62 | ~30 | geride, jeneratör yakıt/akü şarj/kondansatör deşarj eklendi |
-| İnşaat | 65 | ~23 | geride, yığma duvar gerilme kontrolü eklendi |
+| Mekanik | 142 | ~57 | çok geride, fan gücü + pompa NPSH kontrolü eklendi |
+| Elektrik | 62 | ~31 | geride, trafo yüklenme oranı (verdict'li) eklendi |
+| İnşaat | 65 | ~25 | geride, kazık taşıma kapasitesi + sonsuz şev stabilitesi eklendi |
 | Ev Sahibi/Günlük Hayat | 39 | 8 | geride (referans sitede bu kategori için spesifik başlık yayınlanmamış, kendi mantıklı başlıklarımızı ekliyoruz) |
 | Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
@@ -342,6 +342,17 @@ IEC 60831 güvenlik gerekçesi).
 
 **Toplam: 117 modül, 154 test, hepsi yeşil.**
 
+### 5w. Fan gücü/pompa NPSH/trafo yüklenme/kazık/şev stabilitesi: 5 modül daha
+
+Fan mil gücü (P=Q×ΔP/η), pompa NPSH kontrolü (kavitasyon riski, verdict'li),
+trafo yüklenme oranı (verdict'li, IEC pratik eşikleri), kazık taşıma kapasitesi
+(statik yöntem, Qu=qp×Ap+fs×As), sonsuz şev stabilitesi (kohezyonsuz zemin,
+FS=tanφ/tanβ). Not: ilk tasarlanan "rüzgar yükü basıncı" modülü mevcut
+`ruzgar-yuku-hesabi` ile aynı fiziği (qb=0.5ρV²) tekrar ettiği için atlandı,
+yerine kazık taşıma kapasitesi eklendi — modül çeşitliliği tekrardan önemli.
+
+**Toplam: 122 modül, 162 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -384,7 +395,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **117 modül, 154 test** (bkz. §5/§5b-§5v) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **122 modül, 162 test** (bkz. §5/§5b-§5w) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
