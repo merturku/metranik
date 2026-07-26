@@ -668,6 +668,36 @@ const KOLON_ON_BOYUTLANDIRMA: ModuleEntry = {
   href: "/kolon-on-boyutlandirma",
   standard: "—",
 };
+const VANA_KV_DEGERI: ModuleEntry = {
+  id: "vana-kv-degeri",
+  title: "Vana Akış Katsayısı (Kv)",
+  href: "/vana-kv-degeri",
+  standard: "—",
+};
+const JENERATOR_YAKIT_TUKETIMI: ModuleEntry = {
+  id: "jenerator-yakit-tuketimi",
+  title: "Jeneratör Yakıt Tüketimi",
+  href: "/jenerator-yakit-tuketimi",
+  standard: "—",
+};
+const AKU_SARJ_SURESI: ModuleEntry = {
+  id: "aku-sarj-suresi",
+  title: "Akü Şarj Süresi",
+  href: "/aku-sarj-suresi",
+  standard: "—",
+};
+const YIGMA_DUVAR_GERILME_KONTROLU: ModuleEntry = {
+  id: "yigma-duvar-gerilme-kontrolu",
+  title: "Yığma Duvar Gerilme Kontrolü",
+  href: "/yigma-duvar-gerilme-kontrolu",
+  standard: "—",
+};
+const KONDANSATOR_DESARJ_SURESI: ModuleEntry = {
+  id: "kondansator-desarj-suresi",
+  title: "Kondansatör Deşarj Süresi",
+  href: "/kondansator-desarj-suresi",
+  standard: "RC Deşarj Denklemi",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -699,6 +729,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KLIMA_SANTRALI_BASINC_KAYBI,
           BORU_ET_KALINLIGI_BARLOW,
           KOMPRESOR_SIKISTIRMA_SICAKLIGI,
+          VANA_KV_DEGERI,
         ],
       },
       {
@@ -777,6 +808,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BARA_ISINMA_KAYBI,
           MOTOR_GIRIS_GUCU,
           KABLO_EKONOMIK_KESIT,
+          JENERATOR_YAKIT_TUKETIMI,
+          AKU_SARJ_SURESI,
+          KONDANSATOR_DESARJ_SURESI,
         ],
       },
       {
@@ -818,6 +852,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           PERDE_DUVAR_KALINLIGI,
           BETON_SU_CIMENTO_ORANI,
           KOLON_ON_BOYUTLANDIRMA,
+          YIGMA_DUVAR_GERILME_KONTROLU,
         ],
       },
       {

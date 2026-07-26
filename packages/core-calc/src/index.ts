@@ -472,3 +472,22 @@ export type {
   KolonOnBoyutlandirmaInput,
   KolonOnBoyutlandirmaOutput,
 } from "./modules/kolon-on-boyutlandirma";
+export { vanaKvDegeri } from "./modules/vana-kv-degeri";
+export type { VanaKvDegeriInput, VanaKvDegeriOutput } from "./modules/vana-kv-degeri";
+export { jeneratorYakitTuketimi } from "./modules/jenerator-yakit-tuketimi";
+export type {
+  JeneratorYakitTuketimiInput,
+  JeneratorYakitTuketimiOutput,
+} from "./modules/jenerator-yakit-tuketimi";
+export { akuSarjSuresi } from "./modules/aku-sarj-suresi";
+export type { AkuSarjSuresiInput, AkuSarjSuresiOutput } from "./modules/aku-sarj-suresi";
+export { yigmaDuvarGerilmeKontrolu } from "./modules/yigma-duvar-gerilme-kontrolu";
+export type {
+  YigmaDuvarGerilmeKontroluInput,
+  YigmaDuvarGerilmeKontroluOutput,
+} from "./modules/yigma-duvar-gerilme-kontrolu";
+export { kondansatorDesarjSuresi } from "./modules/kondansator-desarj-suresi";
+export type {
+  KondansatorDesarjSuresiInput,
+  KondansatorDesarjSuresiOutput,
+} from "./modules/kondansator-desarj-suresi";
