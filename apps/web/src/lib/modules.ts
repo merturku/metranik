@@ -518,6 +518,36 @@ const RADYANT_ISITICI_KAPASITESI: ModuleEntry = {
   href: "/radyant-isitici-kapasitesi",
   standard: "—",
 };
+const TOPRAKLAMA_ILETKENI_KESITI: ModuleEntry = {
+  id: "topraklama-iletkeni-kesiti",
+  title: "Topraklama İletkeni Kesiti (Adyabatik)",
+  href: "/topraklama-iletkeni-kesiti",
+  standard: "IEC 60364-5-54",
+};
+const KISA_DEVRE_GUCU: ModuleEntry = {
+  id: "kisa-devre-gucu",
+  title: "Kısa Devre Gücü",
+  href: "/kisa-devre-gucu",
+  standard: "—",
+};
+const KESME_KUVVETI_KAPASITESI: ModuleEntry = {
+  id: "kesme-kuvveti-kapasitesi",
+  title: "Kesme Kuvveti Kapasitesi (Beton)",
+  href: "/kesme-kuvveti-kapasitesi",
+  standard: "TS 500",
+};
+const KOLON_NARINLIK_KONTROLU: ModuleEntry = {
+  id: "kolon-narinlik-kontrolu",
+  title: "Kolon Narinlik Kontrolü",
+  href: "/kolon-narinlik-kontrolu",
+  standard: "TBDY 2018",
+};
+const TRAFO_KISA_DEVRE_AKIMI: ModuleEntry = {
+  id: "trafo-kisa-devre-akimi",
+  title: "Trafo Kısa Devre Akımı",
+  href: "/trafo-kisa-devre-akimi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -609,6 +639,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ACIL_AYDINLATMA_BATARYA_SURESI,
           PANO_YUK_CETVELI,
           AYDINLATMA_DIREGI_RUZGAR_YUKU,
+          TOPRAKLAMA_ILETKENI_KESITI,
+          KISA_DEVRE_GUCU,
+          TRAFO_KISA_DEVRE_AKIMI,
         ],
       },
       {
@@ -644,6 +677,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DOSEME_KALINLIGI,
           SU_YALITIM_MEMBRAN_BINDIRME_KONTROLU,
           ZEMIN_KONSOLIDASYON_OTURMASI,
+          KESME_KUVVETI_KAPASITESI,
+          KOLON_NARINLIK_KONTROLU,
         ],
       },
       {
