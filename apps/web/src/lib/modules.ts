@@ -193,6 +193,30 @@ const KLIMA_KAPASITE_SECIMI: ModuleEntry = {
   href: "/klima-kapasite-secimi",
   standard: "—",
 };
+const GUNES_PANELI_KAPASITE_HESABI: ModuleEntry = {
+  id: "gunes-paneli-kapasite-hesabi",
+  title: "Güneş Paneli (GES) Kapasite Hesabı",
+  href: "/gunes-paneli-kapasite-hesabi",
+  standard: "—",
+};
+const SU_DEPOSU_HACMI_HESABI: ModuleEntry = {
+  id: "su-deposu-hacmi-hesabi",
+  title: "Su Deposu Hacmi Hesabı",
+  href: "/su-deposu-hacmi-hesabi",
+  standard: "—",
+};
+const ISI_YALITIM_KALINLIGI_HESABI: ModuleEntry = {
+  id: "isi-yalitim-kalinligi-hesabi",
+  title: "Isı Yalıtım Kalınlığı Hesabı",
+  href: "/isi-yalitim-kalinligi-hesabi",
+  standard: "TS 825",
+};
+const EV_TESISATI_SIGORTA_YUKU_KONTROLU: ModuleEntry = {
+  id: "ev-tesisati-sigorta-yuku-kontrolu",
+  title: "Ev Tesisatı Sigorta Yükü Kontrolü",
+  href: "/ev-tesisati-sigorta-yuku-kontrolu",
+  standard: "IEC 60364",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -259,7 +283,18 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
   },
   {
     label: "Ev",
-    subgroups: [{ label: "Ev", modules: [KLIMA_KAPASITE_SECIMI] }],
+    subgroups: [
+      {
+        label: "Ev",
+        modules: [
+          KLIMA_KAPASITE_SECIMI,
+          GUNES_PANELI_KAPASITE_HESABI,
+          SU_DEPOSU_HACMI_HESABI,
+          ISI_YALITIM_KALINLIGI_HESABI,
+          EV_TESISATI_SIGORTA_YUKU_KONTROLU,
+        ],
+      },
+    ],
   },
 ];
 

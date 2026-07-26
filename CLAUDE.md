@@ -157,7 +157,15 @@ sayfasının tamamına işlendi. **Yeni modül eklerken bu iki prop'u da doldur.
 - Mekanik: yangın dolabı debi/basınç (TS 9811, verdict'li).
 - Ev (yeni disiplin, ilk modülü): klima (split) kapasite seçimi (sektör kuralı, standart yok).
 
-**Toplam: 33 modül, 60 test, hepsi yeşil.** Yeni modül eklerken hem
+### 5e. Ev disiplinini derinleştiren 4 modül daha
+
+Ev disiplini tek modülle (klima) çok inceydi; eklenenler: güneş paneli (GES) kapasite
+hesabı, su deposu hacmi hesabı, ısı yalıtım kalınlığı hesabı (TS 825), ev tesisatı
+sigorta yükü kontrolü (IEC 60364, verdict'li). Ayrıca `/uygulama` (Kontrol Merkezi)
+sayfasına, sidebar'dakiyle tutarlı, disiplin/alt kategori bazlı gruplu "Tüm Modüller"
+bölümü eklendi (referans sitedeki klasör görünümünün karşılığı).
+
+**Toplam: 37 modül, 65 test, hepsi yeşil.** Yeni modül eklerken hem
 `packages/core-calc/src/index.ts` hem `apps/web/src/lib/modules.ts` (MODUL_GRUPLARI +
 ilgili sabit) hem de `apps/web/src/app/(app)/<modul>/page.tsx` (module, standardsLabel,
 description, formula, engineeringNote, fields, defaults) güncellenmeli.
@@ -195,7 +203,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **33 modül, 60 test** (bkz. §5/§5b/§5c/§5d) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli.
+- **37 modül, 65 test** (bkz. §5/§5b/§5c/§5d/§5e) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,

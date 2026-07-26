@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { TUM_MODULLER } from "@/lib/modules";
+import { MODUL_GRUPLARI, TUM_MODULLER, grupBasinaModulSayisi } from "@/lib/modules";
 import { getEnCokKullanilanlar, getRecentCalcs, type RecentCalc } from "@/lib/recent-calcs";
 
 function KontrolMerkeziIcerik() {
@@ -96,6 +96,49 @@ function KontrolMerkeziIcerik() {
           </div>
         </section>
       )}
+
+      <section className="mt-10">
+        <h2 className="text-xs font-semibold uppercase tracking-wide text-text-tertiary">
+          Tüm Modüller · {TUM_MODULLER.length}
+        </h2>
+        <div className="mt-4 flex flex-col gap-8">
+          {MODUL_GRUPLARI.map((grup) => (
+            <div key={grup.label}>
+              <p className="text-sm font-semibold text-text-primary">
+                {grup.label}{" "}
+                <span className="font-mono text-xs font-normal text-text-tertiary">
+                  {grupBasinaModulSayisi(grup)}
+                </span>
+              </p>
+              <div className="mt-2.5 flex flex-col gap-3">
+                {grup.subgroups.map((sg) => (
+                  <div key={sg.label}>
+                    {grup.subgroups.length > 1 && (
+                      <p className="text-[10px] uppercase tracking-wide text-text-tertiary/70">
+                        {sg.label}
+                      </p>
+                    )}
+                    <div className="mt-1.5 flex flex-wrap gap-2">
+                      {sg.modules.map((m) => (
+                        <Link
+                          key={m.id}
+                          href={m.href}
+                          className="rounded-full border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent"
+                        >
+                          {m.title}
+                          {m.standard !== "—" && (
+                            <span className="ml-1.5 text-text-tertiary">· {m.standard}</span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

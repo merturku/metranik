@@ -113,3 +113,23 @@ export type {
   KlimaKapasiteSecimiInput,
   KlimaKapasiteSecimiOutput,
 } from "./modules/klima-kapasite-secimi";
+export { gunesPaneliKapasiteHesabi } from "./modules/gunes-paneli-kapasite-hesabi";
+export type {
+  GunesPaneliKapasiteHesabiInput,
+  GunesPaneliKapasiteHesabiOutput,
+} from "./modules/gunes-paneli-kapasite-hesabi";
+export { suDeposuHacmiHesabi } from "./modules/su-deposu-hacmi-hesabi";
+export type {
+  SuDeposuHacmiHesabiInput,
+  SuDeposuHacmiHesabiOutput,
+} from "./modules/su-deposu-hacmi-hesabi";
+export { isiYalitimKalinligiHesabi } from "./modules/isi-yalitim-kalinligi-hesabi";
+export type {
+  IsiYalitimKalinligiHesabiInput,
+  IsiYalitimKalinligiHesabiOutput,
+} from "./modules/isi-yalitim-kalinligi-hesabi";
+export { evTesisatiSigortaYukuKontrolu } from "./modules/ev-tesisati-sigorta-yuku-kontrolu";
+export type {
+  EvTesisatiSigortaYukuKontroluInput,
+  EvTesisatiSigortaYukuKontroluOutput,
+} from "./modules/ev-tesisati-sigorta-yuku-kontrolu";
