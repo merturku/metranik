@@ -308,11 +308,45 @@ const BARA_AKIM_TASIMA_KAPASITESI: ModuleEntry = {
   standard: "—",
 };
 
+const YAGMUR_SUYU_DEBISI: ModuleEntry = {
+  id: "yagmur-suyu-debisi",
+  title: "Yağmur Suyu Debisi (Rasyonel Yöntem)",
+  href: "/yagmur-suyu-debisi",
+  standard: "Rasyonel Yöntem",
+};
+const ATIK_SU_DEBISI: ModuleEntry = {
+  id: "atik-su-debisi",
+  title: "Atık Su Debisi (Deşarj Birimi Yöntemi)",
+  href: "/atik-su-debisi",
+  standard: "EN 12056-2",
+};
+const EMNIYET_VENTILI_KAPASITESI: ModuleEntry = {
+  id: "emniyet-ventili-kapasitesi",
+  title: "Emniyet Ventili Kapasitesi",
+  href: "/emniyet-ventili-kapasitesi",
+  standard: "TS EN 12828",
+};
+const BUHAR_HAT_CAPI: ModuleEntry = {
+  id: "buhar-hat-capi",
+  title: "Buhar Hat Çapı",
+  href: "/buhar-hat-capi",
+  standard: "—",
+};
+const HAVA_KOMPRESORU_SECIMI: ModuleEntry = {
+  id: "hava-kompresoru-secimi",
+  title: "Hava Kompresörü Seçimi (FAD)",
+  href: "/hava-kompresoru-secimi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
     subgroups: [
-      { label: "Isıtma-Soğutma", modules: [ISITMA_YUKU, SOGUTMA_YUKU] },
+      {
+        label: "Isıtma-Soğutma",
+        modules: [ISITMA_YUKU, SOGUTMA_YUKU, EMNIYET_VENTILI_KAPASITESI],
+      },
       {
         label: "Sıhhi Tesisat",
         modules: [
@@ -322,10 +356,14 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           GENLESME_TANKI,
           SICAK_SU_BOYLER,
           ASKILAMA_HESABI,
+          YAGMUR_SUYU_DEBISI,
+          ATIK_SU_DEBISI,
         ],
       },
       { label: "Havalandırma", modules: [KANAL_BOYUTLANDIRMA, TAZE_HAVA_DEBISI] },
       { label: "Yangın", modules: [SPRINKLER, YANGIN_DOLABI_DEBI_BASINC] },
+      { label: "Buhar", modules: [BUHAR_HAT_CAPI] },
+      { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI] },
       {
         label: "Test & Kontrol",
         modules: [HIDROSTATIK_BASINC_TESTI, HAVALANDIRMA_DEBI_KONTROLU, YANGIN_POMPASI_PERFORMANS_KONTROLU],

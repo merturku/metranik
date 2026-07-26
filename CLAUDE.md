@@ -192,17 +192,38 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~15 | çok geride |
+| Mekanik | 142 | ~20 | çok geride, sıhhi/buhar/basınçlı hava eklendi |
 | Elektrik | 62 | ~17 | geride |
 | İnşaat | 65 | ~15 | geride, denetim+betonarme+yükler alt kategorileri güçlendi |
 | Ev Sahibi/Günlük Hayat | 39 | 5 | geride |
 | Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
 
-projenik.com'un tam menüsü WebFetch ile incelendi (`app.html`, hash olmadan) — gerçek
-başlık ve standart listesi CLAUDE.md düzenleme geçmişinde mevcut, sıradaki oturumlar
-Mekanik (Yangın/Sıhhi/Isıtma-Soğutma/Havalandırma alt kategorileri, en büyük açık) ve
-kalan İnşaat/Elektrik başlıklarından devam edebilir.
+projenik.com'un tam menüsü WebFetch ile incelendi (`app.html`, hash olmadan). Henüz
+bizde olmayan başlıklar (kalınlar öncelikli, gerçek fizik formülü bulunabilenler):
+
+- **Mekanik/Isıtma-Soğutma:** FCU Seçimi, VAV Kutusu, Radyatör, Yerden Isıtma, Radyant
+  Isıtıcı, Aparey, Klima Santrali, Isı Geri Kazanım, Endüstriyel Boyler, Isı Pompası,
+  Güneş Kollektörü, Eşanjör, Denge Kabı, Buffer Tank, Hava Ayırıcı, Kollektör.
+- **Mekanik/Havalandırma:** Fan, Davlumbaz, Basınç Kaybı, Menfez/Difüzör, Susturucu,
+  Trafo Odası Havalandırma.
+- **Mekanik/Yangın:** Sprinkler Boru Çapı, Merdiven Basınçlandırma Fanı, Kuru Sistem
+  Hava Kompresörü.
+- **Mekanik/Sıhhi:** Temiz Su, Sıcak Su Sirkülasyon.
+- **Mekanik/Buhar:** Kondens Hesapları.
+- **Mekanik/Montaj:** Boru Seçim Tablosu, Konsol Boru Yerleşim & Donanım (σ=M/Wx+BOM),
+  Kanal Askı Malzeme Metrajı (SMACNA).
+- **Elektrik:** Kablo Düzeltme Faktörleri (grup+tesisat tipi birleşik), Yıldırım Risk
+  Değerlendirmesi, Acil Aydınlatma Batarya Süresi, Pano Yük Cetveli.
+- **İnşaat:** (Betonarme/Zemin/Yükler/Denetim alt kategorileri artık iyi kapsanıyor.)
+- **Ev Sahibi/Günlük Hayat:** genel amaçlı, projenik'te alt kırılım verilmemiş.
+- **Teknik Ofis / Diğer:** çoğunluğu proje yönetimi/muhasebe/rapor aracı — CalcModule
+  sözleşmesine (gerçek formül + test) uymuyor, DÖF gibi araçlar dahil; bu kategorilere
+  girmeden önce kullanıcıyla kapsam netleştirilmeli.
+
+Sıradaki oturumlar Mekanik'ten (en büyük açık) devam edebilir; yukarıdaki liste
+tükenirse `WebFetch` ile `projenik.com/app.html#m/<ilgili-kategori>` tekrar
+incelenebilir (sayfa client-side render, bazen kısmi bilgi döner).
 
 ### 5h. Betonarme + elektrik denetim: 5 modül daha
 
@@ -218,6 +239,15 @@ bindirme kontrolü (DIN 18533, verdict'li), motor yol verme akımı, UPS/batarya
 kapasitesi, bara (busbar) akım taşıma kapasitesi (akım yoğunluğu yöntemi).
 
 **Toplam: 52 modül, 87 test, hepsi yeşil.**
+
+### 5j. Mekanik açığını kapatmaya başlangıç: 5 modül daha
+
+Yağmur suyu debisi (rasyonel yöntem), atık su debisi (EN 12056-2 deşarj birimi
+yöntemi), emniyet ventili kapasitesi (enerji dengesi, TS EN 12828), buhar hat çapı
+(süreklilik denklemi), hava kompresörü seçimi (FAD, eşzamanlılık faktörü). Yeni
+alt kategoriler: Buhar, Basınçlı Hava.
+
+**Toplam: 57 modül, 92 test, hepsi yeşil.**
 
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
@@ -261,7 +291,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **52 modül, 87 test** (bkz. §5/§5b-§5i) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu).
+- **57 modül, 92 test** (bkz. §5/§5b-§5j) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
