@@ -788,6 +788,36 @@ const KOLON_DONATI_ORANI_KONTROLU: ModuleEntry = {
   href: "/kolon-donati-orani-kontrolu",
   standard: "TS 500",
 };
+const BORU_AKIS_REJIMI_KONTROLU: ModuleEntry = {
+  id: "boru-akis-rejimi-kontrolu",
+  title: "Boru Akış Rejimi (Reynolds Sayısı)",
+  href: "/boru-akis-rejimi-kontrolu",
+  standard: "—",
+};
+const POMPA_HIDROLIK_GUCU: ModuleEntry = {
+  id: "pompa-hidrolik-gucu",
+  title: "Pompa Hidrolik Gücü",
+  href: "/pompa-hidrolik-gucu",
+  standard: "—",
+};
+const MOTOR_SENKRON_HIZI: ModuleEntry = {
+  id: "motor-senkron-hizi",
+  title: "Motor Senkron Hızı",
+  href: "/motor-senkron-hizi",
+  standard: "—",
+};
+const KOMPANZASYON_KONDANSATOR_AKIMI: ModuleEntry = {
+  id: "kompanzasyon-kondansator-akimi",
+  title: "Kompanzasyon Kondansatör Akımı",
+  href: "/kompanzasyon-kondansator-akimi",
+  standard: "—",
+};
+const TEMEL_EKSANTRIK_YUK_KONTROLU: ModuleEntry = {
+  id: "temel-eksantrik-yuk-kontrolu",
+  title: "Temel Eksantrik Yük Zemin Gerilmesi Kontrolü",
+  href: "/temel-eksantrik-yuk-kontrolu",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -840,6 +870,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_TERMAL_GENLESME_PAYI,
           SU_DARBESI_BASINCI,
           SU_YUMUSATMA_RESIN_HACMI,
+          BORU_AKIS_REJIMI_KONTROLU,
+          POMPA_HIDROLIK_GUCU,
         ],
       },
       {
@@ -912,6 +944,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BARA_ELEKTRODINAMIK_KUVVET,
           TRAFO_VERIMI,
           KONDANSATOR_DEPOLANAN_ENERJI,
+          MOTOR_SENKRON_HIZI,
+          KOMPANZASYON_KONDANSATOR_AKIMI,
         ],
       },
       {
@@ -961,6 +995,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KIRIS_SEHIM_KONTROLU,
           ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI,
           KOLON_DONATI_ORANI_KONTROLU,
+          TEMEL_EKSANTRIK_YUK_KONTROLU,
         ],
       },
       {

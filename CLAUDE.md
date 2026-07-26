@@ -192,9 +192,9 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~60 | çok geride, ısı değiştirici etkinliği + psikrometrik çiy noktası eklendi |
-| Elektrik | 62 | ~35 | geride, trafo verimi + kondansatör depolanan enerji eklendi |
-| İnşaat | 65 | ~28 | geride, kolon boyuna donatı oranı kontrolü eklendi |
+| Mekanik | 142 | ~62 | çok geride, boru akış rejimi (Reynolds) + pompa hidrolik gücü eklendi |
+| Elektrik | 62 | ~37 | geride, motor senkron hızı + kompanzasyon kondansatör akımı eklendi |
+| İnşaat | 65 | ~29 | geride, temel eksantrik yük zemin gerilmesi kontrolü eklendi |
 | Ev Sahibi/Günlük Hayat | 39 | 8 | geride (referans sitede bu kategori için spesifik başlık yayınlanmamış, kendi mantıklı başlıklarımızı ekliyoruz) |
 | Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
@@ -371,6 +371,24 @@ verdict'li).
 
 **Toplam: 132 modül, 176 test, hepsi yeşil.**
 
+### 5z. Boru akış rejimi/pompa gücü/motor hızı/kompanzasyon akımı/temel eksantrik yük: 5 modül daha
+
+Boru akış rejimi (Reynolds sayısı, laminer/geçiş/türbülanslı sınıflandırma),
+pompa hidrolik gücü (P=ρgQH/η), motor senkron hızı (n=120f/p), kompanzasyon
+kondansatör akımı (Ic=Qc/(√3×V)), temel eksantrik yük zemin gerilmesi kontrolü
+(q=N/A±M/W, e≤L/6 çekirdek koşulu, verdict'li).
+
+**Toplam: 137 modül, 183 test, hepsi yeşil.**
+
+Ayrıca bu oturumda: (1) Türkçe klavye/yerel ayarla girilen ondalık virgül
+("5,5") `type="number"` input'larda native olarak reddediliyor ve `Number()`
+NaN döndürüyordu — `calc-page.tsx`'teki tüm girdi alanları `type="text"` +
+`inputMode="decimal"`'e çevrildi, virgül/nokta normalize eden `sayiyaCevir()`
+eklendi (kullanıcı canlıda karşılaştı, düzeltildi). (2) (app) ve (marketing)
+layout'larına KVKK/veri gizliliği bildirimi banner'ı (`components/kvkk-banner.tsx`,
+localStorage tabanlı onay) ve `/kvkk` detay sayfası eklendi — çekirdek kullanım
+hâlâ üyeliksiz ve hesaplar tarayıcıda çalışıyor, banner bunu netleştiriyor.
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -413,7 +431,8 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **132 modül, 176 test** (bkz. §5/§5b-§5y) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **137 modül, 183 test** (bkz. §5/§5b-§5z) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
 - **İş modeli (karar 2026-07-25)**: Beta sürümü, çekirdek kullanım ücretsiz/üyeliksiz.
   Gelir modeli reklam/sponsorluk (anasayfada "Reklam Verin" bölümü: Ana Sponsor Bandı,
