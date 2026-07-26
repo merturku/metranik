@@ -608,6 +608,36 @@ const PERDE_DUVAR_KALINLIGI: ModuleEntry = {
   href: "/perde-duvar-kalinligi",
   standard: "TBDY 2018",
 };
+const FCU_HAVA_TARAFI_KAPASITESI: ModuleEntry = {
+  id: "fcu-hava-tarafi-kapasitesi",
+  title: "FCU Hava Tarafı Kapasitesi",
+  href: "/fcu-hava-tarafi-kapasitesi",
+  standard: "—",
+};
+const VAV_KUTUSU_MINIMUM_DEBI: ModuleEntry = {
+  id: "vav-kutusu-minimum-debi",
+  title: "VAV Kutusu Minimum Debi",
+  href: "/vav-kutusu-minimum-debi",
+  standard: "—",
+};
+const ISI_POMPASI_SPF: ModuleEntry = {
+  id: "isi-pompasi-spf",
+  title: "Isı Pompası Mevsimsel Performans Katsayısı (SPF)",
+  href: "/isi-pompasi-spf",
+  standard: "—",
+};
+const BETON_SU_CIMENTO_ORANI: ModuleEntry = {
+  id: "beton-su-cimento-orani",
+  title: "Beton Su/Çimento Oranı",
+  href: "/beton-su-cimento-orani",
+  standard: "TS 802",
+};
+const KLIMA_SANTRALI_BASINC_KAYBI: ModuleEntry = {
+  id: "klima-santrali-basinc-kaybi",
+  title: "Klima Santrali Toplam Basınç Kaybı",
+  href: "/klima-santrali-basinc-kaybi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -633,6 +663,10 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DENGE_KABI_HACMI,
           ENDUSTRIYEL_BOYLER_YAKIT_TUKETIMI,
           KOLLEKTOR_DEVRE_SAYISI,
+          FCU_HAVA_TARAFI_KAPASITESI,
+          VAV_KUTUSU_MINIMUM_DEBI,
+          ISI_POMPASI_SPF,
+          KLIMA_SANTRALI_BASINC_KAYBI,
         ],
       },
       {
@@ -748,6 +782,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOLON_NARINLIK_KONTROLU,
           MERDIVEN_BASAMAK_SAYISI,
           PERDE_DUVAR_KALINLIGI,
+          BETON_SU_CIMENTO_ORANI,
         ],
       },
       {
