@@ -728,6 +728,36 @@ const SONSUZ_SEV_STABILITESI: ModuleEntry = {
   href: "/sonsuz-sev-stabilitesi",
   standard: "—",
 };
+const BASINCLI_HAVA_BORU_CAPI: ModuleEntry = {
+  id: "basincli-hava-boru-capi",
+  title: "Basınçlı Hava Boru Çapı",
+  href: "/basincli-hava-boru-capi",
+  standard: "—",
+};
+const KABLO_KISA_DEVRE_TERMIK_KONTROLU: ModuleEntry = {
+  id: "kablo-kisa-devre-termik-kontrolu",
+  title: "Kablo Kısa Devre Termik Dayanım Kontrolü",
+  href: "/kablo-kisa-devre-termik-kontrolu",
+  standard: "IEC 60364-4-43",
+};
+const BARA_ELEKTRODINAMIK_KUVVET: ModuleEntry = {
+  id: "bara-elektrodinamik-kuvvet",
+  title: "Bara Elektrodinamik Kuvvet",
+  href: "/bara-elektrodinamik-kuvvet",
+  standard: "IEC 60865-1",
+};
+const KIRIS_SEHIM_KONTROLU: ModuleEntry = {
+  id: "kiris-sehim-kontrolu",
+  title: "Kiriş Sehim Kontrolü",
+  href: "/kiris-sehim-kontrolu",
+  standard: "—",
+};
+const ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI: ModuleEntry = {
+  id: "istinat-duvari-aktif-toprak-basinci",
+  title: "İstinat Duvarı Aktif Toprak Basıncı",
+  href: "/istinat-duvari-aktif-toprak-basinci",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -805,7 +835,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         ],
       },
       { label: "Buhar", modules: [BUHAR_HAT_CAPI, KONDENS_DEBISI] },
-      { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI] },
+      { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI, BASINCLI_HAVA_BORU_CAPI] },
       {
         label: "Test & Kontrol",
         modules: [
@@ -847,6 +877,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           JENERATOR_YAKIT_TUKETIMI,
           AKU_SARJ_SURESI,
           KONDANSATOR_DESARJ_SURESI,
+          BARA_ELEKTRODINAMIK_KUVVET,
         ],
       },
       {
@@ -860,6 +891,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KABLO_TAVA_DOLULUK_ORANI,
           YANGIN_ALGILAMA_LOOP_GERILIM_DUSUMU,
           TRAFO_YUKLENME_ORANI,
+          KABLO_KISA_DEVRE_TERMIK_KONTROLU,
         ],
       },
     ],
@@ -892,6 +924,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YIGMA_DUVAR_GERILME_KONTROLU,
           KAZIK_TASIMA_KAPASITESI,
           SONSUZ_SEV_STABILITESI,
+          KIRIS_SEHIM_KONTROLU,
+          ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI,
         ],
       },
       {
