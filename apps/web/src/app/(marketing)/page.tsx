@@ -291,7 +291,7 @@ export default function Home() {
             {[
               { value: `${TUM_MODULLER.length}`, label: "modül yayında" },
               { value: "4", label: "disiplin" },
-              { value: "46", label: "test yeşil" },
+              { value: "50", label: "test yeşil" },
               { value: "0", label: "kara kutu hesap" },
             ].map((stat, i) => (
               <div

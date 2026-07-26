@@ -139,6 +139,24 @@ const PANO_SICAKLIK_ARTISI_KONTROLU: ModuleEntry = {
   href: "/pano-sicaklik-artisi-kontrolu",
   standard: "IEC 61439",
 };
+const KAR_YUKU_HESABI: ModuleEntry = {
+  id: "kar-yuku-hesabi",
+  title: "Kar Yükü Hesabı",
+  href: "/kar-yuku-hesabi",
+  standard: "EN 1991-1-3",
+};
+const ASKILAMA_HESABI: ModuleEntry = {
+  id: "askilama-hesabi",
+  title: "Askılama Hesabı",
+  href: "/askilama-hesabi",
+  standard: "—",
+};
+const GERILIM_DUSUMU_KONTROLU: ModuleEntry = {
+  id: "gerilim-dusumu-kontrolu",
+  title: "Gerilim Düşümü Kontrolü",
+  href: "/gerilim-dusumu-kontrolu",
+  standard: "IEC 60364-5-52",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -147,7 +165,14 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       { label: "Isıtma-Soğutma", modules: [ISITMA_YUKU, SOGUTMA_YUKU] },
       {
         label: "Sıhhi Tesisat",
-        modules: [HIDRONIK_SU_DEBISI, BORU_BASINC_KAYBI, POMPA_SECIMI, GENLESME_TANKI, SICAK_SU_BOYLER],
+        modules: [
+          HIDRONIK_SU_DEBISI,
+          BORU_BASINC_KAYBI,
+          POMPA_SECIMI,
+          GENLESME_TANKI,
+          SICAK_SU_BOYLER,
+          ASKILAMA_HESABI,
+        ],
       },
       { label: "Havalandırma", modules: [KANAL_BOYUTLANDIRMA, TAZE_HAVA_DEBISI] },
       { label: "Yangın", modules: [SPRINKLER] },
@@ -171,6 +196,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YALITIM_DIRENCI_TESTI,
           KESICI_KISA_DEVRE_KONTROLU,
           PANO_SICAKLIK_ARTISI_KONTROLU,
+          GERILIM_DUSUMU_KONTROLU,
         ],
       },
     ],
@@ -178,7 +204,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "İnşaat Hesapları",
     subgroups: [
-      { label: "İnşaat Hesapları", modules: [DEPREM_TABAN_KESME] },
+      { label: "İnşaat Hesapları", modules: [DEPREM_TABAN_KESME, KAR_YUKU_HESABI] },
       {
         label: "Test & Kontrol",
         modules: [ZEMIN_TASIMA_GUCU_KONTROLU, BETON_BASINC_DAYANIMI_KONTROLU],

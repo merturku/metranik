@@ -83,3 +83,12 @@ export type {
   PanoSicaklikArtisiKontroluInput,
   PanoSicaklikArtisiKontroluOutput,
 } from "./modules/pano-sicaklik-artisi-kontrolu";
+export { karYukuHesabi } from "./modules/kar-yuku-hesabi";
+export type { KarYukuHesabiInput, KarYukuHesabiOutput } from "./modules/kar-yuku-hesabi";
+export { askilamaHesabi } from "./modules/askilama-hesabi";
+export type { AskilamaHesabiInput, AskilamaHesabiOutput } from "./modules/askilama-hesabi";
+export { gerilimDusumuKontrolu } from "./modules/gerilim-dusumu-kontrolu";
+export type {
+  GerilimDusumuKontroluInput,
+  GerilimDusumuKontroluOutput,
+} from "./modules/gerilim-dusumu-kontrolu";
