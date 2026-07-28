@@ -6,13 +6,11 @@ import type { CalcModule, CalcResult } from "../types";
 // değer ~3.0 m) referans alır. Askı adedi = ⌈L/S⌉ + 1 (iki uçtaki askılar
 // dahil). Her askı için gerekli kayış/çubuk uzunluğu kanal çevresi + bağlama
 // payından hesaplanır.
-const VARSAYILAN_EK_PAY_M = 0.3;
-
 export const kanalAskiMalzemeMetrajiInputSchema = z.object({
   kanalUzunlugu_L_m: z.number().positive(),
   maksimumAskiAraligi_S_m: z.number().positive(),
   kanalCevresi_P_m: z.number().positive(),
-  baglamaPayi_m: z.number().nonnegative().default(VARSAYILAN_EK_PAY_M),
+  baglamaPayi_m: z.number().nonnegative(),
 });
 
 export type KanalAskiMalzemeMetrajiInput = z.infer<

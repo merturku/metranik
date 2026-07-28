@@ -5,11 +5,9 @@ import type { CalcModule, CalcResult } from "../types";
 // yükselerek tahliye edilebilmesi için akış hızının bir üst sınırın altında
 // kalması gerekir (Bell & Gossett / Spirotech üretici pratiği: ~0.9 m/s).
 // Süreklilik denklemi: A = Q/v, D = √(4A/π).
-const VARSAYILAN_MAKSIMUM_HIZ_MS = 0.9;
-
 export const havaAyiriciBoyutlandirmaInputSchema = z.object({
   debit_Q_m3h: z.number().positive(),
-  maksimumHiz_v_ms: z.number().positive().default(VARSAYILAN_MAKSIMUM_HIZ_MS),
+  maksimumHiz_v_ms: z.number().positive(),
 });
 
 export type HavaAyiriciBoyutlandirmaInput = z.infer<
