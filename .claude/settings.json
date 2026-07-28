@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm -v)",
+      "Bash(pnpm --filter core-calc test)",
+      "Bash(git fsck *)",
+      "Bash(git ls-remote *)",
+      "Bash(git fetch *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(GIT_TERMINAL_PROMPT=0 GIT_TRACE=1 GIT_CURL_VERBOSE=1 git fetch origin)",
+      "Bash(echo \"started pid $!\")",
+      "Bash(xargs -n1 basename)"
+    ]
+  }
+}

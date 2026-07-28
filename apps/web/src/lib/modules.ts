@@ -849,6 +849,37 @@ const KONSOL_KIRIS_SEHIMI: ModuleEntry = {
   standard: "—",
 };
 
+const HAVA_AYIRICI_BOYUTLANDIRMA: ModuleEntry = {
+  id: "hava-ayirici-boyutlandirma",
+  title: "Hava Ayırıcı Boyutlandırma",
+  href: "/hava-ayirici-boyutlandirma",
+  standard: "—",
+};
+const KONSOL_BORU_DESTEK_ARALIGI: ModuleEntry = {
+  id: "konsol-boru-destek-araligi",
+  title: "Konsol Boru Destek Aralığı Kontrolü",
+  href: "/konsol-boru-destek-araligi",
+  standard: "—",
+};
+const KANAL_ASKI_MALZEME_METRAJI: ModuleEntry = {
+  id: "kanal-aski-malzeme-metraji",
+  title: "Kanal Askı Malzeme Metrajı",
+  href: "/kanal-aski-malzeme-metraji",
+  standard: "SMACNA",
+};
+const BAHCE_SULAMA_DEBISI: ModuleEntry = {
+  id: "bahce-sulama-debisi",
+  title: "Bahçe Sulama Debisi",
+  href: "/bahce-sulama-debisi",
+  standard: "—",
+};
+const GUNES_ENERJISI_BATARYA_OTONOMI: ModuleEntry = {
+  id: "gunes-enerjisi-batarya-otonomi",
+  title: "Güneş Enerjisi Bataryası Otonomi Kapasitesi",
+  href: "/gunes-enerjisi-batarya-otonomi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -882,6 +913,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           VANA_KV_DEGERI,
           ISI_DEGISTIRICI_ETKINLIGI,
           DUZ_YUZEY_TASINIM_ISI_KAYBI,
+          HAVA_AYIRICI_BOYUTLANDIRMA,
         ],
       },
       {
@@ -931,6 +963,10 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       },
       { label: "Buhar", modules: [BUHAR_HAT_CAPI, KONDENS_DEBISI] },
       { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI, BASINCLI_HAVA_BORU_CAPI] },
+      {
+        label: "Montaj",
+        modules: [KONSOL_BORU_DESTEK_ARALIGI, KANAL_ASKI_MALZEME_METRAJI],
+      },
       {
         label: "Test & Kontrol",
         modules: [
@@ -1053,6 +1089,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ELEKTRIK_FATURA_TAHMINI,
           GUNES_PANELI_GERI_ODEME_SURESI,
           LED_AYDINLATMA_ENERJI_TASARRUFU,
+          BAHCE_SULAMA_DEBISI,
+          GUNES_ENERJISI_BATARYA_OTONOMI,
         ],
       },
     ],

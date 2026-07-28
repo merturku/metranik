@@ -202,17 +202,19 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 projenik.com'un tam menüsü WebFetch ile incelendi (`app.html`, hash olmadan). Henüz
 bizde olmayan başlıklar (kalınlar öncelikli, gerçek fizik formülü bulunabilenler):
 
-- **Mekanik/Isıtma-Soğutma:** FCU Seçimi, VAV Kutusu, Radyatör, Yerden Isıtma, Radyant
-  Isıtıcı, Aparey, Klima Santrali, Isı Geri Kazanım, Endüstriyel Boyler, Isı Pompası,
-  Güneş Kollektörü, Eşanjör, Denge Kabı, Buffer Tank, Hava Ayırıcı, Kollektör.
+- **Mekanik/Isıtma-Soğutma:** Aparey (kalan tek kalem, adı belirsiz/örtüşüyor — kapsam
+  netleştirilmeli). Diğerleri (FCU, VAV, Radyatör, Yerden Isıtma, Radyant Isıtıcı, Klima
+  Santrali, Isı Geri Kazanım, Endüstriyel Boyler, Isı Pompası, Güneş Kollektörü, Eşanjör,
+  Denge Kabı, Hava Ayırıcı, Kollektör) eklendi.
 - **Mekanik/Havalandırma:** Fan, Davlumbaz, Basınç Kaybı, Menfez/Difüzör, Susturucu,
   Trafo Odası Havalandırma.
 - **Mekanik/Yangın:** Sprinkler Boru Çapı, Merdiven Basınçlandırma Fanı, Kuru Sistem
   Hava Kompresörü.
 - **Mekanik/Sıhhi:** Temiz Su, Sıcak Su Sirkülasyon.
 - **Mekanik/Buhar:** Kondens Hesapları.
-- **Mekanik/Montaj:** Boru Seçim Tablosu, Konsol Boru Yerleşim & Donanım (σ=M/Wx+BOM),
-  Kanal Askı Malzeme Metrajı (SMACNA).
+- **Mekanik/Montaj:** Boru Seçim Tablosu (kalan tek kalem — lookup tablosu ağırlıklı,
+  CalcModule sözleşmesine uyup uymadığı netleştirilmeli). Konsol Boru Destek Aralığı
+  Kontrolü ve Kanal Askı Malzeme Metrajı (SMACNA) eklendi (yeni "Montaj" alt kategorisi).
 - **Elektrik:** Kablo Düzeltme Faktörleri (grup+tesisat tipi birleşik), Yıldırım Risk
   Değerlendirmesi, Acil Aydınlatma Batarya Süresi, Pano Yük Cetveli.
 - **İnşaat:** (Betonarme/Zemin/Yükler/Denetim alt kategorileri artık iyi kapsanıyor.)
@@ -399,6 +401,29 @@ layout'larına KVKK/veri gizliliği bildirimi banner'ı (`components/kvkk-banner
 localStorage tabanlı onay) ve `/kvkk` detay sayfası eklendi — çekirdek kullanım
 hâlâ üyeliksiz ve hesaplar tarayıcıda çalışıyor, banner bunu netleştiriyor.
 
+### 5ab. Hava ayırıcı + montaj (yeni alt kategori) + ev sulama/batarya: 5 modül daha
+
+Hava ayırıcı boyutlandırma (süreklilik denklemi + üretici hız pratiği, Isıtma-Soğutma),
+konsol boru destek aralığı kontrolü (klasik kiriş teorisi, ankastre M=wL²/2, verdict'li)
+ve kanal askı malzeme metrajı (SMACNA askı aralığı pratiği) — ikincisi ve üçüncüsü için
+Mekanik Tesisat altında yeni "Montaj" alt kategorisi açıldı. Ev disiplinine bahçe sulama
+debisi (1mm/m²=1L ilişkisi) ve güneş enerjisi bataryası otonomi kapasitesi (UPS'teki
+yedekleme süresinden farklı olarak gün bazlı otonomi + DoD ile) eklendi.
+
+**Toplam: 147 modül, 195 test, hepsi yeşil.**
+
+Ayrıca bu oturumda: repo iCloud Drive altında olduğu için `.git` bozulmuştu
+(`fatal: bad object HEAD` — commit objesi diskte eksikti) ve son commit'in eklediği
+10 modülün dosyaları (5 core-calc modül+test çifti, 10 page.tsx, modules.ts'teki
+karşılık gelen girdiler) sessizce diskten silinmiş/eski haline dönmüştü — muhtemelen
+aynı iCloud senkron sorunu. `git fetch` (çok yavaş, ~3-4 KB/sn, arka planda beklenip
+tamamlandı) ile obje kurtarıldı, ardından `git restore` ile kayıp dosyalar geri
+yüklendi; hiçbir iş kaybedilmedi (bkz. hafıza `gotcha_icloud_git_corruption`). Bu
+proje iCloud altında çalıştığı sürece benzer belirtiler (`git status`/`git log`
+hatası veya CLAUDE.md'nin kaydettiği sayıyla `pnpm test` çıktısının uyuşmaması)
+görülürse önce `git fetch`/`git restore` denenmeli, dosya gerçekten kayıpsa panik
+yapmadan `origin/main`'den kurtarılabileceği unutulmamalı.
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -441,7 +466,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **142 modül, 189 test** (bkz. §5/§5b-§5aa) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **147 modül, 195 test** (bkz. §5/§5b-§5ab) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
