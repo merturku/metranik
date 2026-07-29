@@ -879,6 +879,36 @@ const GUNES_ENERJISI_BATARYA_OTONOMI: ModuleEntry = {
   href: "/gunes-enerjisi-batarya-otonomi",
   standard: "—",
 };
+const KABLO_TAVASI_BOYUTLANDIRMA: ModuleEntry = {
+  id: "kablo-tavasi-boyutlandirma",
+  title: "Kablo Tavası Boyutlandırma",
+  href: "/kablo-tavasi-boyutlandirma",
+  standard: "TS EN 61537",
+};
+const MALZEME_FIRE_ZAYIAT_OZETI: ModuleEntry = {
+  id: "malzeme-fire-zayiat-ozeti",
+  title: "Malzeme Fire / Zayiat Özeti",
+  href: "/malzeme-fire-zayiat-ozeti",
+  standard: "—",
+};
+const HAFRIYAT_HACMI_KAMYON_SEFERI: ModuleEntry = {
+  id: "hafriyat-hacmi-kamyon-seferi",
+  title: "Hafriyat Hacmi & Kamyon Sefer Sayısı",
+  href: "/hafriyat-hacmi-kamyon-seferi",
+  standard: "—",
+};
+const ISI_YALITIMI_GERI_ODEME_SURESI: ModuleEntry = {
+  id: "isi-yalitimi-geri-odeme-suresi",
+  title: "Isı Yalıtımı Yatırım Geri Ödeme Süresi",
+  href: "/isi-yalitimi-geri-odeme-suresi",
+  standard: "—",
+};
+const KANAL_SURTUNME_BASINC_KAYBI: ModuleEntry = {
+  id: "kanal-surtunme-basinc-kaybi",
+  title: "Kanal Sürtünme Basınç Kaybı",
+  href: "/kanal-surtunme-basinc-kaybi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -949,6 +979,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SUSTURUCU_UZUNLUGU,
           FAN_GUCU,
           PSIKROMETRIK_CIG_NOKTASI,
+          KANAL_SURTUNME_BASINC_KAYBI,
         ],
       },
       {
@@ -1013,6 +1044,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KONDANSATOR_DEPOLANAN_ENERJI,
           MOTOR_SENKRON_HIZI,
           KOMPANZASYON_KONDANSATOR_AKIMI,
+          KABLO_TAVASI_BOYUTLANDIRMA,
         ],
       },
       {
@@ -1064,6 +1096,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOLON_DONATI_ORANI_KONTROLU,
           TEMEL_EKSANTRIK_YUK_KONTROLU,
           KONSOL_KIRIS_SEHIMI,
+          MALZEME_FIRE_ZAYIAT_OZETI,
+          HAFRIYAT_HACMI_KAMYON_SEFERI,
         ],
       },
       {
@@ -1091,6 +1125,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           LED_AYDINLATMA_ENERJI_TASARRUFU,
           BAHCE_SULAMA_DEBISI,
           GUNES_ENERJISI_BATARYA_OTONOMI,
+          ISI_YALITIMI_GERI_ODEME_SURESI,
         ],
       },
     ],

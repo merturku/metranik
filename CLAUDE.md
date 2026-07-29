@@ -188,15 +188,15 @@ description, formula, engineeringNote, fields, defaults) güncellenmeli.
 
 ### 5g. ~330 modül hedefine ilerleme takibi
 
-Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-26):
+Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-29):
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | ~63 | çok geride, düz yüzey taşınımla ısı kaybı eklendi |
-| Elektrik | 62 | ~37 | geride |
-| İnşaat | 65 | ~30 | geride, konsol kiriş ucu sehimi eklendi |
-| Ev Sahibi/Günlük Hayat | 39 | 11 | geride, elektrik fatura tahmini + güneş paneli geri ödeme + LED tasarrufu eklendi |
-| Teknik Ofis | 21 | 0 | başlanmadı — hesap-dışı araçlar (Gantt, Excel, muhasebe) çoğunlukla CalcModule'e uymuyor, değerlendirme gerekir |
+| Mekanik | 142 | 68 | geride ama referans listesi (Isıtma-Soğutma/Havalandırma/Yangın/Sıhhi/Buhar/Montaj) artık "Aparey" ve "Boru Seçim Tablosu" dışında tükendi — kalan açık gerçek modül sayısından çok bizim henüz düşünmediğimiz ek alt-kalemlerden geliyor |
+| Elektrik | 62 | 39 | geride ama referans listesindeki tüm kalemler eklendi — kalan açık muhtemelen referans sitenin göstermediği ek denetim/hesap kalemlerinden |
+| İnşaat | 65 | 31 | geride, Betonarme/Zemin/Yükler/Denetim iyi kapsanıyor + Teknik Ofis'ten 2 metraj kalemi (malzeme fire, hafriyat) eklendi |
+| Ev Sahibi/Günlük Hayat | 39 | 14 | hâlâ en geride kalan disiplin (oransal), projenik alt kırılım vermiyor — mühendislik muhakemesiyle genel ev hesapları üretilmeye devam edilebilir |
+| Teknik Ofis | 21 | 0 (2 kalemi İnşaat'a taşındı) | geri kalanı çoğunlukla proje yönetimi/muhasebe/rapor aracı (Gantt, Excel, muhasebe) — CalcModule'e uymuyor, yeni discipline açmadan önce kullanıcıyla kapsam netleştirilmeli |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
 
 projenik.com'un tam menüsü WebFetch ile incelendi (`app.html`, hash olmadan). Henüz
@@ -206,19 +206,24 @@ bizde olmayan başlıklar (kalınlar öncelikli, gerçek fizik formülü bulunab
   netleştirilmeli). Diğerleri (FCU, VAV, Radyatör, Yerden Isıtma, Radyant Isıtıcı, Klima
   Santrali, Isı Geri Kazanım, Endüstriyel Boyler, Isı Pompası, Güneş Kollektörü, Eşanjör,
   Denge Kabı, Hava Ayırıcı, Kollektör) eklendi.
-- **Mekanik/Havalandırma:** Fan, Davlumbaz, Basınç Kaybı, Menfez/Difüzör, Susturucu,
-  Trafo Odası Havalandırma.
-- **Mekanik/Yangın:** Sprinkler Boru Çapı, Merdiven Basınçlandırma Fanı, Kuru Sistem
-  Hava Kompresörü.
-- **Mekanik/Sıhhi:** Temiz Su, Sıcak Su Sirkülasyon.
-- **Mekanik/Buhar:** Kondens Hesapları.
+- **Mekanik/Havalandırma:** tamamlandı (Fan, Davlumbaz, Basınç Kaybı, Menfez/Difüzör,
+  Susturucu, Trafo Odası Havalandırma hepsi eklendi).
+- **Mekanik/Yangın:** tamamlandı (Sprinkler Boru Çapı, Merdiven Basınçlandırma Fanı,
+  Kuru Sistem Hava Kompresörü eklendi).
+- **Mekanik/Sıhhi:** tamamlandı (Temiz Su, Sıcak Su Sirkülasyon eklendi).
+- **Mekanik/Buhar:** tamamlandı (Kondens Hesapları eklendi).
 - **Mekanik/Montaj:** Boru Seçim Tablosu (kalan tek kalem — lookup tablosu ağırlıklı,
   CalcModule sözleşmesine uyup uymadığı netleştirilmeli). Konsol Boru Destek Aralığı
   Kontrolü ve Kanal Askı Malzeme Metrajı (SMACNA) eklendi (yeni "Montaj" alt kategorisi).
-- **Elektrik:** Kablo Düzeltme Faktörleri (grup+tesisat tipi birleşik), Yıldırım Risk
-  Değerlendirmesi, Acil Aydınlatma Batarya Süresi, Pano Yük Cetveli.
-- **İnşaat:** (Betonarme/Zemin/Yükler/Denetim alt kategorileri artık iyi kapsanıyor.)
-- **Ev Sahibi/Günlük Hayat:** genel amaçlı, projenik'te alt kırılım verilmemiş.
+- **Elektrik:** referans listesindeki tüm kalemler (Kablo Düzeltme Faktörleri, Yıldırım
+  Risk Değerlendirmesi, Acil Aydınlatma Batarya Süresi, Pano Yük Cetveli, Kablo Tavası
+  Boyutlandırma) eklendi.
+- **İnşaat:** (Betonarme/Zemin/Yükler/Denetim alt kategorileri artık iyi kapsanıyor;
+  ayrıca projenik'in "Teknik Ofis/Metraj" kategorisindeki gerçek formüle sahip iki kalem —
+  Malzeme Fire/Zayiat Özeti, Hafriyat Hacmi & Kamyon Sefer Sayısı — İnşaat disiplinine
+  eklendi; yeni "teknik-ofis" discipline'ı açmadan mevcut yapıya sığdırıldı.)
+- **Ev Sahibi/Günlük Hayat:** genel amaçlı, projenik'te alt kırılım verilmemiş; Isı
+  Yalıtımı Yatırım Geri Ödeme Süresi eklendi.
 - **Teknik Ofis / Diğer:** çoğunluğu proje yönetimi/muhasebe/rapor aracı — CalcModule
   sözleşmesine (gerçek formül + test) uymuyor, DÖF gibi araçlar dahil; bu kategorilere
   girmeden önce kullanıcıyla kapsam netleştirilmeli.
@@ -424,6 +429,31 @@ hatası veya CLAUDE.md'nin kaydettiği sayıyla `pnpm test` çıktısının uyu�
 görülürse önce `git fetch`/`git restore` denenmeli, dosya gerçekten kayıpsa panik
 yapmadan `origin/main`'den kurtarılabileceği unutulmamalı.
 
+### 5ac. Referans site (projenik.com/app.html) tam menü taraması + kalan gerçek gaplar: 5 modül daha
+
+`WebFetch` ile projenik.com/app.html'in tam menüsü tekrar tarandı; §5g'deki eski gap
+listesinin büyük bölümü artık kapsandığı görüldü (Mekanik/Havalandırma-Yangın-Sıhhi-Buhar
+tamamen, Elektrik listesindeki tüm kalemler). Genuine kalan kalemlerden 5 modül eklendi:
+kablo tavası boyutlandırma (TS EN 61537, doluluk-oranı kontrolünün tersi — verilen kesit
+alanından gerekli tava genişliğini bulur), kanal sürtünme basınç kaybı (Darcy-Weisbach,
+Mekanik/Havalandırma'daki tek eksik kalem). Ayrıca projenik'in "Teknik Ofis/Metraj &
+Malzeme" kategorisindeki iki kalem — malzeme fire/zayiat özeti ve hafriyat hacmi &
+kamyon sefer sayısı — gerçek formüle sahip olduğu için yeni bir "teknik-ofis" discipline'ı
+açmadan İnşaat disiplinine eklendi (Teknik Ofis'in geri kalanı hâlâ çoğunlukla
+proje yönetimi/muhasebe aracı, CalcModule'e uymuyor). Ev disiplinine ısı yalıtımı
+yatırım geri ödeme süresi eklendi.
+
+**Toplam: 152 modül, 200 test, hepsi yeşil.**
+
+Kalan gerçek gap: Mekanik/Isıtma-Soğutma'da "Aparey" ve Mekanik/Montaj'da "Boru Seçim
+Tablosu" — ikisi de isim/kapsam belirsiz veya lookup-tablosu ağırlıklı, eklemeden önce
+kullanıcıyla netleştirilmeli. Bunların dışında referans sitenin Mekanik/Elektrik/İnşaat
+menüsündeki hesap-şeklinde kalemler artık tükendi; sıradaki oturumlar ya (a) Teknik
+Ofis/Diğer kapsamını kullanıcıyla netleştirip oradan gerçek formüle sahip kalemleri
+seçmeli, ya da (b) Ev disiplinini derinleştirmeli (hedefe göre hâlâ en geride, bkz.
+§5g tablosu — WebFetch projenik'te Ev için alt kırılım vermiyor, mühendislik
+muhakemesiyle genel ev sahibi hesapları üretilebilir).
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -466,7 +496,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **147 modül, 195 test** (bkz. §5/§5b-§5ab) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **152 modül, 200 test** (bkz. §5/§5b-§5ac) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
