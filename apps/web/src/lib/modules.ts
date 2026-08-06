@@ -909,6 +909,36 @@ const KANAL_SURTUNME_BASINC_KAYBI: ModuleEntry = {
   href: "/kanal-surtunme-basinc-kaybi",
   standard: "—",
 };
+const SU_FATURASI_TAHMINI: ModuleEntry = {
+  id: "su-faturasi-tahmini",
+  title: "Su Faturası Tahmini",
+  href: "/su-faturasi-tahmini",
+  standard: "—",
+};
+const ISITMA_YAKIT_TUKETIMI_MALIYETI: ModuleEntry = {
+  id: "isitma-yakit-tuketimi-maliyeti",
+  title: "Isıtma Yakıt Tüketimi & Maliyeti",
+  href: "/isitma-yakit-tuketimi-maliyeti",
+  standard: "—",
+};
+const GUNES_PANELI_YILLIK_URETIM: ModuleEntry = {
+  id: "gunes-paneli-yillik-uretim",
+  title: "Güneş Paneli Yıllık Enerji Üretimi",
+  href: "/gunes-paneli-yillik-uretim",
+  standard: "—",
+};
+const YAGMUR_SUYU_HASAT_TANKI: ModuleEntry = {
+  id: "yagmur-suyu-hasat-tanki",
+  title: "Yağmur Suyu Hasat Tankı Boyutlandırma",
+  href: "/yagmur-suyu-hasat-tanki",
+  standard: "—",
+};
+const RAMPA_EGIM_KONTROLU: ModuleEntry = {
+  id: "rampa-egim-kontrolu",
+  title: "Rampa Eğim Kontrolü",
+  href: "/rampa-egim-kontrolu",
+  standard: "TS 9111",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1126,6 +1156,11 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BAHCE_SULAMA_DEBISI,
           GUNES_ENERJISI_BATARYA_OTONOMI,
           ISI_YALITIMI_GERI_ODEME_SURESI,
+          SU_FATURASI_TAHMINI,
+          ISITMA_YAKIT_TUKETIMI_MALIYETI,
+          GUNES_PANELI_YILLIK_URETIM,
+          YAGMUR_SUYU_HASAT_TANKI,
+          RAMPA_EGIM_KONTROLU,
         ],
       },
     ],
