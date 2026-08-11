@@ -685,3 +685,28 @@ export type {
   RampaEgimKontroluInput,
   RampaEgimKontroluOutput,
 } from "./modules/rampa-egim-kontrolu";
+export { korkulukYuksekligiKontrolu } from "./modules/korkuluk-yuksekligi-kontrolu";
+export type {
+  KorkulukYuksekligiKontroluInput,
+  KorkulukYuksekligiKontroluOutput,
+} from "./modules/korkuluk-yuksekligi-kontrolu";
+export { klimaYillikIsletmeMaliyeti } from "./modules/klima-yillik-isletme-maliyeti";
+export type {
+  KlimaYillikIsletmeMaliyetiInput,
+  KlimaYillikIsletmeMaliyetiOutput,
+} from "./modules/klima-yillik-isletme-maliyeti";
+export { isiPompasiYillikIsletmeMaliyeti } from "./modules/isi-pompasi-yillik-isletme-maliyeti";
+export type {
+  IsiPompasiYillikIsletmeMaliyetiInput,
+  IsiPompasiYillikIsletmeMaliyetiOutput,
+} from "./modules/isi-pompasi-yillik-isletme-maliyeti";
+export { bahceGubrelemeMiktari } from "./modules/bahce-gubreleme-miktari";
+export type {
+  BahceGubrelemeMiktariInput,
+  BahceGubrelemeMiktariOutput,
+} from "./modules/bahce-gubreleme-miktari";
+export { dusukDebiliBataryaTasarrufu } from "./modules/dusuk-debili-batarya-tasarrufu";
+export type {
+  DusukDebiliBataryaTasarrufuInput,
+  DusukDebiliBataryaTasarrufuOutput,
+} from "./modules/dusuk-debili-batarya-tasarrufu";

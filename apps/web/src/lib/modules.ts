@@ -939,6 +939,36 @@ const RAMPA_EGIM_KONTROLU: ModuleEntry = {
   href: "/rampa-egim-kontrolu",
   standard: "TS 9111",
 };
+const KORKULUK_YUKSEKLIGI_KONTROLU: ModuleEntry = {
+  id: "korkuluk-yuksekligi-kontrolu",
+  title: "Korkuluk Yüksekliği Kontrolü",
+  href: "/korkuluk-yuksekligi-kontrolu",
+  standard: "TS 9111",
+};
+const KLIMA_YILLIK_ISLETME_MALIYETI: ModuleEntry = {
+  id: "klima-yillik-isletme-maliyeti",
+  title: "Klima Yıllık İşletme Maliyeti",
+  href: "/klima-yillik-isletme-maliyeti",
+  standard: "—",
+};
+const ISI_POMPASI_YILLIK_ISLETME_MALIYETI: ModuleEntry = {
+  id: "isi-pompasi-yillik-isletme-maliyeti",
+  title: "Isı Pompası Yıllık İşletme Maliyeti",
+  href: "/isi-pompasi-yillik-isletme-maliyeti",
+  standard: "—",
+};
+const BAHCE_GUBRELEME_MIKTARI: ModuleEntry = {
+  id: "bahce-gubreleme-miktari",
+  title: "Bahçe Gübreleme Miktarı Hesabı",
+  href: "/bahce-gubreleme-miktari",
+  standard: "—",
+};
+const DUSUK_DEBILI_BATARYA_TASARRUFU: ModuleEntry = {
+  id: "dusuk-debili-batarya-tasarrufu",
+  title: "Düşük Debili Batarya Su Tasarrufu",
+  href: "/dusuk-debili-batarya-tasarrufu",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1161,6 +1191,11 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           GUNES_PANELI_YILLIK_URETIM,
           YAGMUR_SUYU_HASAT_TANKI,
           RAMPA_EGIM_KONTROLU,
+          KORKULUK_YUKSEKLIGI_KONTROLU,
+          KLIMA_YILLIK_ISLETME_MALIYETI,
+          ISI_POMPASI_YILLIK_ISLETME_MALIYETI,
+          BAHCE_GUBRELEME_MIKTARI,
+          DUSUK_DEBILI_BATARYA_TASARRUFU,
         ],
       },
     ],
