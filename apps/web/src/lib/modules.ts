@@ -969,6 +969,36 @@ const DUSUK_DEBILI_BATARYA_TASARRUFU: ModuleEntry = {
   href: "/dusuk-debili-batarya-tasarrufu",
   standard: "—",
 };
+const YANGIN_SONDURME_GAZI_MIKTARI: ModuleEntry = {
+  id: "yangin-sondurme-gazi-miktari",
+  title: "Yangın Söndürme Gazı (Temiz Gaz) Miktarı",
+  href: "/yangin-sondurme-gazi-miktari",
+  standard: "NFPA 2001",
+};
+const HAVA_DEPOSU_BOYUTLANDIRMA: ModuleEntry = {
+  id: "hava-deposu-boyutlandirma",
+  title: "Hava Deposu (Receiver Tank) Boyutlandırma",
+  href: "/hava-deposu-boyutlandirma",
+  standard: "—",
+};
+const BUHAR_KAZANI_KAPASITESI: ModuleEntry = {
+  id: "buhar-kazani-kapasitesi",
+  title: "Buhar Kazanı Kapasitesi",
+  href: "/buhar-kazani-kapasitesi",
+  standard: "—",
+};
+const ZEMIN_YATAK_KATSAYISI_DUZELTMESI: ModuleEntry = {
+  id: "zemin-yatak-katsayisi-duzeltmesi",
+  title: "Zemin Yatak Katsayısı Ölçek Düzeltmesi",
+  href: "/zemin-yatak-katsayisi-duzeltmesi",
+  standard: "Terzaghi & Peck",
+};
+const KAZIK_GRUBU_VERIMLILIGI: ModuleEntry = {
+  id: "kazik-grubu-verimliligi",
+  title: "Kazık Grubu Verimliliği",
+  href: "/kazik-grubu-verimliligi",
+  standard: "Converse-Labarre",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1050,10 +1080,14 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           MERDIVEN_BASINCLANDIRMA_FANI_DEBISI,
           SPRINKLER_BORU_CAPI,
           KURU_SISTEM_HAVA_KOMPRESORU,
+          YANGIN_SONDURME_GAZI_MIKTARI,
         ],
       },
-      { label: "Buhar", modules: [BUHAR_HAT_CAPI, KONDENS_DEBISI] },
-      { label: "Basınçlı Hava", modules: [HAVA_KOMPRESORU_SECIMI, BASINCLI_HAVA_BORU_CAPI] },
+      { label: "Buhar", modules: [BUHAR_HAT_CAPI, KONDENS_DEBISI, BUHAR_KAZANI_KAPASITESI] },
+      {
+        label: "Basınçlı Hava",
+        modules: [HAVA_KOMPRESORU_SECIMI, BASINCLI_HAVA_BORU_CAPI, HAVA_DEPOSU_BOYUTLANDIRMA],
+      },
       {
         label: "Montaj",
         modules: [KONSOL_BORU_DESTEK_ARALIGI, KANAL_ASKI_MALZEME_METRAJI],
@@ -1158,6 +1192,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KONSOL_KIRIS_SEHIMI,
           MALZEME_FIRE_ZAYIAT_OZETI,
           HAFRIYAT_HACMI_KAMYON_SEFERI,
+          ZEMIN_YATAK_KATSAYISI_DUZELTMESI,
+          KAZIK_GRUBU_VERIMLILIGI,
         ],
       },
       {

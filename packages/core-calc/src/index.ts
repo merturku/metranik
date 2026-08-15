@@ -710,3 +710,28 @@ export type {
   DusukDebiliBataryaTasarrufuInput,
   DusukDebiliBataryaTasarrufuOutput,
 } from "./modules/dusuk-debili-batarya-tasarrufu";
+export { yanginSondurmeGaziMiktari } from "./modules/yangin-sondurme-gazi-miktari";
+export type {
+  YanginSondurmeGaziMiktariInput,
+  YanginSondurmeGaziMiktariOutput,
+} from "./modules/yangin-sondurme-gazi-miktari";
+export { havaDeposuBoyutlandirma } from "./modules/hava-deposu-boyutlandirma";
+export type {
+  HavaDeposuBoyutlandirmaInput,
+  HavaDeposuBoyutlandirmaOutput,
+} from "./modules/hava-deposu-boyutlandirma";
+export { buharKazaniKapasitesi } from "./modules/buhar-kazani-kapasitesi";
+export type {
+  BuharKazaniKapasitesiInput,
+  BuharKazaniKapasitesiOutput,
+} from "./modules/buhar-kazani-kapasitesi";
+export { zeminYatakKatsayisiDuzeltmesi } from "./modules/zemin-yatak-katsayisi-duzeltmesi";
+export type {
+  ZeminYatakKatsayisiDuzeltmesiInput,
+  ZeminYatakKatsayisiDuzeltmesiOutput,
+} from "./modules/zemin-yatak-katsayisi-duzeltmesi";
+export { kazikGrubuVerimliligi } from "./modules/kazik-grubu-verimliligi";
+export type {
+  KazikGrubuVerimliligiInput,
+  KazikGrubuVerimliligiOutput,
+} from "./modules/kazik-grubu-verimliligi";
