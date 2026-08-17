@@ -735,3 +735,13 @@ export type {
   KazikGrubuVerimliligiInput,
   KazikGrubuVerimliligiOutput,
 } from "./modules/kazik-grubu-verimliligi";
+export { kapaliOtoparkHavalandirma } from "./modules/kapali-otopark-havalandirma";
+export type {
+  KapaliOtoparkHavalandirmaInput,
+  KapaliOtoparkHavalandirmaOutput,
+} from "./modules/kapali-otopark-havalandirma";
+export { jeneratorOdasiHavalandirma } from "./modules/jenerator-odasi-havalandirma";
+export type {
+  JeneratorOdasiHavalandirmaInput,
+  JeneratorOdasiHavalandirmaOutput,
+} from "./modules/jenerator-odasi-havalandirma";

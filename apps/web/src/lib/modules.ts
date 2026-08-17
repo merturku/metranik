@@ -999,6 +999,18 @@ const KAZIK_GRUBU_VERIMLILIGI: ModuleEntry = {
   href: "/kazik-grubu-verimliligi",
   standard: "Converse-Labarre",
 };
+const KAPALI_OTOPARK_HAVALANDIRMA: ModuleEntry = {
+  id: "kapali-otopark-havalandirma",
+  title: "Kapalı Otopark Havalandırma",
+  href: "/kapali-otopark-havalandirma",
+  standard: "—",
+};
+const JENERATOR_ODASI_HAVALANDIRMA: ModuleEntry = {
+  id: "jenerator-odasi-havalandirma",
+  title: "Jeneratör Odası Havalandırma",
+  href: "/jenerator-odasi-havalandirma",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1070,6 +1082,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           FAN_GUCU,
           PSIKROMETRIK_CIG_NOKTASI,
           KANAL_SURTUNME_BASINC_KAYBI,
+          KAPALI_OTOPARK_HAVALANDIRMA,
+          JENERATOR_ODASI_HAVALANDIRMA,
         ],
       },
       {

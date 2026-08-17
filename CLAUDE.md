@@ -490,6 +490,20 @@ atlandı — zemin yatak katsayısı modülüyle değiştirildi (bkz. §5w'deki 
 
 **Toplam: 167 modül, 218 test, hepsi yeşil.**
 
+### 5ag. Hava ayırıcı + montaj + kapalı otopark/jeneratör odası havalandırma: 2 modül daha
+
+Kullanıcının projenik.com'un canlı uygulama ekran görüntüsünü paylaşmasıyla, sol
+menüde bizde henüz olmayan iki Havalandırma kalemi fark edildi: Kapalı Otopark
+Havalandırma ve Jeneratör Odası Havalandırma. İkisi de eklendi: kapalı otopark
+havalandırması CO seyreltme (dilüsyon) denklemiyle (Q = G/(Cizin-Cdış), basit hava
+değişimi yerine kirletici bazlı), jeneratör odası havalandırması ise iki farklı
+fiziğin toplamıyla (yanma havası — motor gücüne orantılı üretici katsayısı — artı
+odaya yayılan atık ısı için enerji dengesi soğutma havası) hesaplanıyor; ikinci
+modülün soğutma terimi trafo odası havalandırma debisi modülüyle aynı ilkeyi
+kullanır ama tek başına tekrar olmasın diye yanma havası terimiyle birleştirildi.
+
+**Toplam: 169 modül, 220 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
