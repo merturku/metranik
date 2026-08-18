@@ -192,7 +192,7 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | 71 | geride ama referans listesi (Isıtma-Soğutma/Havalandırma/Yangın/Sıhhi/Buhar/Montaj) artık "Aparey" ve "Boru Seçim Tablosu" dışında tükendi — kalan açık gerçek modül sayısından çok bizim henüz düşünmediğimiz ek alt-kalemlerden geliyor |
+| Mekanik | 142 | 73 | geride ama referans listesi (Isıtma-Soğutma/Havalandırma/Yangın/Sıhhi/Buhar/Montaj) artık "Aparey" ve "Boru Seçim Tablosu" dışında tükendi — kalan açık gerçek modül sayısından çok bizim henüz düşünmediğimiz ek alt-kalemlerden geliyor |
 | Elektrik | 62 | 39 | geride ama referans listesindeki tüm kalemler eklendi — kalan açık muhtemelen referans sitenin göstermediği ek denetim/hesap kalemlerinden |
 | İnşaat | 65 | 33 | geride, Betonarme/Zemin/Yükler/Denetim iyi kapsanıyor + Teknik Ofis'ten 2 metraj kalemi (malzeme fire, hafriyat) eklendi |
 | Ev Sahibi/Günlük Hayat | 39 | 24 | oransal olarak Mekanik/İnşaat'a yaklaştı ama hâlâ mutlak sayıda geride, projenik alt kırılım vermiyor — mühendislik muhakemesiyle genel ev hesapları üretilmeye devam edilebilir |
@@ -546,7 +546,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **167 modül, 218 test** (bkz. §5/§5b-§5af) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **169 modül, 220 test** (bkz. §5/§5b-§5ag) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
