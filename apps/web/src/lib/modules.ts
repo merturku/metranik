@@ -1011,6 +1011,36 @@ const JENERATOR_ODASI_HAVALANDIRMA: ModuleEntry = {
   href: "/jenerator-odasi-havalandirma",
   standard: "—",
 };
+const BACA_CEKISI_HESABI: ModuleEntry = {
+  id: "baca-cekisi-hesabi",
+  title: "Baca Doğal Çekişi Hesabı",
+  href: "/baca-cekisi-hesabi",
+  standard: "—",
+};
+const HAVA_KURUTUCU_KAPASITE_SECIMI: ModuleEntry = {
+  id: "hava-kurutucu-kapasite-secimi",
+  title: "Hava Kurutucu Kapasite Seçimi",
+  href: "/hava-kurutucu-kapasite-secimi",
+  standard: "—",
+};
+const DUVAR_TUGLASI_METRAJI: ModuleEntry = {
+  id: "duvar-tuglasi-metraji",
+  title: "Duvar Dolgu Tuğlası Metrajı",
+  href: "/duvar-tuglasi-metraji",
+  standard: "—",
+};
+const SIVA_HARC_MIKTARI: ModuleEntry = {
+  id: "siva-harc-miktari",
+  title: "Sıva / Harç Miktarı Hesabı",
+  href: "/siva-harc-miktari",
+  standard: "—",
+};
+const CATI_KAPLAMA_METRAJI: ModuleEntry = {
+  id: "cati-kaplama-metraji",
+  title: "Çatı Kaplama Malzeme Metrajı",
+  href: "/cati-kaplama-metraji",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1046,6 +1076,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISI_DEGISTIRICI_ETKINLIGI,
           DUZ_YUZEY_TASINIM_ISI_KAYBI,
           HAVA_AYIRICI_BOYUTLANDIRMA,
+          BACA_CEKISI_HESABI,
         ],
       },
       {
@@ -1100,7 +1131,12 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       { label: "Buhar", modules: [BUHAR_HAT_CAPI, KONDENS_DEBISI, BUHAR_KAZANI_KAPASITESI] },
       {
         label: "Basınçlı Hava",
-        modules: [HAVA_KOMPRESORU_SECIMI, BASINCLI_HAVA_BORU_CAPI, HAVA_DEPOSU_BOYUTLANDIRMA],
+        modules: [
+          HAVA_KOMPRESORU_SECIMI,
+          BASINCLI_HAVA_BORU_CAPI,
+          HAVA_DEPOSU_BOYUTLANDIRMA,
+          HAVA_KURUTUCU_KAPASITE_SECIMI,
+        ],
       },
       {
         label: "Montaj",
@@ -1208,6 +1244,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HAFRIYAT_HACMI_KAMYON_SEFERI,
           ZEMIN_YATAK_KATSAYISI_DUZELTMESI,
           KAZIK_GRUBU_VERIMLILIGI,
+          DUVAR_TUGLASI_METRAJI,
+          SIVA_HARC_MIKTARI,
+          CATI_KAPLAMA_METRAJI,
         ],
       },
       {

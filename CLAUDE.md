@@ -192,9 +192,9 @@ Referans (projenik.com) kategori/modül sayıları ile bizim durumumuz (2026-07-
 
 | Disiplin | Referans | Bizde | Not |
 |---|---|---|---|
-| Mekanik | 142 | 73 | geride ama referans listesi (Isıtma-Soğutma/Havalandırma/Yangın/Sıhhi/Buhar/Montaj) artık "Aparey" ve "Boru Seçim Tablosu" dışında tükendi — kalan açık gerçek modül sayısından çok bizim henüz düşünmediğimiz ek alt-kalemlerden geliyor |
+| Mekanik | 142 | 75 | geride ama referans listesi (Isıtma-Soğutma/Havalandırma/Yangın/Sıhhi/Buhar/Montaj) artık "Aparey" ve "Boru Seçim Tablosu" dışında tükendi — kalan açık gerçek modül sayısından çok bizim henüz düşünmediğimiz ek alt-kalemlerden geliyor |
 | Elektrik | 62 | 39 | geride ama referans listesindeki tüm kalemler eklendi — kalan açık muhtemelen referans sitenin göstermediği ek denetim/hesap kalemlerinden |
-| İnşaat | 65 | 33 | geride, Betonarme/Zemin/Yükler/Denetim iyi kapsanıyor + Teknik Ofis'ten 2 metraj kalemi (malzeme fire, hafriyat) eklendi |
+| İnşaat | 65 | 36 | geride, Betonarme/Zemin/Yükler/Denetim iyi kapsanıyor + Teknik Ofis'ten 2 metraj kalemi (malzeme fire, hafriyat) eklendi |
 | Ev Sahibi/Günlük Hayat | 39 | 24 | oransal olarak Mekanik/İnşaat'a yaklaştı ama hâlâ mutlak sayıda geride, projenik alt kırılım vermiyor — mühendislik muhakemesiyle genel ev hesapları üretilmeye devam edilebilir |
 | Teknik Ofis | 21 | 0 (2 kalemi İnşaat'a taşındı) | geri kalanı çoğunlukla proje yönetimi/muhasebe/rapor aracı (Gantt, Excel, muhasebe) — CalcModule'e uymuyor, yeni discipline açmadan önce kullanıcıyla kapsam netleştirilmeli |
 | Diğer | 3 | 0 | değerlendirilmedi (DÖF gibi hesap-dışı araçlar olabilir, CalcModule'e uymayabilir) |
@@ -504,6 +504,18 @@ kullanır ama tek başına tekrar olmasın diye yanma havası terimiyle birleşt
 
 **Toplam: 169 modül, 220 test, hepsi yeşil.**
 
+### 5ah. Baca çekişi/hava kurutucu + tuğla/sıva/çatı metrajı: 5 modül daha
+
+Mekanik ve İnşaat (oransal olarak hedefe göre en geride kalan iki disiplin) devam
+ettirildi: baca doğal çekişi hesabı (stack effect, ideal gaz + kaldırma kuvveti),
+hava kurutucu kapasite seçimi (üretici düzeltme katsayıları). İnşaat'ta 3 metraj
+modülü: duvar dolgu tuğlası metrajı (tuğla ölçülerinden geometrik birim alan),
+sıva/harç miktarı hesabı (hacim → kütle → torba sayısı), çatı kaplama malzeme
+metrajı (izdüşüm alanından eğim açısı düzeltmesiyle gerçek yüzey alanı,
+trigonometrik).
+
+**Toplam: 174 modül, 225 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
 başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
 atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
@@ -546,7 +558,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **169 modül, 220 test** (bkz. §5/§5b-§5ag) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **174 modül, 225 test** (bkz. §5/§5b-§5ah) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
