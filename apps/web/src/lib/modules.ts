@@ -1041,6 +1041,36 @@ const CATI_KAPLAMA_METRAJI: ModuleEntry = {
   href: "/cati-kaplama-metraji",
   standard: "—",
 };
+const BUHARLI_NEMLENDIRICI_DEBISI: ModuleEntry = {
+  id: "buharli-nemlendirici-debisi",
+  title: "Buharlı Nemlendirici Debisi",
+  href: "/buharli-nemlendirici-debisi",
+  standard: "—",
+};
+const KAZAN_BACA_GAZI_KAYBI: ModuleEntry = {
+  id: "kazan-baca-gazi-kaybi",
+  title: "Kazan Baca Gazı Kaybı (Siegert)",
+  href: "/kazan-baca-gazi-kaybi",
+  standard: "Siegert",
+};
+const KACIS_GENISLIGI_HESABI: ModuleEntry = {
+  id: "kacis-genisligi-hesabi",
+  title: "Kaçış Merdiveni / Kapı Genişliği Hesabı",
+  href: "/kacis-genisligi-hesabi",
+  standard: "—",
+};
+const ISTINAT_DUVARI_DEVRILME_GUVENLIGI: ModuleEntry = {
+  id: "istinat-duvari-devrilme-guvenligi",
+  title: "İstinat Duvarı Devrilme Güvenliği Kontrolü",
+  href: "/istinat-duvari-devrilme-guvenligi",
+  standard: "—",
+};
+const NOTR_ILETKEN_KESITI_SECIMI: ModuleEntry = {
+  id: "notr-iletken-kesiti-secimi",
+  title: "Nötr İletken Kesiti Seçimi",
+  href: "/notr-iletken-kesiti-secimi",
+  standard: "IEC 60364-5-52",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1077,6 +1107,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DUZ_YUZEY_TASINIM_ISI_KAYBI,
           HAVA_AYIRICI_BOYUTLANDIRMA,
           BACA_CEKISI_HESABI,
+          KAZAN_BACA_GAZI_KAYBI,
         ],
       },
       {
@@ -1115,6 +1146,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KANAL_SURTUNME_BASINC_KAYBI,
           KAPALI_OTOPARK_HAVALANDIRMA,
           JENERATOR_ODASI_HAVALANDIRMA,
+          BUHARLI_NEMLENDIRICI_DEBISI,
         ],
       },
       {
@@ -1189,6 +1221,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           MOTOR_SENKRON_HIZI,
           KOMPANZASYON_KONDANSATOR_AKIMI,
           KABLO_TAVASI_BOYUTLANDIRMA,
+          NOTR_ILETKEN_KESITI_SECIMI,
         ],
       },
       {
@@ -1247,6 +1280,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DUVAR_TUGLASI_METRAJI,
           SIVA_HARC_MIKTARI,
           CATI_KAPLAMA_METRAJI,
+          KACIS_GENISLIGI_HESABI,
+          ISTINAT_DUVARI_DEVRILME_GUVENLIGI,
         ],
       },
       {
