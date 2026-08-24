@@ -1071,6 +1071,36 @@ const NOTR_ILETKEN_KESITI_SECIMI: ModuleEntry = {
   href: "/notr-iletken-kesiti-secimi",
   standard: "IEC 60364-5-52",
 };
+const SOGUTMA_KULESI_KAPASITESI: ModuleEntry = {
+  id: "sogutma-kulesi-kapasitesi",
+  title: "Soğutma Kulesi Kapasitesi",
+  href: "/sogutma-kulesi-kapasitesi",
+  standard: "—",
+};
+const CO2_BAZLI_TAZE_HAVA_DEBISI: ModuleEntry = {
+  id: "co2-bazli-taze-hava-debisi",
+  title: "CO2 Bazlı Taze Hava Debisi (DCV)",
+  href: "/co2-bazli-taze-hava-debisi",
+  standard: "ASHRAE 62.1",
+};
+const YANMA_HAVASI_IHTIYACI: ModuleEntry = {
+  id: "yanma-havasi-ihtiyaci",
+  title: "Yanma Havası İhtiyacı",
+  href: "/yanma-havasi-ihtiyaci",
+  standard: "—",
+};
+const HIDROFOR_TANKI_HACMI: ModuleEntry = {
+  id: "hidrofor-tanki-hacmi",
+  title: "Hidrofor Tankı Hacmi",
+  href: "/hidrofor-tanki-hacmi",
+  standard: "—",
+};
+const BUHAR_KAZANI_BESI_SUYU_DEBISI: ModuleEntry = {
+  id: "buhar-kazani-besi-suyu-debisi",
+  title: "Buhar Kazanı Besi Suyu Debisi",
+  href: "/buhar-kazani-besi-suyu-debisi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1108,6 +1138,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HAVA_AYIRICI_BOYUTLANDIRMA,
           BACA_CEKISI_HESABI,
           KAZAN_BACA_GAZI_KAYBI,
+          SOGUTMA_KULESI_KAPASITESI,
+          YANMA_HAVASI_IHTIYACI,
         ],
       },
       {
@@ -1129,6 +1161,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SU_YUMUSATMA_RESIN_HACMI,
           BORU_AKIS_REJIMI_KONTROLU,
           POMPA_HIDROLIK_GUCU,
+          HIDROFOR_TANKI_HACMI,
         ],
       },
       {
@@ -1147,6 +1180,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KAPALI_OTOPARK_HAVALANDIRMA,
           JENERATOR_ODASI_HAVALANDIRMA,
           BUHARLI_NEMLENDIRICI_DEBISI,
+          CO2_BAZLI_TAZE_HAVA_DEBISI,
         ],
       },
       {
@@ -1160,7 +1194,15 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANGIN_SONDURME_GAZI_MIKTARI,
         ],
       },
-      { label: "Buhar", modules: [BUHAR_HAT_CAPI, KONDENS_DEBISI, BUHAR_KAZANI_KAPASITESI] },
+      {
+        label: "Buhar",
+        modules: [
+          BUHAR_HAT_CAPI,
+          KONDENS_DEBISI,
+          BUHAR_KAZANI_KAPASITESI,
+          BUHAR_KAZANI_BESI_SUYU_DEBISI,
+        ],
+      },
       {
         label: "Basınçlı Hava",
         modules: [

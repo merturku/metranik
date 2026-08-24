@@ -516,12 +516,45 @@ trigonometrik).
 
 **Toplam: 174 modül, 225 test, hepsi yeşil.**
 
-Sıradaki oturumlarda kategori kategori devam et (İnşaat'ta Betonarme/Zemin/Yükler alt
-başlıkları, sonra Elektrik denetim, sonra Mekanik). Her modül gerçek formül + standart
-atfı + çözümlü test gerektirir; referans sitenin URL'lerini (`projenik.com/app.html#m/...`)
-WebFetch ile inceleyip gerçek formül/standart bulmak işe yarıyor — ama sayfa client-side
-render olduğundan bazen sadece kısmi bilgi dönebilir, gerekirse mühendislik bilgisiyle
-tamamla (uydurma sayı değil, gerçek standart formülü).
+### 5ai. İstinat duvarı/kaçış genişliği/nötr iletken + buhar/baca gazı: 5 modül daha
+
+İnşaat'ta 2 modül: istinat duvarı devrilme güvenliği kontrolü (aktif toprak basıncının
+oluşturduğu devirici moment / duvar+temel ağırlığının direnç momenti, GS=Mr/Mo,
+verdict'li), kaçış merdiveni/kapı genişliği hesabı (kişi sayısı / birim genişlik
+kapasitesi, verdict'li — ikisi de standart numarası olmadan genel mühendislik
+ilişkisiyle, mevcut projedeki "fiziksel formül, standart yok" emsallerine uygun).
+Elektrik'te 1 modül: nötr iletken kesiti seçimi (IEC 60364-5-52). Mekanik'te 2 modül:
+buharlı nemlendirici debisi, kazan baca gazı kaybı (Siegert formülü, dolaylı verim
+yöntemi).
+
+**Toplam: 179 modül, 232 test, hepsi yeşil.**
+
+### 5aj. Mekanik'in en geride kalan disiplin olması nedeniyle 5 modül daha (Isıtma-Soğutma/Sıhhi/Havalandırma/Buhar)
+
+Mekanik hedefe göre en büyük mutlak ve oransal açığa sahip disiplin olduğu için
+(77/142 → şimdi 82/142) tamamı Mekanik'ten 5 gerçek fizik modülü eklendi: soğutma
+kulesi kapasitesi (enerji dengesi Q=ṁcpRange + Boyle yasası benzeri yaklaşma sıcaklığı
+kontrolü, verdict'li), CO2 bazlı taze hava debisi/DCV (ASHRAE 62.1 Ek C, kararlı durum
+kütle dengesi — sabit kişi/alan bazlı statik taze hava debisi modülünün dinamik
+alternatifi), yanma havası ihtiyacı (stokiyometrik yanma, CH4 teorik oranı ~9.52 Nm³
+hava/Nm³ yakıt × fazla hava katsayısı λ), hidrofor tankı hacmi (Boyle yasası —
+izotermal gaz sıkışması, Vt=Pmax×Vd/(Pmax-Pmin)), buhar kazanı besi suyu debisi
+(kütle dengesi, ṁ_besi=ṁ_buhar/(1-blöf oranı)).
+
+**Toplam: 184 modül, 237 test, hepsi yeşil.**
+
+Sıradaki oturumlarda kategori kategori devam et. Mekanik hâlâ en büyük mutlak açığa
+sahip (82/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (38/65) devam
+edilebilir, sonra Elektrik denetim (40/62), sonra Ev (24/39). Her modül gerçek formül +
+standart atfı + çözümlü test gerektirir; referans sitenin URL'lerini
+(`projenik.com/app.html#m/...`) WebFetch ile inceleyip gerçek formül/standart bulmak
+işe yarıyor — ama sayfa client-side render olduğundan bazen sadece kısmi bilgi
+dönebilir, gerekirse mühendislik bilgisiyle tamamla (uydurma sayı değil, gerçek
+standart formülü). Referans sitenin Mekanik/Elektrik/İnşaat menüsündeki hesap-şeklinde
+kalemler tükendiği için (bkz. §5ac) yeni modüller artık büyük ölçüde mühendislik
+muhakemesiyle (gerçek fizik/kütle-enerji dengesi formülleri) üretiliyor — yeni modül
+eklemeden önce mevcut ~184 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
+tarayıp kavramsal çakışma olmadığından emin ol.
 
 ---
 
@@ -558,7 +591,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **174 modül, 225 test** (bkz. §5/§5b-§5ah) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **184 modül, 237 test** (bkz. §5/§5b-§5aj) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
