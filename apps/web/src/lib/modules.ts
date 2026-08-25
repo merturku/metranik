@@ -1101,6 +1101,36 @@ const BUHAR_KAZANI_BESI_SUYU_DEBISI: ModuleEntry = {
   href: "/buhar-kazani-besi-suyu-debisi",
   standard: "—",
 };
+const BORU_YALITIM_YUZEY_SICAKLIGI: ModuleEntry = {
+  id: "boru-yalitim-yuzey-sicakligi",
+  title: "Yalıtımlı Boru Yüzey Sıcaklığı",
+  href: "/boru-yalitim-yuzey-sicakligi",
+  standard: "ASTM C1055",
+};
+const HAVALANDIRMA_ISI_KAYBI: ModuleEntry = {
+  id: "havalandirma-isi-kaybi",
+  title: "Havalandırma (İnfiltrasyon) Isı Kaybı",
+  href: "/havalandirma-isi-kaybi",
+  standard: "TS 825",
+};
+const DEPREM_YATAY_YUK_DAGILIMI: ModuleEntry = {
+  id: "deprem-yatay-yuk-dagilimi",
+  title: "Deprem Yatay Yük Dağılımı (Kat Kesme Kuvveti)",
+  href: "/deprem-yatay-yuk-dagilimi",
+  standard: "TBDY 2018",
+};
+const KESME_DONATISI_ARALIGI: ModuleEntry = {
+  id: "kesme-donatisi-araligi",
+  title: "Kesme Donatısı (Etriye) Aralığı",
+  href: "/kesme-donatisi-araligi",
+  standard: "TS 500",
+};
+const NOTR_TOPRAKLAMA_DIRENCI_SECIMI: ModuleEntry = {
+  id: "notr-topraklama-direnci-secimi",
+  title: "Nötr Topraklama Direnci (NGR) Seçimi",
+  href: "/notr-topraklama-direnci-secimi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1140,6 +1170,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KAZAN_BACA_GAZI_KAYBI,
           SOGUTMA_KULESI_KAPASITESI,
           YANMA_HAVASI_IHTIYACI,
+          BORU_YALITIM_YUZEY_SICAKLIGI,
+          HAVALANDIRMA_ISI_KAYBI,
         ],
       },
       {
@@ -1264,6 +1296,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOMPANZASYON_KONDANSATOR_AKIMI,
           KABLO_TAVASI_BOYUTLANDIRMA,
           NOTR_ILETKEN_KESITI_SECIMI,
+          NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
         ],
       },
       {
@@ -1324,6 +1357,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           CATI_KAPLAMA_METRAJI,
           KACIS_GENISLIGI_HESABI,
           ISTINAT_DUVARI_DEVRILME_GUVENLIGI,
+          DEPREM_YATAY_YUK_DAGILIMI,
+          KESME_DONATISI_ARALIGI,
         ],
       },
       {
