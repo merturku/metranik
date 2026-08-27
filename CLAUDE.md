@@ -543,9 +543,24 @@ izotermal gaz sıkışması, Vt=Pmax×Vd/(Pmax-Pmin)), buhar kazanı besi suyu d
 
 **Toplam: 184 modül, 237 test, hepsi yeşil.**
 
+### 5ak. Boru yüzey sıcaklığı/havalandırma ısı kaybı + deprem dağılımı/etriye aralığı + NGR: 5 modül daha
+
+Mekanik'te 2 modül: yalıtımlı boru yüzey sıcaklığı (iletim+taşınım direnç ağı,
+ASTM C1055 dokunma güvenliği sınırıyla verdict'li — boru ısı kaybı modülünden farklı
+olarak dış taşınım direncini de modelleyip yüzey sıcaklığını çözer), havalandırma/
+infiltrasyon ısı kaybı (TS 825, hava değişim sayısı yöntemi — pencere/duvar ısı kaybı
+modülünün tamamlayıcısı, iletim değil havalandırma bileşeni). İnşaat'ta 2 modül:
+deprem yatay yük dağılımı (TBDY 2018 §4.7, taban kesme kuvvetinin katlara dağılımı —
+mevcut deprem taban kesme modülünün tek kat için dağılım uzantısı), kesme donatısı
+(etriye) aralığı (TS 500, Vs=Vu-Vc üzerinden klasik etriye denklemi — kesme kuvveti
+kapasitesi modülünü tamamlar). Elektrik'te 1 modül: nötr topraklama direnci (NGR)
+seçimi (Ohm yasası, jeneratör/trafo toprak arıza akımı sınırlama).
+
+**Toplam: 189 modül, 242 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et. Mekanik hâlâ en büyük mutlak açığa
-sahip (82/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (38/65) devam
-edilebilir, sonra Elektrik denetim (40/62), sonra Ev (24/39). Her modül gerçek formül +
+sahip (84/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (40/65) devam
+edilebilir, sonra Elektrik denetim (41/62), sonra Ev (24/39). Her modül gerçek formül +
 standart atfı + çözümlü test gerektirir; referans sitenin URL'lerini
 (`projenik.com/app.html#m/...`) WebFetch ile inceleyip gerçek formül/standart bulmak
 işe yarıyor — ama sayfa client-side render olduğundan bazen sadece kısmi bilgi
@@ -553,8 +568,9 @@ dönebilir, gerekirse mühendislik bilgisiyle tamamla (uydurma sayı değil, ger
 standart formülü). Referans sitenin Mekanik/Elektrik/İnşaat menüsündeki hesap-şeklinde
 kalemler tükendiği için (bkz. §5ac) yeni modüller artık büyük ölçüde mühendislik
 muhakemesiyle (gerçek fizik/kütle-enerji dengesi formülleri) üretiliyor — yeni modül
-eklemeden önce mevcut ~184 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
-tarayıp kavramsal çakışma olmadığından emin ol.
+eklemeden önce mevcut ~189 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
+tarayıp kavramsal çakışma olmadığından emin ol (bkz. §5ak'ta NGR/RCD ve döşeme donatısı
+adaylarının mevcut modüllerle çakıştığı için elenmesi örnekleri).
 
 ---
 
@@ -591,7 +607,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **184 modül, 237 test** (bkz. §5/§5b-§5aj) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **189 modül, 242 test** (bkz. §5/§5b-§5ak) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
