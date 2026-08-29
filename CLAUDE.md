@@ -558,9 +558,25 @@ seçimi (Ohm yasası, jeneratör/trafo toprak arıza akımı sınırlama).
 
 **Toplam: 189 modül, 242 test, hepsi yeşil.**
 
+### 5al. Boru sürtünme katsayısı/kanal izolasyonu/duvar U-değeri + kar sürüklenme + aydınlatma LPD: 5 modül daha
+
+Mekanik'te 3 modül, hepsi mevcut modüllerin bilinçli olarak dışarıda bıraktığı bir
+girdiyi dolduruyor: boru sürtünme katsayısı (Darcy f, Swamee-Jain — Boru Basınç
+Kaybı modülünün yorumunda "mühendisin girdiği bir değer" dediği f'yi üretir),
+kanal izolasyonu ısı kazancı/kaybı (düzlemsel iletim+taşınım direnç ağı — Boru Isı
+Kaybı'nın silindirik geometrisinden farklı, dikdörtgen kanal için), duvar/çatı
+U-değeri hesabı (TS 825, katman dirençleri — Pencere/Duvar Isı Kaybı'nın doğrudan
+girdi aldığı U'yu üretir). İnşaat'ta 1 modül: kar sürüklenme (drift) yükü
+(EN 1991-1-3 Ek B, μw=γh/sk sınırlı — mevcut Kar Yükü Hesabı'nın düzgün yayılı
+yüküne engel yakınında eklenen yerel ek yük). Elektrik'te 1 modül: aydınlatma güç
+yoğunluğu (LPD) kontrolü (ASHRAE 90.1 — Aydınlatma Lüks Yöntemi'nden farklı bir
+metrik, W/m² enerji yoğunluğu).
+
+**Toplam: 194 modül, 247 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et. Mekanik hâlâ en büyük mutlak açığa
-sahip (84/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (40/65) devam
-edilebilir, sonra Elektrik denetim (41/62), sonra Ev (24/39). Her modül gerçek formül +
+sahip (87/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (41/65) devam
+edilebilir, sonra Elektrik denetim (42/62), sonra Ev (24/39). Her modül gerçek formül +
 standart atfı + çözümlü test gerektirir; referans sitenin URL'lerini
 (`projenik.com/app.html#m/...`) WebFetch ile inceleyip gerçek formül/standart bulmak
 işe yarıyor — ama sayfa client-side render olduğundan bazen sadece kısmi bilgi
@@ -568,9 +584,11 @@ dönebilir, gerekirse mühendislik bilgisiyle tamamla (uydurma sayı değil, ger
 standart formülü). Referans sitenin Mekanik/Elektrik/İnşaat menüsündeki hesap-şeklinde
 kalemler tükendiği için (bkz. §5ac) yeni modüller artık büyük ölçüde mühendislik
 muhakemesiyle (gerçek fizik/kütle-enerji dengesi formülleri) üretiliyor — yeni modül
-eklemeden önce mevcut ~189 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
-tarayıp kavramsal çakışma olmadığından emin ol (bkz. §5ak'ta NGR/RCD ve döşeme donatısı
-adaylarının mevcut modüllerle çakıştığı için elenmesi örnekleri).
+eklemeden önce mevcut ~194 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
+tarayıp kavramsal çakışma olmadığından emin ol. Verimli bir kaynak: mevcut modülün
+yorumunda "X mühendisin girdiği bir değer olarak alınır" dediği bir ara değeri
+(§5al'de f, U, LPD gibi) ayrı bir modülde üretmek — bu hem gerçek fizik hem de
+mevcut modülle doğal bir tamamlayıcılık sağlıyor.
 
 ---
 
@@ -607,7 +625,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **189 modül, 242 test** (bkz. §5/§5b-§5ak) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **194 modül, 247 test** (bkz. §5/§5b-§5al) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.

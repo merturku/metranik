@@ -1131,6 +1131,36 @@ const NOTR_TOPRAKLAMA_DIRENCI_SECIMI: ModuleEntry = {
   href: "/notr-topraklama-direnci-secimi",
   standard: "—",
 };
+const BORU_SURTUNME_KATSAYISI: ModuleEntry = {
+  id: "boru-surtunme-katsayisi",
+  title: "Boru Sürtünme Katsayısı (Darcy f, Swamee-Jain)",
+  href: "/boru-surtunme-katsayisi",
+  standard: "Swamee-Jain",
+};
+const KANAL_IZOLASYONU_ISI_KAZANCI: ModuleEntry = {
+  id: "kanal-izolasyonu-isi-kazanci",
+  title: "Kanal İzolasyonu Isı Kazancı/Kaybı",
+  href: "/kanal-izolasyonu-isi-kazanci",
+  standard: "—",
+};
+const DUVAR_U_DEGERI_HESABI: ModuleEntry = {
+  id: "duvar-u-degeri-hesabi",
+  title: "Duvar/Çatı U-Değeri Hesabı",
+  href: "/duvar-u-degeri-hesabi",
+  standard: "TS 825",
+};
+const KAR_SURUKLEME_YUKU: ModuleEntry = {
+  id: "kar-surukleme-yuku",
+  title: "Kar Sürüklenme (Drift) Yükü",
+  href: "/kar-surukleme-yuku",
+  standard: "EN 1991-1-3",
+};
+const AYDINLATMA_GUC_YOGUNLUGU_KONTROLU: ModuleEntry = {
+  id: "aydinlatma-guc-yogunlugu-kontrolu",
+  title: "Aydınlatma Güç Yoğunluğu (LPD) Kontrolü",
+  href: "/aydinlatma-guc-yogunlugu-kontrolu",
+  standard: "ASHRAE 90.1",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1172,6 +1202,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANMA_HAVASI_IHTIYACI,
           BORU_YALITIM_YUZEY_SICAKLIGI,
           HAVALANDIRMA_ISI_KAYBI,
+          DUVAR_U_DEGERI_HESABI,
         ],
       },
       {
@@ -1194,6 +1225,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_AKIS_REJIMI_KONTROLU,
           POMPA_HIDROLIK_GUCU,
           HIDROFOR_TANKI_HACMI,
+          BORU_SURTUNME_KATSAYISI,
         ],
       },
       {
@@ -1212,6 +1244,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KAPALI_OTOPARK_HAVALANDIRMA,
           JENERATOR_ODASI_HAVALANDIRMA,
           BUHARLI_NEMLENDIRICI_DEBISI,
+          KANAL_IZOLASYONU_ISI_KAZANCI,
           CO2_BAZLI_TAZE_HAVA_DEBISI,
         ],
       },
@@ -1297,6 +1330,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KABLO_TAVASI_BOYUTLANDIRMA,
           NOTR_ILETKEN_KESITI_SECIMI,
           NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
+          AYDINLATMA_GUC_YOGUNLUGU_KONTROLU,
         ],
       },
       {
@@ -1359,6 +1393,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISTINAT_DUVARI_DEVRILME_GUVENLIGI,
           DEPREM_YATAY_YUK_DAGILIMI,
           KESME_DONATISI_ARALIGI,
+          KAR_SURUKLEME_YUKU,
         ],
       },
       {

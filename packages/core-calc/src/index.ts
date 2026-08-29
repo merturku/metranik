@@ -845,3 +845,28 @@ export type {
   NotrTopraklamaDirenciSecimiInput,
   NotrTopraklamaDirenciSecimiOutput,
 } from "./modules/notr-topraklama-direnci-secimi";
+export { boruSurtunmeKatsayisi } from "./modules/boru-surtunme-katsayisi";
+export type {
+  BoruSurtunmeKatsayisiInput,
+  BoruSurtunmeKatsayisiOutput,
+} from "./modules/boru-surtunme-katsayisi";
+export { kanalIzolasyonuIsiKazanci } from "./modules/kanal-izolasyonu-isi-kazanci";
+export type {
+  KanalIzolasyonuIsiKazanciInput,
+  KanalIzolasyonuIsiKazanciOutput,
+} from "./modules/kanal-izolasyonu-isi-kazanci";
+export { duvarUDegeriHesabi } from "./modules/duvar-u-degeri-hesabi";
+export type {
+  DuvarUDegeriHesabiInput,
+  DuvarUDegeriHesabiOutput,
+} from "./modules/duvar-u-degeri-hesabi";
+export { karSuruklemeYuku } from "./modules/kar-surukleme-yuku";
+export type {
+  KarSuruklemeYukuInput,
+  KarSuruklemeYukuOutput,
+} from "./modules/kar-surukleme-yuku";
+export { aydinlatmaGucYogunluguKontrolu } from "./modules/aydinlatma-guc-yogunlugu-kontrolu";
+export type {
+  AydinlatmaGucYogunluguKontroluInput,
+  AydinlatmaGucYogunluguKontroluOutput,
+} from "./modules/aydinlatma-guc-yogunlugu-kontrolu";
