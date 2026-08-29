@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
-/* Palet ve tipografi projenik.com'un canlı CSS'inden birebir çekildi (kullanıcı talebiyle,
-   PRODUCT.md'de belirtildiği gibi). İçerik/kopya kaynağa ait değil, orijinal. */
+/* Renk paleti (koyu terracotta/kahve) projenik.com'un canlı CSS'inden birebir çekildi
+   (kullanıcı talebiyle, PRODUCT.md'de belirtildiği gibi). İçerik/kopya kaynağa ait değil,
+   orijinal. Tipografi (IBM Plex Sans/Mono) projenik.com'dan bağımsız, ayrı bir karardır —
+   yaygın Sora+JetBrains Mono ikilisinin "AI şablonu" izlenimini azaltmak için seçildi. */
 :root {
   --surface: #0d0a08;
   --surface-secondary: #171210;
@@ -37,8 +39,8 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
-  --font-sans: var(--font-sora);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
   --font-serif: Georgia, "Times New Roman", "Nimbus Roman", serif;
 }
 
