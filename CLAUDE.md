@@ -574,9 +574,24 @@ metrik, W/m² enerji yoğunluğu).
 
 **Toplam: 194 modül, 247 test, hepsi yeşil.**
 
+### 5am. Genleşme tankı ön basıncı/flaş buhar/boru askı çubuğu + beton karbonatlaşma + yangın söndürücü: 5 modül daha
+
+Mekanik'te 3 modül: genleşme tankı ön basıncı (statik yükseklik → bar, Genleşme
+Tankı hacim modülünün tamamlayıcısı), flaş buhar oranı (blöf tankı entalpi
+dengesi, Buhar Kazanı Besi Suyu Debisi'nin ürettiği blöf debisinin ne kadarının
+flaş buhara dönüştüğünü hesaplar), boru askı çubuğu kesit kontrolü (çekme
+gerilmesi, Konsol Boru Destek Aralığı Kontrolü'nün eğilme kontrolüne karşı askı
+noktasındaki çubuğun kendisini kontrol eder, verdict'li). İnşaat'ta 1 modül:
+beton karbonatlaşma derinliği kontrolü (√t yasası, pas payına karşı korozyon
+başlama riski, verdict'li). Ev'de 1 modül: yangın söndürücü sayısı ve kapsama
+kontrolü (NFPA 10, birim kapsama alanı yöntemi, verdict'li) — Ev disiplini
+hedefe göre hâlâ görece geride kaldığı için önceliklendirildi.
+
+**Toplam: 199 modül, 252 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et. Mekanik hâlâ en büyük mutlak açığa
-sahip (87/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (41/65) devam
-edilebilir, sonra Elektrik denetim (42/62), sonra Ev (24/39). Her modül gerçek formül +
+sahip (90/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (42/65) devam
+edilebilir, sonra Elektrik denetim (42/62), sonra Ev (25/39). Her modül gerçek formül +
 standart atfı + çözümlü test gerektirir; referans sitenin URL'lerini
 (`projenik.com/app.html#m/...`) WebFetch ile inceleyip gerçek formül/standart bulmak
 işe yarıyor — ama sayfa client-side render olduğundan bazen sadece kısmi bilgi
@@ -584,11 +599,12 @@ dönebilir, gerekirse mühendislik bilgisiyle tamamla (uydurma sayı değil, ger
 standart formülü). Referans sitenin Mekanik/Elektrik/İnşaat menüsündeki hesap-şeklinde
 kalemler tükendiği için (bkz. §5ac) yeni modüller artık büyük ölçüde mühendislik
 muhakemesiyle (gerçek fizik/kütle-enerji dengesi formülleri) üretiliyor — yeni modül
-eklemeden önce mevcut ~194 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
+eklemeden önce mevcut ~199 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
 tarayıp kavramsal çakışma olmadığından emin ol. Verimli bir kaynak: mevcut modülün
 yorumunda "X mühendisin girdiği bir değer olarak alınır" dediği bir ara değeri
-(§5al'de f, U, LPD gibi) ayrı bir modülde üretmek — bu hem gerçek fizik hem de
-mevcut modülle doğal bir tamamlayıcılık sağlıyor.
+ayrı bir modülde üretmek, veya bir modülün ürettiği ara sonucu (örn. blöf debisi)
+girdi alan tamamlayıcı bir modül tasarlamak (§5am'deki flaş buhar oranı örneği) —
+bu hem gerçek fizik hem de mevcut modülle doğal bir tamamlayıcılık sağlıyor.
 
 ---
 
@@ -625,7 +641,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **194 modül, 247 test** (bkz. §5/§5b-§5al) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **199 modül, 252 test** (bkz. §5/§5b-§5am) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.

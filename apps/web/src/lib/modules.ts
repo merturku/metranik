@@ -1161,6 +1161,36 @@ const AYDINLATMA_GUC_YOGUNLUGU_KONTROLU: ModuleEntry = {
   href: "/aydinlatma-guc-yogunlugu-kontrolu",
   standard: "ASHRAE 90.1",
 };
+const GENLESME_TANKI_ON_BASINCI: ModuleEntry = {
+  id: "genlesme-tanki-on-basinci",
+  title: "Genleşme Tankı Ön Basıncı",
+  href: "/genlesme-tanki-on-basinci",
+  standard: "—",
+};
+const FLAS_BUHAR_ORANI: ModuleEntry = {
+  id: "flas-buhar-orani",
+  title: "Flaş Buhar Oranı (Blöf Tankı)",
+  href: "/flas-buhar-orani",
+  standard: "—",
+};
+const BORU_ASKI_CUBUGU_KESIT_KONTROLU: ModuleEntry = {
+  id: "boru-aski-cubugu-kesit-kontrolu",
+  title: "Boru Askı Çubuğu Kesit Kontrolü",
+  href: "/boru-aski-cubugu-kesit-kontrolu",
+  standard: "—",
+};
+const BETON_KARBONATLASMA_DERINLIGI_KONTROLU: ModuleEntry = {
+  id: "beton-karbonatlasma-derinligi-kontrolu",
+  title: "Beton Karbonatlaşma Derinliği Kontrolü",
+  href: "/beton-karbonatlasma-derinligi-kontrolu",
+  standard: "—",
+};
+const YANGIN_SONDURUCU_SAYISI_KONTROLU: ModuleEntry = {
+  id: "yangin-sondurucu-sayisi-kontrolu",
+  title: "Yangın Söndürücü Sayısı ve Kapsama Kontrolü",
+  href: "/yangin-sondurucu-sayisi-kontrolu",
+  standard: "NFPA 10",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1226,6 +1256,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           POMPA_HIDROLIK_GUCU,
           HIDROFOR_TANKI_HACMI,
           BORU_SURTUNME_KATSAYISI,
+          GENLESME_TANKI_ON_BASINCI,
         ],
       },
       {
@@ -1266,6 +1297,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KONDENS_DEBISI,
           BUHAR_KAZANI_KAPASITESI,
           BUHAR_KAZANI_BESI_SUYU_DEBISI,
+          FLAS_BUHAR_ORANI,
         ],
       },
       {
@@ -1279,7 +1311,11 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       },
       {
         label: "Montaj",
-        modules: [KONSOL_BORU_DESTEK_ARALIGI, KANAL_ASKI_MALZEME_METRAJI],
+        modules: [
+          KONSOL_BORU_DESTEK_ARALIGI,
+          KANAL_ASKI_MALZEME_METRAJI,
+          BORU_ASKI_CUBUGU_KESIT_KONTROLU,
+        ],
       },
       {
         label: "Test & Kontrol",
@@ -1398,7 +1434,11 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       },
       {
         label: "Test & Kontrol",
-        modules: [ZEMIN_TASIMA_GUCU_KONTROLU, BETON_BASINC_DAYANIMI_KONTROLU],
+        modules: [
+          ZEMIN_TASIMA_GUCU_KONTROLU,
+          BETON_BASINC_DAYANIMI_KONTROLU,
+          BETON_KARBONATLASMA_DERINLIGI_KONTROLU,
+        ],
       },
     ],
   },
@@ -1432,6 +1472,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISI_POMPASI_YILLIK_ISLETME_MALIYETI,
           BAHCE_GUBRELEME_MIKTARI,
           DUSUK_DEBILI_BATARYA_TASARRUFU,
+          YANGIN_SONDURUCU_SAYISI_KONTROLU,
         ],
       },
     ],
