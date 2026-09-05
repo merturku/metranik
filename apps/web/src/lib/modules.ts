@@ -1191,6 +1191,36 @@ const YANGIN_SONDURUCU_SAYISI_KONTROLU: ModuleEntry = {
   href: "/yangin-sondurucu-sayisi-kontrolu",
   standard: "NFPA 10",
 };
+const KONDENS_TANKI_HACMI: ModuleEntry = {
+  id: "kondens-tanki-hacmi",
+  title: "Kondens Tankı (Receiver) Hacmi",
+  href: "/kondens-tanki-hacmi",
+  standard: "—",
+};
+const BORU_EKONOMIK_CAP_SECIMI: ModuleEntry = {
+  id: "boru-ekonomik-cap-secimi",
+  title: "Boru Hattı Ekonomik Çap Seçimi",
+  href: "/boru-ekonomik-cap-secimi",
+  standard: "—",
+};
+const YANGIN_DOLABI_HORTUM_MENZIL_KONTROLU: ModuleEntry = {
+  id: "yangin-dolabi-hortum-menzil-kontrolu",
+  title: "Yangın Dolabı Hortum Menzil Kontrolü",
+  href: "/yangin-dolabi-hortum-menzil-kontrolu",
+  standard: "—",
+};
+const ZEMIN_KONSOLIDASYON_SURESI: ModuleEntry = {
+  id: "zemin-konsolidasyon-suresi",
+  title: "Zemin Konsolidasyon Süresi (Terzaghi Zaman Faktörü)",
+  href: "/zemin-konsolidasyon-suresi",
+  standard: "Terzaghi",
+};
+const KABLO_MANYETIK_ALAN_HESABI: ModuleEntry = {
+  id: "kablo-manyetik-alan-hesabi",
+  title: "Kablo Çevresindeki Manyetik Alan (Ampère Yasası)",
+  href: "/kablo-manyetik-alan-hesabi",
+  standard: "ICNIRP",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1257,6 +1287,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HIDROFOR_TANKI_HACMI,
           BORU_SURTUNME_KATSAYISI,
           GENLESME_TANKI_ON_BASINCI,
+          BORU_EKONOMIK_CAP_SECIMI,
         ],
       },
       {
@@ -1288,6 +1319,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SPRINKLER_BORU_CAPI,
           KURU_SISTEM_HAVA_KOMPRESORU,
           YANGIN_SONDURME_GAZI_MIKTARI,
+          YANGIN_DOLABI_HORTUM_MENZIL_KONTROLU,
         ],
       },
       {
@@ -1298,6 +1330,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BUHAR_KAZANI_KAPASITESI,
           BUHAR_KAZANI_BESI_SUYU_DEBISI,
           FLAS_BUHAR_ORANI,
+          KONDENS_TANKI_HACMI,
         ],
       },
       {
@@ -1367,6 +1400,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           NOTR_ILETKEN_KESITI_SECIMI,
           NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
           AYDINLATMA_GUC_YOGUNLUGU_KONTROLU,
+          KABLO_MANYETIK_ALAN_HESABI,
         ],
       },
       {
@@ -1404,6 +1438,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DOSEME_KALINLIGI,
           SU_YALITIM_MEMBRAN_BINDIRME_KONTROLU,
           ZEMIN_KONSOLIDASYON_OTURMASI,
+          ZEMIN_KONSOLIDASYON_SURESI,
           KESME_KUVVETI_KAPASITESI,
           KOLON_NARINLIK_KONTROLU,
           MERDIVEN_BASAMAK_SAYISI,

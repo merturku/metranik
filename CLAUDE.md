@@ -589,9 +589,24 @@ hedefe göre hâlâ görece geride kaldığı için önceliklendirildi.
 
 **Toplam: 199 modül, 252 test, hepsi yeşil.**
 
+### 5an. Kondens tankı/boru ekonomik çap/yangın dolabı menzil + zemin konsolidasyon süresi + kablo manyetik alan: 5 modül daha
+
+Mekanik'te 3 modül: kondens tankı (receiver) hacmi (bekletme süresi yöntemi,
+Kondens Debisi'nin ürettiği debiyi kullanır), boru hattı ekonomik çap seçimi
+(süreklilik denklemi + ekonomik hız yöntemi, D=√(4Q/(πV)) — Boru Basınç Kaybı'nın
+doğrudan girdi aldığı çapı üretir), yangın dolabı hortum menzil kontrolü
+(hortum uzunluğu + su jeti menzili vs kapsanması gereken mesafe, verdict'li —
+Yangın Dolabı Debi/Basınç'ın geometrik tamamlayıcısı). İnşaat'ta 1 modül: zemin
+konsolidasyon süresi (Terzaghi zaman faktörü, t=Tv×H²/cv — Zemin Konsolidasyon
+Oturması'nın verdiği oturma miktarının süresini tamamlar). Elektrik'te 1 modül:
+kablo çevresindeki manyetik alan (Ampère yasası, B=μ0×I/(2πr), ICNIRP referans
+seviyesiyle verdict'li).
+
+**Toplam: 204 modül, 257 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et. Mekanik hâlâ en büyük mutlak açığa
-sahip (90/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (42/65) devam
-edilebilir, sonra Elektrik denetim (42/62), sonra Ev (25/39). Her modül gerçek formül +
+sahip (93/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (43/65) devam
+edilebilir, sonra Elektrik denetim (43/62), sonra Ev (25/39). Her modül gerçek formül +
 standart atfı + çözümlü test gerektirir; referans sitenin URL'lerini
 (`projenik.com/app.html#m/...`) WebFetch ile inceleyip gerçek formül/standart bulmak
 işe yarıyor — ama sayfa client-side render olduğundan bazen sadece kısmi bilgi
@@ -599,12 +614,13 @@ dönebilir, gerekirse mühendislik bilgisiyle tamamla (uydurma sayı değil, ger
 standart formülü). Referans sitenin Mekanik/Elektrik/İnşaat menüsündeki hesap-şeklinde
 kalemler tükendiği için (bkz. §5ac) yeni modüller artık büyük ölçüde mühendislik
 muhakemesiyle (gerçek fizik/kütle-enerji dengesi formülleri) üretiliyor — yeni modül
-eklemeden önce mevcut ~199 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
-tarayıp kavramsal çakışma olmadığından emin ol. Verimli bir kaynak: mevcut modülün
-yorumunda "X mühendisin girdiği bir değer olarak alınır" dediği bir ara değeri
-ayrı bir modülde üretmek, veya bir modülün ürettiği ara sonucu (örn. blöf debisi)
-girdi alan tamamlayıcı bir modül tasarlamak (§5am'deki flaş buhar oranı örneği) —
-bu hem gerçek fizik hem de mevcut modülle doğal bir tamamlayıcılık sağlıyor.
+eklemeden önce mevcut ~204 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
+tarayıp kavramsal çakışma olmadığından emin ol. Verimli kaynaklar: (1) mevcut bir
+modülün yorumunda "X mühendisin girdiği bir değer olarak alınır" dediği bir ara
+değeri ayrı bir modülde üretmek, (2) bir modülün ürettiği ara/son sonucu girdi
+alan tamamlayıcı bir modül tasarlamak (§5am'deki flaş buhar oranı, §5an'deki
+boru ekonomik çap örnekleri) — bu hem gerçek fizik hem de mevcut modülle doğal
+bir tamamlayıcılık sağlıyor.
 
 ---
 
@@ -641,7 +657,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **199 modül, 252 test** (bkz. §5/§5b-§5am) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **204 modül, 257 test** (bkz. §5/§5b-§5an) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
