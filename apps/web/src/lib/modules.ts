@@ -1251,6 +1251,36 @@ const DUMAN_DEDEKTORU_SAYISI_KONTROLU: ModuleEntry = {
   href: "/duman-dedektoru-sayisi-kontrolu",
   standard: "NFPA 72",
 };
+const BORU_DESTEK_ARALIGI_BASIT_MESNETLI: ModuleEntry = {
+  id: "boru-destek-araligi-basit-mesnetli",
+  title: "Boru Destek Aralığı (Basit Mesnetli)",
+  href: "/boru-destek-araligi-basit-mesnetli",
+  standard: "—",
+};
+const KOMPRESOR_POLITROPIK_SIKISTIRMA_GUCU: ModuleEntry = {
+  id: "kompresor-politropik-sikistirma-gucu",
+  title: "Kompresör Politropik Sıkıştırma Gücü",
+  href: "/kompresor-politropik-sikistirma-gucu",
+  standard: "—",
+};
+const BORU_EROZYON_HIZI_KONTROLU: ModuleEntry = {
+  id: "boru-erozyon-hizi-kontrolu",
+  title: "Boru Hattı Erozyonel Hız Kontrolü",
+  href: "/boru-erozyon-hizi-kontrolu",
+  standard: "API RP 14E",
+};
+const DOSEMEDE_ZIMBALAMA_KONTROLU: ModuleEntry = {
+  id: "dosemede-zimbalama-kontrolu",
+  title: "Döşemede Zımbalama (Punching Shear) Kontrolü",
+  href: "/dosemede-zimbalama-kontrolu",
+  standard: "TS 500",
+};
+const ELEKTRIKLI_ARAC_SARJ_SURESI: ModuleEntry = {
+  id: "elektrikli-arac-sarj-suresi",
+  title: "Elektrikli Araç Şarj Süresi",
+  href: "/elektrikli-arac-sarj-suresi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1282,6 +1312,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KLIMA_SANTRALI_BASINC_KAYBI,
           BORU_ET_KALINLIGI_BARLOW,
           KOMPRESOR_SIKISTIRMA_SICAKLIGI,
+          KOMPRESOR_POLITROPIK_SIKISTIRMA_GUCU,
           VANA_KV_DEGERI,
           ISI_DEGISTIRICI_ETKINLIGI,
           DUZ_YUZEY_TASINIM_ISI_KAYBI,
@@ -1320,6 +1351,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           GENLESME_TANKI_ON_BASINCI,
           BORU_EKONOMIK_CAP_SECIMI,
           BORU_KRITIK_VANA_KAPANMA_SURESI,
+          BORU_EROZYON_HIZI_KONTROLU,
         ],
       },
       {
@@ -1381,6 +1413,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KONSOL_BORU_DESTEK_ARALIGI,
           KANAL_ASKI_MALZEME_METRAJI,
           BORU_ASKI_CUBUGU_KESIT_KONTROLU,
+          BORU_DESTEK_ARALIGI_BASIT_MESNETLI,
         ],
       },
       {
@@ -1469,6 +1502,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KIRIS_BOYUTLANDIRMA,
           TEMEL_TASIMA_KAPASITESI_MEYERHOF,
           SERIT_TEMEL_GENISLIGI_ON_BOYUTLANDIRMA,
+          DOSEMEDE_ZIMBALAMA_KONTROLU,
           DOSEME_KALINLIGI,
           SU_YALITIM_MEMBRAN_BINDIRME_KONTROLU,
           ZEMIN_KONSOLIDASYON_OTURMASI,
@@ -1543,6 +1577,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DUSUK_DEBILI_BATARYA_TASARRUFU,
           YANGIN_SONDURUCU_SAYISI_KONTROLU,
           DUMAN_DEDEKTORU_SAYISI_KONTROLU,
+          ELEKTRIKLI_ARAC_SARJ_SURESI,
         ],
       },
     ],

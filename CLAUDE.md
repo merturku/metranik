@@ -619,9 +619,25 @@ farklı ekipman).
 
 **Toplam: 209 modül, 262 test, hepsi yeşil.**
 
+### 5ap. Boru destek aralığı/kompresör gücü/erozyon hızı + döşeme zımbalama + EV şarj süresi: 5 modül daha
+
+Mekanik'te 3 modül: boru destek aralığı - basit mesnetli (klasik kiriş teorisi,
+L=√(8σS/w) — Konsol Boru Destek Aralığı Kontrolü'nün ankastre durumuna karşı
+iki nokta destekli, daha yaygın durumu kapsar), kompresör politropik sıkıştırma
+gücü (w=n/(n-1)×RT1×[(P2/P1)^((n-1)/n)-1] — Kompresör Sıkıştırma Sıcaklığı'nın
+tamamlayıcısı, aynı süreç için gücü hesaplar), boru hattı erozyonel hız kontrolü
+(API RP 14E tarzı Vmax=C/√ρ, verdict'li — Boru Ekonomik Çap Seçimi'nin ürettiği
+hızın erozyon açısından kontrolü). İnşaat'ta 1 modül: döşemede zımbalama
+(punching shear) kontrolü (TS 500, kritik çevre u=4×(c+d), Vc=0.35√fck×u×d —
+Kesme Kuvveti Kapasitesi (Beton) ile aynı katsayıyı farklı bir geometriye
+uygular, verdict'li). Ev'de 1 modül: elektrikli araç şarj süresi (enerji-güç
+ilişkisi, t=E/(P×η)).
+
+**Toplam: 214 modül, 267 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et. Mekanik hâlâ en büyük mutlak açığa
-sahip (96/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (44/65) devam
-edilebilir, sonra Elektrik denetim (44/62), sonra Ev (26/39). Her modül gerçek formül +
+sahip (99/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (45/65) devam
+edilebilir, sonra Elektrik denetim (44/62), sonra Ev (27/39). Her modül gerçek formül +
 standart atfı + çözümlü test gerektirir; referans sitenin URL'lerini
 (`projenik.com/app.html#m/...`) WebFetch ile inceleyip gerçek formül/standart bulmak
 işe yarıyor — ama sayfa client-side render olduğundan bazen sadece kısmi bilgi
@@ -629,7 +645,7 @@ dönebilir, gerekirse mühendislik bilgisiyle tamamla (uydurma sayı değil, ger
 standart formülü). Referans sitenin Mekanik/Elektrik/İnşaat menüsündeki hesap-şeklinde
 kalemler tükendiği için (bkz. §5ac) yeni modüller artık büyük ölçüde mühendislik
 muhakemesiyle (gerçek fizik/kütle-enerji dengesi formülleri) üretiliyor — yeni modül
-eklemeden önce mevcut ~209 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
+eklemeden önce mevcut ~214 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
 tarayıp kavramsal çakışma olmadığından emin ol. Verimli kaynaklar: (1) mevcut bir
 modülün yorumunda "X mühendisin girdiği bir değer olarak alınır" dediği bir ara
 değeri ayrı bir modülde üretmek, (2) bir modülün ürettiği ara/son sonucu girdi
@@ -672,7 +688,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **209 modül, 262 test** (bkz. §5/§5b-§5ao) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **214 modül, 267 test** (bkz. §5/§5b-§5ap) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
