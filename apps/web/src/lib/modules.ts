@@ -1221,6 +1221,36 @@ const KABLO_MANYETIK_ALAN_HESABI: ModuleEntry = {
   href: "/kablo-manyetik-alan-hesabi",
   standard: "ICNIRP",
 };
+const ISI_POMPASI_CARNOT_COP_SINIRI: ModuleEntry = {
+  id: "isi-pompasi-carnot-cop-siniri",
+  title: "Isı Pompası Carnot COP Sınırı",
+  href: "/isi-pompasi-carnot-cop-siniri",
+  standard: "—",
+};
+const YUZEY_YOGUSMA_RISKI_KONTROLU: ModuleEntry = {
+  id: "yuzey-yogusma-riski-kontrolu",
+  title: "Yüzey Yoğuşma Riski Kontrolü",
+  href: "/yuzey-yogusma-riski-kontrolu",
+  standard: "—",
+};
+const BORU_KRITIK_VANA_KAPANMA_SURESI: ModuleEntry = {
+  id: "boru-kritik-vana-kapanma-suresi",
+  title: "Boru Hattı Kritik Vana Kapanma Süresi (Su Darbesi)",
+  href: "/boru-kritik-vana-kapanma-suresi",
+  standard: "Allievi",
+};
+const SERIT_TEMEL_GENISLIGI_ON_BOYUTLANDIRMA: ModuleEntry = {
+  id: "serit-temel-genisligi-on-boyutlandirma",
+  title: "Şerit Temel Genişliği Ön Boyutlandırma",
+  href: "/serit-temel-genisligi-on-boyutlandirma",
+  standard: "—",
+};
+const DUMAN_DEDEKTORU_SAYISI_KONTROLU: ModuleEntry = {
+  id: "duman-dedektoru-sayisi-kontrolu",
+  title: "Duman Dedektörü Sayısı ve Yerleşim Kontrolü",
+  href: "/duman-dedektoru-sayisi-kontrolu",
+  standard: "NFPA 72",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1263,6 +1293,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_YALITIM_YUZEY_SICAKLIGI,
           HAVALANDIRMA_ISI_KAYBI,
           DUVAR_U_DEGERI_HESABI,
+          ISI_POMPASI_CARNOT_COP_SINIRI,
         ],
       },
       {
@@ -1288,6 +1319,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_SURTUNME_KATSAYISI,
           GENLESME_TANKI_ON_BASINCI,
           BORU_EKONOMIK_CAP_SECIMI,
+          BORU_KRITIK_VANA_KAPANMA_SURESI,
         ],
       },
       {
@@ -1307,6 +1339,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           JENERATOR_ODASI_HAVALANDIRMA,
           BUHARLI_NEMLENDIRICI_DEBISI,
           KANAL_IZOLASYONU_ISI_KAZANCI,
+          YUZEY_YOGUSMA_RISKI_KONTROLU,
           CO2_BAZLI_TAZE_HAVA_DEBISI,
         ],
       },
@@ -1435,6 +1468,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOLON_BOYUTLANDIRMA,
           KIRIS_BOYUTLANDIRMA,
           TEMEL_TASIMA_KAPASITESI_MEYERHOF,
+          SERIT_TEMEL_GENISLIGI_ON_BOYUTLANDIRMA,
           DOSEME_KALINLIGI,
           SU_YALITIM_MEMBRAN_BINDIRME_KONTROLU,
           ZEMIN_KONSOLIDASYON_OTURMASI,
@@ -1508,6 +1542,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BAHCE_GUBRELEME_MIKTARI,
           DUSUK_DEBILI_BATARYA_TASARRUFU,
           YANGIN_SONDURUCU_SAYISI_KONTROLU,
+          DUMAN_DEDEKTORU_SAYISI_KONTROLU,
         ],
       },
     ],

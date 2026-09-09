@@ -604,9 +604,24 @@ seviyesiyle verdict'li).
 
 **Toplam: 204 modül, 257 test, hepsi yeşil.**
 
+### 5ao. Isı pompası Carnot COP/yüzey yoğuşma/boru vana kapanma süresi + şerit temel + duman dedektörü: 5 modül daha
+
+Mekanik'te 3 modül: ısı pompası Carnot COP sınırı (termodinamik 2. yasa, gerçek
+COP'un fiziksel geçerliliğini doğrular, verdict'li), yüzey yoğuşma riski kontrolü
+(yüzey sıcaklığı vs çiy noktası + güvenlik marjı, verdict'li — Psikrometrik Çiy
+Noktası modülünün tamamlayıcısı), boru hattı kritik vana kapanma süresi (Allievi
+kriteri, tc=2L/a — Su Darbesi Basıncı (Joukowsky) modülünün zamanlama kontrolü,
+verdict'li). İnşaat'ta 1 modül: şerit temel genişliği ön boyutlandırma (B=N/qemniyet
+— Temel Taşıma Kapasitesi modüllerinin ters yönde çalışan tamamlayıcısı). Ev'de
+1 modül: duman dedektörü sayısı ve yerleşim kontrolü (NFPA 72, birim kapsama
+alanı yöntemi, verdict'li — Yangın Söndürücü Sayısı modülüyle aynı mantık,
+farklı ekipman).
+
+**Toplam: 209 modül, 262 test, hepsi yeşil.**
+
 Sıradaki oturumlarda kategori kategori devam et. Mekanik hâlâ en büyük mutlak açığa
-sahip (93/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (43/65) devam
-edilebilir, sonra Elektrik denetim (43/62), sonra Ev (25/39). Her modül gerçek formül +
+sahip (96/142); İnşaat'ta Betonarme/Zemin/Yükler alt başlıkları da (44/65) devam
+edilebilir, sonra Elektrik denetim (44/62), sonra Ev (26/39). Her modül gerçek formül +
 standart atfı + çözümlü test gerektirir; referans sitenin URL'lerini
 (`projenik.com/app.html#m/...`) WebFetch ile inceleyip gerçek formül/standart bulmak
 işe yarıyor — ama sayfa client-side render olduğundan bazen sadece kısmi bilgi
@@ -614,13 +629,13 @@ dönebilir, gerekirse mühendislik bilgisiyle tamamla (uydurma sayı değil, ger
 standart formülü). Referans sitenin Mekanik/Elektrik/İnşaat menüsündeki hesap-şeklinde
 kalemler tükendiği için (bkz. §5ac) yeni modüller artık büyük ölçüde mühendislik
 muhakemesiyle (gerçek fizik/kütle-enerji dengesi formülleri) üretiliyor — yeni modül
-eklemeden önce mevcut ~204 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
+eklemeden önce mevcut ~209 modülün başlıklarını (`grep title packages/core-calc/src/modules/*.ts`)
 tarayıp kavramsal çakışma olmadığından emin ol. Verimli kaynaklar: (1) mevcut bir
 modülün yorumunda "X mühendisin girdiği bir değer olarak alınır" dediği bir ara
 değeri ayrı bir modülde üretmek, (2) bir modülün ürettiği ara/son sonucu girdi
-alan tamamlayıcı bir modül tasarlamak (§5am'deki flaş buhar oranı, §5an'deki
-boru ekonomik çap örnekleri) — bu hem gerçek fizik hem de mevcut modülle doğal
-bir tamamlayıcılık sağlıyor.
+alan tamamlayıcı bir modül tasarlamak, (3) bir modülün "ters yönü" — verilen bir
+boyut/değeri kontrol eden modülün tersine, istenen sonuç için o boyutu/değeri
+üreten bir modül tasarlamak (§5ao'daki şerit temel genişliği örneği).
 
 ---
 
@@ -657,7 +672,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **204 modül, 257 test** (bkz. §5/§5b-§5an) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **209 modül, 262 test** (bkz. §5/§5b-§5ao) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
