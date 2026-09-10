@@ -970,3 +970,28 @@ export type {
   ElektrikliAracSarjSuresiInput,
   ElektrikliAracSarjSuresiOutput,
 } from "./modules/elektrikli-arac-sarj-suresi";
+export { kanalEsdegerCap } from "./modules/kanal-esdeger-cap";
+export type {
+  KanalEsdegerCapInput,
+  KanalEsdegerCapOutput,
+} from "./modules/kanal-esdeger-cap";
+export { buharTrapKapasitesi } from "./modules/buhar-trap-kapasitesi";
+export type {
+  BuharTrapKapasitesiInput,
+  BuharTrapKapasitesiOutput,
+} from "./modules/buhar-trap-kapasitesi";
+export { yakitDeposuOtonomiSuresi } from "./modules/yakit-deposu-otonomi-suresi";
+export type {
+  YakitDeposuOtonomiSuresiInput,
+  YakitDeposuOtonomiSuresiOutput,
+} from "./modules/yakit-deposu-otonomi-suresi";
+export { kazikElastikKisalmasi } from "./modules/kazik-elastik-kisalmasi";
+export type {
+  KazikElastikKisalmasiInput,
+  KazikElastikKisalmasiOutput,
+} from "./modules/kazik-elastik-kisalmasi";
+export { kompanzasyonRezonansKontrolu } from "./modules/kompanzasyon-rezonans-kontrolu";
+export type {
+  KompanzasyonRezonansKontroluInput,
+  KompanzasyonRezonansKontroluOutput,
+} from "./modules/kompanzasyon-rezonans-kontrolu";

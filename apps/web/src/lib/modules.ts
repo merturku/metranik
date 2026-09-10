@@ -1281,6 +1281,36 @@ const ELEKTRIKLI_ARAC_SARJ_SURESI: ModuleEntry = {
   href: "/elektrikli-arac-sarj-suresi",
   standard: "—",
 };
+const KANAL_ESDEGER_CAP: ModuleEntry = {
+  id: "kanal-esdeger-cap",
+  title: "Kanal Eşdeğer Çapı (Dikdörtgen → Dairesel)",
+  href: "/kanal-esdeger-cap",
+  standard: "ASHRAE/SMACNA",
+};
+const BUHAR_TRAP_KAPASITESI: ModuleEntry = {
+  id: "buhar-trap-kapasitesi",
+  title: "Buhar Trap (Kondens Tuzağı) Kapasitesi",
+  href: "/buhar-trap-kapasitesi",
+  standard: "—",
+};
+const YAKIT_DEPOSU_OTONOMI_SURESI: ModuleEntry = {
+  id: "yakit-deposu-otonomi-suresi",
+  title: "Yakıt Deposu Otonomi Süresi",
+  href: "/yakit-deposu-otonomi-suresi",
+  standard: "—",
+};
+const KAZIK_ELASTIK_KISALMASI: ModuleEntry = {
+  id: "kazik-elastik-kisalmasi",
+  title: "Kazık Elastik Kısalması",
+  href: "/kazik-elastik-kisalmasi",
+  standard: "—",
+};
+const KOMPANZASYON_REZONANS_KONTROLU: ModuleEntry = {
+  id: "kompanzasyon-rezonans-kontrolu",
+  title: "Kompanzasyon Rezonans Kontrolü",
+  href: "/kompanzasyon-rezonans-kontrolu",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1305,6 +1335,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           PENCERE_DUVAR_ISI_KAYBI,
           DENGE_KABI_HACMI,
           ENDUSTRIYEL_BOYLER_YAKIT_TUKETIMI,
+          YAKIT_DEPOSU_OTONOMI_SURESI,
           KOLLEKTOR_DEVRE_SAYISI,
           FCU_HAVA_TARAFI_KAPASITESI,
           VAV_KUTUSU_MINIMUM_DEBI,
@@ -1373,6 +1404,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KANAL_IZOLASYONU_ISI_KAZANCI,
           YUZEY_YOGUSMA_RISKI_KONTROLU,
           CO2_BAZLI_TAZE_HAVA_DEBISI,
+          KANAL_ESDEGER_CAP,
         ],
       },
       {
@@ -1396,6 +1428,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BUHAR_KAZANI_BESI_SUYU_DEBISI,
           FLAS_BUHAR_ORANI,
           KONDENS_TANKI_HACMI,
+          BUHAR_TRAP_KAPASITESI,
         ],
       },
       {
@@ -1462,6 +1495,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KONDANSATOR_DEPOLANAN_ENERJI,
           MOTOR_SENKRON_HIZI,
           KOMPANZASYON_KONDANSATOR_AKIMI,
+          KOMPANZASYON_REZONANS_KONTROLU,
           KABLO_TAVASI_BOYUTLANDIRMA,
           NOTR_ILETKEN_KESITI_SECIMI,
           NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
@@ -1525,6 +1559,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HAFRIYAT_HACMI_KAMYON_SEFERI,
           ZEMIN_YATAK_KATSAYISI_DUZELTMESI,
           KAZIK_GRUBU_VERIMLILIGI,
+          KAZIK_ELASTIK_KISALMASI,
           DUVAR_TUGLASI_METRAJI,
           SIVA_HARC_MIKTARI,
           CATI_KAPLAMA_METRAJI,
