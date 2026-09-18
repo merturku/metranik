@@ -1311,6 +1311,36 @@ const KOMPANZASYON_REZONANS_KONTROLU: ModuleEntry = {
   href: "/kompanzasyon-rezonans-kontrolu",
   standard: "—",
 };
+const KAPALI_SISTEM_DOLUM_DEBISI: ModuleEntry = {
+  id: "kapali-sistem-dolum-debisi",
+  title: "Kapalı Sistem Dolum Debisi",
+  href: "/kapali-sistem-dolum-debisi",
+  standard: "EN 12828",
+};
+const FAN_GIRIS_AGI_KAYBI: ModuleEntry = {
+  id: "fan-giris-agi-kaybi",
+  title: "Fan Giriş Ağı Kaybı",
+  href: "/fan-giris-agi-kaybi",
+  standard: "ASHRAE",
+};
+const BORU_HAVA_HIZI_KONTROLU: ModuleEntry = {
+  id: "boru-hava-hizi-kontrolu",
+  title: "Boru Hava Hızı Kontrolü",
+  href: "/boru-hava-hizi-kontrolu",
+  standard: "ISO 4414",
+};
+const ISI_POMPASI_KONDENSER_KAPASITESI: ModuleEntry = {
+  id: "isi-pompasi-kondenser-kapasitesi",
+  title: "Isı Pompası Kondenser Kapasitesi",
+  href: "/isi-pompasi-kondenser-kapasitesi",
+  standard: "—",
+};
+const YANGIN_HATTI_STATIK_BASINC: ModuleEntry = {
+  id: "yangin-hatti-statik-basinc",
+  title: "Yangın Hattı Statik Basınç Düşümü",
+  href: "/yangin-hatti-statik-basinc",
+  standard: "NFPA 13",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1356,6 +1386,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HAVALANDIRMA_ISI_KAYBI,
           DUVAR_U_DEGERI_HESABI,
           ISI_POMPASI_CARNOT_COP_SINIRI,
+          KAPALI_SISTEM_DOLUM_DEBISI,
+          ISI_POMPASI_KONDENSER_KAPASITESI,
         ],
       },
       {
@@ -1405,6 +1437,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YUZEY_YOGUSMA_RISKI_KONTROLU,
           CO2_BAZLI_TAZE_HAVA_DEBISI,
           KANAL_ESDEGER_CAP,
+          FAN_GIRIS_AGI_KAYBI,
         ],
       },
       {
@@ -1417,6 +1450,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KURU_SISTEM_HAVA_KOMPRESORU,
           YANGIN_SONDURME_GAZI_MIKTARI,
           YANGIN_DOLABI_HORTUM_MENZIL_KONTROLU,
+          YANGIN_HATTI_STATIK_BASINC,
         ],
       },
       {
@@ -1438,6 +1472,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BASINCLI_HAVA_BORU_CAPI,
           HAVA_DEPOSU_BOYUTLANDIRMA,
           HAVA_KURUTUCU_KAPASITE_SECIMI,
+          BORU_HAVA_HIZI_KONTROLU,
         ],
       },
       {

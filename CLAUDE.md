@@ -705,7 +705,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **219 modül, 272 test** (bkz. §5/§5b-§5aq) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **224 modül, 289 test** (bkz. §5/§5b-§5ar) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -716,3 +716,35 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
 
 Sıradaki karar noktası: Faz 2 (BIM/IFC-native metraj, `packages/ifc`, web-ifc) — ayrı
 bir mimari planlama gerektirir, kendiliğinden başlanmaz, önce birlikte karar verilir.
+
+### 5ar. Kapalı sistem + Fan giriş + Basınçlı hava/Isı pompası/Yangın: 5 modül daha
+
+Mekanik disiplini hedefe göre en büyük açığa sahip olduğu için (102/142 = 71.8%) önceliklendirildi.
+5 modül eklendi:
+
+- **Kapalı Sistem Dolum Debisi** (EN 12828): Isıtma-Soğutma. Sistem bileşenlerinin
+  toplam hacminden, doldurma işlemi için gerekli pompa debisini hesaplar (Q_dolum = 0.5 m/h × A_sistem).
+  Test: 100L kazanı + 80L radyatör + 20L boru, 0.5 m/h → 100 L/h, 120 dakika.
+
+- **Fan Giriş Ağı Kaybı** (ASHRAE): Havalandırma. Fan giriş ağı (filter, silencer) basınç
+  kaybı: ΔP = ζ × (ρ × V²/2). Direnç katsayısı ve hava hızından statik basınç düşümü.
+  Test: ζ=0.8 (filter+silencer), V=5 m/s, ρ=1.2 kg/m³ → ΔP ≈ 12 Pa.
+
+- **Boru Hava Hızı Kontrolü** (ISO 4414): Basınçlı Hava. Basınçlı hava hattı çapından
+  hava hızını hesaplar ve 2–6 m/s kabul aralığıyla karşılaştırır (verdict'li).
+  Test: Q=0.002 m³/s, D=20 mm → V≈6.37 m/s, yüksek; Q=0.001 m³/s → V≈3.18 m/s, uygun.
+
+- **Isı Pompası Kondenser Kapasitesi**: Isıtma-Soğutma. Kompresör gücü × COP'ten
+  kondenserin yayması gereken ısıyı hesaplar ve kondenser kapasite kontrolü (verdict'li).
+  Test: W=10 kW, COP=3.5 → Q_cond=35 kW, kondenser=40 kW → uygun.
+
+- **Yangın Hattı Statik Basınç Düşümü** (NFPA 13): Yangın. Yangın sprinkler sistemi
+  ana hattında suyun akışından kaynaklanan statik basınç düşümü: ΔP = f×(L/D)×(ρ×V²/2).
+  Darcy-Weisbach denklemiyle. Test: f=0.025, L=50m, D=0.04m, V=2.0 m/s → ΔP≈62500 Pa (0.625 bar).
+
+**Toplam: 224 modül, 289 test, hepsi yeşil.**
+
+Tüm modüller Zod şeması + deterministic compute + intermediates + standardsUsed +
+optional verdict döndürür. Sayfaları CalcPage component'i kullanarak formula ve
+engineeringNote prop'ları ile görüntülenir. modules.ts'teki MODUL_GRUPLARI'na
+(Isıtma-Soğutma, Havalandırma, Basınçlı Hava, Yangın) yerleştirildi.
