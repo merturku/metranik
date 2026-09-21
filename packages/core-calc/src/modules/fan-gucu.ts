@@ -1,40 +1,40 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
-// Fan/vantilatör mil gücü: P = Q × ΔP / η.
-// Q: hava debisi (m³/h), ΔP: toplam basınç kaybı (Pa), η: fan verimi (0-1).
-export const fanGucuInputSchema = z.object({
-  debi_Q_m3h: z.number().positive(),
-  basincKaybi_dP_Pa: z.number().positive(),
-  fanVerimi_eta: z.number().positive().max(1),
+export const fanGucuSchema = z.object({
+  volumetrik_debi_m3s: z.number().positive(),
+  toplam_basinc_Pa: z.number().positive(),
+  verim_yuzde: z.number().positive().max(100),
 });
 
-export type FanGucuInput = z.infer<typeof fanGucuInputSchema>;
+export type FanGucuInput = z.infer<typeof fanGucuSchema>;
 
 export interface FanGucuOutput {
-  guc_kW: number;
-}
-
-function compute(input: FanGucuInput): CalcResult<FanGucuOutput> {
-  const debi_m3s = input.debi_Q_m3h / 3600;
-  const guc_W = (debi_m3s * input.basincKaybi_dP_Pa) / input.fanVerimi_eta;
-  const guc_kW = guc_W / 1000;
-
-  return {
-    value: { guc_kW },
-    intermediates: {
-      debi_m3s: Number(debi_m3s.toFixed(4)),
-      fanVerimi_eta: input.fanVerimi_eta,
-    },
-    standardsUsed: [],
-  };
+  hidrolik_guç_kW: number;
+  motor_gucu_kW: number;
 }
 
 export const fanGucu: CalcModule<FanGucuInput, FanGucuOutput> = {
   id: "fan-gucu",
   title: "Fan Gücü",
   discipline: "mekanik",
-  standards: [],
-  inputSchema: fanGucuInputSchema,
-  compute,
+  standards: ["ASHRAE"],
+  inputSchema: fanGucuSchema,
+
+  compute(input: FanGucuInput): CalcResult<FanGucuOutput> {
+    const hidrolik_guç_W = input.volumetrik_debi_m3s * input.toplam_basinc_Pa;
+    const hidrolik_guç_kW = hidrolik_guç_W / 1000;
+    const motor_gucu_kW = hidrolik_guç_kW / (input.verim_yuzde / 100);
+
+    return {
+      value: {
+        hidrolik_guç_kW: Math.round(hidrolik_guç_kW * 100) / 100,
+        motor_gucu_kW: Math.round(motor_gucu_kW * 100) / 100,
+      },
+      intermediates: {
+        verim_oran: input.verim_yuzde / 100,
+      },
+      standardsUsed: ["ASHRAE"],
+    };
+  },
 };

@@ -1,13 +1,15 @@
-import { describe, expect, it } from "vitest";
+import { describe, it, expect } from "vitest";
 import { fanGucu } from "./fan-gucu";
 
-describe("fanGucu", () => {
-  it("Q=5000 m³/h, ΔP=800 Pa, η=0.65 → ≈1.71 kW", () => {
+describe("Fan Gücü", () => {
+  it("ASHRAE: Q=1 m³/s, ΔP=500 Pa, η=70% → P_hidrolik=0.5 kW, P_motor≈0.71 kW", () => {
     const r = fanGucu.compute({
-      debi_Q_m3h: 5000,
-      basincKaybi_dP_Pa: 800,
-      fanVerimi_eta: 0.65,
+      volumetrik_debi_m3s: 1,
+      toplam_basinc_Pa: 500,
+      verim_yuzde: 70,
     });
-    expect(r.value.guc_kW).toBeCloseTo(1.7094, 3);
+
+    expect(r.value.hidrolik_guç_kW).toBeCloseTo(0.5, 1);
+    expect(r.value.motor_gucu_kW).toBeCloseTo(0.71, 1);
   });
 });
