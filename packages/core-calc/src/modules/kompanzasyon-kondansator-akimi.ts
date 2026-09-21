@@ -1,45 +1,43 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
-// Üç fazlı kompanzasyon kondansatör bataryasının hat akımı:
-// Ic = Qc / (√3 × V). Qc: reaktif güç (kVAr), V: hat gerilimi (V).
-// Kablo/kesici/kontaktör seçiminde kullanılır.
-export const kompanzasyonKondansatorAkimiInputSchema = z.object({
-  reaktifGuc_Qc_kVAr: z.number().positive(),
-  hatGerilimi_V_V: z.number().positive(),
+export const kompanzasyonKondansatorAkimiSchema = z.object({
+  gucsel_guc_kVA: z.number().positive(),
+  mevcut_cos_phi: z.number().positive().max(1),
+  hedef_cos_phi: z.number().positive().max(1),
+  isletme_gerilimi_V: z.number().positive(),
 });
 
-export type KompanzasyonKondansatorAkimiInput = z.infer<
-  typeof kompanzasyonKondansatorAkimiInputSchema
->;
+export type KompanzasyonKondansatorAkimiInput = z.infer<typeof kompanzasyonKondansatorAkimiSchema>;
 
 export interface KompanzasyonKondansatorAkimiOutput {
-  hatAkimi_Ic_A: number;
+  gereken_reaktif_guc_kVAr: number;
+  kondansator_akimi_A: number;
 }
 
-function compute(
-  input: KompanzasyonKondansatorAkimiInput,
-): CalcResult<KompanzasyonKondansatorAkimiOutput> {
-  const reaktifGuc_VAr = input.reaktifGuc_Qc_kVAr * 1000;
-  const hatAkimi_Ic_A = reaktifGuc_VAr / (Math.sqrt(3) * input.hatGerilimi_V_V);
-
-  return {
-    value: { hatAkimi_Ic_A },
-    intermediates: {
-      hatGerilimi_V_V: input.hatGerilimi_V_V,
-    },
-    standardsUsed: [],
-  };
-}
-
-export const kompanzasyonKondansatorAkimi: CalcModule<
-  KompanzasyonKondansatorAkimiInput,
-  KompanzasyonKondansatorAkimiOutput
-> = {
+export const kompanzasyonKondansatorAkimi: CalcModule<KompanzasyonKondansatorAkimiInput, KompanzasyonKondansatorAkimiOutput> = {
   id: "kompanzasyon-kondansator-akimi",
   title: "Kompanzasyon Kondansatör Akımı",
   discipline: "elektrik",
-  standards: [],
-  inputSchema: kompanzasyonKondansatorAkimiInputSchema,
-  compute,
+  standards: ["IEC 60831"],
+  inputSchema: kompanzasyonKondansatorAkimiSchema,
+
+  compute(input: KompanzasyonKondansatorAkimiInput): CalcResult<KompanzasyonKondansatorAkimiOutput> {
+    const tan_phi_mevcut = Math.sqrt(1 / Math.pow(input.mevcut_cos_phi, 2) - 1);
+    const tan_phi_hedef = Math.sqrt(1 / Math.pow(input.hedef_cos_phi, 2) - 1);
+    const gereken_reaktif_guc_kVAr = input.gucsel_guc_kVA * (tan_phi_mevcut - tan_phi_hedef);
+    const kondansator_akimi_A = (gereken_reaktif_guc_kVAr * 1000) / (Math.sqrt(3) * input.isletme_gerilimi_V);
+
+    return {
+      value: {
+        gereken_reaktif_guc_kVAr: Math.round(gereken_reaktif_guc_kVAr * 10) / 10,
+        kondansator_akimi_A: Math.round(kondansator_akimi_A * 10) / 10,
+      },
+      intermediates: {
+        tan_phi_mevcut: Math.round(tan_phi_mevcut * 1000) / 1000,
+        tan_phi_hedef: Math.round(tan_phi_hedef * 1000) / 1000,
+      },
+      standardsUsed: ["IEC 60831"],
+    };
+  },
 };

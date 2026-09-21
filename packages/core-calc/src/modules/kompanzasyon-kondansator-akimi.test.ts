@@ -1,12 +1,15 @@
-import { describe, expect, it } from "vitest";
+import { describe, it, expect } from "vitest";
 import { kompanzasyonKondansatorAkimi } from "./kompanzasyon-kondansator-akimi";
 
-describe("kompanzasyonKondansatorAkimi", () => {
-  it("Qc=100 kVAr, V=400V → Ic≈144.34 A", () => {
+describe("Kompanzasyon Kondansatör Akımı", () => {
+  it("IEC 60831: 100 kVA, cos φ 0.8→0.98, 400V → 54.7 kVAr", () => {
     const r = kompanzasyonKondansatorAkimi.compute({
-      reaktifGuc_Qc_kVAr: 100,
-      hatGerilimi_V_V: 400,
+      gucsel_guc_kVA: 100,
+      mevcut_cos_phi: 0.8,
+      hedef_cos_phi: 0.98,
+      isletme_gerilimi_V: 400,
     });
-    expect(r.value.hatAkimi_Ic_A).toBeCloseTo(144.3376, 3);
+
+    expect(r.value.gereken_reaktif_guc_kVAr).toBeCloseTo(54.7, 0);
   });
 });
