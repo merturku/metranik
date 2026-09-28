@@ -1388,6 +1388,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISI_POMPASI_CARNOT_COP_SINIRI,
           KAPALI_SISTEM_DOLUM_DEBISI,
           ISI_POMPASI_KONDENSER_KAPASITESI,
+          SOGUTMA_KULESI_KAPASITESI_KONTROLU,
+          ISI_ESJANJORU_EFFEKTIVITESI,
+          SOGUTMA_DOLUM_PROSEDURU_KONTROL_SURESI,
         ],
       },
       {
@@ -1463,6 +1466,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           FLAS_BUHAR_ORANI,
           KONDENS_TANKI_HACMI,
           BUHAR_TRAP_KAPASITESI,
+          BUHAR_SISTEMI_VAKUUM_KONTROLU,
         ],
       },
       {
@@ -1473,6 +1477,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HAVA_DEPOSU_BOYUTLANDIRMA,
           HAVA_KURUTUCU_KAPASITE_SECIMI,
           BORU_HAVA_HIZI_KONTROLU,
+          KOMPRESSOR_ASPIRASYON_BASINC_KAYBI,
         ],
       },
       {
@@ -1688,3 +1693,34 @@ export function ilgiliModuller(moduleId: string, limit = 4): ModuleEntry[] {
   }
   return [];
 }
+
+const SOGUTMA_KULESI_KAPASITESI_KONTROLU: ModuleEntry = {
+  id: "sogutma-kulesi-kapasitesi-kontrolu",
+  title: "Soğutma Kulesi Kapasitesi Kontrolü",
+  href: "/sogutma-kulesi-kapasitesi-kontrolu",
+  standard: "EN 12113",
+};
+const ISI_ESJANJORU_EFFEKTIVITESI: ModuleEntry = {
+  id: "isi-esjanjoru-effektivitesi",
+  title: "Isı Eşanjörü Effektivitesi (ε-NTU)",
+  href: "/isi-esjanjoru-effektivitesi",
+  standard: "EN 12815",
+};
+const KOMPRESSOR_ASPIRASYON_BASINC_KAYBI: ModuleEntry = {
+  id: "kompressor-aspirasyon-basinc-kaybi",
+  title: "Kompresör Aspirasyon Basınç Kaybı",
+  href: "/kompressor-aspirasyon-basinc-kaybi",
+  standard: "ISO 4414",
+};
+const BUHAR_SISTEMI_VAKUUM_KONTROLU: ModuleEntry = {
+  id: "buhar-sistemi-vakuum-kontrolu",
+  title: "Buhar Sistemi Vakuum Kontrolü",
+  href: "/buhar-sistemi-vakuum-kontrolu",
+  standard: "ASME PTC 12.2",
+};
+const SOGUTMA_DOLUM_PROSEDURU_KONTROL_SURESI: ModuleEntry = {
+  id: "sogutma-dolum-proseduru-kontrol-suresi",
+  title: "Soğutma Dolum Prosedürü Kontrol Süresi",
+  href: "/sogutma-dolum-proseduru-kontrol-suresi",
+  standard: "EN 12828",
+};

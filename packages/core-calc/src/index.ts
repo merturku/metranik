@@ -1045,3 +1045,8 @@ export type {
   ElektrikliKaloriferBoyutlandirmaInput,
   ElektrikliKaloriferBoyutlandirmaOutput,
 } from "./modules/elektrikli-kalorifer-boyutlandirma";
+export { sogutmaKulesiKapasitesiKontrolu } from "./modules/sogutma-kulesi-kapasitesi-kontrolu";
+export { isiEsjanjoreEffektivitesi } from "./modules/isi-esjanjoru-effektivitesi";
+export { kompressorAspirasyanBasincKaybi } from "./modules/kompressor-aspirasyon-basinc-kaybi";
+export { buharSistemiVakuumKontrolu } from "./modules/buhar-sistemi-vakuum-kontrolu";
+export { sogutmaDolumProsedureKontrolSuresi } from "./modules/sogutma-dolum-proseduru-kontrol-suresi";
