@@ -2,29 +2,36 @@ import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
 export const modul_244Schema = z.object({
-  deger_1: z.number().positive().default(10),
-  deger_2: z.number().positive().default(5),
+  akim_A: z.number().positive(),
+  direnc_Ω: z.number().positive(),
+  temp_artisi_K: z.number().default(20),
 });
 
-export type Modul244Input = z.infer<typeof modul_244Schema>;
+export type Modul_244Input = z.infer<typeof modul_244Schema>;
 
-export interface Modul244Output {
-  sonuc: number;
+export interface Modul_244Output {
+  guc_kaybi_W: number;
+  sonda_sicakligi_C: number;
 }
 
-export const modul_244: CalcModule<Modul244Input, Modul244Output> = {
+export const modul_244: CalcModule<Modul_244Input, Modul_244Output> = {
   id: "modul_244",
-  title: "Kablo Direnci (Sıcaklık)",
+  title: "Kablo I²R Kaybı ve Sıcaklığı",
   discipline: "elektrik",
-  standards: ['IEC 60364'],
+  standards: ["IEC 60364"],
   inputSchema: modul_244Schema,
 
-  compute(input: Modul244Input): CalcResult<Modul244Output> {
-    const sonuc = input.deger_1 * input.deger_2;
+  compute(input: Modul_244Input): CalcResult<Modul_244Output> {
+    const P_kaybi = input.akim_A * input.akim_A * input.direnc_Ω;
+    const T_sonda = 20 + input.temp_artisi_K;
+
     return {
-      value: { sonuc: Math.round(sonuc * 100) / 100 },
-      intermediates: {},
-      standardsUsed: ['IEC 60364'],
+      value: {
+        guc_kaybi_W: Math.round(P_kaybi * 10) / 10,
+        sonda_sicakligi_C: T_sonda,
+      },
+      intermediates: { I2R: Math.round(P_kaybi * 100) / 100 },
+      standardsUsed: ["IEC 60364"],
     };
   },
 };

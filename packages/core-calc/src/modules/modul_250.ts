@@ -1,30 +1,21 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
-export const modul_250Schema = z.object({
-  deger_1: z.number().positive().default(10),
-  deger_2: z.number().positive().default(5),
-});
+export const modul_250Schema = z.object({ girdi: z.number().positive().default(1) });
+export type Modul_250Input = z.infer<typeof modul_250Schema>;
+export interface Modul_250Output { sonuc: number; }
 
-export type Modul250Input = z.infer<typeof modul_250Schema>;
-
-export interface Modul250Output {
-  sonuc: number;
-}
-
-export const modul_250: CalcModule<Modul250Input, Modul250Output> = {
+export const modul_250: CalcModule<Modul_250Input, Modul_250Output> = {
   id: "modul_250",
-  title: "Rüzgarda Pompa Çalışması",
+  title: "Modül 250",
   discipline: "mekanik",
-  standards: ['ISO 9906'],
+  standards: ["—"],
   inputSchema: modul_250Schema,
-
-  compute(input: Modul250Input): CalcResult<Modul250Output> {
-    const sonuc = input.deger_1 * input.deger_2;
+  compute(input: Modul_250Input): CalcResult<Modul_250Output> {
     return {
-      value: { sonuc: Math.round(sonuc * 100) / 100 },
+      value: { sonuc: input.girdi * 1.5 },
       intermediates: {},
-      standardsUsed: ['ISO 9906'],
+      standardsUsed: ["—"],
     };
   },
 };

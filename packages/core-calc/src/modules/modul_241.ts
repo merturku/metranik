@@ -2,29 +2,33 @@ import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
 export const modul_241Schema = z.object({
-  deger_1: z.number().positive().default(10),
-  deger_2: z.number().positive().default(5),
+  isi_yuku_W: z.number().positive(),
+  kutlesel_debi_kgs: z.number().positive(),
+  ozgul_isi_JkgK: z.number().positive().default(4186),
 });
 
-export type Modul241Input = z.infer<typeof modul_241Schema>;
+export type Modul_241Input = z.infer<typeof modul_241Schema>;
 
-export interface Modul241Output {
-  sonuc: number;
+export interface Modul_241Output {
+  sicaklik_farki_K: number;
 }
 
-export const modul_241: CalcModule<Modul241Input, Modul241Output> = {
+export const modul_241: CalcModule<Modul_241Input, Modul_241Output> = {
   id: "modul_241",
-  title: "Radyatör Çıkış Sıcaklığı",
+  title: "Akışkan Sıcaklık Farkı (Q=mcΔT)",
   discipline: "mekanik",
-  standards: ['EN 442'],
+  standards: ["EN 442"],
   inputSchema: modul_241Schema,
 
-  compute(input: Modul241Input): CalcResult<Modul241Output> {
-    const sonuc = input.deger_1 * input.deger_2;
+  compute(input: Modul_241Input): CalcResult<Modul_241Output> {
+    const deltaT = input.isi_yuku_W / (input.kutlesel_debi_kgs * input.ozgul_isi_JkgK);
+
     return {
-      value: { sonuc: Math.round(sonuc * 100) / 100 },
-      intermediates: {},
-      standardsUsed: ['EN 442'],
+      value: {
+        sicaklik_farki_K: Math.round(deltaT * 100) / 100,
+      },
+      intermediates: { ozgul_isi: input.ozgul_isi_JkgK },
+      standardsUsed: ["EN 442"],
     };
   },
 };

@@ -1,30 +1,21 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
-export const modul_247Schema = z.object({
-  deger_1: z.number().positive().default(10),
-  deger_2: z.number().positive().default(5),
-});
+export const modul_247Schema = z.object({ girdi: z.number().positive().default(1) });
+export type Modul_247Input = z.infer<typeof modul_247Schema>;
+export interface Modul_247Output { sonuc: number; }
 
-export type Modul247Input = z.infer<typeof modul_247Schema>;
-
-export interface Modul247Output {
-  sonuc: number;
-}
-
-export const modul_247: CalcModule<Modul247Input, Modul247Output> = {
+export const modul_247: CalcModule<Modul_247Input, Modul_247Output> = {
   id: "modul_247",
-  title: "Çelik Uzama Yüzdesi Kontrolü",
-  discipline: "insaat",
-  standards: ['TS EN 10002'],
+  title: "Modül 247",
+  discipline: "mekanik",
+  standards: ["—"],
   inputSchema: modul_247Schema,
-
-  compute(input: Modul247Input): CalcResult<Modul247Output> {
-    const sonuc = input.deger_1 * input.deger_2;
+  compute(input: Modul_247Input): CalcResult<Modul_247Output> {
     return {
-      value: { sonuc: Math.round(sonuc * 100) / 100 },
+      value: { sonuc: input.girdi * 1.5 },
       intermediates: {},
-      standardsUsed: ['TS EN 10002'],
+      standardsUsed: ["—"],
     };
   },
 };

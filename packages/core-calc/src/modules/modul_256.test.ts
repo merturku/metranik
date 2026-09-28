@@ -1,3 +1,9 @@
 import { describe, it, expect } from "vitest";
 import { modul_256 } from "./modul_256";
-describe("M256", () => { it("T", () => { const r = modul_256.compute({ v: 1 }); expect(r.value.r).toBe(2); }); });
+
+describe("Modül 256", () => {
+  it("Test: 1 → 1.5", () => {
+    const r = modul_256.compute({ girdi: 1 });
+    expect(r.value.sonuc).toBe(1.5);
+  });
+});
