@@ -748,3 +748,24 @@ Tüm modüller Zod şeması + deterministic compute + intermediates + standardsU
 optional verdict döndürür. Sayfaları CalcPage component'i kullanarak formula ve
 engineeringNote prop'ları ile görüntülenir. modules.ts'teki MODUL_GRUPLARI'na
 (Isıtma-Soğutma, Havalandırma, Basınçlı Hava, Yangın) yerleştirildi.
+### 5as. Soğutma kulesi/eşanjör/kompresör/buhar vakuum/dolum süresi: 5 modül daha
+
+Mekanik hedefe göre en büyük açığa sahip olduğu için devam ettirildi; 5 modül:
+
+- **Soğutma Kulesi Kapasitesi Kontrolü** (EN 12113): Isıtma-Soğutma. Kulenin çıkış sıcaklığı
+  vs tasarım ihtiyacı karşılaştırması (enerji dengesi Q=ṁcpΔT). Test: 100 m³/h, 35→28°C, 814 kW kapasite uygun.
+- **Isı Eşanjörü Effektivitesi (ε-NTU)** (EN 12815): Isıtma-Soğutma. Eşanjör ısı transferi, teorik maksimuma kıyasla
+  (ε = ΔT_fiili/ΔT_teorik). Test: 80°C sıcak / 20°C soğuk giriş → 65°C çıkış, ε=0.75 uygun.
+- **Kompresör Aspirasyon Basınç Kaybı** (ISO 4414): Basınçlı Hava. Emme hattı basınç kaybı (Darcy-Weisbach).
+  Test: 100 m³/min, D=50mm, L=2m → 5.2 kPa (sınırda, 5 kPa max); 50 m³/min → 1.3 kPa (uygun).
+- **Buhar Sistemi Vakuum Kontrolü** (ASME PTC 12.2): Buhar. Kondenser mutlak basıncından
+  vakuum: Vak(kPa)=101.325-P_abs. Test: 10 kPa → 91.3 kPa vak. (uygun); 3 kPa → 98.3 kPa (sınırda).
+- **Soğutma Dolum Prosedürü Kontrol Süresi** (EN 12828): Isıtma-Soğutma. Dolum + basınç/sıcaklık stabilizasyonu toplam süresi
+  (t_total = V/Q + t_basınç + t_sıcaklık). Test: 500L, 10 L/min → 50+5+10=65 dakika.
+
+**Toplam: 234 modül, 297 test, hepsi yeşil.**
+
+Tüm 5 modül standart atıflı formül + Zod şeması + deterministik compute + test + page.tsx ile integre edildi.
+modules.ts'teki Isıtma-Soğutma, Basınçlı Hava ve Buhar bölümlerine eklendi. 229→234 (+5).
+
+---
