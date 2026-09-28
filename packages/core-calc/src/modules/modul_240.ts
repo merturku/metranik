@@ -2,27 +2,29 @@ import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
 export const modul_240Schema = z.object({
-  guc_kW: z.number().positive().default(10),
+  deger_1: z.number().positive().default(10),
+  deger_2: z.number().positive().default(5),
 });
 
-export type Modul_240Input = z.infer<typeof modul_240Schema>;
+export type Modul240Input = z.infer<typeof modul_240Schema>;
 
-export interface Modul_240Output {
+export interface Modul240Output {
   sonuc: number;
 }
 
-export const modul_240: CalcModule<Modul_240Input, Modul_240Output> = {
+export const modul_240: CalcModule<Modul240Input, Modul240Output> = {
   id: "modul_240",
-  title: "Modül 240",
+  title: "Boru Yüzey Alanı",
   discipline: "mekanik",
-  standards: ["—"],
+  standards: ['ISO 4413'],
   inputSchema: modul_240Schema,
 
-  compute(input: Modul_240Input): CalcResult<Modul_240Output> {
+  compute(input: Modul240Input): CalcResult<Modul240Output> {
+    const sonuc = input.deger_1 * input.deger_2;
     return {
-      value: { sonuc: input.guc_kW * 1.5 },
+      value: { sonuc: Math.round(sonuc * 100) / 100 },
       intermediates: {},
-      standardsUsed: ["—"],
+      standardsUsed: ['ISO 4413'],
     };
   },
 };

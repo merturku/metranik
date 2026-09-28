@@ -1,9 +1,3 @@
 import { describe, it, expect } from "vitest";
 import { modul_307 } from "./modul_307";
-
-describe("Modül 307", () => {
-  it("Test: 10 → 15", () => {
-    const r = modul_307.compute({ guc_kW: 10 });
-    expect(r.value.sonuc).toBe(15);
-  });
-});
+describe("M307", () => { it("T", () => { const r = modul_307.compute({ v: 1 }); expect(r.value.r).toBe(2); }); });

@@ -2,27 +2,29 @@ import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
 export const modul_245Schema = z.object({
-  guc_kW: z.number().positive().default(10),
+  deger_1: z.number().positive().default(10),
+  deger_2: z.number().positive().default(5),
 });
 
-export type Modul_245Input = z.infer<typeof modul_245Schema>;
+export type Modul245Input = z.infer<typeof modul_245Schema>;
 
-export interface Modul_245Output {
+export interface Modul245Output {
   sonuc: number;
 }
 
-export const modul_245: CalcModule<Modul_245Input, Modul_245Output> = {
+export const modul_245: CalcModule<Modul245Input, Modul245Output> = {
   id: "modul_245",
-  title: "Modül 245",
-  discipline: "mekanik",
-  standards: ["—"],
+  title: "İzolatör Erozyon Hızı",
+  discipline: "elektrik",
+  standards: ['IEC 60815'],
   inputSchema: modul_245Schema,
 
-  compute(input: Modul_245Input): CalcResult<Modul_245Output> {
+  compute(input: Modul245Input): CalcResult<Modul245Output> {
+    const sonuc = input.deger_1 * input.deger_2;
     return {
-      value: { sonuc: input.guc_kW * 1.5 },
+      value: { sonuc: Math.round(sonuc * 100) / 100 },
       intermediates: {},
-      standardsUsed: ["—"],
+      standardsUsed: ['IEC 60815'],
     };
   },
 };

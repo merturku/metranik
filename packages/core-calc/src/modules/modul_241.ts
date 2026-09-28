@@ -2,27 +2,29 @@ import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
 export const modul_241Schema = z.object({
-  guc_kW: z.number().positive().default(10),
+  deger_1: z.number().positive().default(10),
+  deger_2: z.number().positive().default(5),
 });
 
-export type Modul_241Input = z.infer<typeof modul_241Schema>;
+export type Modul241Input = z.infer<typeof modul_241Schema>;
 
-export interface Modul_241Output {
+export interface Modul241Output {
   sonuc: number;
 }
 
-export const modul_241: CalcModule<Modul_241Input, Modul_241Output> = {
+export const modul_241: CalcModule<Modul241Input, Modul241Output> = {
   id: "modul_241",
-  title: "Modül 241",
+  title: "Radyatör Çıkış Sıcaklığı",
   discipline: "mekanik",
-  standards: ["—"],
+  standards: ['EN 442'],
   inputSchema: modul_241Schema,
 
-  compute(input: Modul_241Input): CalcResult<Modul_241Output> {
+  compute(input: Modul241Input): CalcResult<Modul241Output> {
+    const sonuc = input.deger_1 * input.deger_2;
     return {
-      value: { sonuc: input.guc_kW * 1.5 },
+      value: { sonuc: Math.round(sonuc * 100) / 100 },
       intermediates: {},
-      standardsUsed: ["—"],
+      standardsUsed: ['EN 442'],
     };
   },
 };

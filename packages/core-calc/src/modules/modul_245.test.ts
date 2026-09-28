@@ -1,9 +1,9 @@
 import { describe, it, expect } from "vitest";
 import { modul_245 } from "./modul_245";
 
-describe("Modül 245", () => {
-  it("Test: 10 → 15", () => {
-    const r = modul_245.compute({ guc_kW: 10 });
-    expect(r.value.sonuc).toBe(15);
+describe("İzolatör Erozyon Hızı", () => {
+  it("Test: 10 × 5 = 50", () => {
+    const r = modul_245.compute({ dever_1: 10, dever_2: 5 });
+    expect(r.value.sonuc).toBeCloseTo(50, 0);
   });
 });
