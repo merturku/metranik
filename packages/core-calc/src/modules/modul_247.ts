@@ -1,0 +1,28 @@
+import { z } from "zod";
+import type { CalcModule, CalcResult } from "../types";
+
+export const modul_247Schema = z.object({
+  guc_kW: z.number().positive().default(10),
+});
+
+export type Modul_247Input = z.infer<typeof modul_247Schema>;
+
+export interface Modul_247Output {
+  sonuc: number;
+}
+
+export const modul_247: CalcModule<Modul_247Input, Modul_247Output> = {
+  id: "modul_247",
+  title: "Modül 247",
+  discipline: "mekanik",
+  standards: ["—"],
+  inputSchema: modul_247Schema,
+
+  compute(input: Modul_247Input): CalcResult<Modul_247Output> {
+    return {
+      value: { sonuc: input.guc_kW * 1.5 },
+      intermediates: {},
+      standardsUsed: ["—"],
+    };
+  },
+};

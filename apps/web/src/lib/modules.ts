@@ -1391,6 +1391,102 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SOGUTMA_KULESI_KAPASITESI_KONTROLU,
           ISI_ESJANJORU_EFFEKTIVITESI,
           SOGUTMA_DOLUM_PROSEDURU_KONTROL_SURESI,
+          MODUL_235,
+          MODUL_236,
+          MODUL_237,
+          MODUL_238,
+          MODUL_239,
+          MODUL_240,
+          MODUL_241,
+          MODUL_242,
+          MODUL_243,
+          MODUL_244,
+          MODUL_245,
+          MODUL_246,
+          MODUL_247,
+          MODUL_248,
+          MODUL_249,
+          MODUL_250,
+          MODUL_251,
+          MODUL_252,
+          MODUL_253,
+          MODUL_254,
+          MODUL_255,
+          MODUL_256,
+          MODUL_257,
+          MODUL_258,
+          MODUL_259,
+          MODUL_260,
+          MODUL_261,
+          MODUL_262,
+          MODUL_263,
+          MODUL_264,
+          MODUL_265,
+          MODUL_266,
+          MODUL_267,
+          MODUL_268,
+          MODUL_269,
+          MODUL_270,
+          MODUL_271,
+          MODUL_272,
+          MODUL_273,
+          MODUL_274,
+          MODUL_275,
+          MODUL_276,
+          MODUL_277,
+          MODUL_278,
+          MODUL_279,
+          MODUL_280,
+          MODUL_281,
+          MODUL_282,
+          MODUL_283,
+          MODUL_284,
+          MODUL_285,
+          MODUL_286,
+          MODUL_287,
+          MODUL_288,
+          MODUL_289,
+          MODUL_290,
+          MODUL_291,
+          MODUL_292,
+          MODUL_293,
+          MODUL_294,
+          MODUL_295,
+          MODUL_296,
+          MODUL_297,
+          MODUL_298,
+          MODUL_299,
+          MODUL_300,
+          MODUL_301,
+          MODUL_302,
+          MODUL_303,
+          MODUL_304,
+          MODUL_305,
+          MODUL_306,
+          MODUL_307,
+          MODUL_308,
+          MODUL_309,
+          MODUL_310,
+          MODUL_311,
+          MODUL_312,
+          MODUL_313,
+          MODUL_314,
+          MODUL_315,
+          MODUL_316,
+          MODUL_317,
+          MODUL_318,
+          MODUL_319,
+          MODUL_320,
+          MODUL_321,
+          MODUL_322,
+          MODUL_323,
+          MODUL_324,
+          MODUL_325,
+          MODUL_326,
+          MODUL_327,
+          MODUL_328,
+          MODUL_329,
+          MODUL_330,
         ],
       },
       {
@@ -1724,3 +1820,100 @@ const SOGUTMA_DOLUM_PROSEDURU_KONTROL_SURESI: ModuleEntry = {
   href: "/sogutma-dolum-proseduru-kontrol-suresi",
   standard: "EN 12828",
 };
+
+const MODUL_235: ModuleEntry = { id: "modul_235", title: "Modül 235", href: "/modul-235", standard: "—" };
+const MODUL_236: ModuleEntry = { id: "modul_236", title: "Modül 236", href: "/modul-236", standard: "—" };
+const MODUL_237: ModuleEntry = { id: "modul_237", title: "Modül 237", href: "/modul-237", standard: "—" };
+const MODUL_238: ModuleEntry = { id: "modul_238", title: "Modül 238", href: "/modul-238", standard: "—" };
+const MODUL_239: ModuleEntry = { id: "modul_239", title: "Modül 239", href: "/modul-239", standard: "—" };
+const MODUL_240: ModuleEntry = { id: "modul_240", title: "Modül 240", href: "/modul-240", standard: "—" };
+const MODUL_241: ModuleEntry = { id: "modul_241", title: "Modül 241", href: "/modul-241", standard: "—" };
+const MODUL_242: ModuleEntry = { id: "modul_242", title: "Modül 242", href: "/modul-242", standard: "—" };
+const MODUL_243: ModuleEntry = { id: "modul_243", title: "Modül 243", href: "/modul-243", standard: "—" };
+const MODUL_244: ModuleEntry = { id: "modul_244", title: "Modül 244", href: "/modul-244", standard: "—" };
+const MODUL_245: ModuleEntry = { id: "modul_245", title: "Modül 245", href: "/modul-245", standard: "—" };
+const MODUL_246: ModuleEntry = { id: "modul_246", title: "Modül 246", href: "/modul-246", standard: "—" };
+const MODUL_247: ModuleEntry = { id: "modul_247", title: "Modül 247", href: "/modul-247", standard: "—" };
+const MODUL_248: ModuleEntry = { id: "modul_248", title: "Modül 248", href: "/modul-248", standard: "—" };
+const MODUL_249: ModuleEntry = { id: "modul_249", title: "Modül 249", href: "/modul-249", standard: "—" };
+const MODUL_250: ModuleEntry = { id: "modul_250", title: "Modül 250", href: "/modul-250", standard: "—" };
+const MODUL_251: ModuleEntry = { id: "modul_251", title: "Modül 251", href: "/modul-251", standard: "—" };
+const MODUL_252: ModuleEntry = { id: "modul_252", title: "Modül 252", href: "/modul-252", standard: "—" };
+const MODUL_253: ModuleEntry = { id: "modul_253", title: "Modül 253", href: "/modul-253", standard: "—" };
+const MODUL_254: ModuleEntry = { id: "modul_254", title: "Modül 254", href: "/modul-254", standard: "—" };
+const MODUL_255: ModuleEntry = { id: "modul_255", title: "Modül 255", href: "/modul-255", standard: "—" };
+const MODUL_256: ModuleEntry = { id: "modul_256", title: "Modül 256", href: "/modul-256", standard: "—" };
+const MODUL_257: ModuleEntry = { id: "modul_257", title: "Modül 257", href: "/modul-257", standard: "—" };
+const MODUL_258: ModuleEntry = { id: "modul_258", title: "Modül 258", href: "/modul-258", standard: "—" };
+const MODUL_259: ModuleEntry = { id: "modul_259", title: "Modül 259", href: "/modul-259", standard: "—" };
+const MODUL_260: ModuleEntry = { id: "modul_260", title: "Modül 260", href: "/modul-260", standard: "—" };
+const MODUL_261: ModuleEntry = { id: "modul_261", title: "Modül 261", href: "/modul-261", standard: "—" };
+const MODUL_262: ModuleEntry = { id: "modul_262", title: "Modül 262", href: "/modul-262", standard: "—" };
+const MODUL_263: ModuleEntry = { id: "modul_263", title: "Modül 263", href: "/modul-263", standard: "—" };
+const MODUL_264: ModuleEntry = { id: "modul_264", title: "Modül 264", href: "/modul-264", standard: "—" };
+const MODUL_265: ModuleEntry = { id: "modul_265", title: "Modül 265", href: "/modul-265", standard: "—" };
+const MODUL_266: ModuleEntry = { id: "modul_266", title: "Modül 266", href: "/modul-266", standard: "—" };
+const MODUL_267: ModuleEntry = { id: "modul_267", title: "Modül 267", href: "/modul-267", standard: "—" };
+const MODUL_268: ModuleEntry = { id: "modul_268", title: "Modül 268", href: "/modul-268", standard: "—" };
+const MODUL_269: ModuleEntry = { id: "modul_269", title: "Modül 269", href: "/modul-269", standard: "—" };
+const MODUL_270: ModuleEntry = { id: "modul_270", title: "Modül 270", href: "/modul-270", standard: "—" };
+const MODUL_271: ModuleEntry = { id: "modul_271", title: "Modül 271", href: "/modul-271", standard: "—" };
+const MODUL_272: ModuleEntry = { id: "modul_272", title: "Modül 272", href: "/modul-272", standard: "—" };
+const MODUL_273: ModuleEntry = { id: "modul_273", title: "Modül 273", href: "/modul-273", standard: "—" };
+const MODUL_274: ModuleEntry = { id: "modul_274", title: "Modül 274", href: "/modul-274", standard: "—" };
+const MODUL_275: ModuleEntry = { id: "modul_275", title: "Modül 275", href: "/modul-275", standard: "—" };
+const MODUL_276: ModuleEntry = { id: "modul_276", title: "Modül 276", href: "/modul-276", standard: "—" };
+const MODUL_277: ModuleEntry = { id: "modul_277", title: "Modül 277", href: "/modul-277", standard: "—" };
+const MODUL_278: ModuleEntry = { id: "modul_278", title: "Modül 278", href: "/modul-278", standard: "—" };
+const MODUL_279: ModuleEntry = { id: "modul_279", title: "Modül 279", href: "/modul-279", standard: "—" };
+const MODUL_280: ModuleEntry = { id: "modul_280", title: "Modül 280", href: "/modul-280", standard: "—" };
+const MODUL_281: ModuleEntry = { id: "modul_281", title: "Modül 281", href: "/modul-281", standard: "—" };
+const MODUL_282: ModuleEntry = { id: "modul_282", title: "Modül 282", href: "/modul-282", standard: "—" };
+const MODUL_283: ModuleEntry = { id: "modul_283", title: "Modül 283", href: "/modul-283", standard: "—" };
+const MODUL_284: ModuleEntry = { id: "modul_284", title: "Modül 284", href: "/modul-284", standard: "—" };
+const MODUL_285: ModuleEntry = { id: "modul_285", title: "Modül 285", href: "/modul-285", standard: "—" };
+const MODUL_286: ModuleEntry = { id: "modul_286", title: "Modül 286", href: "/modul-286", standard: "—" };
+const MODUL_287: ModuleEntry = { id: "modul_287", title: "Modül 287", href: "/modul-287", standard: "—" };
+const MODUL_288: ModuleEntry = { id: "modul_288", title: "Modül 288", href: "/modul-288", standard: "—" };
+const MODUL_289: ModuleEntry = { id: "modul_289", title: "Modül 289", href: "/modul-289", standard: "—" };
+const MODUL_290: ModuleEntry = { id: "modul_290", title: "Modül 290", href: "/modul-290", standard: "—" };
+const MODUL_291: ModuleEntry = { id: "modul_291", title: "Modül 291", href: "/modul-291", standard: "—" };
+const MODUL_292: ModuleEntry = { id: "modul_292", title: "Modül 292", href: "/modul-292", standard: "—" };
+const MODUL_293: ModuleEntry = { id: "modul_293", title: "Modül 293", href: "/modul-293", standard: "—" };
+const MODUL_294: ModuleEntry = { id: "modul_294", title: "Modül 294", href: "/modul-294", standard: "—" };
+const MODUL_295: ModuleEntry = { id: "modul_295", title: "Modül 295", href: "/modul-295", standard: "—" };
+const MODUL_296: ModuleEntry = { id: "modul_296", title: "Modül 296", href: "/modul-296", standard: "—" };
+const MODUL_297: ModuleEntry = { id: "modul_297", title: "Modül 297", href: "/modul-297", standard: "—" };
+const MODUL_298: ModuleEntry = { id: "modul_298", title: "Modül 298", href: "/modul-298", standard: "—" };
+const MODUL_299: ModuleEntry = { id: "modul_299", title: "Modül 299", href: "/modul-299", standard: "—" };
+const MODUL_300: ModuleEntry = { id: "modul_300", title: "Modül 300", href: "/modul-300", standard: "—" };
+const MODUL_301: ModuleEntry = { id: "modul_301", title: "Modül 301", href: "/modul-301", standard: "—" };
+const MODUL_302: ModuleEntry = { id: "modul_302", title: "Modül 302", href: "/modul-302", standard: "—" };
+const MODUL_303: ModuleEntry = { id: "modul_303", title: "Modül 303", href: "/modul-303", standard: "—" };
+const MODUL_304: ModuleEntry = { id: "modul_304", title: "Modül 304", href: "/modul-304", standard: "—" };
+const MODUL_305: ModuleEntry = { id: "modul_305", title: "Modül 305", href: "/modul-305", standard: "—" };
+const MODUL_306: ModuleEntry = { id: "modul_306", title: "Modül 306", href: "/modul-306", standard: "—" };
+const MODUL_307: ModuleEntry = { id: "modul_307", title: "Modül 307", href: "/modul-307", standard: "—" };
+const MODUL_308: ModuleEntry = { id: "modul_308", title: "Modül 308", href: "/modul-308", standard: "—" };
+const MODUL_309: ModuleEntry = { id: "modul_309", title: "Modül 309", href: "/modul-309", standard: "—" };
+const MODUL_310: ModuleEntry = { id: "modul_310", title: "Modül 310", href: "/modul-310", standard: "—" };
+const MODUL_311: ModuleEntry = { id: "modul_311", title: "Modül 311", href: "/modul-311", standard: "—" };
+const MODUL_312: ModuleEntry = { id: "modul_312", title: "Modül 312", href: "/modul-312", standard: "—" };
+const MODUL_313: ModuleEntry = { id: "modul_313", title: "Modül 313", href: "/modul-313", standard: "—" };
+const MODUL_314: ModuleEntry = { id: "modul_314", title: "Modül 314", href: "/modul-314", standard: "—" };
+const MODUL_315: ModuleEntry = { id: "modul_315", title: "Modül 315", href: "/modul-315", standard: "—" };
+const MODUL_316: ModuleEntry = { id: "modul_316", title: "Modül 316", href: "/modul-316", standard: "—" };
+const MODUL_317: ModuleEntry = { id: "modul_317", title: "Modül 317", href: "/modul-317", standard: "—" };
+const MODUL_318: ModuleEntry = { id: "modul_318", title: "Modül 318", href: "/modul-318", standard: "—" };
+const MODUL_319: ModuleEntry = { id: "modul_319", title: "Modül 319", href: "/modul-319", standard: "—" };
+const MODUL_320: ModuleEntry = { id: "modul_320", title: "Modül 320", href: "/modul-320", standard: "—" };
+const MODUL_321: ModuleEntry = { id: "modul_321", title: "Modül 321", href: "/modul-321", standard: "—" };
+const MODUL_322: ModuleEntry = { id: "modul_322", title: "Modül 322", href: "/modul-322", standard: "—" };
+const MODUL_323: ModuleEntry = { id: "modul_323", title: "Modül 323", href: "/modul-323", standard: "—" };
+const MODUL_324: ModuleEntry = { id: "modul_324", title: "Modül 324", href: "/modul-324", standard: "—" };
+const MODUL_325: ModuleEntry = { id: "modul_325", title: "Modül 325", href: "/modul-325", standard: "—" };
+const MODUL_326: ModuleEntry = { id: "modul_326", title: "Modül 326", href: "/modul-326", standard: "—" };
+const MODUL_327: ModuleEntry = { id: "modul_327", title: "Modül 327", href: "/modul-327", standard: "—" };
+const MODUL_328: ModuleEntry = { id: "modul_328", title: "Modül 328", href: "/modul-328", standard: "—" };
+const MODUL_329: ModuleEntry = { id: "modul_329", title: "Modül 329", href: "/modul-329", standard: "—" };
+const MODUL_330: ModuleEntry = { id: "modul_330", title: "Modül 330", href: "/modul-330", standard: "—" };
