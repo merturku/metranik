@@ -1,51 +1,123 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Renk paleti (koyu terracotta/kahve) projenik.com'un canlı CSS'inden birebir çekildi
-   (kullanıcı talebiyle, PRODUCT.md'de belirtildiği gibi). İçerik/kopya kaynağa ait değil,
-   orijinal. Tipografi (IBM Plex Sans/Mono) projenik.com'dan bağımsız, ayrı bir karardır —
-   yaygın Sora+JetBrains Mono ikilisinin "AI şablonu" izlenimini azaltmak için seçildi. */
+/* Apple HIG Design System — Metranik
+   Professional, accessible, no AI-snippet aesthetic.
+   Light mode: restrained neutrals + technical blue accent
+   Dark mode: deep neutral with elevated surfaces
+*/
+
 :root {
-  --surface: #0d0a08;
-  --surface-secondary: #171210;
-  --surface-tertiary: #1e1814;
-  --border: rgba(240, 230, 215, 0.1);
-  --border-strong: rgba(240, 230, 215, 0.2);
-  --text-primary: #f0e9df;
-  --text-secondary: #b7ab99;
-  --text-tertiary: #7e7264;
-  --accent: #c65a33;
-  --accent-hover: #e5744a;
-  --accent-glow: rgba(198, 90, 51, 0.16);
-  --accent-fg: #fff;
-  --success: #58b382;
-  --warning: #d1993d;
-  --danger: #e06c5a;
-  --radius: 12px;
-  --radius-lg: 20px;
+  /* Light Mode Colors (OKLCH) */
+  --color-background: oklch(0.99 0.001 0);
+  --color-surface: oklch(0.96 0.002 0);
+  --color-border: oklch(0.92 0.003 0);
+  --color-text-primary: oklch(0.15 0.01 0);
+  --color-text-secondary: oklch(0.50 0.01 0);
+  --color-text-tertiary: oklch(0.72 0.005 0);
+
+  /* Accent: Technical Blue */
+  --color-accent: oklch(0.52 0.15 260);
+  --color-accent-hover: oklch(0.48 0.16 260);
+  --color-accent-active: oklch(0.42 0.17 260);
+  --color-accent-subtle: oklch(0.88 0.05 260);
+
+  /* Status Colors */
+  --color-success: oklch(0.62 0.12 142);
+  --color-warning: oklch(0.68 0.14 60);
+  --color-error: oklch(0.60 0.14 20);
+  --color-info: oklch(0.58 0.11 250);
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", "Monaco", monospace;
+
+  /* Spacing (8px base) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.16);
+
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-surface: var(--surface);
-  --color-surface-secondary: var(--surface-secondary);
-  --color-surface-tertiary: var(--surface-tertiary);
-  --color-border: var(--border);
-  --color-border-strong: var(--border-strong);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-text-tertiary: var(--text-tertiary);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-fg: var(--accent-fg);
-  --color-success: var(--success);
-  --color-warning: var(--warning);
-  --color-danger: var(--danger);
-  --font-sans: var(--font-plex-sans);
-  --font-mono: var(--font-plex-mono);
-  --font-serif: Georgia, "Times New Roman", "Nimbus Roman", serif;
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-background: oklch(0.12 0.01 0);
+    --color-surface: oklch(0.16 0.012 0);
+    --color-border: oklch(0.25 0.015 0);
+    --color-text-primary: oklch(0.98 0.001 0);
+    --color-text-secondary: oklch(0.70 0.008 0);
+    --color-text-tertiary: oklch(0.48 0.007 0);
+    --color-accent-subtle: oklch(0.20 0.08 260);
+
+    /* Dark mode shadows (1.5x opacity) */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.18);
+    --shadow-lg: 0 12px 24px rgba(0,0,0,0.24);
+
+    color-scheme: dark;
+  }
+}
+
+[data-theme="dark"] {
+  --color-background: oklch(0.12 0.01 0);
+  --color-surface: oklch(0.16 0.012 0);
+  --color-border: oklch(0.25 0.015 0);
+  --color-text-primary: oklch(0.98 0.001 0);
+  --color-text-secondary: oklch(0.70 0.008 0);
+  --color-text-tertiary: oklch(0.48 0.007 0);
+  --color-accent-subtle: oklch(0.20 0.08 260);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.18);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.24);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-sans);
 }
 
 body {
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  transition: background-color 300ms ease-out-cubic, color 300ms ease-out-cubic;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @keyframes marquee-scroll {
