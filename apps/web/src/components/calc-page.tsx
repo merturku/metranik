@@ -6,6 +6,17 @@ import { usePathname } from "next/navigation";
 import type { CalcModule, CalcResult } from "@metranik/core-calc";
 import { recordCalc, bugunSayisi } from "@/lib/recent-calcs";
 import { ilgiliModuller, modulKonumu } from "@/lib/modules";
+import {
+  Input,
+  InputLabel,
+  ButtonPrimary,
+  Card,
+  CardBody,
+  Caption,
+  Body,
+  Headline,
+  BodyLarge,
+} from "@/components/design-system";
 
 const DISIPLIN_ETIKET: Record<string, string> = {
   mekanik: "Mekanik",
@@ -108,49 +119,53 @@ export function CalcPage<I extends Record<string, unknown>, O>({
   return (
     <div className="flex flex-1 flex-col">
       <div className="mx-auto w-full max-w-[1140px] px-6 pt-6">
-        <nav className="flex flex-wrap items-center gap-1.5 text-xs text-text-tertiary">
-          <Link href="/uygulama" className="hover:text-text-primary">
+        <nav className="flex flex-wrap items-center gap-1.5">
+          <Link href="/uygulama" className="text-caption text-text-tertiary hover:text-text-primary">
             Panel
           </Link>
           {konum && (
             <>
-              <span aria-hidden>/</span>
-              <span>{konum.grup}</span>
-              <span aria-hidden>/</span>
-              <span>{konum.altGrup}</span>
+              <span aria-hidden className="text-caption text-text-tertiary">/</span>
+              <span className="text-caption text-text-tertiary">{konum.grup}</span>
+              <span aria-hidden className="text-caption text-text-tertiary">/</span>
+              <span className="text-caption text-text-tertiary">
+                {konum.altGrup}
+              </span>
             </>
           )}
-          <span aria-hidden>/</span>
-          <span className="text-text-secondary">{mod.title}</span>
+          <span aria-hidden className="text-caption text-text-tertiary">/</span>
+          <Caption className="text-text-secondary">{mod.title}</Caption>
         </nav>
       </div>
 
       <main className="mx-auto grid w-full max-w-[1140px] flex-1 gap-10 px-6 py-6 lg:grid-cols-[380px_1fr] lg:py-8">
         <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-text-tertiary">
+          <Caption className="uppercase text-text-tertiary">
             {DISIPLIN_ETIKET[mod.discipline]} · {standardsLabel}
-          </p>
-          <h1 className="mt-1 text-2xl font-semibold text-text-primary">{mod.title}</h1>
+          </Caption>
+          <Headline className="mt-2">{mod.title}</Headline>
 
-          <div className="mt-3 rounded-xl border border-border bg-surface-secondary/60 p-3">
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-text-tertiary">
+          <Card className="mt-4">
+            <Caption className="uppercase text-text-tertiary block mb-2">
               Standart &amp; Yöntem
-            </p>
-            <p className="mt-1 text-xs leading-relaxed text-text-secondary">{description}</p>
+            </Caption>
+            <Body className="text-text-secondary mb-3">{description}</Body>
             {formula && (
-              <p className="mt-2 rounded-lg bg-surface px-2.5 py-2 font-mono text-xs text-text-primary">
+              <code className="block mt-3 rounded-md bg-gray-100 dark:bg-gray-800 px-3 py-2 font-mono text-mono text-text-primary overflow-x-auto">
                 {formula}
-              </p>
+              </code>
             )}
             {engineeringNote && (
-              <div className="mt-2 rounded-lg border border-warning/30 bg-warning/[0.06] px-2.5 py-2">
-                <p className="text-xs leading-relaxed text-text-secondary">
-                  <span className="font-semibold text-warning">Mühendislik notu: </span>
+              <div className="mt-3 rounded-md border border-warning/30 bg-warning/[0.06] px-3 py-2">
+                <Body className="text-text-secondary">
+                  <span className="font-semibold text-warning">
+                    Mühendislik notu:{" "}
+                  </span>
                   {engineeringNote}
-                </p>
+                </Body>
               </div>
             )}
-          </div>
+          </Card>
 
           <form
             className="mt-6 flex flex-col gap-5"
@@ -161,18 +176,13 @@ export function CalcPage<I extends Record<string, unknown>, O>({
           >
             {fields.map((f) => (
               <div key={f.key}>
-                <label
-                  htmlFor={f.key}
-                  className="mb-1.5 block text-sm font-medium text-text-primary"
-                >
-                  {f.label}
-                </label>
+                <InputLabel htmlFor={f.key}>{f.label}</InputLabel>
                 {f.type === "select" ? (
                   <select
                     id={f.key}
                     value={values[f.key]}
                     onChange={(e) => setValues((v) => ({ ...v, [f.key]: e.target.value }))}
-                    className="w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-text-primary transition-colors duration-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/40"
+                    className="w-full rounded-md border border-border bg-surface px-4 py-3 text-body text-text-primary transition-all duration-fast focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:focus:ring-offset-0"
                   >
                     {f.options?.map((o) => (
                       <option key={o.value} value={o.value}>
@@ -181,16 +191,16 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                     ))}
                   </select>
                 ) : (
-                  <div className="flex items-stretch gap-1.5">
+                  <div className="flex items-stretch gap-sm">
                     <button
                       type="button"
                       onClick={() => adimla(f, -1)}
                       aria-label={`${f.label} azalt`}
-                      className="w-9 shrink-0 rounded-xl border border-border text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent"
+                      className="w-9 shrink-0 rounded-md border border-border text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       −
                     </button>
-                    <input
+                    <Input
                       id={f.key}
                       type="text"
                       inputMode="decimal"
@@ -201,13 +211,13 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                           setValues((v) => ({ ...v, [f.key]: girilen }));
                         }
                       }}
-                      className="w-full min-w-0 rounded-xl border border-border bg-surface px-3 py-2 text-center text-sm text-text-primary transition-colors duration-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/40"
+                      className="text-center"
                     />
                     <button
                       type="button"
                       onClick={() => adimla(f, 1)}
                       aria-label={`${f.label} artır`}
-                      className="w-9 shrink-0 rounded-xl border border-border text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent"
+                      className="w-9 shrink-0 rounded-md border border-border text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       +
                     </button>
@@ -216,27 +226,24 @@ export function CalcPage<I extends Record<string, unknown>, O>({
               </div>
             ))}
 
-            {hata && <p className="text-sm text-danger">{hata}</p>}
+            {hata && <Body className="text-error">{hata}</Body>}
 
-            <button
-              type="submit"
-              className="w-full rounded-xl bg-accent px-4 py-2.5 text-sm font-medium text-accent-fg transition-colors duration-300 hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-surface"
-            >
+            <ButtonPrimary type="submit" className="w-full">
               Hesapla
-            </button>
+            </ButtonPrimary>
           </form>
 
           {ilgili.length > 0 && (
             <div className="mt-6">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-text-tertiary">
+              <Caption className="uppercase text-text-tertiary block mb-3">
                 Bununla İlgili
-              </p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
+              </Caption>
+              <div className="flex flex-wrap gap-2">
                 {ilgili.map((m) => (
                   <Link
                     key={m.id}
                     href={m.href}
-                    className="rounded-full border border-border px-2.5 py-1 text-xs text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent"
+                    className="inline-flex rounded-full border border-border px-3 py-1.5 text-caption text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent"
                   >
                     {m.title}
                   </Link>
@@ -248,59 +255,66 @@ export function CalcPage<I extends Record<string, unknown>, O>({
 
         <div>
           {sonuc && mainValue !== null ? (
-            <div
-              className={`rounded-2xl border border-border bg-surface-secondary ${verdictStil ? `border-l-4 ${verdictStil.border}` : ""}`}
+            <Card
+              className={`border-l-4 ${verdictStil ? verdictStil.border : "border-l-accent"}`}
             >
-              <div className="flex items-center justify-between border-b border-border px-6 py-4">
-                <span className="text-xs font-medium uppercase tracking-wide text-text-tertiary">
-                  Sonuç
-                </span>
-                <span className="inline-flex items-center rounded-full border border-border-strong px-2.5 py-0.5 text-xs font-medium text-text-secondary">
-                  {sonuc.standardsUsed.length > 0 ? sonuc.standardsUsed.join(", ") : standardsLabel}
+              <div className="flex items-center justify-between border-b border-border pb-4 mb-6">
+                <Caption className="uppercase">Sonuç</Caption>
+                <span className="inline-flex items-center rounded-full border border-border px-2.5 py-0.5 text-caption font-medium text-text-secondary">
+                  {sonuc.standardsUsed.length > 0
+                    ? sonuc.standardsUsed.join(", ")
+                    : standardsLabel}
                 </span>
               </div>
 
-              <div className="px-6 py-6">
+              <div>
                 {verdictStil && sonuc.verdict && (
-                  <p className={`mb-2 text-xs font-bold uppercase tracking-wide ${verdictStil.text}`}>
+                  <p
+                    className={`mb-4 text-caption font-semibold uppercase tracking-wide ${verdictStil.text}`}
+                  >
                     {verdictStil.label} — {sonuc.verdict.note}
                   </p>
                 )}
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline gap-2 mb-3">
                   <span className="font-mono text-4xl font-semibold tabular-nums text-text-primary">
                     {mainValue.toFixed(mainDecimals)}
                   </span>
-                  <span className="text-sm font-medium text-text-secondary">{mainUnit}</span>
+                  <span className="text-body font-medium text-text-secondary">
+                    {mainUnit}
+                  </span>
                 </div>
                 {bugun > 0 && (
-                  <p className="mt-2 text-xs text-text-tertiary">
+                  <Caption className="text-text-tertiary">
                     Bu hesap bugün {bugun} kez hesaplandı
-                  </p>
+                  </Caption>
                 )}
               </div>
 
-              <div className="border-t border-border px-6 py-4">
-                <p className="mb-3 text-xs font-medium uppercase tracking-wide text-text-tertiary">
-                  Ara Değerler
-                </p>
+              <div className="border-t border-border mt-6 pt-4">
+                <Caption className="uppercase mb-3 block">Ara Değerler</Caption>
                 <dl className="divide-y divide-border">
                   {Object.entries(sonuc.intermediates).map(([k, v]) => (
-                    <div key={k} className="flex items-center justify-between py-2 text-sm">
-                      <dt className="text-text-secondary">{intermediateLabels[k] ?? k}</dt>
-                      <dd className="font-mono tabular-nums text-text-primary">
+                    <div
+                      key={k}
+                      className="flex items-center justify-between py-2"
+                    >
+                      <dt className="text-body text-text-secondary">
+                        {intermediateLabels[k] ?? k}
+                      </dt>
+                      <dd className="font-mono tabular-nums text-text-primary text-body">
                         {typeof v === "number" ? v.toFixed(4) : v}
                       </dd>
                     </div>
                   ))}
                 </dl>
               </div>
-            </div>
+            </Card>
           ) : (
-            <div className="flex min-h-[280px] flex-col items-center justify-center rounded-2xl border border-dashed border-border-strong px-6 py-16 text-center">
-              <p className="max-w-[32ch] text-sm text-text-tertiary">
-                Girdileri doldurup Hesapla&apos;ya bastığınızda sonuç, ara değerler ve standart
-                referansı burada görünecek.
-              </p>
+            <div className="flex min-h-[280px] flex-col items-center justify-center rounded-lg border border-dashed border-border px-6 py-16 text-center">
+              <BodyLarge className="max-w-[32ch] text-text-tertiary">
+                Girdileri doldurup Hesapla&apos;ya bastığınızda sonuç, ara değerler
+                ve standart referansı burada görünecek.
+              </BodyLarge>
             </div>
           )}
         </div>

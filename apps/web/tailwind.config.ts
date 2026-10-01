@@ -54,11 +54,21 @@ const config: Config = {
           light: "oklch(0.85 0.06 20)",
           dark: "oklch(0.45 0.16 20)",
         },
+        danger: {
+          DEFAULT: "oklch(0.60 0.14 20)",
+          light: "oklch(0.85 0.06 20)",
+          dark: "oklch(0.45 0.16 20)",
+        },
         info: {
           DEFAULT: "oklch(0.58 0.11 250)",
           light: "oklch(0.88 0.04 250)",
           dark: "oklch(0.40 0.13 250)",
         },
+
+        // Additional surface variants
+        "surface-secondary": "oklch(0.93 0.003 0)",
+        "border-strong": "oklch(0.85 0.005 0)",
+        "accent-fg": "oklch(0.98 0.001 0)",
       },
 
       // Dark mode overrides
