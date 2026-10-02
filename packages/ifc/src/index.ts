@@ -5,12 +5,12 @@
 export * from "./types";
 export * from "./parser";
 export * from "./extractor";
+export * from "./mapper";
 
 export async function processIfc(file: File) {
-  const { initIfcApi, parseIfc, extractQuantities, closeIfc } = await import(
-    "./parser"
-  );
-  const { extractQuantities: extract } = await import("./extractor");
+  const { initIfcApi, parseIfc } = await import("./parser");
+  const { extractQuantities } = await import("./extractor");
+  const { mapToModules } = await import("./mapper");
 
   const startTime = performance.now();
 
@@ -18,11 +18,13 @@ export async function processIfc(file: File) {
     await initIfcApi();
     const model = await parseIfc(file);
     const extracted = await extractQuantities(model);
+    const mapped = mapToModules(extracted);
 
     return {
       fileName: file.name,
       entities: [],
       extracted,
+      mapped,
       parseTime: performance.now() - startTime,
     };
   } catch (error) {

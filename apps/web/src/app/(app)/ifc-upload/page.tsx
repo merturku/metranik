@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Display2, Headline, Body, ButtonPrimary } from "@/components/design-system";
+import { useRouter } from "next/navigation";
+import {
+  Display2,
+  Headline,
+  Body,
+  ButtonPrimary,
+  Badge,
+} from "@/components/design-system";
+import { TUM_MODULLER } from "@/lib/modules";
 
 interface ExtractedQty {
   entityType: string;
@@ -11,10 +19,19 @@ interface ExtractedQty {
   unit: string;
 }
 
+interface MappedModule {
+  moduleId: string;
+  inputs: Record<string, number | string>;
+  confidence: "high" | "medium" | "low";
+  warning?: string;
+}
+
 export default function IfcUploadPage() {
+  const router = useRouter();
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [extracted, setExtracted] = useState<ExtractedQty[]>([]);
+  const [mapped, setMapped] = useState<MappedModule[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [parseTime, setParseTime] = useState(0);
 
@@ -30,18 +47,17 @@ export default function IfcUploadPage() {
     setFile(uploadedFile);
     setError(null);
     setExtracted([]);
+    setMapped([]);
     setLoading(true);
 
     try {
       const startTime = performance.now();
 
-      // Dynamic import to avoid loading web-ifc on initial page load
       const { processIfc } = await import("@metranik/ifc");
       const result = await processIfc(uploadedFile);
 
       setParseTime(performance.now() - startTime);
 
-      // Convert to flat list for display
       const flatQties = result.extracted.flatMap((ext) =>
         ext.quantities.map((q) => ({
           entityType: ext.entityType,
@@ -53,11 +69,20 @@ export default function IfcUploadPage() {
       );
 
       setExtracted(flatQties);
+      setMapped(result.mapped || []);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to parse IFC file");
       setExtracted([]);
+      setMapped([]);
     } finally {
       setLoading(false);
+    }
+  }
+
+  function openModule(moduleId: string) {
+    const module = TUM_MODULLER.find((m) => m.id === moduleId);
+    if (module) {
+      router.push(module.href);
     }
   }
 
@@ -80,18 +105,14 @@ export default function IfcUploadPage() {
         />
         <label htmlFor="ifc-input" className="cursor-pointer">
           <Headline className="mb-2">IFC Dosyası Seç</Headline>
-          <Body className="text-text-secondary">
-            veya buraya sürükleyin
-          </Body>
+          <Body className="text-text-secondary">veya buraya sürükleyin</Body>
         </label>
       </div>
 
       {/* File Info */}
       {file && (
         <div className="mb-6 rounded-lg bg-surface border border-border p-4">
-          <Body className="font-medium">
-            📄 {file.name}
-          </Body>
+          <Body className="font-medium">📄 {file.name}</Body>
           <Body className="text-text-secondary text-sm">
             {(file.size / 1024 / 1024).toFixed(2)} MB
             {parseTime > 0 && ` · Yükleme süresi: ${parseTime.toFixed(0)}ms`}
@@ -115,10 +136,8 @@ export default function IfcUploadPage() {
 
       {/* Extracted Metraj Table */}
       {extracted.length > 0 && (
-        <div>
-          <Headline className="mb-4">
-            Çıkarılan Metraj ({extracted.length})
-          </Headline>
+        <div className="mb-8">
+          <Headline className="mb-4">Çıkarılan Metraj ({extracted.length})</Headline>
           <div className="overflow-x-auto rounded-lg border border-border">
             <table className="w-full text-sm">
               <thead>
@@ -152,25 +171,71 @@ export default function IfcUploadPage() {
                     <td className="px-4 py-3 text-text-primary font-mono text-xs">
                       {qty.entityName}
                     </td>
-                    <td className="px-4 py-3 text-text-secondary">
-                      {qty.type}
-                    </td>
+                    <td className="px-4 py-3 text-text-secondary">{qty.type}</td>
                     <td className="px-4 py-3 text-text-primary font-mono">
                       {qty.value.toFixed(2)}
                     </td>
-                    <td className="px-4 py-3 text-text-secondary">
-                      {qty.unit}
-                    </td>
+                    <td className="px-4 py-3 text-text-secondary">{qty.unit}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+        </div>
+      )}
 
-          <div className="mt-6 flex gap-3">
-            <ButtonPrimary>İlgili Modülleri Aç</ButtonPrimary>
-            <ButtonPrimary>Projeyi Kaydet</ButtonPrimary>
+      {/* Mapped Modules */}
+      {mapped.length > 0 && (
+        <div>
+          <Headline className="mb-4">Eşleşen Modüller ({mapped.length})</Headline>
+          <div className="grid gap-3">
+            {mapped.map((m, idx) => {
+              const module = TUM_MODULLER.find((x) => x.id === m.moduleId);
+              return (
+                <div
+                  key={idx}
+                  className="rounded-lg border border-border bg-surface p-4 flex items-start justify-between"
+                >
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Body className="font-medium">{module?.title || m.moduleId}</Body>
+                      <Badge
+                        variant={
+                          m.confidence === "high"
+                            ? "success"
+                            : m.confidence === "medium"
+                              ? "warning"
+                              : "error"
+                        }
+                      >
+                        {m.confidence.toUpperCase()}
+                      </Badge>
+                    </div>
+                    {m.warning && (
+                      <Body className="text-warning text-sm">{m.warning}</Body>
+                    )}
+                    <Body className="text-text-secondary text-sm">
+                      {Object.entries(m.inputs)
+                        .map(([k, v]) => `${k}: ${v}`)
+                        .join(" • ")}
+                    </Body>
+                  </div>
+                  <ButtonPrimary
+                    onClick={() => openModule(m.moduleId)}
+                    className="ml-4 shrink-0"
+                  >
+                    Aç
+                  </ButtonPrimary>
+                </div>
+              );
+            })}
           </div>
+        </div>
+      )}
+
+      {!extracted.length && !loading && (
+        <div className="text-center text-text-tertiary">
+          <Body>IFC dosyası yükleyerek başlayın</Body>
         </div>
       )}
     </div>

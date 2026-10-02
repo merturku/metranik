@@ -2,28 +2,28 @@
  * IFC file parser using web-ifc library
  */
 
-import * as WebIFC from "web-ifc";
 import type { IfcEntity } from "./types";
 
-let ifcApi: WebIFC.IfcAPI | null = null;
+let ifcApi: any = null;
 
-export async function initIfcApi(): Promise<WebIFC.IfcAPI> {
+export async function initIfcApi(): Promise<any> {
   if (ifcApi) return ifcApi;
 
-  ifcApi = new WebIFC.IfcAPI();
+  const { IfcAPI } = await import("web-ifc");
+  ifcApi = new IfcAPI();
   await ifcApi.Init();
   return ifcApi;
 }
 
-export async function parseIfc(file: File): Promise<WebIFC.IFCModel> {
+export async function parseIfc(file: File): Promise<any> {
   const api = await initIfcApi();
   const arrayBuffer = await file.arrayBuffer();
-  const model = await api.OpenIfc(new Uint8Array(arrayBuffer));
+  const model = await api.OpenIfc(new Uint8Array(arrayBuffer), true);
   return model;
 }
 
 export async function getIfcEntitiesByType(
-  model: WebIFC.IFCModel,
+  model: any,
   type: string
 ): Promise<IfcEntity[]> {
   const api = await initIfcApi();

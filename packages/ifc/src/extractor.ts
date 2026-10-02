@@ -4,7 +4,6 @@
 
 import type { IfcEntity, ExtractedQuantity } from "./types";
 import { getIfcEntitiesByType } from "./parser";
-import type * as WebIFC from "web-ifc";
 
 const ENTITY_TYPES = [
   "IFCPIPE",
@@ -16,7 +15,7 @@ const ENTITY_TYPES = [
 ];
 
 export async function extractAllEntities(
-  model: WebIFC.IFCModel
+  model: any
 ): Promise<IfcEntity[]> {
   const allEntities: IfcEntity[] = [];
 
@@ -138,7 +137,7 @@ export function quantifyEntity(entity: IfcEntity): ExtractedQuantity | null {
 }
 
 export async function extractQuantities(
-  model: WebIFC.IFCModel
+  model: any
 ): Promise<ExtractedQuantity[]> {
   const entities = await extractAllEntities(model);
   const extracted: ExtractedQuantity[] = [];
