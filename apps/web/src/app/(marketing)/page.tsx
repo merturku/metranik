@@ -208,7 +208,7 @@ const MOCK_KARTLAR = [
 function Eyebrow({ children, center = false }: { children: string; center?: boolean }) {
   return (
     <p
-      className={`inline-flex items-center gap-2.5 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent-hover ${center ? "justify-center" : ""}`}
+      className={`inline-flex items-center gap-sm font-mono text-caption font-semibold uppercase tracking-[0.22em] text-accent-hover ${center ? "justify-center" : ""}`}
     >
       <span aria-hidden className="h-px w-[26px] bg-accent/70" />
       {children}
@@ -228,9 +228,9 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
       {/* Hero */}
-      <section className="border-b border-border px-6 pt-16 pb-20 sm:pt-20 sm:pb-24">
+      <section className="border-b border-border px-lg pt-16 pb-20 sm:pt-20 sm:pb-24">
         <div className="mx-auto max-w-[1140px] text-center">
-          <span className="mb-[34px] inline-flex items-center gap-2.5 rounded-full border border-border bg-text-primary/[0.03] px-4 py-1.5 font-mono text-[0.74rem] tracking-[0.1em] text-text-secondary">
+          <span className="mb-[34px] inline-flex items-center gap-sm rounded-full border border-border bg-text-primary/[0.03] px-md py-1.5 font-mono text-[0.74rem] tracking-[0.1em] text-text-secondary">
             <span aria-hidden className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-success" />
             Beta sürümü · şu an tamamen ücretsiz · üyeliksiz kullanın
           </span>
@@ -247,7 +247,7 @@ export default function Home() {
           </p>
 
           <form onSubmit={ara} className="mx-auto mt-10 max-w-[560px]">
-            <div className="flex items-center gap-2.5 rounded-[14px] border-[1.5px] border-accent bg-surface-secondary py-1.5 pr-1.5 pl-4 shadow-[0_0_0_4px_var(--accent-glow)] focus-within:border-accent-hover">
+            <div className="flex items-center gap-sm rounded-[14px] border-[1.5px] border-accent bg-surface-secondary py-1.5 pr-1.5 pl-4 shadow-[0_0_0_4px_var(--accent-glow)] focus-within:border-accent-hover">
               <svg
                 aria-hidden
                 width="18"
@@ -264,23 +264,23 @@ export default function Home() {
                 value={arama}
                 onChange={(e) => setArama(e.target.value)}
                 placeholder="Ne hesaplamak istiyorsunuz? örn: 85 m² daireye ısıtma yükü"
-                className="min-w-0 flex-1 bg-transparent py-2.5 text-[15px] text-text-primary placeholder:text-text-tertiary focus:outline-none"
+                className="min-w-0 flex-1 bg-transparent py-sm text-[15px] text-text-primary placeholder:text-text-tertiary focus:outline-none"
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-[10px] bg-accent px-[22px] py-3 text-sm font-bold text-accent-fg transition-colors duration-150 hover:bg-accent-hover"
+                className="shrink-0 rounded-[10px] bg-accent px-[22px] py-md text-body font-bold text-accent-fg transition-colors duration-fast hover:bg-accent-hover"
               >
                 Hesapla
               </button>
             </div>
           </form>
 
-          <div className="mx-auto mt-4 flex max-w-[560px] flex-wrap items-center justify-center gap-2">
+          <div className="mx-auto mt-4 flex max-w-[560px] flex-wrap items-center justify-center gap-sm">
             {ONERI_CIPLERI.map((m) => (
               <Link
                 key={m.href}
                 href={m.href}
-                className="rounded-full border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent"
+                className="rounded-full border border-border px-sm py-1.5 text-caption text-text-secondary transition-colors duration-normal hover:border-accent hover:text-accent"
               >
                 {m.title}
               </Link>
@@ -310,10 +310,10 @@ export default function Home() {
         </div>
 
         <div className="mt-14">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-text-tertiary">
+          <p className="text-center text-caption font-semibold uppercase tracking-[0.2em] text-text-tertiary">
             Süslü görsel değil — gerçek modüllerin gerçek çıktısı
           </p>
-          <div className="mt-10 flex flex-wrap items-start justify-center gap-6 px-6">
+          <div className="mt-10 flex flex-wrap items-start justify-center gap-lg px-lg">
             {MOCK_KARTLAR.map((kart) => (
               <div
                 key={kart.title}
@@ -321,12 +321,12 @@ export default function Home() {
                 className="w-[240px] rounded-2xl border border-border bg-surface-secondary p-5 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.8)]"
               >
                 <div className="flex items-center justify-between">
-                  <span className="flex items-center gap-1.5 text-sm font-semibold text-text-primary">
+                  <span className="flex items-center gap-1.5 text-body font-semibold text-text-primary">
                     <span aria-hidden>{kart.icon}</span>
                     {kart.title}
                   </span>
                   <span
-                    className={`rounded-full border px-2 py-0.5 text-[10px] ${
+                    className={`rounded-full border px-sm py-0.5 text-[10px] ${
                       "badgeTone" in kart && kart.badgeTone === "success"
                         ? "border-success/40 text-success"
                         : "badgeTone" in kart && kart.badgeTone === "danger"
@@ -337,10 +337,10 @@ export default function Home() {
                     {kart.badge}
                   </span>
                 </div>
-                <p className="mt-4 font-mono text-2xl font-semibold tabular-nums text-text-primary">
-                  {kart.value} <span className="text-sm text-text-secondary">{kart.unit}</span>
+                <p className="mt-4 font-mono text-headline font-semibold tabular-nums text-text-primary">
+                  {kart.value} <span className="text-body text-text-secondary">{kart.unit}</span>
                 </p>
-                <p className="mt-1 text-xs text-text-tertiary">{kart.subtext}</p>
+                <p className="mt-1 text-caption text-text-tertiary">{kart.subtext}</p>
                 <p className="mt-4 text-[10px] uppercase tracking-wide text-text-tertiary">
                   {kart.footer}
                 </p>
@@ -351,16 +351,16 @@ export default function Home() {
       </section>
 
       {/* Standart marquee */}
-      <section className="border-b border-border py-6">
+      <section className="border-b border-border py-lg">
         <p className="mb-4 text-center text-[11px] uppercase tracking-[0.2em] text-text-tertiary">
           Hesaplar bu standartlara dayanır
         </p>
         <div className="overflow-hidden">
-          <div className="flex w-max animate-marquee gap-3">
+          <div className="flex w-max animate-marquee gap-md">
             {[...STANDARTLAR, ...STANDARTLAR].map((s, i) => (
               <span
                 key={`${s}-${i}`}
-                className="whitespace-nowrap rounded-full border border-border px-4 py-1.5 font-mono text-xs text-text-secondary"
+                className="whitespace-nowrap rounded-full border border-border px-md py-1.5 font-mono text-caption text-text-secondary"
               >
                 {s}
               </span>
@@ -370,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* Özellik: Isıtma Yükü */}
-      <section id="nasil-calisir" className="border-b border-border px-6 py-20">
+      <section id="nasil-calisir" className="border-b border-border px-lg py-20">
         <div className="mx-auto grid max-w-[1140px] gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <Eyebrow>Biliyor muydunuz?</Eyebrow>
@@ -378,13 +378,13 @@ export default function Home() {
               Bir dairenin ısıtma yükünü <em className="text-accent">saniyeler içinde</em>{" "}
               çıkarabileceğinizi biliyor muydunuz?
             </h2>
-            <p className="mt-4 max-w-[55ch] text-sm leading-relaxed text-text-secondary">
+            <p className="mt-4 max-w-[55ch] text-body leading-relaxed text-text-secondary">
               Alan, şehir ve cam tipini girin; motor TS 825 tabanlı yöntemle ara değerleriyle
               birlikte kW cinsinden sonucu versin. Kara kutu yok — her adım görünür.
             </p>
             <Link
               href="/isitma-yuku"
-              className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors duration-300 hover:text-accent-hover"
+              className="mt-5 inline-flex items-center gap-1.5 text-body font-semibold text-accent transition-colors duration-normal hover:text-accent-hover"
             >
               Isıtma Yükü&apos;nü deneyin
               <span aria-hidden>→</span>
@@ -393,27 +393,27 @@ export default function Home() {
 
           <div className="rounded-2xl border border-border bg-surface-secondary p-6">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold text-text-primary">Isıtma Yükü</span>
-              <span className="rounded-full border border-border-strong px-2.5 py-0.5 text-[11px] text-text-tertiary">
+              <span className="text-body font-semibold text-text-primary">Isıtma Yükü</span>
+              <span className="rounded-full border border-border-strong px-sm py-0.5 text-[11px] text-text-tertiary">
                 TS 825
               </span>
             </div>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-sm">
               {["85 m²", "İstanbul", "Çift Cam"].map((p) => (
                 <span
                   key={p}
-                  className="rounded-full border border-accent bg-accent/10 px-3 py-1 text-xs font-medium text-accent"
+                  className="rounded-full border border-accent bg-accent/10 px-sm py-1 text-caption font-medium text-accent"
                 >
                   {p}
                 </span>
               ))}
             </div>
             <div className="mt-5 rounded-xl border border-border-strong bg-surface p-4">
-              <p className="font-mono text-2xl font-semibold tabular-nums text-text-primary">
+              <p className="font-mono text-headline font-semibold tabular-nums text-text-primary">
                 {ornekIsitma.value.kW.toFixed(2)}{" "}
-                <span className="text-sm font-normal text-text-secondary">kW</span>
+                <span className="text-body font-normal text-text-secondary">kW</span>
               </p>
-              <dl className="mt-3 divide-y divide-border text-xs">
+              <dl className="mt-3 divide-y divide-border text-caption">
                 {Object.entries(ornekIsitma.intermediates).map(([k, v]) => (
                   <div key={k} className="flex justify-between py-1.5 text-text-tertiary">
                     <dt>{k}</dt>
@@ -427,26 +427,26 @@ export default function Home() {
       </section>
 
       {/* Özellik: Hidronik Su Debisi */}
-      <section className="border-b border-border px-6 py-20">
+      <section className="border-b border-border px-lg py-20">
         <div className="mx-auto grid max-w-[1140px] gap-12 lg:grid-cols-2 lg:items-center">
           <div className="order-2 rounded-2xl border border-border bg-surface-secondary p-6 lg:order-1">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold text-text-primary">Hidronik Su Debisi</span>
-              <span className="rounded-full border border-border-strong px-2.5 py-0.5 text-[11px] text-text-tertiary">
+              <span className="text-body font-semibold text-text-primary">Hidronik Su Debisi</span>
+              <span className="rounded-full border border-border-strong px-sm py-0.5 text-[11px] text-text-tertiary">
                 Enerji Korunumu
               </span>
             </div>
-            <dl className="mt-4 divide-y divide-border text-sm">
-              <div className="flex justify-between py-2">
+            <dl className="mt-4 divide-y divide-border text-body">
+              <div className="flex justify-between py-sm">
                 <dt className="text-text-secondary">Isı Yükü</dt>
                 <dd className="font-mono text-text-primary">10 kW</dd>
               </div>
-              <div className="flex justify-between py-2">
+              <div className="flex justify-between py-sm">
                 <dt className="text-text-secondary">ΔT</dt>
                 <dd className="font-mono text-text-primary">10 °C</dd>
               </div>
               {Object.entries(ornekHidronik.intermediates).map(([k, v]) => (
-                <div key={k} className="flex justify-between py-2 text-xs">
+                <div key={k} className="flex justify-between py-sm text-caption">
                   <dt className="text-text-tertiary">{k}</dt>
                   <dd className="font-mono text-text-tertiary">
                     {typeof v === "number" ? v.toFixed(3) : v}
@@ -455,9 +455,9 @@ export default function Home() {
               ))}
             </dl>
             <div className="mt-4 rounded-xl border border-accent bg-accent/10 p-4">
-              <p className="font-mono text-2xl font-semibold tabular-nums text-text-primary">
+              <p className="font-mono text-headline font-semibold tabular-nums text-text-primary">
                 {ornekHidronik.value.debi_m3h.toFixed(2)}{" "}
-                <span className="text-sm font-normal text-text-secondary">m³/h</span>
+                <span className="text-body font-normal text-text-secondary">m³/h</span>
               </p>
             </div>
           </div>
@@ -468,13 +468,13 @@ export default function Home() {
               Isı yükünden debiye geçişin <em className="text-accent">tek fizik formülüyle</em>{" "}
               çözüldüğünü biliyor muydunuz?
             </h2>
-            <p className="mt-4 max-w-[55ch] text-sm leading-relaxed text-text-secondary">
+            <p className="mt-4 max-w-[55ch] text-body leading-relaxed text-text-secondary">
               Enerji korunumu kanunu (Q = ṁ · cp · ΔT) motoru çalıştırır — bir standart
               tablosundan değil, suyun fiziksel özelliklerinden gelir.
             </p>
             <Link
               href="/hidronik-su-debisi"
-              className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors duration-300 hover:text-accent-hover"
+              className="mt-5 inline-flex items-center gap-1.5 text-body font-semibold text-accent transition-colors duration-normal hover:text-accent-hover"
             >
               Hidronik Su Debisi&apos;ni deneyin
               <span aria-hidden>→</span>
@@ -484,29 +484,29 @@ export default function Home() {
       </section>
 
       {/* Roller */}
-      <section id="kimin-icin" className="border-b border-border px-6 py-20">
+      <section id="kimin-icin" className="border-b border-border px-lg py-20">
         <div className="mx-auto max-w-[1140px]">
           <h2 className="max-w-2xl text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
             Sahadaki herkese göre bir yüzü var.
           </h2>
-          <p className="mt-3 max-w-[55ch] text-sm text-text-secondary">
+          <p className="mt-3 max-w-[55ch] text-body text-text-secondary">
             Rolünüze göre önem sırası değişir; modüller yine herkese açık.
           </p>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-md sm:grid-cols-2 lg:grid-cols-3">
             {ROLLER.map((rol, i) => (
               <div
                 key={rol.title}
                 className="relative overflow-hidden rounded-2xl border border-border p-6"
               >
-                <span className="absolute right-4 top-4 font-mono text-3xl text-border-strong">
+                <span className="absolute right-4 top-4 font-mono text-display-2 text-border-strong">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-caption font-semibold uppercase tracking-wide text-accent">
                   Metranik · {rol.kategori}
                 </p>
-                <h3 className="mt-3 text-lg font-semibold text-text-primary">{rol.title}</h3>
-                <p className="mt-2 max-w-[36ch] text-sm leading-relaxed text-text-secondary">
+                <h3 className="mt-3 text-subheading font-semibold text-text-primary">{rol.title}</h3>
+                <p className="mt-2 max-w-[36ch] text-body leading-relaxed text-text-secondary">
                   {rol.desc}
                 </p>
               </div>
@@ -516,21 +516,21 @@ export default function Home() {
       </section>
 
       {/* Yol haritası */}
-      <section className="border-b border-border px-6 py-20">
+      <section className="border-b border-border px-lg py-20">
         <div className="mx-auto max-w-[1140px]">
           <Eyebrow>Yol Haritası</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
             Milestone 0 tamam. Sırada standart doğrulaması var.
           </h2>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className="mt-10 grid gap-md sm:grid-cols-3">
             {YOL_HARITASI.map((adim) => (
               <div key={adim.etiket} className="rounded-2xl border border-border p-6">
                 <p className="text-[11px] font-semibold uppercase tracking-wide text-accent">
                   {adim.etiket}
                 </p>
-                <h3 className="mt-3 text-base font-semibold text-text-primary">{adim.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">{adim.desc}</p>
+                <h3 className="mt-3 text-body-lg font-semibold text-text-primary">{adim.title}</h3>
+                <p className="mt-2 text-body leading-relaxed text-text-secondary">{adim.desc}</p>
               </div>
             ))}
           </div>
@@ -538,19 +538,19 @@ export default function Home() {
       </section>
 
       {/* Reklam Verin */}
-      <section id="reklam-verin" className="border-b border-border px-6 py-20">
+      <section id="reklam-verin" className="border-b border-border px-lg py-20">
         <div className="mx-auto max-w-[1140px]">
           <Eyebrow>Reklam Verin</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-[clamp(1.8rem,3.6vw,2.6rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
             Doğru anda, doğru mühendise reklam verin.
           </h2>
-          <p className="mt-3 max-w-[60ch] text-sm leading-relaxed text-text-secondary">
+          <p className="mt-3 max-w-[60ch] text-body leading-relaxed text-text-secondary">
             Metranik beta sürümünde; kullanıcılar gerçek bir hesap yapıp karar verirken
             markanız tam o anda görünür. Malzeme, ekipman ve yazılım üreticileri için
             sponsorluk alanları ayrılabilir.
           </p>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className="mt-10 grid gap-md sm:grid-cols-3">
             {[
               {
                 title: "Ana Sponsor Bandı",
@@ -566,15 +566,15 @@ export default function Home() {
               },
             ].map((k) => (
               <div key={k.title} className="rounded-2xl border border-dashed border-border-strong p-6">
-                <p className="text-sm font-semibold text-text-primary">{k.title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">{k.desc}</p>
+                <p className="text-body font-semibold text-text-primary">{k.title}</p>
+                <p className="mt-2 text-body leading-relaxed text-text-secondary">{k.desc}</p>
               </div>
             ))}
           </div>
 
           <a
             href="mailto:erturkuludasdemir@gmail.com?subject=Metranik%20Reklam%20%2F%20Sponsorluk"
-            className="mt-8 inline-flex items-center justify-center rounded-xl border border-accent px-5 py-2.5 text-sm font-semibold text-accent transition-colors duration-300 hover:bg-accent hover:text-accent-fg"
+            className="mt-8 inline-flex items-center justify-center rounded-xl border border-accent px-5 py-sm text-body font-semibold text-accent transition-colors duration-normal hover:bg-accent hover:text-accent-fg"
           >
             Reklam İçin İletişime Geçin
           </a>
@@ -582,14 +582,14 @@ export default function Home() {
       </section>
 
       {/* Kapanış CTA */}
-      <section className="flex-1 px-6 py-20 text-center">
+      <section className="flex-1 px-lg py-20 text-center">
         <Eyebrow center>Hazır mısınız?</Eyebrow>
         <h2 className="mx-auto mt-4 max-w-xl text-[clamp(1.6rem,3.2vw,2.2rem)] leading-tight text-text-primary [font-family:var(--font-serif)]">
           {TUM_MODULLER.length} modülün tamamı bir tık uzağınızda.
         </h2>
         <Link
           href="/uygulama"
-          className="mt-6 inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-accent-fg shadow-[0_8px_28px_-8px_var(--accent-glow)] transition-colors duration-300 hover:bg-accent-hover"
+          className="mt-6 inline-flex items-center justify-center rounded-xl bg-accent px-lg py-md text-body font-semibold text-accent-fg shadow-[0_8px_28px_-8px_var(--accent-glow)] transition-colors duration-normal hover:bg-accent-hover"
         >
           Uygulamayı Aç
         </Link>
