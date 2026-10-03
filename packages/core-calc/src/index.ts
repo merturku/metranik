@@ -1030,10 +1030,6 @@ export type {
   KanalBaglantıSızıntıKontroluInput,
   KanalBaglantıSızıntıKontroluOutput,
 } from "./modules/kanal-baglantı-sızıntı-kontrolu";
-export { kompanzasyonKondansatorAkimi } from "./modules/kompanzasyon-kondansator-akimi";
-export type {
-  KompanzasyonKondansatorAkimiInput,
-  KompanzasyonKondansatorAkimiOutput,
 } from "./modules/kompanzasyon-kondansator-akimi";
 export { akumulatorTankiHacmi } from "./modules/akumulator-tanki-hacmi";
 export type {
