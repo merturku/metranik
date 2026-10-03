@@ -12,7 +12,7 @@ export const elektrikMotorKapasite: CalcModule<any, any> = {
   title: "Motor Kapasite Kullanımı Kontrolü",
   discipline: "elektrik",
   standards: ["IEC 60034-1"],
-  inputSchema: elektrikMotorKapasite as any,
+  inputSchema: elektrikMotorKapasiteSchema as any,
 
   compute(input: any) {
     const kullanım = (input.guc_istenen_kW / input.motor_nominal_kW) * 100;

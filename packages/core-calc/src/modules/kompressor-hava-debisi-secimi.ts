@@ -11,7 +11,7 @@ export const kompresörHavaDebisiSecimi: CalcModule<any, any> = {
   title: "Kompresör Hava Debisi Seçimi",
   discipline: "mekanik",
   standards: ["ISO 1217"],
-  inputSchema: kompresörHavaDebisiSecimi as any as any,
+  inputSchema: kompresörHavaDebisiSchema as any,
 
   compute(input: any) {
     const sf = input.esanzamanlılık_faktoru ?? 0.7;
