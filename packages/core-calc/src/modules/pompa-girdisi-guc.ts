@@ -4,7 +4,7 @@ import type { CalcModule, CalcResult } from "../types";
 export const pompaGirdisiGucSchema = z.object({
   debi_m3h: z.number().positive(),
   basınç_kPa: z.number().positive(),
-  verim_yuzde: z.number().positive().default(70),
+  verim_yuzde: z.number().positive().optional(),
 });
 
 export type PompaGirdisiGucInput = z.infer<typeof pompaGirdisiGucSchema>;

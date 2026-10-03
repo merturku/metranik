@@ -3,9 +3,9 @@ import type { CalcModule, CalcResult } from "../types";
 
 export const klimaYillikIsletmeMaliyetiSchema = z.object({
   kapasite_kW: z.number().positive(),
-  saat_yillik: z.number().positive().default(3000),
-  COP: z.number().positive().default(3.5),
-  fiyat_kwh: z.number().positive().default(3),
+  saat_yillik: z.number().positive().optional(),
+  COP: z.number().positive().optional(),
+  fiyat_kwh: z.number().positive().optional(),
 });
 
 export type KlimaYillikIsletmeMaliyetiInput = z.infer<typeof klimaYillikIsletmeMaliyetiSchema>;

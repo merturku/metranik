@@ -2,7 +2,7 @@ import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
 export const modul_330Schema = z.object({
-  guc_kW: z.number().positive().default(10),
+  guc_kW: z.number().positive().optional(),
 });
 
 export type Modul_330Input = z.infer<typeof modul_330Schema>;

@@ -7,7 +7,7 @@ export const sogutmaKulesiKapasitesiKontroluSchema = z.object({
   giris_sicakligi_C: z.number(),
   cikis_sicakligi_C: z.number(),
   ortam_sicakligi_C: z.number(),
-  min_cikis_sicakligi_C: z.number().default(28),
+  min_cikis_sicakligi_C: z.number().optional(),
 });
 
 export type SogutmaKulesiKapasitesiKontroluInput = z.infer<typeof sogutmaKulesiKapasitesiKontroluSchema>;
@@ -23,7 +23,7 @@ export const sogutmaKulesiKapasitesiKontrolu: CalcModule<SogutmaKulesiKapasitesi
   title: "Soğutma Kulesi Kapasitesi Kontrolü",
   discipline: "mekanik",
   standards: ["EN 12113", "CTI STD-101"],
-  inputSchema: sogutmaKulesiKapasitesiKontroluSchema,
+  inputSchema: sogutmaKulesiKapasitesiKontrolyuSchema as any,
 
   compute(input: SogutmaKulesiKapasitesiKontroluInput): CalcResult<SogutmaKulesiKapasitesiKontroluOutput> {
     const m_kgs = (input.su_debisi_m3h / 3.6) * 1000; // convert to kg/s, ρ≈1000 kg/m³

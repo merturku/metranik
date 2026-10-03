@@ -6,7 +6,7 @@ export const isiEsjanjoreEffektivitesiSchema = z.object({
   sicaklik_giris_soğuk_C: z.number(),
   sicaklik_cikis_sicak_C: z.number(),
   sicaklik_cikis_soğuk_C: z.number(),
-  min_effektivite: z.number().default(0.7),
+  min_effektivite: z.number().optional(),
 });
 
 export type IsiEsjanjoreEffektivitesiInput = z.infer<typeof isiEsjanjoreEffektivitesiSchema>;

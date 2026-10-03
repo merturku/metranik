@@ -4,7 +4,7 @@ import type { CalcModule, CalcResult } from "../types";
 export const modul_241Schema = z.object({
   isi_yuku_W: z.number().positive(),
   kutlesel_debi_kgs: z.number().positive(),
-  ozgul_isi_JkgK: z.number().positive().default(4186),
+  ozgul_isi_JkgK: z.number().positive().optional(),
 });
 
 export type Modul_241Input = z.infer<typeof modul_241Schema>;

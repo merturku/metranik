@@ -5,7 +5,7 @@ export const modul_242Schema = z.object({
   devir_rpm: z.number().positive(),
   cap_mm: z.number().positive(),
   basinc_Pa: z.number().positive(),
-  verim_yuzde: z.number().positive().default(75),
+  verim_yuzde: z.number().positive().optional(),
 });
 
 export type Modul_242Input = z.infer<typeof modul_242Schema>;

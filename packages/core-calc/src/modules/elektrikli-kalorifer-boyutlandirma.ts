@@ -4,8 +4,8 @@ import type { CalcModule, CalcResult } from "../types";
 export const elektrikliKaloriferBoyutlandirmaSchema = z.object({
   volumetrik_debi_m3h: z.number().positive(),
   sicaklik_artisi_C: z.number().positive(),
-  hava_yoğunluğu_kgm3: z.number().positive().default(1.2),
-  ozgul_isi_Jkg: z.number().positive().default(1000),
+  hava_yoğunluğu_kgm3: z.number().positive().optional(),
+  ozgul_isi_Jkg: z.number().positive().optional(),
 });
 
 export type ElektrikliKaloriferBoyutlandirmaInput = z.infer<typeof elektrikliKaloriferBoyutlandirmaSchema>;

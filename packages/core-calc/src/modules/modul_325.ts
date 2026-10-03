@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
-export const modul_325Schema = z.object({ girdi: z.number().positive().default(1) });
+export const modul_325Schema = z.object({ girdi: z.number().positive().optional() });
 export type Modul_325Input = z.infer<typeof modul_325Schema>;
 export interface Modul_325Output { sonuc: number; }
 

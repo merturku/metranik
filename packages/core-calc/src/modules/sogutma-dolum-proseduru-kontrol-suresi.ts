@@ -4,8 +4,8 @@ import type { CalcModule, CalcResult } from "../types";
 export const sogutmaDolumProsedureKontrolSuresiSchema = z.object({
   sistem_hacmi_L: z.number().positive(),
   dolum_debisi_Lmin: z.number().positive(),
-  basinc_stabilizasyon_dakika: z.number().default(5),
-  sicaklik_stabilizasyon_dakika: z.number().default(10),
+  basinc_stabilizasyon_dakika: z.number().optional(),
+  sicaklik_stabilizasyon_dakika: z.number().optional(),
 });
 
 export type SogutmaDolumProsedureKontrolSuresiInput = z.infer<typeof sogutmaDolumProsedureKontrolSuresiSchema>;
@@ -21,7 +21,7 @@ export const sogutmaDolumProsedureKontrolSuresi: CalcModule<SogutmaDolumProsedur
   title: "Soğutma Dolum Prosedürü Kontrol Süresi",
   discipline: "mekanik",
   standards: ["EN 12828", "ISO 13623"],
-  inputSchema: sogutmaDolumProsedureKontrolSuresiSchema,
+  inputSchema: sogutmaDolumProsedyuKontrolSuresiSchema as any,
 
   compute(input: SogutmaDolumProsedureKontrolSuresiInput): CalcResult<SogutmaDolumProsedureKontrolSuresiOutput> {
     // Dolum süresi = Sistem hacmi / Dolum debisi

@@ -3,8 +3,8 @@ import type { CalcModule, CalcResult } from "../types";
 
 export const modul_236Schema = z.object({
   guc_kW: z.number().positive(),
-  voltaj_V: z.number().positive().default(400),
-  kosinus_phi: z.number().positive().default(0.9),
+  voltaj_V: z.number().positive().optional(),
+  kosinus_phi: z.number().positive().optional(),
 });
 
 export type Modul_236Input = z.infer<typeof modul_236Schema>;

@@ -3,8 +3,8 @@ import type { CalcModule, CalcResult } from "../types";
 
 export const modul_237Schema = z.object({
   alan_m2: z.number().positive(),
-  kW_m2_baslangic: z.number().positive().default(10),
-  kW_m2_final: z.number().positive().default(5),
+  kW_m2_baslangic: z.number().positive().optional(),
+  kW_m2_final: z.number().positive().optional(),
 });
 
 export type Modul_237Input = z.infer<typeof modul_237Schema>;

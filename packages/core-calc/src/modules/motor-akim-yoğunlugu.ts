@@ -3,9 +3,9 @@ import type { CalcModule, CalcResult } from "../types";
 
 export const motorAkimYoğunluguSchema = z.object({
   guc_kW: z.number().positive(),
-  voltaj_V: z.number().positive().default(400),
-  verim_yuzde: z.number().positive().default(85),
-  kosinus_phi: z.number().positive().default(0.85),
+  voltaj_V: z.number().positive().optional(),
+  verim_yuzde: z.number().positive().optional(),
+  kosinus_phi: z.number().positive().optional(),
 });
 
 export type MotorAkimYoğunluguInput = z.infer<typeof motorAkimYoğunluguSchema>;

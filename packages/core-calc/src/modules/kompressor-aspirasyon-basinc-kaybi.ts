@@ -4,8 +4,8 @@ import type { CalcModule, CalcResult } from "../types";
 export const kompressorAspirasyanBasincKaybiSchema = z.object({
   debi_m3min: z.number().positive(),
   emme_boru_capı_mm: z.number().positive(),
-  emme_boru_uzunlugu_m: z.number().positive().default(2),
-  max_basinc_kaybi_kPa: z.number().default(5),
+  emme_boru_uzunlugu_m: z.number().positive().optional(),
+  max_basinc_kaybi_kPa: z.number().optional(),
 });
 
 export type KompressorAspirasyanBasincKaybiInput = z.infer<typeof kompressorAspirasyanBasincKaybiSchema>;

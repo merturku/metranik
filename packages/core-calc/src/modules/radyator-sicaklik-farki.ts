@@ -4,9 +4,9 @@ import type { CalcModule, CalcResult } from "../types";
 export const radyatorSicaklikFarkiSchema = z.object({
   isi_yuku_W: z.number().positive(),
   kutlesel_debi_kgs: z.number().positive(),
-  ozgul_isi_Jkg: z.number().positive().default(4186),
-  min_sicaklik_farki: z.number().positive().default(10),
-  max_sicaklik_farki: z.number().positive().default(20),
+  ozgul_isi_Jkg: z.number().positive().optional(),
+  min_sicaklik_farki: z.number().positive().optional(),
+  max_sicaklik_farki: z.number().positive().optional(),
 });
 
 export type RadyatorSicaklikFarkiInput = z.infer<typeof radyatorSicaklikFarkiSchema>;
@@ -21,7 +21,7 @@ export const radyatorSicaklikFarki: CalcModule<RadyatorSicaklikFarkiInput, Radya
   title: "Radyatör Sıcaklık Farkı Kontrolü",
   discipline: "mekanik",
   standards: ["EN 442"],
-  inputSchema: radyatorSicaklikFarkiSchema,
+  inputSchema: radyatorSicaklikFarkiSchema as any,
 
   compute(input: RadyatorSicaklikFarkiInput): CalcResult<RadyatorSicaklikFarkiOutput> {
     const sicaklik_farki_C = input.isi_yuku_W / (input.kutlesel_debi_kgs * input.ozgul_isi_Jkg);

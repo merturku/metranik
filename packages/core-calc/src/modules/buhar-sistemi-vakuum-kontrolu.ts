@@ -4,7 +4,7 @@ import type { CalcModule, CalcResult } from "../types";
 export const buharSistemiVakuumKontroluSchema = z.object({
   kondenser_basinc_kPa: z.number().positive(),
   adiabatik_sicaklık_C: z.number().positive(),
-  max_izin_vakuum_kPa: z.number().default(95),
+  max_izin_vakuum_kPa: z.number().optional(),
 });
 
 export type BuharSistemiVakuumKontroluInput = z.infer<typeof buharSistemiVakuumKontroluSchema>;
