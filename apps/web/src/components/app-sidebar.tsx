@@ -8,7 +8,7 @@ import { MODUL_GRUPLARI, grupBasinaModulSayisi } from "@/lib/modules";
 export function AppSidebar() {
   const pathname = usePathname();
   const [expanded, setExpanded] = useState<Record<string, boolean>>(
-    Object.fromEntries(MODUL_GRUPLARI.map((g) => [g.label, true]))
+    Object.fromEntries(MODUL_GRUPLARI.map((g) => [g.label, false]))
   );
 
   function toggleGroup(label: string) {
