@@ -1141,3 +1141,10 @@ export { modul_327 } from "./modules/modul_327";
 export { modul_328 } from "./modules/modul_328";
 export { modul_329 } from "./modules/modul_329";
 export { modul_330 } from "./modules/modul_330";
+// Batch 5at (330-334)
+export { termalEnerjiDeposuHacmi } from "./modules/termal-enerji-deposu-hacmi";
+export type { TermalEnerjiDeposuHacmiInput, TermalEnerjiDeposuHacmiOutput } from "./modules/termal-enerji-deposu-hacmi";
+export { sogutmaMenteşeBasinci } from "./modules/sogutma-menteşe-basinci-kontrolu";
+export { motorRotorBarAkimi } from "./modules/motor-rotor-bar-akimi";
+export { temelOturmaPrediktif } from "./modules/temel-oturma-prediktif";
+export { evSicaklikKonforKontrolu } from "./modules/ev-sicaklik-konfor-kontrolu";
