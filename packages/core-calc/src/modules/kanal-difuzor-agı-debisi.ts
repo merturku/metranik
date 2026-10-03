@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
-export const kanalDifuzorAgiSchema = z.object({
+export const kanalDifuzorAgiSchemaSchema = z.object({
   hızlı_havayolu_hızı_ms: z.number().positive().optional(),
   difuzor_alanı_m2: z.number().positive(),
 });
@@ -11,7 +11,7 @@ export const kanalDifuzorAgiDebisi: CalcModule<any, any> = {
   title: "Kanal Difüzör Ağı Debisi",
   discipline: "mekanik",
   standards: ["ASHRAE 62.1"],
-  inputSchema: kanalDifuzorAgiSchema as any,
+  inputSchema: kanalDifuzorAgiDebisi as any as any,
 
   compute(input: any) {
     const v = input.hızlı_havayolu_hızı_ms ?? 4;

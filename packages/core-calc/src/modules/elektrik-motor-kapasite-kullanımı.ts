@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
-export const elektrikMotorKapasite = z.object({
+export const elektrikMotorKapasiteSchema = z.object({
   guc_istenen_kW: z.number().positive(),
   motor_nominal_kW: z.number().positive(),
   max_izin_verilen_yuzde: z.number().positive().optional(),

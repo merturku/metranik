@@ -14,7 +14,7 @@ export const zeminAltlıkGerilmeKontrolu: CalcModule<any, any> = {
   title: "Zemin Altlık Gerilme Kontrolü",
   discipline: "insaat",
   standards: ["TS EN 1997-1"],
-  inputSchema: zeminAltlıkGerilmeSchema as any,
+  inputSchema: zeminAltlıkGerilmeKontrolu as any as any,
 
   compute(input: any) {
     const eksenel = input.yuk_kN / input.temel_alani_m2;
