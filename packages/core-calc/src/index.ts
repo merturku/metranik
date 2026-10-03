@@ -1148,3 +1148,10 @@ export { sogutmaMenteşeBasinci } from "./modules/sogutma-menteşe-basinci-kontr
 export { motorRotorBarAkimi } from "./modules/motor-rotor-bar-akimi";
 export { temelOturmaPrediktif } from "./modules/temel-oturma-prediktif";
 export { evSicaklikKonforKontrolu } from "./modules/ev-sicaklik-konfor-kontrolu";
+
+// Batch 5au (335-339)
+export { kompresörHavaDebisiSecimi } from "./modules/kompressor-hava-debisi-secimi";
+export { kanalDifuzorAgiDebisi } from "./modules/kanal-difuzor-agı-debisi";
+export { elektrikMotorKapasite } from "./modules/elektrik-motor-kapasite-kullanımı";
+export { zeminAltlıkGerilmeKontrolu } from "./modules/zemin-altlık-gerilme-kontrolu";
+export { evElektrikTasarufuGeriOdeme } from "./modules/ev-elektrik-tasarrufu-geri-odeme";
