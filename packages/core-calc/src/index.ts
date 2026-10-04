@@ -1149,3 +1149,10 @@ export { motorRotorBarAkimi } from "./modules/motor-rotor-bar-akimi";
 export { temelOturmaPrediktif } from "./modules/temel-oturma-prediktif";
 export { evSicaklikKonforKontrolu } from "./modules/ev-sicaklik-konfor-kontrolu";
 
+
+// Batch 5av (339-343)
+export { isiDegistiricietkinligi } from "./modules/isi-degistirici-etkinligi";
+export { boruIsiKaybiYuzeySicakligi } from "./modules/boru-isi-kaybi-yuzey-sicakligi";
+export { trafoImpedansGerilim } from "./modules/elektrik-trafo-impedans-gerilim";
+export { betonAğirlikHesabi } from "./modules/insaat-beton-agirlik-hesabi";
+export { evEnerjiTahminYillik } from "./modules/ev-enerji-faturasi-tahmini-yillik";
