@@ -1156,3 +1156,10 @@ export { boruIsiKaybiYuzeySicakligi } from "./modules/boru-isi-kaybi-yuzey-sicak
 export { trafoImpedansGerilim } from "./modules/elektrik-trafo-impedans-gerilim";
 export { betonAğirlikHesabi } from "./modules/insaat-beton-agirlik-hesabi";
 export { evEnerjiTahminYillik } from "./modules/ev-enerji-faturasi-tahmini-yillik";
+
+// Batch 5aw (344-348)
+export { havalanVentilAcikligi } from "./modules/havalandirma-ventil-acikligi";
+export { pompaKavitasyonRiski } from "./modules/pompa-kavitasyon-riski";
+export { motorVerimSinifi } from "./modules/motor-verim-sinifi";
+export { bolmeBoslukOrani } from "./modules/insaat-bolme-bosluk-orani";
+export { evSuTuketimTahmini } from "./modules/ev-su-tuketim-tahmini";
