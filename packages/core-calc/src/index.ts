@@ -1163,3 +1163,7 @@ export { pompaKavitasyonRiski } from "./modules/pompa-kavitasyon-riski";
 export { motorVerimSinifi } from "./modules/motor-verim-sinifi";
 export { bolmeBoslukOrani } from "./modules/insaat-bolme-bosluk-orani";
 export { evSuTuketimTahmini } from "./modules/ev-su-tuketim-tahmini";
+
+// Batch 5ay (354-358)
+export { kabloDuşüşKontrolu } from "./modules/kablo-gerilim-drop-kontrolu";
+export { radyatorDebiSicaklik } from "./modules/radyator-debi-sicaklik-iliskisi";
