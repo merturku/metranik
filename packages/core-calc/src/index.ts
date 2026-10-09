@@ -1172,3 +1172,8 @@ export { radyatorDebiSicaklik } from "./modules/radyator-debi-sicaklik-iliskisi"
 export { kanalBasincKaybi } from "./modules/kanal-basinc-kaybi-darcy";
 export { motorGirisGucu } from "./modules/motor-giris-gucu";
 export { isiEsanjorNtu } from "./modules/isi-esanjoru-ntu";
+
+// Final 3 (356-358)
+export { kanalBasincKaybi } from "./modules/kanal-basinc-kaybi";
+export { motorGucHesabi } from "./modules/motor-guc-hesabi";
+export { isiEsanjorNtu } from "./modules/isi-esanjor-ntu";
