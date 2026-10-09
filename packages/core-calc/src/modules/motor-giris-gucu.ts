@@ -1,38 +1,16 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
-
-// Üç fazlı gerçek güç (şebekeden çekilen giriş gücü): P = √3 × V × I × cosφ.
-// Mil (çıkış) gücü isteniyorsa bu değer ayrıca motor verimiyle çarpılmalıdır.
-export const motorGirisGucuInputSchema = z.object({
-  hatGerilimi_V_V: z.number().positive(),
-  hatAkimi_I_A: z.number().positive(),
-  gucFaktoru_cosfi: z.number().positive().max(1),
-});
-
-export type MotorGirisGucuInput = z.infer<typeof motorGirisGucuInputSchema>;
-
-export interface MotorGirisGucuOutput {
-  girisGucu_kW: number;
-}
-
-function compute(input: MotorGirisGucuInput): CalcResult<MotorGirisGucuOutput> {
-  const girisGucuW =
-    Math.sqrt(3) * input.hatGerilimi_V_V * input.hatAkimi_I_A * input.gucFaktoru_cosfi;
-
-  return {
-    value: { girisGucu_kW: girisGucuW / 1000 },
-    intermediates: {
-      gucFaktoru_cosfi: input.gucFaktoru_cosfi,
-    },
-    standardsUsed: [],
-  };
-}
-
-export const motorGirisGucu: CalcModule<MotorGirisGucuInput, MotorGirisGucuOutput> = {
+export const motorGirisuSchema = z.object({ cikis_guc_kW: z.number().positive(), verim_yuzde: z.number().positive().optional() });
+export const motorGirisGucu: CalcModule<any, any> = {
   id: "motor-giris-gucu",
   title: "Motor Giriş Gücü",
   discipline: "elektrik",
-  standards: [],
-  inputSchema: motorGirisGucuInputSchema,
-  compute,
+  standards: ["IEC 60034-1"],
+  inputSchema: motorGirisuSchema as any,
+  compute(input: any) {
+    const eta = (input.verim_yuzde ?? 90) / 100;
+    const P_giris = input.cikis_guc_kW / eta;
+    const kayip = P_giris - input.cikis_guc_kW;
+    return { value: { P_giris_kW: parseFloat(P_giris.toFixed(2)), kayip_kW: parseFloat(kayip.toFixed(2)) }, intermediates: { eta }, standardsUsed: ["IEC 60034-1"] };
+  },
 };

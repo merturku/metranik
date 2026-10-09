@@ -1167,3 +1167,8 @@ export { evSuTuketimTahmini } from "./modules/ev-su-tuketim-tahmini";
 // Batch 5ay (354-358)
 export { kabloDuşüşKontrolu } from "./modules/kablo-gerilim-drop-kontrolu";
 export { radyatorDebiSicaklik } from "./modules/radyator-debi-sicaklik-iliskisi";
+
+// Final batch (356-358)
+export { kanalBasincKaybi } from "./modules/kanal-basinc-kaybi-darcy";
+export { motorGirisGucu } from "./modules/motor-giris-gucu";
+export { isiEsanjorNtu } from "./modules/isi-esanjoru-ntu";
