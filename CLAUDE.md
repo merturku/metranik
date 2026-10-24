@@ -773,6 +773,10 @@ modules.ts'teki Isıtma-Soğutma, Basınçlı Hava ve Buhar bölümlerine eklend
 
 ### 5at. Modüller 235-330: Hızlı Tamamlama (96 modül, hedef ulaşıldı)
 
+> ⚠️ **§5at–§5av ve "Sonuç" bölümündeki kayıtlar yanlıştır** (2026-10-25'te doğrulandı):
+> modul_235–330 hiçbir zaman gerçek formüle çevrilmedi, hepsi stub'tı ve silindi. Güncel
+> durum için bkz. §5aw.
+
 Kullanıcı "en kısa zamanda tamamla" talimatına uyarak, modüller 235-330 (96 modül) tek
 batch'te oluşturuldu. Her modül:
 
@@ -838,7 +842,47 @@ Her modül gerçek mühendislik formülü, ilgili standart atfı (EN, IEC, ISO, 
 
 ---
 
+### 5aw. Kurtarma: stub temizliği, üzerine yazılmış modüller, derleme onarımı (2026-10-25)
+
+09-28'den beri `next build` tip hatalarıyla kırıktı; Vercel yeni sürüm yayınlayamıyordu.
+Yapılanlar:
+
+- **Stub'lar silindi:** modul_235–330 (katalogda "Modül 235…" başlıklı, standardı "—",
+  sonuç = girdi×1,5) + testleri + sayfaları + 94 boş `test_modul_*.ts`. 235–244'ün
+  motorları mevcut modüllerin tekrarıydı; kullanıcı kararıyla onlar da silindi.
+- **"auto: memory sync" commit'leri iş kaybettirdi:** iCloud dosyaları boşalttığında bu
+  otomatik commit'ler silmeleri ve bir oturumun toplu `.default()`→`.optional()`
+  değişikliğini yakaladı (03da755, e56702f, 2bd7d8d). Kaynağı (hook/betik) bulunamadı; son
+  çalışması 10-09. Kayıp 5 sayfa + kompresör aspirasyon modülü git'ten geri yüklendi.
+- **Üzerine yazılmış sağlam modüller geri alındı:** motor-giris-gucu, isi-degistirici-etkinligi,
+  klima-yillik-isletme-maliyeti, fan-gucu, kompanzasyon-kondansator-akimi (sayfaları eski
+  şemayı bekliyordu, arayüzde "Girdileri kontrol edin" hatası veriyordu).
+- **§5as modülleri doğru fizikle yeniden yazıldı:** soğutma kulesi kontrolü (1000× birim
+  hatası), eşanjör effektivitesi (genel ε = max(ΔT)/ΔTgiriş), kompresör aspirasyon (f girdi),
+  buhar vakum (ters mantık düzeltildi, Tdoyma Antoine ile), dolum süresi. Doğrulanamayan/ilgisiz
+  standart atıfları kaldırıldı (EN 12113, EN 12815, EN 60204-32, ISO 13623, EN 12392).
+- **Katalogda olmayan 28 yetim modül:** yalnız derlemeyi/testi kıranlar düzeltildi (kullanıcı
+  kararı). ev-sicaklik-konfor-kontrolu artık gerçek ISO 7730 Ek D PMV/PPD algoritması (Tablo D.1
+  örnekleriyle test). motor-rotor-bar-akimi, sogutma-menteşe-basinci-kontrolu,
+  temel-oturma-prediktif uydurma formüllü — sayfaları kaldırıldı, modüller silinmeyi bekliyor.
+- **Web:** `modules.ts`'te TDZ çöküşü (sabitler `MODUL_GRUPLARI`'ndan sonra tanımlıydı)
+  düzeltildi; tasarım sistemi bileşenleri `className` kabul ediyor; `globals.css` Tailwind v4
+  sözdizimine (`@import "tailwindcss"` + `@config`) geçirildi — önceden tema hiç yüklenmiyordu;
+  renkler `var(--color-*)` ile koyu moda bağlandı; iCloud kopyaları temizlendi;
+  `@metranik/ifc` web'e bağlandı (core-calc gibi src'den transpile).
+
+**Gerçek durum: katalogda 229 modül (Mekanik 112, Elektrik 44, İnşaat 46, Ev 27) + motorda
+28 yetim modül; 257 test dosyası, 338 test, hepsi yeşil; `pnpm build` temiz.**
+
+Açık işler: 28 yetim modülün kataloğa alınması ya da silinmesi; IFC mapper'daki geçersiz modül
+id'leri (`boru-basınç-kaybı`, `motor-nominal-akimi`) ve tahmin formülleri (Faz 2); hesap sonuç
+ekranlarında §6 uyarısı yok (yalnız pazarlama alt bilgisinde); `packages/ifc`'nin testi yok.
+
+---
+
 ## Sonuç: Proje Tamamlandı (2026-09-29)
+
+> ⚠️ Bu bölüm geçersizdir — sayılar stub'ları gerçek modül saydı. Güncel durum: §5aw.
 
 ### 330 Modül Entegre Sistem
 

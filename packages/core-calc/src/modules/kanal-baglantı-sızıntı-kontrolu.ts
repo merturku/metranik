@@ -3,8 +3,8 @@ import type { CalcModule, CalcResult } from "../types";
 
 export const kanalBaglantıSızıntıKontroluSchema = z.object({
   tasarım_debisi_m3h: z.number().positive(),
-  sızıntı_orani_yuzde: z.number().positive().optional(),
-  izin_verilen_sızıntı_yuzde: z.number().positive().optional(),
+  sızıntı_orani_yuzde: z.number().positive(),
+  izin_verilen_sızıntı_yuzde: z.number().positive(),
 });
 
 export type KanalBaglantıSızıntıKontroluInput = z.infer<typeof kanalBaglantıSızıntıKontroluSchema>;

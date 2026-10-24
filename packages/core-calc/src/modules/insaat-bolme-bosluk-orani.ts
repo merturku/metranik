@@ -19,7 +19,7 @@ export const bolmeBoslukOrani: CalcModule<any, any> = {
     const kapi = input.kapi_alan_m2 ?? 0;
     const bosluk_toplam = pencere + kapi;
     const bosluk_orani = (bosluk_toplam / input.toplam_alan_m2) * 100;
-    const status = bosluk_orani <= 30 ? "uygun" : "yüksek";
+    const status = bosluk_orani <= 30 ? "uygun" : "uygunsuz";
     return {
       value: { bosluk_orani_yuzde: parseFloat(bosluk_orani.toFixed(1)) },
       intermediates: { bosluk_toplam },

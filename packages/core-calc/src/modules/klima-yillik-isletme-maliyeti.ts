@@ -1,38 +1,52 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
-export const klimaYillikIsletmeMaliyetiSchema = z.object({
+// Klima yıllık işletme maliyeti: soğutma/ısıtma kapasitesi COP/EER ile çekilen
+// elektrik gücüne çevrilir, günlük çalışma süresi ve yıllık gün sayısıyla
+// yıllık tüketime, ardından birim fiyatla maliyete dönüştürülür.
+// Elektrik Gücü = Kapasite / COP, Yıllık Tüketim = Elektrik Gücü × Saat × Gün.
+export const klimaYillikIsletmeMaliyetiInputSchema = z.object({
   kapasite_kW: z.number().positive(),
-  saat_yillik: z.number().positive().optional(),
-  COP: z.number().positive().optional(),
-  fiyat_kwh: z.number().positive().optional(),
+  cop: z.number().positive(),
+  gunlukCalismaSuresi_saat: z.number().positive().max(24),
+  yillikCalismaGunSayisi: z.number().positive().max(366),
+  birimFiyat_TLkWh: z.number().positive(),
 });
 
-export type KlimaYillikIsletmeMaliyetiInput = z.infer<typeof klimaYillikIsletmeMaliyetiSchema>;
+export type KlimaYillikIsletmeMaliyetiInput = z.infer<
+  typeof klimaYillikIsletmeMaliyetiInputSchema
+>;
 
 export interface KlimaYillikIsletmeMaliyetiOutput {
-  yillik_tüketim_kWh: number;
-  yillik_maliyet_TL: number;
+  yillikMaliyet_TL: number;
 }
 
-export const klimaYillikIsletmeMaliyeti: CalcModule<KlimaYillikIsletmeMaliyetiInput, KlimaYillikIsletmeMaliyetiOutput> = {
+function compute(
+  input: KlimaYillikIsletmeMaliyetiInput,
+): CalcResult<KlimaYillikIsletmeMaliyetiOutput> {
+  const elektrikGucuKW = input.kapasite_kW / input.cop;
+  const yillikTuketimKWh =
+    elektrikGucuKW * input.gunlukCalismaSuresi_saat * input.yillikCalismaGunSayisi;
+  const yillikMaliyetTL = yillikTuketimKWh * input.birimFiyat_TLkWh;
+
+  return {
+    value: { yillikMaliyet_TL: yillikMaliyetTL },
+    intermediates: {
+      elektrikGucu_kW: elektrikGucuKW,
+      yillikTuketim_kWh: yillikTuketimKWh,
+    },
+    standardsUsed: [],
+  };
+}
+
+export const klimaYillikIsletmeMaliyeti: CalcModule<
+  KlimaYillikIsletmeMaliyetiInput,
+  KlimaYillikIsletmeMaliyetiOutput
+> = {
   id: "klima-yillik-isletme-maliyeti",
   title: "Klima Yıllık İşletme Maliyeti",
   discipline: "ev",
-  standards: ["—"],
-  inputSchema: klimaYillikIsletmeMaliyetiSchema,
-
-  compute(input: KlimaYillikIsletmeMaliyetiInput): CalcResult<KlimaYillikIsletmeMaliyetiOutput> {
-    const tüketim = (input.kapasite_kW * input.saat_yillik) / input.COP;
-    const maliyet = tüketim * input.fiyat_kwh;
-
-    return {
-      value: {
-        yillik_tüketim_kWh: Math.round(tüketim),
-        yillik_maliyet_TL: Math.round(maliyet),
-      },
-      intermediates: { COP_kullanılan: input.COP },
-      standardsUsed: ["—"],
-    };
-  },
+  standards: [],
+  inputSchema: klimaYillikIsletmeMaliyetiInputSchema,
+  compute,
 };

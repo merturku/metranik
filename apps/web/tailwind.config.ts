@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -10,22 +11,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Semantic: Light mode base
-        background: "oklch(0.99 0.001 0)",
-        surface: "oklch(0.96 0.002 0)",
-        border: "oklch(0.92 0.003 0)",
+        // Values live in globals.css so light/dark overrides reach the utilities.
+        background: "var(--color-background)",
+        surface: "var(--color-surface)",
+        border: "var(--color-border)",
 
         // Text
-        "text-primary": "oklch(0.15 0.01 0)",
-        "text-secondary": "oklch(0.50 0.01 0)",
-        "text-tertiary": "oklch(0.72 0.005 0)",
+        "text-primary": "var(--color-text-primary)",
+        "text-secondary": "var(--color-text-secondary)",
+        "text-tertiary": "var(--color-text-tertiary)",
 
         // Accent: Technical Blue
         accent: {
-          DEFAULT: "oklch(0.52 0.15 260)",
-          hover: "oklch(0.48 0.16 260)",
-          active: "oklch(0.42 0.17 260)",
-          subtle: "oklch(0.88 0.05 260)",
+          DEFAULT: "var(--color-accent)",
+          hover: "var(--color-accent-hover)",
+          active: "var(--color-accent-active)",
+          subtle: "var(--color-accent-subtle)",
           50: "oklch(0.95 0.02 260)",
           100: "oklch(0.90 0.04 260)",
           200: "oklch(0.80 0.08 260)",
@@ -40,17 +41,17 @@ const config: Config = {
 
         // Status: Success, Warning, Error, Info
         success: {
-          DEFAULT: "oklch(0.62 0.12 142)",
+          DEFAULT: "var(--color-success)",
           light: "oklch(0.85 0.05 142)",
           dark: "oklch(0.45 0.14 142)",
         },
         warning: {
-          DEFAULT: "oklch(0.68 0.14 60)",
+          DEFAULT: "var(--color-warning)",
           light: "oklch(0.90 0.06 60)",
           dark: "oklch(0.50 0.16 60)",
         },
         error: {
-          DEFAULT: "oklch(0.60 0.14 20)",
+          DEFAULT: "var(--color-error)",
           light: "oklch(0.85 0.06 20)",
           dark: "oklch(0.45 0.16 20)",
         },
@@ -60,7 +61,7 @@ const config: Config = {
           dark: "oklch(0.45 0.16 20)",
         },
         info: {
-          DEFAULT: "oklch(0.58 0.11 250)",
+          DEFAULT: "var(--color-info)",
           light: "oklch(0.88 0.04 250)",
           dark: "oklch(0.40 0.13 250)",
         },
@@ -70,9 +71,6 @@ const config: Config = {
         "border-strong": "oklch(0.85 0.005 0)",
         "accent-fg": "oklch(0.98 0.001 0)",
       },
-
-      // Dark mode overrides
-      darkMode: ["class"],
 
       // Typography
       fontFamily: {
@@ -165,7 +163,7 @@ const config: Config = {
 
   plugins: [
     // Dark mode text colors
-    function ({ addBase, matchUtilities, theme }) {
+    plugin(function ({ addBase, matchUtilities }) {
       addBase({
         ":root": {
           colorScheme: "light",
@@ -189,15 +187,15 @@ const config: Config = {
           },
         }
       );
-    },
+    }),
 
     // Dark mode overrides
-    function ({ addVariant, e }) {
+    plugin(function ({ addVariant }) {
       addVariant("dark", [
         "&:is(.dark &)",
         "@media (prefers-color-scheme: dark)",
       ]);
-    },
+    }),
   ],
 };
 

@@ -1,58 +1,81 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 
+// Kulenin attığı ısı enerji dengesinden bulunur: Q = ṁ×cp×(Tgiriş - Tçıkış).
+// Kule yeterlidir ancak Q ≥ tasarım ısı yükü ve çıkış suyu ≤ tasarım çıkış
+// sıcaklığı ise. Çıkış suyu yaş termometre sıcaklığının altına inemez.
 export const sogutmaKulesiKapasitesiKontroluSchema = z.object({
-  isi_yuku_kW: z.number().positive(),
+  tasarim_isi_yuku_kW: z.number().positive(),
   su_debisi_m3h: z.number().positive(),
   giris_sicakligi_C: z.number(),
   cikis_sicakligi_C: z.number(),
-  ortam_sicakligi_C: z.number(),
-  min_cikis_sicakligi_C: z.number().optional(),
+  yas_termometre_sicakligi_C: z.number(),
+  tasarim_cikis_sicakligi_C: z.number(),
 });
 
-export type SogutmaKulesiKapasitesiKontroluInput = z.infer<typeof sogutmaKulesiKapasitesiKontroluSchema>;
+export type SogutmaKulesiKapasitesiKontroluInput = z.infer<
+  typeof sogutmaKulesiKapasitesiKontroluSchema
+>;
 
 export interface SogutmaKulesiKapasitesiKontroluOutput {
-  gereken_isi_yuku_kW: number;
-  sicaklik_farki_C: number;
-  verdict?: { status: "uygun" | "yetersiz"; note: string };
+  atilan_isi_kW: number;
 }
 
-export const sogutmaKulesiKapasitesiKontrolu: CalcModule<SogutmaKulesiKapasitesiKontroluInput, SogutmaKulesiKapasitesiKontroluOutput> = {
+const SU_YOGUNLUGU_KG_M3 = 1000;
+const SU_OZGUL_ISI_KJ_KGK = 4.186;
+
+function compute(
+  input: SogutmaKulesiKapasitesiKontroluInput,
+): CalcResult<SogutmaKulesiKapasitesiKontroluOutput> {
+  const rangeC = input.giris_sicakligi_C - input.cikis_sicakligi_C;
+  const approachC = input.cikis_sicakligi_C - input.yas_termometre_sicakligi_C;
+  const kutleselDebiKgS = (input.su_debisi_m3h * SU_YOGUNLUGU_KG_M3) / 3600;
+  const atilanIsiKW = kutleselDebiKgS * SU_OZGUL_ISI_KJ_KGK * rangeC;
+
+  let verdict: CalcResult<SogutmaKulesiKapasitesiKontroluOutput>["verdict"];
+  if (approachC < 0) {
+    verdict = {
+      status: "uygunsuz",
+      note: "Çıkış suyu yaş termometre sıcaklığının altında — fiziksel olarak mümkün değil.",
+    };
+  } else if (atilanIsiKW < input.tasarim_isi_yuku_kW) {
+    verdict = {
+      status: "uygunsuz",
+      note: `Atılan ısı (${atilanIsiKW.toFixed(0)} kW) tasarım ısı yükünün (${input.tasarim_isi_yuku_kW} kW) altında: kule kapasitesi yetersiz.`,
+    };
+  } else if (input.cikis_sicakligi_C > input.tasarim_cikis_sicakligi_C) {
+    verdict = {
+      status: "sinirda",
+      note: `Isı yükü karşılanıyor ancak çıkış suyu (${input.cikis_sicakligi_C} °C) tasarım çıkış sıcaklığının (${input.tasarim_cikis_sicakligi_C} °C) üzerinde.`,
+    };
+  } else {
+    verdict = {
+      status: "uygun",
+      note: "Kule tasarım ısı yükünü tasarım çıkış sıcaklığında karşılıyor.",
+    };
+  }
+
+  return {
+    value: { atilan_isi_kW: atilanIsiKW },
+    intermediates: {
+      range_C: rangeC,
+      approach_C: approachC,
+      kutleselDebi_kgs: kutleselDebiKgS,
+      kapasiteOrani: atilanIsiKW / input.tasarim_isi_yuku_kW,
+    },
+    standardsUsed: [],
+    verdict,
+  };
+}
+
+export const sogutmaKulesiKapasitesiKontrolu: CalcModule<
+  SogutmaKulesiKapasitesiKontroluInput,
+  SogutmaKulesiKapasitesiKontroluOutput
+> = {
   id: "sogutma-kulesi-kapasitesi-kontrolu",
   title: "Soğutma Kulesi Kapasitesi Kontrolü",
   discipline: "mekanik",
-  standards: ["EN 12113", "CTI STD-101"],
-  inputSchema: sogutmaKulesiKapasitesiKontroluSchema as any,
-
-  compute(input: SogutmaKulesiKapasitesiKontroluInput): CalcResult<SogutmaKulesiKapasitesiKontroluOutput> {
-    const m_kgs = (input.su_debisi_m3h / 3.6) * 1000; // convert to kg/s, ρ≈1000 kg/m³
-    const c_su = 4186; // specific heat water J/kg°C
-    const delta_T_kabin = input.giris_sicakligi_C - input.cikis_sicakligi_C;
-    const gereken_isi_yuku_kW = (m_kgs * c_su * delta_T_kabin) / 1000;
-
-    let status: "uygun" | "yetersiz" = "uygun";
-    let note = "";
-
-    const min_cikis = input.min_cikis_sicakligi_C ?? input.cikis_sicakligi_C;
-    if (input.cikis_sicakligi_C <= min_cikis) {
-      note = `Çıkış sıcaklığı kabul edilebilir (${input.cikis_sicakligi_C}°C ≤ ${min_cikis}°C).`;
-    } else {
-      status = "yetersiz";
-      note = `Çıkış sıcaklığı aşırı yüksek (${input.cikis_sicakligi_C}°C > ${min_cikis}°C): kulesini büyütün.`;
-    }
-
-    return {
-      value: {
-        gereken_isi_yuku_kW: Math.round(gereken_isi_yuku_kW * 10) / 10,
-        sicaklik_farki_C: delta_T_kabin,
-        verdict: { status, note },
-      },
-      intermediates: {
-        kutlesel_debi_kgs: Math.round(m_kgs * 10) / 10,
-        tasarım_kapasitesi_kW: input.isi_yuku_kW,
-      },
-      standardsUsed: ["EN 12113"],
-    };
-  },
+  standards: [],
+  inputSchema: sogutmaKulesiKapasitesiKontroluSchema,
+  compute,
 };

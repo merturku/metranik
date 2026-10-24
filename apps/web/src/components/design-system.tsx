@@ -144,13 +144,19 @@ export const Card: React.FC<{
   </div>
 );
 
-export const CardHeader: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => <div className="text-headline font-semibold text-text-primary mb-2">{children}</div>;
+type TextProps = { children: React.ReactNode; className?: string };
 
-export const CardBody: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => <div className="text-body text-text-secondary leading-relaxed">{children}</div>;
+export const CardHeader: React.FC<TextProps> = ({ children, className }) => (
+  <div className={`text-headline font-semibold text-text-primary mb-2 ${className || ""}`}>
+    {children}
+  </div>
+);
+
+export const CardBody: React.FC<TextProps> = ({ children, className }) => (
+  <div className={`text-body text-text-secondary leading-relaxed ${className || ""}`}>
+    {children}
+  </div>
+);
 
 // ============================================================================
 // Badge Components
@@ -186,71 +192,66 @@ export const Badge: React.FC<{
 // Heading Components (Typography)
 // ============================================================================
 
-export const Display1: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <h1 className="text-display-1 font-semibold text-text-primary">{children}</h1>
+export const Display1: React.FC<TextProps> = ({ children, className }) => (
+  <h1 className={`text-display-1 font-semibold text-text-primary ${className || ""}`}>
+    {children}
+  </h1>
 );
 
-export const Display2: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <h2 className="text-display-2 font-semibold text-text-primary">{children}</h2>
+export const Display2: React.FC<TextProps> = ({ children, className }) => (
+  <h2 className={`text-display-2 font-semibold text-text-primary ${className || ""}`}>
+    {children}
+  </h2>
 );
 
-export const Headline: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <h3 className="text-headline font-semibold text-text-primary">{children}</h3>
+export const Headline: React.FC<TextProps> = ({ children, className }) => (
+  <h3 className={`text-headline font-semibold text-text-primary ${className || ""}`}>
+    {children}
+  </h3>
 );
 
-export const Subheading: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <h4 className="text-subheading font-semibold text-text-primary">{children}</h4>
+export const Subheading: React.FC<TextProps> = ({ children, className }) => (
+  <h4 className={`text-subheading font-semibold text-text-primary ${className || ""}`}>
+    {children}
+  </h4>
 );
 
 // ============================================================================
 // Text Components
 // ============================================================================
 
-export const BodyLarge: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <p className="text-body-lg text-text-primary leading-relaxed">{children}</p>
+export const BodyLarge: React.FC<TextProps> = ({ children, className }) => (
+  <p className={`text-body-lg text-text-primary leading-relaxed ${className || ""}`}>
+    {children}
+  </p>
 );
 
-export const Body: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <p className="text-body text-text-primary leading-relaxed">{children}</p>
+export const Body: React.FC<TextProps> = ({ children, className }) => (
+  <p className={`text-body text-text-primary leading-relaxed ${className || ""}`}>{children}</p>
 );
 
-export const Caption: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <span className="text-caption text-text-secondary">{children}</span>
+export const Caption: React.FC<TextProps> = ({ children, className }) => (
+  <span className={`text-caption text-text-secondary ${className || ""}`}>{children}</span>
 );
 
-export const TextSecondary: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <span className="text-body text-text-secondary">{children}</span>
+export const TextSecondary: React.FC<TextProps> = ({ children, className }) => (
+  <span className={`text-body text-text-secondary ${className || ""}`}>{children}</span>
 );
 
 // ============================================================================
 // Code/Mono Components
 // ============================================================================
 
-export const Code: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <code className="font-mono text-mono bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">
+export const Code: React.FC<TextProps> = ({ children, className }) => (
+  <code
+    className={`font-mono text-mono bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded ${className || ""}`}
+  >
     {children}
   </code>
 );
 
-export const Value: React.FC<{
-  children: React.ReactNode;
-  unit?: string;
-}> = ({ children, unit }) => (
-  <span className="font-mono text-mono text-accent font-semibold">
+export const Value: React.FC<TextProps & { unit?: string }> = ({ children, unit, className }) => (
+  <span className={`font-mono text-mono text-accent font-semibold ${className || ""}`}>
     {children}
     {unit && <span className="text-text-secondary text-sm ml-1">{unit}</span>}
   </span>

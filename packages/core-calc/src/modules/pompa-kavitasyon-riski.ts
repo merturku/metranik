@@ -19,7 +19,7 @@ export const pompaKavitasyonRiski: CalcModule<any, any> = {
     const P_buhar = 2340;
     const g = 9.81;
     const NPSHA = (P_atm - P_buhar) / (1000 * g) - input.emme_yuksekligi_m - (input.emme_hizi_ms ** 2) / (2 * g);
-    const status = NPSHA > 0.5 ? "uygun" : "risk";
+    const status = NPSHA > 0.5 ? "uygun" : "uygunsuz";
     return {
       value: { NPSHA: parseFloat(NPSHA.toFixed(2)) },
       intermediates: { P_atm, P_buhar },

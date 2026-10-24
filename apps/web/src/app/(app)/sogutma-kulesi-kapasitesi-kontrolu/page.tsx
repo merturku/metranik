@@ -6,25 +6,34 @@ export default function Page() {
   return (
     <CalcPage
       module={sogutmaKulesiKapasitesiKontrolu}
-      standardsLabel="EN 12113"
-      description="Soğutma kulesi çıkış sıcaklığından, talep edilen ısı yükünün sağlanıp sağlanamadığını kontrol eder."
-      formula="Q = ṁ × cp × ΔT | ΔT = Q / (ṁ × cp)"
-      engineeringNote="Soğutma kulesi seçimi tasarım sıcaklıklarından, kapasite kontrolü sonucuna bağlıdır. Çıkış ≤28°C standarttır."
+      standardsLabel="Enerji Dengesi (Q = ṁ×cp×ΔT)"
+      description="Soğutma kulesinin işletme debisi ve sıcaklıklarından attığı ısıyı hesaplar; tasarım ısı yükünü tasarım çıkış sıcaklığında karşılayıp karşılamadığını kontrol eder."
+      formula="Q = ṁ×cp×(Tgiriş - Tçıkış), Approach = Tçıkış - Tyaş"
+      engineeringNote="Kule, tasarım ısı yükünü çıkış suyu tasarım sıcaklığının altında kalırken atabiliyorsa yeterlidir. Çıkış suyu yaş termometre sıcaklığının altına inemez; yaklaşma sıcaklığı küçüldükçe gereken kule boyutu hızla büyür."
       fields={[
-        { name: "isi_yuku_kW", label: "Tasarım Isı Yükü (kW)", type: "number" },
-        { name: "su_debisi_m3h", label: "Su Debisi (m³/h)", type: "number" },
-        { name: "giris_sicakligi_C", label: "Giriş Sıcaklığı (°C)", type: "number" },
-        { name: "cikis_sicakligi_C", label: "Çıkış Sıcaklığı (°C)", type: "number" },
-        { name: "ortam_sicakligi_C", label: "Ortam Sıcaklığı (°C)", type: "number" },
-        { name: "min_cikis_sicakligi_C", label: "Min. Çıkış Sıcaklığı (°C)", type: "number" },
+        { key: "tasarim_isi_yuku_kW", label: "Tasarım Isı Yükü (kW)", type: "number", min: 1, step: 50 },
+        { key: "su_debisi_m3h", label: "Su Debisi (m³/h)", type: "number", min: 1, step: 5 },
+        { key: "giris_sicakligi_C", label: "Giriş Su Sıcaklığı (°C)", type: "number", step: 1 },
+        { key: "cikis_sicakligi_C", label: "Çıkış Su Sıcaklığı (°C)", type: "number", step: 1 },
+        { key: "yas_termometre_sicakligi_C", label: "Yaş Termometre Sıcaklığı (°C)", type: "number", step: 1 },
+        { key: "tasarim_cikis_sicakligi_C", label: "Tasarım Çıkış Sıcaklığı (°C)", type: "number", step: 1 },
       ]}
       defaults={{
-        isi_yuku_kW: 800,
+        tasarim_isi_yuku_kW: 800,
         su_debisi_m3h: 100,
         giris_sicakligi_C: 35,
         cikis_sicakligi_C: 28,
-        ortam_sicakligi_C: 25,
-        min_cikis_sicakligi_C: 28,
+        yas_termometre_sicakligi_C: 24,
+        tasarim_cikis_sicakligi_C: 28,
+      }}
+      mainUnit="kW"
+      mainValueKey="atilan_isi_kW"
+      mainDecimals={1}
+      intermediateLabels={{
+        range_C: "Range (°C)",
+        approach_C: "Approach (°C)",
+        kutleselDebi_kgs: "Kütlesel Debi (kg/s)",
+        kapasiteOrani: "Atılan Isı / Tasarım Yükü",
       }}
     />
   );

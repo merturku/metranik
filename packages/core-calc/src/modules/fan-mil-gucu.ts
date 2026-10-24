@@ -4,7 +4,7 @@ import type { CalcModule, CalcResult } from "../types";
 export const fanMilGucuSchema = z.object({
   debi_m3s: z.number().positive(),
   basinc_pa: z.number().positive(),
-  verim_yuzde: z.number().positive().optional(),
+  verim_yuzde: z.number().positive(),
 });
 
 export type FanMilGucuInput = z.infer<typeof fanMilGucuSchema>;
