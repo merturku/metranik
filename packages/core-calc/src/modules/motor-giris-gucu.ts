@@ -1,6 +1,9 @@
 import { z } from "zod";
 import type { CalcModule, CalcResult } from "../types";
 export const motorGirisuSchema = z.object({ cikis_guc_kW: z.number().positive(), verim_yuzde: z.number().positive().optional() });
+export interface MotorGirisGucuInput { [key: string]: any }
+export interface MotorGirisGucuOutput { [key: string]: any }
+
 export const motorGirisGucu: CalcModule<any, any> = {
   id: "motor-giris-gucu",
   title: "Motor Giriş Gücü",

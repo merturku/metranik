@@ -21,14 +21,14 @@ export const sogutmaDolumProsedureKontrolSuresi: CalcModule<SogutmaDolumProsedur
   title: "Soğutma Dolum Prosedürü Kontrol Süresi",
   discipline: "mekanik",
   standards: ["EN 12828", "ISO 13623"],
-  inputSchema: sogutmaDolumProsedyuKontrolSuresiSchema as any,
+  inputSchema: sogutmaDolumProsedureKontrolSuresiSchema as any,
 
   compute(input: SogutmaDolumProsedureKontrolSuresiInput): CalcResult<SogutmaDolumProsedureKontrolSuresiOutput> {
     // Dolum süresi = Sistem hacmi / Dolum debisi
     const dolum_suresi_dakika = input.sistem_hacmi_L / input.dolum_debisi_Lmin;
-    
+
     // Total: dolum + stabilizasyon (basınç + sıcaklık)
-    const total_kontrol_suresi_dakika = dolum_suresi_dakika + input.basinc_stabilizasyon_dakika + input.sicaklik_stabilizasyon_dakika;
+    const total_kontrol_suresi_dakika = dolum_suresi_dakika + (input.basinc_stabilizasyon_dakika ?? 0) + (input.sicaklik_stabilizasyon_dakika ?? 0);
 
     return {
       value: {

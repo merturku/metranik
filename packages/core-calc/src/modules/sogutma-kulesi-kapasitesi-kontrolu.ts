@@ -23,7 +23,7 @@ export const sogutmaKulesiKapasitesiKontrolu: CalcModule<SogutmaKulesiKapasitesi
   title: "Soğutma Kulesi Kapasitesi Kontrolü",
   discipline: "mekanik",
   standards: ["EN 12113", "CTI STD-101"],
-  inputSchema: sogutmaKulesiKapasitesiKontrolyuSchema as any,
+  inputSchema: sogutmaKulesiKapasitesiKontroluSchema as any,
 
   compute(input: SogutmaKulesiKapasitesiKontroluInput): CalcResult<SogutmaKulesiKapasitesiKontroluOutput> {
     const m_kgs = (input.su_debisi_m3h / 3.6) * 1000; // convert to kg/s, ρ≈1000 kg/m³
@@ -34,11 +34,12 @@ export const sogutmaKulesiKapasitesiKontrolu: CalcModule<SogutmaKulesiKapasitesi
     let status: "uygun" | "yetersiz" = "uygun";
     let note = "";
 
-    if (input.cikis_sicakligi_C <= input.min_cikis_sicakligi_C) {
-      note = `Çıkış sıcaklığı kabul edilebilir (${input.cikis_sicakligi_C}°C ≤ ${input.min_cikis_sicakligi_C}°C).`;
+    const min_cikis = input.min_cikis_sicakligi_C ?? input.cikis_sicakligi_C;
+    if (input.cikis_sicakligi_C <= min_cikis) {
+      note = `Çıkış sıcaklığı kabul edilebilir (${input.cikis_sicakligi_C}°C ≤ ${min_cikis}°C).`;
     } else {
       status = "yetersiz";
-      note = `Çıkış sıcaklığı aşırı yüksek (${input.cikis_sicakligi_C}°C > ${input.min_cikis_sicakligi_C}°C): kulesini büyütün.`;
+      note = `Çıkış sıcaklığı aşırı yüksek (${input.cikis_sicakligi_C}°C > ${min_cikis}°C): kulesini büyütün.`;
     }
 
     return {

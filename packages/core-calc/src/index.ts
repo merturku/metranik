@@ -1040,8 +1040,6 @@ export { sogutmaKulesiKapasitesiKontrolu } from "./modules/sogutma-kulesi-kapasi
 export { isiEsjanjoreEffektivitesi } from "./modules/isi-esjanjoru-effektivitesi";
 export { buharSistemiVakuumKontrolu } from "./modules/buhar-sistemi-vakuum-kontrolu";
 export { sogutmaDolumProsedureKontrolSuresi } from "./modules/sogutma-dolum-proseduru-kontrol-suresi";
-
-export { modul_237 } from "./modules/modul_237";
 export { modul_238 } from "./modules/modul_238";
 export { modul_239 } from "./modules/modul_239";
 export { modul_240 } from "./modules/modul_240";
@@ -1133,8 +1131,6 @@ export { modul_325 } from "./modules/modul_325";
 export { modul_326 } from "./modules/modul_326";
 export { modul_327 } from "./modules/modul_327";
 export { modul_328 } from "./modules/modul_328";
-export { modul_329 } from "./modules/modul_329";
-export { modul_330 } from "./modules/modul_330";
 // Batch 5at (330-334)
 export { termalEnerjiDeposuHacmi } from "./modules/termal-enerji-deposu-hacmi";
 export type { TermalEnerjiDeposuHacmiInput, TermalEnerjiDeposuHacmiOutput } from "./modules/termal-enerji-deposu-hacmi";
@@ -1144,8 +1140,6 @@ export { temelOturmaPrediktif } from "./modules/temel-oturma-prediktif";
 export { evSicaklikKonforKontrolu } from "./modules/ev-sicaklik-konfor-kontrolu";
 
 
-// Batch 5av (339-343)
-export { isiDegistiricietkinligi } from "./modules/isi-degistirici-etkinligi";
 export { boruIsiKaybiYuzeySicakligi } from "./modules/boru-isi-kaybi-yuzey-sicakligi";
 export { trafoImpedansGerilim } from "./modules/elektrik-trafo-impedans-gerilim";
 export { betonAğirlikHesabi } from "./modules/insaat-beton-agirlik-hesabi";

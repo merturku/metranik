@@ -25,15 +25,16 @@ export const buharSistemiVakuumKontrolu: CalcModule<BuharSistemiVakuumKontroluIn
   compute(input: BuharSistemiVakuumKontroluInput): CalcResult<BuharSistemiVakuumKontroluOutput> {
     // Absolute pressure to vacuum: vacuum = 101.325 - kondenser_pressure
     const vakuum_kPa = 101.325 - input.kondenser_basinc_kPa;
+    const max_vakuum = input.max_izin_vakuum_kPa ?? 95;
 
     let status: "uygun" | "sinirda" = "uygun";
     let note = "";
 
-    if (vakuum_kPa <= input.max_izin_vakuum_kPa) {
-      note = `Vakuum kontrolü uygun (${vakuum_kPa.toFixed(1)} kPa ≤ ${input.max_izin_vakuum_kPa} kPa).`;
+    if (vakuum_kPa <= max_vakuum) {
+      note = `Vakuum kontrolü uygun (${vakuum_kPa.toFixed(1)} kPa ≤ ${max_vakuum} kPa).`;
     } else {
       status = "sinirda";
-      note = `Vakuum aşırı (${vakuum_kPa.toFixed(1)} kPa > ${input.max_izin_vakuum_kPa} kPa): kondenser temizliği/soğutma artırılmalı.`;
+      note = `Vakuum aşırı (${vakuum_kPa.toFixed(1)} kPa > ${max_vakuum} kPa): kondenser temizliği/soğutma artırılmalı.`;
     }
 
     return {
