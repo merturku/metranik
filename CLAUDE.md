@@ -674,6 +674,7 @@ yapılıp fark edilip düzeltildi, dikkat).
 
 ## 6. Yapma / Dikkat
 
+- **Dosya okumak için `sed`/`cat`/`head` kullanma — `Read` aracını kullan.**
 - Standart metinlerini (TS/NFPA/IEC) **kopyalama/gömme**. Yalnız madde no + yönteme atıf.
 - Hesabı LLM'e yaptırma (bkz. §3).
 - ~330 modül hedefi §1'de kayıtlı bilinçli bir karar; ama her modül yine de gerçek

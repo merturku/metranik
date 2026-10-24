@@ -538,11 +538,7 @@ export type {
   IstinatDuvariAktifToprakBasinciInput,
   IstinatDuvariAktifToprakBasinciOutput,
 } from "./modules/istinat-duvari-aktif-toprak-basinci";
-export { isiDegistiriciEtkinligi } from "./modules/isi-degistirici-etkinligi";
-export type {
-  IsiDegistiriciEtkinligiInput,
-  IsiDegistiriciEtkinligiOutput,
-} from "./modules/isi-degistirici-etkinligi";
+export { isiDegistiricietkinligi } from "./modules/isi-degistirici-etkinligi";
 export { psikrometrikCigNoktasi } from "./modules/psikrometrik-cig-noktasi";
 export type {
   PsikrometrikCigNoktasiInput,
@@ -1030,7 +1026,6 @@ export type {
   KanalBaglantıSızıntıKontroluInput,
   KanalBaglantıSızıntıKontroluOutput,
 } from "./modules/kanal-baglantı-sızıntı-kontrolu";
-} from "./modules/kompanzasyon-kondansator-akimi";
 export { akumulatorTankiHacmi } from "./modules/akumulator-tanki-hacmi";
 export type {
   AkumulatorTankiHacmiInput,
@@ -1043,7 +1038,6 @@ export type {
 } from "./modules/elektrikli-kalorifer-boyutlandirma";
 export { sogutmaKulesiKapasitesiKontrolu } from "./modules/sogutma-kulesi-kapasitesi-kontrolu";
 export { isiEsjanjoreEffektivitesi } from "./modules/isi-esjanjoru-effektivitesi";
-export { kompressorAspirasyanBasincKaybi } from "./modules/kompressor-aspirasyon-basinc-kaybi";
 export { buharSistemiVakuumKontrolu } from "./modules/buhar-sistemi-vakuum-kontrolu";
 export { sogutmaDolumProsedureKontrolSuresi } from "./modules/sogutma-dolum-proseduru-kontrol-suresi";
 
@@ -1167,13 +1161,3 @@ export { evSuTuketimTahmini } from "./modules/ev-su-tuketim-tahmini";
 // Batch 5ay (354-358)
 export { kabloDuşüşKontrolu } from "./modules/kablo-gerilim-drop-kontrolu";
 export { radyatorDebiSicaklik } from "./modules/radyator-debi-sicaklik-iliskisi";
-
-// Final batch (356-358)
-export { kanalBasincKaybi } from "./modules/kanal-basinc-kaybi-darcy";
-export { motorGirisGucu } from "./modules/motor-giris-gucu";
-export { isiEsanjorNtu } from "./modules/isi-esanjoru-ntu";
-
-// Final 3 (356-358)
-export { kanalBasincKaybi } from "./modules/kanal-basinc-kaybi";
-export { motorGucHesabi } from "./modules/motor-guc-hesabi";
-export { isiEsanjorNtu } from "./modules/isi-esanjor-ntu";
