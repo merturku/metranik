@@ -1576,6 +1576,36 @@ const HAVUZ_KLOR_DOZAJI: ModuleEntry = {
   href: "/havuz-klor-dozaji",
   standard: "—",
 };
+const CELIK_KIRIS_YANAL_BURULMALI_BURKULMA: ModuleEntry = {
+  id: "celik-kiris-yanal-burulmali-burkulma",
+  title: "Çelik Kiriş Yanal Burulmalı Burkulma",
+  href: "/celik-kiris-yanal-burulmali-burkulma",
+  standard: "TS EN 1993-1-1",
+};
+const TABLALI_KIRIS_ETKILI_GENISLIK: ModuleEntry = {
+  id: "tablali-kiris-etkili-genislik",
+  title: "Tablalı (T/L) Kiriş Etkili Tabla Genişliği",
+  href: "/tablali-kiris-etkili-genislik",
+  standard: "TS EN 1992-1-1",
+};
+const BORU_GENLESME_KOLU_BOYU: ModuleEntry = {
+  id: "boru-genlesme-kolu-boyu",
+  title: "Boru Genleşme Kolu Boyu (Kılavuzlu Konsol)",
+  href: "/boru-genlesme-kolu-boyu",
+  standard: "—",
+};
+const DOGALGAZ_TUKETIM_SAYAC_SECIMI: ModuleEntry = {
+  id: "dogalgaz-tuketim-sayac-secimi",
+  title: "Doğalgaz Tüketim Debisi ve Sayaç Seçimi",
+  href: "/dogalgaz-tuketim-sayac-secimi",
+  standard: "TS EN 1359",
+};
+const ELEKTRIK_BORUSU_DOLULUK_ORANI: ModuleEntry = {
+  id: "elektrik-borusu-doluluk-orani",
+  title: "Elektrik Borusu (Konduit) Doluluk Oranı",
+  href: "/elektrik-borusu-doluluk-orani",
+  standard: "NEC",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1723,7 +1753,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       },
       {
         label: "Doğalgaz",
-        modules: [DOGALGAZ_BORU_BASINC_KAYBI],
+        modules: [DOGALGAZ_TUKETIM_SAYAC_SECIMI, DOGALGAZ_BORU_BASINC_KAYBI],
       },
       {
         label: "Montaj",
@@ -1733,6 +1763,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_ASKI_CUBUGU_KESIT_KONTROLU,
           BORU_DESTEK_ARALIGI_BASIT_MESNETLI,
           KALDIRMA_SAPANI_KOL_YUKU,
+          BORU_GENLESME_KOLU_BOYU,
         ],
       },
       {
@@ -1788,6 +1819,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOMPANZASYON_KONDANSATOR_AKIMI,
           KOMPANZASYON_REZONANS_KONTROLU,
           KABLO_TAVASI_BOYUTLANDIRMA,
+          ELEKTRIK_BORUSU_DOLULUK_ORANI,
           NOTR_ILETKEN_KESITI_SECIMI,
           HARMONIK_BOZULMA_THD_K_FAKTORU,
           NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
@@ -1831,6 +1863,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BULONLU_BIRLESIM_KESME_EZILME,
           CELIK_BASINC_BURKULMA_DAYANIMI,
           CELIK_KIRIS_EGILME_KESME,
+          CELIK_KIRIS_YANAL_BURULMALI_BURKULMA,
           TAZE_BETON_KALIP_BASINCI,
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
@@ -1858,6 +1891,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI,
           KOLON_DONATI_ORANI_KONTROLU,
           KIRIS_DONATI_ORANI_KONTROLU,
+          TABLALI_KIRIS_ETKILI_GENISLIK,
           TEMEL_EKSANTRIK_YUK_KONTROLU,
           KONSOL_KIRIS_SEHIMI,
           MALZEME_FIRE_ZAYIAT_OZETI,

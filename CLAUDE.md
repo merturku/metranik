@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **263 modül, 427 test** (güncel sayı §5bd'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **268 modül, 448 test** (güncel sayı §5be'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1034,6 +1034,24 @@ hepsi yeşil; `pnpm build` temiz.**
   girdisi; 1–3 ppm aralığı dışında sınırda. Havuz Su Sirkülasyon Debisi'nin su kimyası tamamlayıcısı.
 
 **Toplam: 263 modül (Mekanik 121, Elektrik 53, İnşaat 55, Ev 34), core-calc 427 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5be. Yanal burulmalı burkulma/tablalı kiriş/genleşme kolu/doğalgaz sayacı/boru doluluğu: 5 modül daha
+
+- **Çelik Kiriş Yanal Burulmalı Burkulma** — İnşaat. TS EN 1993-1-1 §6.3.2.2 genel yöntem; Mcr çift simetrik
+  I kesit formülü (C1, Iz, It, Iw; k = kw = 1, yük kesme merkezinde), χLT a–d eğrileri. IPE 300 L = 4 m
+  örneği + Iw → 0'da klasik (π/L)√(EIzGIt) sonucuna inme testi. Çelik Kiriş Eğilme ve Kesme'nin eksik
+  bıraktığı stabilite kontrolü.
+- **Tablalı (T/L) Kiriş Etkili Tabla Genişliği** — İnşaat. TS EN 1992-1-1 §5.3.2.1: beff,i = min(0,2bi +
+  0,1l0; 0,2l0; bi), l0 = L / 0,85L / 0,70L.
+- **Boru Genleşme Kolu Boyu (Kılavuzlu Konsol)** — Mekanik/Montaj. L = √(3EDδ/SA) (Kellogg); mevcut kolun
+  karşıladığı δ ve gerilme. Boru Termal Genleşme Payı'nın ürettiği δ'yı kullanır.
+- **Doğalgaz Tüketim Debisi ve Sayaç Seçimi** — Mekanik/Doğalgaz. V̇ = f·ΣQ/Hu (Hu varsayılan 9,59 kWh/m³ =
+  8250 kcal/m³), TS EN 1359 G sınıfı Qmaks tablosundan en küçük sayaç. Renouard modülünün debi girdisini üretir.
+- **Elektrik Borusu (Konduit) Doluluk Oranı** — Elektrik. n·d²/D², NEC Bölüm 9 Tablo 1 sınırları (%53 / %31 /
+  %40), gereken en küçük iç çap. Kablo Tava Doluluk Oranı'nın boru karşılığı.
+
+**Toplam: 268 modül (Mekanik 123, Elektrik 54, İnşaat 57, Ev 34), core-calc 448 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---
