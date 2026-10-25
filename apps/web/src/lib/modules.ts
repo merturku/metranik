@@ -1516,6 +1516,36 @@ const HISSEDILEN_SICAKLIK: ModuleEntry = {
   href: "/hissedilen-sicaklik",
   standard: "NWS",
 };
+const POMPA_ISLETME_NOKTASI: ModuleEntry = {
+  id: "pompa-isletme-noktasi",
+  title: "Pompa İşletme Noktası (Pompa–Sistem Eğrisi)",
+  href: "/pompa-isletme-noktasi",
+  standard: "—",
+};
+const KALDIRMA_SAPANI_KOL_YUKU: ModuleEntry = {
+  id: "kaldirma-sapani-kol-yuku",
+  title: "Kaldırma Sapanı Kol Yükü ve WLL Kontrolü",
+  href: "/kaldirma-sapani-kol-yuku",
+  standard: "TS EN 13414-1",
+};
+const GES_DIZI_PANEL_SAYISI: ModuleEntry = {
+  id: "ges-dizi-panel-sayisi",
+  title: "GES Dizi (String) Panel Sayısı",
+  href: "/ges-dizi-panel-sayisi",
+  standard: "IEC 62548",
+};
+const BULONLU_BIRLESIM_KESME_EZILME: ModuleEntry = {
+  id: "bulonlu-birlesim-kesme-ezilme",
+  title: "Bulonlu Birleşim Kesme ve Ezilme Dayanımı",
+  href: "/bulonlu-birlesim-kesme-ezilme",
+  standard: "TS EN 1993-1-8",
+};
+const DUVAR_KAGIDI_RULO_SAYISI: ModuleEntry = {
+  id: "duvar-kagidi-rulo-sayisi",
+  title: "Duvar Kağıdı Rulo Sayısı",
+  href: "/duvar-kagidi-rulo-sayisi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1576,6 +1606,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HIDRONIK_SU_DEBISI,
           BORU_BASINC_KAYBI,
           POMPA_SECIMI,
+          POMPA_ISLETME_NOKTASI,
           GENLESME_TANKI,
           SICAK_SU_BOYLER,
           ASKILAMA_HESABI,
@@ -1669,6 +1700,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KANAL_ASKI_MALZEME_METRAJI,
           BORU_ASKI_CUBUGU_KESIT_KONTROLU,
           BORU_DESTEK_ARALIGI_BASIT_MESNETLI,
+          KALDIRMA_SAPANI_KOL_YUKU,
         ],
       },
       {
@@ -1729,6 +1761,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           AYDINLATMA_GUC_YOGUNLUGU_KONTROLU,
           NOKTA_YONTEMI_AYDINLIK_DUZEYI,
           KABLO_MANYETIK_ALAN_HESABI,
+          GES_DIZI_PANEL_SAYISI,
         ],
       },
       {
@@ -1762,6 +1795,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DONATI_KENETLENME_BOYU,
           CELIK_BULON_SIKMA_MOMENTI,
           KOSE_KAYNAGI_DIKIS_KAPASITESI,
+          BULONLU_BIRLESIM_KESME_EZILME,
           CELIK_BASINC_BURKULMA_DAYANIMI,
           TAZE_BETON_KALIP_BASINCI,
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
@@ -1830,6 +1864,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           EV_TESISATI_SIGORTA_YUKU_KONTROLU,
           BOYA_MIKTARI_HESABI,
           FAYANS_DOSEME_MALZEME_MIKTARI,
+          DUVAR_KAGIDI_RULO_SAYISI,
           HAVUZ_SU_SIRKULASYON_DEBISI,
           ELEKTRIK_FATURA_TAHMINI,
           GUNES_PANELI_GERI_ODEME_SURESI,

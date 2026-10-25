@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **253 modül, 380 test** (güncel sayı §5bb'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **258 modül, 404 test** (güncel sayı §5bc'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -992,6 +992,29 @@ Ayrıca `CalcPage` ana değeri `null`/sonsuz olduğunda artık "0.00" yerine "�
 ana değeri tanımsız olabilen modüller `number | null` döndürebilir.
 
 **Toplam: 253 modül (Mekanik 117, Elektrik 51, İnşaat 53, Ev 32), core-calc 380 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5bc. Pompa işletme noktası/kaldırma sapanı/GES dizisi/bulonlu birleşim/duvar kağıdı: 5 modül daha
+
+- **Pompa İşletme Noktası (Pompa–Sistem Eğrisi)** — Mekanik/Isıtma-Soğutma. Üretici eğrisinden 3 nokta ile
+  H = A + BQ + CQ² tam geçirilir, sistem Hst + bQ²; kesişim + afinite yasasıyla tasarım noktası için devir
+  oranı r. Kesişim eğri verisinin dışındaysa sınırda (ekstrapolasyon). Pompa Seçimi/NPSH'nin tamamlayıcısı.
+- **Kaldırma Sapanı Kol Yükü ve WLL Kontrolü** — Mekanik/Montaj. T = W/(n·cos β) + TS EN 13414-1 takım
+  katsayıları (2 kol 1,4/1,0; 3–4 kol 2,1/1,5; β > 60° yasak; 4 kolda 3 taşıyan kol).
+- **GES Dizi (String) Panel Sayısı** — Elektrik. IEC 62548: Voc(Tmin) ile azami panel (invertör DC sınırı),
+  Vmp(Tmaks)/Vmp(Tmin) ile MPPT penceresi. Ev'deki GES modüllerinin elektriksel tasarım tarafı.
+- **Bulonlu Birleşim Kesme ve Ezilme Dayanımı** — İnşaat. TS EN 1993-1-8 Tablo 3.4 (αv, αd, αb, k1),
+  Tablo 3.3 asgari mesafeler, §3.7 grup, §3.8 uzun birleşim βLf. Köşe Kaynağı modülünün bulonlu karşılığı.
+- **Duvar Kağıdı Rulo Sayısı** — Ev. Şerit yöntemi; desen tekrarının tam katına yuvarlanan şerit boyu,
+  fire oranı (kayan nokta yuvarlama hatasına karşı ε'lu tavan/taban).
+
+Ayrıca bu oturumda iCloud, §5ax'te silinen 4 yetim sayfayı (`boru-isi-kaybi-yuzey-sicakligi`,
+`ev-enerji-faturasi-tahmini-yillik`, `insaat-beton-agirlik-hesabi`, `termal-enerji-deposu-hacmi`) izlenmeyen
+dosya olarak geri getirdi (415dc59'da silinen sürümlerle bayt bayt aynı; motor modülleri olmadığından
+derlemeyi kırarlardı). Depodan çıkarılıp oturum scratchpad'ine taşındı. **Her derleme/commit öncesi
+`git status`'ta beklenmeyen `??` satırlarına bak.**
+
+**Toplam: 258 modül (Mekanik 119, Elektrik 52, İnşaat 54, Ev 33), core-calc 404 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---
