@@ -1606,6 +1606,36 @@ const ELEKTRIK_BORUSU_DOLULUK_ORANI: ModuleEntry = {
   href: "/elektrik-borusu-doluluk-orani",
   standard: "NEC",
 };
+const GLOB_TERMOMETRE_OPERATIF_SICAKLIK: ModuleEntry = {
+  id: "glob-termometre-operatif-sicaklik",
+  title: "Ortalama Işınım ve Operatif Sıcaklık (Glob Termometre)",
+  href: "/glob-termometre-operatif-sicaklik",
+  standard: "TS EN ISO 7726",
+};
+const TOPRAK_KAYNAKLI_ISI_POMPASI_SONDAJ_BOYU: ModuleEntry = {
+  id: "toprak-kaynakli-isi-pompasi-sondaj-boyu",
+  title: "Toprak Kaynaklı Isı Pompası Sondaj Boyu",
+  href: "/toprak-kaynakli-isi-pompasi-sondaj-boyu",
+  standard: "VDI 4640",
+};
+const WENNER_ZEMIN_OZDIRENCI: ModuleEntry = {
+  id: "wenner-zemin-ozdirenci",
+  title: "Zemin Özdirenci Ölçümü (Wenner Yöntemi)",
+  href: "/wenner-zemin-ozdirenci",
+  standard: "IEEE Std 81",
+};
+const AHSAP_KIRIS_EGILME_KONTROLU: ModuleEntry = {
+  id: "ahsap-kiris-egilme-kontrolu",
+  title: "Ahşap Kiriş Eğilme Kontrolü",
+  href: "/ahsap-kiris-egilme-kontrolu",
+  standard: "TS EN 1995-1-1",
+};
+const RADYATOR_DILIM_SAYISI: ModuleEntry = {
+  id: "radyator-dilim-sayisi",
+  title: "Radyatör Dilim Sayısı",
+  href: "/radyator-dilim-sayisi",
+  standard: "TS EN 442-2",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1654,6 +1684,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HAVALANDIRMA_ISI_KAYBI,
           DUVAR_U_DEGERI_HESABI,
           ISI_POMPASI_CARNOT_COP_SINIRI,
+          TOPRAK_KAYNAKLI_ISI_POMPASI_SONDAJ_BOYU,
           KAPALI_SISTEM_DOLUM_DEBISI,
           ISI_POMPASI_KONDENSER_KAPASITESI,
           SOGUTMA_KULESI_KAPASITESI_KONTROLU,
@@ -1703,6 +1734,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           FAN_GUCU,
           PSIKROMETRIK_CIG_NOKTASI,
           HAVA_KARISIM_NOKTASI,
+          GLOB_TERMOMETRE_OPERATIF_SICAKLIK,
           KANAL_SURTUNME_BASINC_KAYBI,
           KAPALI_OTOPARK_HAVALANDIRMA,
           JENERATOR_ODASI_HAVALANDIRMA,
@@ -1802,6 +1834,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           AYDINLATMA_DIREGI_RUZGAR_YUKU,
           TOPRAKLAMA_ILETKENI_KESITI,
           TOPRAKLAMA_CUBUGU_DIRENCI,
+          WENNER_ZEMIN_OZDIRENCI,
           KISA_DEVRE_GUCU,
           TRAFO_KISA_DEVRE_AKIMI,
           BARA_ISINMA_KAYBI,
@@ -1864,6 +1897,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           CELIK_BASINC_BURKULMA_DAYANIMI,
           CELIK_KIRIS_EGILME_KESME,
           CELIK_KIRIS_YANAL_BURULMALI_BURKULMA,
+          AHSAP_KIRIS_EGILME_KONTROLU,
           TAZE_BETON_KALIP_BASINCI,
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
@@ -1957,6 +1991,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ELEKTRIKLI_ARAC_SARJ_SURESI,
           TERMOSIFON_DUS_SURESI,
           KOMBI_SICAK_SU_DEBISI,
+          RADYATOR_DILIM_SAYISI,
           HISSEDILEN_SICAKLIK,
           EV_SICAKLIK_KONFOR_KONTROLU,
         ],

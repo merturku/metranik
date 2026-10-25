@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **268 modül, 448 test** (güncel sayı §5be'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **273 modül, 469 test** (güncel sayı §5bf'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1052,6 +1052,24 @@ hepsi yeşil; `pnpm build` temiz.**
   %40), gereken en küçük iç çap. Kablo Tava Doluluk Oranı'nın boru karşılığı.
 
 **Toplam: 268 modül (Mekanik 123, Elektrik 54, İnşaat 57, Ev 34), core-calc 448 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5bf. Glob/operatif sıcaklık/sondaj boyu/Wenner/ahşap kiriş/radyatör dilimi: 5 modül daha
+
+- **Ortalama Işınım ve Operatif Sıcaklık (Glob Termometre)** — Mekanik/Havalandırma. TS EN ISO 7726 Ek B
+  (doğal/zorlanmış taşınımın büyüğü, 1,1·10⁸ ve 0,25·10⁸ katsayıları), to = A·ta + (1 − A)·t̄r. PMV/PPD
+  modülünün ortalama ışınım sıcaklığı girdisini üretir.
+- **Toprak Kaynaklı Isı Pompası Sondaj Boyu** — Mekanik/Isıtma-Soğutma. VDI 4640 Bölüm 2: Qçekme = Q(1 − 1/COP),
+  L = Qçekme/q; > 30 kW veya sonda başına 40–100 m dışı sınırda. q kullanıcı girdisi (tablo değeri gömülmedi).
+- **Zemin Özdirenci Ölçümü (Wenner Yöntemi)** — Elektrik. IEEE Std 81 elektrot derinliği düzeltmeli tam formül;
+  b = 0'da 2πaR. Topraklama Çubuğu Yayılma Direnci'nin ρ girdisini üretir.
+- **Ahşap Kiriş Eğilme Kontrolü** — İnşaat. TS EN 1995-1-1: kmod (Tablo 3.1, masif ahşap, servis sınıfı
+  1–2 / 3), kh (h < 150 mm), γM = 1,3; TS EN 338 fm,k (C16/C24/C30). Projedeki ilk ahşap modülü. Kayma
+  dayanımı EN 338 sürümleri arasında değiştiği için (2,5 → 4,0 MPa) bilinçli olarak eklenmedi.
+- **Radyatör Dilim Sayısı** — Ev. TS EN 442-2 logaritmik ΔT, Φ = Φ50·(ΔTln/50)^n, N = ⌈Q/Φ⌉. Radyatör Kapasite
+  Düzeltmesi ΔT'yi doğrudan girdi alıyordu; bu modül ΔT'yi gidiş/dönüş/oda sıcaklığından üretip boyutlandırır.
+
+**Toplam: 273 modül (Mekanik 125, Elektrik 55, İnşaat 58, Ev 35), core-calc 469 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---
