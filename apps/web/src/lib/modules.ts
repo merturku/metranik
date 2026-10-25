@@ -1396,6 +1396,36 @@ const EV_SICAKLIK_KONFOR_KONTROLU: ModuleEntry = {
   href: "/ev-sicaklik-konfor-kontrolu",
   standard: "ISO 7730",
 };
+const DOGALGAZ_BORU_BASINC_KAYBI: ModuleEntry = {
+  id: "dogalgaz-boru-basinc-kaybi",
+  title: "Doğalgaz Boru Basınç Kaybı (Renouard)",
+  href: "/dogalgaz-boru-basinc-kaybi",
+  standard: "Renouard",
+};
+const HATA_CEVRIM_EMPEDANSI_KONTROLU: ModuleEntry = {
+  id: "hata-cevrim-empedansi-kontrolu",
+  title: "Hata Çevrim Empedansı (Zs) Kontrolü",
+  href: "/hata-cevrim-empedansi-kontrolu",
+  standard: "IEC 60364-4-41",
+};
+const KIRIS_DONATI_ORANI_KONTROLU: ModuleEntry = {
+  id: "kiris-donati-orani-kontrolu",
+  title: "Kiriş Donatı Oranı Sınırları Kontrolü",
+  href: "/kiris-donati-orani-kontrolu",
+  standard: "TS 500",
+};
+const TEMEL_ELASTIK_OTURMASI: ModuleEntry = {
+  id: "temel-elastik-oturmasi",
+  title: "Temel Elastik (Ani) Oturması",
+  href: "/temel-elastik-oturmasi",
+  standard: "TS EN 1997-1",
+};
+const GES_PANEL_SIRA_ARASI_MESAFE: ModuleEntry = {
+  id: "ges-panel-sira-arasi-mesafe",
+  title: "GES Panel Sıra Arası Mesafe (Gölgelenme)",
+  href: "/ges-panel-sira-arasi-mesafe",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1536,6 +1566,10 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         ],
       },
       {
+        label: "Doğalgaz",
+        modules: [DOGALGAZ_BORU_BASINC_KAYBI],
+      },
+      {
         label: "Montaj",
         modules: [
           KONSOL_BORU_DESTEK_ARALIGI,
@@ -1613,6 +1647,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANGIN_ALGILAMA_LOOP_GERILIM_DUSUMU,
           TRAFO_YUKLENME_ORANI,
           KABLO_KISA_DEVRE_TERMIK_KONTROLU,
+          HATA_CEVRIM_EMPEDANSI_KONTROLU,
         ],
       },
     ],
@@ -1639,6 +1674,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SU_YALITIM_MEMBRAN_BINDIRME_KONTROLU,
           ZEMIN_KONSOLIDASYON_OTURMASI,
           ZEMIN_KONSOLIDASYON_SURESI,
+          TEMEL_ELASTIK_OTURMASI,
           KESME_KUVVETI_KAPASITESI,
           KOLON_NARINLIK_KONTROLU,
           MERDIVEN_BASAMAK_SAYISI,
@@ -1651,6 +1687,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KIRIS_SEHIM_KONTROLU,
           ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI,
           KOLON_DONATI_ORANI_KONTROLU,
+          KIRIS_DONATI_ORANI_KONTROLU,
           TEMEL_EKSANTRIK_YUK_KONTROLU,
           KONSOL_KIRIS_SEHIMI,
           MALZEME_FIRE_ZAYIAT_OZETI,
@@ -1701,6 +1738,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SU_FATURASI_TAHMINI,
           ISITMA_YAKIT_TUKETIMI_MALIYETI,
           GUNES_PANELI_YILLIK_URETIM,
+          GES_PANEL_SIRA_ARASI_MESAFE,
           YAGMUR_SUYU_HASAT_TANKI,
           RAMPA_EGIM_KONTROLU,
           KORKULUK_YUKSEKLIGI_KONTROLU,

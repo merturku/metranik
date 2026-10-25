@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **233 modül, 309 test** (güncel sayı §5ax'te; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **238 modül, 321 test** (güncel sayı §5ay'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -907,6 +907,27 @@ ekranlarında §6 uyarısı yok (yalnız pazarlama alt bilgisinde); `packages/if
 
 **Gerçek durum: 233 modül — motor = katalog = sayfa, yetim yok (Mekanik 113, Elektrik 46,
 İnşaat 46, Ev 28); core-calc 233 test dosyası / 309 test + ifc 4 test, hepsi yeşil; `pnpm build` temiz.**
+
+### 5ay. Doğalgaz/TN çevrim empedansı/kiriş donatı sınırları/elastik oturma/GES gölgelenme: 5 modül daha
+
+- **Doğalgaz Boru Basınç Kaybı (Renouard)** — Mekanik, yeni "Doğalgaz" alt kategorisi (öncesinde
+  hiç gaz tesisatı modülü yoktu). Lineer Renouard: ΔP = 23200·S·Le·Q^1,82·D^−4,82 (mbar, m,
+  m³/h, mm); izin verilen kayıp dağıtım şirketi esaslarından girdi.
+- **Hata Çevrim Empedansı (Zs) Kontrolü** — Elektrik/Test & Kontrol. IEC 60364-4-41 §411.4.4
+  TN otomatik açma koşulu Zs·Ia ≤ U0, Ia = B 5/C 10/D 20 × In (IEC 60898-1). Ölçüm ortam
+  sıcaklığında olduğu için sıcaklık katsayısı girdisi (0,8 yaygın, 2/3 tutucu): katsayılı sınırın
+  altı uygun, katsayılı sınır ile U0/Ia arası sınırda. Mevcut Topraklama Direnci Testi yalnız TT
+  (Ra·IΔn) içindi.
+- **Kiriş Donatı Oranı Sınırları Kontrolü** — İnşaat. TS 500 §7.3: ρmin = 0,8·fctd/fyd,
+  ρmax = min(0,02; 0,85·ρb), k1 = 0,85 − 0,006(fck − 25). Kiriş Boyutlandırma'nın yapmadığı
+  yönetmelik sınır kontrolü.
+- **Temel Elastik (Ani) Oturması** — İnşaat. s = q·B·(1−ν²)·Is/Es (TS EN 1997-1 Ek F elastik
+  yöntem); Is tablodan girdi. Konsolidasyon oturmasının tamamlayıcısı.
+- **GES Panel Sıra Arası Mesafe (Gölgelenme)** — Ev. Kış gündönümü (δ = −23,45°) güneş
+  yükseklik/azimut açısından gölgesiz sıra aralığı; 12:00, 10–14 veya 09–15 kriteri seçilebilir.
+
+**Toplam: 238 modül (Mekanik 114, Elektrik 47, İnşaat 48, Ev 29), core-calc 321 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
 
 ---
 
