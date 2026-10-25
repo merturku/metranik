@@ -15,7 +15,7 @@ const MAPPING_RULES: MappingRule[] = [
   // Pipe → Boru Basınç Kaybı
   {
     entityType: "IFCPIPE",
-    moduleId: "boru-basınç-kaybı",
+    moduleId: "boru-basinc-kaybi",
     confidence: "high",
     inputs: {
       uzunluk_m: (qty) => getQty(qty, "length"),
@@ -41,21 +41,17 @@ const MAPPING_RULES: MappingRule[] = [
     moduleId: "kablo-kesiti-iec60364",
     confidence: "medium",
     inputs: {
-      akim_A: (qty) => estimateCableAmpacity(getQty(qty, "diameter") as number),
       uzunluk_m: (qty) => getQty(qty, "length"),
-      faz: () => "tek",
     },
   },
 
   // Equipment → Power-based modules
   {
     entityType: "IFCEQUIPMENT",
-    moduleId: "motor-nominal-akimi",
+    moduleId: "motor-anma-akimi",
     confidence: "low",
     inputs: {
-      guc_kW: (qty) => getQty(qty, "power"),
-      gerilim_V: () => 380,
-      cosPhi: () => 0.9,
+      milGucu_kW: (qty) => getQty(qty, "power"),
     },
   },
 ];
@@ -81,15 +77,6 @@ function estimateDuctFlow(qty: ExtractedQuantity): number {
   const areaM2 = (width / 1000) * (height / 1000);
   const velocity = 5; // m/s default SMACNA
   return areaM2 * velocity * 3600; // m³/h
-}
-
-function estimateCableAmpacity(diameterMm: number): number {
-  // Rough ampacity estimate from cable diameter (copper, 70°C)
-  // 1mm² ≈ 9A, cable area from diameter
-  if (!diameterMm || diameterMm <= 0) return 0;
-  const radiusMm = diameterMm / 2;
-  const areaMm2 = Math.PI * radiusMm * radiusMm;
-  return areaMm2 * 0.08; // A/mm²
 }
 
 export function mapToModules(

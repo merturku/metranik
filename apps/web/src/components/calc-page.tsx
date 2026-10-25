@@ -308,6 +308,10 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                   ))}
                 </dl>
               </div>
+
+              <p className="mt-6 border-t border-border pt-4 text-caption text-text-tertiary">
+                Ön boyutlandırmadır; nihai karar mühendis kontrolü gerektirir.
+              </p>
             </Card>
           ) : (
             <div className="flex min-h-[280px] flex-col items-center justify-center rounded-lg border border-dashed border-border px-6 py-16 text-center">

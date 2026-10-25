@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **224 modül, 289 test** (bkz. §5/§5b-§5ar) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **233 modül, 309 test** (güncel sayı §5ax'te; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -877,6 +877,36 @@ Yapılanlar:
 Açık işler: 28 yetim modülün kataloğa alınması ya da silinmesi; IFC mapper'daki geçersiz modül
 id'leri (`boru-basınç-kaybı`, `motor-nominal-akimi`) ve tahmin formülleri (Faz 2); hesap sonuç
 ekranlarında §6 uyarısı yok (yalnız pazarlama alt bilgisinde); `packages/ifc`'nin testi yok.
+(Hepsi §5ax'te kapatıldı; yalnız IFC tahmin formülleri Faz 2'ye kaldı.)
+
+### 5ax. Yetim modül triyajı + §6 uyarısı + IFC mapper onarımı (2026-10-25)
+
+28 yetim modül tek tek incelendi, kullanıcı onayıyla (yedek dal `backup/before-orphan-cleanup`):
+
+- **Kataloğa alındı (3):** Trafo Empedans Gerilim Düşümü (IEC 60076-1 regülasyon formülü, sayfası
+  zaten vardı), Ev Sıcaklık Konfor Kontrolü (ISO 7730 PMV/PPD, sayfası zaten vardı), Motor Anma
+  Akımı (eski `motor-akim-yoğunlugu`; ASCII id `motor-anma-akimi`, akım yoğunluğu çıkarıldı —
+  Motor Yol Verme Akımı'nın girdi aldığı anma akımını üretir).
+- **Yeniden yazıldı (1):** Kanal Sızdırmazlık Sınıfı Kontrolü (EN 12237 / EN 1507, f = q/A ile
+  fmax = c·p^0,65 karşılaştırması, A/B/C/D sınıf katsayıları; Mekanik → Test & Kontrol). Eski
+  `kanal-baglantı-sızıntı-kontrolu` debinin %'si ile çalışıyordu — standardın yöntemi değil.
+- **Silindi (24) + 4'ünün sayfası:** 13 katalog tekrarı (fan mil gücü, pompa giriş gücü, motor giriş
+  gücü, NPSH/kavitasyon, termal depo = denge kabı, yıllık fatura, boru yüzey sıcaklığı, radyatör
+  ΔT ×2, kablo gerilim düşümü, elektrikli kalorifer, havalandırma açıklığı, su tüketimi); kanal
+  basınç kaybı ×2 (hava kanalında su yoğunluğu 1000 kg/m³); NTU ×2 (EN 12815 = soba standardı,
+  ε = 1−e^(−NTU) yalnız Cr = 0'da geçerli); uydurma formül/eşik (rotor bar akımı, "menteşe
+  basıncı", temel oturma tahmini, akümülatör tankı, bölme boşluk %30); önemsiz (beton ağırlığı
+  V×ρ, motor verim sınıfı sabit eşikle).
+- **§6 uyarısı:** `CalcPage` sonuç kartının altına "Ön boyutlandırmadır; nihai karar mühendis
+  kontrolü gerektirir." eklendi (tüm modül sayfaları CalcPage kullanıyor).
+- **IFC mapper:** geçersiz id'ler düzeltildi (`boru-basinc-kaybi`, `motor-anma-akimi`); kablo için
+  dış çaptan uydurulan akım tahmini (0,08 A/mm²) ve tahmini faz/gerilim/cosφ varsayılanları
+  kaldırıldı — yalnız IFC'den okunan değer aktarılıyor. `packages/ifc`'ye ilk test eklendi
+  (`mapper.test.ts`: her kural id'si core-calc'te var mı + eşleme davranışı). Debiyi çaptan
+  varsayılan hızla tahmin eden fonksiyonlar Faz 2 tasarımına bırakıldı.
+
+**Gerçek durum: 233 modül — motor = katalog = sayfa, yetim yok (Mekanik 113, Elektrik 46,
+İnşaat 46, Ev 28); core-calc 233 test dosyası / 309 test + ifc 4 test, hepsi yeşil; `pnpm build` temiz.**
 
 ---
 

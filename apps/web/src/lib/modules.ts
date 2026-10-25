@@ -1372,6 +1372,30 @@ const SOGUTMA_DOLUM_PROSEDURU_KONTROL_SURESI: ModuleEntry = {
   href: "/sogutma-dolum-proseduru-kontrol-suresi",
   standard: "—",
 };
+const MOTOR_ANMA_AKIMI: ModuleEntry = {
+  id: "motor-anma-akimi",
+  title: "Motor Anma Akımı",
+  href: "/motor-anma-akimi",
+  standard: "IEC 60034-1",
+};
+const TRAFO_EMPEDANS_GERILIM_DUSUMU: ModuleEntry = {
+  id: "elektrik-trafo-impedans-gerilim",
+  title: "Trafo Empedans Gerilim Düşümü",
+  href: "/elektrik-trafo-impedans-gerilim",
+  standard: "IEC 60076-1",
+};
+const KANAL_SIZDIRMAZLIK_SINIFI_KONTROLU: ModuleEntry = {
+  id: "kanal-sizdirmazlik-sinifi-kontrolu",
+  title: "Kanal Sızdırmazlık Sınıfı Kontrolü",
+  href: "/kanal-sizdirmazlik-sinifi-kontrolu",
+  standard: "EN 12237 / EN 1507",
+};
+const EV_SICAKLIK_KONFOR_KONTROLU: ModuleEntry = {
+  id: "ev-sicaklik-konfor-kontrolu",
+  title: "Ev Sıcaklık Konfor Kontrolü (PMV/PPD)",
+  href: "/ev-sicaklik-konfor-kontrolu",
+  standard: "ISO 7730",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1527,6 +1551,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HAVALANDIRMA_DEBI_KONTROLU,
           YANGIN_POMPASI_PERFORMANS_KONTROLU,
           POMPA_NPSH_KONTROLU,
+          KANAL_SIZDIRMAZLIK_SINIFI_KONTROLU,
         ],
       },
     ],
@@ -1545,6 +1570,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           JENERATOR_SECIMI,
           PARATONER_KORUMA_YARICAPI,
           KABLO_AKIM_TASIMA_KAPASITESI_DUZELTMESI,
+          MOTOR_ANMA_AKIMI,
           MOTOR_YOL_VERME_AKIMI,
           UPS_BATARYA_KAPASITESI,
           BARA_AKIM_TASIMA_KAPASITESI,
@@ -1563,6 +1589,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KONDANSATOR_DESARJ_SURESI,
           BARA_ELEKTRODINAMIK_KUVVET,
           TRAFO_VERIMI,
+          TRAFO_EMPEDANS_GERILIM_DUSUMU,
           KONDANSATOR_DEPOLANAN_ENERJI,
           MOTOR_SENKRON_HIZI,
           KOMPANZASYON_KONDANSATOR_AKIMI,
@@ -1684,6 +1711,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANGIN_SONDURUCU_SAYISI_KONTROLU,
           DUMAN_DEDEKTORU_SAYISI_KONTROLU,
           ELEKTRIKLI_ARAC_SARJ_SURESI,
+          EV_SICAKLIK_KONFOR_KONTROLU,
         ],
       },
     ],
