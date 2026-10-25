@@ -1170,3 +1170,19 @@ export { ahsapKirisEgilmeKontrolu } from "./modules/ahsap-kiris-egilme-kontrolu"
 export type { AhsapKirisEgilmeKontroluInput, AhsapKirisEgilmeKontroluOutput } from "./modules/ahsap-kiris-egilme-kontrolu";
 export { radyatorDilimSayisi } from "./modules/radyator-dilim-sayisi";
 export type { RadyatorDilimSayisiInput, RadyatorDilimSayisiOutput } from "./modules/radyator-dilim-sayisi";
+export { hazenWilliamsSurtunmeKaybi } from "./modules/hazen-williams-surtunme-kaybi";
+export type {
+  HazenWilliamsSurtunmeKaybiInput,
+  HazenWilliamsSurtunmeKaybiOutput,
+} from "./modules/hazen-williams-surtunme-kaybi";
+export { kazanVerimiDogrudanYontem } from "./modules/kazan-verimi-dogrudan-yontem";
+export type {
+  KazanVerimiDogrudanYontemInput,
+  KazanVerimiDogrudanYontemOutput,
+} from "./modules/kazan-verimi-dogrudan-yontem";
+export { kabloCekmeKuvveti } from "./modules/kablo-cekme-kuvveti";
+export type { KabloCekmeKuvvetiInput, KabloCekmeKuvvetiOutput } from "./modules/kablo-cekme-kuvveti";
+export { ahsapKirisSehimKontrolu } from "./modules/ahsap-kiris-sehim-kontrolu";
+export type { AhsapKirisSehimKontroluInput, AhsapKirisSehimKontroluOutput } from "./modules/ahsap-kiris-sehim-kontrolu";
+export { icYuzeyKufRiski } from "./modules/ic-yuzey-kuf-riski";
+export type { IcYuzeyKufRiskiInput, IcYuzeyKufRiskiOutput } from "./modules/ic-yuzey-kuf-riski";

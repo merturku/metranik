@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **273 modül, 469 test** (güncel sayı §5bf'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **278 modül, 489 test** (güncel sayı §5bg'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1070,6 +1070,25 @@ hepsi yeşil; `pnpm build` temiz.**
   Düzeltmesi ΔT'yi doğrudan girdi alıyordu; bu modül ΔT'yi gidiş/dönüş/oda sıcaklığından üretip boyutlandırır.
 
 **Toplam: 273 modül (Mekanik 125, Elektrik 55, İnşaat 58, Ev 35), core-calc 469 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5bg. Hazen-Williams/kazan verimi/kablo çekme/ahşap sehim/küf riski: 5 modül daha
+
+- **Hazen-Williams Sürtünme Kaybı (Yangın Tesisatı)** — Mekanik/Yangın. NFPA 13 SI formülü
+  pm = 6,05·10⁵·Q^1,85/(C^1,85·d^4,87) bar/m; testte ABD formülüyle (4,52, psi/ft) bağımsız çapraz kontrol
+  (%0,02). Mevcut yangın hattı modülü Darcy kullanıyordu; NFPA 13 hidrolik hesabı Hazen-Williams ister.
+- **Kazan Verimi (Doğrudan Yöntem)** — Mekanik/Isıtma-Soğutma. η = V̇ρcpΔT/(V̇gaz·Hu); η > Hs/Hu ≈ %111
+  ölçüm hatası (uygunsuz). Siegert dolaylı yönteminin tamamlayıcısı.
+- **Kablo Çekme Kuvveti (Kapstan Denklemi)** — Elektrik. Düz T₂ = T₁ + μWL, dirsek T₂ = T₁e^(μθ), iki yönde
+  çekiş + yan duvar basıncı; izin verilen gerilme kullanıcı girdisi (varsayılan bakır 50 N/mm², üretici notuyla).
+- **Ahşap Kiriş Sehim Kontrolü (Sünme Dahil)** — İnşaat. TS EN 1995-1-1 §2.2.3: ufin,G = uinst(1 + kdef),
+  ufin,Q = uinst(1 + ψ2·kdef); kdef 0,6/0,8/2,0; E0,mean EN 338; sınır paydaları kullanıcı girdisi
+  (Tablo 7.2 aralıkları). Ahşap Kiriş Eğilme Kontrolü'nün kullanılabilirlik tarafı.
+- **Duvar/Pencere İç Yüzey Sıcaklığı ve Küf Riski** — Ev. TS EN ISO 13788: fRsi = 1 − U·Rsi (0,25 opak /
+  0,13 cam), Ek E psat bağıntıları, küf ölçütü %80 yüzey nemi, yoğuşma ölçütü çiy noktası. Mevcut Yüzey
+  Yoğuşma Riski Kontrolü yüzey sıcaklığını girdi alıyordu; bu modül onu U değerinden üretir.
+
+**Toplam: 278 modül (Mekanik 127, Elektrik 56, İnşaat 59, Ev 36), core-calc 489 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---

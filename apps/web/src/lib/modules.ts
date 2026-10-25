@@ -1636,6 +1636,36 @@ const RADYATOR_DILIM_SAYISI: ModuleEntry = {
   href: "/radyator-dilim-sayisi",
   standard: "TS EN 442-2",
 };
+const HAZEN_WILLIAMS_SURTUNME_KAYBI: ModuleEntry = {
+  id: "hazen-williams-surtunme-kaybi",
+  title: "Hazen-Williams Sürtünme Kaybı (Yangın Tesisatı)",
+  href: "/hazen-williams-surtunme-kaybi",
+  standard: "NFPA 13",
+};
+const KAZAN_VERIMI_DOGRUDAN_YONTEM: ModuleEntry = {
+  id: "kazan-verimi-dogrudan-yontem",
+  title: "Kazan Verimi (Doğrudan Yöntem)",
+  href: "/kazan-verimi-dogrudan-yontem",
+  standard: "—",
+};
+const KABLO_CEKME_KUVVETI: ModuleEntry = {
+  id: "kablo-cekme-kuvveti",
+  title: "Kablo Çekme Kuvveti (Kapstan Denklemi)",
+  href: "/kablo-cekme-kuvveti",
+  standard: "—",
+};
+const AHSAP_KIRIS_SEHIM_KONTROLU: ModuleEntry = {
+  id: "ahsap-kiris-sehim-kontrolu",
+  title: "Ahşap Kiriş Sehim Kontrolü (Sünme Dahil)",
+  href: "/ahsap-kiris-sehim-kontrolu",
+  standard: "TS EN 1995-1-1",
+};
+const IC_YUZEY_KUF_RISKI: ModuleEntry = {
+  id: "ic-yuzey-kuf-riski",
+  title: "Duvar/Pencere İç Yüzey Sıcaklığı ve Küf Riski",
+  href: "/ic-yuzey-kuf-riski",
+  standard: "TS EN ISO 13788",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1677,6 +1707,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HAVA_AYIRICI_BOYUTLANDIRMA,
           BACA_CEKISI_HESABI,
           KAZAN_BACA_GAZI_KAYBI,
+          KAZAN_VERIMI_DOGRUDAN_YONTEM,
           SOGUTMA_KULESI_KAPASITESI,
           YANMA_HAVASI_IHTIYACI,
           BORU_YALITIM_YUZEY_SICAKLIGI,
@@ -1753,6 +1784,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANGIN_DOLABI_DEBI_BASINC,
           MERDIVEN_BASINCLANDIRMA_FANI_DEBISI,
           SPRINKLER_BORU_CAPI,
+          HAZEN_WILLIAMS_SURTUNME_KAYBI,
           KURU_SISTEM_HAVA_KOMPRESORU,
           YANGIN_SONDURME_GAZI_MIKTARI,
           YANGIN_DOLABI_HORTUM_MENZIL_KONTROLU,
@@ -1853,6 +1885,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOMPANZASYON_REZONANS_KONTROLU,
           KABLO_TAVASI_BOYUTLANDIRMA,
           ELEKTRIK_BORUSU_DOLULUK_ORANI,
+          KABLO_CEKME_KUVVETI,
           NOTR_ILETKEN_KESITI_SECIMI,
           HARMONIK_BOZULMA_THD_K_FAKTORU,
           NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
@@ -1898,6 +1931,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           CELIK_KIRIS_EGILME_KESME,
           CELIK_KIRIS_YANAL_BURULMALI_BURKULMA,
           AHSAP_KIRIS_EGILME_KONTROLU,
+          AHSAP_KIRIS_SEHIM_KONTROLU,
           TAZE_BETON_KALIP_BASINCI,
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
@@ -1992,6 +2026,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TERMOSIFON_DUS_SURESI,
           KOMBI_SICAK_SU_DEBISI,
           RADYATOR_DILIM_SAYISI,
+          IC_YUZEY_KUF_RISKI,
           HISSEDILEN_SICAKLIK,
           EV_SICAKLIK_KONFOR_KONTROLU,
         ],
