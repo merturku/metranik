@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **248 modül, 356 test** (güncel sayı §5ba'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **253 modül, 380 test** (güncel sayı §5bb'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -968,6 +968,30 @@ hepsi yeşil; `pnpm build` temiz.**
   Süresi modülünün ani ısıtıcı karşılığı.
 
 **Toplam: 248 modül (Mekanik 116, Elektrik 50, İnşaat 51, Ev 31), core-calc 356 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5bb. Yerden ısıtma yüzeyi/topraklama çubuğu/çelik burkulma/sıvılaşma/hissedilen sıcaklık: 5 modül daha
+
+- **Yerden Isıtma Yüzey Sıcaklığı Kontrolü** — Mekanik/Isıtma-Soğutma. TS EN 1264-2 temel karakteristik
+  eğri q = 8,92·(θF,m − θi)^1,1; oturma 29 °C, kenar 35 °C, banyo θi + 9 K sınırları (θi = 20 °C'de
+  qG ≈ 100 / 175 W/m² testte doğrulanıyor). Yerden Isıtma Boru Uzunluğu'nun ısıl tamamlayıcısı.
+- **Topraklama Çubuğu (Kazık) Yayılma Direnci** — Elektrik. Dwight formülü (IEEE Std 142)
+  R = ρ/(2πL)·[ln(8L/d) − 1] + hedef direnç için ikiye bölmeyle gereken boy. Mevcut Topraklama Direnci
+  Testi'nin (ölçülen değeri kontrol eder) tasarım tarafı; yalnız tek çubuk (paralel çubuk etkileşimi yok).
+- **Çelik Basınç Elemanı Burkulma Dayanımı** — İnşaat. TS EN 1993-1-1 §6.3.1 (χ, Φ, a0–d eğrileri);
+  test λ̄ = 1,0'daki tablo χ değerlerini (a 0,6656 / b 0,5970 / c 0,5399 / d 0,4671) ve HEA 200 örneğini
+  üretir. Kolon Narinlik Kontrolü betonarme içindi; bu ilk çelik stabilite modülü.
+- **Zemin Sıvılaşma Güvenlik Sayısı (SPT)** — İnşaat. Youd vd. (2001) NCEER: CSR (Liao-Whitman rd),
+  CRR7,5 temiz kum eğrisi, Idriss MSF, Kσ; (N1)60cs ≥ 30 veya su seviyesi üstünde FS tanımsız (`null`).
+  Gerekli FS kullanıcı girdisi (varsayılan 1,1 — TBDY 2018'den teyit notuyla).
+- **Hissedilen Sıcaklık (Isı İndeksi / Rüzgar Soğuğu)** — Ev. NWS Rothfusz ısı indeksi (düşük/yüksek nem
+  düzeltmeleriyle, NWS tablosuyla test) ve NWS/Environment Canada 2001 rüzgar soğuğu (EC tablosuyla test);
+  risk kategorileri verdict'te.
+
+Ayrıca `CalcPage` ana değeri `null`/sonsuz olduğunda artık "0.00" yerine "—" gösteriyor (`anaDegerMetni()`);
+ana değeri tanımsız olabilen modüller `number | null` döndürebilir.
+
+**Toplam: 253 modül (Mekanik 117, Elektrik 51, İnşaat 53, Ev 32), core-calc 380 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---

@@ -1486,6 +1486,36 @@ const KOMBI_SICAK_SU_DEBISI: ModuleEntry = {
   href: "/kombi-sicak-su-debisi",
   standard: "EN 13203-1",
 };
+const YERDEN_ISITMA_YUZEY_SICAKLIGI: ModuleEntry = {
+  id: "yerden-isitma-yuzey-sicakligi",
+  title: "Yerden Isıtma Yüzey Sıcaklığı Kontrolü",
+  href: "/yerden-isitma-yuzey-sicakligi",
+  standard: "TS EN 1264-2",
+};
+const TOPRAKLAMA_CUBUGU_DIRENCI: ModuleEntry = {
+  id: "topraklama-cubugu-direnci",
+  title: "Topraklama Çubuğu (Kazık) Yayılma Direnci",
+  href: "/topraklama-cubugu-direnci",
+  standard: "IEEE Std 142",
+};
+const CELIK_BASINC_BURKULMA_DAYANIMI: ModuleEntry = {
+  id: "celik-basinc-burkulma-dayanimi",
+  title: "Çelik Basınç Elemanı Burkulma Dayanımı",
+  href: "/celik-basinc-burkulma-dayanimi",
+  standard: "TS EN 1993-1-1",
+};
+const ZEMIN_SIVILASMA_GUVENLIK_SAYISI: ModuleEntry = {
+  id: "zemin-sivilasma-guvenlik-sayisi",
+  title: "Zemin Sıvılaşma Güvenlik Sayısı (SPT)",
+  href: "/zemin-sivilasma-guvenlik-sayisi",
+  standard: "Youd vd. 2001",
+};
+const HISSEDILEN_SICAKLIK: ModuleEntry = {
+  id: "hissedilen-sicaklik",
+  title: "Hissedilen Sıcaklık (Isı İndeksi / Rüzgar Soğuğu)",
+  href: "/hissedilen-sicaklik",
+  standard: "NWS",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1503,6 +1533,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           GUNES_KOLLEKTORU_ALANI,
           FCU_SU_DEBISI,
           YERDEN_ISITMA_BORU_UZUNLUGU,
+          YERDEN_ISITMA_YUZEY_SICAKLIGI,
           ISI_GERI_KAZANIM_VERIMI,
           BOYLER_ISINMA_SURESI,
           RADYANT_ISITICI_KAPASITESI,
@@ -1675,6 +1706,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           PANO_YUK_CETVELI,
           AYDINLATMA_DIREGI_RUZGAR_YUKU,
           TOPRAKLAMA_ILETKENI_KESITI,
+          TOPRAKLAMA_CUBUGU_DIRENCI,
           KISA_DEVRE_GUCU,
           TRAFO_KISA_DEVRE_AKIMI,
           BARA_ISINMA_KAYBI,
@@ -1730,6 +1762,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DONATI_KENETLENME_BOYU,
           CELIK_BULON_SIKMA_MOMENTI,
           KOSE_KAYNAGI_DIKIS_KAPASITESI,
+          CELIK_BASINC_BURKULMA_DAYANIMI,
           TAZE_BETON_KALIP_BASINCI,
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
@@ -1751,6 +1784,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YIGMA_DUVAR_GERILME_KONTROLU,
           KAZIK_TASIMA_KAPASITESI,
           SONSUZ_SEV_STABILITESI,
+          ZEMIN_SIVILASMA_GUVENLIK_SAYISI,
           KIRIS_SEHIM_KONTROLU,
           CATLAK_GENISLIGI_KONTROLU,
           ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI,
@@ -1819,6 +1853,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ELEKTRIKLI_ARAC_SARJ_SURESI,
           TERMOSIFON_DUS_SURESI,
           KOMBI_SICAK_SU_DEBISI,
+          HISSEDILEN_SICAKLIK,
           EV_SICAKLIK_KONFOR_KONTROLU,
         ],
       },

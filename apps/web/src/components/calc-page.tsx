@@ -81,6 +81,13 @@ export function CalcPage<I extends Record<string, unknown>, O>({
     return typeof v === "number" ? v : Number(String(v).trim().replace(",", "."));
   }
 
+  // Modül ana değeri tanımsız (null) döndürebilir — örn. sıvılaşmayan zeminde FS;
+  // Number(null) = 0 yanıltıcı olacağından "—" gösterilir.
+  function anaDegerMetni(v: unknown): string {
+    const n = v === null || v === undefined ? NaN : Number(v);
+    return Number.isFinite(n) ? n.toFixed(mainDecimals) : "—";
+  }
+
   function adimla(f: CalcField, yon: 1 | -1) {
     const mevcut = sayiyaCevir(values[f.key]) || 0;
     const adim = f.step ?? 1;
@@ -106,12 +113,12 @@ export function CalcPage<I extends Record<string, unknown>, O>({
       moduleId: mod.id,
       title: mod.title,
       href: pathname,
-      summary: `${Number(yeniSonuc.value[mainValueKey]).toFixed(mainDecimals)} ${mainUnit}`,
+      summary: `${anaDegerMetni(yeniSonuc.value[mainValueKey])} ${mainUnit}`,
     });
     setBugun((n) => n + 1);
   }
 
-  const mainValue = sonuc ? Number(sonuc.value[mainValueKey]) : null;
+  const mainValue = sonuc ? anaDegerMetni(sonuc.value[mainValueKey]) : null;
   const konum = modulKonumu(mod.id);
   const ilgili = ilgiliModuller(mod.id);
   const verdictStil = sonuc?.verdict ? VERDICT_STIL[sonuc.verdict.status] : null;
@@ -277,7 +284,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                 )}
                 <div className="flex items-baseline gap-2 mb-3">
                   <span className="font-mono text-4xl font-semibold tabular-nums text-text-primary">
-                    {mainValue.toFixed(mainDecimals)}
+                    {mainValue}
                   </span>
                   <span className="text-body font-medium text-text-secondary">
                     {mainUnit}
