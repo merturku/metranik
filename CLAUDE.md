@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **238 modül, 321 test** (güncel sayı §5ay'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **243 modül, 337 test** (güncel sayı §5az'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -927,6 +927,26 @@ ekranlarında §6 uyarısı yok (yalnız pazarlama alt bilgisinde); `packages/if
   yükseklik/azimut açısından gölgesiz sıra aralığı; 12:00, 10–14 veya 09–15 kriteri seçilebilir.
 
 **Toplam: 238 modül (Mekanik 114, Elektrik 47, İnşaat 48, Ev 29), core-calc 321 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5az. Çatlak genişliği/beton olgunluk/harmonik THD/duş süresi/yoğuşma önleyici yalıtım: 5 modül daha
+
+- **Çatlak Genişliği Kontrolü** — İnşaat. TS EN 1992-1-1 §7.3.4 tam akış: çatlamış elastik kesitten
+  x ve σs, hc,eff ve ρp,eff, (7.9) alt sınırlı εsm − εcm, (7.11) sr,max; çubuk aralığı
+  5(c + φ/2)'yi aşarsa (7.14) sr,max = 1,3(h − x). k1–k4 önerilen değerler (ulusal ek teyidi notu).
+- **Beton Olgunluk Yöntemi ile Kalıp Alma Süresi** — İnşaat. ASTM C1074 Nurse-Saul:
+  tşantiye = tref·(Tref − T0)/(Tş − T0); T0 girdi (deneysel, literatürde −10…0 °C).
+- **Akım Harmonik Bozulması (THD) ve K-Faktörü** — Elektrik. THDI, Irms, K = ΣIh²h²/ΣIh²
+  (UL 1561), üçün katı harmoniklerden nötr akımı 3·√(I3² + I9²); nötr/faz oranı Nötr İletken
+  Kesiti Seçimi'nin harmonik çarpanı girdisini üretir.
+- **Termosifon / Boyler Duş Süresi** — Ev. Adyabatik karışım dengesi
+  Vkarışık = V·f·(Td − Ts)/(Tduş − Ts); f kullanılabilir oran girdisi (ideal 1).
+- **Soğuk Boru Yoğuşma Önleyici Yalıtım Kalınlığı** — Mekanik. EN ISO 12241 silindirik direnç
+  ağıyla yüzey sıcaklığı = çiy noktası (+ pay) olacak D2 ikiye bölme ile çözülür (Yüzey
+  Yoğuşma Riski Kontrolü'nün "ters yönü"). Çiy noktası mevcut Psikrometrik modülüyle aynı Magnus
+  katsayıları.
+
+**Toplam: 243 modül (Mekanik 115, Elektrik 48, İnşaat 50, Ev 30), core-calc 337 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---

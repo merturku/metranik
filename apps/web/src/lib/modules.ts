@@ -1426,6 +1426,36 @@ const GES_PANEL_SIRA_ARASI_MESAFE: ModuleEntry = {
   href: "/ges-panel-sira-arasi-mesafe",
   standard: "—",
 };
+const CATLAK_GENISLIGI_KONTROLU: ModuleEntry = {
+  id: "catlak-genisligi-kontrolu",
+  title: "Çatlak Genişliği Kontrolü",
+  href: "/catlak-genisligi-kontrolu",
+  standard: "TS EN 1992-1-1",
+};
+const BETON_OLGUNLUK_KALIP_ALMA_SURESI: ModuleEntry = {
+  id: "beton-olgunluk-kalip-alma-suresi",
+  title: "Beton Olgunluk Yöntemi ile Kalıp Alma Süresi",
+  href: "/beton-olgunluk-kalip-alma-suresi",
+  standard: "ASTM C1074",
+};
+const HARMONIK_BOZULMA_THD_K_FAKTORU: ModuleEntry = {
+  id: "harmonik-bozulma-thd-k-faktoru",
+  title: "Akım Harmonik Bozulması (THD) ve K-Faktörü",
+  href: "/harmonik-bozulma-thd-k-faktoru",
+  standard: "IEC 61000-2-2",
+};
+const TERMOSIFON_DUS_SURESI: ModuleEntry = {
+  id: "termosifon-dus-suresi",
+  title: "Termosifon / Boyler Duş Süresi",
+  href: "/termosifon-dus-suresi",
+  standard: "—",
+};
+const YOGUSMA_ONLEYICI_YALITIM_KALINLIGI: ModuleEntry = {
+  id: "yogusma-onleyici-yalitim-kalinligi",
+  title: "Soğuk Boru Yoğuşma Önleyici Yalıtım Kalınlığı",
+  href: "/yogusma-onleyici-yalitim-kalinligi",
+  standard: "EN ISO 12241",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1468,6 +1498,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SOGUTMA_KULESI_KAPASITESI,
           YANMA_HAVASI_IHTIYACI,
           BORU_YALITIM_YUZEY_SICAKLIGI,
+          YOGUSMA_ONLEYICI_YALITIM_KALINLIGI,
           HAVALANDIRMA_ISI_KAYBI,
           DUVAR_U_DEGERI_HESABI,
           ISI_POMPASI_CARNOT_COP_SINIRI,
@@ -1630,6 +1661,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOMPANZASYON_REZONANS_KONTROLU,
           KABLO_TAVASI_BOYUTLANDIRMA,
           NOTR_ILETKEN_KESITI_SECIMI,
+          HARMONIK_BOZULMA_THD_K_FAKTORU,
           NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
           AYDINLATMA_GUC_YOGUNLUGU_KONTROLU,
           KABLO_MANYETIK_ALAN_HESABI,
@@ -1665,6 +1697,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DONATI_KENETLENME_BOYU,
           CELIK_BULON_SIKMA_MOMENTI,
           TAZE_BETON_KALIP_BASINCI,
+          BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
           KIRIS_BOYUTLANDIRMA,
           TEMEL_TASIMA_KAPASITESI_MEYERHOF,
@@ -1685,6 +1718,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KAZIK_TASIMA_KAPASITESI,
           SONSUZ_SEV_STABILITESI,
           KIRIS_SEHIM_KONTROLU,
+          CATLAK_GENISLIGI_KONTROLU,
           ISTINAT_DUVARI_AKTIF_TOPRAK_BASINCI,
           KOLON_DONATI_ORANI_KONTROLU,
           KIRIS_DONATI_ORANI_KONTROLU,
@@ -1749,6 +1783,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANGIN_SONDURUCU_SAYISI_KONTROLU,
           DUMAN_DEDEKTORU_SAYISI_KONTROLU,
           ELEKTRIKLI_ARAC_SARJ_SURESI,
+          TERMOSIFON_DUS_SURESI,
           EV_SICAKLIK_KONFOR_KONTROLU,
         ],
       },
