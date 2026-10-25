@@ -1546,6 +1546,36 @@ const DUVAR_KAGIDI_RULO_SAYISI: ModuleEntry = {
   href: "/duvar-kagidi-rulo-sayisi",
   standard: "—",
 };
+const KONTROL_VANASI_OTORITESI: ModuleEntry = {
+  id: "kontrol-vanasi-otoritesi",
+  title: "Kontrol Vanası Otoritesi",
+  href: "/kontrol-vanasi-otoritesi",
+  standard: "—",
+};
+const SOGUK_ODA_URUN_YUKU: ModuleEntry = {
+  id: "soguk-oda-urun-yuku",
+  title: "Soğuk Oda Ürün Soğutma Yükü",
+  href: "/soguk-oda-urun-yuku",
+  standard: "ASHRAE Refrigeration",
+};
+const TRAFO_PARALEL_YUK_PAYLASIMI: ModuleEntry = {
+  id: "trafo-paralel-yuk-paylasimi",
+  title: "Trafoların Paralel Çalışma Yük Paylaşımı",
+  href: "/trafo-paralel-yuk-paylasimi",
+  standard: "IEC 60076-8",
+};
+const CELIK_KIRIS_EGILME_KESME: ModuleEntry = {
+  id: "celik-kiris-egilme-kesme",
+  title: "Çelik Kiriş Eğilme ve Kesme Dayanımı",
+  href: "/celik-kiris-egilme-kesme",
+  standard: "TS EN 1993-1-1",
+};
+const HAVUZ_KLOR_DOZAJI: ModuleEntry = {
+  id: "havuz-klor-dozaji",
+  title: "Havuz Klor Dozajı",
+  href: "/havuz-klor-dozaji",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1556,6 +1586,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         modules: [
           ISITMA_YUKU,
           SOGUTMA_YUKU,
+          SOGUK_ODA_URUN_YUKU,
           EMNIYET_VENTILI_KAPASITESI,
           ESANJOR_BOYUTLANDIRMA,
           ISI_POMPASI_KOMPRESOR_GUCU,
@@ -1607,6 +1638,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_BASINC_KAYBI,
           POMPA_SECIMI,
           POMPA_ISLETME_NOKTASI,
+          KONTROL_VANASI_OTORITESI,
           GENLESME_TANKI,
           SICAK_SU_BOYLER,
           ASKILAMA_HESABI,
@@ -1749,6 +1781,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KONDANSATOR_DESARJ_SURESI,
           BARA_ELEKTRODINAMIK_KUVVET,
           TRAFO_VERIMI,
+          TRAFO_PARALEL_YUK_PAYLASIMI,
           TRAFO_EMPEDANS_GERILIM_DUSUMU,
           KONDANSATOR_DEPOLANAN_ENERJI,
           MOTOR_SENKRON_HIZI,
@@ -1797,6 +1830,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOSE_KAYNAGI_DIKIS_KAPASITESI,
           BULONLU_BIRLESIM_KESME_EZILME,
           CELIK_BASINC_BURKULMA_DAYANIMI,
+          CELIK_KIRIS_EGILME_KESME,
           TAZE_BETON_KALIP_BASINCI,
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
@@ -1866,6 +1900,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           FAYANS_DOSEME_MALZEME_MIKTARI,
           DUVAR_KAGIDI_RULO_SAYISI,
           HAVUZ_SU_SIRKULASYON_DEBISI,
+          HAVUZ_KLOR_DOZAJI,
           ELEKTRIK_FATURA_TAHMINI,
           GUNES_PANELI_GERI_ODEME_SURESI,
           LED_AYDINLATMA_ENERJI_TASARRUFU,

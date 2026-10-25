@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **258 modül, 404 test** (güncel sayı §5bc'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **263 modül, 427 test** (güncel sayı §5bd'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1015,6 +1015,25 @@ derlemeyi kırarlardı). Depodan çıkarılıp oturum scratchpad'ine taşındı.
 `git status`'ta beklenmeyen `??` satırlarına bak.**
 
 **Toplam: 258 modül (Mekanik 119, Elektrik 52, İnşaat 54, Ev 33), core-calc 404 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5bd. Vana otoritesi/soğuk oda ürün yükü/paralel trafo/çelik kiriş/havuz kloru: 5 modül daha
+
+- **Kontrol Vanası Otoritesi** — Mekanik/Isıtma-Soğutma. ΔPv = 100(Q/Kvs)², N = ΔPv/(ΔPv + ΔPdevre);
+  N ≥ 0,5 uygun, 0,25–0,5 sınırda (yaygın tasarım önerisi); N = 0,5 için Kvs ve R5 dizisinden
+  (1; 1,6; 2,5; 4; 6,3 × 10ⁿ) önerilen standart Kvs. Vana Kv modülünün kontrol kalitesi tarafı.
+- **Soğuk Oda Ürün Soğutma Yükü** — Mekanik/Isıtma-Soğutma. ASHRAE Refrigeration ürün yükü
+  Q = m[c1(T1 − Tf) + hif + c2(Tf − T2)]/t (donma yoksa yalnız duyulur). Projedeki ilk soğutma
+  (refrigeration) modülü.
+- **Trafoların Paralel Çalışma Yük Paylaşımı** — Elektrik. IEC 60076-8: Si ∝ Sri/uki, aşırı yüksüz azami
+  yük min(uk)·Σ(Sr/uk); uk farkı > %10 sınırda.
+- **Çelik Kiriş Eğilme ve Kesme Dayanımı** — İnşaat. TS EN 1993-1-1 §6.2.5/6.2.6/6.2.8 (yüksek kesmede
+  ρ ile My,V,Rd), §6.2.6(6) gövde narinliği 72ε/η (η = 1). IPE 300 örneğiyle test. Çelik Basınç Elemanı
+  Burkulma Dayanımı'nın eğilme karşılığı (yanal burulmalı burkulma yok).
+- **Havuz Klor Dozajı** — Ev. 1 ppm = 1 g/m³ kütle dengesi; ürün aktif klor içeriği g/kg veya g/L
+  girdisi; 1–3 ppm aralığı dışında sınırda. Havuz Su Sirkülasyon Debisi'nin su kimyası tamamlayıcısı.
+
+**Toplam: 263 modül (Mekanik 121, Elektrik 53, İnşaat 55, Ev 34), core-calc 427 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---
