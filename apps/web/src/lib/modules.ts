@@ -1456,6 +1456,36 @@ const YOGUSMA_ONLEYICI_YALITIM_KALINLIGI: ModuleEntry = {
   href: "/yogusma-onleyici-yalitim-kalinligi",
   standard: "EN ISO 12241",
 };
+const HAVA_KARISIM_NOKTASI: ModuleEntry = {
+  id: "hava-karisim-noktasi",
+  title: "Hava Karışım Noktası (Taze + Dönüş Havası)",
+  href: "/hava-karisim-noktasi",
+  standard: "ASHRAE Fundamentals",
+};
+const NOKTA_YONTEMI_AYDINLIK_DUZEYI: ModuleEntry = {
+  id: "nokta-yontemi-aydinlik-duzeyi",
+  title: "Nokta Yöntemiyle Aydınlık Düzeyi",
+  href: "/nokta-yontemi-aydinlik-duzeyi",
+  standard: "—",
+};
+const GERILIM_DENGESIZLIGI_KONTROLU: ModuleEntry = {
+  id: "gerilim-dengesizligi-kontrolu",
+  title: "Gerilim Dengesizliği Kontrolü",
+  href: "/gerilim-dengesizligi-kontrolu",
+  standard: "IEC 61000-4-30",
+};
+const KOSE_KAYNAGI_DIKIS_KAPASITESI: ModuleEntry = {
+  id: "kose-kaynagi-dikis-kapasitesi",
+  title: "Köşe Kaynağı Dikiş Kapasitesi",
+  href: "/kose-kaynagi-dikis-kapasitesi",
+  standard: "TS EN 1993-1-8",
+};
+const KOMBI_SICAK_SU_DEBISI: ModuleEntry = {
+  id: "kombi-sicak-su-debisi",
+  title: "Kombi / Ani Su Isıtıcı Sıcak Su Debisi",
+  href: "/kombi-sicak-su-debisi",
+  standard: "EN 13203-1",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1548,6 +1578,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SUSTURUCU_UZUNLUGU,
           FAN_GUCU,
           PSIKROMETRIK_CIG_NOKTASI,
+          HAVA_KARISIM_NOKTASI,
           KANAL_SURTUNME_BASINC_KAYBI,
           KAPALI_OTOPARK_HAVALANDIRMA,
           JENERATOR_ODASI_HAVALANDIRMA,
@@ -1664,6 +1695,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           HARMONIK_BOZULMA_THD_K_FAKTORU,
           NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
           AYDINLATMA_GUC_YOGUNLUGU_KONTROLU,
+          NOKTA_YONTEMI_AYDINLIK_DUZEYI,
           KABLO_MANYETIK_ALAN_HESABI,
         ],
       },
@@ -1680,6 +1712,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TRAFO_YUKLENME_ORANI,
           KABLO_KISA_DEVRE_TERMIK_KONTROLU,
           HATA_CEVRIM_EMPEDANSI_KONTROLU,
+          GERILIM_DENGESIZLIGI_KONTROLU,
         ],
       },
     ],
@@ -1696,6 +1729,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           MERDIVEN_BASAMAK_HESABI,
           DONATI_KENETLENME_BOYU,
           CELIK_BULON_SIKMA_MOMENTI,
+          KOSE_KAYNAGI_DIKIS_KAPASITESI,
           TAZE_BETON_KALIP_BASINCI,
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
@@ -1784,6 +1818,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DUMAN_DEDEKTORU_SAYISI_KONTROLU,
           ELEKTRIKLI_ARAC_SARJ_SURESI,
           TERMOSIFON_DUS_SURESI,
+          KOMBI_SICAK_SU_DEBISI,
           EV_SICAKLIK_KONFOR_KONTROLU,
         ],
       },

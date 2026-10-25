@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **243 modül, 337 test** (güncel sayı §5az'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **248 modül, 356 test** (güncel sayı §5ba'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -947,6 +947,27 @@ hepsi yeşil; `pnpm build` temiz.**
   katsayıları.
 
 **Toplam: 243 modül (Mekanik 115, Elektrik 48, İnşaat 50, Ev 30), core-calc 337 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5ba. Hava karışımı/nokta aydınlığı/gerilim dengesizliği/köşe kaynağı/kombi sıcak su: 5 modül daha
+
+- **Hava Karışım Noktası (Taze + Dönüş Havası)** — Mekanik/Havalandırma. ASHRAE Fundamentals Bölüm 1
+  adyabatik karışım: kuru hava kütlesi, nem ve entalpi dengesi; doyma basıncı Hyland-Wexler, karışım
+  yaş termometresi Eş. 35/37 ikiye bölmeyle. Test ASHRAE'nin kendi örneğini (2 m³/s 4 °C/2 °C yaş +
+  6,25 m³/s 25 °C %50 → t3 ≈ 19,5 °C, t*3 = 14,6 °C) üretir; karışım doyma ötesine geçerse sis uyarısı.
+- **Nokta Yöntemiyle Aydınlık Düzeyi** — Elektrik. Ters kare–kosinüs yasası Eh = Iθ·cos³θ/h²,
+  Ev = Iθ·cos²θ·sinθ/h² (Aydınlatma Lüks Yöntemi'nin ortalama değerinden farklı, nokta değeri).
+- **Gerilim Dengesizliği Kontrolü** — Elektrik/Test & Kontrol. IEC 61000-4-30 β formülüyle ters/doğru
+  bileşen oranı (testte simetrik bileşenlerle bağımsız doğrulanıyor) + NEMA MG 1 LVUR ve 2·(%)² sıcaklık
+  artışı; EN 50160 %2 (uygun) / %3 (sınırda) değerlendirmesi.
+- **Köşe Kaynağı Dikiş Kapasitesi** — İnşaat. TS EN 1993-1-8 §4.5.3.3 basitleştirilmiş yöntem
+  fvw,d = (fu/√3)/(βw·γM2); a ≥ 3 mm, Leff ≥ max(30 mm; 6a), uç krateri L − 2a, uzun bindirmeli
+  birleşimde βLw.1 = 1,2 − 0,2·Lj/(150a). Çelik Bulon Sıkma Momenti'nden sonra ilk çelik birleşim dayanımı.
+- **Kombi / Ani Su Isıtıcı Sıcak Su Debisi** — Ev. ṁ = P/(cp·ΔT), ΔT = 30 K'de EN 13203-1 spesifik debi
+  karşılaştırması, eşzamanlı duş yetmezse o debide ulaşılan sıcaklık (verdict'li). Depolu Termosifon Duş
+  Süresi modülünün ani ısıtıcı karşılığı.
+
+**Toplam: 248 modül (Mekanik 116, Elektrik 50, İnşaat 51, Ev 31), core-calc 356 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---
