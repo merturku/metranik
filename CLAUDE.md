@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **283 modül, 513 test** (güncel sayı §5bh'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **288 modül, 537 test** (güncel sayı §5bi'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1113,6 +1113,30 @@ hepsi yeşil; `pnpm build` temiz.**
   formülüyle (0,1·A·Δp·Fa lb/h) çapraz kontrol (%0,12). Fa yalnız teyit edilen değerlerle notta (0,5 / 1,0 / ≥ 1,5).
 
 **Toplam: 283 modül (Mekanik 129, Elektrik 57, İnşaat 60, Ev 37), core-calc 513 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5bi. Soğuk oda kapı infiltrasyonu/boru içi taşınım/topraklama ızgarası/çift donatılı kiriş/üst kat su basıncı: 5 modül daha
+
+- **Soğuk Oda Kapı İnfiltrasyon Yükü** — Mekanik/Isıtma-Soğutma. ASHRAE Refrigeration (Gosney-Olama):
+  q = 0,221·A·Δh·ρr·√(1 − ρi/ρr)·√(gH)·Fm, qt = q·Dt·Df·(1 − E); psikrometri ASHRAE Fundamentals (W, h, kuru hava
+  ρ), psat ISO 13788 Ek E (buz üstü dahil). Testte IP formülüyle (795,6 = 0,221 × 3600) çapraz kontrol (%0,02).
+  Soğuk Oda Ürün Soğutma Yükü'nün tamamlayıcısı.
+- **Boru İçi Taşınım Katsayısı (Gnielinski / Dittus-Boelter)** — Mekanik/Sıhhi. Petukhov f + Gnielinski
+  (Re ≥ 2300, 2300–3000 geçiş işaretli), laminer Nu 3,66 / 4,36, Dittus-Boelter karşılaştırması (Re ≥ 10⁴,
+  Pr 0,6–160). ν mm²/s girdisi (üstel varsayılan göstermemek için). Düz Yüzey Taşınım/Boru Isı Kaybı'nın h girdisini üretir.
+- **Topraklama Izgarası (Ağ) Direnci** — Elektrik. IEEE Std 80 Sverak + Laurent-Niemann + GPR = IG·Rg; test IEEE 80
+  Ek B örneğini (70×70 m, 400 Ω·m: LT 1540 → 2,78 Ω, LT 1690 → 2,75 Ω) üretir. Topraklama Çubuğu'nun ızgara karşılığı.
+- **Çift Donatılı Kiriş Moment Kapasitesi** — İnşaat. TS 500 şekil değiştirme uygunluğu (ikiye bölmeyle c),
+  σs' ≤ fyd; ρ ≤ 0,02 ve ρ − ρ' ≤ 0,85ρb (Kiriş Donatı Oranı modülüyle aynı ρb), Md karşılaştırması. Testte iki donatı
+  akarken kapalı çözüm ve basınç donatısı akmazken ikinci derece denklem çözümüyle doğrulama.
+- **Üst Kat Su Basıncı ve Hidrofor İhtiyacı** — Ev. Püst = Pşebeke − 0,0981Δh − ΔPkayıp, hidroforsuz azami yükseklik,
+  gereken basınç artışı; alt kat statik basıncı sınırı aşarsa sınırda (basınç düşürücü). EN 806 sınır değerleri
+  teyit edilemediği için asgari/azami basınçlar kullanıcı girdisi, standart atfı yok.
+
+Not: ilk düşünülen "Basınçlı Hava Kaçak Testi (basınç düşüm yöntemi)" mevcut Hava Deposu Boyutlandırma'nın aynı
+Boyle bağıntısını (V = Q·t·p0/Δp) Q için çözdüğünden atlandı, yerine boru içi taşınım katsayısı eklendi.
+
+**Toplam: 288 modül (Mekanik 131, Elektrik 58, İnşaat 61, Ev 38), core-calc 537 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---

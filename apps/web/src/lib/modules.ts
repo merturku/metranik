@@ -1696,6 +1696,36 @@ const HAVUZ_BUHARLASMA_ISI_KAYBI: ModuleEntry = {
   href: "/havuz-buharlasma-isi-kaybi",
   standard: "ASHRAE",
 };
+const SOGUK_ODA_KAPI_INFILTRASYON_YUKU: ModuleEntry = {
+  id: "soguk-oda-kapi-infiltrasyon-yuku",
+  title: "Soğuk Oda Kapı İnfiltrasyon Yükü",
+  href: "/soguk-oda-kapi-infiltrasyon-yuku",
+  standard: "ASHRAE",
+};
+const BORU_ICI_TASINIM_KATSAYISI: ModuleEntry = {
+  id: "boru-ici-tasinim-katsayisi",
+  title: "Boru İçi Taşınım Katsayısı (Gnielinski / Dittus-Boelter)",
+  href: "/boru-ici-tasinim-katsayisi",
+  standard: "Gnielinski",
+};
+const TOPRAKLAMA_IZGARASI_DIRENCI: ModuleEntry = {
+  id: "topraklama-izgarasi-direnci",
+  title: "Topraklama Izgarası (Ağ) Direnci",
+  href: "/topraklama-izgarasi-direnci",
+  standard: "IEEE Std 80",
+};
+const CIFT_DONATILI_KIRIS_MOMENT_KAPASITESI: ModuleEntry = {
+  id: "cift-donatili-kiris-moment-kapasitesi",
+  title: "Çift Donatılı Kiriş Moment Kapasitesi",
+  href: "/cift-donatili-kiris-moment-kapasitesi",
+  standard: "TS 500",
+};
+const UST_KAT_SU_BASINCI_KONTROLU: ModuleEntry = {
+  id: "ust-kat-su-basinci-kontrolu",
+  title: "Üst Kat Su Basıncı ve Hidrofor İhtiyacı",
+  href: "/ust-kat-su-basinci-kontrolu",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1707,6 +1737,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISITMA_YUKU,
           SOGUTMA_YUKU,
           SOGUK_ODA_URUN_YUKU,
+          SOGUK_ODA_KAPI_INFILTRASYON_YUKU,
           SOGUTUCU_AKISKAN_AZAMI_SARJ,
           EMNIYET_VENTILI_KAPASITESI,
           ESANJOR_BOYUTLANDIRMA,
@@ -1770,6 +1801,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SICAK_SU_SIRKULASYON_DEBISI,
           TEMIZ_SU_DEBISI,
           BORU_ISI_KAYBI_IZOLASYON,
+          BORU_ICI_TASINIM_KATSAYISI,
           BORU_TERMAL_GENLESME_PAYI,
           SU_DARBESI_BASINCI,
           SU_YUMUSATMA_RESIN_HACMI,
@@ -1899,6 +1931,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           AYDINLATMA_DIREGI_RUZGAR_YUKU,
           TOPRAKLAMA_ILETKENI_KESITI,
           TOPRAKLAMA_CUBUGU_DIRENCI,
+          TOPRAKLAMA_IZGARASI_DIRENCI,
           WENNER_ZEMIN_OZDIRENCI,
           KISA_DEVRE_GUCU,
           TRAFO_KISA_DEVRE_AKIMI,
@@ -1970,6 +2003,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
           KIRIS_BOYUTLANDIRMA,
+          CIFT_DONATILI_KIRIS_MOMENT_KAPASITESI,
           TEMEL_TASIMA_KAPASITESI_MEYERHOF,
           SERIT_TEMEL_GENISLIGI_ON_BOYUTLANDIRMA,
           DOSEMEDE_ZIMBALAMA_KONTROLU,
@@ -2030,6 +2064,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KLIMA_KAPASITE_SECIMI,
           GUNES_PANELI_KAPASITE_HESABI,
           SU_DEPOSU_HACMI_HESABI,
+          UST_KAT_SU_BASINCI_KONTROLU,
           ISI_YALITIM_KALINLIGI_HESABI,
           EV_TESISATI_SIGORTA_YUKU_KONTROLU,
           BOYA_MIKTARI_HESABI,
