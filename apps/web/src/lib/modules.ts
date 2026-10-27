@@ -1666,6 +1666,36 @@ const IC_YUZEY_KUF_RISKI: ModuleEntry = {
   href: "/ic-yuzey-kuf-riski",
   standard: "TS EN ISO 13788",
 };
+const HAVA_AKIMI_RAHATSIZLIGI_DR: ModuleEntry = {
+  id: "hava-akimi-rahatsizligi-dr",
+  title: "Hava Akımı Rahatsızlığı (Draught Rate, DR)",
+  href: "/hava-akimi-rahatsizligi-dr",
+  standard: "TS EN ISO 7730",
+};
+const SOGUTUCU_AKISKAN_AZAMI_SARJ: ModuleEntry = {
+  id: "sogutucu-akiskan-azami-sarj",
+  title: "Yanıcı Soğutucu Akışkan Azami Şarj Miktarı",
+  href: "/sogutucu-akiskan-azami-sarj",
+  standard: "TS EN 378-1",
+};
+const AKU_ODASI_HAVALANDIRMA: ModuleEntry = {
+  id: "aku-odasi-havalandirma",
+  title: "Akü Odası Havalandırma Debisi (Hidrojen)",
+  href: "/aku-odasi-havalandirma",
+  standard: "EN IEC 62485-2",
+};
+const AHSAP_KOLON_BURKULMA_KONTROLU: ModuleEntry = {
+  id: "ahsap-kolon-burkulma-kontrolu",
+  title: "Ahşap Kolon Burkulma Kontrolü",
+  href: "/ahsap-kolon-burkulma-kontrolu",
+  standard: "TS EN 1995-1-1",
+};
+const HAVUZ_BUHARLASMA_ISI_KAYBI: ModuleEntry = {
+  id: "havuz-buharlasma-isi-kaybi",
+  title: "Kapalı Havuz Buharlaşma ve Isı Kaybı",
+  href: "/havuz-buharlasma-isi-kaybi",
+  standard: "ASHRAE",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1677,6 +1707,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ISITMA_YUKU,
           SOGUTMA_YUKU,
           SOGUK_ODA_URUN_YUKU,
+          SOGUTUCU_AKISKAN_AZAMI_SARJ,
           EMNIYET_VENTILI_KAPASITESI,
           ESANJOR_BOYUTLANDIRMA,
           ISI_POMPASI_KOMPRESOR_GUCU,
@@ -1766,6 +1797,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           PSIKROMETRIK_CIG_NOKTASI,
           HAVA_KARISIM_NOKTASI,
           GLOB_TERMOMETRE_OPERATIF_SICAKLIK,
+          HAVA_AKIMI_RAHATSIZLIGI_DR,
           KANAL_SURTUNME_BASINC_KAYBI,
           KAPALI_OTOPARK_HAVALANDIRMA,
           JENERATOR_ODASI_HAVALANDIRMA,
@@ -1859,6 +1891,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           MOTOR_ANMA_AKIMI,
           MOTOR_YOL_VERME_AKIMI,
           UPS_BATARYA_KAPASITESI,
+          AKU_ODASI_HAVALANDIRMA,
           BARA_AKIM_TASIMA_KAPASITESI,
           YILDIRIM_RISK_DEGERLENDIRMESI,
           ACIL_AYDINLATMA_BATARYA_SURESI,
@@ -1932,6 +1965,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           CELIK_KIRIS_YANAL_BURULMALI_BURKULMA,
           AHSAP_KIRIS_EGILME_KONTROLU,
           AHSAP_KIRIS_SEHIM_KONTROLU,
+          AHSAP_KOLON_BURKULMA_KONTROLU,
           TAZE_BETON_KALIP_BASINCI,
           BETON_OLGUNLUK_KALIP_ALMA_SURESI,
           KOLON_BOYUTLANDIRMA,
@@ -2003,6 +2037,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DUVAR_KAGIDI_RULO_SAYISI,
           HAVUZ_SU_SIRKULASYON_DEBISI,
           HAVUZ_KLOR_DOZAJI,
+          HAVUZ_BUHARLASMA_ISI_KAYBI,
           ELEKTRIK_FATURA_TAHMINI,
           GUNES_PANELI_GERI_ODEME_SURESI,
           LED_AYDINLATMA_ENERJI_TASARRUFU,

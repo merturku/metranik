@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **278 modül, 489 test** (güncel sayı §5bg'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **283 modül, 513 test** (güncel sayı §5bh'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1089,6 +1089,30 @@ hepsi yeşil; `pnpm build` temiz.**
   Yoğuşma Riski Kontrolü yüzey sıcaklığını girdi alıyordu; bu modül onu U değerinden üretir.
 
 **Toplam: 278 modül (Mekanik 127, Elektrik 56, İnşaat 59, Ev 36), core-calc 489 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5bh. Hava akımı rahatsızlığı/yanıcı soğutucu şarjı/akü odası/ahşap kolon/havuz buharlaşması: 5 modül daha
+
+- **Hava Akımı Rahatsızlığı (Draught Rate, DR)** — Mekanik/Havalandırma. TS EN ISO 7730 §6.2
+  DR = (34 − ta)(v − 0,05)^0,62(0,37·v·Tu + 3,14), v < 0,05 → 0,05; kategori A/B/C (< %10/20/30) ve hedef
+  kategori için ikiye bölmeyle azami hız; geçerlilik aralığı dışı girdide not. PMV/PPD'nin yerel rahatsızlık
+  tamamlayıcısı.
+- **Yanıcı Soğutucu Akışkan Azami Şarj Miktarı** — Mekanik/Isıtma-Soğutma. TS EN 378-1 Ek C / IEC 60335-2-40
+  Ek GG: mmax = 2,5·LFL^(5/4)·h0·√A, Amin; LFL (ISO 817) R32 0,307 / R1234yf 0,289 / R290 0,038; h0 zemin 0,6 /
+  pencere 1,0 / duvar 1,8 / tavan 2,2. m ≤ m1 = 4·LFL sınırsız, m > m2 = 26·LFL formül kapsamı dışı (sınırda;
+  A2L üst sınırı sürüme göre değiştiği için teyit notu).
+- **Akü Odası Havalandırma Debisi (Hidrojen)** — Elektrik. EN IEC 62485-2 (eski EN 50272-2):
+  Q = 0,05·n·Igas·Crt·10⁻³, Igas = I·fg·fs (açık kurşun-asit 1/4 mA/Ah fg 1, VRLA 1/8 fg 0,2, fs 5), doğal
+  havalandırma açıklığı A = 28·Q cm². NiCd bilinçli olarak eklenmedi (tablo değeri teyit edilemedi).
+- **Ahşap Kolon Burkulma Kontrolü** — İnşaat. TS EN 1995-1-1 §6.3.2: iki eksende λrel, k, kc (βc = 0,2),
+  λrel ≤ 0,3 → kc = 1; TS EN 338 (2016) fc,0,k / E0,05 C16 17/5400, C24 21/7400, C30 24/8000 (C30 değeri 2009'da
+  23'tü, 2016 tablosu kullanıldı). Ahşap kiriş eğilme/sehim modüllerinin basınç elemanı karşılığı; eğilme
+  etkileşimi yok.
+- **Kapalı Havuz Buharlaşma ve Isı Kaybı** — Ev. ASHRAE HVAC Applications (Natatoriums)
+  wp = 4·10⁻⁵·A·(pw − pa)·Fa (kg/s, kPa); psat TS EN ISO 13788 Ek E; hfg ≈ 2501 − 2,361t; testte ASHRAE IP
+  formülüyle (0,1·A·Δp·Fa lb/h) çapraz kontrol (%0,12). Fa yalnız teyit edilen değerlerle notta (0,5 / 1,0 / ≥ 1,5).
+
+**Toplam: 283 modül (Mekanik 129, Elektrik 57, İnşaat 60, Ev 37), core-calc 513 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---
