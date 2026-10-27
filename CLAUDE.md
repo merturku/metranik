@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **288 modül, 537 test** (güncel sayı §5bi'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **293 modül, 566 test** (güncel sayı §5bj'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1137,6 +1137,29 @@ Not: ilk düşünülen "Basınçlı Hava Kaçak Testi (basınç düşüm yöntem
 Boyle bağıntısını (V = Q·t·p0/Δp) Q için çözdüğünden atlandı, yerine boru içi taşınım katsayısı eklendi.
 
 **Toplam: 288 modül (Mekanik 131, Elektrik 58, İnşaat 61, Ev 38), core-calc 537 test + ifc 4 test,
+hepsi yeşil; `pnpm build` temiz.**
+
+### 5bj. Soğutma çevrimi/serpantin yükü/yangın suyu deposu/dokunma-adım gerilimi/TBDY spektrumu: 5 modül daha
+
+- **Buhar Sıkıştırmalı Soğutma Çevrimi (Entalpi Yöntemi)** — Mekanik/Isıtma-Soğutma. h2 = h1 + (h2s − h1)/ηis,
+  ṁ = QL/(h1 − h3), kompresör gücü, kondenser ısısı, COP soğutma/ısı pompası. Entalpiler kullanıcı girdisi (akışkan
+  tablosu gömülmedi). Test Çengel & Boles Örnek 11-1 (ideal, COP 3,97) ve 11-2 (ηC %93,9, COP 3,93) değerlerini üretir.
+- **Soğutma Serpantini Yükü (Nem Alma)** — Mekanik/Havalandırma. ASHRAE Fundamentals Bölüm 1:
+  q = ṁda[(h1 − h2) − (W1 − W2)hw2], duyulur/gizli ayrımı hx = h(t2, W1), SHR, yoğuşan su; psikrometri Hava Karışım
+  Noktası ile aynı Hyland-Wexler bağıntıları. Test Çengel Örnek 14-8'i (511 kJ/dk) %0,06 farkla üretir. Çıkış nemi girişten
+  büyükse kuru soğutma kabul edilir (uygunsuz uyarısı). Klima Gizli Isı Yükü ΔW'yi girdi alıyordu; bu modül onu durumlardan üretir.
+- **Sprinkler Tasarım Debisi ve Yangın Suyu Deposu Hacmi** — Mekanik/Yangın. Yoğunluk/alan yöntemi (TS EN 12845, NFPA 13):
+  n = ⌈A/As⌉, q = max(D·As; K√Pmin), V = (n·q + Qhortum)·t. Tehlike sınıfı tabloları gömülmedi (notta tipik değerler + teyit
+  uyarısı). Testte NFPA 13 OH2 metrik girdiyle ABD birimli el hesabı (562 gpm, 50 580 gal) çapraz kontrol. Mevcut Sprinkler
+  (Q = K√P) modülü yoğunluk tablosunu bilinçli dışarıda bırakıyordu.
+- **İzin Verilen Dokunma ve Adım Gerilimi** — Elektrik. IEEE Std 80: Cs = 1 − 0,09(1 − ρ/ρs)/(2hs + 0,09),
+  E = (1000 + 1,5/6·Cs·ρs)·k/√ts (k 0,116 / 0,157); GPR > Edokunma → ayrıntılı göz/adım hesabı (sınırda). Test IEEE 80 Ek B
+  (Cs 0,74, 838,2 / 2686,6 V; tam Cs ile < %0,5 fark). Topraklama Izgarası Direnci'nin GPR'ını değerlendirir.
+- **TBDY 2018 Yatay Elastik Tasarım Spektrumu** — İnşaat. §2.3: SDS = SS·FS, SD1 = S1·F1 (Tablo 2.1/2.2 gömülü, doğrusal
+  enterpolasyon; tablolar Vikikaynak'taki yönetmelik metninden doğrulandı), TA, TB, TL = 6 s, dört bölgeli Sae(T) ve Sde(T).
+  ZF hariç. Deprem Taban Kesme modülünün Sa girdisini üretir.
+
+**Toplam: 293 modül (Mekanik 134, Elektrik 59, İnşaat 62, Ev 38), core-calc 566 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
 
 ---

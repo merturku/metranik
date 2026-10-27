@@ -1727,6 +1727,37 @@ const UST_KAT_SU_BASINCI_KONTROLU: ModuleEntry = {
   standard: "—",
 };
 
+const BUHAR_SIKISTIRMALI_SOGUTMA_CEVRIMI: ModuleEntry = {
+  id: "buhar-sikistirmali-sogutma-cevrimi",
+  title: "Buhar Sıkıştırmalı Soğutma Çevrimi (Entalpi Yöntemi)",
+  href: "/buhar-sikistirmali-sogutma-cevrimi",
+  standard: "—",
+};
+const SOGUTMA_SERPANTINI_YUKU: ModuleEntry = {
+  id: "sogutma-serpantini-yuku",
+  title: "Soğutma Serpantini Yükü (Nem Alma)",
+  href: "/sogutma-serpantini-yuku",
+  standard: "ASHRAE",
+};
+const YANGIN_SUYU_DEPOSU_HACMI: ModuleEntry = {
+  id: "yangin-suyu-deposu-hacmi",
+  title: "Sprinkler Tasarım Debisi ve Yangın Suyu Deposu Hacmi",
+  href: "/yangin-suyu-deposu-hacmi",
+  standard: "TS EN 12845",
+};
+const IZIN_VERILEN_DOKUNMA_ADIM_GERILIMI: ModuleEntry = {
+  id: "izin-verilen-dokunma-adim-gerilimi",
+  title: "İzin Verilen Dokunma ve Adım Gerilimi",
+  href: "/izin-verilen-dokunma-adim-gerilimi",
+  standard: "IEEE Std 80",
+};
+const TBDY_YATAY_ELASTIK_TASARIM_SPEKTRUMU: ModuleEntry = {
+  id: "tbdy-yatay-elastik-tasarim-spektrumu",
+  title: "TBDY 2018 Yatay Elastik Tasarım Spektrumu",
+  href: "/tbdy-yatay-elastik-tasarim-spektrumu",
+  standard: "TBDY 2018",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -1739,6 +1770,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SOGUK_ODA_URUN_YUKU,
           SOGUK_ODA_KAPI_INFILTRASYON_YUKU,
           SOGUTUCU_AKISKAN_AZAMI_SARJ,
+          BUHAR_SIKISTIRMALI_SOGUTMA_CEVRIMI,
           EMNIYET_VENTILI_KAPASITESI,
           ESANJOR_BOYUTLANDIRMA,
           ISI_POMPASI_KOMPRESOR_GUCU,
@@ -1828,6 +1860,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           FAN_GUCU,
           PSIKROMETRIK_CIG_NOKTASI,
           HAVA_KARISIM_NOKTASI,
+          SOGUTMA_SERPANTINI_YUKU,
           GLOB_TERMOMETRE_OPERATIF_SICAKLIK,
           HAVA_AKIMI_RAHATSIZLIGI_DR,
           KANAL_SURTUNME_BASINC_KAYBI,
@@ -1848,6 +1881,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANGIN_DOLABI_DEBI_BASINC,
           MERDIVEN_BASINCLANDIRMA_FANI_DEBISI,
           SPRINKLER_BORU_CAPI,
+          YANGIN_SUYU_DEPOSU_HACMI,
           HAZEN_WILLIAMS_SURTUNME_KAYBI,
           KURU_SISTEM_HAVA_KOMPRESORU,
           YANGIN_SONDURME_GAZI_MIKTARI,
@@ -1932,6 +1966,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TOPRAKLAMA_ILETKENI_KESITI,
           TOPRAKLAMA_CUBUGU_DIRENCI,
           TOPRAKLAMA_IZGARASI_DIRENCI,
+          IZIN_VERILEN_DOKUNMA_ADIM_GERILIMI,
           WENNER_ZEMIN_OZDIRENCI,
           KISA_DEVRE_GUCU,
           TRAFO_KISA_DEVRE_AKIMI,
@@ -1985,6 +2020,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          TBDY_YATAY_ELASTIK_TASARIM_SPEKTRUMU,
           DEPREM_TABAN_KESME,
           KAR_YUKU_HESABI,
           RUZGAR_YUKU_HESABI,

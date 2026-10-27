@@ -1215,3 +1215,22 @@ export type {
 } from "./modules/cift-donatili-kiris-moment-kapasitesi";
 export { ustKatSuBasinciKontrolu } from "./modules/ust-kat-su-basinci-kontrolu";
 export type { UstKatSuBasinciKontroluInput, UstKatSuBasinciKontroluOutput } from "./modules/ust-kat-su-basinci-kontrolu";
+export { buharSikistirmaliSogutmaCevrimi } from "./modules/buhar-sikistirmali-sogutma-cevrimi";
+export type {
+  BuharSikistirmaliSogutmaCevrimiInput,
+  BuharSikistirmaliSogutmaCevrimiOutput,
+} from "./modules/buhar-sikistirmali-sogutma-cevrimi";
+export { sogutmaSerpantiniYuku } from "./modules/sogutma-serpantini-yuku";
+export type { SogutmaSerpantiniYukuInput, SogutmaSerpantiniYukuOutput } from "./modules/sogutma-serpantini-yuku";
+export { yanginSuyuDeposuHacmi } from "./modules/yangin-suyu-deposu-hacmi";
+export type { YanginSuyuDeposuHacmiInput, YanginSuyuDeposuHacmiOutput } from "./modules/yangin-suyu-deposu-hacmi";
+export { izinVerilenDokunmaAdimGerilimi } from "./modules/izin-verilen-dokunma-adim-gerilimi";
+export type {
+  IzinVerilenDokunmaAdimGerilimiInput,
+  IzinVerilenDokunmaAdimGerilimiOutput,
+} from "./modules/izin-verilen-dokunma-adim-gerilimi";
+export { tbdyYatayElastikTasarimSpektrumu } from "./modules/tbdy-yatay-elastik-tasarim-spektrumu";
+export type {
+  TbdyYatayElastikTasarimSpektrumuInput,
+  TbdyYatayElastikTasarimSpektrumuOutput,
+} from "./modules/tbdy-yatay-elastik-tasarim-spektrumu";
