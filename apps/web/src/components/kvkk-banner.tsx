@@ -19,7 +19,7 @@ export function KvkkBanner() {
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-surface/98 px-4 py-4 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur">
+    <div data-kvkk className="fixed inset-x-4 bottom-4 z-[120] border border-border sm:inset-x-8 sm:bottom-8 bg-surface px-4 py-4 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur">
       <div className="mx-auto flex max-w-[1140px] flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-relaxed text-text-secondary">
           <span className="font-semibold text-text-primary">🔒 Verileriniz bu cihazda kalır.</span>{" "}

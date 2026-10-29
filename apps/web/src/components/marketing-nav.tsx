@@ -28,7 +28,7 @@ export function MarketingNav() {
         scrolled ? "border-b border-border bg-background/95 backdrop-blur" : ""
       }`}
     >
-      <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-8 py-5 font-mono text-[13px] lg:px-14">
+      <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-8 pb-4 pt-12 font-mono text-[13px] lg:px-14">
         <Link href="/" className="font-display text-[26px] font-bold leading-none tracking-[0.04em] text-white">
           METRA<span className="text-accent-text">NİK</span>
         </Link>

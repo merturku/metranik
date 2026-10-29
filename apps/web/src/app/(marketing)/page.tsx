@@ -110,7 +110,7 @@ export default function Home() {
                 onChange={(e) => setArama(e.target.value)}
                 aria-label="Hesap sorusu"
                 autoComplete="off"
-                placeholder="Ne hesaplamak istiyorsunuz? örn: kablo kesiti"
+                placeholder="Ne hesaplamak istiyorsunuz?"
                 className="min-w-0 flex-1 bg-transparent py-2.5 font-mono text-[14px] text-text-primary placeholder:text-text-tertiary focus:outline-none"
               />
               <button

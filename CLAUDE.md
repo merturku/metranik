@@ -1192,6 +1192,20 @@ metin kontrastları hesapla ≥ 4,5:1 (en düşük 4,99). Ana sayfada sahte ista
 
 **Toplam: 303 modül (Mekanik 138, Elektrik 61, İnşaat 64, Ev 40), core-calc 602 test + ifc 4 test, hepsi yeşil.**
 
+### 5bm. Yayın öncesi cila: görsel hatalar, rapor/paylaşım/kayıt özellikleri (2026-10-29)
+
+- **Görsel hatalar:** pafta çerçevesi menü düğmesine ve alttaki KVKK şeridine biniyordu (menü aşağı alındı, çerçeve
+  z-110, şerit çerçevenin içinde z-120; mobilde çerçeve inset-2/3.5). `design-system.tsx`'te kalmış açık tema sınıfları
+  (`bg-gray-*`, `text-white`) hover'da beyaz zemin/okunmayan yazı üretiyordu — tema token'larına bağlandı.
+- **Yeni özellikler (referans projenik'e karşılık):** PDF indir (yazdırma stili, `globals.css` `@media print`),
+  Excel (BOM'lu `;` ayraçlı CSV), Paylaş (Web Share / pano; bağlantı girdileri `?alan=..` taşır ve açılınca otomatik
+  hesaplar), Kaydet + `/projelerim` (proje bazlı kayıt, proje Excel/PDF raporu, yedek al/geri yükle, favori yıldızı).
+  Hepsi yalnız localStorage (`lib/projeler.ts`); sunucu/giriş yok — referans sitede de giriş yok.
+- **Test (üretim derlemesi + gerçek Chromium):** 304 sayfa 0 kırık link, 303 modülde Hesapla çalışır (NaN/hata yok),
+  0 kontrast ihlali (<4,5:1), yeni özellikler uçtan uca doğrulandı. Test betikleri repoda değil (oturum scratchpad'i).
+- **Yok (bilinçli):** kullanıcı girişi (Supabase + KVKK güncellemesi gerekir), İngilizce sürüm, birim/tema ayarı,
+  İletişim/Hakkında sayfası (gerçek iletişim bilgisi gerekir), Hesap Rehberleri, sitemap/robots/OG (alan adı gerekir).
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

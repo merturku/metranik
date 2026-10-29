@@ -7,9 +7,19 @@ import type { CalcModule, CalcResult } from "@metranik/core-calc";
 import { recordCalc, bugunSayisi } from "@/lib/recent-calcs";
 import { ilgiliModuller, modulKonumu } from "@/lib/modules";
 import {
+  csvOlustur,
+  dosyaIndir,
+  favoriDegistir,
+  favoriMi,
+  hesapKaydet,
+  projeAdlari,
+  type SatirDeger,
+} from "@/lib/projeler";
+import {
   Input,
   InputLabel,
   ButtonPrimary,
+  ButtonSecondary,
   Card,
   CardBody,
   Caption,
@@ -73,9 +83,124 @@ export function CalcPage<I extends Record<string, unknown>, O>({
   const [bugun, setBugun] = useState(0);
   const pathname = usePathname();
 
+  const [otoHesapla, setOtoHesapla] = useState(false);
+  const [bildirim, setBildirim] = useState<string | null>(null);
+
   useEffect(() => {
     setBugun(bugunSayisi(mod.id));
   }, [mod.id]);
+
+  // Paylaşılan bağlantıdaki girdiler (?alan=85&sehir=istanbul) forma yüklenir ve hesaplanır.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const gelen: Record<string, string> = {};
+    for (const f of fields) {
+      const v = q.get(f.key);
+      if (v !== null) gelen[f.key] = v;
+    }
+    if (Object.keys(gelen).length > 0) {
+      setValues((onceki) => ({ ...onceki, ...gelen }));
+      setOtoHesapla(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (otoHesapla) {
+      setOtoHesapla(false);
+      hesapla();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [otoHesapla]);
+
+  function paylasimUrl(): string {
+    const q = new URLSearchParams();
+    for (const f of fields) q.set(f.key, String(values[f.key]));
+    return `${window.location.origin}${window.location.pathname}?${q.toString()}`;
+  }
+
+  const [favori, setFavori] = useState(false);
+  useEffect(() => {
+    setFavori(favoriMi(mod.id));
+  }, [mod.id]);
+
+  function girdiSatirlari(): SatirDeger[] {
+    return fields.map((f) => ({
+      etiket: f.label,
+      deger:
+        f.type === "select"
+          ? (f.options?.find((o) => o.value === String(values[f.key]))?.label ?? String(values[f.key]))
+          : String(values[f.key]),
+    }));
+  }
+
+  function araSatirlari(): SatirDeger[] {
+    if (!sonuc) return [];
+    return Object.entries(sonuc.intermediates).map(([k, v]) => ({
+      etiket: intermediateLabels[k] ?? k,
+      deger: typeof v === "number" ? v.toFixed(4) : String(v),
+    }));
+  }
+
+  function excelIndir() {
+    if (!sonuc) return;
+    const satirlar: string[][] = [
+      ["Metranik", mod.title],
+      ["Standart", sonuc.standardsUsed.join(", ") || standardsLabel],
+      ["Tarih", new Date().toLocaleDateString("tr-TR")],
+      [],
+      ["GİRDİLER", ""],
+      ...girdiSatirlari().map((s) => [s.etiket, s.deger]),
+      [],
+      ["SONUÇ", `${anaDegerMetni(sonuc.value[mainValueKey])} ${mainUnit}`],
+      ...(sonuc.verdict ? [["Değerlendirme", `${sonuc.verdict.status} — ${sonuc.verdict.note}`]] : []),
+      [],
+      ["ARA DEĞERLER", ""],
+      ...araSatirlari().map((s) => [s.etiket, s.deger]),
+      [],
+      ["Not", "Ön boyutlandırmadır; nihai karar mühendis kontrolü gerektirir."],
+    ];
+    dosyaIndir(`${mod.id}.csv`, csvOlustur(satirlar));
+  }
+
+  function kaydet() {
+    if (!sonuc) return;
+    const onerilen = projeAdlari()[0] ?? "Projem";
+    const proje = window.prompt("Hangi projeye kaydedilsin?", onerilen);
+    if (!proje || !proje.trim()) return;
+    const ok = hesapKaydet({
+      proje: proje.trim(),
+      moduleId: mod.id,
+      title: mod.title,
+      href: paylasimUrl().replace(window.location.origin, ""),
+      standart: sonuc.standardsUsed.join(", ") || standardsLabel,
+      sonuc: `${anaDegerMetni(sonuc.value[mainValueKey])} ${mainUnit}`,
+      girdiler: girdiSatirlari(),
+      araDegerler: araSatirlari(),
+      durum: sonuc.verdict?.status,
+    });
+    setBildirim(ok ? `“${proje.trim()}” projesine kaydedildi.` : "Kaydedilemedi: tarayıcı depolaması kapalı.");
+    setTimeout(() => setBildirim(null), 4000);
+  }
+
+  async function paylas() {
+    const url = paylasimUrl();
+    const metin = sonuc
+      ? `${mod.title}: ${anaDegerMetni(sonuc.value[mainValueKey])} ${mainUnit}`
+      : mod.title;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: `Metranik — ${mod.title}`, text: metin, url });
+        return;
+      }
+      await navigator.clipboard.writeText(url);
+      setBildirim("Bağlantı panoya kopyalandı.");
+    } catch {
+      // Kullanıcı paylaşımı iptal ettiyse sessiz geç; pano reddedildiyse bağlantıyı göster.
+      if (!navigator.share) setBildirim(url);
+    }
+    setTimeout(() => setBildirim(null), 4000);
+  }
 
   function sayiyaCevir(v: string | number): number {
     return typeof v === "number" ? v : Number(String(v).trim().replace(",", "."));
@@ -150,7 +275,22 @@ export function CalcPage<I extends Record<string, unknown>, O>({
           <Caption className="uppercase text-text-tertiary">
             {DISIPLIN_ETIKET[mod.discipline]} · {standardsLabel}
           </Caption>
-          <Headline className="mt-2">{mod.title}</Headline>
+          <div className="mt-2 flex items-start justify-between gap-3">
+            <Headline>{mod.title}</Headline>
+            <button
+              type="button"
+              aria-pressed={favori}
+              aria-label={favori ? "Favorilerden çıkar" : "Favorilere ekle"}
+              onClick={() => setFavori(favoriDegistir(mod.id))}
+              className={`no-print shrink-0 rounded-[2px] border px-2 py-1 text-lg leading-none transition-colors ${
+                favori
+                  ? "border-accent bg-accent text-accent-fg"
+                  : "border-border text-text-secondary hover:border-accent hover:text-accent-text"
+              }`}
+            >
+              {favori ? "★" : "☆"}
+            </button>
+          </div>
 
           <Card className="mt-4">
             <Caption className="uppercase text-text-tertiary block mb-2">
@@ -158,7 +298,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
             </Caption>
             <Body className="text-text-secondary mb-3">{description}</Body>
             {formula && (
-              <code className="block mt-3 rounded-md bg-gray-100 dark:bg-gray-800 px-3 py-2 font-mono text-mono text-text-primary overflow-x-auto">
+              <code className="block mt-3 rounded-md bg-surface-secondary border border-border px-3 py-2 font-mono text-mono text-text-primary overflow-x-auto">
                 {formula}
               </code>
             )}
@@ -316,9 +456,48 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                 </dl>
               </div>
 
+              <div className="print-only mt-6 border-t border-border pt-4">
+                <Caption className="uppercase mb-2 block">Girdiler</Caption>
+                <dl className="text-body">
+                  {fields.map((f) => (
+                    <div key={f.key} className="flex justify-between py-1">
+                      <dt className="text-text-secondary">{f.label}</dt>
+                      <dd className="font-mono text-text-primary">
+                        {f.type === "select"
+                          ? (f.options?.find((o) => o.value === String(values[f.key]))?.label ?? values[f.key])
+                          : values[f.key]}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-2 text-caption text-text-tertiary">
+                  {mod.title} · {standardsLabel} · {new Date().toLocaleDateString("tr-TR")} · metranik.vercel.app
+                </p>
+              </div>
+
               <p className="mt-6 border-t border-border pt-4 text-caption text-text-tertiary">
                 Ön boyutlandırmadır; nihai karar mühendis kontrolü gerektirir.
               </p>
+
+              <div className="no-print mt-4 flex flex-wrap items-center gap-2">
+                <ButtonSecondary type="button" onClick={() => window.print()}>
+                  PDF indir
+                </ButtonSecondary>
+                <ButtonSecondary type="button" onClick={excelIndir}>
+                  Excel
+                </ButtonSecondary>
+                <ButtonSecondary type="button" onClick={kaydet}>
+                  Kaydet
+                </ButtonSecondary>
+                <ButtonSecondary type="button" onClick={paylas}>
+                  Paylaş
+                </ButtonSecondary>
+                {bildirim && (
+                  <span role="status" className="text-caption text-text-secondary break-all">
+                    {bildirim}
+                  </span>
+                )}
+              </div>
             </Card>
           ) : (
             <div className="flex min-h-[280px] flex-col items-center justify-center rounded-lg border border-dashed border-border px-6 py-16 text-center">

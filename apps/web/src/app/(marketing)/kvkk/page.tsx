@@ -36,7 +36,7 @@ export default function KvkkPage() {
         <section>
           <h2 className="text-base font-semibold text-text-primary">3. Yerel Depolama (localStorage)</h2>
           <p className="mt-2">
-            Son kullanılan hesaplar, en çok kullanılan modüller ve bu KVKK bildirimine verdiğiniz
+            Son kullanılan hesaplar, en çok kullanılan modüller, “Kaydet” ile sakladığınız hesaplar (Projelerim), favori modülleriniz ve bu KVKK bildirimine verdiğiniz
             onay yalnızca tarayıcınızın yerel hafızasında (localStorage) saklanır. Bu veriler
             başka bir sunucuya gönderilmez ve yalnızca kullandığınız cihazda/tarayıcıda kalır.
             Tarayıcı verilerini temizlerseniz bu kayıtlar da silinir.

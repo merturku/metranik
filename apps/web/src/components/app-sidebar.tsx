@@ -36,7 +36,7 @@ export function AppSidebar() {
 
       {/* Sidebar */}
       <nav
-        className={`fixed lg:relative w-64 h-full flex flex-col gap-4 overflow-y-auto border-r border-border px-4 py-6 z-40 transition-transform duration-200 ${
+        className={`no-print fixed lg:relative w-64 h-full flex flex-col gap-4 overflow-y-auto border-r border-border px-4 py-6 z-40 transition-transform duration-200 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }`}
       >
@@ -50,6 +50,17 @@ export function AppSidebar() {
           }`}
         >
           Kontrol Merkezi
+        </Link>
+        <Link
+          href="/projelerim"
+          onClick={() => setSidebarOpen(false)}
+          className={`rounded-lg px-3 py-2 text-body font-medium transition-colors duration-fast ${
+            pathname === "/projelerim"
+              ? "bg-accent/10 text-accent-text"
+              : "text-text-secondary hover:text-text-primary"
+          }`}
+        >
+          Projelerim ★
         </Link>
 
         {MODUL_GRUPLARI.map((grup) => (

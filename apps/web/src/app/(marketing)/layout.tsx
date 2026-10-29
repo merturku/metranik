@@ -20,10 +20,10 @@ export default function MarketingLayout({
       className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col bp-grid font-sans text-text-primary">
-        <div aria-hidden className="pointer-events-none fixed inset-5 z-[90] border-2 border-line" />
-        <div aria-hidden className="pointer-events-none fixed inset-7 z-[90] border border-line/55" />
+        <div aria-hidden className="pointer-events-none fixed inset-2 z-[110] sm:inset-5 border-2 border-line" />
+        <div aria-hidden className="pointer-events-none fixed inset-3.5 z-[110] sm:inset-7 border border-line/55" />
         <MarketingNav />
-        <div className="pt-[100px]">{children}</div>
+        <div className="pt-[124px]">{children}</div>
 
         <footer className="border-t border-border px-10 py-10">
           <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">

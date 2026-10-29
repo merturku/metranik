@@ -228,3 +228,22 @@ body {
 .os-stack > :nth-child(4) { animation-delay: 0.24s; }
 .os-stack > :nth-child(5) { animation-delay: 0.32s; }
 .os-stack > :nth-child(6) { animation-delay: 0.4s; }
+
+/* Yazdırma / PDF: açık zemin, koyu yazı; kabuk ve form gizlenir, yalnız sonuç basılır. */
+@media print {
+  :root {
+    --color-background: #fff; --color-surface: #fff; --color-surface-secondary: #f1f4f8;
+    --color-surface-tertiary: #e6ebf2; --color-border: #9aa7b8; --color-border-strong: #5b6b80;
+    --color-text-primary: #0a1424; --color-text-secondary: #26364d; --color-text-tertiary: #3d4e66;
+    --color-accent-text: #0a2342; --color-success: #0b6b3a; --color-warning: #8a5a00;
+    --color-error: #a3261a; --color-danger: #a3261a;
+  }
+  html, body { height: auto !important; background: #fff !important; color: #0a1424 !important; }
+  .bp-grid { background-image: none !important; }
+  header, aside, form, .no-print, [data-kvkk] { display: none !important; }
+  main { overflow: visible !important; }
+  main *, main { background: transparent !important; color: #0a1424 !important; border-color: #9aa7b8 !important; box-shadow: none !important; }
+  main code { background: #f1f4f8 !important; }
+  .print-only { display: block !important; }
+}
+.print-only { display: none; }
