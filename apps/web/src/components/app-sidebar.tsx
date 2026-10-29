@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { kategoriEmoji } from "@/lib/kategori-emoji";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MODUL_GRUPLARI, grupBasinaModulSayisi } from "@/lib/modules";
@@ -70,7 +71,7 @@ export function AppSidebar() {
               className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-surface transition-colors duration-fast"
             >
               <span className="text-caption font-semibold uppercase tracking-wide text-text-tertiary">
-                {grup.label} · {grupBasinaModulSayisi(grup)}
+                <span aria-hidden>{kategoriEmoji(grup.label)}</span> {grup.label} · {grupBasinaModulSayisi(grup)}
               </span>
               <span className="text-text-tertiary text-lg leading-none">
                 {expanded[grup.label] ? "−" : "+"}
@@ -83,7 +84,7 @@ export function AppSidebar() {
                   <div key={sg.label}>
                     {grup.subgroups.length > 1 && (
                       <p className="px-3 py-1 text-[10px] uppercase tracking-wide text-text-tertiary/70">
-                        {sg.label}
+                        <span aria-hidden>{kategoriEmoji(sg.label)}</span> {sg.label}
                       </p>
                     )}
                     <div className="flex flex-col gap-0.5">

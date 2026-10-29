@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useState } from "react";
+import { kategoriEmoji } from "@/lib/kategori-emoji";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { MODUL_GRUPLARI, TUM_MODULLER, grupBasinaModulSayisi } from "@/lib/modules";
@@ -105,7 +106,7 @@ function KontrolMerkeziIcerik() {
           {MODUL_GRUPLARI.map((grup) => (
             <div key={grup.label}>
               <p className="text-sm font-semibold text-text-primary">
-                {grup.label}{" "}
+                <span aria-hidden>{kategoriEmoji(grup.label)}</span> {grup.label}{" "}
                 <span className="font-mono text-xs font-normal text-text-tertiary">
                   {grupBasinaModulSayisi(grup)}
                 </span>
@@ -115,7 +116,7 @@ function KontrolMerkeziIcerik() {
                   <div key={sg.label}>
                     {grup.subgroups.length > 1 && (
                       <p className="text-[10px] uppercase tracking-wide text-text-tertiary/70">
-                        {sg.label}
+                        <span aria-hidden>{kategoriEmoji(sg.label)}</span> {sg.label}
                       </p>
                     )}
                     <div className="mt-1.5 flex flex-wrap gap-2">
