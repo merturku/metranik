@@ -3,7 +3,7 @@ export function SplashLoader() {
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-surface">
       <span className="text-3xl font-bold tracking-tight">
         <span className="text-text-primary">Metra</span>
-        <span className="text-accent">nik</span>
+        <span className="text-accent-text">nik</span>
       </span>
       <span
         aria-hidden

@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
 import { AppSidebar } from "@/components/app-sidebar";
 import { KvkkBanner } from "@/components/kvkk-banner";
 import "../globals.css";
-
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
 
 export const metadata: Metadata = {
   title: "Metranik — Uygulama",
@@ -30,9 +17,9 @@ export default function AppLayout({
   return (
     <html
       lang="tr"
-      className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
-      <body className="flex h-full flex-col bg-surface font-sans text-text-primary">
+      <body className="flex h-full flex-col bg-background font-sans text-text-primary">
         <header className="flex shrink-0 items-center justify-between border-b border-border px-4 py-3">
           <Link href="/uygulama" className="flex items-center gap-2.5">
             <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-xs font-bold text-accent-fg">
@@ -40,7 +27,7 @@ export default function AppLayout({
             </span>
             <span className="text-sm font-bold tracking-tight">
               <span className="text-text-primary">Metra</span>
-              <span className="text-accent">nik</span>
+              <span className="text-accent-text">nik</span>
             </span>
           </Link>
           <Link

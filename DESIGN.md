@@ -1,5 +1,36 @@
 # Design System — Metranik
 
+**Güncel (2026-10-29): koyu, sıcak, editoryal tema.** Palet ve tipografi referans sitenin (projenik.com)
+dilinden alındı (kullanıcı talebi, bkz. PRODUCT.md); içerik/kopya/logo orijinaldir. Tek tema: koyu.
+Aşağıdaki eski "Apple HIG / Technical Blue" bölümleri tarihsel kayıttır ve **geçersizdir**.
+
+## Tokenlar (kaynak: `apps/web/src/app/globals.css`)
+
+| Token | Değer | Not |
+|---|---|---|
+| background | `#0d0a08` | sayfa zemini |
+| surface / -secondary / -tertiary | `#171210` / `#1e1814` / `#271f19` | kart, panel, hover |
+| border / border-strong | `#2b2521` / `#41372e` | |
+| text-primary / secondary / tertiary | `#f0e9df` / `#b7ab99` / `#968a7a` | tertiary referanstan (#7e7264) açıldı: AA |
+| accent (dolgu) | `#b8502b` | beyaz yazıyla 4,98:1; referansta #c65a33 (4,28:1, AA altı) |
+| accent-text | `#e5744a` | vurgu metni/ikon, 6,5:1 |
+| success / warning / error / info | `#58b382` / `#e0a84a` / `#e06c5a` / `#6fa3d8` | |
+| radius | 6 / 12 / 20 px | |
+
+## Tipografi
+- Gövde: **Sora** (400/600/700/800) — `--font-sans`
+- Mono (etiket, eyebrow, sayı etiketleri): **JetBrains Mono** — `--font-mono`
+- Başlık/büyük sayılar: **Georgia** serif — `--font-serif` (`font-serif`)
+
+## Kurallar
+- Her metin/zemin çifti ≥ 4,5:1 (WCAG AA). Yeni renk eklerken önce kontrastı hesapla.
+- Düğmeler hap (rounded-full); hero arama kutusu 14 px radius, accent kenarlık + glow.
+- Hero: sıcak radyal ışımalar (`.os-bg`) + noktalı doku (`.dotted`); video kullanılmıyor.
+- Hareket: blur-reveal girişi (`os-in`), `prefers-reduced-motion`'da kapalı.
+
+---
+## Tarihsel (geçersiz) — önceki Apple HIG / mavi sistem
+
 Apple Human Interface Guidelines + Technical Engineering Platform
 
 ## Color Palette

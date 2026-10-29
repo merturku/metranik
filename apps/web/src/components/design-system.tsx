@@ -168,7 +168,7 @@ export const Badge: React.FC<{
   className?: string;
 }> = ({ children, variant = "primary", className }) => {
   const variantClasses = {
-    primary: "bg-accent-subtle text-accent-900",
+    primary: "bg-accent-subtle text-accent-text",
     success: "bg-success-light text-success-dark",
     warning: "bg-warning-light text-warning-dark",
     error: "bg-error-light text-error-dark",
@@ -251,7 +251,7 @@ export const Code: React.FC<TextProps> = ({ children, className }) => (
 );
 
 export const Value: React.FC<TextProps & { unit?: string }> = ({ children, unit, className }) => (
-  <span className={`font-mono text-mono text-accent font-semibold ${className || ""}`}>
+  <span className={`font-mono text-mono text-accent-text font-semibold ${className || ""}`}>
     {children}
     {unit && <span className="text-text-secondary text-sm ml-1">{unit}</span>}
   </span>

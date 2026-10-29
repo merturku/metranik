@@ -27,7 +27,7 @@ export function KvkkBanner() {
           yerel hafızasında (localStorage) saklanır, sunucuya kişisel veri gönderilmez. Hesaplar
           doğrudan tarayıcınızda çalışır. Site, işleyiş için zorunlu yerel kayıtlar ve (ileride)
           reklam çerezleri kullanır — detay:{" "}
-          <Link href="/kvkk" className="font-medium text-accent hover:underline">
+          <Link href="/kvkk" className="font-medium text-accent-text hover:underline">
             Kullanım Koşulları &amp; KVKK
           </Link>
           .

@@ -45,7 +45,7 @@ export function AppSidebar() {
           onClick={() => setSidebarOpen(false)}
           className={`rounded-lg px-3 py-2 text-body font-medium transition-colors duration-fast ${
             pathname === "/uygulama"
-              ? "bg-accent/10 text-accent"
+              ? "bg-accent/10 text-accent-text"
               : "text-text-secondary hover:text-text-primary"
           }`}
         >
@@ -83,7 +83,7 @@ export function AppSidebar() {
                           onClick={() => setSidebarOpen(false)}
                           className={`rounded-lg px-3 py-1.5 text-body transition-colors duration-fast ${
                             pathname === m.href
-                              ? "bg-accent/10 text-accent"
+                              ? "bg-accent/10 text-accent-text"
                               : "text-text-secondary hover:text-text-primary"
                           }`}
                         >

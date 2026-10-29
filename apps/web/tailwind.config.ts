@@ -27,66 +27,58 @@ const config: Config = {
           hover: "var(--color-accent-hover)",
           active: "var(--color-accent-active)",
           subtle: "var(--color-accent-subtle)",
-          50: "oklch(0.95 0.02 260)",
-          100: "oklch(0.90 0.04 260)",
-          200: "oklch(0.80 0.08 260)",
-          300: "oklch(0.70 0.12 260)",
-          400: "oklch(0.60 0.14 260)",
-          500: "oklch(0.52 0.15 260)",
-          600: "oklch(0.48 0.16 260)",
-          700: "oklch(0.42 0.17 260)",
-          800: "oklch(0.35 0.16 260)",
-          900: "oklch(0.28 0.14 260)",
+          50: "oklch(0.95 0.02 38)",
+          100: "oklch(0.90 0.04 38)",
+          200: "oklch(0.80 0.08 38)",
+          300: "oklch(0.70 0.12 38)",
+          400: "oklch(0.60 0.14 38)",
+          500: "oklch(0.52 0.15 38)",
+          600: "oklch(0.48 0.16 38)",
+          700: "oklch(0.42 0.17 38)",
+          800: "oklch(0.35 0.16 38)",
+          900: "oklch(0.28 0.14 38)",
         },
 
         // Status: Success, Warning, Error, Info
         success: {
           DEFAULT: "var(--color-success)",
-          light: "oklch(0.85 0.05 142)",
-          dark: "oklch(0.45 0.14 142)",
+          light: "var(--color-success-light)",
+          dark: "var(--color-success)",
         },
         warning: {
           DEFAULT: "var(--color-warning)",
-          light: "oklch(0.90 0.06 60)",
-          dark: "oklch(0.50 0.16 60)",
+          light: "var(--color-warning-light)",
+          dark: "var(--color-warning)",
         },
         error: {
           DEFAULT: "var(--color-error)",
-          light: "oklch(0.85 0.06 20)",
-          dark: "oklch(0.45 0.16 20)",
+          light: "var(--color-error-light)",
+          dark: "var(--color-error)",
         },
         danger: {
-          DEFAULT: "oklch(0.60 0.14 20)",
-          light: "oklch(0.85 0.06 20)",
-          dark: "oklch(0.45 0.16 20)",
+          DEFAULT: "var(--color-error)",
+          light: "var(--color-error-light)",
+          dark: "var(--color-error)",
         },
         info: {
           DEFAULT: "var(--color-info)",
-          light: "oklch(0.88 0.04 250)",
-          dark: "oklch(0.40 0.13 250)",
+          light: "var(--color-info)",
+          dark: "var(--color-info)",
         },
 
         // Additional surface variants
-        "surface-secondary": "oklch(0.93 0.003 0)",
-        "border-strong": "oklch(0.85 0.005 0)",
-        "accent-fg": "oklch(0.98 0.001 0)",
+        "surface-secondary": "var(--color-surface-secondary)",
+        "surface-tertiary": "var(--color-surface-tertiary)",
+        "border-strong": "var(--color-border-strong)",
+        "accent-fg": "var(--color-accent-fg)",
+        "accent-text": "var(--color-accent-text)",
       },
 
       // Typography
       fontFamily: {
-        sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          '"IBM Plex Sans"',
-          '"Segoe UI"',
-          "sans-serif",
-        ],
-        mono: [
-          '"IBM Plex Mono"',
-          '"SF Mono"',
-          '"Monaco"',
-          "monospace",
-        ],
+        sans: ["var(--font-sans)"],
+        mono: ["var(--font-mono)"],
+        serif: ["var(--font-serif)"],
       },
 
       fontSize: {
@@ -120,18 +112,18 @@ const config: Config = {
       // Border Radius
       borderRadius: {
         none: "0px",
-        sm: "4px",
-        md: "8px",
-        lg: "12px",
+        sm: "6px",
+        md: "12px",
+        lg: "20px",
         full: "9999px",
       },
 
       // Box Shadow (Elevation)
       boxShadow: {
         none: "none",
-        sm: "0 1px 3px rgba(0,0,0,0.08)",
-        md: "0 4px 8px rgba(0,0,0,0.12)",
-        lg: "0 12px 24px rgba(0,0,0,0.16)",
+        sm: "0 1px 3px rgba(0,0,0,0.3)",
+        md: "0 4px 12px rgba(0,0,0,0.4)",
+        lg: "0 12px 40px -12px rgba(0,0,0,0.7)",
 
         // Dark mode shadows (1.5x opacity)
         "dark-sm": "0 1px 3px rgba(0,0,0,0.12)",
@@ -141,7 +133,7 @@ const config: Config = {
 
       // Focus Ring (outline)
       outline: {
-        accent: "2px solid oklch(0.52 0.15 260)",
+        accent: "2px solid oklch(0.52 0.15 38)",
       },
 
       // Transition

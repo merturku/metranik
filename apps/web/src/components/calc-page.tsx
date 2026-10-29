@@ -203,7 +203,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                       type="button"
                       onClick={() => adimla(f, -1)}
                       aria-label={`${f.label} azalt`}
-                      className="w-9 shrink-0 rounded-md border border-border text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-9 shrink-0 rounded-md border border-border text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent-text disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       −
                     </button>
@@ -224,7 +224,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                       type="button"
                       onClick={() => adimla(f, 1)}
                       aria-label={`${f.label} artır`}
-                      className="w-9 shrink-0 rounded-md border border-border text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-9 shrink-0 rounded-md border border-border text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent-text disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       +
                     </button>
@@ -250,7 +250,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                   <Link
                     key={m.id}
                     href={m.href}
-                    className="inline-flex rounded-full border border-border px-3 py-1.5 text-caption text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent"
+                    className="inline-flex rounded-full border border-border px-3 py-1.5 text-caption text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent-text"
                   >
                     {m.title}
                   </Link>

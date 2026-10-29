@@ -27,7 +27,9 @@ aksan), 12/20px radius, hafif döndürülmüş "yakında" etiketleri. İçerik/k
 ait değil, orijinal — sahte istatistik, AutoCAD/sponsorluk gibi bize ait olmayan
 iddialar kopyalanmadı.
 
-**Tipografi kararı (2026-08-29, güncellendi):** İlk kararda projenik.com'un font
+**Tipografi kararı (2026-10-29, yeniden güncellendi):** Kullanıcı, referans siteyle aynı renk/yazı karakteri/tasarım dilini istedi ("bu sitede ne varsa aynısını örnek al"). Sora + JetBrains Mono + Georgia başlıklar ve koyu terracotta palet geri alındı; yalnız erişilebilirlik için iki değer AA'ya çekildi (bkz. DESIGN.md). İçerik/kopya/logo/istatistik yine orijinal. Aşağıdaki 2026-08-29 kararı tarihseldir.
+
+**Tipografi kararı (2026-08-29, güncellendi — şu an geçersiz):** İlk kararda projenik.com'un font
 ikilisi (Sora + JetBrains Mono) de birebir alınmıştı; kullanıcı geri bildirimiyle
 ("yapay zeka kırıntısı", "herkeste aynı font") bu değiştirildi — Sora+JetBrains Mono,
 sayısız AI-üretimi/şablon SaaS arayüzünde birebir aynı şekilde kullanılan, artık

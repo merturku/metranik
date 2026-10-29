@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
 import { MarketingNav } from "@/components/marketing-nav";
 import { KvkkBanner } from "@/components/kvkk-banner";
 import "../globals.css";
-
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
 
 export const metadata: Metadata = {
   title: "Metranik",
@@ -30,9 +17,9 @@ export default function MarketingLayout({
   return (
     <html
       lang="tr"
-      className={`${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col bg-surface font-sans text-text-primary">
+      <body className="min-h-full flex flex-col bg-background font-sans text-text-primary">
         <MarketingNav />
         <div className="pt-[100px]">{children}</div>
 
@@ -40,21 +27,21 @@ export default function MarketingLayout({
           <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
             <span className="text-sm font-bold tracking-tight">
               <span className="text-text-primary">Metra</span>
-              <span className="text-accent">nik</span>
+              <span className="text-accent-text">nik</span>
             </span>
             <nav className="flex flex-wrap items-center justify-center gap-4 text-xs text-text-secondary">
-              <a href="/#nasil-calisir" className="transition-colors duration-300 hover:text-text-primary">
-                Nasıl Çalışır
-              </a>
               <a href="/#kimin-icin" className="transition-colors duration-300 hover:text-text-primary">
                 Kimin İçin
+              </a>
+              <a href="/#yol-haritasi" className="transition-colors duration-300 hover:text-text-primary">
+                Yol Haritası
               </a>
               <Link href="/uygulama" className="transition-colors duration-300 hover:text-text-primary">
                 Modüller
               </Link>
-              <a href="/#reklam-verin" className="transition-colors duration-300 hover:text-text-primary">
-                Reklam Verin
-              </a>
+              <Link href="/kvkk" className="transition-colors duration-300 hover:text-text-primary">
+                KVKK
+              </Link>
             </nav>
             <p className="text-xs text-text-tertiary">
               Beta sürümü · Ön boyutlandırma aracıdır; nihai karar mühendis kontrolü gerektirir.

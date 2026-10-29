@@ -95,7 +95,7 @@ export default function Home() {
               Hesabı motor yapar.
             </Display1>
             <Subheading className="text-text-secondary mb-6">
-              Kararı <em className="font-normal text-accent not-italic">mühendis</em> verir.
+              Kararı <em className="font-normal text-accent-text not-italic">mühendis</em> verir.
             </Subheading>
 
             <BodyLarge className="mx-auto max-w-[640px] text-text-secondary mb-8">
@@ -113,7 +113,7 @@ export default function Home() {
                 height="18"
                 viewBox="0 0 16 16"
                 fill="none"
-                className="shrink-0 text-accent"
+                className="shrink-0 text-accent-text"
               >
                 <circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.5" />
                 <path
@@ -142,7 +142,7 @@ export default function Home() {
               <Link
                 key={m.href}
                 href={m.href}
-                className="rounded-full border border-border px-3 py-1.5 text-caption text-text-secondary hover:border-accent hover:text-accent transition-colors duration-fast"
+                className="rounded-full border border-border px-3 py-1.5 text-caption text-text-secondary hover:border-accent hover:text-accent-text transition-colors duration-fast"
               >
                 {m.title}
               </Link>
@@ -152,19 +152,19 @@ export default function Home() {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
             <div>
-              <Headline className="text-accent mb-1">{TUM_MODULLER.length}</Headline>
+              <Headline className="text-accent-text mb-1">{TUM_MODULLER.length}</Headline>
               <Caption className="text-text-secondary">modül yayında</Caption>
             </div>
             <div>
-              <Headline className="text-accent mb-1">4</Headline>
+              <Headline className="text-accent-text mb-1">4</Headline>
               <Caption className="text-text-secondary">disiplin</Caption>
             </div>
             <div>
-              <Headline className="text-accent mb-1">100%</Headline>
+              <Headline className="text-accent-text mb-1">100%</Headline>
               <Caption className="text-text-secondary">test yeşil</Caption>
             </div>
             <div>
-              <Headline className="text-accent mb-1">0</Headline>
+              <Headline className="text-accent-text mb-1">0</Headline>
               <Caption className="text-text-secondary">kara kutu</Caption>
             </div>
           </div>
