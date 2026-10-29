@@ -1757,6 +1757,36 @@ const TBDY_YATAY_ELASTIK_TASARIM_SPEKTRUMU: ModuleEntry = {
   href: "/tbdy-yatay-elastik-tasarim-spektrumu",
   standard: "TBDY 2018",
 };
+const EVAPORATIF_SOGUTMA_CIKIS_SICAKLIGI: ModuleEntry = {
+  id: "evaporatif-sogutma-cikis-sicakligi",
+  title: "Evaporatif (Adyabatik) Soğutma Çıkış Sıcaklığı",
+  href: "/evaporatif-sogutma-cikis-sicakligi",
+  standard: "ASHRAE",
+};
+const CHILLER_IPLV: ModuleEntry = {
+  id: "chiller-iplv",
+  title: "Chiller Kısmi Yük Verimi (IPLV)",
+  href: "/chiller-iplv",
+  standard: "AHRI 550/590",
+};
+const MOTOR_SARGI_SICAKLIGI_DIRENC_YONTEMI: ModuleEntry = {
+  id: "motor-sargi-sicakligi-direnc-yontemi",
+  title: "Motor Sargı Sıcaklığı (Direnç Yöntemi)",
+  href: "/motor-sargi-sicakligi-direnc-yontemi",
+  standard: "IEC 60034-1",
+};
+const CELIK_CEKME_ELEMANI_DAYANIMI: ModuleEntry = {
+  id: "celik-cekme-elemani-dayanimi",
+  title: "Çelik Çekme Elemanı Dayanımı",
+  href: "/celik-cekme-elemani-dayanimi",
+  standard: "TS EN 1993-1-1",
+};
+const YAGMUR_OLUGU_KAPASITESI: ModuleEntry = {
+  id: "yagmur-olugu-kapasitesi",
+  title: "Yağmur Oluğu Taşıma Kapasitesi (Manning)",
+  href: "/yagmur-olugu-kapasitesi",
+  standard: "—",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1771,6 +1801,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           SOGUK_ODA_KAPI_INFILTRASYON_YUKU,
           SOGUTUCU_AKISKAN_AZAMI_SARJ,
           BUHAR_SIKISTIRMALI_SOGUTMA_CEVRIMI,
+          CHILLER_IPLV,
           EMNIYET_VENTILI_KAPASITESI,
           ESANJOR_BOYUTLANDIRMA,
           ISI_POMPASI_KOMPRESOR_GUCU,
@@ -1860,6 +1891,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           FAN_GUCU,
           PSIKROMETRIK_CIG_NOKTASI,
           HAVA_KARISIM_NOKTASI,
+          EVAPORATIF_SOGUTMA_CIKIS_SICAKLIGI,
           SOGUTMA_SERPANTINI_YUKU,
           GLOB_TERMOMETRE_OPERATIF_SICAKLIK,
           HAVA_AKIMI_RAHATSIZLIGI_DR,
@@ -2010,6 +2042,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KABLO_KISA_DEVRE_TERMIK_KONTROLU,
           HATA_CEVRIM_EMPEDANSI_KONTROLU,
           GERILIM_DENGESIZLIGI_KONTROLU,
+          MOTOR_SARGI_SICAKLIGI_DIRENC_YONTEMI,
         ],
       },
     ],
@@ -2030,6 +2063,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KOSE_KAYNAGI_DIKIS_KAPASITESI,
           BULONLU_BIRLESIM_KESME_EZILME,
           CELIK_BASINC_BURKULMA_DAYANIMI,
+          CELIK_CEKME_ELEMANI_DAYANIMI,
           CELIK_KIRIS_EGILME_KESME,
           CELIK_KIRIS_YANAL_BURULMALI_BURKULMA,
           AHSAP_KIRIS_EGILME_KONTROLU,
@@ -2101,6 +2135,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           GUNES_PANELI_KAPASITE_HESABI,
           SU_DEPOSU_HACMI_HESABI,
           UST_KAT_SU_BASINCI_KONTROLU,
+          YAGMUR_OLUGU_KAPASITESI,
           ISI_YALITIM_KALINLIGI_HESABI,
           EV_TESISATI_SIGORTA_YUKU_KONTROLU,
           BOYA_MIKTARI_HESABI,

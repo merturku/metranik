@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **293 modül, 566 test** (güncel sayı §5bj'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **298 modül, 586 test** (güncel sayı §5bk'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1161,6 +1161,22 @@ hepsi yeşil; `pnpm build` temiz.**
 
 **Toplam: 293 modül (Mekanik 134, Elektrik 59, İnşaat 62, Ev 38), core-calc 566 test + ifc 4 test,
 hepsi yeşil; `pnpm build` temiz.**
+
+### 5bk. Evaporatif soğutma/chiller IPLV/motor sargı sıcaklığı/çelik çekme elemanı/yağmur oluğu: 5 modül daha
+
+- **Evaporatif (Adyabatik) Soğutma Çıkış Sıcaklığı** — Mekanik/Havalandırma. ASHRAE Systems & Equipment:
+  t2 = t1 − ε(t1 − t*1), duyulur etki Q = ρV̇cpΔT; ε = 1'de yaş termometreye iner (testte doğrulanır).
+- **Chiller Kısmi Yük Verimi (IPLV)** — Mekanik/Isıtma-Soğutma. AHRI 550/590: 0,01A + 0,42B + 0,45C + 0,12D (COP);
+  EER ve kW/TR karşılığı. Değerlendirme koşulları notta, "güncel sürümden teyit edin" uyarısıyla.
+- **Motor Sargı Sıcaklığı (Direnç Yöntemi)** — Elektrik/Test & Kontrol. IEC 60034-1: θ2 = (R2/R1)(k + θ1) − k
+  (Cu 234,5 / Al 225); artış A 60, E 75, B 80, F 105, H 125 K sınırıyla verdict'li (ortam ≤ 40 °C, tabloyu teyit edin).
+- **Çelik Çekme Elemanı Dayanımı** — İnşaat. TS EN 1993-1-1 §6.2.3: Npl,Rd = Afy/γM0, Nu,Rd = 0,9Anetfu/γM2.
+  Bağlantı dışmerkezliği (§1993-1-8 3.10.3) kapsam dışı, notta belirtildi.
+- **Yağmur Oluğu Taşıma Kapasitesi (Manning)** — Ev. Dairesel segment geometrisi + Manning, çatı debisiyle verdict'li.
+  Standart atfı yok (EN 12056-3 yalnız "bununla kontrol edin" notu); mevcut Yağmur Suyu Debisi modülünün tüketici tarafı.
+
+**Toplam: 298 modül (Mekanik 136, Elektrik 60, İnşaat 63, Ev 39), core-calc 586 test + ifc 4 test,
+hepsi yeşil; `src` altında tsc temiz (apps/web'de `.next/types/* 2.ts` iCloud kopyaları sahte hata veriyor).**
 
 ---
 
