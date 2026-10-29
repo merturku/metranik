@@ -250,7 +250,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
                   <Link
                     key={m.id}
                     href={m.href}
-                    className="inline-flex rounded-full border border-border px-3 py-1.5 text-caption text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent-text"
+                    className="inline-flex rounded-[2px] border border-border px-3 py-1.5 text-caption text-text-secondary transition-colors duration-fast hover:border-accent hover:text-accent-text"
                   >
                     {m.title}
                   </Link>
@@ -267,7 +267,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
             >
               <div className="flex items-center justify-between border-b border-border pb-4 mb-6">
                 <Caption className="uppercase">Sonuç</Caption>
-                <span className="inline-flex items-center rounded-full border border-border px-2.5 py-0.5 text-caption font-medium text-text-secondary">
+                <span className="inline-flex items-center rounded-[2px] border border-border px-2.5 py-0.5 text-caption font-medium text-text-secondary">
                   {sonuc.standardsUsed.length > 0
                     ? sonuc.standardsUsed.join(", ")
                     : standardsLabel}

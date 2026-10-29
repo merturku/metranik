@@ -74,3 +74,10 @@ kaldırıldı, **tek koyu tema** var (DESIGN.md). Erişilebilirlik için iki de�
 üçüncül metin `#7e7264` (4,2:1) → `#968a7a` (5,8:1); düğme dolgusu `#c65a33` (beyazla 4,28:1) → `#b8502b` (4,98:1).
 Yazı tipleri `apps/web/public/fonts` altında yerel (derlemede dış ağ yok). `next build` temiz (305 sayfa).
 Hero'daki "100% test yeşil / 0 kara kutu" iddiaları, bu raporun 3. bölümündeki bulgular nedeniyle kaldırıldı.
+
+## 6. Ek (2026-10-29, akşam): son görsel yön "Teknik Çizim"
+
+Terracotta tema, kullanıcının seçtiği "Teknik Çizim" (mavi kopya) yönüyle değiştirildi (DESIGN.md). Hesaplanan en düşük
+metin/zemin kontrastı **4,99:1** (üçüncül metin / surface-tertiary); diğer çiftler 5,7–14,8:1; sarı düğme + lacivert yazı 10,9:1.
+Tarayıcıda gözle kontrol yapılmadı. Bekleyen 5 modül (VFD, nötr akımı, kayma güvenliği, güneş kazancı, rakım yoğunluğu)
+kullanıcı "bitir" dediği için kataloğa alındı; 3. bölümdeki doğrulama uyarısı bunlar için de geçerlidir (testler el hesabı).

@@ -1,107 +1,161 @@
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
 
-/* Yerel yazı tipleri (OFL): Sora ve JetBrains Mono, değişken ağırlık. Derlemede dış ağa bağımlılık yok. */
+/* Yerel yazı tipleri (OFL): Archivo Narrow (başlık), IBM Plex Sans (gövde), IBM Plex Mono (etiket/sayı). Derlemede dış ağ yok. */
 @font-face {
-  font-family: "Sora";
+  font-family: "Archivo Narrow";
   font-style: normal;
-  font-weight: 100 800;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("/fonts/sora-latin-ext.woff2") format("woff2");
+  src: url("/fonts/archivo-narrow-400-700-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-
 @font-face {
-  font-family: "Sora";
+  font-family: "Archivo Narrow";
   font-style: normal;
-  font-weight: 100 800;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("/fonts/sora-latin.woff2") format("woff2");
+  src: url("/fonts/archivo-narrow-400-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/plex-sans-400-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/plex-sans-400-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/plex-mono-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/plex-mono-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/plex-mono-500-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/plex-mono-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/plex-mono-600-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/plex-mono-600-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 100 800;
-  font-display: swap;
-  src: url("/fonts/jetbrains-mono-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 100 800;
-  font-display: swap;
-  src: url("/fonts/jetbrains-mono-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Metranik görsel sistemi — koyu, sıcak, editoryal (PRODUCT.md).
-   Palet ve tipografi referans sitenin (projenik.com) dilinden alınmıştır; ancak WCAG AA için
-   iki değer bilinçli olarak ayarlandı: üçüncül metin (#7e7264 → #968a7a, 5,8:1) ve düğme dolgusu
-   (#c65a33 → #b8502b, beyaz yazıyla 4,98:1). Tüm metin/zemin çiftleri >= 4,5:1 (rapor: docs/).
-   Tek tema: koyu. */
+/* Metranik görsel sistemi — "Teknik Çizim": mavi kopya (blueprint) zemin, ölçü çizgisi cyan'ı, sarı vurgu.
+   Tek tema: koyu lacivert. Tüm metin/zemin çiftleri >= 4,5:1 (en düşüğü 4,99; bkz. DESIGN.md, docs/). */
 
 :root {
-  /* Yüzeyler */
-  --color-background: #0d0a08;
-  --color-surface: #171210;
-  --color-surface-secondary: #1e1814;
-  --color-surface-tertiary: #271f19;
-  --color-border: #2b2521;
-  --color-border-strong: #41372e;
+  /* Yüzeyler (lacivert kademeleri) */
+  --color-background: #0a2342;
+  --color-surface: #0e2d52;
+  --color-surface-secondary: #123860;
+  --color-surface-tertiary: #17426f;
+  --color-border: #2a5a86;
+  --color-border-strong: #4f88b8;
+  --color-line: #8fd8ff;            /* çizim/ölçü çizgisi cyan'ı */
 
   /* Metin */
-  --color-text-primary: #f0e9df;
-  --color-text-secondary: #b7ab99;
-  --color-text-tertiary: #968a7a;
+  --color-text-primary: #f2f8ff;
+  --color-text-secondary: #b4cce4;
+  --color-text-tertiary: #9ab8d6;
 
-  /* Vurgu: terracotta */
-  --color-accent: #b8502b;          /* dolgu (düğme) — beyaz yazı 4,98:1 */
-  --color-accent-hover: #c0542e;
-  --color-accent-active: #a8451f;
-  --color-accent-text: #e5744a;     /* metin/ikon olarak vurgu — 6,5:1 */
-  --color-accent-fg: #ffffff;
-  --color-accent-subtle: #26160f;
-  --accent-glow: rgba(198, 90, 51, 0.16);
+  /* Vurgu: kopya kalemi sarısı */
+  --color-accent: #ffd166;          /* dolgu (düğme) — lacivert yazı 10,9:1 */
+  --color-accent-hover: #ffe08f;
+  --color-accent-active: #f2c04a;
+  --color-accent-text: #ffd166;     /* vurgu metni/ikon */
+  --color-accent-fg: #0a2342;       /* sarı dolgu üstündeki yazı */
+  --color-accent-subtle: #14395f;
+  --accent-glow: rgba(255, 209, 102, 0.18);
 
-  /* Durum (hepsi koyu zeminde >= 4,5:1) */
-  --color-success: #58b382;
-  --color-warning: #e0a84a;
-  --color-error: #e06c5a;
-  --color-info: #6fa3d8;
-  --color-success-light: #12231a;
-  --color-warning-light: #2a1f0d;
-  --color-error-light: #2b1411;
+  /* Durum */
+  --color-success: #5fd6a0;
+  --color-warning: #ffc24d;
+  --color-error: #ff9a8a;
+  --color-info: #8fd8ff;
+  --color-success-light: #0f3a44;
+  --color-warning-light: #3b3a22;
+  --color-error-light: #4a2a3a;
 
   /* Tipografi (yerel @font-face, yukarıda) */
-  --font-sans: "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
-  --font-serif: Georgia, "Times New Roman", "Nimbus Roman", serif;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+  --font-display: "Archivo Narrow", "IBM Plex Sans", system-ui, sans-serif;
 
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 12px 40px -12px rgba(0, 0, 0, 0.7);
+  --shadow-sm: none;
+  --shadow-md: 0 4px 14px rgba(3, 12, 26, 0.45);
+  --shadow-lg: 0 12px 40px -12px rgba(3, 12, 26, 0.8);
 
   color-scheme: dark;
 }
 
 ::selection {
-  background: #b8502b;
-  color: #fff;
+  background: #ffd166;
+  color: #0a2342;
 }
 
-/* Referansın "noktalı grid" dokusu */
-.dotted {
-  background-image: radial-gradient(rgba(240, 230, 215, 0.055) 1px, transparent 1.6px);
-  background-size: 26px 26px;
+/* Kopya kâğıdı ızgarası: 80 px ana + 16 px ince */
+.bp-grid {
+  background-color: var(--color-background);
+  background-image:
+    linear-gradient(rgba(143, 216, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 216, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(rgba(143, 216, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 216, 255, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+}
+
+/* Başlıklar: dar, yoğun teknik harf */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.005em;
 }
 
 /* Base Styles */
@@ -162,15 +216,6 @@ body {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
-}
-
-/* Hero zemini: klibin paletini taklit eden sıcak ışımalar (video yok) */
-.os-bg {
-  background:
-    radial-gradient(60% 55% at 50% 58%, rgba(198, 90, 51, 0.22), transparent 70%),
-    radial-gradient(35% 40% at 22% 30%, rgba(229, 116, 74, 0.1), transparent 70%),
-    radial-gradient(35% 40% at 80% 72%, rgba(138, 58, 31, 0.14), transparent 70%),
-    var(--color-background);
 }
 
 @keyframes os-in {

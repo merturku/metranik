@@ -81,35 +81,24 @@ export default function Home() {
 
   return (
     <div className="flex flex-1 flex-col">
-      {/* Hero — tek ekran, sıcak ışımalı zemin */}
-      <section className="relative -mt-[100px] flex min-h-[100svh] flex-col overflow-hidden border-b border-border">
-        <div aria-hidden className="os-bg pointer-events-none absolute inset-0" />
-        <div aria-hidden className="dotted pointer-events-none absolute inset-0 opacity-60" />
-
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-5 pb-8 pt-[132px] text-center">
-          <div className="os-stack flex w-full max-w-[1100px] flex-col items-center">
-            <div className="mb-[22px] inline-flex items-center gap-[9px] rounded-full border border-border bg-text-primary/[0.03] px-4 py-[7px] font-mono text-[0.74rem] tracking-[0.1em] text-text-secondary">
-              <span className="animate-pulse-dot h-[7px] w-[7px] rounded-full bg-success" aria-hidden />
-              Beta sürümü · Tamamen ücretsiz
-            </div>
-
-            <h1 className="mx-auto font-serif text-[clamp(2.3rem,6.2vw,4.9rem)] font-normal leading-[1.04] tracking-[-0.02em] text-text-primary">
-              Hesabı motor yapar.
-              <span className="block text-text-secondary">
-                Kararı <b className="font-normal italic text-accent-text">mühendis</b> verir.
-              </span>
+      {/* Hero — teknik çizim pafta */}
+      <section className="relative -mt-[100px] flex min-h-[100svh] flex-col overflow-hidden">
+        <div className="relative z-10 mx-auto grid w-full max-w-[1240px] flex-1 items-center gap-10 px-8 pb-6 pt-[132px] lg:grid-cols-[minmax(0,520px)_minmax(0,1fr)] lg:px-14">
+          <div className="os-stack">
+            <div className="font-mono text-[12px] tracking-[0.2em] text-line">PAFTA 01 / HESAP MOTORU · BETA</div>
+            <h1 className="mt-4 font-display text-[clamp(3rem,7vw,5.25rem)] font-bold uppercase leading-[0.95] text-white">
+              Hesap<br />motorun.
+              <span className="block text-accent-text">Karar senin.</span>
             </h1>
-
-            <p className="mx-auto mt-[18px] max-w-[600px] text-[1.02rem] leading-[1.65] text-text-secondary">
-              Her modül ara değerlerini gösterir ve tamamen deterministik bir hesap motoruyla çalışır.
-              Girdiyi siz belirlersiniz, sonucu motor üretir.
+            <p className="mt-6 max-w-[470px] font-mono text-[15px] leading-[1.7] text-text-secondary">
+              Girdiyi yaz, motor hesaplasın; her ara değer çizimdeki ölçü çizgisi gibi görünür kalsın. Denetçi neyin nereden geldiğini okur.
             </p>
 
             <form
               onSubmit={ara}
               role="search"
               aria-label="Hesap ara"
-              className="mx-auto mb-3 mt-[26px] flex w-full max-w-[640px] items-center gap-2.5 rounded-[14px] border-[1.5px] border-accent bg-surface/90 py-1.5 pl-4 pr-1.5 shadow-[0_0_0_4px_var(--accent-glow)] backdrop-blur-[6px] transition-colors focus-within:border-accent-text max-[560px]:flex-wrap max-[560px]:p-2.5"
+              className="mt-7 flex w-full max-w-[520px] items-center gap-2 border-[1.5px] border-accent bg-surface py-1.5 pl-4 pr-1.5 shadow-[0_0_0_4px_var(--accent-glow)] max-[520px]:flex-wrap max-[520px]:p-2"
             >
               <svg aria-hidden width="18" height="18" viewBox="0 0 16 16" fill="none" className="shrink-0 text-accent-text">
                 <circle cx="7" cy="7" r="4.5" stroke="currentColor" strokeWidth="1.8" />
@@ -121,65 +110,108 @@ export default function Home() {
                 onChange={(e) => setArama(e.target.value)}
                 aria-label="Hesap sorusu"
                 autoComplete="off"
-                placeholder="Ne hesaplamak istiyorsunuz? örn: 85 m² daireye ısıtma yükü"
-                className="min-w-0 flex-1 bg-transparent py-2.5 text-[15px] text-text-primary placeholder:text-text-tertiary focus:outline-none"
+                placeholder="Ne hesaplamak istiyorsunuz? örn: kablo kesiti"
+                className="min-w-0 flex-1 bg-transparent py-2.5 font-mono text-[14px] text-text-primary placeholder:text-text-tertiary focus:outline-none"
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-[10px] bg-accent px-[22px] py-3 text-[14px] font-bold text-accent-fg transition-colors hover:bg-accent-hover max-[560px]:w-full"
+                className="shrink-0 bg-accent px-5 py-3 font-mono text-[13px] font-semibold tracking-[0.06em] text-accent-fg transition-colors hover:bg-accent-hover max-[520px]:w-full"
               >
-                Hesapla
+                HESAPLA
               </button>
             </form>
 
-            <div className="mx-auto mb-5 flex max-w-[680px] flex-wrap justify-center gap-2" aria-label="Popüler hesaplar">
+            <div className="mt-4 flex max-w-[520px] flex-wrap gap-2" aria-label="Popüler hesaplar">
               {QUICK_MODULES.map((m) => (
                 <Link
                   key={m.href}
                   href={m.href}
-                  className="rounded-full border border-border-strong bg-background/45 px-3.5 py-1.5 text-[12.5px] text-text-secondary transition-colors hover:border-accent hover:text-accent-text"
+                  className="border border-border px-3 py-1.5 font-mono text-[12px] text-text-secondary transition-colors hover:border-accent hover:text-accent-text"
                 >
                   {m.title}
                 </Link>
               ))}
             </div>
 
-            <div className="mt-1.5 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-7 flex flex-wrap gap-3.5">
+              <Link
+                href="/yagmur-olugu-kapasitesi"
+                className="bg-accent px-6 py-4 font-mono text-[13.5px] font-semibold tracking-[0.06em] text-accent-fg transition-colors hover:bg-accent-hover"
+              >
+                ÖRNEK HESABI AÇ
+              </Link>
               <Link
                 href="/uygulama"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-8 py-4 text-[1.02rem] font-semibold text-accent-fg shadow-[0_8px_28px_-8px_var(--accent-glow)] transition-all duration-200 hover:-translate-y-0.5 hover:gap-[18px] hover:bg-accent-hover"
+                className="border-[1.5px] border-line px-6 py-4 font-mono text-[13.5px] tracking-[0.06em] text-text-primary transition-colors hover:bg-line/10"
               >
-                Uygulamayı Aç
-                <svg aria-hidden viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2.5 8h11M9.5 4l4 4-4 4" />
-                </svg>
+                {TUM_MODULLER.length} MODÜL
               </Link>
-              <a
-                href="#kimin-icin"
-                className="inline-flex items-center rounded-full border border-border-strong bg-text-primary/[0.03] px-8 py-4 text-[1.02rem] font-semibold text-text-secondary transition-all duration-200 hover:-translate-y-0.5 hover:border-text-primary/25 hover:text-text-primary"
-              >
-                Kimler kullanır
-              </a>
             </div>
           </div>
+
+          <figure className="m-0 justify-self-center lg:justify-self-end" style={{ width: "100%", maxWidth: 610 }}>
+            <svg
+              viewBox="0 0 560 420"
+              width="100%"
+              role="img"
+              aria-label="Yarım daire yağmur oluğu enine kesiti: çap 125 mm, tam dolu, kapasite 3,913 litre/saniye"
+              className="block"
+            >
+              <defs>
+                <pattern id="tarama" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="8" stroke="#8fd8ff" strokeWidth="1" opacity=".5" />
+                </pattern>
+              </defs>
+              <path d="M140 150 A140 140 0 0 0 420 150 Z" fill="url(#tarama)" />
+              <path d="M140 150 A140 140 0 0 0 420 150" fill="none" stroke="#fff" strokeWidth="4" />
+              <line x1="120" y1="150" x2="440" y2="150" stroke="#8fd8ff" strokeWidth="1.5" strokeDasharray="10 5 2 5" />
+              <g stroke="#ffd166" fill="#ffd166" strokeWidth="1.5">
+                <line x1="140" y1="150" x2="140" y2="86" />
+                <line x1="420" y1="150" x2="420" y2="86" />
+                <line x1="140" y1="100" x2="420" y2="100" />
+                <path d="M140 100l12-5v10zM420 100l-12-5v10z" stroke="none" />
+              </g>
+              <text x="280" y="88" textAnchor="middle" fontFamily="IBM Plex Mono" fontSize="16" fontWeight="600" fill="#ffd166">Ø125 mm</text>
+              <line x1="280" y1="150" x2="280" y2="290" stroke="#8fd8ff" strokeWidth="1.5" />
+              <circle cx="280" cy="150" r="4" fill="#8fd8ff" />
+              <text x="292" y="228" fontFamily="IBM Plex Mono" fontSize="15" fill="#d9ecff">r = 62,5</text>
+              <g stroke="#ffd166" strokeWidth="1.5" fill="#ffd166">
+                <line x1="450" y1="150" x2="540" y2="162" />
+                <path d="M540 162l-10-6 -2 10z" stroke="none" />
+              </g>
+              <text x="462" y="190" fontFamily="IBM Plex Mono" fontSize="15" fill="#ffd166">S = %0,5</text>
+              <polyline points="215,250 170,330 120,330" fill="none" stroke="#8fd8ff" strokeWidth="1.5" />
+              <rect x="10" y="300" width="112" height="60" fill="#0a2342" stroke="#8fd8ff" strokeWidth="1.5" />
+              <text x="20" y="322" fontFamily="IBM Plex Mono" fontSize="12.5" fill="#b4cce4">n = 0,011</text>
+              <text x="20" y="344" fontFamily="IBM Plex Mono" fontSize="12.5" fill="#b4cce4">R = r/2 = 31,25</text>
+            </svg>
+            <figcaption className="mt-2 font-mono text-[11px] tracking-[0.14em] text-text-tertiary">ÖRNEK HESAP · YAĞMUR OLUĞU KESİTİ</figcaption>
+          </figure>
         </div>
 
-        <div className="relative z-10 border-t border-border/60 bg-gradient-to-t from-background/85 to-background/35 px-7 pb-[18px] pt-3.5">
-          <div className="mx-auto flex max-w-[1140px] flex-wrap items-center justify-between gap-4">
-            <dl className="flex flex-wrap">
-              {[
-                [String(TUM_MODULLER.length), "hesap modülü"],
-                ["4", "disiplin"],
-                ["Ara değerler", "şeffaf sonuç"],
-                ["Ön boyutlandırma", "mühendis kontrolü şart"],
-              ].map(([b, t], i) => (
-                <div key={t} className={`px-[22px] py-0.5 text-center ${i > 0 ? "border-l border-border/60" : ""}`}>
-                  <dt className="font-serif text-[1.3rem] leading-tight text-text-primary">{b}</dt>
-                  <dd className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-text-tertiary">{t}</dd>
-                </div>
-              ))}
-            </dl>
+        <div className="relative z-10 mx-auto flex w-full max-w-[1240px] flex-wrap items-end gap-x-9 gap-y-4 px-8 pb-24 lg:px-14">
+          <div className="pb-3 font-mono text-[12px] tracking-[0.2em] text-line">SONUÇ</div>
+          <div className="font-display text-[clamp(3.5rem,7vw,5.75rem)] font-bold leading-[0.9] text-white">
+            3,913<span className="ml-3 text-[2.1rem] text-accent-text">L/s</span>
           </div>
+          <div className="pb-1.5 font-mono text-[13.5px] leading-[1.8] text-text-secondary">
+            Q = (1/n)·A·R<sup>2/3</sup>·S<sup>1/2</sup>
+            <br />
+            Manning · tam dolu yarım daire kesit
+          </div>
+          <dl className="ml-auto grid w-full max-w-[640px] grid-cols-2 border-[1.5px] border-line bg-background/90 font-mono text-[12px] sm:grid-cols-[2fr_1fr_1fr_1fr]">
+            {[
+              ["HESAP", "Yağmur oluğu taşıma kapasitesi"],
+              ["YÖNTEM", "Manning"],
+              ["DURUM", "UYGUN"],
+              ["NOT", "Ön boyutlandırma"],
+            ].map(([k, v], i) => (
+              <div key={k} className={`px-3.5 py-2.5 ${i > 0 ? "border-l border-line/50" : ""}`}>
+                <dt className="text-[10.5px] tracking-[0.14em] text-text-secondary">{k}</dt>
+                <dd className={`mt-1 font-semibold ${k === "DURUM" ? "text-accent-text" : "text-white"}`}>{v}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

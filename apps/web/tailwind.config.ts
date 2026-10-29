@@ -21,22 +21,22 @@ const config: Config = {
         "text-secondary": "var(--color-text-secondary)",
         "text-tertiary": "var(--color-text-tertiary)",
 
-        // Accent: Technical Blue
+        // Accent: kopya kalemi sarısı
         accent: {
           DEFAULT: "var(--color-accent)",
           hover: "var(--color-accent-hover)",
           active: "var(--color-accent-active)",
           subtle: "var(--color-accent-subtle)",
-          50: "oklch(0.95 0.02 38)",
-          100: "oklch(0.90 0.04 38)",
-          200: "oklch(0.80 0.08 38)",
-          300: "oklch(0.70 0.12 38)",
-          400: "oklch(0.60 0.14 38)",
-          500: "oklch(0.52 0.15 38)",
-          600: "oklch(0.48 0.16 38)",
-          700: "oklch(0.42 0.17 38)",
-          800: "oklch(0.35 0.16 38)",
-          900: "oklch(0.28 0.14 38)",
+          50: "oklch(0.95 0.02 90)",
+          100: "oklch(0.90 0.04 90)",
+          200: "oklch(0.80 0.08 90)",
+          300: "oklch(0.70 0.12 90)",
+          400: "oklch(0.60 0.14 90)",
+          500: "oklch(0.52 0.15 90)",
+          600: "oklch(0.48 0.16 90)",
+          700: "oklch(0.42 0.17 90)",
+          800: "oklch(0.35 0.16 90)",
+          900: "oklch(0.28 0.14 90)",
         },
 
         // Status: Success, Warning, Error, Info
@@ -78,7 +78,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
-        serif: ["var(--font-serif)"],
+        display: ["var(--font-display)"],
       },
 
       fontSize: {
@@ -112,18 +112,18 @@ const config: Config = {
       // Border Radius
       borderRadius: {
         none: "0px",
-        sm: "6px",
-        md: "12px",
-        lg: "20px",
+        sm: "2px",
+        md: "2px",
+        lg: "4px",
         full: "9999px",
       },
 
       // Box Shadow (Elevation)
       boxShadow: {
         none: "none",
-        sm: "0 1px 3px rgba(0,0,0,0.3)",
-        md: "0 4px 12px rgba(0,0,0,0.4)",
-        lg: "0 12px 40px -12px rgba(0,0,0,0.7)",
+        sm: "none",
+        md: "0 4px 14px rgba(3,12,26,0.45)",
+        lg: "0 12px 40px -12px rgba(3,12,26,0.8)",
 
         // Dark mode shadows (1.5x opacity)
         "dark-sm": "0 1px 3px rgba(0,0,0,0.12)",
@@ -133,7 +133,7 @@ const config: Config = {
 
       // Focus Ring (outline)
       outline: {
-        accent: "2px solid oklch(0.52 0.15 38)",
+        accent: "2px solid oklch(0.52 0.15 90)",
       },
 
       // Transition

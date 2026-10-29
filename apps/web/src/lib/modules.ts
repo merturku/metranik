@@ -1787,6 +1787,36 @@ const YAGMUR_OLUGU_KAPASITESI: ModuleEntry = {
   href: "/yagmur-olugu-kapasitesi",
   standard: "—",
 };
+const RAKIM_HAVA_YOGUNLUGU_FAN_DUZELTMESI: ModuleEntry = {
+  id: "rakim-hava-yogunlugu-fan-duzeltmesi",
+  title: "Rakıma Göre Hava Yoğunluğu ve Fan Düzeltmesi",
+  href: "/rakim-hava-yogunlugu-fan-duzeltmesi",
+  standard: "ASHRAE",
+};
+const POMPA_VFD_ENERJI_TASARRUFU: ModuleEntry = {
+  id: "pompa-vfd-enerji-tasarrufu",
+  title: "Pompa/Fan Devir Düşürme Enerji Tasarrufu (VFD)",
+  href: "/pompa-vfd-enerji-tasarrufu",
+  standard: "—",
+};
+const UC_FAZ_DENGESIZ_NOTR_AKIMI: ModuleEntry = {
+  id: "uc-faz-dengesiz-notr-akimi",
+  title: "Üç Faz Dengesiz Yük Nötr Akımı",
+  href: "/uc-faz-dengesiz-notr-akimi",
+  standard: "—",
+};
+const ISTINAT_DUVARI_KAYMA_GUVENLIGI: ModuleEntry = {
+  id: "istinat-duvari-kayma-guvenligi",
+  title: "İstinat Duvarı Kayma Güvenliği Kontrolü",
+  href: "/istinat-duvari-kayma-guvenligi",
+  standard: "—",
+};
+const PENCERE_GUNES_ISI_KAZANCI: ModuleEntry = {
+  id: "pencere-gunes-isi-kazanci",
+  title: "Pencere Güneş Isı Kazancı (SHGC)",
+  href: "/pencere-gunes-isi-kazanci",
+  standard: "ASHRAE",
+};
 
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
@@ -1855,6 +1885,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BORU_BASINC_KAYBI,
           POMPA_SECIMI,
           POMPA_ISLETME_NOKTASI,
+          POMPA_VFD_ENERJI_TASARRUFU,
           KONTROL_VANASI_OTORITESI,
           GENLESME_TANKI,
           SICAK_SU_BOYLER,
@@ -1884,6 +1915,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           KANAL_BOYUTLANDIRMA,
           TAZE_HAVA_DEBISI,
           FAN_AFFINITE_YASALARI,
+          RAKIM_HAVA_YOGUNLUGU_FAN_DUZELTMESI,
           DAVLUMBAZ_DEBISI,
           MENFEZ_DIFUZOR_DEBISI,
           TRAFO_ODASI_HAVALANDIRMA_DEBISI,
@@ -2020,6 +2052,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           ELEKTRIK_BORUSU_DOLULUK_ORANI,
           KABLO_CEKME_KUVVETI,
           NOTR_ILETKEN_KESITI_SECIMI,
+          UC_FAZ_DENGESIZ_NOTR_AKIMI,
           HARMONIK_BOZULMA_THD_K_FAKTORU,
           NOTR_TOPRAKLAMA_DIRENCI_SECIMI,
           AYDINLATMA_GUC_YOGUNLUGU_KONTROLU,
@@ -2110,6 +2143,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           CATI_KAPLAMA_METRAJI,
           KACIS_GENISLIGI_HESABI,
           ISTINAT_DUVARI_DEVRILME_GUVENLIGI,
+          ISTINAT_DUVARI_KAYMA_GUVENLIGI,
           DEPREM_YATAY_YUK_DAGILIMI,
           KESME_DONATISI_ARALIGI,
           KAR_SURUKLEME_YUKU,
@@ -2132,6 +2166,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         label: "Ev",
         modules: [
           KLIMA_KAPASITE_SECIMI,
+          PENCERE_GUNES_ISI_KAZANCI,
           GUNES_PANELI_KAPASITE_HESABI,
           SU_DEPOSU_HACMI_HESABI,
           UST_KAT_SU_BASINCI_KONTROLU,

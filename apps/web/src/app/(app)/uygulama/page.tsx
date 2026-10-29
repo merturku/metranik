@@ -88,7 +88,7 @@ function KontrolMerkeziIcerik() {
               <Link
                 key={m.moduleId}
                 href={m.href}
-                className="rounded-full border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent-text"
+                className="rounded-[2px] border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent-text"
               >
                 {m.title} <span className="text-text-tertiary">· {m.adet}×</span>
               </Link>
@@ -123,7 +123,7 @@ function KontrolMerkeziIcerik() {
                         <Link
                           key={m.id}
                           href={m.href}
-                          className="rounded-full border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent-text"
+                          className="rounded-[2px] border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors duration-300 hover:border-accent hover:text-accent-text"
                         >
                           {m.title}
                           {m.standard !== "—" && (

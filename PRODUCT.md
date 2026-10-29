@@ -27,7 +27,9 @@ aksan), 12/20px radius, hafif döndürülmüş "yakında" etiketleri. İçerik/k
 ait değil, orijinal — sahte istatistik, AutoCAD/sponsorluk gibi bize ait olmayan
 iddialar kopyalanmadı.
 
-**Tipografi kararı (2026-10-29, yeniden güncellendi):** Kullanıcı, referans siteyle aynı renk/yazı karakteri/tasarım dilini istedi ("bu sitede ne varsa aynısını örnek al"). Sora + JetBrains Mono + Georgia başlıklar ve koyu terracotta palet geri alındı; yalnız erişilebilirlik için iki değer AA'ya çekildi (bkz. DESIGN.md). İçerik/kopya/logo/istatistik yine orijinal. Aşağıdaki 2026-08-29 kararı tarihseldir.
+**Görsel yön kararı (2026-10-29, son):** 5 yön sunuldu, kullanıcı "Teknik Çizim" (mavi kopya) seçti: lacivert zemin, cyan ölçü çizgisi, sarı vurgu, Archivo Narrow + IBM Plex Sans/Mono. Ayrıntı: DESIGN.md. Aşağıdaki iki tipografi kaydı tarihseldir.
+
+**Tipografi kararı (2026-10-29, terracotta dönemi — geçersiz):** Kullanıcı, referans siteyle aynı renk/yazı karakteri/tasarım dilini istedi ("bu sitede ne varsa aynısını örnek al"). Sora + JetBrains Mono + Georgia başlıklar ve koyu terracotta palet geri alındı; yalnız erişilebilirlik için iki değer AA'ya çekildi (bkz. DESIGN.md). İçerik/kopya/logo/istatistik yine orijinal. Aşağıdaki 2026-08-29 kararı tarihseldir.
 
 **Tipografi kararı (2026-08-29, güncellendi — şu an geçersiz):** İlk kararda projenik.com'un font
 ikilisi (Sora + JetBrains Mono) de birebir alınmıştı; kullanıcı geri bildirimiyle

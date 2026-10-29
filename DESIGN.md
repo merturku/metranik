@@ -1,32 +1,33 @@
 # Design System — Metranik
 
-**Güncel (2026-10-29): koyu, sıcak, editoryal tema.** Palet ve tipografi referans sitenin (projenik.com)
-dilinden alındı (kullanıcı talebi, bkz. PRODUCT.md); içerik/kopya/logo orijinaldir. Tek tema: koyu.
-Aşağıdaki eski "Apple HIG / Technical Blue" bölümleri tarihsel kayıttır ve **geçersizdir**.
+**Güncel (2026-10-29): "Teknik Çizim" — mavi kopya (blueprint) tasarımı.** Kullanıcı 5 yönden bunu seçti
+(canvas: "Metranik — 5 Tasarım Yönü"). Tek tema: koyu lacivert. Önceki koyu terracotta (referans-site temelli)
+ve Apple HIG/mavi sistemleri tarihseldir ve **geçersizdir**. İçerik, logo ve metinler orijinaldir.
 
 ## Tokenlar (kaynak: `apps/web/src/app/globals.css`)
 
 | Token | Değer | Not |
 |---|---|---|
-| background | `#0d0a08` | sayfa zemini |
-| surface / -secondary / -tertiary | `#171210` / `#1e1814` / `#271f19` | kart, panel, hover |
-| border / border-strong | `#2b2521` / `#41372e` | |
-| text-primary / secondary / tertiary | `#f0e9df` / `#b7ab99` / `#968a7a` | tertiary referanstan (#7e7264) açıldı: AA |
-| accent (dolgu) | `#b8502b` | beyaz yazıyla 4,98:1; referansta #c65a33 (4,28:1, AA altı) |
-| accent-text | `#e5744a` | vurgu metni/ikon, 6,5:1 |
-| success / warning / error / info | `#58b382` / `#e0a84a` / `#e06c5a` / `#6fa3d8` | |
-| radius | 6 / 12 / 20 px | |
+| background | `#0a2342` | + `.bp-grid` (80 px ana / 16 px ince cyan ızgara) |
+| surface / -secondary / -tertiary | `#0e2d52` / `#123860` / `#17426f` | |
+| border / border-strong / line | `#2a5a86` / `#4f88b8` / `#8fd8ff` | `line`: ölçü/çizim çizgisi |
+| text-primary / secondary / tertiary | `#f2f8ff` / `#b4cce4` / `#9ab8d6` | tertiary en düşük 4,99:1 |
+| accent (dolgu) / accent-fg | `#ffd166` / `#0a2342` | düğme; lacivert yazı 10,9:1 |
+| accent-text | `#ffd166` | vurgu metni |
+| success / warning / error / info | `#5fd6a0` / `#ffc24d` / `#ff9a8a` / `#8fd8ff` | |
+| radius | 2 / 2 / 4 px | köşeli, çizim hissi |
 
-## Tipografi
-- Gövde: **Sora** (400/600/700/800) — `--font-sans`
-- Mono (etiket, eyebrow, sayı etiketleri): **JetBrains Mono** — `--font-mono`
-- Başlık/büyük sayılar: **Georgia** serif — `--font-serif` (`font-serif`)
+## Tipografi (hepsi yerel: `public/fonts`, @font-face globals.css'te)
+- Başlık/büyük sayı: **Archivo Narrow** 700, büyük harf (`font-display`; h1–h3 varsayılan)
+- Gövde: **IBM Plex Sans** — formlar ve uzun metin
+- Etiket, nav, sayı, formül: **IBM Plex Mono** — büyük harf + geniş harf aralığı
 
-## Kurallar
-- Her metin/zemin çifti ≥ 4,5:1 (WCAG AA). Yeni renk eklerken önce kontrastı hesapla.
-- Düğmeler hap (rounded-full); hero arama kutusu 14 px radius, accent kenarlık + glow.
-- Hero: sıcak radyal ışımalar (`.os-bg`) + noktalı doku (`.dotted`); video kullanılmıyor.
-- Hareket: blur-reveal girişi (`os-in`), `prefers-reduced-motion`'da kapalı.
+## Bileşen dili
+- Pafta çerçevesi: iki iç içe cyan çerçeve (marketing layout), antet tablosu (4 hücreli) sonuç özetinde.
+- Düğme: köşeli; dolgu sarı + lacivert yazı veya sarı kenarlık. Hap/yuvarlak yok.
+- Ölçü çizgisi dili: sarı ölçü, cyan eksen, tarama (hatch) ile dolgu.
+- Hareket: blur-reveal giriş (`os-in`), `prefers-reduced-motion`'da kapalı.
+- Kural: her metin/zemin çifti ≥ 4,5:1; yeni renk eklerken önce kontrastı hesapla.
 
 ---
 ## Tarihsel (geçersiz) — önceki Apple HIG / mavi sistem

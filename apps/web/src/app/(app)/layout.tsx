@@ -19,15 +19,12 @@ export default function AppLayout({
       lang="tr"
       className="h-full antialiased"
     >
-      <body className="flex h-full flex-col bg-background font-sans text-text-primary">
+      <body className="flex h-full flex-col bp-grid font-sans text-text-primary">
         <header className="flex shrink-0 items-center justify-between border-b border-border px-4 py-3">
           <Link href="/uygulama" className="flex items-center gap-2.5">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-xs font-bold text-accent-fg">
-              M
-            </span>
-            <span className="text-sm font-bold tracking-tight">
-              <span className="text-text-primary">Metra</span>
-              <span className="text-accent-text">nik</span>
+            <span className="font-display text-xl font-bold leading-none tracking-[0.04em]">
+              <span className="text-white">METRA</span>
+              <span className="text-accent-text">NİK</span>
             </span>
           </Link>
           <Link

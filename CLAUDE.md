@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **298 modül, 586 test** (güncel sayı §5bk'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **303 modül, 602 test** (güncel sayı §5bl'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1177,6 +1177,20 @@ hepsi yeşil; `pnpm build` temiz.**
 
 **Toplam: 298 modül (Mekanik 136, Elektrik 60, İnşaat 63, Ev 39), core-calc 586 test + ifc 4 test,
 hepsi yeşil; `src` altında tsc temiz (apps/web'de `.next/types/* 2.ts` iCloud kopyaları sahte hata veriyor).**
+
+### 5bl. Rakım yoğunluğu/VFD tasarrufu/nötr akımı/istinat kayma/pencere güneş kazancı: 5 modül daha + tasarım değişimi
+
+- **Rakıma Göre Hava Yoğunluğu ve Fan Düzeltmesi** — Mekanik/Havalandırma. ASHRAE standart atmosfer basıncı + ideal gaz; fan basıncı/gücü ρ/1,2 ile düzeltilir.
+- **Pompa/Fan Devir Düşürme Enerji Tasarrufu (VFD)** — Mekanik/Isıtma-Soğutma. Afinite P ∝ n³; statik yük yoksa geçerli (notta).
+- **Üç Faz Dengesiz Yük Nötr Akımı** — Elektrik. IN = √(IA²+IB²+IC²−IAIB−IBIC−ICIA); verdict'li (kapasite girilirse).
+- **İstinat Duvarı Kayma Güvenliği Kontrolü** — İnşaat. FS = (ΣV tanδ + ca B + Pp)/ΣH; verdict'li. Devrilme modülünün tamamlayıcısı.
+- **Pencere Güneş Isı Kazancı (SHGC)** — Ev. Q = A·SHGC·Et·Fg (ASHRAE Fenestration).
+
+Testler el hesabı (yayımlanmış örnek değil); bkz. docs/RAPOR-erisilebilirlik-ve-dogruluk.md §3.
+**Tasarım:** Site, kullanıcının seçtiği "Teknik Çizim" (mavi kopya) yönüne geçirildi (DESIGN.md/PRODUCT.md). Yazı tipleri yerel (`apps/web/public/fonts`),
+metin kontrastları hesapla ≥ 4,5:1 (en düşük 4,99). Ana sayfada sahte istatistik yok.
+
+**Toplam: 303 modül (Mekanik 138, Elektrik 61, İnşaat 64, Ev 40), core-calc 602 test + ifc 4 test, hepsi yeşil.**
 
 ---
 

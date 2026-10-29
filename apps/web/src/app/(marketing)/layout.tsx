@@ -19,15 +19,17 @@ export default function MarketingLayout({
       lang="tr"
       className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col bg-background font-sans text-text-primary">
+      <body className="min-h-full flex flex-col bp-grid font-sans text-text-primary">
+        <div aria-hidden className="pointer-events-none fixed inset-5 z-[90] border-2 border-line" />
+        <div aria-hidden className="pointer-events-none fixed inset-7 z-[90] border border-line/55" />
         <MarketingNav />
         <div className="pt-[100px]">{children}</div>
 
-        <footer className="border-t border-border px-6 py-8">
+        <footer className="border-t border-border px-10 py-10">
           <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
-            <span className="text-sm font-bold tracking-tight">
-              <span className="text-text-primary">Metra</span>
-              <span className="text-accent-text">nik</span>
+            <span className="font-display text-xl font-bold tracking-[0.04em]">
+              <span className="text-white">METRA</span>
+              <span className="text-accent-text">NİK</span>
             </span>
             <nav className="flex flex-wrap items-center justify-center gap-4 text-xs text-text-secondary">
               <a href="/#kimin-icin" className="transition-colors duration-300 hover:text-text-primary">
