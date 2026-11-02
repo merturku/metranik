@@ -1334,3 +1334,13 @@ export { yakitTuketimiLpgPeletOdun } from "./modules/yakit-tuketimi-lpg-pelet-od
 export type { YakitTuketimiLpgPeletOdunInput, YakitTuketimiLpgPeletOdunOutput } from "./modules/yakit-tuketimi-lpg-pelet-odun";
 export { isitmaSicakligiDusurmeTasarrufu } from "./modules/isitma-sicakligi-dusurme-tasarrufu";
 export type { IsitmaSicakligiDusurmeTasarrufuInput, IsitmaSicakligiDusurmeTasarrufuOutput } from "./modules/isitma-sicakligi-dusurme-tasarrufu";
+export { kanalSacAgirligi } from "./modules/kanal-sac-agirligi";
+export type { KanalSacAgirligiInput, KanalSacAgirligiOutput } from "./modules/kanal-sac-agirligi";
+export { enerjiCo2Emisyonu } from "./modules/enerji-co2-emisyonu";
+export type { EnerjiCo2EmisyonuInput, EnerjiCo2EmisyonuOutput } from "./modules/enerji-co2-emisyonu";
+export { betonarmeKalipAlani } from "./modules/betonarme-kalip-alani";
+export type { BetonarmeKalipAlaniInput, BetonarmeKalipAlaniOutput } from "./modules/betonarme-kalip-alani";
+export { yanginYukuYogunlugu } from "./modules/yangin-yuku-yogunlugu";
+export type { YanginYukuYogunluguInput, YanginYukuYogunluguOutput } from "./modules/yangin-yuku-yogunlugu";
+export { gucUcgeniDonusumu } from "./modules/guc-ucgeni-donusumu";
+export type { GucUcgeniDonusumuInput, GucUcgeniDonusumuOutput } from "./modules/guc-ucgeni-donusumu";

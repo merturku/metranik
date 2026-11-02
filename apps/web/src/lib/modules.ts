@@ -2098,6 +2098,41 @@ const ISITMA_SICAKLIGI_DUSURME_TASARRUFU: ModuleEntry = {
   standard: "TS 825",
 };
 
+const KANAL_SAC_AGIRLIGI: ModuleEntry = {
+  id: "kanal-sac-agirligi",
+  title: "Hava Kanalı Sac Alanı ve Ağırlığı",
+  href: "/kanal-sac-agirligi",
+  standard: "SMACNA",
+};
+
+const ENERJI_CO2_EMISYONU: ModuleEntry = {
+  id: "enerji-co2-emisyonu",
+  title: "Enerji Tüketiminden CO₂ Emisyonu",
+  href: "/enerji-co2-emisyonu",
+  standard: "IPCC 2006",
+};
+
+const BETONARME_KALIP_ALANI: ModuleEntry = {
+  id: "betonarme-kalip-alani",
+  title: "Betonarme Kalıp Alanı Metrajı",
+  href: "/betonarme-kalip-alani",
+  standard: "—",
+};
+
+const YANGIN_YUKU_YOGUNLUGU: ModuleEntry = {
+  id: "yangin-yuku-yogunlugu",
+  title: "Yangın Yükü Yoğunluğu (MJ/m²)",
+  href: "/yangin-yuku-yogunlugu",
+  standard: "TS EN 1991-1-2",
+};
+
+const GUC_UCGENI_DONUSUMU: ModuleEntry = {
+  id: "guc-ucgeni-donusumu",
+  title: "Güç Üçgeni Dönüşümü (P, Q, S, I)",
+  href: "/guc-ucgeni-donusumu",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2202,6 +2237,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          KANAL_SAC_AGIRLIGI,
           UFLEME_HAVASI_DEBISI,
           FAN_SPESIFIK_GUC_SFP,
           KANAL_BOYUTLANDIRMA,
@@ -2233,6 +2269,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Yangın",
         modules: [
+          YANGIN_YUKU_YOGUNLUGU,
           SPRINKLER,
           YANGIN_DOLABI_DEBI_BASINC,
           MERDIVEN_BASINCLANDIRMA_FANI_DEBISI,
@@ -2304,6 +2341,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          GUC_UCGENI_DONUSUMU,
           KABLO_DIRENCI_SICAKLIK_DUZELTMESI,
           ANA_ES_POTANSIYEL_BAGLANTI_ILETKENI,
           KABLO_ILETKEN_KUTLESI,
@@ -2389,6 +2427,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BETONARME_KALIP_ALANI,
           KESIT_OZELLIKLERI,
           KOLON_YUK_TOPLAMA,
           BASIT_KIRIS_KESIT_TESIRLERI,
@@ -2476,6 +2515,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          ENERJI_CO2_EMISYONU,
           ISITMA_SICAKLIGI_DUSURME_TASARRUFU,
           YAKIT_TUKETIMI_LPG_PELET_ODUN,
           SICAK_SU_BIRIM_MALIYETI,

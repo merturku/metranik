@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **343 modül, 682 test** (güncel sayı §5bu'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **353 modül, 692 test** (güncel sayı §5bv'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1288,6 +1288,17 @@ Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) 
 - **İç Sıcaklık Düşürme ile Isıtma Tasarrufu** — Ev. (Ti−Ti')/(Ti−Te,ort); "°C başına ~%6" kuralının fiziksel temeli.
 
 **Toplam: 343 modül (Mekanik 152, Elektrik 70, İnşaat 72, Ev 49), core-calc 682 test, hepsi yeşil; src tsc ve `pnpm build` temiz.**
+
+### 5bv. Kanal sac ağırlığı/CO₂ emisyonu/kalıp alanı/yangın yükü/güç üçgeni: 5 modül daha
+
+- **Hava Kanalı Sac Alanı ve Ağırlığı** — Mekanik/Havalandırma. A=2(a+b)L, m=A·t·7850·(1+fire); sac kalınlığı SMACNA girdisi.
+- **Enerji Tüketiminden CO₂ Emisyonu** — Ev. Elektrik + doğalgaz (IPCC 2006: 56,1 kg/GJ × 34,5 MJ/m³ ≈ 1,935); şebeke faktörü kullanıcı girdisi.
+- **Betonarme Kalıp Alanı Metrajı** — İnşaat. Kolon 2(b+h)H, kiriş (b+2h)L (hafif tutucu), döşeme alt yüzey.
+- **Yangın Yükü Yoğunluğu (MJ/m²)** — Mekanik/Yangın. q_f=Σm·H/A (EN 1991-1-2 Ek E), odun eşdeğeri; sınıflandırma yok.
+- **Güç Üçgeni Dönüşümü (P,Q,S,I)** — Elektrik. S=P/cosφ, Q, hat akımı (1/3 faz).
+- Not: sayfa/kayıt üretimi için oturum scratchpad'inde gen.py kullanıldı (repoda değil).
+
+**Toplam: 353 modül (Mekanik 154, Elektrik 71, İnşaat 73, Ev 50), core-calc 692 test, hepsi yeşil; src tsc temiz.**
 
 ---
 
