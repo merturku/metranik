@@ -1923,6 +1923,41 @@ const ODA_HAVA_DEGISIM_KIRLETICI_AZALMA: ModuleEntry = {
   standard: "ASHRAE",
 };
 
+const PIS_SU_POMPA_KUYUSU_HACMI: ModuleEntry = {
+  id: "pis-su-pompa-kuyusu-hacmi",
+  title: "Drenaj / Pis Su Pompa Kuyusu Faydalı Hacmi",
+  href: "/pis-su-pompa-kuyusu-hacmi",
+  standard: "ANSI/HI 9.8",
+};
+
+const IC_ISI_KAZANCI: ModuleEntry = {
+  id: "ic-isi-kazanci",
+  title: "Mahal İç Isı Kazancı (İnsan + Aydınlatma + Ekipman)",
+  href: "/ic-isi-kazanci",
+  standard: "ASHRAE",
+};
+
+const MOTOR_KALKIS_GERILIM_DUSUMU: ModuleEntry = {
+  id: "motor-kalkis-gerilim-dusumu",
+  title: "Motor Kalkışında Gerilim Düşümü",
+  href: "/motor-kalkis-gerilim-dusumu",
+  standard: "IEC 60364-5-52",
+};
+
+const BETON_HACMI_MIKSER_SAYISI: ModuleEntry = {
+  id: "beton-hacmi-mikser-sayisi",
+  title: "Beton Sipariş Hacmi ve Mikser Sayısı",
+  href: "/beton-hacmi-mikser-sayisi",
+  standard: "TS EN 206",
+};
+
+const GURULTU_SEVIYESI_TOPLAMA: ModuleEntry = {
+  id: "gurultu-seviyesi-toplama",
+  title: "Gürültü Seviyesi Toplama ve Mesafe Azalması",
+  href: "/gurultu-seviyesi-toplama",
+  standard: "ISO 9613-2",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -1930,6 +1965,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          IC_ISI_KAZANCI,
           BORU_SISTEM_SU_HACMI,
           POMPA_CARKI_KESME,
           ISI_ESANJORU_KIRLENME_U,
@@ -1989,6 +2025,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Sıhhi Tesisat",
         modules: [
+          PIS_SU_POMPA_KUYUSU_HACMI,
           FARK_BASINCLI_DEBIMETRE,
           HIDRONIK_SU_DEBISI,
           BORU_BASINC_KAYBI,
@@ -2121,6 +2158,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          MOTOR_KALKIS_GERILIM_DUSUMU,
           DC_KABLO_GERILIM_DUSUMU,
           AKIM_TRAFOSU_YUKU,
           KABLO_ASIRI_YUK_KORUMA_KONTROLU,
@@ -2200,6 +2238,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BETON_HACMI_MIKSER_SAYISI,
           DONATI_CELIGI_METRAJI,
           BETON_ELASTISITE_MODULU,
           BETON_CATLAMA_MOMENTI,
@@ -2282,6 +2321,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          GURULTU_SEVIYESI_TOPLAMA,
           ODA_HAVA_DEGISIM_KIRLETICI_AZALMA,
           TERMAL_KOPRU_ISI_KAYBI,
           PV_HUCRE_SICAKLIGI_GUC,

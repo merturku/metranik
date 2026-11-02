@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **318 modül, 632 test** (güncel sayı §5bp'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **323 modül, 640 test** (güncel sayı §5bq'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1237,6 +1237,16 @@ Not: `CalcPage` select değerleri string geçirir — modül şemasında boolean
 - **Oda Havalandırma Süresi (CO₂ / Kirletici Azalması)** — Ev. Tam karışım modeli t = ln((C0−Cd)/(Ch−Cd))/N.
 
 **Toplam: 318 modül (Mekanik 144, Elektrik 64, İnşaat 67, Ev 43), core-calc 632 test, hepsi yeşil; src altında tsc temiz.**
+
+### 5bq. Pompa kuyusu/iç ısı kazancı/motor kalkış düşümü/beton mikser/gürültü toplama: 5 modül daha
+
+- **Drenaj / Pis Su Pompa Kuyusu Faydalı Hacmi** — Mekanik/Sıhhi. V = Q·T_min/4, T_min = 60/N (ANSI/HI 9.8 çevrim süresi).
+- **Mahal İç Isı Kazancı** — Mekanik/Isıtma-Soğutma. İnsan (duyulur+gizli) + aydınlatma×balast + ekipman×kullanım; zaman gecikmesi yok (notta).
+- **Motor Kalkışında Gerilim Düşümü** — Elektrik. IEC 60364-5-52 Ek G ΔU = √3·I·L·(R cosφ + X sinφ), izin yüzdesi girdi, verdict'li.
+- **Beton Sipariş Hacmi ve Mikser Sayısı** — İnşaat. Fire payı, ⌈V/Vmikser⌉, pompa ile döküm süresi.
+- **Gürültü Seviyesi Toplama ve Mesafe Azalması** — Ev. 10·log10(Σ10^(L/10)) + 20·log10(r2/r1), izin dB ile verdict'li.
+
+**Toplam: 323 modül (Mekanik 146, Elektrik 65, İnşaat 68, Ev 44), core-calc 640 test, hepsi yeşil; src tsc ve `pnpm build` temiz.**
 
 ---
 
