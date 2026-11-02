@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **328 modül, 651 test** (güncel sayı §5br'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **333 modül, 662 test** (güncel sayı §5bs'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1257,6 +1257,17 @@ Not: `CalcPage` select değerleri string geçirir — modül şemasında boolean
 - **Perde Kumaşı Miktarı** — Ev. Pile katsayısı ve kumaş eninden panel sayısı ve toplam boy.
 
 **Toplam: 328 modül (Mekanik 148, Elektrik 66, İnşaat 69, Ev 45), core-calc 651 test, hepsi yeşil; src tsc temiz.**
+
+### 5bs. Kule makyaj suyu/detuned reaktör/kablo kütlesi/basit kiriş tesirleri/su sertliği: 5 modül daha (333 — ilk kez ~330 hedefi gerçek modüllerle aşıldı)
+
+- **Soğutma Kulesi Makyaj Suyu ve Blöf** — Mekanik/Isıtma-Soğutma. E = Q·ρ·cp·Range/h_fg, M = E·COC/(COC−1), sürüklenme düşülerek blöf; M = E+B+D testle doğrulanır.
+- **Seri Reaktörlü Kompanzasyon Ayar Frekansı** — Elektrik. fr = fn/√(p/100) (IEC 61642), baskın harmonik altında %10 payla verdict'li.
+- **Kablo İletken Metal Kütlesi** — Elektrik. A·n·L·ρ (Cu 8960 / Al 2700); yalıtım/kılıf dahil değil.
+- **Basit Mesnetli Kiriş Kesit Tesirleri** — İnşaat. R, Vmaks, Mmaks = wL²/8 + PL/4.
+- **Su Sertliği Birim Dönüşümü ve Sınıfı** — Ev. fH/dH/gpg/mmol/ppm (CaCO₃) dönüşümü + sınıf.
+
+**Toplam: 333 modül (Mekanik 149, Elektrik 68, İnşaat 70, Ev 46), core-calc 662 test, hepsi yeşil; src tsc ve `pnpm build` temiz.**
+Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) aynen geçerli, kullanıcıyla bir sonraki yönü (Faz 2 IFC / giriş / Teknik Ofis kapsamı) netleştirmek mantıklı.
 
 ---
 

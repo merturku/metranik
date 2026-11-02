@@ -1304,3 +1304,13 @@ export { yukKombinasyonuTasarimYuku } from "./modules/yuk-kombinasyonu-tasarim-y
 export type { YukKombinasyonuTasarimYukuInput, YukKombinasyonuTasarimYukuOutput } from "./modules/yuk-kombinasyonu-tasarim-yuku";
 export { perdeKumasMiktari } from "./modules/perde-kumas-miktari";
 export type { PerdeKumasMiktariInput, PerdeKumasMiktariOutput } from "./modules/perde-kumas-miktari";
+export { sogutmaKulesiMakyajSuyu } from "./modules/sogutma-kulesi-makyaj-suyu";
+export type { SogutmaKulesiMakyajSuyuInput, SogutmaKulesiMakyajSuyuOutput } from "./modules/sogutma-kulesi-makyaj-suyu";
+export { detunedReaktorAyarFrekansi } from "./modules/detuned-reaktor-ayar-frekansi";
+export type { DetunedReaktorAyarFrekansiInput, DetunedReaktorAyarFrekansiOutput } from "./modules/detuned-reaktor-ayar-frekansi";
+export { kabloIletkenKutlesi } from "./modules/kablo-iletken-kutlesi";
+export type { KabloIletkenKutlesiInput, KabloIletkenKutlesiOutput } from "./modules/kablo-iletken-kutlesi";
+export { basitKirisKesitTesirleri } from "./modules/basit-kiris-kesit-tesirleri";
+export type { BasitKirisKesitTesirleriInput, BasitKirisKesitTesirleriOutput } from "./modules/basit-kiris-kesit-tesirleri";
+export { suSertligiBirimDonusumu } from "./modules/su-sertligi-birim-donusumu";
+export type { SuSertligiBirimDonusumuInput, SuSertligiBirimDonusumuOutput } from "./modules/su-sertligi-birim-donusumu";

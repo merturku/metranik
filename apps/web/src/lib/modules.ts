@@ -1993,6 +1993,41 @@ const PERDE_KUMAS_MIKTARI: ModuleEntry = {
   standard: "—",
 };
 
+const SOGUTMA_KULESI_MAKYAJ_SUYU: ModuleEntry = {
+  id: "sogutma-kulesi-makyaj-suyu",
+  title: "Soğutma Kulesi Makyaj Suyu ve Blöf",
+  href: "/sogutma-kulesi-makyaj-suyu",
+  standard: "ASHRAE",
+};
+
+const DETUNED_REAKTOR_AYAR_FREKANSI: ModuleEntry = {
+  id: "detuned-reaktor-ayar-frekansi",
+  title: "Seri Reaktörlü Kompanzasyon Ayar Frekansı",
+  href: "/detuned-reaktor-ayar-frekansi",
+  standard: "IEC 61642",
+};
+
+const KABLO_ILETKEN_KUTLESI: ModuleEntry = {
+  id: "kablo-iletken-kutlesi",
+  title: "Kablo İletken Metal Kütlesi",
+  href: "/kablo-iletken-kutlesi",
+  standard: "—",
+};
+
+const BASIT_KIRIS_KESIT_TESIRLERI: ModuleEntry = {
+  id: "basit-kiris-kesit-tesirleri",
+  title: "Basit Mesnetli Kiriş Kesit Tesirleri (M, V)",
+  href: "/basit-kiris-kesit-tesirleri",
+  standard: "—",
+};
+
+const SU_SERTLIGI_BIRIM_DONUSUMU: ModuleEntry = {
+  id: "su-sertligi-birim-donusumu",
+  title: "Su Sertliği Birim Dönüşümü ve Sınıfı",
+  href: "/su-sertligi-birim-donusumu",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2000,6 +2035,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          SOGUTMA_KULESI_MAKYAJ_SUYU,
           ISI_POMPASI_DENGE_NOKTASI,
           IC_ISI_KAZANCI,
           BORU_SISTEM_SU_HACMI,
@@ -2195,6 +2231,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_ILETKEN_KUTLESI,
+          DETUNED_REAKTOR_AYAR_FREKANSI,
           KABLO_ILETKEN_SICAKLIGI,
           MOTOR_KALKIS_GERILIM_DUSUMU,
           DC_KABLO_GERILIM_DUSUMU,
@@ -2276,6 +2314,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BASIT_KIRIS_KESIT_TESIRLERI,
           YUK_KOMBINASYONU_TASARIM_YUKU,
           BETON_HACMI_MIKSER_SAYISI,
           DONATI_CELIGI_METRAJI,
@@ -2360,6 +2399,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          SU_SERTLIGI_BIRIM_DONUSUMU,
           PERDE_KUMAS_MIKTARI,
           GURULTU_SEVIYESI_TOPLAMA,
           ODA_HAVA_DEGISIM_KIRLETICI_AZALMA,
