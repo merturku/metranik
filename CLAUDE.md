@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **308 modül, 613 test** (güncel sayı §5bn'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **313 modül, 623 test** (güncel sayı §5bo'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1215,6 +1215,18 @@ metin kontrastları hesapla ≥ 4,5:1 (en düşük 4,99). Ana sayfada sahte ista
 - **GES Panel Hücre Sıcaklığı ve Güç Kaybı** — Ev. NOCT modeli + γ katsayısı (IEC 61215/61853).
 
 Testler el hesabı + standart tablo değeri çapraz kontrolü. **Toplam: 308 modül (Mekanik 140, Elektrik 62, İnşaat 65, Ev 41), core-calc 613 test, hepsi yeşil; tsc temiz.**
+
+### 5bo. Boru ağırlığı/eşanjör kirlenme U/CT yükü/beton E modülü/ısıl köprü: 5 modül daha
+
+- **Boru Birim Uzunluk Ağırlığı** — Mekanik/Montaj. Çelik + su + yalıtım geometrik ağırlığı; Askılama Hesabı'nın girdilerini üretir.
+- **Eşanjör Toplam Isı Geçirgenliği (Kirlenme Dahil)** — Mekanik/Isıtma-Soğutma. TEMA direnç ağı; Eşanjör Boyutlandırma'nın U girdisini üretir.
+- **Akım Trafosu (CT) Sekonder Yük Kontrolü** — Elektrik. IEC 61869-2 S = I²·R + S_röle, verdict'li (Cu 75 °C tutucu).
+- **Beton Elastisite Modülü ve Modüler Oran** — İnşaat. EN 1992-1-1 Ecm ve TS 500 Ec karşılaştırması.
+- **Isıl Köprü (Doğrusal) Isı Kaybı** — Ev. Q = ψ·L·ΔT (TS EN ISO 14683 / TS 825).
+
+Not: `CalcPage` select değerleri string geçirir — modül şemasında boolean/sayı literal değil `z.enum(["..."])` kullan.
+
+**Toplam: 313 modül (Mekanik 142, Elektrik 63, İnşaat 66, Ev 42), core-calc 623 test, hepsi yeşil; tsc temiz.**
 
 ---
 

@@ -1853,6 +1853,41 @@ const PV_HUCRE_SICAKLIGI_GUC: ModuleEntry = {
   standard: "IEC 61215",
 };
 
+const BORU_BIRIM_AGIRLIGI: ModuleEntry = {
+  id: "boru-birim-agirligi",
+  title: "Boru Birim Uzunluk Ağırlığı (Boru + Su + Yalıtım)",
+  href: "/boru-birim-agirligi",
+  standard: "—",
+};
+
+const ISI_ESANJORU_KIRLENME_U: ModuleEntry = {
+  id: "isi-esanjoru-kirlenme-u",
+  title: "Eşanjör Toplam Isı Geçirgenliği (Kirlenme Dahil)",
+  href: "/isi-esanjoru-kirlenme-u",
+  standard: "TEMA",
+};
+
+const AKIM_TRAFOSU_YUKU: ModuleEntry = {
+  id: "akim-trafosu-yuku",
+  title: "Akım Trafosu (CT) Sekonder Yük Kontrolü",
+  href: "/akim-trafosu-yuku",
+  standard: "IEC 61869-2",
+};
+
+const BETON_ELASTISITE_MODULU: ModuleEntry = {
+  id: "beton-elastisite-modulu",
+  title: "Beton Elastisite Modülü ve Modüler Oran",
+  href: "/beton-elastisite-modulu",
+  standard: "TS EN 1992",
+};
+
+const TERMAL_KOPRU_ISI_KAYBI: ModuleEntry = {
+  id: "termal-kopru-isi-kaybi",
+  title: "Isıl Köprü (Doğrusal) Isı Kaybı",
+  href: "/termal-kopru-isi-kaybi",
+  standard: "TS EN ISO 14683",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -1860,6 +1895,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          ISI_ESANJORU_KIRLENME_U,
           ISITMA_YUKU,
           SOGUTMA_YUKU,
           SOGUK_ODA_URUN_YUKU,
@@ -2021,6 +2057,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Montaj",
         modules: [
+          BORU_BIRIM_AGIRLIGI,
           KONSOL_BORU_DESTEK_ARALIGI,
           KANAL_ASKI_MALZEME_METRAJI,
           BORU_ASKI_CUBUGU_KESIT_KONTROLU,
@@ -2047,6 +2084,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          AKIM_TRAFOSU_YUKU,
           KABLO_ASIRI_YUK_KORUMA_KONTROLU,
           KABLO_KESITI,
           KISA_DEVRE_AKIMI,
@@ -2124,6 +2162,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BETON_ELASTISITE_MODULU,
           BETON_CATLAMA_MOMENTI,
           TBDY_YATAY_ELASTIK_TASARIM_SPEKTRUMU,
           DEPREM_TABAN_KESME,
@@ -2204,6 +2243,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          TERMAL_KOPRU_ISI_KAYBI,
           PV_HUCRE_SICAKLIGI_GUC,
           KLIMA_KAPASITE_SECIMI,
           PENCERE_GUNES_ISI_KAZANCI,
