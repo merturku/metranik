@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **313 modül, 623 test** (güncel sayı §5bo'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **318 modül, 632 test** (güncel sayı §5bp'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1227,6 +1227,16 @@ Testler el hesabı + standart tablo değeri çapraz kontrolü. **Toplam: 308 mod
 Not: `CalcPage` select değerleri string geçirir — modül şemasında boolean/sayı literal değil `z.enum(["..."])` kullan.
 
 **Toplam: 313 modül (Mekanik 142, Elektrik 63, İnşaat 66, Ev 42), core-calc 623 test, hepsi yeşil; tsc temiz.**
+
+### 5bp. Çark tıraşlama/sistem su hacmi/DC kablo/donatı metrajı/oda havalandırma süresi: 5 modül daha
+
+- **Pompa Çarkı Tıraşlama** — Mekanik/Isıtma-Soğutma. Q∝D, H∝D², P∝D³ (ISO 9906/HI); r < 0,8 sınırda, < 0,7 uygunsuz. Devir afinitesinden (VFD) farklı.
+- **Hidronik Sistem Su Hacmi** — Mekanik/Isıtma-Soğutma. Boru + ekipman iç hacmi; genleşme tankı ve dolum girdisi.
+- **DC Kablo Gerilim Düşümü (GES / Akü Hattı)** — Elektrik. ΔV = 2ρLI/A, izin yüzdesi girdi, gereken min kesit, verdict'li.
+- **Donatı Çeliği Ağırlığı ve Metrajı** — İnşaat. TS 708 birim kütle (Ø12 = 0,888 kg/m ile test) + fire.
+- **Oda Havalandırma Süresi (CO₂ / Kirletici Azalması)** — Ev. Tam karışım modeli t = ln((C0−Cd)/(Ch−Cd))/N.
+
+**Toplam: 318 modül (Mekanik 144, Elektrik 64, İnşaat 67, Ev 43), core-calc 632 test, hepsi yeşil; src altında tsc temiz.**
 
 ---
 

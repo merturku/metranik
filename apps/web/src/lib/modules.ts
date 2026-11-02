@@ -1888,6 +1888,41 @@ const TERMAL_KOPRU_ISI_KAYBI: ModuleEntry = {
   standard: "TS EN ISO 14683",
 };
 
+const POMPA_CARKI_KESME: ModuleEntry = {
+  id: "pompa-carki-kesme",
+  title: "Pompa Çarkı Tıraşlama (Çap Değişimi)",
+  href: "/pompa-carki-kesme",
+  standard: "ISO 9906",
+};
+
+const BORU_SISTEM_SU_HACMI: ModuleEntry = {
+  id: "boru-sistem-su-hacmi",
+  title: "Hidronik Sistem Su Hacmi",
+  href: "/boru-sistem-su-hacmi",
+  standard: "—",
+};
+
+const DC_KABLO_GERILIM_DUSUMU: ModuleEntry = {
+  id: "dc-kablo-gerilim-dusumu",
+  title: "DC Kablo Gerilim Düşümü (GES / Akü Hattı)",
+  href: "/dc-kablo-gerilim-dusumu",
+  standard: "IEC 62548",
+};
+
+const DONATI_CELIGI_METRAJI: ModuleEntry = {
+  id: "donati-celigi-metraji",
+  title: "Donatı Çeliği Ağırlığı ve Metrajı",
+  href: "/donati-celigi-metraji",
+  standard: "TS 708",
+};
+
+const ODA_HAVA_DEGISIM_KIRLETICI_AZALMA: ModuleEntry = {
+  id: "oda-hava-degisim-kirletici-azalma",
+  title: "Oda Havalandırma Süresi (CO₂ / Kirletici Azalması)",
+  href: "/oda-hava-degisim-kirletici-azalma",
+  standard: "ASHRAE",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -1895,6 +1930,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          BORU_SISTEM_SU_HACMI,
+          POMPA_CARKI_KESME,
           ISI_ESANJORU_KIRLENME_U,
           ISITMA_YUKU,
           SOGUTMA_YUKU,
@@ -2084,6 +2121,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          DC_KABLO_GERILIM_DUSUMU,
           AKIM_TRAFOSU_YUKU,
           KABLO_ASIRI_YUK_KORUMA_KONTROLU,
           KABLO_KESITI,
@@ -2162,6 +2200,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          DONATI_CELIGI_METRAJI,
           BETON_ELASTISITE_MODULU,
           BETON_CATLAMA_MOMENTI,
           TBDY_YATAY_ELASTIK_TASARIM_SPEKTRUMU,
@@ -2243,6 +2282,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          ODA_HAVA_DEGISIM_KIRLETICI_AZALMA,
           TERMAL_KOPRU_ISI_KAYBI,
           PV_HUCRE_SICAKLIGI_GUC,
           KLIMA_KAPASITE_SECIMI,
