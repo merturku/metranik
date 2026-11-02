@@ -1958,6 +1958,41 @@ const GURULTU_SEVIYESI_TOPLAMA: ModuleEntry = {
   standard: "ISO 9613-2",
 };
 
+const ISI_POMPASI_DENGE_NOKTASI: ModuleEntry = {
+  id: "isi-pompasi-denge-noktasi",
+  title: "Isı Pompası Denge Noktası (Bivalent)",
+  href: "/isi-pompasi-denge-noktasi",
+  standard: "TS EN 14825",
+};
+
+const UFLEME_HAVASI_DEBISI: ModuleEntry = {
+  id: "ufleme-havasi-debisi",
+  title: "Üfleme Havası Debisi (Duyulur Yükten)",
+  href: "/ufleme-havasi-debisi",
+  standard: "ASHRAE",
+};
+
+const KABLO_ILETKEN_SICAKLIGI: ModuleEntry = {
+  id: "kablo-iletken-sicakligi",
+  title: "Kablo İletken Sıcaklığı (Yüklenmeye Göre)",
+  href: "/kablo-iletken-sicakligi",
+  standard: "IEC 60287",
+};
+
+const YUK_KOMBINASYONU_TASARIM_YUKU: ModuleEntry = {
+  id: "yuk-kombinasyonu-tasarim-yuku",
+  title: "Düşey Yük Kombinasyonu (1,4G+1,6Q / 1,35G+1,5Q)",
+  href: "/yuk-kombinasyonu-tasarim-yuku",
+  standard: "TS 500",
+};
+
+const PERDE_KUMAS_MIKTARI: ModuleEntry = {
+  id: "perde-kumas-miktari",
+  title: "Perde Kumaşı Miktarı",
+  href: "/perde-kumas-miktari",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -1965,6 +2000,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          ISI_POMPASI_DENGE_NOKTASI,
           IC_ISI_KAZANCI,
           BORU_SISTEM_SU_HACMI,
           POMPA_CARKI_KESME,
@@ -2058,6 +2094,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          UFLEME_HAVASI_DEBISI,
           FAN_SPESIFIK_GUC_SFP,
           KANAL_BOYUTLANDIRMA,
           TAZE_HAVA_DEBISI,
@@ -2158,6 +2195,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_ILETKEN_SICAKLIGI,
           MOTOR_KALKIS_GERILIM_DUSUMU,
           DC_KABLO_GERILIM_DUSUMU,
           AKIM_TRAFOSU_YUKU,
@@ -2238,6 +2276,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          YUK_KOMBINASYONU_TASARIM_YUKU,
           BETON_HACMI_MIKSER_SAYISI,
           DONATI_CELIGI_METRAJI,
           BETON_ELASTISITE_MODULU,
@@ -2321,6 +2360,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          PERDE_KUMAS_MIKTARI,
           GURULTU_SEVIYESI_TOPLAMA,
           ODA_HAVA_DEGISIM_KIRLETICI_AZALMA,
           TERMAL_KOPRU_ISI_KAYBI,

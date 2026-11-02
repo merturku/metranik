@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **323 modül, 640 test** (güncel sayı §5bq'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **328 modül, 651 test** (güncel sayı §5br'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1247,6 +1247,16 @@ Not: `CalcPage` select değerleri string geçirir — modül şemasında boolean
 - **Gürültü Seviyesi Toplama ve Mesafe Azalması** — Ev. 10·log10(Σ10^(L/10)) + 20·log10(r2/r1), izin dB ile verdict'li.
 
 **Toplam: 323 modül (Mekanik 146, Elektrik 65, İnşaat 68, Ev 44), core-calc 640 test, hepsi yeşil; src tsc ve `pnpm build` temiz.**
+
+### 5br. Denge noktası/üfleme debisi/iletken sıcaklığı/yük kombinasyonu/perde kumaşı: 5 modül daha
+
+- **Isı Pompası Denge Noktası (Bivalent)** — Mekanik/Isıtma-Soğutma. Doğrusal bina yükü ile doğrusal pompa kapasitesinin kesişimi, tasarım noktasında ek ısıtıcı gücü.
+- **Üfleme Havası Debisi (Duyulur Yükten)** — Mekanik/Havalandırma. V̇ = q/(ρ·cp·ΔT); İç Isı Kazancı modülünün çıktısını tüketir.
+- **Kablo İletken Sıcaklığı (Yüklenmeye Göre)** — Elektrik. Tc = Ta + (Tmaks−Ta)(I/Iz)², sabit direnç yaklaşımı (hafif iyimser, notta), verdict'li.
+- **Düşey Yük Kombinasyonu** — İnşaat. TS 500 1,4G+1,6Q ve TS EN 1990 6.10 1,35G+1,5Q (deprem/rüzgâr kombinasyonu yok).
+- **Perde Kumaşı Miktarı** — Ev. Pile katsayısı ve kumaş eninden panel sayısı ve toplam boy.
+
+**Toplam: 328 modül (Mekanik 148, Elektrik 66, İnşaat 69, Ev 45), core-calc 651 test, hepsi yeşil; src tsc temiz.**
 
 ---
 
