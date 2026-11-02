@@ -2063,6 +2063,41 @@ const SICAK_SU_BIRIM_MALIYETI: ModuleEntry = {
   standard: "—",
 };
 
+const POMPALAMA_SPESIFIK_ENERJISI: ModuleEntry = {
+  id: "pompalama-spesifik-enerjisi",
+  title: "Pompalama Spesifik Enerjisi ve Yıllık Maliyet",
+  href: "/pompalama-spesifik-enerjisi",
+  standard: "—",
+};
+
+const KABLO_DIRENCI_SICAKLIK_DUZELTMESI: ModuleEntry = {
+  id: "kablo-direnci-sicaklik-duzeltmesi",
+  title: "Kablo İletken Direnci ve Sıcaklık Düzeltmesi",
+  href: "/kablo-direnci-sicaklik-duzeltmesi",
+  standard: "IEC 60228",
+};
+
+const KESIT_OZELLIKLERI: ModuleEntry = {
+  id: "kesit-ozellikleri",
+  title: "Kesit Özellikleri (Dikdörtgen / Daire / Boru)",
+  href: "/kesit-ozellikleri",
+  standard: "—",
+};
+
+const YAKIT_TUKETIMI_LPG_PELET_ODUN: ModuleEntry = {
+  id: "yakit-tuketimi-lpg-pelet-odun",
+  title: "Yakıt Tüketimi ve Maliyeti (LPG / Pelet / Odun)",
+  href: "/yakit-tuketimi-lpg-pelet-odun",
+  standard: "—",
+};
+
+const ISITMA_SICAKLIGI_DUSURME_TASARRUFU: ModuleEntry = {
+  id: "isitma-sicakligi-dusurme-tasarrufu",
+  title: "İç Sıcaklık Düşürme ile Isıtma Tasarrufu",
+  href: "/isitma-sicakligi-dusurme-tasarrufu",
+  standard: "TS 825",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2070,6 +2105,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          POMPALAMA_SPESIFIK_ENERJISI,
           PLAKALI_ESANJOR_PLAKA_SAYISI,
           SOGUTMA_KULESI_MAKYAJ_SUYU,
           ISI_POMPASI_DENGE_NOKTASI,
@@ -2268,6 +2304,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_DIRENCI_SICAKLIK_DUZELTMESI,
           ANA_ES_POTANSIYEL_BAGLANTI_ILETKENI,
           KABLO_ILETKEN_KUTLESI,
           DETUNED_REAKTOR_AYAR_FREKANSI,
@@ -2352,6 +2389,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KESIT_OZELLIKLERI,
           KOLON_YUK_TOPLAMA,
           BASIT_KIRIS_KESIT_TESIRLERI,
           YUK_KOMBINASYONU_TASARIM_YUKU,
@@ -2438,6 +2476,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          ISITMA_SICAKLIGI_DUSURME_TASARRUFU,
+          YAKIT_TUKETIMI_LPG_PELET_ODUN,
           SICAK_SU_BIRIM_MALIYETI,
           SU_SERTLIGI_BIRIM_DONUSUMU,
           PERDE_KUMAS_MIKTARI,

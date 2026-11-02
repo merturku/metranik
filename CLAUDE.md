@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **338 modül, 670 test** (güncel sayı §5bt'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **343 modül, 682 test** (güncel sayı §5bu'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1278,6 +1278,16 @@ Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) 
 - **Sıcak Su Birim Maliyeti** — Ev. ρ·cp·ΔT/(3600η) kWh/m³ × ₺/kWh.
 
 **Toplam: 338 modül (Mekanik 151, Elektrik 69, İnşaat 71, Ev 47), core-calc 670 test, hepsi yeşil; src tsc temiz.**
+
+### 5bu. Pompalama enerjisi/kablo direnci/kesit özellikleri/LPG-pelet-odun/sıcaklık düşürme tasarrufu: 5 modül daha
+
+- **Pompalama Spesifik Enerjisi ve Yıllık Maliyet** — Mekanik/Isıtma-Soğutma. E = ρgH/(3,6e6·η) kWh/m³.
+- **Kablo İletken Direnci ve Sıcaklık Düzeltmesi** — Elektrik. IEC 60228 ρ20 (Cu 17,241 Ω/km·mm² ile test) + α20 sıcaklık düzeltmesi; DC direnç (AC deri etkisi yok, notta).
+- **Kesit Özellikleri (Dikdörtgen / Daire / Boru)** — İnşaat. A, I, W, i; sehim/burkulma modüllerinin I girdisini üretir.
+- **Yakıt Tüketimi ve Maliyeti (LPG / Pelet / Odun)** — Ev. m = Q/(Hu·η), tipik Hu (LPG 12,8 / pelet 4,6 / odun 4,0) "teyit edin" notuyla.
+- **İç Sıcaklık Düşürme ile Isıtma Tasarrufu** — Ev. (Ti−Ti')/(Ti−Te,ort); "°C başına ~%6" kuralının fiziksel temeli.
+
+**Toplam: 343 modül (Mekanik 152, Elektrik 70, İnşaat 72, Ev 49), core-calc 682 test, hepsi yeşil; src tsc ve `pnpm build` temiz.**
 
 ---
 
