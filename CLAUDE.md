@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **348 modül, 692 test** (güncel sayı §5bv'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **353 modül, 702 test** (güncel sayı §5bw'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1299,6 +1299,16 @@ Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) 
 - Not: sayfa/kayıt üretimi için oturum scratchpad'inde gen.py kullanıldı (repoda değil).
 
 **Toplam: 348 modül (Mekanik 154, Elektrik 71, İnşaat 73, Ev 50), core-calc 692 test, hepsi yeşil; src tsc temiz.**
+
+### 5bw. Röle açma süresi/hendek kazısı/boru yalıtım metrajı/yakıt maliyet karşılaştırması/kazan kapasitesi: 5 modül daha
+
+- **Ters Zamanlı Aşırı Akım Rölesi Açma Süresi** — Elektrik. IEC 60255-151 SI/VI/EI/LTI eğrileri; I ≤ Is ise null + uygunsuz.
+- **Hendek Kazı Hacmi (Şevli Kesit)** — İnşaat. A = h(b+mh), kabarma ile gevşek hacim.
+- **Boru Yalıtımı Hacim ve Kaplama Metrajı** — Mekanik/Montaj. Silindirik kabuk hacmi ve dış yüzey.
+- **Isıtma Yakıtı Maliyet Karşılaştırması** — Ev. ₺/kWh faydalı ısı (gaz, elektrik, ısı pompası SCOP, pelet, LPG); fiyatlar örnek.
+- **Isıtma Kazanı Kapasite Seçimi** — Mekanik/Isıtma-Soğutma. Q_bina·(1+boru)·(1+ısınma)+Q_sıcaksu, yakıt giriş gücü.
+
+**Toplam: 353 modül (Mekanik 156, Elektrik 72, İnşaat 74, Ev 51), core-calc 702 test, hepsi yeşil; src tsc temiz.**
 
 ---
 

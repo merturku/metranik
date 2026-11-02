@@ -2133,6 +2133,41 @@ const GUC_UCGENI_DONUSUMU: ModuleEntry = {
   standard: "—",
 };
 
+const ASIRI_AKIM_ROLE_ACMA_SURESI: ModuleEntry = {
+  id: "asiri-akim-role-acma-suresi",
+  title: "Ters Zamanlı Aşırı Akım Rölesi Açma Süresi",
+  href: "/asiri-akim-role-acma-suresi",
+  standard: "IEC 60255-151",
+};
+
+const HENDEK_KAZI_HACMI: ModuleEntry = {
+  id: "hendek-kazi-hacmi",
+  title: "Hendek Kazı Hacmi (Şevli Kesit)",
+  href: "/hendek-kazi-hacmi",
+  standard: "—",
+};
+
+const BORU_YALITIM_METRAJI: ModuleEntry = {
+  id: "boru-yalitim-metraji",
+  title: "Boru Yalıtımı Hacim ve Kaplama Metrajı",
+  href: "/boru-yalitim-metraji",
+  standard: "—",
+};
+
+const ISITMA_YAKITI_MALIYET_KARSILASTIRMASI: ModuleEntry = {
+  id: "isitma-yakiti-maliyet-karsilastirmasi",
+  title: "Isıtma Yakıtı Maliyet Karşılaştırması",
+  href: "/isitma-yakiti-maliyet-karsilastirmasi",
+  standard: "—",
+};
+
+const KAZAN_KAPASITESI_SECIMI: ModuleEntry = {
+  id: "kazan-kapasitesi-secimi",
+  title: "Isıtma Kazanı Kapasite Seçimi",
+  href: "/kazan-kapasitesi-secimi",
+  standard: "TS EN 12828",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2140,6 +2175,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          KAZAN_KAPASITESI_SECIMI,
           POMPALAMA_SPESIFIK_ENERJISI,
           PLAKALI_ESANJOR_PLAKA_SAYISI,
           SOGUTMA_KULESI_MAKYAJ_SUYU,
@@ -2314,6 +2350,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Montaj",
         modules: [
+          BORU_YALITIM_METRAJI,
           BORU_BIRIM_AGIRLIGI,
           KONSOL_BORU_DESTEK_ARALIGI,
           KANAL_ASKI_MALZEME_METRAJI,
@@ -2341,6 +2378,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          ASIRI_AKIM_ROLE_ACMA_SURESI,
           GUC_UCGENI_DONUSUMU,
           KABLO_DIRENCI_SICAKLIK_DUZELTMESI,
           ANA_ES_POTANSIYEL_BAGLANTI_ILETKENI,
@@ -2427,6 +2465,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          HENDEK_KAZI_HACMI,
           BETONARME_KALIP_ALANI,
           KESIT_OZELLIKLERI,
           KOLON_YUK_TOPLAMA,
@@ -2515,6 +2554,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          ISITMA_YAKITI_MALIYET_KARSILASTIRMASI,
           ENERJI_CO2_EMISYONU,
           ISITMA_SICAKLIGI_DUSURME_TASARRUFU,
           YAKIT_TUKETIMI_LPG_PELET_ODUN,
