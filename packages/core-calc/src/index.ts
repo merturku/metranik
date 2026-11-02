@@ -1314,3 +1314,13 @@ export { basitKirisKesitTesirleri } from "./modules/basit-kiris-kesit-tesirleri"
 export type { BasitKirisKesitTesirleriInput, BasitKirisKesitTesirleriOutput } from "./modules/basit-kiris-kesit-tesirleri";
 export { suSertligiBirimDonusumu } from "./modules/su-sertligi-birim-donusumu";
 export type { SuSertligiBirimDonusumuInput, SuSertligiBirimDonusumuOutput } from "./modules/su-sertligi-birim-donusumu";
+export { buharTuketimiIsiSerpantini } from "./modules/buhar-tuketimi-isi-serpantini";
+export type { BuharTuketimiIsiSerpantiniInput, BuharTuketimiIsiSerpantiniOutput } from "./modules/buhar-tuketimi-isi-serpantini";
+export { plakaliEsanjorPlakaSayisi } from "./modules/plakali-esanjor-plaka-sayisi";
+export type { PlakaliEsanjorPlakaSayisiInput, PlakaliEsanjorPlakaSayisiOutput } from "./modules/plakali-esanjor-plaka-sayisi";
+export { anaEsPotansiyelBaglantiIletkeni } from "./modules/ana-es-potansiyel-baglanti-iletkeni";
+export type { AnaEsPotansiyelBaglantiIletkeniInput, AnaEsPotansiyelBaglantiIletkeniOutput } from "./modules/ana-es-potansiyel-baglanti-iletkeni";
+export { kolonYukToplama } from "./modules/kolon-yuk-toplama";
+export type { KolonYukToplamaInput, KolonYukToplamaOutput } from "./modules/kolon-yuk-toplama";
+export { sicakSuBirimMaliyeti } from "./modules/sicak-su-birim-maliyeti";
+export type { SicakSuBirimMaliyetiInput, SicakSuBirimMaliyetiOutput } from "./modules/sicak-su-birim-maliyeti";

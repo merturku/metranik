@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **333 modül, 662 test** (güncel sayı §5bs'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **338 modül, 670 test** (güncel sayı §5bt'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1268,6 +1268,16 @@ Not: `CalcPage` select değerleri string geçirir — modül şemasında boolean
 
 **Toplam: 333 modül (Mekanik 149, Elektrik 68, İnşaat 70, Ev 46), core-calc 662 test, hepsi yeşil; src tsc ve `pnpm build` temiz.**
 Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) aynen geçerli, kullanıcıyla bir sonraki yönü (Faz 2 IFC / giriş / Teknik Ofis kapsamı) netleştirmek mantıklı.
+
+### 5bt. Buhar tüketimi/plaka sayısı/eş potansiyel iletken/kolon yük toplama/sıcak su maliyeti: 5 modül daha
+
+- **Buharlı Isıtıcı Buhar Tüketimi** — Mekanik/Buhar. ṁ = Q/(h_fg·η); h_fg buhar tablosundan girdi.
+- **Plakalı Eşanjör Plaka Sayısı** — Mekanik/Isıtma-Soğutma. A = Q/(U·LMTD)·(1+pay), n = ⌈A/Aplaka⌉, toplam = n+1; Kirlenme-U modülünün çıktısını tüketir.
+- **Ana Eş Potansiyel Bağlantı İletkeni Kesiti** — Elektrik. IEC 60364-5-54 §544.1.1: 0,5·PE, alt 6 / üst 25 mm² Cu, standart diziye yuvarlama.
+- **Kolon Eksenel Yük Toplama (Etki Alanı)** — İnşaat. N = n·A·q + A·q_çatı + G; Kolon Ön Boyutlandırma'nın N girdisini üretir.
+- **Sıcak Su Birim Maliyeti** — Ev. ρ·cp·ΔT/(3600η) kWh/m³ × ₺/kWh.
+
+**Toplam: 338 modül (Mekanik 151, Elektrik 69, İnşaat 71, Ev 47), core-calc 670 test, hepsi yeşil; src tsc temiz.**
 
 ---
 

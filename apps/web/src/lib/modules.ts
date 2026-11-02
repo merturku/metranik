@@ -2028,6 +2028,41 @@ const SU_SERTLIGI_BIRIM_DONUSUMU: ModuleEntry = {
   standard: "—",
 };
 
+const BUHAR_TUKETIMI_ISI_SERPANTINI: ModuleEntry = {
+  id: "buhar-tuketimi-isi-serpantini",
+  title: "Buharlı Isıtıcı Buhar Tüketimi",
+  href: "/buhar-tuketimi-isi-serpantini",
+  standard: "—",
+};
+
+const PLAKALI_ESANJOR_PLAKA_SAYISI: ModuleEntry = {
+  id: "plakali-esanjor-plaka-sayisi",
+  title: "Plakalı Eşanjör Plaka Sayısı",
+  href: "/plakali-esanjor-plaka-sayisi",
+  standard: "—",
+};
+
+const ANA_ES_POTANSIYEL_BAGLANTI_ILETKENI: ModuleEntry = {
+  id: "ana-es-potansiyel-baglanti-iletkeni",
+  title: "Ana Eş Potansiyel Bağlantı İletkeni Kesiti",
+  href: "/ana-es-potansiyel-baglanti-iletkeni",
+  standard: "IEC 60364-5-54",
+};
+
+const KOLON_YUK_TOPLAMA: ModuleEntry = {
+  id: "kolon-yuk-toplama",
+  title: "Kolon Eksenel Yük Toplama (Etki Alanı)",
+  href: "/kolon-yuk-toplama",
+  standard: "—",
+};
+
+const SICAK_SU_BIRIM_MALIYETI: ModuleEntry = {
+  id: "sicak-su-birim-maliyeti",
+  title: "Sıcak Su Birim Maliyeti",
+  href: "/sicak-su-birim-maliyeti",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2035,6 +2070,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          PLAKALI_ESANJOR_PLAKA_SAYISI,
           SOGUTMA_KULESI_MAKYAJ_SUYU,
           ISI_POMPASI_DENGE_NOKTASI,
           IC_ISI_KAZANCI,
@@ -2176,6 +2212,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Buhar",
         modules: [
+          BUHAR_TUKETIMI_ISI_SERPANTINI,
           BUHAR_HAT_CAPI,
           KONDENS_DEBISI,
           BUHAR_KAZANI_KAPASITESI,
@@ -2231,6 +2268,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          ANA_ES_POTANSIYEL_BAGLANTI_ILETKENI,
           KABLO_ILETKEN_KUTLESI,
           DETUNED_REAKTOR_AYAR_FREKANSI,
           KABLO_ILETKEN_SICAKLIGI,
@@ -2314,6 +2352,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KOLON_YUK_TOPLAMA,
           BASIT_KIRIS_KESIT_TESIRLERI,
           YUK_KOMBINASYONU_TASARIM_YUKU,
           BETON_HACMI_MIKSER_SAYISI,
@@ -2399,6 +2438,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          SICAK_SU_BIRIM_MALIYETI,
           SU_SERTLIGI_BIRIM_DONUSUMU,
           PERDE_KUMAS_MIKTARI,
           GURULTU_SEVIYESI_TOPLAMA,
