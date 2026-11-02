@@ -2238,6 +2238,41 @@ const BASINCLI_HAVA_KACAK_ORANI: ModuleEntry = {
   standard: "ISO 11011",
 };
 
+const KONDENS_GERI_KAZANIM_TASARRUFU: ModuleEntry = {
+  id: "kondens-geri-kazanim-tasarrufu",
+  title: "Kondens Geri Kazanımı Yakıt Tasarrufu",
+  href: "/kondens-geri-kazanim-tasarrufu",
+  standard: "—",
+};
+
+const TRAFO_YILLIK_KAYIP_MALIYETI: ModuleEntry = {
+  id: "trafo-yillik-kayip-maliyeti",
+  title: "Trafo Yıllık Kayıp Enerjisi ve Maliyeti",
+  href: "/trafo-yillik-kayip-maliyeti",
+  standard: "IEC 60076-20",
+};
+
+const CATI_YAGMUR_GIDER_SAYISI: ModuleEntry = {
+  id: "cati-yagmur-gider-sayisi",
+  title: "Çatı Yağmur Gideri Sayısı",
+  href: "/cati-yagmur-gider-sayisi",
+  standard: "TS EN 12056-3",
+};
+
+const NEM_ALMA_CIHAZI_KAPASITESI: ModuleEntry = {
+  id: "nem-alma-cihazi-kapasitesi",
+  title: "Nem Alma Cihazı Kapasitesi",
+  href: "/nem-alma-cihazi-kapasitesi",
+  standard: "ASHRAE",
+};
+
+const KAYIS_KASNAK_DEVIR_HESABI: ModuleEntry = {
+  id: "kayis-kasnak-devir-hesabi",
+  title: "Kayış–Kasnak Devir ve Kayış Boyu Hesabı",
+  href: "/kayis-kasnak-devir-hesabi",
+  standard: "ISO 4184",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2345,6 +2380,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          KAYIS_KASNAK_DEVIR_HESABI,
           KANAL_SAC_AGIRLIGI,
           UFLEME_HAVASI_DEBISI,
           FAN_SPESIFIK_GUC_SFP,
@@ -2394,6 +2430,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Buhar",
         modules: [
+          KONDENS_GERI_KAZANIM_TASARRUFU,
           BUHAR_TUKETIMI_ISI_SERPANTINI,
           BUHAR_HAT_CAPI,
           KONDENS_DEBISI,
@@ -2452,6 +2489,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          TRAFO_YILLIK_KAYIP_MALIYETI,
           ARMATUR_YERLESIM_ARALIGI,
           SEBEKE_GERILIM_HARMONIK_BOZULMASI,
           ASIRI_AKIM_ROLE_ACMA_SURESI,
@@ -2541,6 +2579,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          CATI_YAGMUR_GIDER_SAYISI,
           KAZIK_GRUBU_KAZIK_SAYISI,
           IKI_ACIKLIKLI_SUREKLI_KIRIS,
           HENDEK_KAZI_HACMI,
@@ -2632,6 +2671,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          NEM_ALMA_CIHAZI_KAPASITESI,
           GES_INVERTOR_GUCU,
           HAVUZ_ILK_ISITMA_SURESI,
           ISITMA_YAKITI_MALIYET_KARSILASTIRMASI,

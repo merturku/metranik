@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **363 modül, 725 test** (güncel sayı §5by'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **368 modül, 738 test** (güncel sayı §5bz'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1329,6 +1329,17 @@ Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) 
 - **Basınçlı Hava Kaçak Oranı (Yük/Boşta Süresi)** — Mekanik/Basınçlı Hava. Kaçak %=Ty/(Ty+Tb), kaçak debisi, yıllık kayıp; %10/%20 eşikleri.
 
 **Toplam: 363 modül (Mekanik 160, Elektrik 74, İnşaat 76, Ev 53), core-calc 725 test, hepsi yeşil; src tsc temiz.**
+
+### 5bz. Kondens geri kazanımı/trafo kayıp maliyeti/çatı gider sayısı/nem alma/kayış-kasnak: 5 modül daha
+
+- **Kondens Geri Kazanımı Yakıt Tasarrufu** — Mekanik/Buhar. q=ṁ·r·cp·ΔT, yakıt=q/(η·Hu); flaş buhar dahil değil.
+- **Trafo Yıllık Kayıp Enerjisi ve Maliyeti** — Elektrik. E=(P0+β²Pk)t; boşta=yük kaybı yüklenmesi √(P0/Pk) testle doğrulanır.
+- **Çatı Yağmur Gideri Sayısı** — İnşaat. Rasyonel yöntem Q=C·i·A/3600, n=⌈Q/Q_gider⌉ (+1 taşma).
+- **Nem Alma Cihazı Kapasitesi** — Ev. Magnus psat + W=0,622Pv/(P−Pv); psikrometrik diyagram değerleriyle test (20 °C %60 ≈ 8,7 g/kg).
+- **Kayış–Kasnak Devir ve Kayış Boyu Hesabı** — Mekanik/Havalandırma. N2, kayış hızı (≤30 m/s verdict), kayış boyu, sarım açısı.
+- Not: Basınçlı Hava Kaçak Oranı (5by) önce yanlışlıkla Montaj'a kaydedilmişti, Basınçlı Hava alt kategorisine taşındı.
+
+**Toplam: 368 modül (Mekanik 162, Elektrik 75, İnşaat 77, Ev 54), core-calc 738 test, hepsi yeşil; src tsc temiz.**
 
 ---
 
