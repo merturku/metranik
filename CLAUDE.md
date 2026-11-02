@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **303 modül, 602 test** (güncel sayı §5bl'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **308 modül, 613 test** (güncel sayı §5bn'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1205,6 +1205,16 @@ metin kontrastları hesapla ≥ 4,5:1 (en düşük 4,99). Ana sayfada sahte ista
   0 kontrast ihlali (<4,5:1), yeni özellikler uçtan uca doğrulandı. Test betikleri repoda değil (oturum scratchpad'i).
 - **Yok (bilinçli):** kullanıcı girişi (Supabase + KVKK güncellemesi gerekir), İngilizce sürüm, birim/tema ayarı,
   İletişim/Hakkında sayfası (gerçek iletişim bilgisi gerekir), Hesap Rehberleri, sitemap/robots/OG (alan adı gerekir).
+
+### 5bn. SFP/debi ölçer/aşırı yük koordinasyonu/çatlama momenti/PV hücre sıcaklığı: 5 modül daha
+
+- **Fan Spesifik Gücü (SFP) Kontrolü** — Mekanik/Havalandırma. SFP = P/q, EN 13779 sınıfları (EN 16798-3 teyit notu), hedef sınıfa göre verdict'li.
+- **Fark Basınçlı Debi Ölçer (Orifis/Venturi)** — Mekanik/Sıhhi. ISO 5167-1 qm = C/√(1−β⁴)·(π/4)d²√(2Δpρ); C girdi, β 0,10–0,75, yalnız sıvı.
+- **Kablo Aşırı Yük Koruma Koordinasyonu** — Elektrik. IEC 60364-4-43 §433.1 Ib ≤ In ≤ Iz ve I2 ≤ 1,45·Iz (kesici 1,45 / gG 1,6), verdict'li.
+- **Betonarme Kesit Çatlama Momenti** — İnşaat. Mcr = fctm·bh²/6, fctm = 0,30·fck^(2/3) (EN 1992-1-1 Tablo 3.1, C30 → 2,9 MPa ile test).
+- **GES Panel Hücre Sıcaklığı ve Güç Kaybı** — Ev. NOCT modeli + γ katsayısı (IEC 61215/61853).
+
+Testler el hesabı + standart tablo değeri çapraz kontrolü. **Toplam: 308 modül (Mekanik 140, Elektrik 62, İnşaat 65, Ev 41), core-calc 613 test, hepsi yeşil; tsc temiz.**
 
 ---
 

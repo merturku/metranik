@@ -1818,6 +1818,41 @@ const PENCERE_GUNES_ISI_KAZANCI: ModuleEntry = {
   standard: "ASHRAE",
 };
 
+const FAN_SPESIFIK_GUC_SFP: ModuleEntry = {
+  id: "fan-spesifik-guc-sfp",
+  title: "Fan Spesifik Gücü (SFP) Kontrolü",
+  href: "/fan-spesifik-guc-sfp",
+  standard: "EN 13779",
+};
+
+const FARK_BASINCLI_DEBIMETRE: ModuleEntry = {
+  id: "fark-basincli-debimetre",
+  title: "Fark Basınçlı Debi Ölçer (Orifis / Venturi)",
+  href: "/fark-basincli-debimetre",
+  standard: "ISO 5167",
+};
+
+const KABLO_ASIRI_YUK_KORUMA_KONTROLU: ModuleEntry = {
+  id: "kablo-asiri-yuk-koruma-kontrolu",
+  title: "Kablo Aşırı Yük Koruma Koordinasyonu",
+  href: "/kablo-asiri-yuk-koruma-kontrolu",
+  standard: "IEC 60364",
+};
+
+const BETON_CATLAMA_MOMENTI: ModuleEntry = {
+  id: "beton-catlama-momenti",
+  title: "Betonarme Kesit Çatlama Momenti",
+  href: "/beton-catlama-momenti",
+  standard: "TS EN 1992",
+};
+
+const PV_HUCRE_SICAKLIGI_GUC: ModuleEntry = {
+  id: "pv-hucre-sicakligi-guc",
+  title: "GES Panel Hücre Sıcaklığı ve Güç Kaybı",
+  href: "/pv-hucre-sicakligi-guc",
+  standard: "IEC 61215",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -1881,6 +1916,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Sıhhi Tesisat",
         modules: [
+          FARK_BASINCLI_DEBIMETRE,
           HIDRONIK_SU_DEBISI,
           BORU_BASINC_KAYBI,
           POMPA_SECIMI,
@@ -1912,6 +1948,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          FAN_SPESIFIK_GUC_SFP,
           KANAL_BOYUTLANDIRMA,
           TAZE_HAVA_DEBISI,
           FAN_AFFINITE_YASALARI,
@@ -2010,6 +2047,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_ASIRI_YUK_KORUMA_KONTROLU,
           KABLO_KESITI,
           KISA_DEVRE_AKIMI,
           AYDINLATMA,
@@ -2086,6 +2124,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BETON_CATLAMA_MOMENTI,
           TBDY_YATAY_ELASTIK_TASARIM_SPEKTRUMU,
           DEPREM_TABAN_KESME,
           KAR_YUKU_HESABI,
@@ -2165,6 +2204,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          PV_HUCRE_SICAKLIGI_GUC,
           KLIMA_KAPASITE_SECIMI,
           PENCERE_GUNES_ISI_KAZANCI,
           GUNES_PANELI_KAPASITE_HESABI,
