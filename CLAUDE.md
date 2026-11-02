@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **358 modül, 714 test** (güncel sayı §5bx'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **363 modül, 725 test** (güncel sayı §5by'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1319,6 +1319,16 @@ Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) 
 - **Basınçlandırılmış Merdiven Kapısı Açma Kuvveti** — Mekanik/Yangın. F=F_dc+WAΔP/(2(W−d)), 133 N sınırı teyit notuyla, verdict'li.
 
 **Toplam: 358 modül (Mekanik 158, Elektrik 73, İnşaat 75, Ev 52), core-calc 714 test, hepsi yeşil; src tsc temiz.**
+
+### 5by. Chiller kondenser debisi/armatür yerleşimi/kazık sayısı/invertör gücü/hava kaçak oranı: 5 modül daha
+
+- **Chiller Kondenser Isısı ve Su Debisi** — Mekanik/Isıtma-Soğutma. Q_cond=Q_evap+W, ṁ=Q_cond/(cpΔT).
+- **Armatür Yerleşimi ve Aralık (SHR) Kontrolü** — Elektrik. s_maks=SHR·h, sıra sayısı, lüks yöntemi adediyle karşılaştırma.
+- **Kazıklı Temel Kazık Sayısı ve Başlık Boyutu** — İnşaat. n=⌈N(1+f)/Q_izin⌉, 3D aralık, başlık plan boyutu (ön boyut).
+- **GES İnvertör Gücü Seçimi (DC/AC Oranı)** — Ev. Ticari basamak seçimi, DC/AC > 1,4 veya < 1 sınırda.
+- **Basınçlı Hava Kaçak Oranı (Yük/Boşta Süresi)** — Mekanik/Basınçlı Hava. Kaçak %=Ty/(Ty+Tb), kaçak debisi, yıllık kayıp; %10/%20 eşikleri.
+
+**Toplam: 363 modül (Mekanik 160, Elektrik 74, İnşaat 76, Ev 53), core-calc 725 test, hepsi yeşil; src tsc temiz.**
 
 ---
 

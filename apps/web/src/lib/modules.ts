@@ -2203,6 +2203,41 @@ const MERDIVEN_KAPISI_ACMA_KUVVETI: ModuleEntry = {
   standard: "NFPA 92",
 };
 
+const CHILLER_KONDENSER_SU_DEBISI: ModuleEntry = {
+  id: "chiller-kondenser-su-debisi",
+  title: "Chiller Kondenser Isısı ve Su Debisi",
+  href: "/chiller-kondenser-su-debisi",
+  standard: "—",
+};
+
+const ARMATUR_YERLESIM_ARALIGI: ModuleEntry = {
+  id: "armatur-yerlesim-araligi",
+  title: "Armatür Yerleşimi ve Aralık (SHR) Kontrolü",
+  href: "/armatur-yerlesim-araligi",
+  standard: "TS EN 12464-1",
+};
+
+const KAZIK_GRUBU_KAZIK_SAYISI: ModuleEntry = {
+  id: "kazik-grubu-kazik-sayisi",
+  title: "Kazıklı Temel Kazık Sayısı ve Başlık Boyutu",
+  href: "/kazik-grubu-kazik-sayisi",
+  standard: "TS EN 1997-1",
+};
+
+const GES_INVERTOR_GUCU: ModuleEntry = {
+  id: "ges-invertor-gucu",
+  title: "GES İnvertör Gücü Seçimi (DC/AC Oranı)",
+  href: "/ges-invertor-gucu",
+  standard: "IEC 62548",
+};
+
+const BASINCLI_HAVA_KACAK_ORANI: ModuleEntry = {
+  id: "basincli-hava-kacak-orani",
+  title: "Basınçlı Hava Kaçak Oranı (Yük/Boşta Süresi)",
+  href: "/basincli-hava-kacak-orani",
+  standard: "ISO 11011",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2210,6 +2245,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          CHILLER_KONDENSER_SU_DEBISI,
           KAZAN_KAPASITESI_SECIMI,
           POMPALAMA_SPESIFIK_ENERJISI,
           PLAKALI_ESANJOR_PLAKA_SAYISI,
@@ -2372,6 +2408,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Basınçlı Hava",
         modules: [
+          BASINCLI_HAVA_KACAK_ORANI,
           HAVA_KOMPRESORU_SECIMI,
           BASINCLI_HAVA_BORU_CAPI,
           HAVA_DEPOSU_BOYUTLANDIRMA,
@@ -2415,6 +2452,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          ARMATUR_YERLESIM_ARALIGI,
           SEBEKE_GERILIM_HARMONIK_BOZULMASI,
           ASIRI_AKIM_ROLE_ACMA_SURESI,
           GUC_UCGENI_DONUSUMU,
@@ -2503,6 +2541,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KAZIK_GRUBU_KAZIK_SAYISI,
           IKI_ACIKLIKLI_SUREKLI_KIRIS,
           HENDEK_KAZI_HACMI,
           BETONARME_KALIP_ALANI,
@@ -2593,6 +2632,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          GES_INVERTOR_GUCU,
           HAVUZ_ILK_ISITMA_SURESI,
           ISITMA_YAKITI_MALIYET_KARSILASTIRMASI,
           ENERJI_CO2_EMISYONU,
