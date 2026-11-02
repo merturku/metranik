@@ -2168,6 +2168,41 @@ const KAZAN_KAPASITESI_SECIMI: ModuleEntry = {
   standard: "TS EN 12828",
 };
 
+const GRAVITE_BORU_KAPASITESI_MANNING: ModuleEntry = {
+  id: "gravite-boru-kapasitesi-manning",
+  title: "Gravite Atık Su Borusu Kapasitesi (Manning)",
+  href: "/gravite-boru-kapasitesi-manning",
+  standard: "EN 752",
+};
+
+const SEBEKE_GERILIM_HARMONIK_BOZULMASI: ModuleEntry = {
+  id: "sebeke-gerilim-harmonik-bozulmasi",
+  title: "Şebeke Gerilim Harmonik Bozulması (THDv)",
+  href: "/sebeke-gerilim-harmonik-bozulmasi",
+  standard: "EN 50160",
+};
+
+const IKI_ACIKLIKLI_SUREKLI_KIRIS: ModuleEntry = {
+  id: "iki-aciklikli-surekli-kiris",
+  title: "İki Açıklıklı Sürekli Kiriş Tesirleri",
+  href: "/iki-aciklikli-surekli-kiris",
+  standard: "—",
+};
+
+const HAVUZ_ILK_ISITMA_SURESI: ModuleEntry = {
+  id: "havuz-ilk-isitma-suresi",
+  title: "Havuz İlk Isıtma Süresi",
+  href: "/havuz-ilk-isitma-suresi",
+  standard: "—",
+};
+
+const MERDIVEN_KAPISI_ACMA_KUVVETI: ModuleEntry = {
+  id: "merdiven-kapisi-acma-kuvveti",
+  title: "Basınçlandırılmış Merdiven Kapısı Açma Kuvveti",
+  href: "/merdiven-kapisi-acma-kuvveti",
+  standard: "NFPA 92",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2240,6 +2275,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Sıhhi Tesisat",
         modules: [
+          GRAVITE_BORU_KAPASITESI_MANNING,
           PIS_SU_POMPA_KUYUSU_HACMI,
           FARK_BASINCLI_DEBIMETRE,
           HIDRONIK_SU_DEBISI,
@@ -2305,6 +2341,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Yangın",
         modules: [
+          MERDIVEN_KAPISI_ACMA_KUVVETI,
           YANGIN_YUKU_YOGUNLUGU,
           SPRINKLER,
           YANGIN_DOLABI_DEBI_BASINC,
@@ -2378,6 +2415,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          SEBEKE_GERILIM_HARMONIK_BOZULMASI,
           ASIRI_AKIM_ROLE_ACMA_SURESI,
           GUC_UCGENI_DONUSUMU,
           KABLO_DIRENCI_SICAKLIK_DUZELTMESI,
@@ -2465,6 +2503,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          IKI_ACIKLIKLI_SUREKLI_KIRIS,
           HENDEK_KAZI_HACMI,
           BETONARME_KALIP_ALANI,
           KESIT_OZELLIKLERI,
@@ -2554,6 +2593,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          HAVUZ_ILK_ISITMA_SURESI,
           ISITMA_YAKITI_MALIYET_KARSILASTIRMASI,
           ENERJI_CO2_EMISYONU,
           ISITMA_SICAKLIGI_DUSURME_TASARRUFU,

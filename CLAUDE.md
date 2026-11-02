@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **353 modül, 702 test** (güncel sayı §5bw'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **358 modül, 714 test** (güncel sayı §5bx'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1309,6 +1309,16 @@ Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) 
 - **Isıtma Kazanı Kapasite Seçimi** — Mekanik/Isıtma-Soğutma. Q_bina·(1+boru)·(1+ısınma)+Q_sıcaksu, yakıt giriş gücü.
 
 **Toplam: 353 modül (Mekanik 156, Elektrik 72, İnşaat 74, Ev 51), core-calc 702 test, hepsi yeşil; src tsc temiz.**
+
+### 5bx. Gravite boru Manning/THDv/sürekli kiriş/havuz ısıtma/merdiven kapısı kuvveti: 5 modül daha
+
+- **Gravite Atık Su Borusu Kapasitesi (Manning)** — Mekanik/Sıhhi. Q=(1/n)AR^(2/3)S^(1/2), doluluk oranına göre verdict (%75 üstü sınırda).
+- **Şebeke Gerilim Harmonik Bozulması (THDv)** — Elektrik. Vh% = √3·Ih·h·Zsc/U, EN 50160 %8; rezonans ihmal (notta).
+- **İki Açıklıklı Sürekli Kiriş Tesirleri** — İnşaat. M_B=wL²/8, M_açıklık=9wL²/128, R=3wL/8 ve 5wL/4; denge testi.
+- **Havuz İlk Isıtma Süresi** — Ev. E=Vρcp ΔT, t=E/(Pη).
+- **Basınçlandırılmış Merdiven Kapısı Açma Kuvveti** — Mekanik/Yangın. F=F_dc+WAΔP/(2(W−d)), 133 N sınırı teyit notuyla, verdict'li.
+
+**Toplam: 358 modül (Mekanik 158, Elektrik 73, İnşaat 75, Ev 52), core-calc 714 test, hepsi yeşil; src tsc temiz.**
 
 ---
 
