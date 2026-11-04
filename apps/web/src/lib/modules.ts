@@ -2308,6 +2308,41 @@ const ODA_SOGUMA_SURESI: ModuleEntry = {
   standard: "—",
 };
 
+const ISI_GERI_KAZANIM_YILLIK_TASARRUF: ModuleEntry = {
+  id: "isi-geri-kazanim-yillik-tasarruf",
+  title: "Isı Geri Kazanım Yıllık Enerji Tasarrufu",
+  href: "/isi-geri-kazanim-yillik-tasarruf",
+  standard: "—",
+};
+
+const MOTOR_KALKIS_SURESI: ModuleEntry = {
+  id: "motor-kalkis-suresi",
+  title: "Motor Kalkış (Hızlanma) Süresi",
+  href: "/motor-kalkis-suresi",
+  standard: "—",
+};
+
+const ZEMIN_FAZ_ILISKILERI: ModuleEntry = {
+  id: "zemin-faz-iliskileri",
+  title: "Zemin Faz İlişkileri (Birim Hacim Ağırlık)",
+  href: "/zemin-faz-iliskileri",
+  standard: "—",
+};
+
+const EV_BEKLEME_TUKETIMI_MALIYETI: ModuleEntry = {
+  id: "ev-bekleme-tuketimi-maliyeti",
+  title: "Bekleme (Standby) Tüketimi Maliyeti",
+  href: "/ev-bekleme-tuketimi-maliyeti",
+  standard: "—",
+};
+
+const SOGUTMA_KAPASITESI_BIRIM_DONUSUMU: ModuleEntry = {
+  id: "sogutma-kapasitesi-birim-donusumu",
+  title: "Soğutma Kapasitesi Birim Dönüşümü",
+  href: "/sogutma-kapasitesi-birim-donusumu",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2315,6 +2350,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          SOGUTMA_KAPASITESI_BIRIM_DONUSUMU,
           ISITMA_DERECE_GUN_YILLIK_ENERJI,
           ISITMA_EGRISI_DIS_HAVA_KOMPANZASYONU,
           CHILLER_KONDENSER_SU_DEBISI,
@@ -2417,6 +2453,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          ISI_GERI_KAZANIM_YILLIK_TASARRUF,
           KAYIS_KASNAK_DEVIR_HESABI,
           KANAL_SAC_AGIRLIGI,
           UFLEME_HAVASI_DEBISI,
@@ -2526,6 +2563,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          MOTOR_KALKIS_SURESI,
           AKU_PEUKERT_BOSALMA_SURESI,
           TRAFO_YILLIK_KAYIP_MALIYETI,
           ARMATUR_YERLESIM_ARALIGI,
@@ -2617,6 +2655,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ZEMIN_FAZ_ILISKILERI,
           TAZE_BETON_SICAKLIGI,
           CATI_YAGMUR_GIDER_SAYISI,
           KAZIK_GRUBU_KAZIK_SAYISI,
@@ -2710,6 +2749,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_BEKLEME_TUKETIMI_MALIYETI,
           ODA_SOGUMA_SURESI,
           NEM_ALMA_CIHAZI_KAPASITESI,
           GES_INVERTOR_GUCU,

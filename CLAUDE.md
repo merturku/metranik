@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **373 modül, 750 test** (güncel sayı §5ca'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **378 modül, 760 test** (güncel sayı §5cb'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1352,6 +1352,18 @@ Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) 
 Testler el hesabı + özel durum kontrolü (yayımlanmış çözümlü örnek değil).
 
 **Toplam: 373 modül (Mekanik 164, Elektrik 76, İnşaat 78, Ev 55), core-calc 750 test, hepsi yeşil; src tsc temiz.**
+
+### 5cb. Isı geri kazanım tasarrufu/motor kalkış süresi/zemin faz ilişkileri/standby tüketimi/TR dönüşümü: 5 modül daha
+
+- **Isı Geri Kazanım Yıllık Enerji Tasarrufu** — Mekanik/Havalandırma. E = 0,335·V̇·ε·DG·h/1000; yalnız duyulur ısı. Isı Geri Kazanım Verimi'nin ε'unu yıllık enerjiye çevirir.
+- **Motor Kalkış (Hızlanma) Süresi** — Elektrik. t = J·ω/T_ort; Motor Yol Verme Akımı'nın süre tamamlayıcısı.
+- **Zemin Faz İlişkileri** — İnşaat. γ, γd, γsat, γ', n, Sr (Sr·e = w·Gs; Sr > %100 girdi reddedilir); taşıma gücü/istinat modüllerinin γ girdisini üretir.
+- **Bekleme (Standby) Tüketimi Maliyeti** — Ev. E = P·n·h·365/1000.
+- **Soğutma Kapasitesi Birim Dönüşümü** — Mekanik/Isıtma-Soğutma. 1 TR = 3,51685 kW = 12 000 BTU/h; 1 kcal/h = 1,163 W.
+
+Testler el hesabı + özel durum kontrolü. Standart atfı yok (fizik/birim ilişkisi).
+
+**Toplam: 378 modül (Mekanik 166, Elektrik 77, İnşaat 79, Ev 56), core-calc 760 test, hepsi yeşil; src tsc temiz.**
 
 ---
 
