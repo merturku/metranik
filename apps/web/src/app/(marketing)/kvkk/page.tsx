@@ -11,7 +11,7 @@ export default function KvkkPage() {
       <h1 className="text-2xl font-bold tracking-tight text-text-primary">
         Kullanım Koşulları &amp; KVKK
       </h1>
-      <p className="mt-2 text-sm text-text-tertiary">Son güncelleme: 2026-07</p>
+      <p className="mt-2 text-sm text-text-tertiary">Son güncelleme: 2026-11</p>
 
       <div className="mt-8 space-y-8 text-sm leading-relaxed text-text-secondary">
         <section>
@@ -21,6 +21,18 @@ export default function KvkkPage() {
             kayıt gerektirmez. Kimlik, iletişim veya benzeri kişisel veri toplanmaz; hesap
             modüllerine girdiğiniz mühendislik değerleri (m², kW, mm gibi) sunucuya kişisel veri
             olarak gönderilmez.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-base font-semibold text-text-primary">1.1 İsteğe Bağlı Üyelik</h2>
+          <p className="mt-2">
+            Üyelik etkinleştirildiğinde, hesap oluşturmayı seçerseniz yalnızca e-posta adresiniz ve
+            parolanız (parola yalnızca şifrelenmiş özet olarak) kimlik doğrulama sağlayıcısı
+            Supabase üzerinde, hesabınızı yönetmek ve oturumunuzu doğrulamak amacıyla işlenir.
+            Üyelik zorunlu değildir; üye olmadan tüm hesap modüllerini kullanabilirsiniz. Hesabınızın
+            silinmesini talep edebilirsiniz. Projelerinizin bulutta saklanması özelliği
+            etkinleştirildiğinde bu metin ayrıca güncellenecek ve açık onayınız istenecektir.
           </p>
         </section>
 

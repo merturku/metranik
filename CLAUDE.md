@@ -1386,6 +1386,17 @@ Testler el hesabı + özel durum kontrolü. Not: Enerji dönüşümü testinde i
 
 **Toplam: 387 modül, core-calc 778 test, hepsi yeşil; src tsc temiz.**
 
+### 5ce. Üyelik (giriş) altyapısı — anahtar bekleyen, özellik bayraklı (2026-11-04)
+
+Referans projenik.com yeniden incelendi (WebFetch istemci tarafı arayüzü göremez; giriş düğmesi kullanıcı ekran görüntüsünde var). Görünen ticari model: **ücretsiz üyelikle günde 10 hesap**, **ücretsiz 3 proje kaydı**, Pro = sınırsız proje + logolu/antetli PDF + Excel + karşılaştırmalı rapor; kayıtlar cihazda (localStorage), bulut eşitleme görünmüyor. **Bu limit/paket modeli bilinçli olarak uygulanmadı** (§8 iş modeli kararı: çekirdek ücretsiz/üyeliksiz, gelir reklam) — kullanıcı kararı gerekir.
+
+Eklenenler (hepsi `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` tanımlıyken görünür; tanımsızken uygulama eskisi gibi üyeliksiz, arayüzde iz yok):
+- `lib/supabase.ts` (istemci, `girisAktif`, Türkçe hata metinleri), `components/hesap-kutusu.tsx` (sidebar: "Giriş yap" / e-posta + Çıkış), `/giris` sayfası (e-posta+parola giriş, kayıt + zorunlu KVKK onay kutusu, parola sıfırlama; parola ≥ 8).
+- `supabase/migrations/0001_kayitli_hesaplar.sql` (RLS'li bulut eşitleme tablosu — **henüz kullanılmıyor**, eşitleme kodu yok), `apps/web/.env.example`, KVKK metnine "1.1 İsteğe Bağlı Üyelik" bölümü.
+- Doğrulama: tsc + `pnpm build` temiz; anahtarsız `next start`'ta `/giris` "Üyelik şu an kapalı", sidebar'da düğme yok. **Gerçek Supabase ile giriş akışı denenmedi** (anahtar yok).
+
+Kullanıcıdan gereken: Supabase proje URL + anon key (Vercel env + yerel `.env.local`), e-posta doğrulama/redirect URL ayarı, SQL migration'ın çalıştırılması. Sonra: bulut eşitleme (`projeler.ts` ↔ tablo), KVKK'nın bulut saklama için güncellenmesi.
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
