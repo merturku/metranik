@@ -2273,6 +2273,41 @@ const KAYIS_KASNAK_DEVIR_HESABI: ModuleEntry = {
   standard: "ISO 4184",
 };
 
+const ISITMA_DERECE_GUN_YILLIK_ENERJI: ModuleEntry = {
+  id: "isitma-derece-gun-yillik-enerji",
+  title: "Derece-Gün ile Yıllık Isıtma Enerjisi",
+  href: "/isitma-derece-gun-yillik-enerji",
+  standard: "TS 825",
+};
+
+const ISITMA_EGRISI_DIS_HAVA_KOMPANZASYONU: ModuleEntry = {
+  id: "isitma-egrisi-dis-hava-kompanzasyonu",
+  title: "Isıtma Eğrisi (Dış Hava Kompanzasyonu)",
+  href: "/isitma-egrisi-dis-hava-kompanzasyonu",
+  standard: "TS EN 442-2",
+};
+
+const AKU_PEUKERT_BOSALMA_SURESI: ModuleEntry = {
+  id: "aku-peukert-bosalma-suresi",
+  title: "Akü Boşalma Süresi (Peukert)",
+  href: "/aku-peukert-bosalma-suresi",
+  standard: "—",
+};
+
+const TAZE_BETON_SICAKLIGI: ModuleEntry = {
+  id: "taze-beton-sicakligi",
+  title: "Taze Beton Sıcaklığı",
+  href: "/taze-beton-sicakligi",
+  standard: "ACI 305R",
+};
+
+const ODA_SOGUMA_SURESI: ModuleEntry = {
+  id: "oda-soguma-suresi",
+  title: "Oda Soğuma Süresi (Isıl Zaman Sabiti)",
+  href: "/oda-soguma-suresi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2280,6 +2315,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          ISITMA_DERECE_GUN_YILLIK_ENERJI,
+          ISITMA_EGRISI_DIS_HAVA_KOMPANZASYONU,
           CHILLER_KONDENSER_SU_DEBISI,
           KAZAN_KAPASITESI_SECIMI,
           POMPALAMA_SPESIFIK_ENERJISI,
@@ -2489,6 +2526,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          AKU_PEUKERT_BOSALMA_SURESI,
           TRAFO_YILLIK_KAYIP_MALIYETI,
           ARMATUR_YERLESIM_ARALIGI,
           SEBEKE_GERILIM_HARMONIK_BOZULMASI,
@@ -2579,6 +2617,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          TAZE_BETON_SICAKLIGI,
           CATI_YAGMUR_GIDER_SAYISI,
           KAZIK_GRUBU_KAZIK_SAYISI,
           IKI_ACIKLIKLI_SUREKLI_KIRIS,
@@ -2671,6 +2710,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          ODA_SOGUMA_SURESI,
           NEM_ALMA_CIHAZI_KAPASITESI,
           GES_INVERTOR_GUCU,
           HAVUZ_ILK_ISITMA_SURESI,

@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **368 modül, 738 test** (güncel sayı §5bz'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **373 modül, 750 test** (güncel sayı §5ca'da; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1340,6 +1340,18 @@ Not: §1'deki "~330" hedefi sayısal olarak aşıldı; kalite kuralı (§3/§4) 
 - Not: Basınçlı Hava Kaçak Oranı (5by) önce yanlışlıkla Montaj'a kaydedilmişti, Basınçlı Hava alt kategorisine taşındı.
 
 **Toplam: 368 modül (Mekanik 162, Elektrik 75, İnşaat 77, Ev 54), core-calc 738 test, hepsi yeşil; src tsc temiz.**
+
+### 5ca. Derece-gün/ısıtma eğrisi/Peukert/taze beton sıcaklığı/oda soğuma: 5 modül daha
+
+- **Derece-Gün ile Yıllık Isıtma Enerjisi** — Mekanik/Isıtma-Soğutma. E = (UA + 0,335·n·V)·DG·24/1000, yakıt girişi E/η; iç/güneş kazancı ihmal (notta).
+- **Isıtma Eğrisi (Dış Hava Kompanzasyonu)** — Mekanik/Isıtma-Soğutma. EN 442 üstel yasasıyla Tm = Ti + ΔTN·φ^(1/n), sabit debide gidiş/dönüş; Radyatör Dilim Sayısı'nın ΔT'sini dış havaya bağlar.
+- **Akü Boşalma Süresi (Peukert)** — Elektrik. t = H·(C/(I·H))^k; k = 1'de C/I, anma akımında C/H testle doğrulanır. Standart yok (üretici eğrisiyle teyit notu).
+- **Taze Beton Sıcaklığı** — İnşaat. ACI 305R ısı dengesi (0,22 özgül ısı oranı); buz ve karıştırma ısısı yok.
+- **Oda Soğuma Süresi (Isıl Zaman Sabiti)** — Ev. τ = C/H, t = τ·ln((Ti−Te)/(Thedef−Te)); tek kapasiteli model.
+
+Testler el hesabı + özel durum kontrolü (yayımlanmış çözümlü örnek değil).
+
+**Toplam: 373 modül (Mekanik 164, Elektrik 76, İnşaat 78, Ev 55), core-calc 750 test, hepsi yeşil; src tsc temiz.**
 
 ---
 
