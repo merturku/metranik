@@ -674,6 +674,8 @@ yapılıp fark edilip düzeltildi, dikkat).
 
 ## 6. Yapma / Dikkat
 
+- **"devam" = bitene kadar devam (kullanıcı kuralı, 2026-11-04):** parti arası onay/"devam mı?" sorma; yalnızca gerçek engelde (kapsam kararı, kırık build) veya tekrar-olmayan aday kalmadığında dur, sonda tek rapor ver.
+
 - **Dosya okumak için `sed`/`cat`/`head` kullanma — `Read` aracını kullan.**
 - Standart metinlerini (TS/NFPA/IEC) **kopyalama/gömme**. Yalnız madde no + yönteme atıf.
 - Hesabı LLM'e yaptırma (bkz. §3).
@@ -706,7 +708,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **379 modül, 763 test** (güncel sayı §5cc'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **387 modül, 778 test** (güncel sayı §5cd'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1372,6 +1374,17 @@ Testler el hesabı + özel durum kontrolü. Standart atfı yok (fizik/birim ili�
 **Aparey** hâlâ eklenmedi: adı/kapsamı belirsiz, uydurma modül yazılmadı. Faz 2 (IFC, giriş/bulut, iOS) ortak karar bekliyor.
 
 **Toplam: 379 modül (Mekanik 167), core-calc 763 test, hepsi yeşil; `pnpm build` temiz.**
+
+### 5cd. Standart seri seçimleri + beton karışımı + birim dönüşümleri: 8 modül daha
+
+- **Kablo Standart Kesit Seçimi** (Elektrik, IEC 60228 serisi 1,5–630 mm²), **Kesici Nominal Akım Seçimi** (Elektrik, IEC 60898-1 tercihli akımlar 6–125 A) — hesaplanan değeri standart değere yuvarlar; aşılırsa `null` + uygunsuz.
+- **Beton Karışımı Mutlak Hacim Yöntemi** (İnşaat, ACI 211.1) — 1 m³ = Vc + Vsu + Vhava + Vagrega'dan agrega kütlesi; hacim toplamı 1 testle doğrulanır.
+- **Donatı Kesit Alanı ve Adet Seçimi** (İnşaat) — A = nπφ²/4, gerekli alana göre en az adet, verdict'li.
+- **Basınç / Hava Debisi / Enerji Birim Dönüşümleri** (Mekanik ×2, Ev) ve **LED Lümen–Watt Eşdeğeri** (Ev, η = Φ/P).
+
+Testler el hesabı + özel durum kontrolü. Not: Enerji dönüşümü testinde ilk yazılan kcal beklentisi yanlıştı (motor doğruydu: 360·10⁶/4186,8 = 85 984,5), test düzeltildi.
+
+**Toplam: 387 modül, core-calc 778 test, hepsi yeşil; src tsc temiz.**
 
 ---
 

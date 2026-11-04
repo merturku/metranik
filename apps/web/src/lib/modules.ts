@@ -2350,6 +2350,62 @@ const BORU_SECIM_DN: ModuleEntry = {
   standard: "EN 10220",
 };
 
+const KABLO_STANDART_KESIT_SECIMI: ModuleEntry = {
+  id: "kablo-standart-kesit-secimi",
+  title: "Kablo Standart Kesit Seçimi",
+  href: "/kablo-standart-kesit-secimi",
+  standard: "IEC 60228",
+};
+
+const KESICI_NOMINAL_AKIM_SECIMI: ModuleEntry = {
+  id: "kesici-nominal-akim-secimi",
+  title: "Kesici Nominal Akım Seçimi",
+  href: "/kesici-nominal-akim-secimi",
+  standard: "IEC 60898-1",
+};
+
+const BETON_KARISIM_MUTLAK_HACIM: ModuleEntry = {
+  id: "beton-karisim-mutlak-hacim",
+  title: "Beton Karışımı Mutlak Hacim Yöntemi",
+  href: "/beton-karisim-mutlak-hacim",
+  standard: "ACI 211.1",
+};
+
+const DONATI_KESIT_ALANI: ModuleEntry = {
+  id: "donati-kesit-alani",
+  title: "Donatı Kesit Alanı ve Adet Seçimi",
+  href: "/donati-kesit-alani",
+  standard: "TS 500",
+};
+
+const BASINC_BIRIM_DONUSUMU: ModuleEntry = {
+  id: "basinc-birim-donusumu",
+  title: "Basınç Birim Dönüşümü",
+  href: "/basinc-birim-donusumu",
+  standard: "—",
+};
+
+const HAVA_DEBISI_BIRIM_DONUSUMU: ModuleEntry = {
+  id: "hava-debisi-birim-donusumu",
+  title: "Hava Debisi Birim Dönüşümü",
+  href: "/hava-debisi-birim-donusumu",
+  standard: "—",
+};
+
+const ENERJI_BIRIM_DONUSUMU: ModuleEntry = {
+  id: "enerji-birim-donusumu",
+  title: "Enerji Birim Dönüşümü",
+  href: "/enerji-birim-donusumu",
+  standard: "—",
+};
+
+const LED_LUMEN_WATT_ESDEGERI: ModuleEntry = {
+  id: "led-lumen-watt-esdegeri",
+  title: "LED Lümen–Watt Eşdeğeri",
+  href: "/led-lumen-watt-esdegeri",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2357,6 +2413,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          BASINC_BIRIM_DONUSUMU,
           SOGUTMA_KAPASITESI_BIRIM_DONUSUMU,
           ISITMA_DERECE_GUN_YILLIK_ENERJI,
           ISITMA_EGRISI_DIS_HAVA_KOMPANZASYONU,
@@ -2460,6 +2517,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          HAVA_DEBISI_BIRIM_DONUSUMU,
           ISI_GERI_KAZANIM_YILLIK_TASARRUF,
           KAYIS_KASNAK_DEVIR_HESABI,
           KANAL_SAC_AGIRLIGI,
@@ -2571,6 +2629,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KESICI_NOMINAL_AKIM_SECIMI,
+          KABLO_STANDART_KESIT_SECIMI,
           MOTOR_KALKIS_SURESI,
           AKU_PEUKERT_BOSALMA_SURESI,
           TRAFO_YILLIK_KAYIP_MALIYETI,
@@ -2663,6 +2723,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          DONATI_KESIT_ALANI,
+          BETON_KARISIM_MUTLAK_HACIM,
           ZEMIN_FAZ_ILISKILERI,
           TAZE_BETON_SICAKLIGI,
           CATI_YAGMUR_GIDER_SAYISI,
@@ -2757,6 +2819,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          LED_LUMEN_WATT_ESDEGERI,
+          ENERJI_BIRIM_DONUSUMU,
           EV_BEKLEME_TUKETIMI_MALIYETI,
           ODA_SOGUMA_SURESI,
           NEM_ALMA_CIHAZI_KAPASITESI,
