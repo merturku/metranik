@@ -706,7 +706,7 @@ Milestone 0'ın çok ötesine geçildi — kullanıcı onayıyla ek kapsam eklen
   kopyalamadık.
 - **App shell**: `/uygulama` (Kontrol Merkezi) + sidebar, gerçek geçmiş/en-çok-kullanılan
   takibi (localStorage, `lib/recent-calcs.ts`).
-- **378 modül, 760 test** (güncel sayı §5cb'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
+- **379 modül, 763 test** (güncel sayı §5cc'de; §5at–§5av ve "Sonuç" bölümündeki sayılar geçersiz) — hem hesap hem test/kontrol tipinde, 4 disiplinde (mekanik/elektrik/inşaat/ev) dengeli. Hedef ~330 (§5g'de ilerleme tablosu ve eksik başlık listesi).
 - **KVKK**: (app) ve (marketing) layout'larında `KvkkBanner` (localStorage onay) + `/kvkk` detay sayfası var (bkz. §5z). Bulut/hesap eklenince (Faz 1+) bu bildirim gerçek sunucu tarafı veri işleme senaryosuna göre güncellenmeli.
 - **Sayısal girdi alanları**: `calc-page.tsx`'teki tüm sayı alanları `type="text"` + `inputMode="decimal"` kullanır (native `type="number"` Türkçe ondalık virgülü — "5,5" — reddediyordu); `sayiyaCevir()` virgül/nokta normalize eder. Yeni girdi tipi eklerken bu deseni koru.
 - **Deploy**: GitHub `merturku/metranik` → Vercel otomatik deploy, canlı link §2'de.
@@ -1364,6 +1364,14 @@ Testler el hesabı + özel durum kontrolü (yayımlanmış çözümlü örnek de
 Testler el hesabı + özel durum kontrolü. Standart atfı yok (fizik/birim ilişkisi).
 
 **Toplam: 378 modül (Mekanik 166, Elektrik 77, İnşaat 79, Ev 56), core-calc 760 test, hepsi yeşil; src tsc temiz.**
+
+### 5cc. Boru seçimi (DN): 1 modül, kapanış
+
+- **Boru Seçimi (DN, Debi ve Hıza Göre)** — Mekanik/Montaj. D = √(4Q/πV); EN 10220 dış çap serisinden (DN15–DN300) iç çapı ≥ D olan en küçük DN; et kalınlığı kullanıcı girdisi (schedule tablosu gömülmedi). DN300 aşılırsa `null` + uygunsuz. §5g'deki "Boru Seçim Tablosu" açığı bu şekilde kapandı.
+
+**Aparey** hâlâ eklenmedi: adı/kapsamı belirsiz, uydurma modül yazılmadı. Faz 2 (IFC, giriş/bulut, iOS) ortak karar bekliyor.
+
+**Toplam: 379 modül (Mekanik 167), core-calc 763 test, hepsi yeşil; `pnpm build` temiz.**
 
 ---
 

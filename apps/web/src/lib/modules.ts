@@ -2343,6 +2343,13 @@ const SOGUTMA_KAPASITESI_BIRIM_DONUSUMU: ModuleEntry = {
   standard: "—",
 };
 
+const BORU_SECIM_DN: ModuleEntry = {
+  id: "boru-secim-dn",
+  title: "Boru Seçimi (DN, Debi ve Hıza Göre)",
+  href: "/boru-secim-dn",
+  standard: "EN 10220",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2535,6 +2542,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Montaj",
         modules: [
+          BORU_SECIM_DN,
           BORU_YALITIM_METRAJI,
           BORU_BIRIM_AGIRLIGI,
           KONSOL_BORU_DESTEK_ARALIGI,

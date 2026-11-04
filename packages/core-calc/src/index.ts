@@ -1404,3 +1404,5 @@ export { evBeklemeTuketimiMaliyeti } from "./modules/ev-bekleme-tuketimi-maliyet
 export type { EvBeklemeTuketimiMaliyetiInput, EvBeklemeTuketimiMaliyetiOutput } from "./modules/ev-bekleme-tuketimi-maliyeti";
 export { sogutmaKapasitesiBirimDonusumu } from "./modules/sogutma-kapasitesi-birim-donusumu";
 export type { SogutmaKapasitesiBirimDonusumuInput, SogutmaKapasitesiBirimDonusumuOutput } from "./modules/sogutma-kapasitesi-birim-donusumu";
+export { boruSecimDn } from "./modules/boru-secim-dn";
+export type { BoruSecimDnInput, BoruSecimDnOutput } from "./modules/boru-secim-dn";
