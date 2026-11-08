@@ -2406,6 +2406,41 @@ const LED_LUMEN_WATT_ESDEGERI: ModuleEntry = {
   standard: "—",
 };
 
+const POMPA_PARALEL_CALISMA: ModuleEntry = {
+  id: "pompa-paralel-calisma",
+  title: "Pompaların Paralel Çalışma Debisi",
+  href: "/pompa-paralel-calisma",
+  standard: "ISO 9906",
+};
+
+const COK_YUKLU_HAT_GERILIM_DUSUMU: ModuleEntry = {
+  id: "cok-yuklu-hat-gerilim-dusumu",
+  title: "Çok Yüklü Hat Gerilim Düşümü (Dağıtılmış Yük)",
+  href: "/cok-yuklu-hat-gerilim-dusumu",
+  standard: "IEC 60364-5-52",
+};
+
+const KIRIS_EGILME_DONATISI_GEREKLI: ModuleEntry = {
+  id: "kiris-egilme-donatisi-gerekli",
+  title: "Kiriş Eğilme Donatısı (Gerekli As, Tek Donatılı)",
+  href: "/kiris-egilme-donatisi-gerekli",
+  standard: "TS 500",
+};
+
+const ZEMIN_GERILME_ARTISI: ModuleEntry = {
+  id: "zemin-gerilme-artisi",
+  title: "Zeminde Gerilme Artışı (2:1 ve Boussinesq)",
+  href: "/zemin-gerilme-artisi",
+  standard: "—",
+};
+
+const SES_YALITIMI_KUTLE_YASASI: ModuleEntry = {
+  id: "ses-yalitimi-kutle-yasasi",
+  title: "Duvar Hava Ses Yalıtımı (Kütle Yasası)",
+  href: "/ses-yalitimi-kutle-yasasi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2415,6 +2450,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         modules: [
           BASINC_BIRIM_DONUSUMU,
           SOGUTMA_KAPASITESI_BIRIM_DONUSUMU,
+          POMPA_PARALEL_CALISMA,
           ISITMA_DERECE_GUN_YILLIK_ENERJI,
           ISITMA_EGRISI_DIS_HAVA_KOMPANZASYONU,
           CHILLER_KONDENSER_SU_DEBISI,
@@ -2630,6 +2666,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         label: "Elektrik Tesisat",
         modules: [
           KESICI_NOMINAL_AKIM_SECIMI,
+          COK_YUKLU_HAT_GERILIM_DUSUMU,
           KABLO_STANDART_KESIT_SECIMI,
           MOTOR_KALKIS_SURESI,
           AKU_PEUKERT_BOSALMA_SURESI,
@@ -2724,6 +2761,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         label: "İnşaat Hesapları",
         modules: [
           DONATI_KESIT_ALANI,
+          KIRIS_EGILME_DONATISI_GEREKLI,
+          ZEMIN_GERILME_ARTISI,
           BETON_KARISIM_MUTLAK_HACIM,
           ZEMIN_FAZ_ILISKILERI,
           TAZE_BETON_SICAKLIGI,
@@ -2820,6 +2859,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         label: "Ev",
         modules: [
           LED_LUMEN_WATT_ESDEGERI,
+          SES_YALITIMI_KUTLE_YASASI,
           ENERJI_BIRIM_DONUSUMU,
           EV_BEKLEME_TUKETIMI_MALIYETI,
           ODA_SOGUMA_SURESI,

@@ -1397,6 +1397,18 @@ Eklenenler (hepsi `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` t
 
 Kullanıcıdan gereken: Supabase proje URL + anon key (Vercel env + yerel `.env.local`), e-posta doğrulama/redirect URL ayarı, SQL migration'ın çalıştırılması. Sonra: bulut eşitleme (`projeler.ts` ↔ tablo), KVKK'nın bulut saklama için güncellenmesi.
 
+### 5cf. Paralel pompa/çok yüklü hat/eğilme donatısı/zemin gerilme artışı/ses yalıtımı: 5 modül daha
+
+- **Pompaların Paralel Çalışma Debisi** — Mekanik/Isıtma-Soğutma. (C − k·n²)q² + Bq + (A − Hst) = 0; Q = n·q; testte iki pompa için Q = 20 m³/h, H = 30 m (iki eğri de sağlanır), debi artışı n'den küçük (1,58).
+- **Çok Yüklü Hat Gerilim Düşümü** — Elektrik. ΔU = b·Σ(I·L)·(R'cosφ + X'sinφ), IEC 60228 ρ20 + sıcaklık düzeltmesi; verdict (>%90 sınır = sınırda).
+- **Kiriş Eğilme Donatısı (Gerekli As)** — İnşaat. TS 500 dikdörtgen blok, Kiriş Boyutlandırma'nın ters yönü; ρmin/ρmax sınırları Kiriş Donatı Oranı modülüyle aynı; geri hesapla Md doğrulanır.
+- **Zeminde Gerilme Artışı** — İnşaat. 2:1 yayılma ve Boussinesq noktasal yük; konsolidasyon/elastik oturma modüllerinin gerilim girdisi.
+- **Duvar Hava Ses Yalıtımı (Kütle Yasası)** — Ev. TL = 20log(m·f) − 47; hedef için gereken kütle; kuramsal değer (koinsidans/kaçak notta).
+
+Testler el hesabı + geri hesap/özel durum kontrolü (yayımlanmış çözümlü örnek değil). Sıradaki aday: beton dayanım gelişimi (EN 1992-1-1 βcc(t)).
+
+**Toplam: 392 modül, core-calc 795 test, hepsi yeşil.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
