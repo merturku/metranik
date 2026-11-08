@@ -2588,6 +2588,41 @@ const GES_MEVSIMSEL_EGIM_ACISI: ModuleEntry = {
   standard: "—",
 };
 
+const DUMAN_TUYU_KUTLE_DEBISI: ModuleEntry = {
+  id: "duman-tuyu-kutle-debisi",
+  title: "Duman Tüyü Kütle Debisi ve Tahliye Debisi (NFPA 92)",
+  href: "/duman-tuyu-kutle-debisi",
+  standard: "NFPA 92",
+};
+
+const KABLO_JOULE_KAYBI_YILLIK_MALIYET: ModuleEntry = {
+  id: "kablo-joule-kaybi-yillik-maliyet",
+  title: "Kablo Joule Kaybı ve Yıllık Enerji Maliyeti",
+  href: "/kablo-joule-kaybi-yillik-maliyet",
+  standard: "—",
+};
+
+const EULER_KRITIK_BURKULMA_YUKU: ModuleEntry = {
+  id: "euler-kritik-burkulma-yuku",
+  title: "Euler Kritik Burkulma Yükü ve Narinlik",
+  href: "/euler-kritik-burkulma-yuku",
+  standard: "—",
+};
+
+const KOLON_ETRIYE_SARILMA_DONATISI: ModuleEntry = {
+  id: "kolon-etriye-sarilma-donatisi",
+  title: "Kolon Sarılma Bölgesi Etriye Alanı (Ash)",
+  href: "/kolon-etriye-sarilma-donatisi",
+  standard: "TBDY 2018",
+};
+
+const EGIM_BIRIM_DONUSUMU: ModuleEntry = {
+  id: "egim-birim-donusumu",
+  title: "Eğim Birim Dönüşümü (° / % / 1:n)",
+  href: "/egim-birim-donusumu",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2739,6 +2774,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Yangın",
         modules: [
+          DUMAN_TUYU_KUTLE_DEBISI,
           MERDIVEN_KAPISI_ACMA_KUVVETI,
           YANGIN_YUKU_YOGUNLUGU,
           SPRINKLER,
@@ -2819,6 +2855,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_JOULE_KAYBI_YILLIK_MALIYET,
           YILDIZ_UCGEN_YOL_VERME,
           KABLO_SONU_KISA_DEVRE_AKIMI,
           YUKSEK_VERIMLI_MOTOR_GERI_ODEME,
@@ -2918,6 +2955,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KOLON_ETRIYE_SARILMA_DONATISI,
+          EULER_KRITIK_BURKULMA_YUKU,
           HENDEK_BORU_TOPRAK_YUKU_MARSTON,
           ZEMIN_EFEKTIF_GERILME,
           BINA_YAKLASIK_DOGAL_PERIYOT,
@@ -3022,6 +3061,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EGIM_BIRIM_DONUSUMU,
           GES_MEVSIMSEL_EGIM_ACISI,
           ODA_YANKILANMA_SURESI_SABINE,
           EV_TASINABILIR_JENERATOR_GUCU,

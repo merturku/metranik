@@ -1454,7 +1454,17 @@ Testler el hesabı + geri hesap (Kablo sonu testinde ilk beklentim karekök hata
 
 Testler el hesabı + limit durum kontrolü. tsc temiz (iCloud'da tsc artık ~dk'lar yerine hızlı çalışıyor).
 
-**Toplam: 413 modül.**
+**Toplam: 413 modül, core-calc 852 test, hepsi yeşil (tam paket 18 sn).**
+
+### 5ck. Duman tüyü/kablo Joule kaybı/Euler burkulma/kolon sarılma donatısı/eğim dönüşümü: 5 modül daha
+
+- **Duman Tüyü Kütle Debisi (NFPA 92)** — Mekanik/Yangın. Heskestad: zl = 0,166Qc^0,4; alev üstü m = 0,071Qc^⅓z^(5/3) + 0,0018Qc, alev içi m = 0,032Qc^0,6·z; T, ρ ve tahliye hacim debisi.
+- **Kablo Joule Kaybı ve Yıllık Maliyet** — Elektrik. P = 3I²R (tek faz 2I²R), yıllık kWh ve ₺.
+- **Euler Kritik Burkulma Yükü** — İnşaat. Ncr = π²EI/(kL)², σcr, λ; σcr > fy ise Euler geçerli değil uyarısı (HEA200 örneği).
+- **Kolon Sarılma Bölgesi Etriye Alanı (Ash)** — İnşaat. 0,30·s·bk·(fck/fywk)(Ac/Ack − 1) ve 0,075·s·bk·fck/fywk; DBYBHY/TBDY, madde no teyit notu.
+- **Eğim Birim Dönüşümü** — Ev. °, %, 1:n.
+
+**Toplam: 418 modül.**
 
 ---
 

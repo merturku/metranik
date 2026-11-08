@@ -1474,3 +1474,13 @@ export { hendekBoruToprakYukuMarston } from "./modules/hendek-boru-toprak-yuku-m
 export type { HendekBoruToprakYukuMarstonInput, HendekBoruToprakYukuMarstonOutput } from "./modules/hendek-boru-toprak-yuku-marston";
 export { gesMevsimselEgimAcisi } from "./modules/ges-mevsimsel-egim-acisi";
 export type { GesMevsimselEgimAcisiInput, GesMevsimselEgimAcisiOutput } from "./modules/ges-mevsimsel-egim-acisi";
+export { dumanTuyuKutleDebisi } from "./modules/duman-tuyu-kutle-debisi";
+export type { DumanTuyuKutleDebisiInput, DumanTuyuKutleDebisiOutput } from "./modules/duman-tuyu-kutle-debisi";
+export { kabloJouleKaybiYillikMaliyet } from "./modules/kablo-joule-kaybi-yillik-maliyet";
+export type { KabloJouleKaybiYillikMaliyetInput, KabloJouleKaybiYillikMaliyetOutput } from "./modules/kablo-joule-kaybi-yillik-maliyet";
+export { eulerKritikBurkulmaYuku } from "./modules/euler-kritik-burkulma-yuku";
+export type { EulerKritikBurkulmaYukuInput, EulerKritikBurkulmaYukuOutput } from "./modules/euler-kritik-burkulma-yuku";
+export { kolonEtriyeSarilmaDonatisi } from "./modules/kolon-etriye-sarilma-donatisi";
+export type { KolonEtriyeSarilmaDonatisiInput, KolonEtriyeSarilmaDonatisiOutput } from "./modules/kolon-etriye-sarilma-donatisi";
+export { egimBirimDonusumu } from "./modules/egim-birim-donusumu";
+export type { EgimBirimDonusumuInput, EgimBirimDonusumuOutput } from "./modules/egim-birim-donusumu";
