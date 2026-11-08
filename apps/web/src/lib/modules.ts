@@ -2553,6 +2553,41 @@ const KABLO_SONU_KISA_DEVRE_AKIMI: ModuleEntry = {
   standard: "IEC 60909-0",
 };
 
+const TANK_BOSALMA_SURESI_TORRICELLI: ModuleEntry = {
+  id: "tank-bosalma-suresi-torricelli",
+  title: "Tank Boşalma Süresi (Torricelli)",
+  href: "/tank-bosalma-suresi-torricelli",
+  standard: "—",
+};
+
+const KOMPRESOR_ATIK_ISI_GERI_KAZANIMI: ModuleEntry = {
+  id: "kompresor-atik-isi-geri-kazanimi",
+  title: "Kompresör Atık Isı Geri Kazanımı",
+  href: "/kompresor-atik-isi-geri-kazanimi",
+  standard: "—",
+};
+
+const YILDIZ_UCGEN_YOL_VERME: ModuleEntry = {
+  id: "yildiz-ucgen-yol-verme",
+  title: "Yıldız-Üçgen Yol Verme (Akım ve Moment)",
+  href: "/yildiz-ucgen-yol-verme",
+  standard: "IEC 60034-12",
+};
+
+const HENDEK_BORU_TOPRAK_YUKU_MARSTON: ModuleEntry = {
+  id: "hendek-boru-toprak-yuku-marston",
+  title: "Hendekte Boru Üzerindeki Toprak Yükü (Marston)",
+  href: "/hendek-boru-toprak-yuku-marston",
+  standard: "—",
+};
+
+const GES_MEVSIMSEL_EGIM_ACISI: ModuleEntry = {
+  id: "ges-mevsimsel-egim-acisi",
+  title: "GES Panel Eğim Açısı (Gün/Mevsime Göre)",
+  href: "/ges-mevsimsel-egim-acisi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2632,6 +2667,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Sıhhi Tesisat",
         modules: [
+          TANK_BOSALMA_SURESI_TORRICELLI,
           GRAVITE_BORU_KAPASITESI_MANNING,
           PIS_SU_POMPA_KUYUSU_HACMI,
           FARK_BASINCLI_DEBIMETRE,
@@ -2735,6 +2771,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Basınçlı Hava",
         modules: [
+          KOMPRESOR_ATIK_ISI_GERI_KAZANIMI,
           BASINCLI_HAVA_KACAK_ORANI,
           HAVA_KOMPRESORU_SECIMI,
           BASINCLI_HAVA_BORU_CAPI,
@@ -2782,6 +2819,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          YILDIZ_UCGEN_YOL_VERME,
           KABLO_SONU_KISA_DEVRE_AKIMI,
           YUKSEK_VERIMLI_MOTOR_GERI_ODEME,
           KESICI_NOMINAL_AKIM_SECIMI,
@@ -2880,6 +2918,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          HENDEK_BORU_TOPRAK_YUKU_MARSTON,
           ZEMIN_EFEKTIF_GERILME,
           BINA_YAKLASIK_DOGAL_PERIYOT,
           DOSEME_OLU_YUKU_KATMANLAR,
@@ -2983,6 +3022,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          GES_MEVSIMSEL_EGIM_ACISI,
           ODA_YANKILANMA_SURESI_SABINE,
           EV_TASINABILIR_JENERATOR_GUCU,
           LED_LUMEN_WATT_ESDEGERI,

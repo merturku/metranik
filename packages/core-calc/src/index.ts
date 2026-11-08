@@ -1464,3 +1464,13 @@ export { odaYankilanmaSuresiSabine } from "./modules/oda-yankilanma-suresi-sabin
 export type { OdaYankilanmaSuresiSabineInput, OdaYankilanmaSuresiSabineOutput } from "./modules/oda-yankilanma-suresi-sabine";
 export { kabloSonuKisaDevreAkimi } from "./modules/kablo-sonu-kisa-devre-akimi";
 export type { KabloSonuKisaDevreAkimiInput, KabloSonuKisaDevreAkimiOutput } from "./modules/kablo-sonu-kisa-devre-akimi";
+export { tankBosalmaSuresiTorricelli } from "./modules/tank-bosalma-suresi-torricelli";
+export type { TankBosalmaSuresiTorricelliInput, TankBosalmaSuresiTorricelliOutput } from "./modules/tank-bosalma-suresi-torricelli";
+export { kompresorAtikIsiGeriKazanimi } from "./modules/kompresor-atik-isi-geri-kazanimi";
+export type { KompresorAtikIsiGeriKazanimiInput, KompresorAtikIsiGeriKazanimiOutput } from "./modules/kompresor-atik-isi-geri-kazanimi";
+export { yildizUcgenYolVerme } from "./modules/yildiz-ucgen-yol-verme";
+export type { YildizUcgenYolVermeInput, YildizUcgenYolVermeOutput } from "./modules/yildiz-ucgen-yol-verme";
+export { hendekBoruToprakYukuMarston } from "./modules/hendek-boru-toprak-yuku-marston";
+export type { HendekBoruToprakYukuMarstonInput, HendekBoruToprakYukuMarstonOutput } from "./modules/hendek-boru-toprak-yuku-marston";
+export { gesMevsimselEgimAcisi } from "./modules/ges-mevsimsel-egim-acisi";
+export type { GesMevsimselEgimAcisiInput, GesMevsimselEgimAcisiOutput } from "./modules/ges-mevsimsel-egim-acisi";

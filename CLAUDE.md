@@ -1444,6 +1444,18 @@ Testler el hesabı + geri hesap (Kablo sonu testinde ilk beklentim karekök hata
 
 **Toplam: 408 modül.**
 
+### 5cj. Tank boşalma/kompresör atık ısısı/Y-Δ yol verme/Marston hendek yükü/GES eğim açısı: 5 modül daha
+
+- **Tank Boşalma Süresi (Torricelli)** — Mekanik/Sıhhi. t = (A/(Cd·a))·√(2/g)·(√H − √h2); tam boşalma = 2V/Q0 testle doğrulanır.
+- **Kompresör Atık Isı Geri Kazanımı** — Mekanik/Basınçlı Hava. Q = P·yük·η_geri, yıllık yakıt ve mali tasarruf; geri kazanım oranı üreticiden (girdi).
+- **Yıldız-Üçgen Yol Verme** — Elektrik. I_Y = I_DOL/3, T_Y = T_DOL/3; yük momentiyle marj, verdict'li.
+- **Hendekte Boru Üzerindeki Toprak Yükü (Marston)** — İnşaat. Cd = (1 − e^(−2Kμ'H/B))/(2Kμ'); Kμ' tipik değerleri teyit notuyla.
+- **GES Panel Eğim Açısı** — Ev. β = |φ − δ|, Cooper deklinasyonu; güney yarımküre desteği.
+
+Testler el hesabı + limit durum kontrolü. tsc temiz (iCloud'da tsc artık ~dk'lar yerine hızlı çalışıyor).
+
+**Toplam: 413 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
