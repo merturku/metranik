@@ -2476,6 +2476,48 @@ const DOGALGAZ_FATURA_TAHMINI: ModuleEntry = {
   standard: "—",
 };
 
+const ARMATUR_ESDEGER_BORU_UZUNLUGU: ModuleEntry = {
+  id: "armatur-esdeger-boru-uzunlugu",
+  title: "Armatür Eşdeğer Boru Uzunluğu (K → Le)",
+  href: "/armatur-esdeger-boru-uzunlugu",
+  standard: "—",
+};
+
+const UC_YOLLU_VANA_KARISIM_DEBISI: ModuleEntry = {
+  id: "uc-yollu-vana-karisim-debisi",
+  title: "3 Yollu Karışım Vanası Debi Payı",
+  href: "/uc-yollu-vana-karisim-debisi",
+  standard: "—",
+};
+
+const YUKSEK_VERIMLI_MOTOR_GERI_ODEME: ModuleEntry = {
+  id: "yuksek-verimli-motor-geri-odeme",
+  title: "Yüksek Verimli Motor Enerji Tasarrufu ve Geri Ödeme",
+  href: "/yuksek-verimli-motor-geri-odeme",
+  standard: "IEC 60034-30-1",
+};
+
+const DOSEME_OLU_YUKU_KATMANLAR: ModuleEntry = {
+  id: "doseme-olu-yuku-katmanlar",
+  title: "Döşeme Ölü Yükü (Kaplama Katmanları)",
+  href: "/doseme-olu-yuku-katmanlar",
+  standard: "TS 498",
+};
+
+const BINA_YAKLASIK_DOGAL_PERIYOT: ModuleEntry = {
+  id: "bina-yaklasik-dogal-periyot",
+  title: "Bina Yaklaşık Doğal Periyodu (Ampirik)",
+  href: "/bina-yaklasik-dogal-periyot",
+  standard: "TBDY 2018",
+};
+
+const EV_TASINABILIR_JENERATOR_GUCU: ModuleEntry = {
+  id: "ev-tasinabilir-jenerator-gucu",
+  title: "Ev Taşınabilir Jeneratör Gücü (Kalkış Yüklü)",
+  href: "/ev-tasinabilir-jenerator-gucu",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2483,6 +2525,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          UC_YOLLU_VANA_KARISIM_DEBISI,
           BASINC_BIRIM_DONUSUMU,
           SOGUTMA_KAPASITESI_BIRIM_DONUSUMU,
           POMPA_PARALEL_CALISMA,
@@ -2672,6 +2715,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Montaj",
         modules: [
+          ARMATUR_ESDEGER_BORU_UZUNLUGU,
           BORU_SECIM_DN,
           BORU_YALITIM_METRAJI,
           BORU_BIRIM_AGIRLIGI,
@@ -2701,6 +2745,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          YUKSEK_VERIMLI_MOTOR_GERI_ODEME,
           KESICI_NOMINAL_AKIM_SECIMI,
           COK_YUKLU_HAT_GERILIM_DUSUMU,
           REAKTIF_ENERJI_ORANI_KONTROLU,
@@ -2797,6 +2842,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BINA_YAKLASIK_DOGAL_PERIYOT,
+          DOSEME_OLU_YUKU_KATMANLAR,
           DONATI_KESIT_ALANI,
           KIRIS_EGILME_DONATISI_GEREKLI,
           BETON_DAYANIM_GELISIMI,
@@ -2897,6 +2944,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_TASINABILIR_JENERATOR_GUCU,
           LED_LUMEN_WATT_ESDEGERI,
           SES_YALITIMI_KUTLE_YASASI,
           DOGALGAZ_FATURA_TAHMINI,

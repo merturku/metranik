@@ -1419,6 +1419,19 @@ Testler el hesabı + geri hesap. Not: iCloud'da ilk vitest/tsc çalıştırması
 
 **Toplam: 397 modül, core-calc 809 test, hepsi yeşil.**
 
+### 5ch. Eşdeğer boru uzunluğu/3 yollu vana/verimli motor/ölü yük/bina periyodu/ev jeneratörü: 6 modül daha
+
+- **Armatür Eşdeğer Boru Uzunluğu** — Mekanik/Montaj. Le = K·D/f; Boru Basınç Kaybı'na uzunluk girdisi.
+- **3 Yollu Karışım Vanası Debi Payı** — Mekanik/Isıtma-Soğutma. x = (Tm − T2)/(T1 − T2); koşul dışı null + uygunsuz.
+- **Yüksek Verimli Motor Geri Ödeme** — Elektrik. Pmil·yük·(1/η1 − 1/η2)·h, basit geri ödeme.
+- **Döşeme Ölü Yükü (Katmanlar)** — İnşaat. g = Σ tᵢγᵢ, TS 500 ve EN 1990 tasarım yükü.
+- **Bina Yaklaşık Doğal Periyodu** — İnşaat. T = Ct·H^¾ (Ct girdi, TBDY teyit notu).
+- **Ev Taşınabilir Jeneratör Gücü** — Ev. [ΣP + (k−1)·Pmotor]·(1+yedek), VA.
+
+Çalışma notu: sayfa/katalog/index kaydı için oturum scratchpad'inde üreteç betik kullanıldı (repoda değil).
+
+**Toplam: 403 modül, core-calc 824 test, hepsi yeşil.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
