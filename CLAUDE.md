@@ -1432,6 +1432,18 @@ Testler el hesabı + geri hesap. Not: iCloud'da ilk vitest/tsc çalıştırması
 
 **Toplam: 403 modül, core-calc 824 test, hepsi yeşil.**
 
+### 5ci. Kızdırma/aşırı soğutma/sistem eğrisi/efektif gerilme/Sabine/kablo sonu kısa devre: 5 modül daha
+
+- **Soğutma Çevrimi Kızdırma ve Aşırı Soğutma Kontrolü** — Mekanik/Test & Kontrol. SH = Temme − Tevap, SC = Tyoğ − Tsıvı; aralıklar girdi, ≤ 2 K sapma sınırda.
+- **Sistem Eğrisi: Debi Değişiminde Basınç Kaybı** — Mekanik/Havalandırma. ΔP2 = ΔP1(Q2/Q1)^n, güç oranı (Q2/Q1)^(n+1).
+- **Zemin Efektif Düşey Gerilme** — İnşaat. σv, u, σ' (Terzaghi); su tablası altında σ' = γ·zw + z_batık(γsat − γw) ile çapraz kontrol.
+- **Oda Yankılanma Süresi (Sabine)** — Ev. T60 = 0,161V/A, hedef için gereken ek yutum, verdict'li.
+- **Kablo Sonu Kısa Devre Akımı** — Elektrik. IEC 60909 empedans toplama (kaynak R/X + kablo R', X'); L = 0'da kaynak akımına iner.
+
+Testler el hesabı + geri hesap (Kablo sonu testinde ilk beklentim karekök hatalıydı, modül doğruydu; test düzeltildi).
+
+**Toplam: 408 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

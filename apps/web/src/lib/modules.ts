@@ -2518,6 +2518,41 @@ const EV_TASINABILIR_JENERATOR_GUCU: ModuleEntry = {
   standard: "—",
 };
 
+const SOGUTMA_KIZDIRMA_ASIRI_SOGUTMA_KONTROLU: ModuleEntry = {
+  id: "sogutma-kizdirma-asiri-sogutma-kontrolu",
+  title: "Soğutma Çevrimi Kızdırma ve Aşırı Soğutma Kontrolü",
+  href: "/sogutma-kizdirma-asiri-sogutma-kontrolu",
+  standard: "—",
+};
+
+const KANAL_SISTEM_EGRISI_BASINC_DEBI: ModuleEntry = {
+  id: "kanal-sistem-egrisi-basinc-debi",
+  title: "Sistem Eğrisi: Debi Değişiminde Basınç Kaybı",
+  href: "/kanal-sistem-egrisi-basinc-debi",
+  standard: "—",
+};
+
+const ZEMIN_EFEKTIF_GERILME: ModuleEntry = {
+  id: "zemin-efektif-gerilme",
+  title: "Zemin Efektif Düşey Gerilme (Yeraltı Suyu Dahil)",
+  href: "/zemin-efektif-gerilme",
+  standard: "—",
+};
+
+const ODA_YANKILANMA_SURESI_SABINE: ModuleEntry = {
+  id: "oda-yankilanma-suresi-sabine",
+  title: "Oda Yankılanma Süresi (Sabine)",
+  href: "/oda-yankilanma-suresi-sabine",
+  standard: "—",
+};
+
+const KABLO_SONU_KISA_DEVRE_AKIMI: ModuleEntry = {
+  id: "kablo-sonu-kisa-devre-akimi",
+  title: "Kablo Sonu Kısa Devre Akımı (Empedans Toplama)",
+  href: "/kablo-sonu-kisa-devre-akimi",
+  standard: "IEC 60909-0",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2631,6 +2666,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          KANAL_SISTEM_EGRISI_BASINC_DEBI,
           PITOT_TUPU_HIZ_DEBI,
           HAVA_DEBISI_BIRIM_DONUSUMU,
           ISI_GERI_KAZANIM_YILLIK_TASARRUF,
@@ -2730,6 +2766,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          SOGUTMA_KIZDIRMA_ASIRI_SOGUTMA_KONTROLU,
           HIDROSTATIK_BASINC_TESTI,
           HAVALANDIRMA_DEBI_KONTROLU,
           YANGIN_POMPASI_PERFORMANS_KONTROLU,
@@ -2745,6 +2782,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_SONU_KISA_DEVRE_AKIMI,
           YUKSEK_VERIMLI_MOTOR_GERI_ODEME,
           KESICI_NOMINAL_AKIM_SECIMI,
           COK_YUKLU_HAT_GERILIM_DUSUMU,
@@ -2842,6 +2880,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ZEMIN_EFEKTIF_GERILME,
           BINA_YAKLASIK_DOGAL_PERIYOT,
           DOSEME_OLU_YUKU_KATMANLAR,
           DONATI_KESIT_ALANI,
@@ -2944,6 +2983,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          ODA_YANKILANMA_SURESI_SABINE,
           EV_TASINABILIR_JENERATOR_GUCU,
           LED_LUMEN_WATT_ESDEGERI,
           SES_YALITIMI_KUTLE_YASASI,
