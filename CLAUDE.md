@@ -1466,6 +1466,19 @@ Testler el hesabı + limit durum kontrolü. tsc temiz (iCloud'da tsc artık ~dk'
 
 **Toplam: 418 modül.**
 
+### 5cl. Boru donma süresi/pompa manometrik yükseklik/darbe kısa devre akımı/Atterberg/döşeme–kiriş yükü/çatı panel sayısı: 6 modül daha
+
+- **Boru İçi Suyun Donma Süresi** — Mekanik/Sıhhi. τ = ρcA/U', t = τ ln((Ti−Te)/(Tf−Te)); yalnız 0 °C'ye ulaşma süresi (gizli ısı hariç).
+- **Pompa Manometrik Yüksekliği (Saha Ölçümü)** — Mekanik/Test & Kontrol. H = Δp/ρg + Δz + Δ(v²/2g).
+- **Darbe Kısa Devre Akımı ip** — Elektrik. κ = 1,02 + 0,98e^(−3R/X), ip = κ√2·Ik″ (IEC 60909-0).
+- **Zemin Atterberg Plastisite/Kıvam İndeksi** — İnşaat. PI, LI, CI, Burmister plastisite derecesi, verdict'li.
+- **Döşemeden Kirişe Yük Aktarımı** — İnşaat. Moment eşdeğeri kısa q·lx/3, uzun (q·lx/2)(1 − m²/3); kesme eşdeğerleriyle toplam yük dengesi testle doğrulanır.
+- **Çatıya Sığan GES Panel Sayısı** — Ev. ⌊A·kullanım/(boy·en)⌋, kWp.
+
+Testte iki beklenti hatası düzeltildi (döşeme–kiriş boyları ters yazılmıştı); modül kodu doğruydu.
+
+**Toplam: 424 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

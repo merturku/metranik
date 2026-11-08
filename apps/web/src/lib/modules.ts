@@ -2623,6 +2623,48 @@ const EGIM_BIRIM_DONUSUMU: ModuleEntry = {
   standard: "—",
 };
 
+const BORU_DONMA_SURESI: ModuleEntry = {
+  id: "boru-donma-suresi",
+  title: "Boru İçi Suyun Donma Süresi (Isıl Zaman Sabiti)",
+  href: "/boru-donma-suresi",
+  standard: "—",
+};
+
+const POMPA_MANOMETRIK_YUKSEKLIK_OLCUMU: ModuleEntry = {
+  id: "pompa-manometrik-yukseklik-olcumu",
+  title: "Pompa Manometrik Yüksekliği (Saha Ölçümü)",
+  href: "/pompa-manometrik-yukseklik-olcumu",
+  standard: "ISO 9906",
+};
+
+const DARBE_KISA_DEVRE_AKIMI_IP: ModuleEntry = {
+  id: "darbe-kisa-devre-akimi-ip",
+  title: "Darbe (Tepe) Kısa Devre Akımı ip (κ Faktörü)",
+  href: "/darbe-kisa-devre-akimi-ip",
+  standard: "IEC 60909-0",
+};
+
+const ZEMIN_ATTERBERG_KIVAM_INDEKSI: ModuleEntry = {
+  id: "zemin-atterberg-kivam-indeksi",
+  title: "Zemin Plastisite ve Kıvam İndeksi (Atterberg)",
+  href: "/zemin-atterberg-kivam-indeksi",
+  standard: "—",
+};
+
+const DOSEME_KIRIS_YUK_AKTARIMI: ModuleEntry = {
+  id: "doseme-kiris-yuk-aktarimi",
+  title: "Döşemeden Kirişe Yük Aktarımı (Eşdeğer Yayılı)",
+  href: "/doseme-kiris-yuk-aktarimi",
+  standard: "—",
+};
+
+const EV_CATI_PANEL_SAYISI: ModuleEntry = {
+  id: "ev-cati-panel-sayisi",
+  title: "Çatıya Sığan GES Panel Sayısı ve Kurulu Güç",
+  href: "/ev-cati-panel-sayisi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2702,6 +2744,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Sıhhi Tesisat",
         modules: [
+          BORU_DONMA_SURESI,
           TANK_BOSALMA_SURESI_TORRICELLI,
           GRAVITE_BORU_KAPASITESI_MANNING,
           PIS_SU_POMPA_KUYUSU_HACMI,
@@ -2839,6 +2882,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          POMPA_MANOMETRIK_YUKSEKLIK_OLCUMU,
           SOGUTMA_KIZDIRMA_ASIRI_SOGUTMA_KONTROLU,
           HIDROSTATIK_BASINC_TESTI,
           HAVALANDIRMA_DEBI_KONTROLU,
@@ -2855,6 +2899,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          DARBE_KISA_DEVRE_AKIMI_IP,
           KABLO_JOULE_KAYBI_YILLIK_MALIYET,
           YILDIZ_UCGEN_YOL_VERME,
           KABLO_SONU_KISA_DEVRE_AKIMI,
@@ -2955,6 +3000,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          DOSEME_KIRIS_YUK_AKTARIMI,
+          ZEMIN_ATTERBERG_KIVAM_INDEKSI,
           KOLON_ETRIYE_SARILMA_DONATISI,
           EULER_KRITIK_BURKULMA_YUKU,
           HENDEK_BORU_TOPRAK_YUKU_MARSTON,
@@ -3061,6 +3108,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_CATI_PANEL_SAYISI,
           EGIM_BIRIM_DONUSUMU,
           GES_MEVSIMSEL_EGIM_ACISI,
           ODA_YANKILANMA_SURESI_SABINE,
