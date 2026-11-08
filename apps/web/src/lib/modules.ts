@@ -2441,6 +2441,41 @@ const SES_YALITIMI_KUTLE_YASASI: ModuleEntry = {
   standard: "—",
 };
 
+const BETON_DAYANIM_GELISIMI: ModuleEntry = {
+  id: "beton-dayanim-gelisimi",
+  title: "Beton Dayanım Gelişimi (Yaşa Göre)",
+  href: "/beton-dayanim-gelisimi",
+  standard: "EN 1992-1-1",
+};
+
+const PITOT_TUPU_HIZ_DEBI: ModuleEntry = {
+  id: "pitot-tupu-hiz-debi",
+  title: "Pitot Tüpü ile Hava Hızı ve Debisi",
+  href: "/pitot-tupu-hiz-debi",
+  standard: "ISO 3966",
+};
+
+const REAKTIF_ENERJI_ORANI_KONTROLU: ModuleEntry = {
+  id: "reaktif-enerji-orani-kontrolu",
+  title: "Reaktif Enerji Oranı Kontrolü (Endüktif / Kapasitif)",
+  href: "/reaktif-enerji-orani-kontrolu",
+  standard: "—",
+};
+
+const ISTINAT_PASIF_TOPRAK_BASINCI: ModuleEntry = {
+  id: "istinat-pasif-toprak-basinci",
+  title: "Pasif Toprak Basıncı (Rankine)",
+  href: "/istinat-pasif-toprak-basinci",
+  standard: "—",
+};
+
+const DOGALGAZ_FATURA_TAHMINI: ModuleEntry = {
+  id: "dogalgaz-fatura-tahmini",
+  title: "Doğalgaz Fatura Tahmini (m³ → kWh)",
+  href: "/dogalgaz-fatura-tahmini",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2553,6 +2588,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          PITOT_TUPU_HIZ_DEBI,
           HAVA_DEBISI_BIRIM_DONUSUMU,
           ISI_GERI_KAZANIM_YILLIK_TASARRUF,
           KAYIS_KASNAK_DEVIR_HESABI,
@@ -2667,6 +2703,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         modules: [
           KESICI_NOMINAL_AKIM_SECIMI,
           COK_YUKLU_HAT_GERILIM_DUSUMU,
+          REAKTIF_ENERJI_ORANI_KONTROLU,
           KABLO_STANDART_KESIT_SECIMI,
           MOTOR_KALKIS_SURESI,
           AKU_PEUKERT_BOSALMA_SURESI,
@@ -2762,7 +2799,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         modules: [
           DONATI_KESIT_ALANI,
           KIRIS_EGILME_DONATISI_GEREKLI,
+          BETON_DAYANIM_GELISIMI,
           ZEMIN_GERILME_ARTISI,
+          ISTINAT_PASIF_TOPRAK_BASINCI,
           BETON_KARISIM_MUTLAK_HACIM,
           ZEMIN_FAZ_ILISKILERI,
           TAZE_BETON_SICAKLIGI,
@@ -2860,6 +2899,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         modules: [
           LED_LUMEN_WATT_ESDEGERI,
           SES_YALITIMI_KUTLE_YASASI,
+          DOGALGAZ_FATURA_TAHMINI,
           ENERJI_BIRIM_DONUSUMU,
           EV_BEKLEME_TUKETIMI_MALIYETI,
           ODA_SOGUMA_SURESI,

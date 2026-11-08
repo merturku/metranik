@@ -1405,9 +1405,19 @@ Kullanıcıdan gereken: Supabase proje URL + anon key (Vercel env + yerel `.env.
 - **Zeminde Gerilme Artışı** — İnşaat. 2:1 yayılma ve Boussinesq noktasal yük; konsolidasyon/elastik oturma modüllerinin gerilim girdisi.
 - **Duvar Hava Ses Yalıtımı (Kütle Yasası)** — Ev. TL = 20log(m·f) − 47; hedef için gereken kütle; kuramsal değer (koinsidans/kaçak notta).
 
-Testler el hesabı + geri hesap/özel durum kontrolü (yayımlanmış çözümlü örnek değil). Sıradaki aday: beton dayanım gelişimi (EN 1992-1-1 βcc(t)).
+Testler el hesabı + geri hesap/özel durum kontrolü (yayımlanmış çözümlü örnek değil). **Toplam: 392 modül, core-calc 795 test, hepsi yeşil.**
 
-**Toplam: 392 modül, core-calc 795 test, hepsi yeşil.**
+### 5cg. Beton dayanım gelişimi/Pitot/reaktif oran/pasif toprak basıncı/doğalgaz faturası: 5 modül daha
+
+- **Beton Dayanım Gelişimi** — İnşaat. EN 1992-1-1 §3.1.2 βcc(t) = exp{s[1 − √(28/t)]}; hedef dayanım için gerekli gün (geri hesapla doğrulanır).
+- **Pitot Tüpü Hız ve Debi** — Mekanik/Havalandırma. v = Cp√(2Δp/ρ), ρ ideal gaz; Mach > 0,3 uyarısı.
+- **Reaktif Enerji Oranı Kontrolü** — Elektrik. Endüktif/kapasitif kVArh/kWh oranı, sınırlar girdi (EPDK, teyit notu), verdict'li.
+- **Pasif Toprak Basıncı (Rankine)** — İnşaat. Kp = tan²(45+φ/2), Pp = ½γH²Kp + 2cH√Kp; aktif basınç modülünün karşılığı.
+- **Doğalgaz Fatura Tahmini** — Ev. m³ → kWh (Hu girdi) × fiyat + sabit bedel + vergi.
+
+Testler el hesabı + geri hesap. Not: iCloud'da ilk vitest/tsc çalıştırması çok yavaş (dakikalar), sonraki hedefli çalıştırmalar < 1 sn; parti başına yalnız yeni testleri çalıştır, tam paket/tsc'yi ara sıra.
+
+**Toplam: 397 modül, core-calc 809 test, hepsi yeşil.**
 
 ---
 
