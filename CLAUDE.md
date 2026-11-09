@@ -1599,6 +1599,15 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 480 modül.**
 
+### 5cy. Fan işletme noktası/Y-Δ direnç dönüşümü/bağıl sıkılık/yüksek yatak toprağı: 4 modül daha
+
+- **Fan İşletme Noktası** — Mekanik/Havalandırma. Fan eğrisi (A+BQ+CQ²) ile sistem eğrisi kΔQ² kesişimi; her iki eğrinin sağlandığı testle doğrulanır, kesişim yoksa `null`.
+- **Yıldız–Üçgen Direnç Dönüşümü** — Elektrik. Kennelly; geri dönüşüm orijinal değerleri verir.
+- **Zemin Bağıl Sıkılık (Dr)** — İnşaat. e = Gs·γw/γd − 1, Dr = (emaks−e)/(emaks−emin), sınıf (ASTM D4254/D4253).
+- **Yüksek Yatak Toprak Hacmi** — Ev. V·(1+oturma)/torba hacmi.
+
+**Toplam: 484 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

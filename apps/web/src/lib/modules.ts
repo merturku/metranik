@@ -3057,6 +3057,34 @@ const EV_ISI_DEPOLAMA_KAPASITESI: ModuleEntry = {
   standard: "—",
 };
 
+const FAN_ISLETME_NOKTASI: ModuleEntry = {
+  id: "fan-isletme-noktasi",
+  title: "Fan İşletme Noktası (Fan–Sistem Eğrisi)",
+  href: "/fan-isletme-noktasi",
+  standard: "—",
+};
+
+const YILDIZ_UCGEN_DIRENC_DONUSUMU: ModuleEntry = {
+  id: "yildiz-ucgen-direnc-donusumu",
+  title: "Yıldız–Üçgen Direnç Dönüşümü",
+  href: "/yildiz-ucgen-direnc-donusumu",
+  standard: "—",
+};
+
+const ZEMIN_BAGIL_SIKILIK: ModuleEntry = {
+  id: "zemin-bagil-sikilik",
+  title: "Zemin Bağıl Sıkılık (Dr) ve Sınıfı",
+  href: "/zemin-bagil-sikilik",
+  standard: "ASTM D4254",
+};
+
+const EV_YUKSEK_YATAK_TOPRAK_HACMI: ModuleEntry = {
+  id: "ev-yuksek-yatak-toprak-hacmi",
+  title: "Yüksek Yatak / Saksı Toprak Hacmi ve Torba Sayısı",
+  href: "/ev-yuksek-yatak-toprak-hacmi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3179,6 +3207,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          FAN_ISLETME_NOKTASI,
           KANAL_YEREL_KAYIP_BASINC,
           HAVA_ISITICI_BATARYA_SU_DEBISI,
           FAN_TOPLAM_STATIK_DINAMIK_BASINC,
@@ -3308,6 +3337,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          YILDIZ_UCGEN_DIRENC_DONUSUMU,
           KABLO_SARJ_AKIMI,
           RLC_SERI_EMPEDANS_REZONANS,
           STANDART_MOTOR_GUCU_SECIMI,
@@ -3422,6 +3452,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ZEMIN_BAGIL_SIKILIK,
           FLOTASYON_KALDIRMA_GUVENLIGI,
           ENGELLENMIS_ISIL_GERILME,
           MOHR_CEMBERI_ASAL_GERILMELER,
@@ -3543,6 +3574,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_YUKSEK_YATAK_TOPRAK_HACMI,
           EV_ISI_DEPOLAMA_KAPASITESI,
           EV_LAMINAT_PARKE_MIKTARI,
           EV_KONUT_KREDISI_TAKSIT,
