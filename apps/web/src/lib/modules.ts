@@ -2777,6 +2777,41 @@ const EV_ASPIRATOR_DEBISI: ModuleEntry = {
   standard: "—",
 };
 
+const SU_YOGUNLUGU_ISIL_GENLESME_HACMI: ModuleEntry = {
+  id: "su-yogunlugu-isil-genlesme-hacmi",
+  title: "Suyun Yoğunluğu ve Isıl Genleşme Hacmi",
+  href: "/su-yogunlugu-isil-genlesme-hacmi",
+  standard: "—",
+};
+
+const REZISTANS_ISITICI_DIRENC_AKIM: ModuleEntry = {
+  id: "rezistans-isitici-direnc-akim",
+  title: "Rezistanslı Isıtıcı Eleman Direnci ve Akım (Y/Δ)",
+  href: "/rezistans-isitici-direnc-akim",
+  standard: "—",
+};
+
+const BILESIK_KESIT_T_I_OZELLIKLERI: ModuleEntry = {
+  id: "bilesik-kesit-t-i-ozellikleri",
+  title: "Bileşik Kesit (T / I) Ağırlık Merkezi ve Atalet Momenti",
+  href: "/bilesik-kesit-t-i-ozellikleri",
+  standard: "—",
+};
+
+const EV_CAMASIR_MAKINESI_YILLIK_MALIYET: ModuleEntry = {
+  id: "ev-camasir-makinesi-yillik-maliyet",
+  title: "Çamaşır / Bulaşık Makinesi Yıllık İşletme Maliyeti",
+  href: "/ev-camasir-makinesi-yillik-maliyet",
+  standard: "—",
+};
+
+const SU_DOYMA_SICAKLIGI_BASINCI_ANTOINE: ModuleEntry = {
+  id: "su-doyma-sicakligi-basinci-antoine",
+  title: "Su Doyma Sıcaklığı – Basıncı (Antoine)",
+  href: "/su-doyma-sicakligi-basinci-antoine",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2784,6 +2819,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          SU_YOGUNLUGU_ISIL_GENLESME_HACMI,
           KANAT_FIN_VERIMI,
           UC_YOLLU_VANA_KARISIM_DEBISI,
           BASINC_BIRIM_DONUSUMU,
@@ -2952,6 +2988,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Buhar",
         modules: [
+          SU_DOYMA_SICAKLIGI_BASINCI_ANTOINE,
           KONDENS_GERI_KAZANIM_TASARRUFU,
           BUHAR_TUKETIMI_ISI_SERPANTINI,
           BUHAR_HAT_CAPI,
@@ -3016,6 +3053,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          REZISTANS_ISITICI_DIRENC_AKIM,
           MOTOR_MOMENT_GUC_DONUSUMU,
           GUC_FAKTORU_IYILESTIRME_KAYIP_AZALMASI,
           AYDINLATMA_BAKIM_FAKTORU,
@@ -3120,6 +3158,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BILESIK_KESIT_T_I_OZELLIKLERI,
           AGREGA_NEM_DUZELTMESI,
           ISTINAT_COULOMB_AKTIF_BASINC,
           BETON_ADYABATIK_SICAKLIK_ARTISI,
@@ -3232,6 +3271,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_CAMASIR_MAKINESI_YILLIK_MALIYET,
           EV_ASPIRATOR_DEBISI,
           EV_DAMLAMA_KACAGI_SU_KAYBI,
           ZEMINE_OTURAN_DOSEME_U_DEGERI,

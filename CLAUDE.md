@@ -1512,6 +1512,16 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 440 modül.**
 
+### 5cp. Su yoğunluğu/rezistans Y-Δ/bileşik kesit/çamaşır makinesi maliyeti/Antoine doyma: 5 modül daha
+
+- **Suyun Yoğunluğu ve Isıl Genleşme Hacmi** — Mekanik/Isıtma-Soğutma. Tanaka (2001); 20 °C = 998,21, 80 °C = 971,8 kg/m³ tablo değerleriyle uyumlu.
+- **Rezistanslı Isıtıcı Eleman Direnci (Y/Δ)** — Elektrik. 9 kW/400 V: Y = 17,78 Ω, Δ = 53,33 Ω (3 kat), hat akımı aynı.
+- **Bileşik Kesit (T / I)** — İnşaat. A, ȳ, I, W; dikdörtgene indirgenme testi.
+- **Çamaşır/Bulaşık Makinesi Yıllık Maliyeti** — Ev.
+- **Su Doyma Sıcaklığı–Basıncı (Antoine)** — Mekanik/Buhar. İki aralıklı katsayılar; 100 °C → 101,3 kPa; T→P→T gidiş-dönüş testi.
+
+**Toplam: 445 modül, core-calc 932 test (tam paket 14 sn).**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
