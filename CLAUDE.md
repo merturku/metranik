@@ -1590,6 +1590,15 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 476 modül.**
 
+### 5cx. Hidrostatik test ek suyu/kablo şarj akımı/flotasyon güvenliği/ısı depolama: 4 modül daha
+
+- **Hidrostatik Test Ek Su Hacmi** — Mekanik/Montaj. ΔV = V·ΔP(1/Kw + D/(Et)), EN 805 izin payı 1,2 (teyit notuyla).
+- **Kablo Kapasitif Şarj Akımı** — Elektrik. Ic = ωCU0·L, Qc = ωCLU².
+- **Su Kaldırma Kuvveti (Flotasyon) Güvenliği** — İnşaat. FS = W/(γw·hw·A), verdict'li.
+- **Sıcak Su Deposu Isı Depolama Kapasitesi** — Ev. E = Vρcp ΔT/3600, şarj süresi.
+
+**Toplam: 480 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

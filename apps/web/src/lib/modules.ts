@@ -3029,6 +3029,34 @@ const EV_LAMINAT_PARKE_MIKTARI: ModuleEntry = {
   standard: "—",
 };
 
+const HIDROSTATIK_TEST_EK_SU_HACMI: ModuleEntry = {
+  id: "hidrostatik-test-ek-su-hacmi",
+  title: "Hidrostatik Test Ek Su Hacmi",
+  href: "/hidrostatik-test-ek-su-hacmi",
+  standard: "EN 805",
+};
+
+const KABLO_SARJ_AKIMI: ModuleEntry = {
+  id: "kablo-sarj-akimi",
+  title: "Kablo Kapasitif Şarj Akımı",
+  href: "/kablo-sarj-akimi",
+  standard: "—",
+};
+
+const FLOTASYON_KALDIRMA_GUVENLIGI: ModuleEntry = {
+  id: "flotasyon-kaldirma-guvenligi",
+  title: "Su Kaldırma Kuvveti (Flotasyon) Güvenliği",
+  href: "/flotasyon-kaldirma-guvenligi",
+  standard: "EN 1997-1",
+};
+
+const EV_ISI_DEPOLAMA_KAPASITESI: ModuleEntry = {
+  id: "ev-isi-depolama-kapasitesi",
+  title: "Sıcak Su Deposu Isı Depolama Kapasitesi",
+  href: "/ev-isi-depolama-kapasitesi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3244,6 +3272,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Montaj",
         modules: [
+          HIDROSTATIK_TEST_EK_SU_HACMI,
           KRITIK_YALITIM_YARICAPI,
           ARMATUR_ESDEGER_BORU_UZUNLUGU,
           BORU_SECIM_DN,
@@ -3279,6 +3308,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_SARJ_AKIMI,
           RLC_SERI_EMPEDANS_REZONANS,
           STANDART_MOTOR_GUCU_SECIMI,
           ARON_IKI_WATTMETRE_YONTEMI,
@@ -3392,6 +3422,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          FLOTASYON_KALDIRMA_GUVENLIGI,
           ENGELLENMIS_ISIL_GERILME,
           MOHR_CEMBERI_ASAL_GERILMELER,
           ZEMIN_KAYMA_DALGASI_RIJITLIK_SINIFI,
@@ -3512,6 +3543,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_ISI_DEPOLAMA_KAPASITESI,
           EV_LAMINAT_PARKE_MIKTARI,
           EV_KONUT_KREDISI_TAKSIT,
           EV_CIT_DIREK_SAYISI,
