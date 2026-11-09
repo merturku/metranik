@@ -1552,6 +1552,17 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 460 modül.**
 
+### 5ct. Kritik yalıtım yarıçapı/yük faktörü/Darcy sızma/yatırım NPV: 4 modül daha
+
+- **Kritik Yalıtım Yarıçapı (Silindirik)** — Mekanik/Montaj. r_kr = λ/h; r1 < r_kr iken yalıtımın kaybı artırdığı durum ve eşitlik yarıçapı (ikiye bölme; r_eq'da kayıp = çıplak kayıp testle doğrulanır).
+- **Yük Faktörü ve Talep Analizi** — Elektrik. LF = E/(P_pik·T), kullanım faktörü, talep bedeli; LF > 1 uygunsuz.
+- **Zeminde Darcy Sızma Debisi** — İnşaat. Q = k·i·A, sızma hızı, kritik gradyan ve kaynama güvenliği FS (eşik şartnameden teyit).
+- **Yatırım NPV ve İç Verim** — Ev. Annüite NPV, iskontolu geri ödeme, IRR (NPV(IRR) = 0 testle doğrulanır).
+
+**Süreç notu:** Önceki partide (460) `tsc` hatası zincirde `grep | head` yüzünden commit'i durdurmadı ve kırık bir commit (3dad4bd) push edildi; bir sonraki commit ile düzeltildi. Artık oturum scratchpad'indeki `check.sh` (tsc çıktısı boş değilse non-zero) `&&` zincirine bağlı. **Her commit öncesi tsc çıktısının gerçekten boş olduğunu kontrol et.**
+
+**Toplam: 464 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

@@ -2917,6 +2917,34 @@ const YATAY_SILINDIRIK_TANK_KISMI_HACIM: ModuleEntry = {
   standard: "—",
 };
 
+const KRITIK_YALITIM_YARICAPI: ModuleEntry = {
+  id: "kritik-yalitim-yaricapi",
+  title: "Kritik Yalıtım Yarıçapı (Silindirik)",
+  href: "/kritik-yalitim-yaricapi",
+  standard: "—",
+};
+
+const YUK_FAKTORU_TALEP_ANALIZI: ModuleEntry = {
+  id: "yuk-faktoru-talep-analizi",
+  title: "Yük Faktörü ve Talep Analizi",
+  href: "/yuk-faktoru-talep-analizi",
+  standard: "—",
+};
+
+const ZEMIN_DARCY_SIZMA_DEBISI: ModuleEntry = {
+  id: "zemin-darcy-sizma-debisi",
+  title: "Zeminde Darcy Sızma Debisi ve Kaynama Güvenliği",
+  href: "/zemin-darcy-sizma-debisi",
+  standard: "—",
+};
+
+const EV_YATIRIM_NPV_GERI_ODEME: ModuleEntry = {
+  id: "ev-yatirim-npv-geri-odeme",
+  title: "Yatırım Net Bugünkü Değer (NPV) ve İç Verim",
+  href: "/ev-yatirim-npv-geri-odeme",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3130,6 +3158,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Montaj",
         modules: [
+          KRITIK_YALITIM_YARICAPI,
           ARMATUR_ESDEGER_BORU_UZUNLUGU,
           BORU_SECIM_DN,
           BORU_YALITIM_METRAJI,
@@ -3164,6 +3193,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          YUK_FAKTORU_TALEP_ANALIZI,
           AKU_GRUBU_SERI_PARALEL,
           SAYAC_CARPANI_TUKETIM,
           GES_PERFORMANS_ORANI_PR,
@@ -3272,6 +3302,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ZEMIN_DARCY_SIZMA_DEBISI,
           KOSE_KAYNAGI_METAL_AGIRLIGI,
           KAT_YANAL_RIJITLIGI_OTELENME,
           SIKISMA_YUZDESI_KUM_KONISI,
@@ -3388,6 +3419,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_YATIRIM_NPV_GERI_ODEME,
           EV_HAVUZ_HACMI_DOLUM_SURESI,
           EV_ODA_ISINMA_SURESI_ELEKTRIKLI,
           MUTLAK_NEM_BAGIL_NEM_DONUSUMU,
