@@ -2945,6 +2945,34 @@ const EV_YATIRIM_NPV_GERI_ODEME: ModuleEntry = {
   standard: "—",
 };
 
+const POMPA_SERI_CALISMA: ModuleEntry = {
+  id: "pompa-seri-calisma",
+  title: "Pompaların Seri Çalışma Debisi ve Yüksekliği",
+  href: "/pompa-seri-calisma",
+  standard: "—",
+};
+
+const PANO_HAVALANDIRMA_FANI_DEBISI: ModuleEntry = {
+  id: "pano-havalandirma-fani-debisi",
+  title: "Pano Havalandırma Fanı Debisi",
+  href: "/pano-havalandirma-fani-debisi",
+  standard: "—",
+};
+
+const ZEMIN_KAYMA_DALGASI_RIJITLIK_SINIFI: ModuleEntry = {
+  id: "zemin-kayma-dalgasi-rijitlik-sinifi",
+  title: "Kayma Dalgası Hızından Zemin Rijitliği ve Zemin Sınıfı",
+  href: "/zemin-kayma-dalgasi-rijitlik-sinifi",
+  standard: "TBDY 2018",
+};
+
+const EV_CIT_DIREK_SAYISI: ModuleEntry = {
+  id: "ev-cit-direk-sayisi",
+  title: "Çit / Korkuluk Direk ve Panel Sayısı",
+  href: "/ev-cit-direk-sayisi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2952,6 +2980,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          POMPA_SERI_CALISMA,
           YATAY_SILINDIRIK_TANK_KISMI_HACIM,
           YOGUSMALI_KAZAN_YOGUSMA_SUYU,
           ESANJOR_NTU_KARSIT_AKIS,
@@ -3193,6 +3222,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          PANO_HAVALANDIRMA_FANI_DEBISI,
           YUK_FAKTORU_TALEP_ANALIZI,
           AKU_GRUBU_SERI_PARALEL,
           SAYAC_CARPANI_TUKETIM,
@@ -3302,6 +3332,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ZEMIN_KAYMA_DALGASI_RIJITLIK_SINIFI,
           ZEMIN_DARCY_SIZMA_DEBISI,
           KOSE_KAYNAGI_METAL_AGIRLIGI,
           KAT_YANAL_RIJITLIGI_OTELENME,
@@ -3419,6 +3450,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_CIT_DIREK_SAYISI,
           EV_YATIRIM_NPV_GERI_ODEME,
           EV_HAVUZ_HACMI_DOLUM_SURESI,
           EV_ODA_ISINMA_SURESI_ELEKTRIKLI,

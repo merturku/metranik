@@ -1563,6 +1563,15 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 464 modül.**
 
+### 5cu. Pompa seri çalışma/pano fanı/Vs zemin rijitliği/çit direk sayısı: 4 modül daha
+
+- **Pompaların Seri Çalışma Debisi** — Mekanik/Isıtma-Soğutma. (n·C − k)Q² + nB·Q + (nA − Hst) = 0; paralel çalışma modülünün tamamlayıcısı; eğri doğrulama testi.
+- **Pano Havalandırma Fanı Debisi** — Elektrik. V̇ = P/(1206·ΔT)·f; 500 W, ΔT 10 K → 149,3 m³/h.
+- **Kayma Dalgası Hızından Zemin Rijitliği ve Sınıfı** — İnşaat. G = ρVs², E = 2G(1+ν), Vp, Vs30'dan ZA–ZE (TBDY eşikleri teyit notu).
+- **Çit/Korkuluk Direk ve Panel Sayısı** — Ev. Kapalı/açık hat, kapı kolonları, köşeler.
+
+**Toplam: 468 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
