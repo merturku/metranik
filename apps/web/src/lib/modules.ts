@@ -2973,6 +2973,34 @@ const EV_CIT_DIREK_SAYISI: ModuleEntry = {
   standard: "—",
 };
 
+const ARON_IKI_WATTMETRE_YONTEMI: ModuleEntry = {
+  id: "aron-iki-wattmetre-yontemi",
+  title: "İki Wattmetre (Aron) Yöntemiyle Üç Faz Güç Ölçümü",
+  href: "/aron-iki-wattmetre-yontemi",
+  standard: "—",
+};
+
+const MOHR_CEMBERI_ASAL_GERILMELER: ModuleEntry = {
+  id: "mohr-cemberi-asal-gerilmeler",
+  title: "Mohr Çemberi: Asal Gerilmeler ve Maksimum Kayma",
+  href: "/mohr-cemberi-asal-gerilmeler",
+  standard: "—",
+};
+
+const STANDART_MOTOR_GUCU_SECIMI: ModuleEntry = {
+  id: "standart-motor-gucu-secimi",
+  title: "Standart Motor Gücü Seçimi",
+  href: "/standart-motor-gucu-secimi",
+  standard: "IEC 60072-1",
+};
+
+const EV_KONUT_KREDISI_TAKSIT: ModuleEntry = {
+  id: "ev-konut-kredisi-taksit",
+  title: "Kredi Aylık Taksit ve Toplam Faiz",
+  href: "/ev-konut-kredisi-taksit",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3222,6 +3250,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          STANDART_MOTOR_GUCU_SECIMI,
+          ARON_IKI_WATTMETRE_YONTEMI,
           PANO_HAVALANDIRMA_FANI_DEBISI,
           YUK_FAKTORU_TALEP_ANALIZI,
           AKU_GRUBU_SERI_PARALEL,
@@ -3332,6 +3362,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          MOHR_CEMBERI_ASAL_GERILMELER,
           ZEMIN_KAYMA_DALGASI_RIJITLIK_SINIFI,
           ZEMIN_DARCY_SIZMA_DEBISI,
           KOSE_KAYNAGI_METAL_AGIRLIGI,
@@ -3450,6 +3481,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_KONUT_KREDISI_TAKSIT,
           EV_CIT_DIREK_SAYISI,
           EV_YATIRIM_NPV_GERI_ODEME,
           EV_HAVUZ_HACMI_DOLUM_SURESI,

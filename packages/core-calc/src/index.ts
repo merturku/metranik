@@ -1584,3 +1584,11 @@ export { zeminKaymaDalgasiRijitlikSinifi } from "./modules/zemin-kayma-dalgasi-r
 export type { ZeminKaymaDalgasiRijitlikSinifiInput, ZeminKaymaDalgasiRijitlikSinifiOutput } from "./modules/zemin-kayma-dalgasi-rijitlik-sinifi";
 export { evCitDirekSayisi } from "./modules/ev-cit-direk-sayisi";
 export type { EvCitDirekSayisiInput, EvCitDirekSayisiOutput } from "./modules/ev-cit-direk-sayisi";
+export { aronIkiWattmetreYontemi } from "./modules/aron-iki-wattmetre-yontemi";
+export type { AronIkiWattmetreYontemiInput, AronIkiWattmetreYontemiOutput } from "./modules/aron-iki-wattmetre-yontemi";
+export { mohrCemberiAsalGerilmeler } from "./modules/mohr-cemberi-asal-gerilmeler";
+export type { MohrCemberiAsalGerilmelerInput, MohrCemberiAsalGerilmelerOutput } from "./modules/mohr-cemberi-asal-gerilmeler";
+export { standartMotorGucuSecimi } from "./modules/standart-motor-gucu-secimi";
+export type { StandartMotorGucuSecimiInput, StandartMotorGucuSecimiOutput } from "./modules/standart-motor-gucu-secimi";
+export { evKonutKredisiTaksit } from "./modules/ev-konut-kredisi-taksit";
+export type { EvKonutKredisiTaksitInput, EvKonutKredisiTaksitOutput } from "./modules/ev-konut-kredisi-taksit";

@@ -1572,6 +1572,15 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 468 modül.**
 
+### 5cv. Aron wattmetre/Mohr çemberi/standart motor gücü/kredi taksiti: 4 modül daha
+
+- **İki Wattmetre (Aron) Yöntemi** — Elektrik. P = W1+W2, Q = √3(W1−W2), cosφ = P/S; W2 = 0 → cosφ = 0,5 testle doğrulanır.
+- **Mohr Çemberi Asal Gerilmeler** — İnşaat. σ1,2, θp, τmaks, von Mises (σx²−σxσy+σy²+3τ² ile çapraz kontrol).
+- **Standart Motor Gücü Seçimi** — Elektrik. P_mil·k → IEC 60072-1 anma gücü serisi (seri teyit notuyla); aşılırsa `null` + uygunsuz.
+- **Kredi Aylık Taksit** — Ev. Annüite A = P·i/(1−(1+i)^−n); 100 000 ₺, %1, 12 ay = 8 884,88 ve borç dengesi testi.
+
+**Toplam: 472 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
