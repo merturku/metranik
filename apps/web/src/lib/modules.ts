@@ -2812,6 +2812,41 @@ const SU_DOYMA_SICAKLIGI_BASINCI_ANTOINE: ModuleEntry = {
   standard: "—",
 };
 
+const KOMPRESOR_BASINC_DUSURME_TASARRUFU: ModuleEntry = {
+  id: "kompresor-basinc-dusurme-tasarrufu",
+  title: "Kompresör Basıncı Düşürme Enerji Tasarrufu",
+  href: "/kompresor-basinc-dusurme-tasarrufu",
+  standard: "—",
+};
+
+const GES_PERFORMANS_ORANI_PR: ModuleEntry = {
+  id: "ges-performans-orani-pr",
+  title: "GES Performans Oranı (PR) Kontrolü",
+  href: "/ges-performans-orani-pr",
+  standard: "IEC 61724-1",
+};
+
+const SIKISMA_YUZDESI_KUM_KONISI: ModuleEntry = {
+  id: "sikisma-yuzdesi-kum-konisi",
+  title: "Saha Sıkışma Yüzdesi Kontrolü (Proctor Bağıl Sıkışma)",
+  href: "/sikisma-yuzdesi-kum-konisi",
+  standard: "TS 1900-2",
+};
+
+const MUTLAK_NEM_BAGIL_NEM_DONUSUMU: ModuleEntry = {
+  id: "mutlak-nem-bagil-nem-donusumu",
+  title: "Bağıl Nem – Mutlak Nem – Özgül Nem Dönüşümü",
+  href: "/mutlak-nem-bagil-nem-donusumu",
+  standard: "—",
+};
+
+const KANAL_HIZ_AGI_ORTALAMA_DEBI: ModuleEntry = {
+  id: "kanal-hiz-agi-ortalama-debi",
+  title: "Kanal Hız Taraması — Ortalama Hız ve Debi",
+  href: "/kanal-hiz-agi-ortalama-debi",
+  standard: "ISO 3966",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3004,6 +3039,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Basınçlı Hava",
         modules: [
+          KOMPRESOR_BASINC_DUSURME_TASARRUFU,
           KOMPRESOR_ATIK_ISI_GERI_KAZANIMI,
           BASINCLI_HAVA_KACAK_ORANI,
           HAVA_KOMPRESORU_SECIMI,
@@ -3036,6 +3072,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          KANAL_HIZ_AGI_ORTALAMA_DEBI,
           POMPA_MANOMETRIK_YUKSEKLIK_OLCUMU,
           SOGUTMA_KIZDIRMA_ASIRI_SOGUTMA_KONTROLU,
           HIDROSTATIK_BASINC_TESTI,
@@ -3053,6 +3090,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          GES_PERFORMANS_ORANI_PR,
           REZISTANS_ISITICI_DIRENC_AKIM,
           MOTOR_MOMENT_GUC_DONUSUMU,
           GUC_FAKTORU_IYILESTIRME_KAYIP_AZALMASI,
@@ -3158,6 +3196,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          SIKISMA_YUZDESI_KUM_KONISI,
           BILESIK_KESIT_T_I_OZELLIKLERI,
           AGREGA_NEM_DUZELTMESI,
           ISTINAT_COULOMB_AKTIF_BASINC,
@@ -3271,6 +3310,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          MUTLAK_NEM_BAGIL_NEM_DONUSUMU,
           EV_CAMASIR_MAKINESI_YILLIK_MALIYET,
           EV_ASPIRATOR_DEBISI,
           EV_DAMLAMA_KACAGI_SU_KAYBI,

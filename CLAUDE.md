@@ -1522,6 +1522,16 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 445 modül, core-calc 932 test (tam paket 14 sn).**
 
+### 5cq. Kompresör basıncı düşürme/GES PR/saha sıkışma/mutlak nem/kanal hız taraması: 5 modül daha
+
+- **Kompresör Basıncı Düşürme Tasarrufu** — Mekanik/Basınçlı Hava. İzentropik güç oranı; 8→7 bar(g) = %7,1 (pratik kural %6–7/bar ile uyumlu).
+- **GES Performans Oranı (PR)** — Elektrik. IEC 61724-1; ≥ 0,80 uygun, 0,70–0,80 sınırda (yaygın kıyas eşikleri).
+- **Saha Sıkışma Yüzdesi (Proctor RC)** — İnşaat. γd = γ_yaş/(1+w), RC = γd/γd,maks; kabul eşiği girdi.
+- **Bağıl–Mutlak–Özgül Nem Dönüşümü** — Ev. Magnus (±%0,4); testte tablo yerine Magnus değerleri esas alındı (20 °C'de 23,33 hPa).
+- **Kanal Hız Taraması (Ortalama Hız/Debi)** — Mekanik/Test & Kontrol. ISO 3966; ±%10 uygun, ±%15'e kadar sınırda.
+
+**Toplam: 450 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

@@ -1538,3 +1538,13 @@ export { evCamasirMakinesiYillikMaliyet } from "./modules/ev-camasir-makinesi-yi
 export type { EvCamasirMakinesiYillikMaliyetInput, EvCamasirMakinesiYillikMaliyetOutput } from "./modules/ev-camasir-makinesi-yillik-maliyet";
 export { suDoymaSicakligiBasinciAntoine } from "./modules/su-doyma-sicakligi-basinci-antoine";
 export type { SuDoymaSicakligiBasinciAntoineInput, SuDoymaSicakligiBasinciAntoineOutput } from "./modules/su-doyma-sicakligi-basinci-antoine";
+export { kompresorBasincDusurmeTasarrufu } from "./modules/kompresor-basinc-dusurme-tasarrufu";
+export type { KompresorBasincDusurmeTasarrufuInput, KompresorBasincDusurmeTasarrufuOutput } from "./modules/kompresor-basinc-dusurme-tasarrufu";
+export { gesPerformansOraniPr } from "./modules/ges-performans-orani-pr";
+export type { GesPerformansOraniPrInput, GesPerformansOraniPrOutput } from "./modules/ges-performans-orani-pr";
+export { sikismaYuzdesiKumKonisi } from "./modules/sikisma-yuzdesi-kum-konisi";
+export type { SikismaYuzdesiKumKonisiInput, SikismaYuzdesiKumKonisiOutput } from "./modules/sikisma-yuzdesi-kum-konisi";
+export { mutlakNemBagilNemDonusumu } from "./modules/mutlak-nem-bagil-nem-donusumu";
+export type { MutlakNemBagilNemDonusumuInput, MutlakNemBagilNemDonusumuOutput } from "./modules/mutlak-nem-bagil-nem-donusumu";
+export { kanalHizAgiOrtalamaDebi } from "./modules/kanal-hiz-agi-ortalama-debi";
+export type { KanalHizAgiOrtalamaDebiInput, KanalHizAgiOrtalamaDebiOutput } from "./modules/kanal-hiz-agi-ortalama-debi";
