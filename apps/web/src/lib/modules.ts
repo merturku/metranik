@@ -2665,6 +2665,41 @@ const EV_CATI_PANEL_SAYISI: ModuleEntry = {
   standard: "—",
 };
 
+const FAN_TOPLAM_STATIK_DINAMIK_BASINC: ModuleEntry = {
+  id: "fan-toplam-statik-dinamik-basinc",
+  title: "Fan Toplam, Statik ve Dinamik Basınç",
+  href: "/fan-toplam-statik-dinamik-basinc",
+  standard: "ISO 5801",
+};
+
+const AYDINLATMA_BAKIM_FAKTORU: ModuleEntry = {
+  id: "aydinlatma-bakim-faktoru",
+  title: "Aydınlatma Bakım Faktörü (LLMF·LSF·LMF·RMF)",
+  href: "/aydinlatma-bakim-faktoru",
+  standard: "EN 12464-1",
+};
+
+const CELIK_LEVHA_PROFIL_AGIRLIGI: ModuleEntry = {
+  id: "celik-levha-profil-agirligi",
+  title: "Çelik Levha / Dolu Profil Ağırlığı",
+  href: "/celik-levha-profil-agirligi",
+  standard: "—",
+};
+
+const EV_ELEKTRIKLI_ZEMIN_ISITMA_MALIYETI: ModuleEntry = {
+  id: "ev-elektrikli-zemin-isitma-maliyeti",
+  title: "Elektrikli Yerden Isıtma Gücü ve Aylık Maliyet",
+  href: "/ev-elektrikli-zemin-isitma-maliyeti",
+  standard: "—",
+};
+
+const KANAT_FIN_VERIMI: ModuleEntry = {
+  id: "kanat-fin-verimi",
+  title: "Kanat (Fin) Verimi ve Isı Transferi",
+  href: "/kanat-fin-verimi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2672,6 +2707,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          KANAT_FIN_VERIMI,
           UC_YOLLU_VANA_KARISIM_DEBISI,
           BASINC_BIRIM_DONUSUMU,
           SOGUTMA_KAPASITESI_BIRIM_DONUSUMU,
@@ -2780,6 +2816,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          FAN_TOPLAM_STATIK_DINAMIK_BASINC,
           KANAL_SISTEM_EGRISI_BASINC_DEBI,
           PITOT_TUPU_HIZ_DEBI,
           HAVA_DEBISI_BIRIM_DONUSUMU,
@@ -2899,6 +2936,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          AYDINLATMA_BAKIM_FAKTORU,
           DARBE_KISA_DEVRE_AKIMI_IP,
           KABLO_JOULE_KAYBI_YILLIK_MALIYET,
           YILDIZ_UCGEN_YOL_VERME,
@@ -3000,6 +3038,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          CELIK_LEVHA_PROFIL_AGIRLIGI,
           DOSEME_KIRIS_YUK_AKTARIMI,
           ZEMIN_ATTERBERG_KIVAM_INDEKSI,
           KOLON_ETRIYE_SARILMA_DONATISI,
@@ -3108,6 +3147,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_ELEKTRIKLI_ZEMIN_ISITMA_MALIYETI,
           EV_CATI_PANEL_SAYISI,
           EGIM_BIRIM_DONUSUMU,
           GES_MEVSIMSEL_EGIM_ACISI,

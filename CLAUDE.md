@@ -1479,6 +1479,16 @@ Testte iki beklenti hatası düzeltildi (döşeme–kiriş boyları ters yazılm
 
 **Toplam: 424 modül.**
 
+### 5cm. Fan basınçları/aydınlatma bakım faktörü/çelik ağırlığı/elektrikli zemin ısıtma/kanat verimi: 5 modül daha
+
+- **Fan Toplam, Statik ve Dinamik Basınç** — Mekanik/Havalandırma. Pt = Ps + ρV²/2.
+- **Aydınlatma Bakım Faktörü** — Elektrik. MF = LLMF·LSF·LMF·RMF (CIE 97/EN 12464-1).
+- **Çelik Levha / Dolu Profil Ağırlığı** — İnşaat. ρ = 7850 kg/m³; Ø20 = 2,466 kg/m testle doğrulanır.
+- **Elektrikli Yerden Isıtma Maliyeti** — Ev. P = q·A, aylık kWh ve ₺.
+- **Kanat (Fin) Verimi** — Mekanik/Isıtma-Soğutma. η = tanh(mL)/(mL), adyabatik uç.
+
+**Toplam: 429 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
