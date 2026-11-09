@@ -1581,6 +1581,15 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 472 modül.**
 
+### 5cw. Kanal yerel kaybı/seri RLC/engellenmiş ısıl gerilme/laminat metrajı: 4 modül daha
+
+- **Kanal Fiting Yerel Basınç Kaybı** — Mekanik/Havalandırma. ΔP = ΣC·ρv²/2 (ASHRAE Fundamentals); sürtünme kaybı modülünün tamamlayıcısı.
+- **Seri RLC Empedansı ve Rezonans** — Elektrik. XL, XC, Z, f0, Q; rezonansta Z = R, φ = 0 testle doğrulanır.
+- **Engellenmiş Genleşmede Isıl Gerilme** — İnşaat. σ = EαΔT, F = σA, akma oranına göre verdict'li (çelik ΔT = 40 K → 100,8 MPa).
+- **Laminat / Parke Paket Sayısı** — Ev. ⌈A(1+fire)/A_paket⌉.
+
+**Toplam: 476 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

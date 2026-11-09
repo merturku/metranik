@@ -3001,6 +3001,34 @@ const EV_KONUT_KREDISI_TAKSIT: ModuleEntry = {
   standard: "—",
 };
 
+const KANAL_YEREL_KAYIP_BASINC: ModuleEntry = {
+  id: "kanal-yerel-kayip-basinc",
+  title: "Kanal Fiting Yerel Basınç Kaybı",
+  href: "/kanal-yerel-kayip-basinc",
+  standard: "ASHRAE Fundamentals",
+};
+
+const RLC_SERI_EMPEDANS_REZONANS: ModuleEntry = {
+  id: "rlc-seri-empedans-rezonans",
+  title: "Seri RLC Empedansı ve Rezonans Frekansı",
+  href: "/rlc-seri-empedans-rezonans",
+  standard: "—",
+};
+
+const ENGELLENMIS_ISIL_GERILME: ModuleEntry = {
+  id: "engellenmis-isil-gerilme",
+  title: "Engellenmiş Genleşmede Isıl Gerilme ve Kuvvet",
+  href: "/engellenmis-isil-gerilme",
+  standard: "—",
+};
+
+const EV_LAMINAT_PARKE_MIKTARI: ModuleEntry = {
+  id: "ev-laminat-parke-miktari",
+  title: "Laminat / Parke Paket Sayısı",
+  href: "/ev-laminat-parke-miktari",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3123,6 +3151,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          KANAL_YEREL_KAYIP_BASINC,
           HAVA_ISITICI_BATARYA_SU_DEBISI,
           FAN_TOPLAM_STATIK_DINAMIK_BASINC,
           KANAL_SISTEM_EGRISI_BASINC_DEBI,
@@ -3250,6 +3279,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          RLC_SERI_EMPEDANS_REZONANS,
           STANDART_MOTOR_GUCU_SECIMI,
           ARON_IKI_WATTMETRE_YONTEMI,
           PANO_HAVALANDIRMA_FANI_DEBISI,
@@ -3362,6 +3392,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ENGELLENMIS_ISIL_GERILME,
           MOHR_CEMBERI_ASAL_GERILMELER,
           ZEMIN_KAYMA_DALGASI_RIJITLIK_SINIFI,
           ZEMIN_DARCY_SIZMA_DEBISI,
@@ -3481,6 +3512,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_LAMINAT_PARKE_MIKTARI,
           EV_KONUT_KREDISI_TAKSIT,
           EV_CIT_DIREK_SAYISI,
           EV_YATIRIM_NPV_GERI_ODEME,
