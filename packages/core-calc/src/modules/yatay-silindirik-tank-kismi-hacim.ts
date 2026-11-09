@@ -5,19 +5,19 @@ import type { CalcModule, CalcResult } from "../types";
 // V = L·[ r²·arccos((r − h)/r) − (r − h)·√(2·r·h − h²) ]  (m³).  Tam dolu V = π·r²·L.
 // Bombeli/elipsoidal kapaklar hacim eklemez bu modülde (kapak hacmi üreticiden eklenmelidir). Yakıt deposu/ısıl depo seviye–hacim kalibrasyonu ve
 // otonomi hesabı için kullanılır (Yakıt Deposu Otonomi Süresi modülüne hacim girdisi).
-export const yatayDikSilindirikTankInputSchema = z.object({
+export const yataySilindirikTankKismiHacimInputSchema = z.object({
   cap_D_m: z.number().positive(),
   boy_L_m: z.number().positive(),
   sivi_yuksekligi_h_m: z.number().min(0),
 });
 
-export type YatayDikSilindirikTankInput = z.infer<typeof yatayDikSilindirikTankInputSchema>;
+export type YataySilindirikTankKismiHacimInput = z.infer<typeof yataySilindirikTankKismiHacimInputSchema>;
 
-export interface YatayDikSilindirikTankOutput {
+export interface YataySilindirikTankKismiHacimOutput {
   dolu_hacim_m3: number | null;
 }
 
-function compute(input: YatayDikSilindirikTankInput): CalcResult<YatayDikSilindirikTankOutput> {
+function compute(input: YataySilindirikTankKismiHacimInput): CalcResult<YataySilindirikTankKismiHacimOutput> {
   const r = input.cap_D_m / 2;
   const h = input.sivi_yuksekligi_h_m;
   const standards = ["Dairesel segment geometrisi"];
@@ -46,11 +46,11 @@ function compute(input: YatayDikSilindirikTankInput): CalcResult<YatayDikSilindi
   };
 }
 
-export const yatayDikSilindirikTank: CalcModule<YatayDikSilindirikTankInput, YatayDikSilindirikTankOutput> = {
+export const yataySilindirikTankKismiHacim: CalcModule<YataySilindirikTankKismiHacimInput, YataySilindirikTankKismiHacimOutput> = {
   id: "yatay-silindirik-tank-kismi-hacim",
   title: "Yatay Silindirik Tank Kısmi Dolu Hacim",
   discipline: "mekanik",
   standards: [],
-  inputSchema: yatayDikSilindirikTankInputSchema,
+  inputSchema: yataySilindirikTankKismiHacimInputSchema,
   compute,
 };
