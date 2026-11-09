@@ -1542,6 +1542,16 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 455 modül.**
 
+### 5cs. Taze hava oranı/akü grubu/kaynak metal ağırlığı/havuz dolum/yatay tank kısmi hacim: 5 modül daha
+
+- **Taze Hava Oranı (Sıcaklık Yöntemi)** — Mekanik/Test & Kontrol. x = (Tkar − Tdön)/(Tdış − Tdön); fark < 5 K'de hesaplanmaz.
+- **Akü Grubu Seri/Paralel Sayısı** — Elektrik. Ns, Np, kWh, kullanılabilir enerji (DoD), Np > 4 uyarısı.
+- **Köşe Kaynağı Metal Ağırlığı ve Sarfiyatı** — İnşaat. A = z²/2·pay, 7850 kg/m³, elektrot verimi.
+- **Havuz Hacmi ve Dolum Süresi** — Ev. Dikdörtgen/daire.
+- **Yatay Silindirik Tank Kısmi Hacim** — Mekanik/Isıtma-Soğutma. Dairesel segment; yarı dolu = toplamın %50'si, %25 seviye = %19,55.
+
+**Toplam: 460 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

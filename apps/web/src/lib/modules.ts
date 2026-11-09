@@ -2882,6 +2882,41 @@ const YOGUSMALI_KAZAN_YOGUSMA_SUYU: ModuleEntry = {
   standard: "—",
 };
 
+const TAZE_HAVA_ORANI_SICAKLIKTAN: ModuleEntry = {
+  id: "taze-hava-orani-sicakliktan",
+  title: "Taze Hava Oranı (Sıcaklık Yöntemi, Saha Ölçümü)",
+  href: "/taze-hava-orani-sicakliktan",
+  standard: "—",
+};
+
+const AKU_GRUBU_SERI_PARALEL: ModuleEntry = {
+  id: "aku-grubu-seri-paralel",
+  title: "Akü Grubu Seri/Paralel Bağlantı Sayısı",
+  href: "/aku-grubu-seri-paralel",
+  standard: "—",
+};
+
+const KOSE_KAYNAGI_METAL_AGIRLIGI: ModuleEntry = {
+  id: "kose-kaynagi-metal-agirligi",
+  title: "Köşe Kaynağı Metal Ağırlığı ve Elektrot Sarfiyatı",
+  href: "/kose-kaynagi-metal-agirligi",
+  standard: "—",
+};
+
+const EV_HAVUZ_HACMI_DOLUM_SURESI: ModuleEntry = {
+  id: "ev-havuz-hacmi-dolum-suresi",
+  title: "Havuz Hacmi ve Dolum Süresi",
+  href: "/ev-havuz-hacmi-dolum-suresi",
+  standard: "—",
+};
+
+const YATAY_SILINDIRIK_TANK_KISMI_HACIM: ModuleEntry = {
+  id: "yatay-silindirik-tank-kismi-hacim",
+  title: "Yatay Silindirik Tank Kısmi Dolu Hacim",
+  href: "/yatay-silindirik-tank-kismi-hacim",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2889,6 +2924,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          YATAY_SILINDIRIK_TANK_KISMI_HACIM,
           YOGUSMALI_KAZAN_YOGUSMA_SUYU,
           ESANJOR_NTU_KARSIT_AKIS,
           SU_YOGUNLUGU_ISIL_GENLESME_HACMI,
@@ -3109,6 +3145,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          TAZE_HAVA_ORANI_SICAKLIKTAN,
           KANAL_HIZ_AGI_ORTALAMA_DEBI,
           POMPA_MANOMETRIK_YUKSEKLIK_OLCUMU,
           SOGUTMA_KIZDIRMA_ASIRI_SOGUTMA_KONTROLU,
@@ -3127,6 +3164,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          AKU_GRUBU_SERI_PARALEL,
           SAYAC_CARPANI_TUKETIM,
           GES_PERFORMANS_ORANI_PR,
           REZISTANS_ISITICI_DIRENC_AKIM,
@@ -3234,6 +3272,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KOSE_KAYNAGI_METAL_AGIRLIGI,
           KAT_YANAL_RIJITLIGI_OTELENME,
           SIKISMA_YUZDESI_KUM_KONISI,
           BILESIK_KESIT_T_I_OZELLIKLERI,
@@ -3349,6 +3388,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_HAVUZ_HACMI_DOLUM_SURESI,
           EV_ODA_ISINMA_SURESI_ELEKTRIKLI,
           MUTLAK_NEM_BAGIL_NEM_DONUSUMU,
           EV_CAMASIR_MAKINESI_YILLIK_MALIYET,
