@@ -1506,3 +1506,13 @@ export { evElektrikliZeminIsitmaMaliyeti } from "./modules/ev-elektrikli-zemin-i
 export type { EvElektrikliZeminIsitmaMaliyetiInput, EvElektrikliZeminIsitmaMaliyetiOutput } from "./modules/ev-elektrikli-zemin-isitma-maliyeti";
 export { kanatFinVerimi } from "./modules/kanat-fin-verimi";
 export type { KanatFinVerimiInput, KanatFinVerimiOutput } from "./modules/kanat-fin-verimi";
+export { tersOzmozKutleDengesi } from "./modules/ters-ozmoz-kutle-dengesi";
+export type { TersOzmozKutleDengesiInput, TersOzmozKutleDengesiOutput } from "./modules/ters-ozmoz-kutle-dengesi";
+export { zemineOturanDosemeUDegeri } from "./modules/zemine-oturan-doseme-u-degeri";
+export type { ZemineOturanDosemeUDegeriInput, ZemineOturanDosemeUDegeriOutput } from "./modules/zemine-oturan-doseme-u-degeri";
+export { gucFaktoruIyilestirmeKayipAzalmasi } from "./modules/guc-faktoru-iyilestirme-kayip-azalmasi";
+export type { GucFaktoruIyilestirmeKayipAzalmasiInput, GucFaktoruIyilestirmeKayipAzalmasiOutput } from "./modules/guc-faktoru-iyilestirme-kayip-azalmasi";
+export { betonAdyabatikSicaklikArtisi } from "./modules/beton-adyabatik-sicaklik-artisi";
+export type { BetonAdyabatikSicaklikArtisiInput, BetonAdyabatikSicaklikArtisiOutput } from "./modules/beton-adyabatik-sicaklik-artisi";
+export { evDamlamaKacagiSuKaybi } from "./modules/ev-damlama-kacagi-su-kaybi";
+export type { EvDamlamaKacagiSuKaybiInput, EvDamlamaKacagiSuKaybiOutput } from "./modules/ev-damlama-kacagi-su-kaybi";

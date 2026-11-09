@@ -1489,6 +1489,18 @@ Testte iki beklenti hatası düzeltildi (döşeme–kiriş boyları ters yazılm
 
 **Toplam: 429 modül.**
 
+### 5cn. Ters ozmoz/zemine oturan döşeme U/güç faktörü kayıp azalması/beton adyabatik ısınma/damlama kaçağı: 5 modül daha
+
+- **Ters Ozmoz Kütle ve Tuz Dengesi** — Mekanik/Sıhhi. Qp = R·Qf, Cc = (Qf·Cf − Qp·Cp)/Qc; tuz dengesi hatası testle sıfırlanır; R > %85 uyarısı.
+- **Zemine Oturan Döşeme U Değeri** — Ev. TS EN ISO 13370, B' = A/(0,5P), dt < B' ve dt ≥ B' kolları; sınırda süreklilik testi.
+- **Güç Faktörü İyileştirmesiyle Hat Kaybı Azalması** — Elektrik. (cosφ1/cosφ2)²; 0,80→0,95 = %29,1 azalma.
+- **Beton Hidratasyon Adyabatik Sıcaklık Artışı** — İnşaat. ΔT = C·q/(ρ·c) (ACI 207.2R), verdict'li.
+- **Damlayan Musluk Yıllık Su Kaybı** — Ev. 60 damla/dk → 1576,8 L/yıl.
+
+Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), modül doğruydu.
+
+**Toplam: 434 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

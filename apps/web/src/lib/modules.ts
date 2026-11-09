@@ -2700,6 +2700,41 @@ const KANAT_FIN_VERIMI: ModuleEntry = {
   standard: "—",
 };
 
+const TERS_OZMOZ_KUTLE_DENGESI: ModuleEntry = {
+  id: "ters-ozmoz-kutle-dengesi",
+  title: "Ters Ozmoz Kütle ve Tuz Dengesi",
+  href: "/ters-ozmoz-kutle-dengesi",
+  standard: "—",
+};
+
+const ZEMINE_OTURAN_DOSEME_U_DEGERI: ModuleEntry = {
+  id: "zemine-oturan-doseme-u-degeri",
+  title: "Zemine Oturan Döşeme U Değeri (EN ISO 13370)",
+  href: "/zemine-oturan-doseme-u-degeri",
+  standard: "TS EN ISO 13370",
+};
+
+const GUC_FAKTORU_IYILESTIRME_KAYIP_AZALMASI: ModuleEntry = {
+  id: "guc-faktoru-iyilestirme-kayip-azalmasi",
+  title: "Güç Faktörü İyileştirmesiyle Hat Kaybı Azalması",
+  href: "/guc-faktoru-iyilestirme-kayip-azalmasi",
+  standard: "—",
+};
+
+const BETON_ADYABATIK_SICAKLIK_ARTISI: ModuleEntry = {
+  id: "beton-adyabatik-sicaklik-artisi",
+  title: "Beton Hidratasyon Adyabatik Sıcaklık Artışı",
+  href: "/beton-adyabatik-sicaklik-artisi",
+  standard: "—",
+};
+
+const EV_DAMLAMA_KACAGI_SU_KAYBI: ModuleEntry = {
+  id: "ev-damlama-kacagi-su-kaybi",
+  title: "Damlayan Musluk / Kaçak Yıllık Su Kaybı",
+  href: "/ev-damlama-kacagi-su-kaybi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2780,6 +2815,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Sıhhi Tesisat",
         modules: [
+          TERS_OZMOZ_KUTLE_DENGESI,
           BORU_DONMA_SURESI,
           TANK_BOSALMA_SURESI_TORRICELLI,
           GRAVITE_BORU_KAPASITESI_MANNING,
@@ -2936,6 +2972,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          GUC_FAKTORU_IYILESTIRME_KAYIP_AZALMASI,
           AYDINLATMA_BAKIM_FAKTORU,
           DARBE_KISA_DEVRE_AKIMI_IP,
           KABLO_JOULE_KAYBI_YILLIK_MALIYET,
@@ -3038,6 +3075,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BETON_ADYABATIK_SICAKLIK_ARTISI,
           CELIK_LEVHA_PROFIL_AGIRLIGI,
           DOSEME_KIRIS_YUK_AKTARIMI,
           ZEMIN_ATTERBERG_KIVAM_INDEKSI,
@@ -3147,6 +3185,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_DAMLAMA_KACAGI_SU_KAYBI,
+          ZEMINE_OTURAN_DOSEME_U_DEGERI,
           EV_ELEKTRIKLI_ZEMIN_ISITMA_MALIYETI,
           EV_CATI_PANEL_SAYISI,
           EGIM_BIRIM_DONUSUMU,
