@@ -2735,6 +2735,48 @@ const EV_DAMLAMA_KACAGI_SU_KAYBI: ModuleEntry = {
   standard: "—",
 };
 
+const KOPUK_SOLUSYON_KONSANTRE_MIKTARI: ModuleEntry = {
+  id: "kopuk-solusyon-konsantre-miktari",
+  title: "Köpüklü Söndürme Solüsyon ve Konsantre Miktarı",
+  href: "/kopuk-solusyon-konsantre-miktari",
+  standard: "NFPA 11",
+};
+
+const HAVA_ISITICI_BATARYA_SU_DEBISI: ModuleEntry = {
+  id: "hava-isitici-batarya-su-debisi",
+  title: "Hava Isıtıcı Batarya Kapasitesi ve Su Debisi",
+  href: "/hava-isitici-batarya-su-debisi",
+  standard: "—",
+};
+
+const MOTOR_MOMENT_GUC_DONUSUMU: ModuleEntry = {
+  id: "motor-moment-guc-donusumu",
+  title: "Motor Mil Gücü – Moment – Devir Dönüşümü",
+  href: "/motor-moment-guc-donusumu",
+  standard: "—",
+};
+
+const ISTINAT_COULOMB_AKTIF_BASINC: ModuleEntry = {
+  id: "istinat-coulomb-aktif-basinc",
+  title: "Coulomb Aktif Toprak Basıncı (Duvar Sürtünmeli)",
+  href: "/istinat-coulomb-aktif-basinc",
+  standard: "—",
+};
+
+const AGREGA_NEM_DUZELTMESI: ModuleEntry = {
+  id: "agrega-nem-duzeltmesi",
+  title: "Agrega Nem Düzeltmesi (Karışım Suyu)",
+  href: "/agrega-nem-duzeltmesi",
+  standard: "TS EN 1097-6",
+};
+
+const EV_ASPIRATOR_DEBISI: ModuleEntry = {
+  id: "ev-aspirator-debisi",
+  title: "Aspiratör (Egzoz) Debisi — Hava Değişim Yöntemi",
+  href: "/ev-aspirator-debisi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2852,6 +2894,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          HAVA_ISITICI_BATARYA_SU_DEBISI,
           FAN_TOPLAM_STATIK_DINAMIK_BASINC,
           KANAL_SISTEM_EGRISI_BASINC_DEBI,
           PITOT_TUPU_HIZ_DEBI,
@@ -2890,6 +2933,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Yangın",
         modules: [
+          KOPUK_SOLUSYON_KONSANTRE_MIKTARI,
           DUMAN_TUYU_KUTLE_DEBISI,
           MERDIVEN_KAPISI_ACMA_KUVVETI,
           YANGIN_YUKU_YOGUNLUGU,
@@ -2972,6 +3016,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          MOTOR_MOMENT_GUC_DONUSUMU,
           GUC_FAKTORU_IYILESTIRME_KAYIP_AZALMASI,
           AYDINLATMA_BAKIM_FAKTORU,
           DARBE_KISA_DEVRE_AKIMI_IP,
@@ -3075,6 +3120,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          AGREGA_NEM_DUZELTMESI,
+          ISTINAT_COULOMB_AKTIF_BASINC,
           BETON_ADYABATIK_SICAKLIK_ARTISI,
           CELIK_LEVHA_PROFIL_AGIRLIGI,
           DOSEME_KIRIS_YUK_AKTARIMI,
@@ -3185,6 +3232,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_ASPIRATOR_DEBISI,
           EV_DAMLAMA_KACAGI_SU_KAYBI,
           ZEMINE_OTURAN_DOSEME_U_DEGERI,
           EV_ELEKTRIKLI_ZEMIN_ISITMA_MALIYETI,

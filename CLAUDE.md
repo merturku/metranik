@@ -1501,6 +1501,17 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 434 modül.**
 
+### 5co. Köpük konsantresi/hava ısıtıcı batarya/moment–güç/Coulomb aktif basınç/agrega nemi/aspiratör: 6 modül daha
+
+- **Köpüklü Söndürme Solüsyon ve Konsantre** — Mekanik/Yangın. NFPA 11, q ve süre girdi.
+- **Hava Isıtıcı Batarya Kapasitesi ve Su Debisi** — Mekanik/Havalandırma. Q = V̇·1,206·ΔT, ṁ_su = Q/(4,186·ΔTw).
+- **Motor Mil Gücü–Moment–Devir** — Elektrik. P = T·n/9549,3 (hedef seçilebilir).
+- **Coulomb Aktif Toprak Basıncı** — İnşaat. φ = 30°, δ = 20° için Ka = 0,2973; δ = θ = β = 0'da Rankine'e iner (testle doğrulanır).
+- **Agrega Nem Düzeltmesi** — İnşaat. Serbest su = M_kuru(w − emme), tartılacak nemli agrega, eklenecek su.
+- **Aspiratör Debisi** — Ev. Q = V·n, kanal kayıp payı.
+
+**Toplam: 440 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
