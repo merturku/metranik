@@ -1548,3 +1548,13 @@ export { mutlakNemBagilNemDonusumu } from "./modules/mutlak-nem-bagil-nem-donusu
 export type { MutlakNemBagilNemDonusumuInput, MutlakNemBagilNemDonusumuOutput } from "./modules/mutlak-nem-bagil-nem-donusumu";
 export { kanalHizAgiOrtalamaDebi } from "./modules/kanal-hiz-agi-ortalama-debi";
 export type { KanalHizAgiOrtalamaDebiInput, KanalHizAgiOrtalamaDebiOutput } from "./modules/kanal-hiz-agi-ortalama-debi";
+export { esanjorNtuKarsitAkis } from "./modules/esanjor-ntu-karsit-akis";
+export type { EsanjorNtuKarsitAkisInput, EsanjorNtuKarsitAkisOutput } from "./modules/esanjor-ntu-karsit-akis";
+export { sayacCarpaniTuketim } from "./modules/sayac-carpani-tuketim";
+export type { SayacCarpaniTuketimInput, SayacCarpaniTuketimOutput } from "./modules/sayac-carpani-tuketim";
+export { katYanalRijitligiOtelenme } from "./modules/kat-yanal-rijitligi-otelenme";
+export type { KatYanalRijitligiOtelenmeInput, KatYanalRijitligiOtelenmeOutput } from "./modules/kat-yanal-rijitligi-otelenme";
+export { evOdaIsinmaSuresiElektrikli } from "./modules/ev-oda-isinma-suresi-elektrikli";
+export type { EvOdaIsinmaSuresiElektrikliInput, EvOdaIsinmaSuresiElektrikliOutput } from "./modules/ev-oda-isinma-suresi-elektrikli";
+export { yogusmaliKazanYogusmaSuyu } from "./modules/yogusmali-kazan-yogusma-suyu";
+export type { YogusmaliKazanYogusmaSuyuInput, YogusmaliKazanYogusmaSuyuOutput } from "./modules/yogusmali-kazan-yogusma-suyu";

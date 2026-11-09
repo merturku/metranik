@@ -1532,6 +1532,16 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 450 modül.**
 
+### 5cr. Eşanjör ε–NTU/sayaç çarpanı/kat yanal rijitliği/oda ısınma süresi/yoğuşma suyu: 5 modül daha
+
+- **Eşanjör ε–NTU (Karşıt Akış)** — Mekanik/Isıtma-Soğutma. UA verilen eşanjörde çıkış sıcaklıkları; Cr = 1 ve UA → ∞ sınır testleri.
+- **Sayaç Çarpanı ile Tüketim (CT × VT)** — Elektrik. Endeks taşması düzeltmesi.
+- **Kat Yanal Rijitliği, Ötelenme ve Periyot** — İnşaat. k = 12EI/h³, Δ = H/K, T = 2π√(m/K); etkin rijitlik çarpanı girdi (TBDY değeri teyit notu).
+- **Odanın Isınma Süresi (Elektrikli Isıtıcı)** — Ev. T∞ = Te + P/UA, t = τ ln(...); hedef T∞ üstündeyse null + uygunsuz.
+- **Yoğuşmalı Kazan Yoğuşma Suyu** — Mekanik/Isıtma-Soğutma. CH4 + 2O2 → CO2 + 2H2O, 1,6075 kg/Nm³.
+
+**Toplam: 455 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

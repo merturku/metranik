@@ -2847,6 +2847,41 @@ const KANAL_HIZ_AGI_ORTALAMA_DEBI: ModuleEntry = {
   standard: "ISO 3966",
 };
 
+const ESANJOR_NTU_KARSIT_AKIS: ModuleEntry = {
+  id: "esanjor-ntu-karsit-akis",
+  title: "Eşanjör ε–NTU (Karşıt Akış) Çıkış Sıcaklıkları",
+  href: "/esanjor-ntu-karsit-akis",
+  standard: "—",
+};
+
+const SAYAC_CARPANI_TUKETIM: ModuleEntry = {
+  id: "sayac-carpani-tuketim",
+  title: "Sayaç Çarpanı ile Tüketim (CT × VT)",
+  href: "/sayac-carpani-tuketim",
+  standard: "—",
+};
+
+const KAT_YANAL_RIJITLIGI_OTELENME: ModuleEntry = {
+  id: "kat-yanal-rijitligi-otelenme",
+  title: "Kat Yanal Rijitliği, Ötelenme ve Periyot (Kesme Modeli)",
+  href: "/kat-yanal-rijitligi-otelenme",
+  standard: "—",
+};
+
+const EV_ODA_ISINMA_SURESI_ELEKTRIKLI: ModuleEntry = {
+  id: "ev-oda-isinma-suresi-elektrikli",
+  title: "Odanın Isınma Süresi (Elektrikli Isıtıcı)",
+  href: "/ev-oda-isinma-suresi-elektrikli",
+  standard: "—",
+};
+
+const YOGUSMALI_KAZAN_YOGUSMA_SUYU: ModuleEntry = {
+  id: "yogusmali-kazan-yogusma-suyu",
+  title: "Yoğuşmalı Kazan Yoğuşma Suyu Miktarı",
+  href: "/yogusmali-kazan-yogusma-suyu",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -2854,6 +2889,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          YOGUSMALI_KAZAN_YOGUSMA_SUYU,
+          ESANJOR_NTU_KARSIT_AKIS,
           SU_YOGUNLUGU_ISIL_GENLESME_HACMI,
           KANAT_FIN_VERIMI,
           UC_YOLLU_VANA_KARISIM_DEBISI,
@@ -3090,6 +3127,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          SAYAC_CARPANI_TUKETIM,
           GES_PERFORMANS_ORANI_PR,
           REZISTANS_ISITICI_DIRENC_AKIM,
           MOTOR_MOMENT_GUC_DONUSUMU,
@@ -3196,6 +3234,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KAT_YANAL_RIJITLIGI_OTELENME,
           SIKISMA_YUZDESI_KUM_KONISI,
           BILESIK_KESIT_T_I_OZELLIKLERI,
           AGREGA_NEM_DUZELTMESI,
@@ -3310,6 +3349,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_ODA_ISINMA_SURESI_ELEKTRIKLI,
           MUTLAK_NEM_BAGIL_NEM_DONUSUMU,
           EV_CAMASIR_MAKINESI_YILLIK_MALIYET,
           EV_ASPIRATOR_DEBISI,
