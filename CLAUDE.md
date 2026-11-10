@@ -1608,6 +1608,17 @@ Test düzeltmesi: zemin U testinde dt'yi yanlış hesaplamışım (10,72 m), mod
 
 **Toplam: 484 modül.**
 
+### 5cz. Boru sıcaklık düşümü/havai hat sehimi/taban plakası ezilmesi/saçak derinliği: 4 modül daha
+
+- **Boru Boyunca Sıcaklık Düşümü** — Mekanik/Isıtma-Soğutma. T(L) = Ta + (Ti−Ta)e^(−U'L/ṁcp); küçük x'te lineer kayıp, uzun boruda ortam sıcaklığı testle doğrulanır.
+- **Havai Hat İletken Sehimi** — Elektrik. f = wL²/8H, iletken boyu, mesnet çekmesi (parabolik teori).
+- **Kolon Taban Plakası Beton Ezilme Kontrolü** — İnşaat. AISC 360-16 §J8, φ = 0,65, √(A2/A1) ≤ 2; TS EN 1992-1-1 §6.7 farklı, teyit notuyla; verdict'li.
+- **Pencere Güneşlik / Saçak Derinliği** — Ev. D = (a+Hp)/tan(αp), mevcut saçağın gölgeleme oranı.
+
+Tam paket (adım 2 sağlık kontrolü): 488 test dosyası / 1051 test yeşil.
+
+**Toplam: 488 modül.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

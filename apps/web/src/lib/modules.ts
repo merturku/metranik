@@ -3085,6 +3085,34 @@ const EV_YUKSEK_YATAK_TOPRAK_HACMI: ModuleEntry = {
   standard: "—",
 };
 
+const BORU_BOYUNCA_SICAKLIK_DUSUMU: ModuleEntry = {
+  id: "boru-boyunca-sicaklik-dusumu",
+  title: "Boru Boyunca Akışkan Sıcaklık Düşümü",
+  href: "/boru-boyunca-sicaklik-dusumu",
+  standard: "—",
+};
+
+const HAVAI_HAT_SEHIMI: ModuleEntry = {
+  id: "havai-hat-sehimi",
+  title: "Havai Hat İletken Sehimi",
+  href: "/havai-hat-sehimi",
+  standard: "—",
+};
+
+const TABAN_PLAKASI_EZILME_KONTROLU: ModuleEntry = {
+  id: "taban-plakasi-ezilme-kontrolu",
+  title: "Kolon Taban Plakası Beton Ezilme Kontrolü",
+  href: "/taban-plakasi-ezilme-kontrolu",
+  standard: "AISC 360-16",
+};
+
+const EV_PENCERE_SACAK_DERINLIGI: ModuleEntry = {
+  id: "ev-pencere-sacak-derinligi",
+  title: "Pencere Güneşlik / Saçak Derinliği",
+  href: "/ev-pencere-sacak-derinligi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3092,6 +3120,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          BORU_BOYUNCA_SICAKLIK_DUSUMU,
           POMPA_SERI_CALISMA,
           YATAY_SILINDIRIK_TANK_KISMI_HACIM,
           YOGUSMALI_KAZAN_YOGUSMA_SUYU,
@@ -3337,6 +3366,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          HAVAI_HAT_SEHIMI,
           YILDIZ_UCGEN_DIRENC_DONUSUMU,
           KABLO_SARJ_AKIMI,
           RLC_SERI_EMPEDANS_REZONANS,
@@ -3452,6 +3482,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          TABAN_PLAKASI_EZILME_KONTROLU,
           ZEMIN_BAGIL_SIKILIK,
           FLOTASYON_KALDIRMA_GUVENLIGI,
           ENGELLENMIS_ISIL_GERILME,
@@ -3574,6 +3605,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_PENCERE_SACAK_DERINLIGI,
           EV_YUKSEK_YATAK_TOPRAK_HACMI,
           EV_ISI_DEPOLAMA_KAPASITESI,
           EV_LAMINAT_PARKE_MIKTARI,
