@@ -3218,6 +3218,48 @@ const EV_KORKULUK_BALUSTR_SAYISI: ModuleEntry = {
   standard: "—",
 };
 
+const DIKDORTGEN_SAVAK_DEBISI: ModuleEntry = {
+  id: "dikdortgen-savak-debisi",
+  title: "Dikdörtgen Keskin Kenarlı Savak Debisi (Francis)",
+  href: "/dikdortgen-savak-debisi",
+  standard: "—",
+};
+
+const TABAN_PLAKASI_KALINLIGI: ModuleEntry = {
+  id: "taban-plakasi-kalinligi",
+  title: "Kolon Taban Plakası Kalınlığı (AISC Design Guide 1)",
+  href: "/taban-plakasi-kalinligi",
+  standard: "AISC Design Guide 1",
+};
+
+const NOZUL_REAKSIYON_KUVVETI: ModuleEntry = {
+  id: "nozul-reaksiyon-kuvveti",
+  title: "Yangın Hortumu Nozul Reaksiyon Kuvveti",
+  href: "/nozul-reaksiyon-kuvveti",
+  standard: "—",
+};
+
+const CT_GERCEK_DOGRULUK_SINIRI_FAKTORU: ModuleEntry = {
+  id: "ct-gercek-dogruluk-siniri-faktoru",
+  title: "CT Gerçek Doğruluk Sınır Faktörü (ALF′)",
+  href: "/ct-gercek-dogruluk-siniri-faktoru",
+  standard: "IEC 61869-2",
+};
+
+const PANO_DEVRE_ESZAMANLILIK_FAKTORU: ModuleEntry = {
+  id: "pano-devre-eszamanlilik-faktoru",
+  title: "Pano Devre Eşzamanlılık (RDF) Faktörü",
+  href: "/pano-devre-eszamanlilik-faktoru",
+  standard: "IEC 61439-1",
+};
+
+const EV_CAM_LEVHA_AGIRLIGI: ModuleEntry = {
+  id: "ev-cam-levha-agirligi",
+  title: "Cam Levha Ağırlığı",
+  href: "/ev-cam-levha-agirligi",
+  standard: "TS EN 572-1",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3384,6 +3426,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Yangın",
         modules: [
+          NOZUL_REAKSIYON_KUVVETI,
           HIDRANT_AKIS_TESTI_KULLANILABILIR_DEBI,
           KOPUK_SOLUSYON_KONSANTRE_MIKTARI,
           DUMAN_TUYU_KUTLE_DEBISI,
@@ -3476,6 +3519,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          PANO_DEVRE_ESZAMANLILIK_FAKTORU,
           ESLIK_ISITMA_GUC_IHTIYACI,
           PARATONER_AYIRMA_MESAFESI,
           UPS_ISI_YAYILIMI,
@@ -3573,6 +3617,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          CT_GERCEK_DOGRULUK_SINIRI_FAKTORU,
           TOPRAKLAMA_DIRENCI_TESTI,
           YALITIM_DIRENCI_TESTI,
           KESICI_KISA_DEVRE_KONTROLU,
@@ -3595,6 +3640,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          TABAN_PLAKASI_KALINLIGI,
+          DIKDORTGEN_SAVAK_DEBISI,
           BETON_HEDEF_ORTALAMA_DAYANIM,
           TRAPEZ_KANAL_MANNING_NORMAL_DERINLIK,
           DAIRESEL_MIL_BURULMA,
@@ -3722,6 +3769,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_CAM_LEVHA_AGIRLIGI,
           EV_KORKULUK_BALUSTR_SAYISI,
           EV_SICAKLIK_BIRIM_DONUSUMU,
           EV_SAP_MALZEME_MIKTARI,

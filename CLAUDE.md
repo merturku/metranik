@@ -1653,6 +1653,17 @@ Test düzeltmesi: paratonerde beton (km = 0,5) için ilk beklentim yarıydı, do
 
 **Toplam: 503 modül (test dosyası sayısı), core-calc 1087 test, hepsi yeşil; src tsc temiz.**
 
+### 5dd. Savak/taban plakası kalınlığı/nozul reaksiyonu/CT ALF′/pano RDF/cam ağırlığı: 6 modül daha
+
+- **Dikdörtgen Keskin Kenarlı Savak Debisi (Francis)** — İnşaat. Q = (2/3)Cd√(2g)(b − 0,1nH)H^1,5; Cd başlangıç değeri, Kindsvater-Carter teyit notu.
+- **Kolon Taban Plakası Kalınlığı** — İnşaat. AISC DG1 m, n, n′, t = l√(2Pu/(0,9FyBN)); λ = 1 tutucu. Taban Plakası Ezilme Kontrolü'nün tamamlayıcısı.
+- **Yangın Hortumu Nozul Reaksiyon Kuvveti** — Mekanik/Yangın. Momentum F = ρQ²/A (500 L/dk, Ø20 → 221 N).
+- **CT Gerçek Doğruluk Sınır Faktörü (ALF′)** — Elektrik/Test & Kontrol. IEC 61869-2; Sin = In²Rct, gerekli Ik/In ile verdict'li. CT Sekonder Yük Kontrolü'nün doyma tarafı.
+- **Pano Devre Eşzamanlılık (RDF) Faktörü** — Elektrik. IEC 61439-1 Tablo 101 (1; 0,9; 0,8; 0,7; 0,6), "teyit edin" notuyla.
+- **Cam Levha Ağırlığı** — Ev. ρ = 2500 kg/m³, kalınlık × alan × adet.
+
+**Toplam: 509 modül (test dosyası sayısı), core-calc 1099 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
