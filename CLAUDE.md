@@ -1692,6 +1692,19 @@ Süreç notu: modules.ts'te tek satırlık `modules: [A, B],` biçimli alt kateg
 
 **Toplam: 523 modül (test dosyası sayısı), core-calc 1130 test, hepsi yeşil; src tsc temiz.**
 
+### 5dg. Kaynak suyu debisi/blöf TDS/pnömatik silindir/redresör/asansör/kaynak boyu/Ohm/direnç: 8 modül daha
+
+- **Su Kaynaklı Isı Pompası Kaynak Suyu Debisi** — Mekanik/Isıtma-Soğutma. Qevap = Qh(1 − 1/COP), ṁ = Qevap/(cpΔT); Qevap + W = Qh testle doğrulanır.
+- **Kazan Blöf Debisi ve Oranı (TDS)** — Mekanik/Buhar. B = S·Sf/(Sk − Sf), B/F = Sf/Sk; Kazan Besi Suyu Debisi'nin blöf oranı girdisini üretir; Zod refine Sk > Sf.
+- **Pnömatik Silindir Hava Tüketimi** — Mekanik/Basınçlı Hava. Boyle yasasıyla serbest hava (258,9 L/dk örneği); kol hacmi ihmal.
+- **Akü Şarj Redresörü Akımı ve Gücü** — Elektrik. I = Iyük + k·C/t.
+- **Asansör Motor Gücü (Karşı Ağırlıklı)** — Elektrik. P = (1 − φ)Qgv/(1000η); φ ve η "teyit edin" notuyla.
+- **Köşe Kaynağı Gerekli Dikiş Boyu** — İnşaat. TS EN 1993-1-8 §4.5.3.3; Köşe Kaynağı Dikiş Kapasitesi'nin ters yönü (asgari max(30; 6a), +2a krater); ters kontrol testi.
+- **Ohm Yasası ve Elektriksel Güç Hesabı** — Ev. Altı çiftten (V,I,R,P) dörtlünün tamamı; hepsi aynı dörtlüye iner.
+- **Seri / Paralel Eşdeğer Direnç** — Ev.
+
+**Toplam: 531 modül (test dosyası sayısı), core-calc 1147 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

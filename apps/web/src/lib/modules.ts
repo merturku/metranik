@@ -3358,6 +3358,62 @@ const EV_LED_SERIT_GUC_ADAPTOR: ModuleEntry = {
   standard: "—",
 };
 
+const ISI_POMPASI_KAYNAK_SUYU_DEBISI: ModuleEntry = {
+  id: "isi-pompasi-kaynak-suyu-debisi",
+  title: "Su Kaynaklı Isı Pompası Kaynak Suyu Debisi",
+  href: "/isi-pompasi-kaynak-suyu-debisi",
+  standard: "—",
+};
+
+const KAZAN_BLOF_ORANI_TDS: ModuleEntry = {
+  id: "kazan-blof-orani-tds",
+  title: "Kazan Blöf Debisi ve Oranı (TDS Yöntemi)",
+  href: "/kazan-blof-orani-tds",
+  standard: "EN 12953-10 (kazan suyu kalitesi)",
+};
+
+const PNOMATIK_SILINDIR_HAVA_TUKETIMI: ModuleEntry = {
+  id: "pnomatik-silindir-hava-tuketimi",
+  title: "Pnömatik Silindir Hava Tüketimi",
+  href: "/pnomatik-silindir-hava-tuketimi",
+  standard: "ISO 6358 / ideal gaz",
+};
+
+const AKU_SARJ_REDRESORU_AKIMI: ModuleEntry = {
+  id: "aku-sarj-redresoru-akimi",
+  title: "Akü Şarj Redresörü Akımı ve Gücü",
+  href: "/aku-sarj-redresoru-akimi",
+  standard: "IEEE 485 / IEC 60896 (şarj ilkesi)",
+};
+
+const ASANSOR_MOTOR_GUCU: ModuleEntry = {
+  id: "asansor-motor-gucu",
+  title: "Asansör Motor Gücü (Karşı Ağırlıklı)",
+  href: "/asansor-motor-gucu",
+  standard: "EN 81-20 (ilke)",
+};
+
+const KOSE_KAYNAGI_GEREKLI_BOY: ModuleEntry = {
+  id: "kose-kaynagi-gerekli-boy",
+  title: "Köşe Kaynağı Gerekli Dikiş Boyu",
+  href: "/kose-kaynagi-gerekli-boy",
+  standard: "TS EN 1993-1-8 §4.5.3.3",
+};
+
+const EV_OHM_YASASI_GUC: ModuleEntry = {
+  id: "ev-ohm-yasasi-guc",
+  title: "Ohm Yasası ve Elektriksel Güç Hesabı",
+  href: "/ev-ohm-yasasi-guc",
+  standard: "—",
+};
+
+const EV_DIRENC_SERI_PARALEL: ModuleEntry = {
+  id: "ev-direnc-seri-paralel",
+  title: "Seri / Paralel Eşdeğer Direnç",
+  href: "/ev-direnc-seri-paralel",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3365,6 +3421,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          ISI_POMPASI_KAYNAK_SUYU_DEBISI,
           POMPA_KAPALI_VANA_ISINMASI,
           DEPO_BEKLEME_ISI_KAYBI,
           BORU_BOYUNCA_SICAKLIK_DUSUMU,
@@ -3547,6 +3604,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Buhar",
         modules: [
+          KAZAN_BLOF_ORANI_TDS,
           SU_DOYMA_SICAKLIGI_BASINCI_ANTOINE,
           KONDENS_GERI_KAZANIM_TASARRUFU,
           BUHAR_TUKETIMI_ISI_SERPANTINI,
@@ -3563,6 +3621,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Basınçlı Hava",
         modules: [
+          PNOMATIK_SILINDIR_HAVA_TUKETIMI,
           BASINCLI_HAVA_DELIK_KACAK_DEBISI,
           KOMPRESOR_BASINC_DUSURME_TASARRUFU,
           KOMPRESOR_ATIK_ISI_GERI_KAZANIMI,
@@ -3624,6 +3683,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          ASANSOR_MOTOR_GUCU,
+          AKU_SARJ_REDRESORU_AKIMI,
           ISIK_SIDDETI_AKI_ACI_DONUSUMU,
           PANO_DEVRE_ESZAMANLILIK_FAKTORU,
           ESLIK_ISITMA_GUC_IHTIYACI,
@@ -3747,6 +3808,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KOSE_KAYNAGI_GEREKLI_BOY,
           DUVAR_YUKU_KIRIS_UZERI,
           DEPREM_KAT_AGIRLIGI,
           CELIK_KOLON_ETKIN_BURKULMA_BOYU_K,
@@ -3882,6 +3944,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_DIRENC_SERI_PARALEL,
+          EV_OHM_YASASI_GUC,
           EV_LED_SERIT_GUC_ADAPTOR,
           EV_CIHAZ_YILLIK_ENERJI_MALIYETI,
           EV_CAM_LEVHA_AGIRLIGI,
