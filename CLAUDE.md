@@ -1705,6 +1705,20 @@ Süreç notu: modules.ts'te tek satırlık `modules: [A, B],` biçimli alt kateg
 
 **Toplam: 531 modül (test dosyası sayısı), core-calc 1147 test, hepsi yeşil; src tsc temiz.**
 
+### 5dh. Statik yeniden kazanım/yol aydınlatma/AWG/Branson Ie/bulon etkileşimi: 5 modül daha
+
+- **Kanal Statik Basınç Yeniden Kazanımı** — Mekanik/Havalandırma. ΔPs = R·(ρ/2)(v1² − v2²); R ASHRAE'den teyit notuyla.
+- **Yol Aydınlatması Direk Aralığı (Lümen Yöntemi)** — Elektrik. s = Φ·UF·MF/(E·w); geri doğrulama E = hedef.
+- **AWG – mm² Kablo Kesiti Dönüşümü** — Elektrik. ASTM B258 d = 0,127·92^((36−n)/39); 4/0 = 11,684 mm tanım değeriyle test, en yakın IEC 60228 kesiti.
+- **Branson Etkin Atalet Momenti** — İnşaat. Ie = (Mcr/Ma)³Ig + [1 − (Mcr/Ma)³]Icr ≤ Ig; Ma ≤ Mcr → Ig. Betonarme Kesit Çatlama Momenti'nin sehim tarafı.
+- **Bulon Kesme–Çekme Etkileşim Kontrolü** — İnşaat. TS EN 1993-1-8 Tablo 3.4 (Fv,Rd, Ft,Rd, Fv/Fv,Rd + Ft/(1,4Ft,Rd) ≤ 1), verdict'li.
+
+Test düzeltmesi: bulon etkileşiminde "sınırda" testi için ilk girdim (40/60 kN) 1,137 verdi; 36/40 kN (0,913) ile düzeltildi, modül doğruydu.
+
+**Kalite notu (kendi değerlendirmem):** §5dc–§5dg arasında bazı çok basit modüller (Ohm yasası, seri/paralel direnç, cam ağırlığı, LED şerit adaptörü, cihaz enerji maliyeti) eklendi. §5ax'te benzer "önemsiz" modüllerin (V×ρ gibi) silindiği düşünülürse bunlar gözden geçirilmeli; sonraki partilerde yalnız mühendislik değeri olan modüller eklenmeli.
+
+**Toplam: 536 modül (test dosyası sayısı), core-calc 1160 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

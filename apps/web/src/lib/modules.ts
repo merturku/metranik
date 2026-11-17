@@ -3414,6 +3414,41 @@ const EV_DIRENC_SERI_PARALEL: ModuleEntry = {
   standard: "—",
 };
 
+const KANAL_STATIK_BASINC_YENIDEN_KAZANIMI: ModuleEntry = {
+  id: "kanal-statik-basinc-yeniden-kazanimi",
+  title: "Kanal Statik Basınç Yeniden Kazanımı",
+  href: "/kanal-statik-basinc-yeniden-kazanimi",
+  standard: "ASHRAE Fundamentals (Duct Design)",
+};
+
+const YOL_AYDINLATMA_DIREK_ARALIGI: ModuleEntry = {
+  id: "yol-aydinlatma-direk-araligi",
+  title: "Yol Aydınlatması Direk Aralığı (Lümen Yöntemi)",
+  href: "/yol-aydinlatma-direk-araligi",
+  standard: "EN 13201-2/-3",
+};
+
+const AWG_MM2_DONUSUMU: ModuleEntry = {
+  id: "awg-mm2-donusumu",
+  title: "AWG – mm² Kablo Kesiti Dönüşümü",
+  href: "/awg-mm2-donusumu",
+  standard: "ASTM B258",
+};
+
+const BRANSON_ETKIN_ATALET_MOMENTI: ModuleEntry = {
+  id: "branson-etkin-atalet-momenti",
+  title: "Branson Etkin Atalet Momenti (Çatlamış Kesit)",
+  href: "/branson-etkin-atalet-momenti",
+  standard: "ACI 318-19 §24.2.3.5 / TS 500",
+};
+
+const BULON_KESME_CEKME_ETKILESIMI: ModuleEntry = {
+  id: "bulon-kesme-cekme-etkilesimi",
+  title: "Bulon Kesme–Çekme Etkileşim Kontrolü",
+  href: "/bulon-kesme-cekme-etkilesimi",
+  standard: "TS EN 1993-1-8 Tablo 3.4",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3541,6 +3576,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          KANAL_STATIK_BASINC_YENIDEN_KAZANIMI,
           KANAL_YOGUSMA_ONLEYICI_YALITIM_KALINLIGI,
           FAN_ISLETME_NOKTASI,
           KANAL_YEREL_KAYIP_BASINC,
@@ -3683,6 +3719,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          AWG_MM2_DONUSUMU,
+          YOL_AYDINLATMA_DIREK_ARALIGI,
           ASANSOR_MOTOR_GUCU,
           AKU_SARJ_REDRESORU_AKIMI,
           ISIK_SIDDETI_AKI_ACI_DONUSUMU,
@@ -3808,6 +3846,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BULON_KESME_CEKME_ETKILESIMI,
+          BRANSON_ETKIN_ATALET_MOMENTI,
           KOSE_KAYNAGI_GEREKLI_BOY,
           DUVAR_YUKU_KIRIS_UZERI,
           DEPREM_KAT_AGIRLIGI,
