@@ -3113,6 +3113,41 @@ const EV_PENCERE_SACAK_DERINLIGI: ModuleEntry = {
   standard: "—",
 };
 
+const DEPO_BEKLEME_ISI_KAYBI: ModuleEntry = {
+  id: "depo-bekleme-isi-kaybi",
+  title: "Sıcak Su Deposu Bekleme Isı Kaybı",
+  href: "/depo-bekleme-isi-kaybi",
+  standard: "—",
+};
+
+const HIDRANT_AKIS_TESTI_KULLANILABILIR_DEBI: ModuleEntry = {
+  id: "hidrant-akis-testi-kullanilabilir-debi",
+  title: "Hidrant Akış Testi — Kalan Basınçta Kullanılabilir Debi",
+  href: "/hidrant-akis-testi-kullanilabilir-debi",
+  standard: "NFPA 291",
+};
+
+const UPS_ISI_YAYILIMI: ModuleEntry = {
+  id: "ups-isi-yayilimi",
+  title: "UPS Isı Yayılımı ve Oda Soğutma Yükü",
+  href: "/ups-isi-yayilimi",
+  standard: "IEC 62040-3",
+};
+
+const KOLON_MOMENT_BUYUTME_KATSAYISI: ModuleEntry = {
+  id: "kolon-moment-buyutme-katsayisi",
+  title: "Kolon Moment Büyütme Katsayısı (Narinlik Etkisi)",
+  href: "/kolon-moment-buyutme-katsayisi",
+  standard: "ACI 318-19 §6.6.4.5",
+};
+
+const EV_SAP_MALZEME_MIKTARI: ModuleEntry = {
+  id: "ev-sap-malzeme-miktari",
+  title: "Şap (Tesviye) Çimento ve Su Miktarı",
+  href: "/ev-sap-malzeme-miktari",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3120,6 +3155,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          DEPO_BEKLEME_ISI_KAYBI,
           BORU_BOYUNCA_SICAKLIK_DUSUMU,
           POMPA_SERI_CALISMA,
           YATAY_SILINDIRIK_TANK_KISMI_HACIM,
@@ -3277,6 +3313,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Yangın",
         modules: [
+          HIDRANT_AKIS_TESTI_KULLANILABILIR_DEBI,
           KOPUK_SOLUSYON_KONSANTRE_MIKTARI,
           DUMAN_TUYU_KUTLE_DEBISI,
           MERDIVEN_KAPISI_ACMA_KUVVETI,
@@ -3366,6 +3403,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          UPS_ISI_YAYILIMI,
           HAVAI_HAT_SEHIMI,
           YILDIZ_UCGEN_DIRENC_DONUSUMU,
           KABLO_SARJ_AKIMI,
@@ -3482,6 +3520,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KOLON_MOMENT_BUYUTME_KATSAYISI,
           TABAN_PLAKASI_EZILME_KONTROLU,
           ZEMIN_BAGIL_SIKILIK,
           FLOTASYON_KALDIRMA_GUVENLIGI,
@@ -3605,6 +3644,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_SAP_MALZEME_MIKTARI,
           EV_PENCERE_SACAK_DERINLIGI,
           EV_YUKSEK_YATAK_TOPRAK_HACMI,
           EV_ISI_DEPOLAMA_KAPASITESI,

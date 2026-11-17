@@ -1624,3 +1624,13 @@ export { tabanPlakasiEzilmeKontrolu } from "./modules/taban-plakasi-ezilme-kontr
 export type { TabanPlakasiEzilmeKontroluInput, TabanPlakasiEzilmeKontroluOutput } from "./modules/taban-plakasi-ezilme-kontrolu";
 export { evPencereSacakDerinligi } from "./modules/ev-pencere-sacak-derinligi";
 export type { EvPencereSacakDerinligiInput, EvPencereSacakDerinligiOutput } from "./modules/ev-pencere-sacak-derinligi";
+export { depoBeklemeIsiKaybi } from "./modules/depo-bekleme-isi-kaybi";
+export type { DepoBeklemeIsiKaybiInput, DepoBeklemeIsiKaybiOutput } from "./modules/depo-bekleme-isi-kaybi";
+export { hidrantAkisTestiKullanilabilirDebi } from "./modules/hidrant-akis-testi-kullanilabilir-debi";
+export type { HidrantAkisTestiKullanilabilirDebiInput, HidrantAkisTestiKullanilabilirDebiOutput } from "./modules/hidrant-akis-testi-kullanilabilir-debi";
+export { upsIsiYayilimi } from "./modules/ups-isi-yayilimi";
+export type { UpsIsiYayilimiInput, UpsIsiYayilimiOutput } from "./modules/ups-isi-yayilimi";
+export { kolonMomentBuyutmeKatsayisi } from "./modules/kolon-moment-buyutme-katsayisi";
+export type { KolonMomentBuyutmeKatsayisiInput, KolonMomentBuyutmeKatsayisiOutput } from "./modules/kolon-moment-buyutme-katsayisi";
+export { evSapMalzemeMiktari } from "./modules/ev-sap-malzeme-miktari";
+export type { EvSapMalzemeMiktariInput, EvSapMalzemeMiktariOutput } from "./modules/ev-sap-malzeme-miktari";

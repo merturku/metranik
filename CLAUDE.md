@@ -1619,6 +1619,18 @@ Tam paket (adım 2 sağlık kontrolü): 488 test dosyası / 1051 test yeşil.
 
 **Toplam: 488 modül.**
 
+### 5da. Depo bekleme kaybı/hidrant testi/UPS ısısı/moment büyütme/şap: 5 modül daha
+
+- **Sıcak Su Deposu Bekleme Isı Kaybı** — Mekanik/Isıtma-Soğutma. Q = UA·ΔT, τ = mcp/UA, T(t) üstel soğuma; t = 0 ve t → ∞ sınırları testle doğrulanır.
+- **Hidrant Akış Testi — Kalan Basınçta Kullanılabilir Debi** — Mekanik/Yangın. NFPA 291 QR = QF·[(Ps−PR)/(Ps−PF)]^0,54, gerekli debiyle verdict'li; Zod refine ile PF < Ps.
+- **UPS Isı Yayılımı ve Oda Soğutma Yükü** — Elektrik. Q = Pç(1/η − 1), yedek payı, kW/BTU/h/TR.
+- **Kolon Moment Büyütme Katsayısı** — İnşaat. ACI 318-19 §6.6.4.5 δns = Cm/(1 − Pu/0,75Pc); Pu ≥ 0,75Pc → `null` + uygunsuz.
+- **Şap Çimento ve Su Miktarı** — Ev. V = A·t·(1+fire), çimento dozajı ve s/ç girdi.
+
+Testler el hesabı + sınır durumu. Süreç: oturum scratchpad'inde `gen.py` (dosya/katalog/index üretici) + `batchN.py`; commit öncesi core-calc ve web `tsc` (web'de yalnız `.next/types/* N.ts` iCloud kopyası hataları kabul edilir).
+
+**Toplam: 493 modül, core-calc 1062 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
