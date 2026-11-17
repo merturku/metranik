@@ -3316,6 +3316,48 @@ const EV_CIHAZ_YILLIK_ENERJI_MALIYETI: ModuleEntry = {
   standard: "—",
 };
 
+const BACA_GAZI_DEBISI_CAPI: ModuleEntry = {
+  id: "baca-gazi-debisi-capi",
+  title: "Baca Gazı Debisi ve Baca İç Çapı (Doğalgaz)",
+  href: "/baca-gazi-debisi-capi",
+  standard: "TS EN 13384-1 (ön boyut)",
+};
+
+const CELIK_KOLON_ETKIN_BURKULMA_BOYU_K: ModuleEntry = {
+  id: "celik-kolon-etkin-burkulma-boyu-k",
+  title: "Çelik Kolon Etkin Burkulma Boyu Katsayısı (K) ve Narinlik",
+  href: "/celik-kolon-etkin-burkulma-boyu-k",
+  standard: "AISC 360 Commentary (Duan-King-Chen)",
+};
+
+const DEPREM_KAT_AGIRLIGI: ModuleEntry = {
+  id: "deprem-kat-agirligi",
+  title: "Deprem Hesabı Kat Ağırlığı (G + n·Q)",
+  href: "/deprem-kat-agirligi",
+  standard: "TBDY 2018",
+};
+
+const DUVAR_YUKU_KIRIS_UZERI: ModuleEntry = {
+  id: "duvar-yuku-kiris-uzeri",
+  title: "Kiriş Üzeri Duvar Yükü (kN/m)",
+  href: "/duvar-yuku-kiris-uzeri",
+  standard: "TS 498",
+};
+
+const FAZ_AKIMI_DENGESIZLIGI_KONTROLU: ModuleEntry = {
+  id: "faz-akimi-dengesizligi-kontrolu",
+  title: "Faz Akımı Dengesizliği Kontrolü",
+  href: "/faz-akimi-dengesizligi-kontrolu",
+  standard: "NEMA MG 1 (pratik sınır)",
+};
+
+const EV_LED_SERIT_GUC_ADAPTOR: ModuleEntry = {
+  id: "ev-led-serit-guc-adaptor",
+  title: "LED Şerit Toplam Güç ve Adaptör Seçimi",
+  href: "/ev-led-serit-guc-adaptor",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3535,7 +3577,11 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       },
       {
         label: "Doğalgaz",
-        modules: [DOGALGAZ_TUKETIM_SAYAC_SECIMI, DOGALGAZ_BORU_BASINC_KAYBI],
+        modules: [
+          BACA_GAZI_DEBISI_CAPI,
+          DOGALGAZ_TUKETIM_SAYAC_SECIMI,
+          DOGALGAZ_BORU_BASINC_KAYBI,
+        ],
       },
       {
         label: "Montaj",
@@ -3677,6 +3723,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          FAZ_AKIMI_DENGESIZLIGI_KONTROLU,
           CT_GERCEK_DOGRULUK_SINIRI_FAKTORU,
           TOPRAKLAMA_DIRENCI_TESTI,
           YALITIM_DIRENCI_TESTI,
@@ -3700,6 +3747,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          DUVAR_YUKU_KIRIS_UZERI,
+          DEPREM_KAT_AGIRLIGI,
+          CELIK_KOLON_ETKIN_BURKULMA_BOYU_K,
           FORE_KAZIK_BETON_HACMI,
           DURMA_GORUS_MESAFESI,
           KESME_DONATISI_MINIMUM_ORANI,
@@ -3832,6 +3882,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_LED_SERIT_GUC_ADAPTOR,
           EV_CIHAZ_YILLIK_ENERJI_MALIYETI,
           EV_CAM_LEVHA_AGIRLIGI,
           EV_KORKULUK_BALUSTR_SAYISI,

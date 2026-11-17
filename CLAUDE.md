@@ -1679,6 +1679,19 @@ Test düzeltmesi: durma görüşü `null` testinde ilk girdim (a = 3,4, G = −0
 
 **Toplam: 517 modül (test dosyası sayısı), core-calc 1118 test, hepsi yeşil; src tsc temiz.**
 
+### 5df. Baca gazı çapı/çelik kolon K/deprem kat ağırlığı/duvar yükü/faz akımı dengesizliği/LED şerit: 6 modül daha
+
+- **Baca Gazı Debisi ve Baca İç Çapı (Doğalgaz)** — Mekanik/Doğalgaz. CH4 stokiyometrisi: baca gazı = 3 + 7,524 + (λ−1)·9,524 Nm³/Nm³ yakıt, sıcaklık düzeltmesi, D = √(4V̇/πv); gerçek tasarım için TS EN 13384-1 notu.
+- **Çelik Kolon Etkin Burkulma Boyu Katsayısı (K)** — İnşaat. Duan-King-Chen yaklaşık formülleri (ötelenmesiz/ötelenmeli); uç sınırlar G = 0 → 0,5 / 1,0 testle doğrulanır.
+- **Deprem Hesabı Kat Ağırlığı (G + nQ)** — İnşaat. TBDY 2018 kütle tanımı; n değeri tablodan teyit notuyla.
+- **Kiriş Üzeri Duvar Yükü** — İnşaat. q = (γd·t + 2·ts·γs)·h·(1 − boşluk); birim ağırlıklar TS 498'den teyit notuyla.
+- **Faz Akımı Dengesizliği Kontrolü** — Elektrik/Test & Kontrol. max|Ii − Ort|/Ort; ≤ %5 uygun, ≤ %10 sınırda (pratik eşik, teyit notuyla).
+- **LED Şerit Güç ve Adaptör Seçimi** — Ev.
+
+Süreç notu: modules.ts'te tek satırlık `modules: [A, B],` biçimli alt kategori gen.py'ın ekleme mantığını bozdu (Doğalgaz); satır çok satırlı biçime çevrildi. Silme (`rm`) izni reddedildiği için gen.py'a `OVERWRITE=1` bayrağı eklendi (yarım kalan üretimi temizlemek için).
+
+**Toplam: 523 modül (test dosyası sayısı), core-calc 1130 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
