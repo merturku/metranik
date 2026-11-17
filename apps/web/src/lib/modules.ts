@@ -3260,6 +3260,62 @@ const EV_CAM_LEVHA_AGIRLIGI: ModuleEntry = {
   standard: "TS EN 572-1",
 };
 
+const KANAL_YOGUSMA_ONLEYICI_YALITIM_KALINLIGI: ModuleEntry = {
+  id: "kanal-yogusma-onleyici-yalitim-kalinligi",
+  title: "Soğuk Hava Kanalı Yoğuşma Önleyici Yalıtım Kalınlığı",
+  href: "/kanal-yogusma-onleyici-yalitim-kalinligi",
+  standard: "TS EN ISO 12241",
+};
+
+const YAG_TUTUCU_NOMINAL_BOYUT: ModuleEntry = {
+  id: "yag-tutucu-nominal-boyut",
+  title: "Yağ Tutucu (Gres Separatörü) Nominal Boyutu",
+  href: "/yag-tutucu-nominal-boyut",
+  standard: "TS EN 1825-2",
+};
+
+const BORU_DIRSEGI_BASINC_ITME_KUVVETI: ModuleEntry = {
+  id: "boru-dirsegi-basinc-itme-kuvveti",
+  title: "Boru Dirseği Basınç İtme Kuvveti ve Dayanak Alanı",
+  href: "/boru-dirsegi-basinc-itme-kuvveti",
+  standard: "AWWA M11",
+};
+
+const ISIK_SIDDETI_AKI_ACI_DONUSUMU: ModuleEntry = {
+  id: "isik-siddeti-aki-aci-donusumu",
+  title: "Işık Şiddeti – Akı – Işın Açısı Dönüşümü",
+  href: "/isik-siddeti-aki-aci-donusumu",
+  standard: "CIE (fotometri tanımları)",
+};
+
+const KESME_DONATISI_MINIMUM_ORANI: ModuleEntry = {
+  id: "kesme-donatisi-minimum-orani",
+  title: "Kesme Donatısı (Etriye) Minimum Oranı ve Azami Aralık",
+  href: "/kesme-donatisi-minimum-orani",
+  standard: "TS 500 §8.1.5",
+};
+
+const DURMA_GORUS_MESAFESI: ModuleEntry = {
+  id: "durma-gorus-mesafesi",
+  title: "Durma Görüş Mesafesi (Yol Tasarımı)",
+  href: "/durma-gorus-mesafesi",
+  standard: "AASHTO Green Book",
+};
+
+const FORE_KAZIK_BETON_HACMI: ModuleEntry = {
+  id: "fore-kazik-beton-hacmi",
+  title: "Fore Kazık Beton Hacmi ve Donatı Ağırlığı",
+  href: "/fore-kazik-beton-hacmi",
+  standard: "—",
+};
+
+const EV_CIHAZ_YILLIK_ENERJI_MALIYETI: ModuleEntry = {
+  id: "ev-cihaz-yillik-enerji-maliyeti",
+  title: "Elektrikli Cihaz Yıllık Enerji Tüketimi ve Maliyeti",
+  href: "/ev-cihaz-yillik-enerji-maliyeti",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3348,6 +3404,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Sıhhi Tesisat",
         modules: [
+          YAG_TUTUCU_NOMINAL_BOYUT,
           TERS_OZMOZ_KUTLE_DENGESI,
           BORU_DONMA_SURESI,
           TANK_BOSALMA_SURESI_TORRICELLI,
@@ -3385,6 +3442,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          KANAL_YOGUSMA_ONLEYICI_YALITIM_KALINLIGI,
           FAN_ISLETME_NOKTASI,
           KANAL_YEREL_KAYIP_BASINC,
           HAVA_ISITICI_BATARYA_SU_DEBISI,
@@ -3482,6 +3540,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Montaj",
         modules: [
+          BORU_DIRSEGI_BASINC_ITME_KUVVETI,
           HIDROSTATIK_TEST_EK_SU_HACMI,
           KRITIK_YALITIM_YARICAPI,
           ARMATUR_ESDEGER_BORU_UZUNLUGU,
@@ -3519,6 +3578,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          ISIK_SIDDETI_AKI_ACI_DONUSUMU,
           PANO_DEVRE_ESZAMANLILIK_FAKTORU,
           ESLIK_ISITMA_GUC_IHTIYACI,
           PARATONER_AYIRMA_MESAFESI,
@@ -3640,6 +3700,9 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          FORE_KAZIK_BETON_HACMI,
+          DURMA_GORUS_MESAFESI,
+          KESME_DONATISI_MINIMUM_ORANI,
           TABAN_PLAKASI_KALINLIGI,
           DIKDORTGEN_SAVAK_DEBISI,
           BETON_HEDEF_ORTALAMA_DAYANIM,
@@ -3769,6 +3832,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_CIHAZ_YILLIK_ENERJI_MALIYETI,
           EV_CAM_LEVHA_AGIRLIGI,
           EV_KORKULUK_BALUSTR_SAYISI,
           EV_SICAKLIK_BIRIM_DONUSUMU,

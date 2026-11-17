@@ -1664,6 +1664,21 @@ Test düzeltmesi: paratonerde beton (km = 0,5) için ilk beklentim yarıydı, do
 
 **Toplam: 509 modül (test dosyası sayısı), core-calc 1099 test, hepsi yeşil; src tsc temiz.**
 
+### 5de. Kanal yoğuşma yalıtımı/yağ tutucu/dirsek itmesi/ışık şiddeti/etriye min. oranı/durma görüşü/fore kazık/cihaz maliyeti: 8 modül daha
+
+- **Soğuk Hava Kanalı Yoğuşma Önleyici Yalıtım Kalınlığı** — Mekanik/Havalandırma. Düzlemsel direnç ağı, Magnus çiy noktası; yoğuşma önleyici yalıtım (boru) modülünün dikdörtgen kanal karşılığı; testte geri doğrulama (yüzey sıcaklığı = hedef). Hedef ≥ ortam → `null`, Tc ≥ hedef → 0 mm.
+- **Yağ Tutucu Nominal Boyutu** — Mekanik/Sıhhi. TS EN 1825-2 NS = Qs·ft·fd·fr + NS serisi; katsayı/seri "teyit edin" notuyla.
+- **Boru Dirseği Basınç İtme Kuvveti ve Dayanak Alanı** — Mekanik/Montaj. F = 2(pA + ρAv²)sin(θ/2), AWWA M11.
+- **Işık Şiddeti–Akı–Işın Açısı Dönüşümü** — Elektrik. Ω = 2π(1 − cos(θ/2)), I = Φ/Ω, E = I/d².
+- **Kesme Donatısı Minimum Oranı ve Azami Aralık** — İnşaat. TS 500 §8.1.5 ρw ≥ 0,3fctd/fywd.
+- **Durma Görüş Mesafesi** — İnşaat. AASHTO SSD; payda ≤ 0 → `null`.
+- **Fore Kazık Beton Hacmi ve Donatı Ağırlığı** — İnşaat. Geometrik metraj.
+- **Elektrikli Cihaz Yıllık Enerji Maliyeti** — Ev.
+
+Test düzeltmesi: durma görüşü `null` testinde ilk girdim (a = 3,4, G = −0,3) payda > 0 verdiği için hatalıydı; a = 1 ile düzeltildi (modül doğruydu).
+
+**Toplam: 517 modül (test dosyası sayısı), core-calc 1118 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
