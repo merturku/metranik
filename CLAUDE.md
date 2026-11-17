@@ -1631,6 +1631,18 @@ Testler el hesabı + sınır durumu. Süreç: oturum scratchpad'inde `gen.py` (d
 
 **Toplam: 493 modül, core-calc 1062 test, hepsi yeşil; src tsc temiz.**
 
+### 5db. Hava kaçağı/paratoner ayırma/burulma/trapez kanal/sıcaklık dönüşümü: 5 modül daha
+
+- **Basınçlı Hava Delik Kaçak Debisi ve Maliyeti** — Mekanik/Basınçlı Hava. İzentropik orifis akışı; p0/pa ≥ 1,893 tıkanmış, altında alt-kritik; iki formülün kritik basınçta sürekliliği testle doğrulanır (3 mm, 7 bar-g → 0,533 m³/dk).
+- **Paratoner Ayırma (Emniyet) Mesafesi** — Elektrik. TS EN 62305-3 s = ki·kc/km·l; katsayılar "teyit edin" notuyla.
+- **Dairesel Mil Burulma Gerilmesi ve Dönme Açısı** — İnşaat. J, τmaks = T(d/2)/J, φ = TL/GJ; dolu ve boru kesit.
+- **Trapez Açık Kanal Normal Derinlik (Manning)** — İnşaat. Q(y) monoton, ikiye bölme; Froude rejimi; testte Q(y = 1 m) geri çözülür.
+- **Sıcaklık Birim Dönüşümü (°C, K, °F, °R)** — Ev. Mutlak sıfır altı Zod ile reddedilir.
+
+Test düzeltmesi: paratonerde beton (km = 0,5) için ilk beklentim yarıydı, doğrusu iki katı (modül doğruydu).
+
+**Toplam: 498 modül (test dosyası sayısı), core-calc 1075 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

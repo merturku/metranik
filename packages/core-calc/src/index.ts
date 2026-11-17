@@ -1634,3 +1634,13 @@ export { kolonMomentBuyutmeKatsayisi } from "./modules/kolon-moment-buyutme-kats
 export type { KolonMomentBuyutmeKatsayisiInput, KolonMomentBuyutmeKatsayisiOutput } from "./modules/kolon-moment-buyutme-katsayisi";
 export { evSapMalzemeMiktari } from "./modules/ev-sap-malzeme-miktari";
 export type { EvSapMalzemeMiktariInput, EvSapMalzemeMiktariOutput } from "./modules/ev-sap-malzeme-miktari";
+export { basincliHavaDelikKacakDebisi } from "./modules/basincli-hava-delik-kacak-debisi";
+export type { BasincliHavaDelikKacakDebisiInput, BasincliHavaDelikKacakDebisiOutput } from "./modules/basincli-hava-delik-kacak-debisi";
+export { paratonerAyirmaMesafesi } from "./modules/paratoner-ayirma-mesafesi";
+export type { ParatonerAyirmaMesafesiInput, ParatonerAyirmaMesafesiOutput } from "./modules/paratoner-ayirma-mesafesi";
+export { daireselMilBurulma } from "./modules/dairesel-mil-burulma";
+export type { DaireselMilBurulmaInput, DaireselMilBurulmaOutput } from "./modules/dairesel-mil-burulma";
+export { trapezKanalManningNormalDerinlik } from "./modules/trapez-kanal-manning-normal-derinlik";
+export type { TrapezKanalManningNormalDerinlikInput, TrapezKanalManningNormalDerinlikOutput } from "./modules/trapez-kanal-manning-normal-derinlik";
+export { evSicaklikBirimDonusumu } from "./modules/ev-sicaklik-birim-donusumu";
+export type { EvSicaklikBirimDonusumuInput, EvSicaklikBirimDonusumuOutput } from "./modules/ev-sicaklik-birim-donusumu";

@@ -3148,6 +3148,41 @@ const EV_SAP_MALZEME_MIKTARI: ModuleEntry = {
   standard: "—",
 };
 
+const BASINCLI_HAVA_DELIK_KACAK_DEBISI: ModuleEntry = {
+  id: "basincli-hava-delik-kacak-debisi",
+  title: "Basınçlı Hava Delik Kaçak Debisi ve Maliyeti",
+  href: "/basincli-hava-delik-kacak-debisi",
+  standard: "ISO 6358 (orifis akışı)",
+};
+
+const PARATONER_AYIRMA_MESAFESI: ModuleEntry = {
+  id: "paratoner-ayirma-mesafesi",
+  title: "Paratoner Ayırma (Emniyet) Mesafesi",
+  href: "/paratoner-ayirma-mesafesi",
+  standard: "TS EN 62305-3",
+};
+
+const DAIRESEL_MIL_BURULMA: ModuleEntry = {
+  id: "dairesel-mil-burulma",
+  title: "Dairesel Mil Burulma Gerilmesi ve Dönme Açısı",
+  href: "/dairesel-mil-burulma",
+  standard: "Saint-Venant burulma teorisi",
+};
+
+const TRAPEZ_KANAL_MANNING_NORMAL_DERINLIK: ModuleEntry = {
+  id: "trapez-kanal-manning-normal-derinlik",
+  title: "Trapez Açık Kanal Normal Derinlik (Manning)",
+  href: "/trapez-kanal-manning-normal-derinlik",
+  standard: "Manning denklemi",
+};
+
+const EV_SICAKLIK_BIRIM_DONUSUMU: ModuleEntry = {
+  id: "ev-sicaklik-birim-donusumu",
+  title: "Sıcaklık Birim Dönüşümü (°C, K, °F, °R)",
+  href: "/ev-sicaklik-birim-donusumu",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3349,6 +3384,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Basınçlı Hava",
         modules: [
+          BASINCLI_HAVA_DELIK_KACAK_DEBISI,
           KOMPRESOR_BASINC_DUSURME_TASARRUFU,
           KOMPRESOR_ATIK_ISI_GERI_KAZANIMI,
           BASINCLI_HAVA_KACAK_ORANI,
@@ -3403,6 +3439,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          PARATONER_AYIRMA_MESAFESI,
           UPS_ISI_YAYILIMI,
           HAVAI_HAT_SEHIMI,
           YILDIZ_UCGEN_DIRENC_DONUSUMU,
@@ -3520,6 +3557,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          TRAPEZ_KANAL_MANNING_NORMAL_DERINLIK,
+          DAIRESEL_MIL_BURULMA,
           KOLON_MOMENT_BUYUTME_KATSAYISI,
           TABAN_PLAKASI_EZILME_KONTROLU,
           ZEMIN_BAGIL_SIKILIK,
@@ -3644,6 +3683,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_SICAKLIK_BIRIM_DONUSUMU,
           EV_SAP_MALZEME_MIKTARI,
           EV_PENCERE_SACAK_DERINLIGI,
           EV_YUKSEK_YATAK_TOPRAK_HACMI,
