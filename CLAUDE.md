@@ -1643,6 +1643,16 @@ Test düzeltmesi: paratonerde beton (km = 0,5) için ilk beklentim yarıydı, do
 
 **Toplam: 498 modül (test dosyası sayısı), core-calc 1075 test, hepsi yeşil; src tsc temiz.**
 
+### 5dc. Pompa saha verimi/kapalı vana ısınması/eşlik ısıtma/beton hedef dayanımı/balüstr: 5 modül daha
+
+- **Pompa Saha Verim Testi** — Mekanik/Test & Kontrol. Phid = ρgQH, ηpompa = Phid/(Pel·ηm); ISO 9906 toleransıyla garanti verimine karşı verdict'li (tolerans girdi, sürümden teyit notu); η > 1 → ölçüm hatası.
+- **Pompa Kapalı Vanada Isınma Süresi** — Mekanik/Isıtma-Soğutma. dT/dt = Pmil/(m·cp), izinli artışa süre (minimum debi hattı gerekçesi).
+- **Eşlik Isıtma Güç İhtiyacı** — Elektrik. Silindirik iletimle q (W/m) ve toplam güç; IEC 62395-1/IEEE 515.
+- **Beton Hedef Ortalama Dayanımı** — İnşaat. ACI 318-19 §26.4.3: s biliniyorsa iki denklemin büyüğü, yoksa Tablo 26.4.3.1; TS EN 206 farkı notta.
+- **Korkuluk Balüstr Sayısı ve Boşluk** — Ev. n ≥ (L − g)/(w + g), gerçekleşen boşluk; azami boşluk girdi.
+
+**Toplam: 503 modül (test dosyası sayısı), core-calc 1087 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

@@ -3183,6 +3183,41 @@ const EV_SICAKLIK_BIRIM_DONUSUMU: ModuleEntry = {
   standard: "—",
 };
 
+const POMPA_SAHA_VERIM_TESTI: ModuleEntry = {
+  id: "pompa-saha-verim-testi",
+  title: "Pompa Saha Verim Testi (Toplam ve Pompa Verimi)",
+  href: "/pompa-saha-verim-testi",
+  standard: "ISO 9906",
+};
+
+const POMPA_KAPALI_VANA_ISINMASI: ModuleEntry = {
+  id: "pompa-kapali-vana-isinmasi",
+  title: "Pompa Kapalı Vanada Isınma Süresi (Minimum Debi)",
+  href: "/pompa-kapali-vana-isinmasi",
+  standard: "API 610 (minimum debi ilkesi)",
+};
+
+const ESLIK_ISITMA_GUC_IHTIYACI: ModuleEntry = {
+  id: "eslik-isitma-guc-ihtiyaci",
+  title: "Eşlik Isıtma (Heat Tracing) Güç İhtiyacı",
+  href: "/eslik-isitma-guc-ihtiyaci",
+  standard: "IEC 62395-1 / IEEE 515",
+};
+
+const BETON_HEDEF_ORTALAMA_DAYANIM: ModuleEntry = {
+  id: "beton-hedef-ortalama-dayanim",
+  title: "Beton Hedef Ortalama Dayanımı (Karışım Tasarımı)",
+  href: "/beton-hedef-ortalama-dayanim",
+  standard: "ACI 318-19 §26.4.3",
+};
+
+const EV_KORKULUK_BALUSTR_SAYISI: ModuleEntry = {
+  id: "ev-korkuluk-balustr-sayisi",
+  title: "Korkuluk Dikme (Balüstr) Sayısı ve Boşluk",
+  href: "/ev-korkuluk-balustr-sayisi",
+  standard: "—",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3190,6 +3225,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          POMPA_KAPALI_VANA_ISINMASI,
           DEPO_BEKLEME_ISI_KAYBI,
           BORU_BOYUNCA_SICAKLIK_DUSUMU,
           POMPA_SERI_CALISMA,
@@ -3420,6 +3456,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          POMPA_SAHA_VERIM_TESTI,
           TAZE_HAVA_ORANI_SICAKLIKTAN,
           KANAL_HIZ_AGI_ORTALAMA_DEBI,
           POMPA_MANOMETRIK_YUKSEKLIK_OLCUMU,
@@ -3439,6 +3476,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          ESLIK_ISITMA_GUC_IHTIYACI,
           PARATONER_AYIRMA_MESAFESI,
           UPS_ISI_YAYILIMI,
           HAVAI_HAT_SEHIMI,
@@ -3557,6 +3595,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          BETON_HEDEF_ORTALAMA_DAYANIM,
           TRAPEZ_KANAL_MANNING_NORMAL_DERINLIK,
           DAIRESEL_MIL_BURULMA,
           KOLON_MOMENT_BUYUTME_KATSAYISI,
@@ -3683,6 +3722,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          EV_KORKULUK_BALUSTR_SAYISI,
           EV_SICAKLIK_BIRIM_DONUSUMU,
           EV_SAP_MALZEME_MIKTARI,
           EV_PENCERE_SACAK_DERINLIGI,
