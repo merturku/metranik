@@ -1719,6 +1719,17 @@ Test düzeltmesi: bulon etkileşiminde "sınırda" testi için ilk girdim (40/60
 
 **Toplam: 536 modül (test dosyası sayısı), core-calc 1160 test, hepsi yeşil; src tsc temiz.**
 
+### 5di. Hidronik kritik devre/sprinkler yerleşimi/sayaç doğruluğu/çelik kesit sınıfı: 4 modül daha
+
+- **Hidronik Kritik Devre Toplam Basınç Kaybı ve Pompa Yüksekliği** — Mekanik/Isıtma-Soğutma. R·L + Σζρv²/2 + ekipman, emniyet payı, H = ΔP/ρg; Pompa Seçimi'nin girdisini üretir.
+- **Sprinkler Adedi ve Izgara Yerleşimi** — Mekanik/Yangın. nx, ny ve alan sınırı; tehlike sınıfı sınırları girdi (NFPA 13 / TS EN 12845'ten teyit notu).
+- **Elektrik Sayacı Doğruluk Kontrolü** — Elektrik/Test & Kontrol. IEC 62053-21/-22 sınıf 0,5S/1/2 sınırları, verdict'li.
+- **Çelik I Kesit Sınıflandırması (Eğilme)** — İnşaat. TS EN 1993-1-1 Tablo 5.2 (9ε/10ε/14ε, 72ε/83ε/124ε); IPE300 S355 sınıf 1.
+
+Gerçek hata (düzeltildi): Sayaç doğruluğunda tam sınır değerinde (%0,8 = sınırın %80'i) kayan nokta 0,79999… çıkarıp "uygun" veriyordu; karşılaştırmalara 1e-9 toleransı eklendi. Ayrıca hidronik testte kendi el aritmetiğim (5,7923/5,2657) 1e-4 hatalıydı, modül doğruydu (5,7924/5,2658).
+
+**Toplam: 540 modül (test dosyası sayısı), core-calc 1170 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

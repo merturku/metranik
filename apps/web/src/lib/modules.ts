@@ -3449,6 +3449,34 @@ const BULON_KESME_CEKME_ETKILESIMI: ModuleEntry = {
   standard: "TS EN 1993-1-8 Tablo 3.4",
 };
 
+const HIDRONIK_KRITIK_DEVRE_BASINC_KAYBI: ModuleEntry = {
+  id: "hidronik-kritik-devre-basinc-kaybi",
+  title: "Hidronik Kritik Devre Toplam Basınç Kaybı ve Pompa Yüksekliği",
+  href: "/hidronik-kritik-devre-basinc-kaybi",
+  standard: "TS EN 12828 (hidrolik hesap ilkesi)",
+};
+
+const SPRINKLER_ADEDI_YERLESIMI: ModuleEntry = {
+  id: "sprinkler-adedi-yerlesimi",
+  title: "Sprinkler Adedi ve Izgara Yerleşimi",
+  href: "/sprinkler-adedi-yerlesimi",
+  standard: "NFPA 13 / TS EN 12845",
+};
+
+const SAYAC_DOGRULUK_KONTROLU: ModuleEntry = {
+  id: "sayac-dogruluk-kontrolu",
+  title: "Elektrik Sayacı Doğruluk Kontrolü",
+  href: "/sayac-dogruluk-kontrolu",
+  standard: "IEC 62053-21/-22",
+};
+
+const CELIK_I_KESIT_SINIFI: ModuleEntry = {
+  id: "celik-i-kesit-sinifi",
+  title: "Çelik I Kesit Sınıflandırması (Eğilme)",
+  href: "/celik-i-kesit-sinifi",
+  standard: "TS EN 1993-1-1 Tablo 5.2",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3456,6 +3484,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          HIDRONIK_KRITIK_DEVRE_BASINC_KAYBI,
           ISI_POMPASI_KAYNAK_SUYU_DEBISI,
           POMPA_KAPALI_VANA_ISINMASI,
           DEPO_BEKLEME_ISI_KAYBI,
@@ -3619,6 +3648,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Yangın",
         modules: [
+          SPRINKLER_ADEDI_YERLESIMI,
           NOZUL_REAKSIYON_KUVVETI,
           HIDRANT_AKIS_TESTI_KULLANILABILIR_DEBI,
           KOPUK_SOLUSYON_KONSANTRE_MIKTARI,
@@ -3822,6 +3852,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          SAYAC_DOGRULUK_KONTROLU,
           FAZ_AKIMI_DENGESIZLIGI_KONTROLU,
           CT_GERCEK_DOGRULUK_SINIRI_FAKTORU,
           TOPRAKLAMA_DIRENCI_TESTI,
@@ -3846,6 +3877,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          CELIK_I_KESIT_SINIFI,
           BULON_KESME_CEKME_ETKILESIMI,
           BRANSON_ETKIN_ATALET_MOMENTI,
           KOSE_KAYNAGI_GEREKLI_BOY,
