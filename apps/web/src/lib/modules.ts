@@ -3505,6 +3505,27 @@ const SOGUTUCU_HAT_HIZI_KONTROLU: ModuleEntry = {
   standard: "ASHRAE Refrigeration (boru boyutlandırma)",
 };
 
+const FAZ_YUK_DENGELEME: ModuleEntry = {
+  id: "faz-yuk-dengeleme",
+  title: "Tek Faz Yüklerin Fazlara Dengeli Dağıtımı",
+  href: "/faz-yuk-dengeleme",
+  standard: "IEC 60364-3 (yük dengeleme ilkesi)",
+};
+
+const ASFALT_KAPLAMA_TONAJI: ModuleEntry = {
+  id: "asfalt-kaplama-tonaji",
+  title: "Asfalt Kaplama Tonajı ve Bitüm Miktarı",
+  href: "/asfalt-kaplama-tonaji",
+  standard: "—",
+};
+
+const KOMPRESOR_OZGUL_GUC_ENERJI_MALIYETI: ModuleEntry = {
+  id: "kompresor-ozgul-guc-enerji-maliyeti",
+  title: "Kompresör Özgül Güç ve Yıllık Enerji Maliyeti",
+  href: "/kompresor-ozgul-guc-enerji-maliyeti",
+  standard: "ISO 1217 (FAD ölçümü)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3715,6 +3736,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Basınçlı Hava",
         modules: [
+          KOMPRESOR_OZGUL_GUC_ENERJI_MALIYETI,
           PNOMATIK_SILINDIR_HAVA_TUKETIMI,
           BASINCLI_HAVA_DELIK_KACAK_DEBISI,
           KOMPRESOR_BASINC_DUSURME_TASARRUFU,
@@ -3778,6 +3800,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          FAZ_YUK_DENGELEME,
           KABLO_ORTAM_SICAKLIGI_DUZELTME_KATSAYISI,
           AWG_MM2_DONUSUMU,
           YOL_AYDINLATMA_DIREK_ARALIGI,
@@ -3907,6 +3930,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ASFALT_KAPLAMA_TONAJI,
           MINIMUM_YATAY_KURB_YARICAPI,
           YOL_KESIT_HACMI_ORTALAMA_PRIZMOIDAL,
           CELIK_I_KESIT_SINIFI,

@@ -1739,6 +1739,14 @@ Gerçek hata (düzeltildi): Sayaç doğruluğunda tam sınır değerinde (%0,8 =
 
 **Toplam: 544 modül (test dosyası sayısı), core-calc 1180 test, hepsi yeşil; src tsc temiz.**
 
+### 5dk. Faz yük dengeleme/asfalt tonajı/kompresör özgül güç: 3 modül daha
+
+- **Tek Faz Yüklerin Fazlara Dengeli Dağıtımı** — Elektrik. LPT açgözlü atama, faz toplamları, dengesizlik % ve nötr akımı; 30/25/20/15/10/5 A → 35/35/35 A. Faz Akımı Dengesizliği Kontrolü'nün tasarım tarafı.
+- **Asfalt Kaplama Tonajı ve Bitüm Miktarı** — İnşaat. Geometrik metraj, ρ ve bitüm oranı Marshall sonuçlarından girdi.
+- **Kompresör Özgül Güç ve Yıllık Enerji Maliyeti** — Mekanik/Basınçlı Hava. P/FAD, kWh/m³, yıllık maliyet; Delik Kaçak Debisi modülünün maliyet karşılığı.
+
+**Toplam: 547 modül (test dosyası sayısı), core-calc 1187 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
