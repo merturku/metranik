@@ -1747,6 +1747,18 @@ Gerçek hata (düzeltildi): Sayaç doğruluğunda tam sınır değerinde (%0,8 =
 
 **Toplam: 547 modül (test dosyası sayısı), core-calc 1187 test, hepsi yeşil; src tsc temiz.**
 
+### 5dl. Ekonomizer/doğal havalandırma/trafo yaşlanması/eksantrik bulon grubu/n50: 5 modül daha
+
+- **Ekonomizer Baca Gazı Isı Geri Kazanımı** — Mekanik/Isıtma-Soğutma. Q = ṁ·cp·ΔT, su ısınması, yıllık yakıt tasarrufu; asit çiy noktası ve termodinamik uygunluk verdict'i. Kazan Verimi/Siegert modüllerinin geri kazanım tarafı.
+- **Doğal Havalandırma Debisi (Baca Etkisi)** — Mekanik/Havalandırma. ASHRAE Böl. 16 Q = Cd·A*·√(2gΔH·ΔT/Ti), seri açıklık A*; rüzgâr etkisi yok (notta).
+- **Trafo Sıcak Nokta Sıcaklığı ve Yaşlanma Hızı** — Elektrik. IEC 60076-7 V = 2^((θh−98)/6) ve termal kâğıt exp bağıntısı; verdict'li. Trafo Yüklenme Oranı'nın ısıl ömür tamamlayıcısı.
+- **Eksantrik Yüklü Bulon Grubu (Elastik Yöntem)** — İnşaat. T = V·e, köşe bulonu bileşkesi; testte bulon koordinatlarıyla bağımsız çapraz kontrol. Bulonlu Birleşim modüllerinin eksantrik yük tamamlayıcısı.
+- **Bina Hava Sızdırmazlığı (n50)** — Ev. TS EN ISO 9972; n50, q50, n50/N infiltrasyon; İnfiltrasyon Isı Kaybı modülünün hava değişimi girdisini üretir.
+
+Not: ilk düşünülen "akü kapasitesi (IEEE 485)" modülü, Kt faktörleri üretici verisi gerektirdiği ve gömülebilecek doğrulanmış tablo olmadığı için atlandı. Üretici betik (gen.py) oturum scratchpad'inde yeniden yazıldı (repoda değil).
+
+**Toplam: 552 modül (test dosyası sayısı), core-calc 1205 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

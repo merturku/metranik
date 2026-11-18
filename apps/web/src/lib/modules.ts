@@ -3526,6 +3526,41 @@ const KOMPRESOR_OZGUL_GUC_ENERJI_MALIYETI: ModuleEntry = {
   standard: "ISO 1217 (FAD ölçümü)",
 };
 
+const EKONOMIZER_BACA_GAZI_ISI_GERI_KAZANIMI: ModuleEntry = {
+  id: "ekonomizer-baca-gazi-isi-geri-kazanimi",
+  title: "Ekonomizer Baca Gazı Isı Geri Kazanımı",
+  href: "/ekonomizer-baca-gazi-isi-geri-kazanimi",
+  standard: "—",
+};
+
+const DOGAL_HAVALANDIRMA_BACA_ETKISI: ModuleEntry = {
+  id: "dogal-havalandirma-baca-etkisi",
+  title: "Doğal Havalandırma Debisi (Baca Etkisi)",
+  href: "/dogal-havalandirma-baca-etkisi",
+  standard: "ASHRAE Fundamentals Böl. 16 (doğal havalandırma)",
+};
+
+const TRAFO_SICAK_NOKTA_YASLANMA_HIZI: ModuleEntry = {
+  id: "trafo-sicak-nokta-yaslanma-hizi",
+  title: "Trafo Sıcak Nokta Sıcaklığı ve Yalıtım Yaşlanma Hızı",
+  href: "/trafo-sicak-nokta-yaslanma-hizi",
+  standard: "IEC 60076-7 (yükleme kılavuzu)",
+};
+
+const EKSANTRIK_BULON_GRUBU_YUK_DAGILIMI: ModuleEntry = {
+  id: "eksantrik-bulon-grubu-yuk-dagilimi",
+  title: "Eksantrik Yüklü Bulon Grubu En Büyük Bulon Kuvveti (Elastik Yöntem)",
+  href: "/eksantrik-bulon-grubu-yuk-dagilimi",
+  standard: "TS EN 1993-1-8 §3.12 (elastik dağılım)",
+};
+
+const BINA_HAVA_SIZDIRMAZLIGI_N50: ModuleEntry = {
+  id: "bina-hava-sizdirmazligi-n50",
+  title: "Bina Hava Sızdırmazlığı (n50, Blower Door)",
+  href: "/bina-hava-sizdirmazligi-n50",
+  standard: "TS EN ISO 9972 (fan basınçlandırma)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3533,6 +3568,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          EKONOMIZER_BACA_GAZI_ISI_GERI_KAZANIMI,
           HIDRONIK_KRITIK_DEVRE_BASINC_KAYBI,
           ISI_POMPASI_KAYNAK_SUYU_DEBISI,
           POMPA_KAPALI_VANA_ISINMASI,
@@ -3654,6 +3690,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          DOGAL_HAVALANDIRMA_BACA_ETKISI,
           KANAL_STATIK_BASINC_YENIDEN_KAZANIMI,
           KANAL_YOGUSMA_ONLEYICI_YALITIM_KALINLIGI,
           FAN_ISLETME_NOKTASI,
@@ -3800,6 +3837,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          TRAFO_SICAK_NOKTA_YASLANMA_HIZI,
           FAZ_YUK_DENGELEME,
           KABLO_ORTAM_SICAKLIGI_DUZELTME_KATSAYISI,
           AWG_MM2_DONUSUMU,
@@ -3930,6 +3968,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          EKSANTRIK_BULON_GRUBU_YUK_DAGILIMI,
           ASFALT_KAPLAMA_TONAJI,
           MINIMUM_YATAY_KURB_YARICAPI,
           YOL_KESIT_HACMI_ORTALAMA_PRIZMOIDAL,
@@ -4072,6 +4111,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          BINA_HAVA_SIZDIRMAZLIGI_N50,
           EV_DIRENC_SERI_PARALEL,
           EV_OHM_YASASI_GUC,
           EV_LED_SERIT_GUC_ADAPTOR,
