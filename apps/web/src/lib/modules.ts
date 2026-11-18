@@ -3477,6 +3477,34 @@ const CELIK_I_KESIT_SINIFI: ModuleEntry = {
   standard: "TS EN 1993-1-1 Tablo 5.2",
 };
 
+const KABLO_ORTAM_SICAKLIGI_DUZELTME_KATSAYISI: ModuleEntry = {
+  id: "kablo-ortam-sicakligi-duzeltme-katsayisi",
+  title: "Kablo Ortam Sıcaklığı Düzeltme Katsayısı",
+  href: "/kablo-ortam-sicakligi-duzeltme-katsayisi",
+  standard: "IEC 60364-5-52 Tablo B.52.14",
+};
+
+const YOL_KESIT_HACMI_ORTALAMA_PRIZMOIDAL: ModuleEntry = {
+  id: "yol-kesit-hacmi-ortalama-prizmoidal",
+  title: "Yol / Hendek Kesit Hacmi (Ortalama Alan ve Prizmoidal)",
+  href: "/yol-kesit-hacmi-ortalama-prizmoidal",
+  standard: "—",
+};
+
+const MINIMUM_YATAY_KURB_YARICAPI: ModuleEntry = {
+  id: "minimum-yatay-kurb-yaricapi",
+  title: "Minimum Yatay Kurb Yarıçapı (Yol Tasarımı)",
+  href: "/minimum-yatay-kurb-yaricapi",
+  standard: "AASHTO Green Book",
+};
+
+const SOGUTUCU_HAT_HIZI_KONTROLU: ModuleEntry = {
+  id: "sogutucu-hat-hizi-kontrolu",
+  title: "Soğutucu Akışkan Hat Hızı Kontrolü",
+  href: "/sogutucu-hat-hizi-kontrolu",
+  standard: "ASHRAE Refrigeration (boru boyutlandırma)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3729,6 +3757,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          SOGUTUCU_HAT_HIZI_KONTROLU,
           POMPA_SAHA_VERIM_TESTI,
           TAZE_HAVA_ORANI_SICAKLIKTAN,
           KANAL_HIZ_AGI_ORTALAMA_DEBI,
@@ -3749,6 +3778,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_ORTAM_SICAKLIGI_DUZELTME_KATSAYISI,
           AWG_MM2_DONUSUMU,
           YOL_AYDINLATMA_DIREK_ARALIGI,
           ASANSOR_MOTOR_GUCU,
@@ -3877,6 +3907,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          MINIMUM_YATAY_KURB_YARICAPI,
+          YOL_KESIT_HACMI_ORTALAMA_PRIZMOIDAL,
           CELIK_I_KESIT_SINIFI,
           BULON_KESME_CEKME_ETKILESIMI,
           BRANSON_ETKIN_ATALET_MOMENTI,

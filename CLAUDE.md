@@ -1730,6 +1730,15 @@ Gerçek hata (düzeltildi): Sayaç doğruluğunda tam sınır değerinde (%0,8 =
 
 **Toplam: 540 modül (test dosyası sayısı), core-calc 1170 test, hepsi yeşil; src tsc temiz.**
 
+### 5dj. Kablo ortam düzeltmesi/kesit hacmi/yatay kurb/soğutucu hat hızı: 4 modül daha
+
+- **Kablo Ortam Sıcaklığı Düzeltme Katsayısı** — Elektrik. IEC 60364-5-52 k = √((θmaks − θa)/(θmaks − θref)); standart tablo değerleriyle uyum testle doğrulanır (PVC 40 °C → 0,87; XLPE 40 °C → 0,91).
+- **Yol / Hendek Kesit Hacmi (Ortalama Alan ve Prizmoidal)** — İnşaat. L(A1+A2)/2 ve L(A1+4Am+A2)/6; doğrusal değişimde iki yöntem eşit.
+- **Minimum Yatay Kurb Yarıçapı** — İnşaat. AASHTO R = V²/(127(e+f)); yanal ivme = g(e+f) çapraz kontrolü. Durma Görüş Mesafesi'nin yol tasarımı eşi.
+- **Soğutucu Akışkan Hat Hızı Kontrolü** — Mekanik/Test & Kontrol. v = ṁν/A, hız aralığı girdi (ASHRAE Refrigeration teyit notu), verdict'li.
+
+**Toplam: 544 modül (test dosyası sayısı), core-calc 1180 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
