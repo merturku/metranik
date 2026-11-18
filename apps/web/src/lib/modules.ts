@@ -3561,6 +3561,41 @@ const BINA_HAVA_SIZDIRMAZLIGI_N50: ModuleEntry = {
   standard: "TS EN ISO 9972 (fan basınçlandırma)",
 };
 
+const HAVA_FILTRESI_BASINC_KAYBI_ENERJI_MALIYETI: ModuleEntry = {
+  id: "hava-filtresi-basinc-kaybi-enerji-maliyeti",
+  title: "Hava Filtresi Basınç Kaybı ve Yıllık Enerji Maliyeti",
+  href: "/hava-filtresi-basinc-kaybi-enerji-maliyeti",
+  standard: "—",
+};
+
+const KISA_DEVRE_ISIL_ESDEGER_AKIM_ITH: ModuleEntry = {
+  id: "kisa-devre-isil-esdeger-akim-ith",
+  title: "Kısa Devre Isıl Eşdeğer Akım (Ith) ve Dayanım Kontrolü",
+  href: "/kisa-devre-isil-esdeger-akim-ith",
+  standard: "IEC 60909-0 (Ith), IEC 62271-1/61439 (kısa süreli dayanım)",
+};
+
+const ISTINAT_DUVARI_YANAL_BASINC_SURJ_TABAN_SUYU: ModuleEntry = {
+  id: "istinat-duvari-yanal-basinc-surj-taban-suyu",
+  title: "İstinat Duvarı Yanal Basıncı (Sürşarj ve Taban Suyu)",
+  href: "/istinat-duvari-yanal-basinc-surj-taban-suyu",
+  standard: "Rankine teorisi",
+};
+
+const COK_KATMANLI_DUVAR_ARAYUZ_YOGUSMASI_GLASER: ModuleEntry = {
+  id: "cok-katmanli-duvar-arayuz-yogusmasi-glaser",
+  title: "Çok Katmanlı Duvarda Arayüz Yoğuşma Kontrolü (Glaser)",
+  href: "/cok-katmanli-duvar-arayuz-yogusmasi-glaser",
+  standard: "TS EN ISO 13788 (Glaser yöntemi)",
+};
+
+const SPRINKLER_KAYNAK_BASINCI_GEREKSINIMI: ModuleEntry = {
+  id: "sprinkler-kaynak-basinci-gereksinimi",
+  title: "Sprinkler Sistemi Kaynak Basıncı Gereksinimi",
+  href: "/sprinkler-kaynak-basinci-gereksinimi",
+  standard: "NFPA 13 (hidrolik hesap toplamı)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3690,6 +3725,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          HAVA_FILTRESI_BASINC_KAYBI_ENERJI_MALIYETI,
           DOGAL_HAVALANDIRMA_BACA_ETKISI,
           KANAL_STATIK_BASINC_YENIDEN_KAZANIMI,
           KANAL_YOGUSMA_ONLEYICI_YALITIM_KALINLIGI,
@@ -3734,6 +3770,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Yangın",
         modules: [
+          SPRINKLER_KAYNAK_BASINCI_GEREKSINIMI,
           SPRINKLER_ADEDI_YERLESIMI,
           NOZUL_REAKSIYON_KUVVETI,
           HIDRANT_AKIS_TESTI_KULLANILABILIR_DEBI,
@@ -3943,6 +3980,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Test & Kontrol",
         modules: [
+          KISA_DEVRE_ISIL_ESDEGER_AKIM_ITH,
           SAYAC_DOGRULUK_KONTROLU,
           FAZ_AKIMI_DENGESIZLIGI_KONTROLU,
           CT_GERCEK_DOGRULUK_SINIRI_FAKTORU,
@@ -3968,6 +4006,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ISTINAT_DUVARI_YANAL_BASINC_SURJ_TABAN_SUYU,
           EKSANTRIK_BULON_GRUBU_YUK_DAGILIMI,
           ASFALT_KAPLAMA_TONAJI,
           MINIMUM_YATAY_KURB_YARICAPI,
@@ -4111,6 +4150,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          COK_KATMANLI_DUVAR_ARAYUZ_YOGUSMASI_GLASER,
           BINA_HAVA_SIZDIRMAZLIGI_N50,
           EV_DIRENC_SERI_PARALEL,
           EV_OHM_YASASI_GUC,

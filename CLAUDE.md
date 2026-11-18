@@ -1759,6 +1759,18 @@ Not: ilk düşünülen "akü kapasitesi (IEEE 485)" modülü, Kt faktörleri ür
 
 **Toplam: 552 modül (test dosyası sayısı), core-calc 1205 test, hepsi yeşil; src tsc temiz.**
 
+### 5dm. Filtre enerjisi/Ith/sürşarj + taban suyu/Glaser/sprinkler kaynak basıncı: 5 modül daha
+
+- **Hava Filtresi Basınç Kaybı ve Yıllık Enerji Maliyeti** — Mekanik/Havalandırma. P = V̇·Δp_ort/η, filtre değişim bedeli dahil.
+- **Kısa Devre Isıl Eşdeğer Akım (Ith)** — Elektrik/Test & Kontrol. IEC 60909-0 m ve n faktörleri, κ = 2'de limit m = 2 (testle doğrulanır); Ith·√(Tk/Tkr) ≤ Ithr verdict'i. Darbe Kısa Devre Akımı modülünün κ'sını kullanır.
+- **İstinat Duvarı Yanal Basıncı (Sürşarj + Taban Suyu)** — İnşaat. Rankine, beş parçalı bileşke ve etki yüksekliği; su/sürşarj sıfırken klasik ½KaγH² ve H/3'e iner. Devrilme/Kayma modüllerinin girdisini üretir.
+- **Çok Katmanlı Duvar Arayüz Yoğuşması (Glaser)** — Ev. TS EN ISO 13788; iki arayüzde pv/psat (iç yalıtımlı örnekte 1,198 → uygunsuz, dış yalıtımlıda 0,545). Yalnız nokta kontrolü, tam Glaser diyagramı değil (notta).
+- **Sprinkler Sistemi Kaynak Basıncı Gereksinimi** — Mekanik/Yangın. Başlık + sürtünme + statik + alarm vanası + emniyet; Hazen-Williams modülünün tüketicisi.
+
+Test düzeltmesi yok; beklenen değerler Node'da bağımsız hesaplanıp teste yazıldı.
+
+**Toplam: 557 modül (test dosyası sayısı), core-calc 1224 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
