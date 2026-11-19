@@ -675,6 +675,7 @@ yapılıp fark edilip düzeltildi, dikkat).
 ## 6. Yapma / Dikkat
 
 - **"devam" = bitene kadar devam (kullanıcı kuralı, 2026-11-04):** parti arası onay/"devam mı?" sorma; yalnızca gerçek engelde (kapsam kararı, kırık build) veya tekrar-olmayan aday kalmadığında dur, sonda tek rapor ver.
+- **Kalıcı onay (kullanıcı kuralı, 2026-11-19):** "durmadan devam, onaylar verildi" — modül ekleme, test, commit ve `main`'e push için ayrıca onay İSTEME; durmadan parti parti ilerle. Tek istisna: silme/force push/mimari-kapsam değişikliği (bkz. yukarıdaki engel koşulları). tsc çıktısı boş + testler yeşil olmadan commit yok.
 
 - **Dosya okumak için `sed`/`cat`/`head` kullanma — `Read` aracını kullan.**
 - Standart metinlerini (TS/NFPA/IEC) **kopyalama/gömme**. Yalnız madde no + yönteme atıf.
@@ -1770,6 +1771,18 @@ Not: ilk düşünülen "akü kapasitesi (IEEE 485)" modülü, Kt faktörleri ür
 Test düzeltmesi yok; beklenen değerler Node'da bağımsız hesaplanıp teste yazıldı.
 
 **Toplam: 557 modül (test dosyası sayısı), core-calc 1224 test, hepsi yeşil; src tsc temiz.**
+
+### 5dn. Dalga hızı/Broms yatay yük/gün ışığı/genleşme derzi/kondansatör kademesi: 5 modül daha
+
+- **Su Darbesi Basınç Dalgası Hızı** — Mekanik/Sıhhi. a = √(K/ρ)/√(1+(K/E)(D/e)c1) (Wylie & Streeter); Su Darbesi Basıncı (Joukowsky) modülünün c girdisini üretir.
+- **Kazık Yatay Yük Kapasitesi (Broms, kısa)** — İnşaat. Hu = 0,5KpγDL³/(e+L), f ve Mmaks; f > L ise kısa kazık varsayımı geçersiz (uygunsuz).
+- **Ortalama Gün Işığı Faktörü (BRE)** — Ev. DF = Aw·T·θ·M/(A(1−R²)); %2/%5 eşikleri teyit notuyla.
+- **Yapı Genleşme Derzi Genişliği** — İnşaat. δ = αΔTL, w = δ(1+pay)/MAC, mevcut derz için azami blok boyu.
+- **Kondansatör Bankası Kademelendirme** — Elektrik. Qc = P(tanφ1−tanφ2), standart kademeye yuvarlama, gerçekleşen cosφ ve aşırı kompanzasyon kontrolü.
+
+Testlerde iki beklenti hatası düzeltildi (c1 sırası ve aşırı kompanzasyon girdisi); modül kodu doğruydu.
+
+**Toplam: 562 modül (test dosyası sayısı), core-calc 1240 test, hepsi yeşil; src tsc temiz.**
 
 ---
 

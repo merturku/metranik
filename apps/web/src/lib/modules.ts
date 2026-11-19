@@ -3596,6 +3596,41 @@ const SPRINKLER_KAYNAK_BASINCI_GEREKSINIMI: ModuleEntry = {
   standard: "NFPA 13 (hidrolik hesap toplamı)",
 };
 
+const SU_DARBESI_DALGA_HIZI: ModuleEntry = {
+  id: "su-darbesi-dalga-hizi",
+  title: "Su Darbesi Basınç Dalgası Hızı",
+  href: "/su-darbesi-dalga-hizi",
+  standard: "Korteweg / Joukowsky (Wylie & Streeter)",
+};
+
+const KAZIK_YATAY_YUK_BROMS_KISA: ModuleEntry = {
+  id: "kazik-yatay-yuk-broms-kisa",
+  title: "Kazık Yatay Yük Kapasitesi (Broms, Kısa Kazık, Kohezyonsuz Zemin)",
+  href: "/kazik-yatay-yuk-broms-kisa",
+  standard: "Broms (1964)",
+};
+
+const GUN_ISIGI_FAKTORU_BRE: ModuleEntry = {
+  id: "gun-isigi-faktoru-bre",
+  title: "Ortalama Gün Işığı Faktörü (BRE Yöntemi)",
+  href: "/gun-isigi-faktoru-bre",
+  standard: "BRE / CIBSE LG10",
+};
+
+const YAPI_GENLESME_DERZI_GENISLIGI: ModuleEntry = {
+  id: "yapi-genlesme-derzi-genisligi",
+  title: "Yapı Genleşme Derzi Genişliği ve Azami Blok Boyu",
+  href: "/yapi-genlesme-derzi-genisligi",
+  standard: "Doğrusal ısıl genleşme δ = αΔTL",
+};
+
+const KONDANSATOR_BANKASI_KADEMELENDIRME: ModuleEntry = {
+  id: "kondansator-bankasi-kademelendirme",
+  title: "Kondansatör Bankası Gücü ve Kademelendirme",
+  href: "/kondansator-bankasi-kademelendirme",
+  standard: "IEC 60831-1 / IEC 61921 (kondansatör)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3687,6 +3722,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Sıhhi Tesisat",
         modules: [
+          SU_DARBESI_DALGA_HIZI,
           YAG_TUTUCU_NOMINAL_BOYUT,
           TERS_OZMOZ_KUTLE_DENGESI,
           BORU_DONMA_SURESI,
@@ -3874,6 +3910,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KONDANSATOR_BANKASI_KADEMELENDIRME,
           TRAFO_SICAK_NOKTA_YASLANMA_HIZI,
           FAZ_YUK_DENGELEME,
           KABLO_ORTAM_SICAKLIGI_DUZELTME_KATSAYISI,
@@ -4006,6 +4043,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          KAZIK_YATAY_YUK_BROMS_KISA,
+          YAPI_GENLESME_DERZI_GENISLIGI,
           ISTINAT_DUVARI_YANAL_BASINC_SURJ_TABAN_SUYU,
           EKSANTRIK_BULON_GRUBU_YUK_DAGILIMI,
           ASFALT_KAPLAMA_TONAJI,
@@ -4150,6 +4189,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          GUN_ISIGI_FAKTORU_BRE,
           COK_KATMANLI_DUVAR_ARAYUZ_YOGUSMASI_GLASER,
           BINA_HAVA_SIZDIRMAZLIGI_N50,
           EV_DIRENC_SERI_PARALEL,
