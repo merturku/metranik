@@ -3631,6 +3631,34 @@ const KONDANSATOR_BANKASI_KADEMELENDIRME: ModuleEntry = {
   standard: "IEC 60831-1 / IEC 61921 (kondansatör)",
 };
 
+const FAN_PARALEL_CALISMA_DEBISI: ModuleEntry = {
+  id: "fan-paralel-calisma-debisi",
+  title: "Fanların Paralel Çalışma Debisi",
+  href: "/fan-paralel-calisma-debisi",
+  standard: "Fan–sistem eğrisi kesişimi (afinite/paralel çalışma)",
+};
+
+const KABLO_TAVASI_YUK_KAPASITESI: ModuleEntry = {
+  id: "kablo-tavasi-yuk-kapasitesi",
+  title: "Kablo Tavası Yük Kapasitesi Kontrolü (kg/m)",
+  href: "/kablo-tavasi-yuk-kapasitesi",
+  standard: "TS EN 61537 (güvenli çalışma yükü SWL)",
+};
+
+const ZEMIN_MOHR_COULOMB_KIRILMA_GERILMESI: ModuleEntry = {
+  id: "zemin-mohr-coulomb-kirilma-gerilmesi",
+  title: "Zemin Mohr-Coulomb Kırılma Gerilmesi",
+  href: "/zemin-mohr-coulomb-kirilma-gerilmesi",
+  standard: "Mohr-Coulomb kırılma ölçütü",
+};
+
+const KONUT_NEM_DENGESI_HAVALANDIRMA: ModuleEntry = {
+  id: "konut-nem-dengesi-havalandirma",
+  title: "Konut Nem Dengesi ve Gerekli Havalandırma Debisi",
+  href: "/konut-nem-dengesi-havalandirma",
+  standard: "Nem kütle dengesi (TS EN ISO 13788 psikrometrik bağıntılar)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3761,6 +3789,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          FAN_PARALEL_CALISMA_DEBISI,
           HAVA_FILTRESI_BASINC_KAYBI_ENERJI_MALIYETI,
           DOGAL_HAVALANDIRMA_BACA_ETKISI,
           KANAL_STATIK_BASINC_YENIDEN_KAZANIMI,
@@ -3910,6 +3939,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          KABLO_TAVASI_YUK_KAPASITESI,
           KONDANSATOR_BANKASI_KADEMELENDIRME,
           TRAFO_SICAK_NOKTA_YASLANMA_HIZI,
           FAZ_YUK_DENGELEME,
@@ -4043,6 +4073,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ZEMIN_MOHR_COULOMB_KIRILMA_GERILMESI,
           KAZIK_YATAY_YUK_BROMS_KISA,
           YAPI_GENLESME_DERZI_GENISLIGI,
           ISTINAT_DUVARI_YANAL_BASINC_SURJ_TABAN_SUYU,
@@ -4189,6 +4220,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          KONUT_NEM_DENGESI_HAVALANDIRMA,
           GUN_ISIGI_FAKTORU_BRE,
           COK_KATMANLI_DUVAR_ARAYUZ_YOGUSMASI_GLASER,
           BINA_HAVA_SIZDIRMAZLIGI_N50,

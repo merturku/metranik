@@ -1784,6 +1784,17 @@ Testlerde iki beklenti hatası düzeltildi (c1 sırası ve aşırı kompanzasyon
 
 **Toplam: 562 modül (test dosyası sayısı), core-calc 1240 test, hepsi yeşil; src tsc temiz.**
 
+### 5do. Fan paralel çalışma/tava yük kapasitesi/Mohr-Coulomb/konut nem dengesi: 4 modül daha
+
+- **Fanların Paralel Çalışma Debisi** — Mekanik/Havalandırma. (C − k n²)q² + Bq + A = 0, Q = n·q; fan ve sistem eğrisinin ikisi de testle sağlanır (2 fan ≈ ×1,58). Kesişim yoksa `null` + uygunsuz.
+- **Kablo Tavası Yük Kapasitesi (kg/m)** — Elektrik. Σn·m·(1+ek) ile SWL karşılaştırması, mesnet reaksiyonu/momenti; Kablo Tava Doluluk (alan) modülünün kütle tamamlayıcısı. Şema düz anahtarlıdır (CalcPage iç içe nesne desteklemez).
+- **Zemin Mohr-Coulomb Kırılma Gerilmesi** — İnşaat. σ1f = σ3Nφ + 2c√Nφ, kırılma düzleminde τ = c + σn tanφ bağımsız çapraz kontrolü.
+- **Konut Nem Dengesi ve Havalandırma Debisi** — Ev. V̇ = G/(ρΔx), Magnus mutlak nem (20 °C %60 ≈ 8,7 g/kg ile test); dış nem iç hedefi aşarsa `null` + uygunsuz.
+
+Süreç: kalıcı onay kuralı (§6) gereği parti arası sormadan commit/push; üretici betik (gen.py/batch.py) oturum scratchpad'inde (repoda değil). `CalcPage` select dışında yalnız düz sayı alanı alır.
+
+**Toplam: 566 modül (test dosyası sayısı), core-calc 1252 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
