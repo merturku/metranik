@@ -3659,6 +3659,34 @@ const KONUT_NEM_DENGESI_HAVALANDIRMA: ModuleEntry = {
   standard: "Nem kütle dengesi (TS EN ISO 13788 psikrometrik bağıntılar)",
 };
 
+const FAN_ISI_KAZANCI_HAVA_SICAKLIK_ARTISI: ModuleEntry = {
+  id: "fan-isi-kazanci-hava-sicaklik-artisi",
+  title: "Fan Isı Kazancı ve Hava Sıcaklık Artışı",
+  href: "/fan-isi-kazanci-hava-sicaklik-artisi",
+  standard: "ASHRAE Fundamentals (fan ısı kazancı)",
+};
+
+const AKIM_TRAFOSU_PRIMER_AKIM_SECIMI: ModuleEntry = {
+  id: "akim-trafosu-primer-akim-secimi",
+  title: "Akım Trafosu Primer Akımı Seçimi",
+  href: "/akim-trafosu-primer-akim-secimi",
+  standard: "IEC 61869-2 (standart primer akımlar)",
+};
+
+const SONSUZ_SEV_STABILITESI_C_PHI: ModuleEntry = {
+  id: "sonsuz-sev-stabilitesi-c-phi",
+  title: "Sonsuz Şev Stabilitesi (Kohezyonlu, Gözenek Suyu Etkili)",
+  href: "/sonsuz-sev-stabilitesi-c-phi",
+  standard: "Sonsuz şev analizi (Skempton & DeLory / Das)",
+};
+
+const PENCERE_DEGISTIRME_GERI_ODEME: ModuleEntry = {
+  id: "pencere-degistirme-geri-odeme",
+  title: "Pencere Değiştirme Enerji Tasarrufu ve Geri Ödeme",
+  href: "/pencere-degistirme-geri-odeme",
+  standard: "TS 825 (Q = U·A·ΔT, derece-gün)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3789,6 +3817,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          FAN_ISI_KAZANCI_HAVA_SICAKLIK_ARTISI,
           FAN_PARALEL_CALISMA_DEBISI,
           HAVA_FILTRESI_BASINC_KAYBI_ENERJI_MALIYETI,
           DOGAL_HAVALANDIRMA_BACA_ETKISI,
@@ -3939,6 +3968,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          AKIM_TRAFOSU_PRIMER_AKIM_SECIMI,
           KABLO_TAVASI_YUK_KAPASITESI,
           KONDANSATOR_BANKASI_KADEMELENDIRME,
           TRAFO_SICAK_NOKTA_YASLANMA_HIZI,
@@ -4073,6 +4103,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          SONSUZ_SEV_STABILITESI_C_PHI,
           ZEMIN_MOHR_COULOMB_KIRILMA_GERILMESI,
           KAZIK_YATAY_YUK_BROMS_KISA,
           YAPI_GENLESME_DERZI_GENISLIGI,
@@ -4220,6 +4251,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Ev",
         modules: [
+          PENCERE_DEGISTIRME_GERI_ODEME,
           KONUT_NEM_DENGESI_HAVALANDIRMA,
           GUN_ISIGI_FAKTORU_BRE,
           COK_KATMANLI_DUVAR_ARAYUZ_YOGUSMASI_GLASER,

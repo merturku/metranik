@@ -1795,6 +1795,17 @@ Süreç: kalıcı onay kuralı (§6) gereği parti arası sormadan commit/push; 
 
 **Toplam: 566 modül (test dosyası sayısı), core-calc 1252 test, hepsi yeşil; src tsc temiz.**
 
+### 5dp. Fan ısı kazancı/CT primer akımı/c-φ sonsuz şev/pencere değiştirme geri ödeme: 4 modül daha
+
+- **Fan Isı Kazancı ve Hava Sıcaklık Artışı** — Mekanik/Havalandırma. Q = P_mil + motor kaybı (motor hava akımındaysa), ΔT = Q/(ṁcp); debi ikiye katlanınca ΔT yarıya iner testle doğrulanır.
+- **Akım Trafosu Primer Akımı Seçimi** — Elektrik. IEC 61869-2 standart seri (10…75 × 10ⁿ), dönüşüm oranı, %20–%120 yükleme verdict'i; seri aşılırsa `null`.
+- **Sonsuz Şev Stabilitesi (c-φ, ru)** — İnşaat. Kohezyonsuz kuru şev modülünün (FS = tanφ/tanβ) kohezyon + gözenek suyu uzantısı; c = 0, ru = 0'da ona indiği testle doğrulanır.
+- **Pencere Değiştirme Geri Ödeme** — Ev. Derece-gün ΔU tasarrufu, basit geri ödeme; ΔU ≤ 0 → `null` + uygunsuz.
+
+Test düzeltmesi: CT testinde iki beklentim yanlıştı (10 A × 5 → %20 sınırın içinde; seri 750 kA'ya uzanıyor); modül doğruydu.
+
+**Toplam: 570 modül (test dosyası sayısı), core-calc 1265 test, hepsi yeşil; src tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
