@@ -3687,6 +3687,41 @@ const PENCERE_DEGISTIRME_GERI_ODEME: ModuleEntry = {
   standard: "TS 825 (Q = U·A·ΔT, derece-gün)",
 };
 
+const LMTD_DUZELTME_FAKTORU_F: ModuleEntry = {
+  id: "lmtd-duzeltme-faktoru-f",
+  title: "LMTD Düzeltme Faktörü F (Gövde-Tüp Eşanjör)",
+  href: "/lmtd-duzeltme-faktoru-f",
+  standard: "TEMA / Bowman-Mueller-Nagle (1 gövde geçişli eşanjör F faktörü)",
+};
+
+const YANGIN_ALARM_BATARYA_KAPASITESI: ModuleEntry = {
+  id: "yangin-alarm-batarya-kapasitesi",
+  title: "Yangın Alarm Paneli Batarya Kapasitesi",
+  href: "/yangin-alarm-batarya-kapasitesi",
+  standard: "NFPA 72 §10.6.7.2.1 / EN 54-4 (ikincil güç kaynağı)",
+};
+
+const BETON_ANKRAJ_CEKME_KONISI_KOPMA: ModuleEntry = {
+  id: "beton-ankraj-cekme-konisi-kopma",
+  title: "Beton Ankraj Çekme Konisi Kopma Dayanımı",
+  href: "/beton-ankraj-cekme-konisi-kopma",
+  standard: "ACI 318-19 §17.6.2 (beton kopma konisi, tek ankraj)",
+};
+
+const ELASTIK_ZEMIN_UZERINDE_KIRIS_HETENYI: ModuleEntry = {
+  id: "elastik-zemin-uzerinde-kiris-hetenyi",
+  title: "Elastik Zemin Üzerinde Kiriş (Winkler, Tekil Yük)",
+  href: "/elastik-zemin-uzerinde-kiris-hetenyi",
+  standard: "Hetényi (1946) elastik zemin üzerinde kiriş / Winkler modeli",
+};
+
+const DERECE_GUN_AYLIK_SICAKLIK: ModuleEntry = {
+  id: "derece-gun-aylik-sicaklik",
+  title: "Aylık Sıcaklıklardan Isıtma Derece-Günü",
+  href: "/derece-gun-aylik-sicaklik",
+  standard: "TS 825 (aylık ortalama yöntemi ile derece-gün)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3694,6 +3729,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Isıtma-Soğutma",
         modules: [
+          DERECE_GUN_AYLIK_SICAKLIK,
+          LMTD_DUZELTME_FAKTORU_F,
           EKONOMIZER_BACA_GAZI_ISI_GERI_KAZANIMI,
           HIDRONIK_KRITIK_DEVRE_BASINC_KAYBI,
           ISI_POMPASI_KAYNAK_SUYU_DEBISI,
@@ -3968,6 +4005,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          YANGIN_ALARM_BATARYA_KAPASITESI,
           AKIM_TRAFOSU_PRIMER_AKIM_SECIMI,
           KABLO_TAVASI_YUK_KAPASITESI,
           KONDANSATOR_BANKASI_KADEMELENDIRME,
@@ -4103,6 +4141,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ELASTIK_ZEMIN_UZERINDE_KIRIS_HETENYI,
+          BETON_ANKRAJ_CEKME_KONISI_KOPMA,
           SONSUZ_SEV_STABILITESI_C_PHI,
           ZEMIN_MOHR_COULOMB_KIRILMA_GERILMESI,
           KAZIK_YATAY_YUK_BROMS_KISA,

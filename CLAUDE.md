@@ -1806,6 +1806,18 @@ Test düzeltmesi: CT testinde iki beklentim yanlıştı (10 A × 5 → %20 sın�
 
 **Toplam: 570 modül (test dosyası sayısı), core-calc 1265 test, hepsi yeşil; src tsc temiz.**
 
+### 5dq. LMTD F faktörü/alarm bataryası/ankraj konisi/Hetényi kirişi/aylık derece-gün: 5 modül daha
+
+- **LMTD Düzeltme Faktörü F (Gövde-Tüp)** — Mekanik/Isıtma-Soğutma. Bowman-Mueller-Nagle P, R, F (R = 1 özel kolu ayrı); sıcaklık kesişmesinde F `null` + uygunsuz; F ≥ 0,8 uygun, 0,75–0,8 sınırda. Eşanjör Boyutlandırma'nın karşıt akış LMTD'sini gerçek akış düzenine uyarlar.
+- **Yangın Alarm Paneli Batarya Kapasitesi** — Elektrik. NFPA 72 24 saat bekleme + 5 dk alarm, emniyet katsayısı girdi (teyit notuyla), seçilen akü ile verdict'li.
+- **Beton Ankraj Çekme Konisi Kopma** — İnşaat. ACI 318-19 §17.6.2 tek ankraj Nb, ANc/ANco, ψed, ψc; hef ≥ 280 mm'de 3,9·√f'c·hef^(5/3). Sonradan montajda ψc = 1,0 (tutucu); yalnız kopma konisi, çelik/sıyrılma/yarılma yok (notta).
+- **Elastik Zemin Üzerinde Kiriş (Hetényi)** — İnşaat. λ = (ks·b/4EI)^¼, y0, M0, q0; zemin tepkisi integrali = P testle doğrulanır; λL ≥ π uygun, π/4–π sınırda, altı rijit (uygunsuz).
+- **Aylık Sıcaklıklardan Derece-Gün** — Mekanik/Isıtma-Soğutma. DG = ΣN·max(0, Tb − Tay); aylık yöntem günlük veriden küçük çıkar (notta); Derece-Gün ile Yıllık Isıtma Enerjisi'ne girdi üretir.
+
+Test düzeltmesi (iki kendi hatam, modüller doğruydu): ankraj kenar testinde 60/52,99 > 1 olduğu için beklenen "uygunsuz"du; Hetényi denge testinde fazladan `/2` yazmıştım (∫ = 2/λ). Üretici betik bu oturumda yeniden yazılmadı; dosyalar elle + tek seferlik Python ile eklendi (index.ts, modules.ts).
+
+**Toplam: 575 modül (test dosyası sayısı), core-calc 1283 test, hepsi yeşil; core-calc tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
