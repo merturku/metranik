@@ -1849,6 +1849,18 @@ Test düzeltmesi: azami kablo boyu testinde "sınırda" beklemiştim, oran 0,72 
 
 **Toplam: 587 modül (test dosyası sayısı), core-calc 1315 test, hepsi yeşil; core-calc ve web tsc temiz.**
 
+### 5du. Doğruluk taraması (modül eklenmedi, 2026-11-22)
+
+587 modülün tamamı sayfa varsayılan girdileriyle ve her sayısal girdi ×0,5 / ×2 yapılarak (5 086 hesap) NaN/Infinity için tarandı. Bulgular:
+- **Genleşme Tankı:** ilk basınç ≥ son basınç girilince negatif/sonsuz hacim üretiyordu → Zod refine (Pa < Pf) + test.
+- **Boru Isı Kaybı (İzolasyonlu):** r2 ≤ r1 girilince sonsuz/negatif kayıp → Zod refine (r2 > r1) + test.
+- **Temel Taşıma (Meyerhof):** geoteknik denklem "TS 500" (beton standardı) ile etiketlenmişti → "Meyerhof (1963)" olarak düzeltildi.
+- Kolon etriye sarılma ve döşeme–kiriş yük aktarımı geçersiz geometride NaN döner ama zaten "uygunsuz" verdict'iyle bilinçli ele alınıyor (değişiklik yok).
+- 292 modülün `standards` alanı boş; çoğu saf fizik/birim dönüşümü. Doğrulanmamış atıf eklenmedi.
+Tarama betiği tek seferlik (repoda değil): sayfa `defaults={{...}}` regex ile okunup `inputSchema.safeParse` + `compute` çalıştırılır. Yeni parti sonrası tekrarlanabilir.
+
+**Toplam: 587 modül, core-calc 1317 test, hepsi yeşil; core-calc tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

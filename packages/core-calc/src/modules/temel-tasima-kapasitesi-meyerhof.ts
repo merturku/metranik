@@ -41,7 +41,7 @@ function compute(
       derinlikTerimi_kPa: derinlikTerimiKPa,
       genislikTerimi_kPa: genislikTerimiKPa,
     },
-    standardsUsed: ["Meyerhof", "TS 500"],
+    standardsUsed: ["Meyerhof (1963)"],
   };
 }
 
@@ -52,7 +52,7 @@ export const temelTasimaKapasitesiMeyerhof: CalcModule<
   id: "temel-tasima-kapasitesi-meyerhof",
   title: "Temel Taşıma Kapasitesi (Meyerhof)",
   discipline: "insaat",
-  standards: ["Meyerhof", "TS 500"],
+  standards: ["Meyerhof (1963)"],
   inputSchema: temelTasimaKapasitesiMeyerhofInputSchema,
   compute,
 };

@@ -13,4 +13,10 @@ describe("genlesme-tanki", () => {
 
     expect(r.value.tankHacmi_L).toBeCloseTo(6, 5);
   });
+
+  it("ilk basınç ≥ son basınç ise girdi reddedilir (negatif/sonsuz hacim üretmez)", () => {
+    const g = { sistemSuHacmi_L: 100, genlesmeOrani: 0.03, ilkBasinc_bar: 3, sonBasinc_bar: 3 };
+    expect(genlesmeTanki.inputSchema.safeParse(g).success).toBe(false);
+    expect(genlesmeTanki.inputSchema.safeParse({ ...g, ilkBasinc_bar: 4 }).success).toBe(false);
+  });
 });

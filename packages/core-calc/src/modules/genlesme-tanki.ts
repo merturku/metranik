@@ -8,6 +8,9 @@ export const genlesmeTankiInputSchema = z.object({
   genlesmeOrani: z.number().positive(),
   ilkBasinc_bar: z.number().positive(),
   sonBasinc_bar: z.number().positive(),
+}).refine((v) => v.ilkBasinc_bar < v.sonBasinc_bar, {
+  message: "İlk basınç son basınçtan küçük olmalıdır (mutlak basınç, Pa < Pf)",
+  path: ["ilkBasinc_bar"],
 });
 
 export type GenlesmeTankiInput = z.infer<typeof genlesmeTankiInputSchema>;

@@ -7,7 +7,7 @@ export default function TemelTasimaKapasitesiMeyerhofPage() {
   return (
     <CalcPage
       module={temelTasimaKapasitesiMeyerhof}
-      standardsLabel="Meyerhof / TS 500"
+      standardsLabel="Meyerhof (1963) taşıma gücü denklemi"
       description="Meyerhof taşıma gücü formülüyle zeminin nihai taşıma kapasitesini hesaplar."
       formula="qu = c·Nc + q·Nq + 0.5·γ·B·Nγ"
       engineeringNote="Nc, Nq, Nγ taşıma gücü katsayıları zemin sürtünme açısına (φ) göre standart tablolardan alınır; bu modülde gömülü değildir."

@@ -10,6 +10,9 @@ export const boruIsiKaybiIzolasyonInputSchema = z.object({
   icSicaklik_T1_C: z.number(),
   disSicaklik_T2_C: z.number(),
   boruUzunlugu_L_m: z.number().positive(),
+}).refine((v) => v.izolasyonDisYaricapi_r2_mm > v.boruDisYaricapi_r1_mm, {
+  message: "İzolasyon dış yarıçapı (r2) boru dış yarıçapından (r1) büyük olmalıdır",
+  path: ["izolasyonDisYaricapi_r2_mm"],
 });
 
 export type BoruIsiKaybiIzolasyonInput = z.infer<typeof boruIsiKaybiIzolasyonInputSchema>;
