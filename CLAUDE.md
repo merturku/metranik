@@ -1840,6 +1840,15 @@ Test düzeltmesi: azami kablo boyu testinde "sınırda" beklemiştim, oran 0,72 
 
 **Toplam: 583 modül (test dosyası sayısı), core-calc 1307 test, hepsi yeşil; core-calc ve web tsc temiz.**
 
+### 5dt. Wobbe indeksi/sıcak su gelme süresi/motor kalkış momenti/bileşik eğilme gerilmesi: 4 modül daha
+
+- **Wobbe İndeksi ve Gaz Değişimi Uygunluğu** — Mekanik/Doğalgaz. W = Hs/√d, Q2/Q1 = W2/W1; izin sapma girdi (EN 437 teyit notuyla).
+- **Musluğa Sıcak Su Gelme Süresi ve Boşa Giden Su** — Ev. t = V/Q, yıllık boşa giden su ve maliyet; ısıl kütle ihmal (alt sınır).
+- **Motor Kalkış Momenti Kontrolü (Gerilim Düşümünde)** — Elektrik. T ∝ V², Tk/Tyük ≥ 1,25 pratik eşik; gereken minimum terminal gerilimi. Motor Kalkışında Gerilim Düşümü'nün moment tarafı.
+- **Bileşik Eğilme Gerilmesi ve Çekirdek Kontrolü (Dikdörtgen)** — İnşaat. σ = N/A ± Mx/Wx ± My/Wy, ex/h + ey/b ≤ 1/6.
+
+**Toplam: 587 modül (test dosyası sayısı), core-calc 1315 test, hepsi yeşil; core-calc ve web tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

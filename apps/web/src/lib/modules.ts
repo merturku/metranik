@@ -3778,6 +3778,34 @@ const FOSSEPTIK_HACMI: ModuleEntry = {
   standard: "EPA Onsite Wastewater Manual (yerel yönetmelik teyidi)",
 };
 
+const WOBBE_INDEKSI_YAKIT_DEGISIMI: ModuleEntry = {
+  id: "wobbe-indeksi-yakit-degisimi",
+  title: "Wobbe İndeksi ve Gaz Değişimi Uygunluğu",
+  href: "/wobbe-indeksi-yakit-degisimi",
+  standard: "TS EN 437 (Wobbe indeksi, gaz aileleri)",
+};
+
+const SICAK_SU_GELME_SURESI: ModuleEntry = {
+  id: "sicak-su-gelme-suresi",
+  title: "Musluğa Sıcak Su Gelme Süresi ve Boşa Giden Su",
+  href: "/sicak-su-gelme-suresi",
+  standard: "Hidrolik süreklilik (t = V/Q)",
+};
+
+const MOTOR_KALKIS_TORKU_GERILIM_DUSUSU: ModuleEntry = {
+  id: "motor-kalkis-torku-gerilim-dususu",
+  title: "Motor Kalkış Momenti Kontrolü (Gerilim Düşümünde)",
+  href: "/motor-kalkis-torku-gerilim-dususu",
+  standard: "IEC 60034-1 (T ∝ V²)",
+};
+
+const BILESIK_EGILME_GERILMESI_DIKDORTGEN: ModuleEntry = {
+  id: "bilesik-egilme-gerilmesi-dikdortgen",
+  title: "Bileşik Eğilme Gerilmesi ve Çekirdek Kontrolü",
+  href: "/bilesik-egilme-gerilmesi-dikdortgen",
+  standard: "Klasik mukavemet (σ = N/A ± M/W)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -4017,6 +4045,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         label: "Doğalgaz",
         modules: [
           BACA_GAZI_DEBISI_CAPI,
+          WOBBE_INDEKSI_YAKIT_DEGISIMI,
           DOGALGAZ_TUKETIM_SAYAC_SECIMI,
           DOGALGAZ_BORU_BASINC_KAYBI,
         ],
@@ -4105,6 +4134,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           COK_YUKLU_HAT_GERILIM_DUSUMU,
           REAKTIF_ENERJI_ORANI_KONTROLU,
           KABLO_STANDART_KESIT_SECIMI,
+          MOTOR_KALKIS_TORKU_GERILIM_DUSUSU,
           MOTOR_KALKIS_SURESI,
           AKU_PEUKERT_BOSALMA_SURESI,
           TRAFO_YILLIK_KAYIP_MALIYETI,
@@ -4229,6 +4259,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BETON_HEDEF_ORTALAMA_DAYANIM,
           TRAPEZ_KANAL_MANNING_NORMAL_DERINLIK,
           KIRIS_KESME_GERILMESI_JOURAWSKI,
+          BILESIK_EGILME_GERILMESI_DIKDORTGEN,
           DAIRESEL_MIL_BURULMA,
           KOLON_MOMENT_BUYUTME_KATSAYISI,
           TABAN_PLAKASI_EZILME_KONTROLU,
@@ -4369,6 +4400,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           EV_SAP_MALZEME_MIKTARI,
           EV_PENCERE_SACAK_DERINLIGI,
           FOSSEPTIK_HACMI,
+          SICAK_SU_GELME_SURESI,
           EV_YUKSEK_YATAK_TOPRAK_HACMI,
           EV_ISI_DEPOLAMA_KAPASITESI,
           EV_LAMINAT_PARKE_MIKTARI,

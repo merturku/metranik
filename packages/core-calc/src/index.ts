@@ -1814,3 +1814,11 @@ export { kirisKesmeGerilmesiJourawski } from "./modules/kiris-kesme-gerilmesi-jo
 export type { KirisKesmeGerilmesiJourawskiInput, KirisKesmeGerilmesiJourawskiOutput } from "./modules/kiris-kesme-gerilmesi-jourawski";
 export { fosseptikHacmi } from "./modules/fosseptik-hacmi";
 export type { FosseptikHacmiInput, FosseptikHacmiOutput } from "./modules/fosseptik-hacmi";
+export { wobbeIndeksiYakitDegisimi } from "./modules/wobbe-indeksi-yakit-degisimi";
+export type { WobbeIndeksiYakitDegisimiInput, WobbeIndeksiYakitDegisimiOutput } from "./modules/wobbe-indeksi-yakit-degisimi";
+export { sicakSuGelmeSuresi } from "./modules/sicak-su-gelme-suresi";
+export type { SicakSuGelmeSuresiInput, SicakSuGelmeSuresiOutput } from "./modules/sicak-su-gelme-suresi";
+export { motorKalkisTorkuGerilimDususu } from "./modules/motor-kalkis-torku-gerilim-dususu";
+export type { MotorKalkisTorkuGerilimDususuInput, MotorKalkisTorkuGerilimDususuOutput } from "./modules/motor-kalkis-torku-gerilim-dususu";
+export { bilesikEgilmeGerilmesiDikdortgen } from "./modules/bilesik-egilme-gerilmesi-dikdortgen";
+export type { BilesikEgilmeGerilmesiDikdortgenInput, BilesikEgilmeGerilmesiDikdortgenOutput } from "./modules/bilesik-egilme-gerilmesi-dikdortgen";
