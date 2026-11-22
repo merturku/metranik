@@ -3722,6 +3722,34 @@ const DERECE_GUN_AYLIK_SICAKLIK: ModuleEntry = {
   standard: "TS 825 (aylık ortalama yöntemi ile derece-gün)",
 };
 
+const RULMAN_OMRU_L10: ModuleEntry = {
+  id: "rulman-omru-l10",
+  title: "Rulman Nominal Ömrü (L10)",
+  href: "/rulman-omru-l10",
+  standard: "ISO 281 (dinamik yük sayısı ve nominal ömür)",
+};
+
+const SILINDIRIK_KABUK_ET_KALINLIGI_ASME: ModuleEntry = {
+  id: "silindirik-kabuk-et-kalinligi-asme",
+  title: "Basınçlı Kap Kabuk Et Kalınlığı (Silindir / Küre)",
+  href: "/silindirik-kabuk-et-kalinligi-asme",
+  standard: "ASME BPVC Sec. VIII Div. 1 UG-27 (ince cidarlı kabuk)",
+};
+
+const MOTOR_KAYMA_ROTOR_KAYIPLARI: ModuleEntry = {
+  id: "motor-kayma-rotor-kayiplari",
+  title: "Motor Kayması ve Rotor Bakır Kaybı",
+  href: "/motor-kayma-rotor-kayiplari",
+  standard: "IEC 60034-1 (asenkron motor kayma ve rotor kayıpları, klasik makine teorisi)",
+};
+
+const ONGERMELI_BULON_SURTUNME_BIRLESIMI: ModuleEntry = {
+  id: "ongermeli-bulon-surtunme-birlesimi",
+  title: "Öngerilmeli Bulon Sürtünme Birleşimi Kayma Dayanımı",
+  href: "/ongermeli-bulon-surtunme-birlesimi",
+  standard: "TS EN 1993-1-8 §3.9 (öngerilmeli bulonlu sürtünme birleşimi)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3941,6 +3969,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Basınçlı Hava",
         modules: [
+          SILINDIRIK_KABUK_ET_KALINLIGI_ASME,
           KOMPRESOR_OZGUL_GUC_ENERJI_MALIYETI,
           PNOMATIK_SILINDIR_HAVA_TUKETIMI,
           BASINCLI_HAVA_DELIK_KACAK_DEBISI,
@@ -3966,6 +3995,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Montaj",
         modules: [
+          RULMAN_OMRU_L10,
           BORU_DIRSEGI_BASINC_ITME_KUVVETI,
           HIDROSTATIK_TEST_EK_SU_HACMI,
           KRITIK_YALITIM_YARICAPI,
@@ -4005,6 +4035,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Elektrik Tesisat",
         modules: [
+          MOTOR_KAYMA_ROTOR_KAYIPLARI,
           YANGIN_ALARM_BATARYA_KAPASITESI,
           AKIM_TRAFOSU_PRIMER_AKIM_SECIMI,
           KABLO_TAVASI_YUK_KAPASITESI,
@@ -4141,6 +4172,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "İnşaat Hesapları",
         modules: [
+          ONGERMELI_BULON_SURTUNME_BIRLESIMI,
           ELASTIK_ZEMIN_UZERINDE_KIRIS_HETENYI,
           BETON_ANKRAJ_CEKME_KONISI_KOPMA,
           SONSUZ_SEV_STABILITESI_C_PHI,

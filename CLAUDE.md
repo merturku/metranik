@@ -1818,6 +1818,17 @@ Test düzeltmesi (iki kendi hatam, modüller doğruydu): ankraj kenar testinde 6
 
 **Toplam: 575 modül (test dosyası sayısı), core-calc 1283 test, hepsi yeşil; core-calc tsc temiz.**
 
+### 5dr. Rulman ömrü/basınçlı kap kabuğu/motor kayması/öngerilmeli bulon: 4 modül daha
+
+- **Rulman Nominal Ömrü (L10)** — Mekanik/Montaj. ISO 281 L10 = (C/P)^p (bilya 3, makara 10/3), L10h = 10⁶·L10/(60n); gereken ömürle verdict'li. aISO düzeltmesi yok (notta).
+- **Basınçlı Kap Kabuk Et Kalınlığı** — Mekanik/Basınçlı Hava. ASME VIII-1 UG-27 silindir (çevresel/boyuna büyüğü) ve küre + korozyon payı; P > 0,385SE (küre 0,665SE) kalın cidar → uygunsuz. S ve E şartnameden teyit notuyla.
+- **Motor Kayması ve Rotor Bakır Kaybı** — Elektrik. ns, s, f_rotor, Pag = Pmil/(1−s), Pcu2 = s·Pag; Pag = Pmil + Pcu2 testle doğrulanır; ns üstü devir Zod ile reddedilir. Kayma eşikleri tipik pratik (etiketten teyit).
+- **Öngerilmeli Bulon Sürtünme Birleşimi** — İnşaat. TS EN 1993-1-8 §3.9 Fp,C = 0,7·fub·As, Fs,Rd = ks·n·μ(Fp,C − 0,8Ft)/γM3; öngerme tükenirse kapasite 0 + uygunsuz. Seçenekler string enum (CalcPage kuralı); μ/ks/γM3 teyit notuyla.
+
+Test düzeltmesi: rulman makaralı testinde kendi el hesabım yanlıştı (5^(10/3) = 213,75, 213,37 değil); modül doğruydu.
+
+**Toplam: 579 modül (test dosyası sayısı), core-calc 1296 test, hepsi yeşil; core-calc tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

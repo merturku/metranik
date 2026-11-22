@@ -1798,3 +1798,11 @@ export { elastikZeminUzerindeKirisHetenyi } from "./modules/elastik-zemin-uzerin
 export type { ElastikZeminUzerindeKirisHetenyiInput, ElastikZeminUzerindeKirisHetenyiOutput } from "./modules/elastik-zemin-uzerinde-kiris-hetenyi";
 export { dereceGunAylikSicaklik } from "./modules/derece-gun-aylik-sicaklik";
 export type { DereceGunAylikSicaklikInput, DereceGunAylikSicaklikOutput } from "./modules/derece-gun-aylik-sicaklik";
+export { rulmanOmruL10 } from "./modules/rulman-omru-l10";
+export type { RulmanOmruL10Input, RulmanOmruL10Output } from "./modules/rulman-omru-l10";
+export { silindirikKabukEtKalinligiAsme } from "./modules/silindirik-kabuk-et-kalinligi-asme";
+export type { SilindirikKabukEtKalinligiAsmeInput, SilindirikKabukEtKalinligiAsmeOutput } from "./modules/silindirik-kabuk-et-kalinligi-asme";
+export { motorKaymaRotorKayiplari } from "./modules/motor-kayma-rotor-kayiplari";
+export type { MotorKaymaRotorKayiplariInput, MotorKaymaRotorKayiplariOutput } from "./modules/motor-kayma-rotor-kayiplari";
+export { ongermeliBulonSurtunmeBirlesimi } from "./modules/ongermeli-bulon-surtunme-birlesimi";
+export type { OngermeliBulonSurtunmeBirlesimiInput, OngermeliBulonSurtunmeBirlesimiOutput } from "./modules/ongermeli-bulon-surtunme-birlesimi";
