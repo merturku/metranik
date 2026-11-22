@@ -3750,6 +3750,34 @@ const ONGERMELI_BULON_SURTUNME_BIRLESIMI: ModuleEntry = {
   standard: "TS EN 1993-1-8 §3.9 (öngerilmeli bulonlu sürtünme birleşimi)",
 };
 
+const KANAL_BOYUNCA_SICAKLIK_DEGISIMI: ModuleEntry = {
+  id: "kanal-boyunca-sicaklik-degisimi",
+  title: "Hava Kanalı Boyunca Sıcaklık Değişimi",
+  href: "/kanal-boyunca-sicaklik-degisimi",
+  standard: "ASHRAE Fundamentals Böl. 4 ve 23 (kanal ısı geçişi)",
+};
+
+const KORUMA_CIHAZI_AZAMI_KABLO_BOYU: ModuleEntry = {
+  id: "koruma-cihazi-azami-kablo-boyu",
+  title: "Koruma Cihazı İçin Azami Kablo Boyu (TN Otomatik Açma)",
+  href: "/koruma-cihazi-azami-kablo-boyu",
+  standard: "IEC 60364-4-41 §411.4, IEC 60364-6",
+};
+
+const KIRIS_KESME_GERILMESI_JOURAWSKI: ModuleEntry = {
+  id: "kiris-kesme-gerilmesi-jourawski",
+  title: "Kiriş Kesme Gerilmesi Dağılımı (Jourawski)",
+  href: "/kiris-kesme-gerilmesi-jourawski",
+  standard: "Klasik mukavemet (τ = VQ/Ib)",
+};
+
+const FOSSEPTIK_HACMI: ModuleEntry = {
+  id: "fosseptik-hacmi",
+  title: "Fosseptik (Septik Tank) Hacmi",
+  href: "/fosseptik-hacmi",
+  standard: "EPA Onsite Wastewater Manual (yerel yönetmelik teyidi)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3882,6 +3910,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
       {
         label: "Havalandırma",
         modules: [
+          KANAL_BOYUNCA_SICAKLIK_DEGISIMI,
           FAN_ISI_KAZANCI_HAVA_SICAKLIK_ARTISI,
           FAN_PARALEL_CALISMA_DEBISI,
           HAVA_FILTRESI_BASINC_KAYBI_ENERJI_MALIYETI,
@@ -4159,6 +4188,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           YANGIN_ALGILAMA_LOOP_GERILIM_DUSUMU,
           TRAFO_YUKLENME_ORANI,
           KABLO_KISA_DEVRE_TERMIK_KONTROLU,
+          KORUMA_CIHAZI_AZAMI_KABLO_BOYU,
           HATA_CEVRIM_EMPEDANSI_KONTROLU,
           GERILIM_DENGESIZLIGI_KONTROLU,
           MOTOR_SARGI_SICAKLIGI_DIRENC_YONTEMI,
@@ -4198,6 +4228,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           DIKDORTGEN_SAVAK_DEBISI,
           BETON_HEDEF_ORTALAMA_DAYANIM,
           TRAPEZ_KANAL_MANNING_NORMAL_DERINLIK,
+          KIRIS_KESME_GERILMESI_JOURAWSKI,
           DAIRESEL_MIL_BURULMA,
           KOLON_MOMENT_BUYUTME_KATSAYISI,
           TABAN_PLAKASI_EZILME_KONTROLU,
@@ -4337,6 +4368,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           EV_SICAKLIK_BIRIM_DONUSUMU,
           EV_SAP_MALZEME_MIKTARI,
           EV_PENCERE_SACAK_DERINLIGI,
+          FOSSEPTIK_HACMI,
           EV_YUKSEK_YATAK_TOPRAK_HACMI,
           EV_ISI_DEPOLAMA_KAPASITESI,
           EV_LAMINAT_PARKE_MIKTARI,

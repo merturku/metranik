@@ -1829,6 +1829,17 @@ Test düzeltmesi: rulman makaralı testinde kendi el hesabım yanlıştı (5^(10
 
 **Toplam: 579 modül (test dosyası sayısı), core-calc 1296 test, hepsi yeşil; core-calc tsc temiz.**
 
+### 5ds. Kanal sıcaklık değişimi/azami kablo boyu/Jourawski kesme gerilmesi/fosseptik: 4 modül daha
+
+- **Hava Kanalı Boyunca Sıcaklık Değişimi** — Mekanik/Havalandırma. T(L) = Ta + (Ti − Ta)e^(−NTU), U düzlemsel direnç ağından; Boru Boyunca Sıcaklık Düşümü'nün kanal karşılığı.
+- **Koruma Cihazı İçin Azami Kablo Boyu (TN)** — Elektrik. Lmaks = 0,8·U0·S/(ρθ(1+m)Ia), B/C/D k = 5/10/20; Hata Çevrim Empedansı Kontrolü'nün tasarım (ters) yönü.
+- **Kiriş Kesme Gerilmesi (Jourawski)** — İnşaat. τ = VQ/(Ib); dikdörtgen 1,5V/A, I kesitte nötr eksen ve gövde–başlık birleşimi (testte I = 24 869 717 mm⁴ ile doğrulandı).
+- **Fosseptik (Septik Tank) Hacmi** — Ev. V = N(q·t + s·T); girdiler yerel yönetmelikten teyit notuyla.
+
+Test düzeltmesi: azami kablo boyu testinde "sınırda" beklemiştim, oran 0,72 → uygun (modül doğruydu).
+
+**Toplam: 583 modül (test dosyası sayısı), core-calc 1307 test, hepsi yeşil; core-calc ve web tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

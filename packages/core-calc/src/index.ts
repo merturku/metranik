@@ -1806,3 +1806,11 @@ export { motorKaymaRotorKayiplari } from "./modules/motor-kayma-rotor-kayiplari"
 export type { MotorKaymaRotorKayiplariInput, MotorKaymaRotorKayiplariOutput } from "./modules/motor-kayma-rotor-kayiplari";
 export { ongermeliBulonSurtunmeBirlesimi } from "./modules/ongermeli-bulon-surtunme-birlesimi";
 export type { OngermeliBulonSurtunmeBirlesimiInput, OngermeliBulonSurtunmeBirlesimiOutput } from "./modules/ongermeli-bulon-surtunme-birlesimi";
+export { kanalBoyuncaSicaklikDegisimi } from "./modules/kanal-boyunca-sicaklik-degisimi";
+export type { KanalBoyuncaSicaklikDegisimiInput, KanalBoyuncaSicaklikDegisimiOutput } from "./modules/kanal-boyunca-sicaklik-degisimi";
+export { koruyucuCihazAzamiKabloBoyu } from "./modules/koruma-cihazi-azami-kablo-boyu";
+export type { KoruyucuCihazAzamiKabloBoyuInput, KoruyucuCihazAzamiKabloBoyuOutput } from "./modules/koruma-cihazi-azami-kablo-boyu";
+export { kirisKesmeGerilmesiJourawski } from "./modules/kiris-kesme-gerilmesi-jourawski";
+export type { KirisKesmeGerilmesiJourawskiInput, KirisKesmeGerilmesiJourawskiOutput } from "./modules/kiris-kesme-gerilmesi-jourawski";
+export { fosseptikHacmi } from "./modules/fosseptik-hacmi";
+export type { FosseptikHacmiInput, FosseptikHacmiOutput } from "./modules/fosseptik-hacmi";
