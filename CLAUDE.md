@@ -1863,6 +1863,15 @@ Tarama betiği tek seferlik (repoda değil): sayfa `defaults={{...}}` regex ile 
 
 **Toplam: 587 modül, core-calc 1317 test, hepsi yeşil; core-calc tsc temiz.**
 
+### 5dv. AI asistan (Claude tool-use) — anahtar bekleyen, özellik bayraklı (2026-11-23)
+
+Kullanıcı sırayı bana bıraktı ("sıra ile devam et"); ürünün 2. ekseni (§1) uygulandı. `ANTHROPIC_API_KEY` (yalnız sunucu) tanımlıyken menüde "AI Asistan" görünür; tanımsızken özellik tamamen kapalıdır (`/api/asistan` 503, `/asistan` "kapalı" gösterir).
+- `lib/asistan/kayit.ts`: core-calc'taki tüm modüllerden otomatik kayıt; `modulAra` (Türkçe normalize, başlık/id/standart puanı), `modulSemasi` (Zod v3 → sade JSON Schema), `modulHesapla` (safeParse + compute, NaN/Infinity → null, paylaşım bağlantısı üretir).
+- `app/api/asistan/route.ts`: Anthropic Messages API (fetch, SDK yok) ile 3 araçlı tool-use döngüsü (en çok 8 tur), IP başına 20 istek/10 dk, mesaj ≤ 2000 karakter, 20 mesaj; model `ANTHROPIC_MODEL` (varsayılan `claude-sonnet-5-5`). Sistem istemi §3'ü zorlar: LLM sayı üretmez, eksik girdiyi sorar, standardı araç sonucundan aktarır.
+- `/asistan` sohbet sayfası: yanıtın altında her hesap için sonuç kartı + "Modülde aç" (girdiler önceden dolu). KVKK §1.2 eklendi (mesajlar Anthropic'e iletilir, kalıcı saklanmaz). `.env.example` güncellendi.
+- Doğrulama: tsc + `pnpm build` temiz; araç katmanı (arama, şema, hesap, refine hatası) ve rota (503 / araç döngüsü / 400 / 502) sahte Anthropic yanıtıyla vitest'te geçti (geçici yapılandırma scratchpad'de, repoda değil — apps/web'de test altyapısı yok). **Gerçek API ile uçtan uca denenmedi (anahtar yok).**
+- Kullanıcıdan gereken: Vercel'de `ANTHROPIC_API_KEY`. Maliyet kontrolü için Anthropic konsolunda harcama limiti önerilir; sunucusuz ortamda bellek içi istek sınırı örnek başınadır (kalıcı sınır için Supabase/KV gerekir).
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

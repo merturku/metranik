@@ -37,6 +37,18 @@ export default function KvkkPage() {
         </section>
 
         <section>
+          <h2 className="text-base font-semibold text-text-primary">1.2 AI Asistan (İsteğe Bağlı)</h2>
+          <p className="mt-2">
+            AI asistan etkinleştirildiğinde, asistana yazdığınız mesajlar ve asistanın çağırdığı hesap
+            girdileri, yanıt üretmek amacıyla yapay zekâ servis sağlayıcısına (Anthropic) iletilir. Bu
+            veriler Metranik tarafından kalıcı olarak saklanmaz. Asistana kişisel veri, ticari sır veya
+            gizli proje bilgisi yazmamanız önerilir. Asistan kullanımı zorunlu değildir; tüm hesap
+            modülleri asistan olmadan da çalışır. Hesap sonuçlarını asistan değil, deterministik hesap
+            motoru üretir.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-base font-semibold text-text-primary">2. Hesaplamalar Nerede Çalışır</h2>
           <p className="mt-2">
             Tüm hesap motoru (<code className="rounded bg-border/40 px-1 py-0.5 text-xs">@metranik/core-calc</code>)

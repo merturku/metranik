@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MODUL_GRUPLARI, grupBasinaModulSayisi } from "@/lib/modules";
 import { HesapKutusu } from "@/components/hesap-kutusu";
+import { AsistanLinki } from "@/components/asistan-linki";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -64,6 +65,7 @@ export function AppSidebar() {
         >
           Projelerim ★
         </Link>
+        <AsistanLinki onNavigate={() => setSidebarOpen(false)} />
         <HesapKutusu onNavigate={() => setSidebarOpen(false)} />
 
         {MODUL_GRUPLARI.map((grup) => (
