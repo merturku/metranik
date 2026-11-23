@@ -31,8 +31,11 @@ export default function KvkkPage() {
             parolanız (parola yalnızca şifrelenmiş özet olarak) kimlik doğrulama sağlayıcısı
             Supabase üzerinde, hesabınızı yönetmek ve oturumunuzu doğrulamak amacıyla işlenir.
             Üyelik zorunlu değildir; üye olmadan tüm hesap modüllerini kullanabilirsiniz. Hesabınızın
-            silinmesini talep edebilirsiniz. Projelerinizin bulutta saklanması özelliği
-            etkinleştirildiğinde bu metin ayrıca güncellenecek ve açık onayınız istenecektir.
+            silinmesini talep edebilirsiniz. Üyeyseniz, Projelerim sayfasında isteğe bağlı bulut yedeği
+            kullanabilirsiniz: yalnızca siz "Buluta yedekle" dediğinizde, kayıtlı hesaplarınız (proje adı,
+            girdi değerleri, sonuçlar) hesabınıza bağlı olarak Supabase sunucularında saklanır; bunun için
+            ilk kullanımda açık onayınız istenir. Buluttaki kayıtlarınızı "Buluttakileri sil" ile istediğiniz
+            zaman kalıcı olarak silebilirsiniz. Bulut yedeği kullanmazsanız kayıtlarınız yalnızca cihazınızda kalır.
           </p>
         </section>
 

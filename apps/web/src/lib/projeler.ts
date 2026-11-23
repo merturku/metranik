@@ -51,6 +51,11 @@ export function hesapKaydet(k: Omit<KayitliHesap, "id" | "tarih">): boolean {
   return kayitlariGetir().length > 0;
 }
 
+/** Kayıt listesinin tamamını yazar (bulut geri yüklemesi için). */
+export function kayitlariTopluYaz(liste: KayitliHesap[]) {
+  yaz(KAYIT_KEY, liste.slice(0, 500));
+}
+
 export function kaydiSil(id: string) {
   yaz(KAYIT_KEY, kayitlariGetir().filter((k) => k.id !== id));
 }

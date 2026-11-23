@@ -1881,6 +1881,13 @@ Eski `packages/ifc` çalışmıyordu: `getIfcTypeCode` içindeki sayılar uydurm
 - Doğrulama: ifc paketinde 6 test (gerçek web-ifc, elle yazılmış IFC: mm/m/fit birimleri, eksik Qto, boş model); `pnpm build` temiz; **gerçek Chrome'da (puppeteer-core, scratchpad) yükle → metraj tablosu → öneri → hedef sayfada alanlar dolu uçtan uca geçti**. Bu sırada yakalanan hatalar: wasm 404 (göreli yol), ve **`/${id}` ile kurulan bağlantılar `kablo-kesiti-iec60364` gibi id'den farklı sayfa yolu olan modüllerde 404 verirdi** — IFC önerileri ve AI asistan bağlantıları artık katalogdaki `href`'i kullanır (katalogdaki 587 href'in hepsinin gerçek sayfaya gittiği doğrulandı).
 - **Gerçek bir Revit/ArchiCAD IFC'siyle denenmedi** (yalnız elle yazılmış küçük dosyalarla): gerçek modellerde Qto adları/birimleri farklı olabilir; büyük dosyalarda ana iş parçacığı bloklanabilir (Web Worker yok). Tip nitelikleri (IfcRelDefinesByType) ve IfcElementQuantity dışı alan/hacim henüz okunmuyor.
 
+### 5dx. İsteğe bağlı bulut yedeği (Supabase) — anahtar bekleyen (2026-11-23)
+
+Üyelik (§5ce) açıkken Projelerim sayfasında "Buluta yedekle / Buluttan ekle / Buluttakileri sil". **Bilinçli olarak otomatik eşitleme yok**: kullanıcı açıkça tetikler; geri yükleme yalnız EKLER (yerel kaydı silmez/ezmez), böylece veri kaybı riski yok. İlk kullanımda açık onay penceresi (`metranik.bulut_onay`), KVKK §1.1 güncellendi.
+- `lib/bulut.ts` (taklit edilebilir istemci arayüzü): parçalı (100'lük) upsert `onConflict: user_id,istemci_id`, şekil doğrulamalı okuma (bozuk satır elenir), çoğaltmasız `birlestir`, `buluttakileriSil` (RLS yalnız kendi satırları). `components/bulut-yedek.tsx`. `supabase/migrations/0002_kayitli_hesaplar_istemci_id.sql` (0001'den sonra çalıştırılmalı).
+- Doğrulama: tsc + `pnpm build` temiz; mantık taklit Supabase istemcisiyle vitest'te geçti (scratchpad, repoda değil). **Gerçek Supabase ile hiç denenmedi** (proje/anahtar yok) — özellikle `ON CONFLICT (user_id, istemci_id)` ile `default auth.uid()` ve RLS davranışı ilk gerçek kurulumda doğrulanmalı.
+- Kullanıcıdan gereken: Supabase projesi, iki SQL migration'ın çalıştırılması, Vercel'de `NEXT_PUBLIC_SUPABASE_URL/ANON_KEY` (bkz. §5ce), e-posta doğrulama/redirect ayarı.
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

@@ -14,6 +14,7 @@ import {
   type KayitliHesap,
 } from "@/lib/projeler";
 import { ButtonSecondary, Caption, Headline, Body } from "@/components/design-system";
+import { BulutYedek } from "@/components/bulut-yedek";
 
 export default function ProjelerimSayfasi() {
   const [kayitlar, setKayitlar] = useState<KayitliHesap[]>([]);
@@ -68,8 +69,9 @@ export default function ProjelerimSayfasi() {
     <div className="mx-auto w-full max-w-[1140px] px-6 py-8">
       <Headline>Projelerim</Headline>
       <Body className="mt-2 text-text-secondary">
-        Kaydettiğiniz hesaplar ve favori modülleriniz yalnız bu tarayıcıda saklanır; sunucuya gönderilmez. Tarayıcı
-        verisini silerseniz kayıtlar da silinir — önemli hesapları PDF veya Excel olarak indirin.
+        Kaydettiğiniz hesaplar ve favori modülleriniz varsayılan olarak yalnız bu tarayıcıda saklanır; sunucuya gönderilmez
+        (üyelik açıksa isteğe bağlı bulut yedeği vardır). Tarayıcı verisini silerseniz yerel kayıtlar da silinir — önemli
+        hesapları PDF veya Excel olarak indirin.
       </Body>
 
       <div className="no-print mt-4 flex flex-wrap items-center gap-2">
@@ -81,6 +83,15 @@ export default function ProjelerimSayfasi() {
           <input type="file" accept="application/json" className="sr-only" onChange={(e) => yedekGeriYukle(e.target.files?.[0])} />
         </label>
         {mesaj && <span role="status" className="text-caption text-text-secondary">{mesaj}</span>}
+      </div>
+
+      <div className="no-print mt-3">
+        <BulutYedek
+          onDegisti={() => {
+            setKayitlar(kayitlariGetir());
+            setFavoriler(favorileriGetir());
+          }}
+        />
       </div>
 
       <section className="mt-8">
