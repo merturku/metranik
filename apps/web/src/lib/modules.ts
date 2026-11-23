@@ -3806,6 +3806,34 @@ const BILESIK_EGILME_GERILMESI_DIKDORTGEN: ModuleEntry = {
   standard: "Klasik mukavemet (σ = N/A ± M/W)",
 };
 
+const PRIMER_SEKONDER_AYIRICI_BYPASS: ModuleEntry = {
+  id: "primer-sekonder-ayirici-bypass",
+  title: "Primer–Sekonder Ayırıcı (Decoupler) Debisi ve Karışım Sıcaklığı",
+  href: "/primer-sekonder-ayirici-bypass",
+  standard: "Kütle/enerji dengesi (ASHRAE Systems & Equipment)",
+};
+
+const YUMUSAK_YOL_VERICI_AKIM_SINIRI: ModuleEntry = {
+  id: "yumusak-yol-verici-akim-siniri",
+  title: "Yumuşak Yol Verici (Soft Starter) Kalkış Akımı ve Moment Marjı",
+  href: "/yumusak-yol-verici-akim-siniri",
+  standard: "IEC 60947-4-2 (I ∝ U, T ∝ U²)",
+};
+
+const CIFT_ANKASTRE_KIRIS_TESIRLERI: ModuleEntry = {
+  id: "cift-ankastre-kiris-tesirleri",
+  title: "İki Ucu Ankastre Kiriş Kesit Tesirleri ve Sehim",
+  href: "/cift-ankastre-kiris-tesirleri",
+  standard: "Klasik kiriş teorisi",
+};
+
+const BETON_ROTRE_KISALMA: ModuleEntry = {
+  id: "beton-rotre-kisalma",
+  title: "Beton Rötre Şekil Değiştirmesi ve Boy Kısalması",
+  href: "/beton-rotre-kisalma",
+  standard: "TS EN 1992-1-1 §3.1.4",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3814,6 +3842,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         label: "Isıtma-Soğutma",
         modules: [
           DERECE_GUN_AYLIK_SICAKLIK,
+          PRIMER_SEKONDER_AYIRICI_BYPASS,
           LMTD_DUZELTME_FAKTORU_F,
           EKONOMIZER_BACA_GAZI_ISI_GERI_KAZANIMI,
           HIDRONIK_KRITIK_DEVRE_BASINC_KAYBI,
@@ -4135,6 +4164,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           REAKTIF_ENERJI_ORANI_KONTROLU,
           KABLO_STANDART_KESIT_SECIMI,
           MOTOR_KALKIS_TORKU_GERILIM_DUSUSU,
+          YUMUSAK_YOL_VERICI_AKIM_SINIRI,
           MOTOR_KALKIS_SURESI,
           AKU_PEUKERT_BOSALMA_SURESI,
           TRAFO_YILLIK_KAYIP_MALIYETI,
@@ -4260,6 +4290,8 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TRAPEZ_KANAL_MANNING_NORMAL_DERINLIK,
           KIRIS_KESME_GERILMESI_JOURAWSKI,
           BILESIK_EGILME_GERILMESI_DIKDORTGEN,
+          BETON_ROTRE_KISALMA,
+          CIFT_ANKASTRE_KIRIS_TESIRLERI,
           DAIRESEL_MIL_BURULMA,
           KOLON_MOMENT_BUYUTME_KATSAYISI,
           TABAN_PLAKASI_EZILME_KONTROLU,

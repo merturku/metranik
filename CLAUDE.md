@@ -1888,6 +1888,15 @@ Eski `packages/ifc` çalışmıyordu: `getIfcTypeCode` içindeki sayılar uydurm
 - Doğrulama: tsc + `pnpm build` temiz; mantık taklit Supabase istemcisiyle vitest'te geçti (scratchpad, repoda değil). **Gerçek Supabase ile hiç denenmedi** (proje/anahtar yok) — özellikle `ON CONFLICT (user_id, istemci_id)` ile `default auth.uid()` ve RLS davranışı ilk gerçek kurulumda doğrulanmalı.
 - Kullanıcıdan gereken: Supabase projesi, iki SQL migration'ın çalıştırılması, Vercel'de `NEXT_PUBLIC_SUPABASE_URL/ANON_KEY` (bkz. §5ce), e-posta doğrulama/redirect ayarı.
 
+### 5dy. Primer–sekonder ayırıcı/soft starter/ankastre kiriş/rötre: 4 modül daha
+
+- **Primer–Sekonder Ayırıcı (Decoupler) Debisi** — Mekanik/Isıtma-Soğutma. Qb = Qp − Qs, karışım düğümü enerji dengesi; Qs > Qp ise ters akış + sekonder besleme bozulması (uygunsuz).
+- **Yumuşak Yol Verici Kalkış Akımı ve Moment Marjı** — Elektrik. I ∝ U, T ∝ U² (IEC 60947-4-2), 1,25 moment marjı pratik eşik (teyit notuyla); Y-Δ ve motor kalkış modüllerinin soft starter karşılığı.
+- **İki Ucu Ankastre Kiriş Tesirleri ve Sehim** — İnşaat. R, Muç, Morta, δ; Muç + Morta = basit mesnetli Mmaks denge testi.
+- **Beton Rötre ve Boy Kısalması** — İnşaat. TS EN 1992-1-1 §3.1.4: εcs = kh·εcd,0 + 2,5(fck−10)·10⁻⁶; kh Tablo 3.3 enterpolasyonu, εcd,0 girdi (tablo gömülmedi).
+
+Testler el hesabı + denge/sınır kontrolü. **Toplam: 591 modül, core-calc 1328 test, hepsi yeşil; core-calc ve web tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
