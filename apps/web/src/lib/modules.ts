@@ -3855,6 +3855,27 @@ const CELIK_KESIT_PLASTIK_MOMENT: ModuleEntry = {
   standard: "TS EN 1993-1-1 §6.2.5",
 };
 
+const SPRINKLER_BASLIK_AKTIVASYON_SURESI: ModuleEntry = {
+  id: "sprinkler-baslik-aktivasyon-suresi",
+  title: "Sprinkler Başlığı Aktivasyon Süresi (RTI)",
+  href: "/sprinkler-baslik-aktivasyon-suresi",
+  standard: "NFPA 13 / UL 199 (RTI), Heskestad & Bill",
+};
+
+const DONATI_BINDIRME_BOYU: ModuleEntry = {
+  id: "donati-bindirme-boyu",
+  title: "Donatı Bindirme (Ek) Boyu",
+  href: "/donati-bindirme-boyu",
+  standard: "TS EN 1992-1-1 §8.7.3",
+};
+
+const CATLAK_YONTEMI_INFILTRASYON: ModuleEntry = {
+  id: "catlak-yontemi-infiltrasyon",
+  title: "Çatlak Yöntemiyle Rüzgârdan Hava Sızıntısı ve Isı Kaybı",
+  href: "/catlak-yontemi-infiltrasyon",
+  standard: "ASHRAE Fundamentals Ch. 16 (crack method)",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -4039,6 +4060,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         modules: [
           SPRINKLER_KAYNAK_BASINCI_GEREKSINIMI,
           SPRINKLER_ADEDI_YERLESIMI,
+          SPRINKLER_BASLIK_AKTIVASYON_SURESI,
           NOZUL_REAKSIYON_KUVVETI,
           HIDRANT_AKIS_TESTI_KULLANILABILIR_DEBI,
           KOPUK_SOLUSYON_KONSANTRE_MIKTARI,
@@ -4318,6 +4340,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           CIFT_ANKASTRE_KIRIS_TESIRLERI,
           DAIRESEL_MIL_BURULMA,
           KOLON_MOMENT_BUYUTME_KATSAYISI,
+          DONATI_BINDIRME_BOYU,
           TABAN_PLAKASI_EZILME_KONTROLU,
           ZEMIN_BAGIL_SIKILIK,
           FLOTASYON_KALDIRMA_GUVENLIGI,
@@ -4457,6 +4480,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           EV_PENCERE_SACAK_DERINLIGI,
           FOSSEPTIK_HACMI,
           SICAK_SU_GELME_SURESI,
+          CATLAK_YONTEMI_INFILTRASYON,
           EV_YUKSEK_YATAK_TOPRAK_HACMI,
           EV_ISI_DEPOLAMA_KAPASITESI,
           EV_LAMINAT_PARKE_MIKTARI,

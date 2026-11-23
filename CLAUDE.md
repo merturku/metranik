@@ -1905,6 +1905,14 @@ Testler el hesabı + denge/sınır kontrolü. **Toplam: 591 modül, core-calc 13
 
 Testler el hesabı + sınır kontrolü. **Toplam: 594 modül, core-calc 1335 test, hepsi yeşil; core-calc ve web tsc temiz.**
 
+### 5ea. Sprinkler RTI/donatı bindirme boyu/çatlak yöntemi sızıntı: 3 modül daha
+
+- **Sprinkler Başlığı Aktivasyon Süresi (RTI)** — Mekanik/Yangın. t = (RTI/√u)·ln[(Tg−Ta)/(Tg−Tact)]; Tg ≤ Tact → `null` + uygunsuz. Testte RTI ×2 → süre ×2, u ×4 → süre ÷2.
+- **Donatı Bindirme (Ek) Boyu** — İnşaat. TS EN 1992-1-1 §8.7.3: l0 = α·α6·lb,rqd, α6 = √(ρ1/25) ∈ [1; 1,5], asgari max(0,3α6lb; 15φ; 200). Kenetlenme Boyu modülünün çıktısını tüketir.
+- **Çatlak Yöntemiyle Rüzgârdan Hava Sızıntısı** — Ev. ASHRAE Fund. Böl. 16 Q = C·L·ΔP^n, ΔP = ΔCp·ρv²/2, duyulur ısı kaybı; C ve n kullanıcı girdisi (tablo gömülmedi).
+
+**Toplam: 597 modül, core-calc 1343 test, hepsi yeşil; core-calc ve web tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

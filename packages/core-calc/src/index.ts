@@ -1836,3 +1836,9 @@ export { kazanDairesiHavalandirmaDebisi } from "./modules/kazan-dairesi-havaland
 export type { KazanDairesiHavalandirmaDebisiInput, KazanDairesiHavalandirmaDebisiOutput } from "./modules/kazan-dairesi-havalandirma-debisi";
 export { celikKesitPlastikMoment } from "./modules/celik-kesit-plastik-moment";
 export type { CelikKesitPlastikMomentInput, CelikKesitPlastikMomentOutput } from "./modules/celik-kesit-plastik-moment";
+export { sprinklerBaslikAktivasyonSuresi } from "./modules/sprinkler-baslik-aktivasyon-suresi";
+export type { SprinklerBaslikAktivasyonSuresiInput, SprinklerBaslikAktivasyonSuresiOutput } from "./modules/sprinkler-baslik-aktivasyon-suresi";
+export { donatiBindirmeBoyu } from "./modules/donati-bindirme-boyu";
+export type { DonatiBindirmeBoyuInput, DonatiBindirmeBoyuOutput } from "./modules/donati-bindirme-boyu";
+export { catlakYontemiInfiltrasyon } from "./modules/catlak-yontemi-infiltrasyon";
+export type { CatlakYontemiInfiltrasyonInput, CatlakYontemiInfiltrasyonOutput } from "./modules/catlak-yontemi-infiltrasyon";
