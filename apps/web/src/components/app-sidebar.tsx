@@ -65,6 +65,17 @@ export function AppSidebar() {
         >
           Projelerim ★
         </Link>
+        <Link
+          href="/ifc-metraj"
+          onClick={() => setSidebarOpen(false)}
+          className={`rounded-lg px-3 py-2 text-body font-medium transition-colors duration-fast ${
+            pathname === "/ifc-metraj"
+              ? "bg-accent/10 text-accent-text"
+              : "text-text-secondary hover:text-text-primary"
+          }`}
+        >
+          IFC Metraj
+        </Link>
         <AsistanLinki onNavigate={() => setSidebarOpen(false)} />
         <HesapKutusu onNavigate={() => setSidebarOpen(false)} />
 

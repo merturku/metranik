@@ -173,7 +173,7 @@ export function modulHesapla(id: string, girdi: unknown): { hata: string; sorunl
       araDegerler: temizle(r.intermediates) as Record<string, unknown>,
       standartlar: r.standardsUsed,
       hukum: r.verdict,
-      href: `/${m.id}?${q.toString()}`,
+      href: `${TUM_MODULLER.find((e) => e.id === m.id)?.href ?? `/${m.id}`}?${q.toString()}`,
     },
   };
 }

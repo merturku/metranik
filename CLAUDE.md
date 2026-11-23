@@ -1872,6 +1872,15 @@ Kullanıcı sırayı bana bıraktı ("sıra ile devam et"); ürünün 2. ekseni 
 - Doğrulama: tsc + `pnpm build` temiz; araç katmanı (arama, şema, hesap, refine hatası) ve rota (503 / araç döngüsü / 400 / 502) sahte Anthropic yanıtıyla vitest'te geçti (geçici yapılandırma scratchpad'de, repoda değil — apps/web'de test altyapısı yok). **Gerçek API ile uçtan uca denenmedi (anahtar yok).**
 - Kullanıcıdan gereken: Vercel'de `ANTHROPIC_API_KEY`. Maliyet kontrolü için Anthropic konsolunda harcama limiti önerilir; sunucusuz ortamda bellek içi istek sınırı örnek başınadır (kalıcı sınır için Supabase/KV gerekir).
 
+### 5dw. IFC metraj (BIM) — baştan yazıldı ve gerçek tarayıcıda doğrulandı (2026-11-23)
+
+Eski `packages/ifc` çalışmıyordu: `getIfcTypeCode` içindeki sayılar uydurmaydı (IFCPIPE ve IFCDUCT'ın ikisi de 106; gerçek `IFCPIPESEGMENT = 3612865200`), web-ifc 0.0.56'da olmayan `OpenIfc` çağrılıyordu, IFC'de olmayan `IFCEQUIPMENT` sınıfı vardı, miktarlar eleman özelliği sanılıyordu ve mapper'ın girdi anahtarları gerçek modül şemalarıyla uyuşmuyordu (`cap_mm`, `debi_m3h`…). Silindi, yerine:
+- `okuyucu.ts` — `metrajCikar(api, W, modelID)`: IfcProject birim ataması (SI önekleri, FOOT/INCH, ConversionBasedUnit), `IfcRelDefinesByProperties` ile eleman → `IfcElementQuantity` (Qto, öncelikli) / `IfcPropertySet`; uzunluk, dış çap, genişlik/yükseklik (ad eşleme normalize: "Outside Diameter", "Width"…); sınıf+boyut gruplama. **IFC'de olmayan değer tahmin edilmez**, uyarı verilir. Kapsam: boru/kanal/kablo segmenti, kablo tavası, ekipman sayımı (pompa, fan, kazan, chiller, motor, trafo, kompresör, eşanjör, tank).
+- `mapper.ts` — gerçek anahtarlarla öneri: boru → Boru Basınç Kaybı (uzunluk, capD; iç çap/debi/f kullanıcıya), kanal → Kanal Sac Ağırlığı (a, b, L), kablo → Kablo Kesiti (en uzun segment, düşük güven). Testte anahtarlar modül şemalarıyla doğrulanır.
+- `/ifc-metraj` sayfası (kenar çubuğunda "IFC Metraj"): tarayıcıda işler, dosya sunucuya gitmez; CSV dışa aktarım; "Modülde aç" bağlantısı girdileri doldurur. `public/wasm/web-ifc.wasm` (1,1 MB) sunulur; `SetWasmPath(dir, true)` (mutlak) şart.
+- Doğrulama: ifc paketinde 6 test (gerçek web-ifc, elle yazılmış IFC: mm/m/fit birimleri, eksik Qto, boş model); `pnpm build` temiz; **gerçek Chrome'da (puppeteer-core, scratchpad) yükle → metraj tablosu → öneri → hedef sayfada alanlar dolu uçtan uca geçti**. Bu sırada yakalanan hatalar: wasm 404 (göreli yol), ve **`/${id}` ile kurulan bağlantılar `kablo-kesiti-iec60364` gibi id'den farklı sayfa yolu olan modüllerde 404 verirdi** — IFC önerileri ve AI asistan bağlantıları artık katalogdaki `href`'i kullanır (katalogdaki 587 href'in hepsinin gerçek sayfaya gittiği doğrulandı).
+- **Gerçek bir Revit/ArchiCAD IFC'siyle denenmedi** (yalnız elle yazılmış küçük dosyalarla): gerçek modellerde Qto adları/birimleri farklı olabilir; büyük dosyalarda ana iş parçacığı bloklanabilir (Web Worker yok). Tip nitelikleri (IfcRelDefinesByType) ve IfcElementQuantity dışı alan/hacim henüz okunmuyor.
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

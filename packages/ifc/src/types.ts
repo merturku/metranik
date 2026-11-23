@@ -1,36 +1,52 @@
 /**
- * IFC parsing and metraj extraction types
+ * IFC metraj çıkarımı tipleri
  */
 
-export interface IfcEntity {
-  id: number;
-  type: string;
-  name: string;
-  properties: Record<string, unknown>;
+export type IfcKategori = "boru" | "kanal" | "kablo" | "tava" | "ekipman";
+
+export interface IfcEleman {
+  expressId: number;
+  ifcSinifi: string;
+  kategori: IfcKategori;
+  ad: string;
+  /** Metre cinsinden uzunluk (IFC'de yoksa tanımsız — uydurulmaz) */
+  uzunluk_m?: number;
+  /** Dış çap (mm) */
+  disCap_mm?: number;
+  /** Okunan çap değerinin IFC'deki özellik adı (şeffaflık) */
+  capOzellikAdi?: string;
+  genislik_mm?: number;
+  yukseklik_mm?: number;
 }
 
-export interface ExtractedQuantity {
-  entityId: number;
-  entityType: string;
-  entityName: string;
-  quantities: {
-    type: string;
-    value: number;
-    unit: string;
-    source: "ifc" | "calculated" | "default";
-  }[];
+export interface MetrajGrubu {
+  kategori: IfcKategori;
+  ifcSinifi: string;
+  /** "Ø114.3 mm", "300×200 mm" ya da "—" (boyut bilgisi yok) */
+  etiket: string;
+  disCap_mm?: number;
+  genislik_mm?: number;
+  yukseklik_mm?: number;
+  adet: number;
+  /** Uzunluğu bulunan elemanların toplam uzunluğu (m) */
+  toplamUzunluk_m: number;
+  enUzunEleman_m: number;
+  uzunluguOlmayanAdet: number;
 }
 
-export interface MappedInput {
+export interface IfcMetrajSonucu {
+  /** 1 IFC uzunluk birimi = kaç metre */
+  uzunlukBirimi_m: number;
+  uyarilar: string[];
+  elemanlar: IfcEleman[];
+  gruplar: MetrajGrubu[];
+}
+
+export interface ModulOnerisi {
   moduleId: string;
-  inputs: Record<string, number | string>;
-  confidence: "high" | "medium" | "low";
-  warning?: string;
-}
-
-export interface IfcParseResult {
-  fileName: string;
-  entities: IfcEntity[];
-  extracted: ExtractedQuantity[];
-  parseTime: number;
+  /** Modül sayfasının alan anahtarlarıyla birebir aynı */
+  girdiler: Record<string, number>;
+  guven: "yuksek" | "orta" | "dusuk";
+  kaynakGrup: string;
+  notlar: string[];
 }
