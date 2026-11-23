@@ -43,9 +43,14 @@ export function HesapKutusu({ onNavigate }: { onNavigate?: () => void }) {
 
   return (
     <div className="flex items-center justify-between gap-2 rounded-lg border border-border px-3 py-2">
-      <span className="min-w-0 truncate text-caption text-text-secondary" title={eposta}>
+      <Link
+        href="/hesabim"
+        onClick={onNavigate}
+        className="min-w-0 truncate text-caption text-text-secondary hover:text-text-primary hover:underline"
+        title={`Hesabım (${eposta})`}
+      >
         {eposta}
-      </span>
+      </Link>
       <button
         onClick={() => supabaseIstemci()?.auth.signOut()}
         className="shrink-0 text-caption font-medium text-accent-text hover:underline"

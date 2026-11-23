@@ -71,7 +71,7 @@ export default function GirisSayfasi() {
       setMesaj({ tur: "hata", metin: "Önce e-posta adresinizi yazın." });
       return;
     }
-    const { error } = await sb.auth.resetPasswordForEmail(eposta.trim(), { redirectTo: `${window.location.origin}/uygulama` });
+    const { error } = await sb.auth.resetPasswordForEmail(eposta.trim(), { redirectTo: `${window.location.origin}/hesabim` });
     setMesaj(error ? { tur: "hata", metin: hataMetni(error.message) } : { tur: "bilgi", metin: "Parola sıfırlama bağlantısı gönderildi." });
   }
 
@@ -132,7 +132,7 @@ export default function GirisSayfasi() {
           </button>
         )}
       </div>
-      <Caption className="mt-8 block">Hesaplarınız ve projeleriniz şimdilik bu cihazda saklanır; bulut eşitleme eklendiğinde ayrıca bildirilecektir.</Caption>
+      <Caption className="mt-8 block">Hesaplarınız ve projeleriniz bu cihazda saklanır; buluta yedekleme yalnız siz istediğinizde, Hesabım veya Projelerim sayfasından yapılır.</Caption>
     </div>
   );
 }

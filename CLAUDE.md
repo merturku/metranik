@@ -1913,6 +1913,12 @@ Testler el hesabı + sınır kontrolü. **Toplam: 594 modül, core-calc 1335 tes
 
 **Toplam: 597 modül, core-calc 1343 test, hepsi yeşil; core-calc ve web tsc temiz.**
 
+### 5eb. Başlık taraması + üyelik paneli `/hesabim` (2026-11-24)
+
+- **Başlık taraması (597 modül, id/başlık örtüşmesi):** gerçek tekrar yalnız **Soğutma Kulesi Kapasitesi** ↔ **Soğutma Kulesi Kapasitesi Kontrolü** (aynı Q = ṁ·cp·Range + yaklaşma; ikincisi tasarım yüküyle verdict ekler). Silme kullanıcı onayı gerektirdiği için dokunulmadı. Kalan benzer başlıklar bilinçli tamamlayıcılar (Sonsuz Şev c-φ uzantısı c = 0'da diğerine iner, Kolon Boyutlandırma kapasite ↔ Ön Boyutlandırma yük, Taze Hava ↔ CO₂ DCV, Genleşme Tankı hacim ↔ ön basınç, Kısa Devre ailesi).
+- **Üyelik paneli** (`app/(app)/hesabim`, Supabase anahtarları varken; yoksa "Üyelik şu an kapalı"): hesap bilgileri (e-posta, doğrulama, üyelik/son giriş tarihi), cihazdaki veri özeti (kayıt/proje/favori sayısı), "Verilerimi indir (JSON)", mevcut `BulutYedek` bileşeni, parola değiştirme (`updateUser`, ≥ 8 karakter + tekrar), çıkış. Kenar çubuğundaki e-posta artık `/hesabim`'e bağlanır; parola sıfırlama bağlantısı `/hesabim`'e döner (`PASSWORD_RECOVERY` olayında yeni parola alanı vurgulanır). Limit/paket modeli YOK (bkz. §5ce).
+- Doğrulama: web tsc + `pnpm build` temiz, anahtarsız `next start`'ta `/hesabim` 200 ve kapalı mesajı. **Gerçek Supabase ile denenmedi.** Supabase > Auth > URL Configuration > Redirect URLs listesine `<alan-adı>/hesabim` eklenmeli. **Hesabın kalıcı silinmesi yok** (service_role gerektirir; sunucu tarafı rota + KVKK kararı gerekir), panelde bu açıkça belirtildi.
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)
