@@ -1859,6 +1859,8 @@ Test düzeltmesi: azami kablo boyu testinde "sınırda" beklemiştim, oran 0,72 
 - 292 modülün `standards` alanı boş; çoğu saf fizik/birim dönüşümü. Doğrulanmamış atıf eklenmedi.
 Tarama betiği tek seferlik (repoda değil): sayfa `defaults={{...}}` regex ile okunup `inputSchema.safeParse` + `compute` çalıştırılır. Yeni parti sonrası tekrarlanabilir.
 
+**Tablo değeri doğrulaması (aynı gün, değişiklik gerekmedi):** gömülü tablolar yayımlanmış değerlerle karşılaştırıldı ve doğru bulundu — TBDY Tablo 2.1/2.2 (Fs, F1), EC3 kusur katsayıları (a0–d) ve E/G, EC5 kmod/kdef, EN 338 (E0,mean, fc,0,k, E0,05), IEC 60228 kesit serisi, IEC 60898-1 kademeleri, IEC 60072 motor gücü serisi, TS EN 1359 G sınıfları, TS EN 62305-3 ki/kc/km, ISO 817 LFL ve h0, TS EN 1993-1-8 ks/γM3, EC2 k1–k4. Kalan doğrulanmamış tablolar: yağ tutucu (EN 1825-2 katsayıları), sayaç sınıf sınırları, kondansatör kademeleri — bunlar sayfalarda zaten "teyit edin" notlu.
+
 **Toplam: 587 modül, core-calc 1317 test, hepsi yeşil; core-calc tsc temiz.**
 
 ---
