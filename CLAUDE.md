@@ -1897,6 +1897,14 @@ Eski `packages/ifc` çalışmıyordu: `getIfcTypeCode` içindeki sayılar uydurm
 
 Testler el hesabı + denge/sınır kontrolü. **Toplam: 591 modül, core-calc 1328 test, hepsi yeşil; core-calc ve web tsc temiz.**
 
+### 5dz. SPD etkin koruma seviyesi/kazan dairesi havalandırma/çelik plastik moment: 3 modül daha
+
+- **Parafudr (SPD) Etkin Koruma Seviyesi** — Elektrik. Ueff = Up + L'·l·di/dt, 0,8·Uw pratik pay (teyit notuyla), azami bağlantı uzunluğu.
+- **Kazan Dairesi Havalandırma Debisi** — Mekanik/Havalandırma. CH4 stokiyometrik yanma havası + yayılan ısı için soğutma havası (toplam muhafazakâr).
+- **Çelik Kesit Plastik Mukavemet Momenti** — İnşaat. Dikdörtgen ve I kesitte Wel, Wpl, α, Mpl,Rd (TS EN 1993-1-1 §6.2.5); geçersiz I geometri → uygunsuz.
+
+Testler el hesabı + sınır kontrolü. **Toplam: 594 modül, core-calc 1335 test, hepsi yeşil; core-calc ve web tsc temiz.**
+
 ---
 
 ## Sonuç: Proje Tamamlandı (2026-09-29)

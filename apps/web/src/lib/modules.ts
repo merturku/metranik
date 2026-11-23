@@ -3834,6 +3834,27 @@ const BETON_ROTRE_KISALMA: ModuleEntry = {
   standard: "TS EN 1992-1-1 §3.1.4",
 };
 
+const PARAFUDR_ETKIN_KORUMA_SEVIYESI: ModuleEntry = {
+  id: "parafudr-etkin-koruma-seviyesi",
+  title: "Parafudr (SPD) Etkin Koruma Seviyesi ve Bağlantı Uzunluğu",
+  href: "/parafudr-etkin-koruma-seviyesi",
+  standard: "IEC 62305-4 (SPD bağlantı iletkeni)",
+};
+
+const KAZAN_DAIRESI_HAVALANDIRMA_DEBISI: ModuleEntry = {
+  id: "kazan-dairesi-havalandirma-debisi",
+  title: "Kazan Dairesi Havalandırma Debisi (Yanma + Soğutma Havası)",
+  href: "/kazan-dairesi-havalandirma-debisi",
+  standard: "Yanma stokiyometrisi + enerji dengesi",
+};
+
+const CELIK_KESIT_PLASTIK_MOMENT: ModuleEntry = {
+  id: "celik-kesit-plastik-moment",
+  title: "Çelik Kesit Plastik Mukavemet Momenti ve Şekil Faktörü",
+  href: "/celik-kesit-plastik-moment",
+  standard: "TS EN 1993-1-1 §6.2.5",
+};
+
 export const MODUL_GRUPLARI: ModuleGroup[] = [
   {
     label: "Mekanik Tesisat",
@@ -3842,6 +3863,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
         label: "Isıtma-Soğutma",
         modules: [
           DERECE_GUN_AYLIK_SICAKLIK,
+          KAZAN_DAIRESI_HAVALANDIRMA_DEBISI,
           PRIMER_SEKONDER_AYIRICI_BYPASS,
           LMTD_DUZELTME_FAKTORU_F,
           EKONOMIZER_BACA_GAZI_ISI_GERI_KAZANIMI,
@@ -4164,6 +4186,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           REAKTIF_ENERJI_ORANI_KONTROLU,
           KABLO_STANDART_KESIT_SECIMI,
           MOTOR_KALKIS_TORKU_GERILIM_DUSUSU,
+          PARAFUDR_ETKIN_KORUMA_SEVIYESI,
           YUMUSAK_YOL_VERICI_AKIM_SINIRI,
           MOTOR_KALKIS_SURESI,
           AKU_PEUKERT_BOSALMA_SURESI,
@@ -4290,6 +4313,7 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           TRAPEZ_KANAL_MANNING_NORMAL_DERINLIK,
           KIRIS_KESME_GERILMESI_JOURAWSKI,
           BILESIK_EGILME_GERILMESI_DIKDORTGEN,
+          CELIK_KESIT_PLASTIK_MOMENT,
           BETON_ROTRE_KISALMA,
           CIFT_ANKASTRE_KIRIS_TESIRLERI,
           DAIRESEL_MIL_BURULMA,
