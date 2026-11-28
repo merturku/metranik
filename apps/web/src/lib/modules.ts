@@ -1071,12 +1071,6 @@ const NOTR_ILETKEN_KESITI_SECIMI: ModuleEntry = {
   href: "/notr-iletken-kesiti-secimi",
   standard: "IEC 60364-5-52",
 };
-const SOGUTMA_KULESI_KAPASITESI: ModuleEntry = {
-  id: "sogutma-kulesi-kapasitesi",
-  title: "Soğutma Kulesi Kapasitesi",
-  href: "/sogutma-kulesi-kapasitesi",
-  standard: "—",
-};
 const CO2_BAZLI_TAZE_HAVA_DEBISI: ModuleEntry = {
   id: "co2-bazli-taze-hava-debisi",
   title: "CO2 Bazlı Taze Hava Debisi (DCV)",
@@ -3953,7 +3947,6 @@ export const MODUL_GRUPLARI: ModuleGroup[] = [
           BACA_CEKISI_HESABI,
           KAZAN_BACA_GAZI_KAYBI,
           KAZAN_VERIMI_DOGRUDAN_YONTEM,
-          SOGUTMA_KULESI_KAPASITESI,
           YANMA_HAVASI_IHTIYACI,
           BORU_YALITIM_YUZEY_SICAKLIGI,
           YOGUSMA_ONLEYICI_YALITIM_KALINLIGI,

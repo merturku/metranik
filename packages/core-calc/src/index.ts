@@ -795,11 +795,6 @@ export type {
   NotrIletkenKesitiSecimiInput,
   NotrIletkenKesitiSecimiOutput,
 } from "./modules/notr-iletken-kesiti-secimi";
-export { sogutmaKulesiKapasitesi } from "./modules/sogutma-kulesi-kapasitesi";
-export type {
-  SogutmaKulesiKapasitesiInput,
-  SogutmaKulesiKapasitesiOutput,
-} from "./modules/sogutma-kulesi-kapasitesi";
 export { co2BazliTazeHavaDebisi } from "./modules/co2-bazli-taze-hava-debisi";
 export type {
   Co2BazliTazeHavaDebisiInput,
