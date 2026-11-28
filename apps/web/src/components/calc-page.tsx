@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { CalcModule, CalcResult } from "@metranik/core-calc";
 import { recordCalc, bugunSayisi } from "@/lib/recent-calcs";
+import { firmaGetir, firmaCsvSatirlari } from "@/lib/firma";
+import { FirmaBasligi } from "@/components/firma-basligi";
 import { ilgiliModuller, modulKonumu } from "@/lib/modules";
 import {
   csvOlustur,
@@ -158,6 +160,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
   function excelIndir() {
     if (!sonuc) return;
     const satirlar: string[][] = [
+      ...firmaCsvSatirlari(firmaGetir()),
       ["Metranik", mod.title],
       ["Standart", sonuc.standardsUsed.join(", ") || standardsLabel],
       ["Tarih", new Date().toLocaleDateString("tr-TR")],
@@ -470,6 +473,7 @@ export function CalcPage<I extends Record<string, unknown>, O>({
               </div>
 
               <div className="print-only mt-6 border-t border-border pt-4">
+                <FirmaBasligi />
                 <Caption className="uppercase mb-2 block">Girdiler</Caption>
                 <dl className="text-body">
                   {fields.map((f) => (

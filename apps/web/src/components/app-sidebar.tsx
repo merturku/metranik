@@ -66,6 +66,17 @@ export function AppSidebar() {
           Projelerim ★
         </Link>
         <Link
+          href="/ayarlar"
+          onClick={() => setSidebarOpen(false)}
+          className={`rounded-lg px-3 py-2 text-body font-medium transition-colors duration-fast ${
+            pathname === "/ayarlar"
+              ? "bg-accent/10 text-accent-text"
+              : "text-text-secondary hover:text-text-primary"
+          }`}
+        >
+          Ayarlar
+        </Link>
+        <Link
           href="/ifc-metraj"
           onClick={() => setSidebarOpen(false)}
           className={`rounded-lg px-3 py-2 text-body font-medium transition-colors duration-fast ${

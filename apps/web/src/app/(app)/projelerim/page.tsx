@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { firmaGetir, firmaCsvSatirlari } from "@/lib/firma";
+import { FirmaBasligi } from "@/components/firma-basligi";
 import Link from "next/link";
 import { TUM_MODULLER } from "@/lib/modules";
 import {
@@ -54,7 +56,7 @@ export default function ProjelerimSayfasi() {
   }
 
   function projeExcel(ad: string, liste: KayitliHesap[]) {
-    const satirlar: string[][] = [["Metranik proje raporu", ad], ["Tarih", new Date().toLocaleDateString("tr-TR")], []];
+    const satirlar: string[][] = [...firmaCsvSatirlari(firmaGetir()), ["Metranik proje raporu", ad], ["Tarih", new Date().toLocaleDateString("tr-TR")], []];
     for (const k of liste) {
       satirlar.push([k.title, k.sonuc], ["Standart", k.standart]);
       if (k.durum) satirlar.push(["Değerlendirme", k.durum]);
@@ -67,6 +69,7 @@ export default function ProjelerimSayfasi() {
 
   return (
     <div className="mx-auto w-full max-w-[1140px] px-6 py-8">
+      <FirmaBasligi />
       <Headline>Projelerim</Headline>
       <Body className="mt-2 text-text-secondary">
         Kaydettiğiniz hesaplar ve favori modülleriniz varsayılan olarak yalnız bu tarayıcıda saklanır; sunucuya gönderilmez
