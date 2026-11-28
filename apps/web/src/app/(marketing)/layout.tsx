@@ -5,8 +5,18 @@ import { KvkkBanner } from "@/components/kvkk-banner";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Metranik",
-  description: "Mühendislik hesap platformu",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://metranik.vercel.app"),
+  title: "Metranik — Mühendislik Hesap Platformu",
+  description:
+    "Mekanik, elektrik, inşaat ve ev hesapları için standart atıflı, ücretsiz mühendislik hesap platformu: 590+ modül, IFC metraj, PDF ve Excel çıktısı.",
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    siteName: "Metranik",
+    title: "Metranik — Mühendislik Hesap Platformu",
+    description:
+      "590+ standart atıflı mühendislik hesap modülü. Üyeliksiz, ücretsiz, tarayıcıda çalışır.",
+  },
 };
 
 export default function MarketingLayout({

@@ -90,6 +90,19 @@ export function CalcPage<I extends Record<string, unknown>, O>({
     setBugun(bugunSayisi(mod.id));
   }, [mod.id]);
 
+  // Modül sayfaları istemci bileşeni olduğundan `metadata` export edemez; sayfa
+  // başlığı ve açıklaması burada (arama motorları JS'i çalıştırır) ayarlanır.
+  useEffect(() => {
+    document.title = `${mod.title}${standardsLabel ? ` (${standardsLabel})` : ""} — Metranik`;
+    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+  }, [mod.title, standardsLabel, description]);
+
   // Paylaşılan bağlantıdaki girdiler (?alan=85&sehir=istanbul) forma yüklenir ve hesaplanır.
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
