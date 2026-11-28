@@ -42,6 +42,12 @@ export default function MarketingLayout({
               <span className="text-accent-text">NİK</span>
             </span>
             <nav className="flex flex-wrap items-center justify-center gap-4 text-xs text-text-secondary">
+              <a href="/rehber" className="transition-colors duration-300 hover:text-text-primary">
+                Hesap Rehberleri
+              </a>
+              <a href="/daire-teslim-kontrol-listesi" className="transition-colors duration-300 hover:text-text-primary">
+                Daire Teslim Listesi
+              </a>
               <a href="/#kimin-icin" className="transition-colors duration-300 hover:text-text-primary">
                 Kimin İçin
               </a>
